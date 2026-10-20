@@ -14,7 +14,7 @@ const GAMES = [
   { id: 'match', subjects: null },
   { id: 'sort', subjects: null },
   { id: 'type', subjects: null },
-  { id: 'memory', subjects: null },
+  { id: 'pop', subjects: null },
 ];
 const GAME_IDS = GAMES.map((g) => g.id);
 
@@ -172,13 +172,80 @@ app.get('/api/me/scores', authed, ah(async (req, res) => res.json(await db.getUs
 app.get('/api/me/sets', authed, ah(async (req, res) => res.json((await db.getUserSets(req.session.userId)).map(db.publicSet))));
 
 // ---------- AI generation requests ----------
+// Deterministic notes → question-set generator. Parses term/definition lines
+// ("Term: definition") and definitional sentences ("X is ..."), then builds
+// forward + reverse MCQs with shuffled distractors. Instant, no API key needed.
+const GEN_STOP = new Set(['this','that','it','they','we','you','he','she','the','a','an','there','here','these','those','my','our','their','its']);
+function genExtractPairs(notes) {
+  const pairs = [], seen = new Set();
+  const push = (term, def) => {
+    term = (term || '').replace(/^[*#\-–—\d.)\s]+/, '').trim();
+    def = (def || '').trim();
+    if (!term || !def) return;
+    if (term.length < 3 || term.length > 60 || def.length < 15 || def.length > 400) return;
+    if (term.split(/\s+/).length > 8) return;
+    if (GEN_STOP.has(term.toLowerCase().split(/\s+/)[0])) return;
+    const k = term.toLowerCase();
+    if (seen.has(k)) return;
+    seen.add(k);
+    pairs.push({ term, def });
+  };
+  for (const line of notes.split(/\r?\n/)) {
+    const m = line.match(/^(.{1,60}?)\s*[:\u2014\u2013-]\s+(.{15,400})$/);
+    if (m) push(m[1], m[2]);
+  }
+  for (const s of notes.replace(/\r?\n/g, ' ').split(/(?<=[.!?])\s+/)) {
+    const m = s.match(/^([A-Z][\w\s,'()/-]{2,50}?)\s+(is|are|refers to|means)\s+(.{15,400})$/);
+    if (m) push(m[1], m[3]);
+  }
+  return pairs;
+}
+function genShort(s, n = 140) { s = s.trim(); return s.length > n ? s.slice(0, n - 1) + '…' : s; }
+function genShuffle(a) { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+function genBuildQuestions(pairs) {
+  const qs = [];
+  const defs = pairs.map((p) => genShort(p.def));
+  const terms = pairs.map((p) => p.term);
+  pairs.forEach((p, i) => {
+    const dOthers = genShuffle(defs.map((d, j) => j)
+      .filter((j) => j !== i && defs[j].toLowerCase() !== defs[i].toLowerCase())).slice(0, 3);
+    if (dOthers.length === 3) {
+      const opts = genShuffle([defs[i], ...dOthers.map((j) => defs[j])]);
+      qs.push({ q: `What is ${p.term}?`, options: opts, answer: opts.indexOf(defs[i]),
+                explain: `${p.term}: ${p.def}` });
+    }
+    if (i % 2 === 0) {
+      const tOthers = genShuffle(terms.map((t, j) => j)
+        .filter((j) => j !== i && terms[j].toLowerCase() !== terms[i].toLowerCase())).slice(0, 3);
+      if (tOthers.length === 3) {
+        const opts = genShuffle([terms[i], ...tOthers.map((j) => terms[j])]);
+        qs.push({ q: `"${genShort(p.def, 120)}" — this describes:`, options: opts,
+                  answer: opts.indexOf(terms[i]), explain: `${p.term}: ${p.def}` });
+      }
+    }
+  });
+  return genShuffle(qs).slice(0, 60);
+}
+
 app.post('/api/generate', authed, ah(async (req, res) => {
   const { subject, notes } = req.body || {};
   if (!subject || !notes || notes.trim().length < 50)
     return res.status(400).json({ error: 'Add a subject and paste at least a few sentences of notes.' });
-  const r = await db.addGenRequest(req.session.userId, subject.trim(), notes.trim());
-  res.json({ ok: true, id: r.id,
-    message: 'Request saved! AI game generation is coming online soon — your set will appear in the library.' });
+  await db.addGenRequest(req.session.userId, subject.trim(), notes.trim());
+  const pairs = genExtractPairs(notes);
+  if (pairs.length < 4)
+    return res.status(400).json({ error: `I found only ${pairs.length} clear term(s) in your notes. Try one "Term: definition" per line — paste at least 4.` });
+  const questions = genBuildQuestions(pairs);
+  const title = `From notes: ${subject.trim()}`;
+  const order = await db.maxModuleOrder(subject.trim());
+  const r = await db.createSet({
+    title, subject: subject.trim(), module: title, module_order: order + 1,
+    description: `Auto-generated from your notes (${pairs.length} terms). Skim the questions and edit anything that looks off.`,
+    questionsJson: JSON.stringify(questions),
+    roundsJson: JSON.stringify([{ tag: title, title, desc: 'Generated from notes', count: questions.length, boss: false }]),
+    creatorId: req.session.userId,
+  });
+  res.json({ ok: true, id: r.id, message: `Built ${questions.length} questions from ${pairs.length} terms — your module is live!` });
 }));
 
 // ---------- games registry ----------
@@ -194,8 +261,8 @@ app.get('/api/games', (req, res) => {
       desc: 'Items drop in — fling each one into the right category bin before time runs out. Made for the dental teeth set.' },
     { id: 'type', title: 'Type Attack', icon: '⌨️', subjects: null,
       desc: 'No multiple choice. Type the answer from memory before the clock runs out.' },
-    { id: 'memory', title: 'Memory Match', icon: '🧩', subjects: null,
-      desc: 'Flip the cards and clear the board by matching questions to their answers.' },
+    { id: 'pop', title: 'Balloon Pop', icon: '🎈', subjects: null,
+      desc: 'Guess the hidden answer letter by letter — every wrong guess pops a balloon.' },
   ]);
 });
 
