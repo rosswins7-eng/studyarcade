@@ -1,8 +1,27 @@
 // StudyArcade SPA
 const $ = (id) => document.getElementById(id);
 let ME = null, GAMES = [], SUBJECTS = [];
-const ICONS = { 'Psychology 101': '🧠', 'SAT Prep': '📝', 'Spanish 101': '🇪🇸', 'Biology 101': '🧬', 'Chemistry 101': '⚗️' };
+const ICONS = {
+  'Psychology 101': '🧠', 'Biology 101': '🧬', 'Chemistry 101': '⚗️',
+  'Anatomy & Physiology': '🫀', 'Algebra 1': '➗', 'Pre-Algebra': '🔢', 'Geometry': '📐',
+  'Physics Basics': '🚀', 'Computer Science Basics': '💻', 'CompTIA Security+ Prep': '🔒',
+  'AP US History': '🏛️', 'World History': '🌍', 'English & Grammar': '✍️',
+  'Spanish Basics': '🇪🇸', 'SAT Vocabulary': '📖', 'Nursing Fundamentals': '🩺',
+  'Dental Fundamentals': '🦷', 'Financial Literacy': '💰',
+  'Elementary Math': '🧮', 'Kids Science': '🔬', 'Kids Reading': '📖', 'Kids Geography': '🗺️',
+};
 const iconFor = (s) => ICONS[s] || '📚';
+// Age bands for the Subjects page. Unmapped subjects fall into 'other'.
+const BANDS = [
+  { id: 'elementary', title: '🧒 Elementary School', subjects: ['Elementary Math', 'Kids Science', 'Kids Reading', 'Kids Geography'] },
+  { id: 'teen', title: '🎒 Teen / High School', subjects: ['Algebra 1', 'Pre-Algebra', 'Geometry', 'Physics Basics', 'Computer Science Basics', 'AP US History', 'World History', 'English & Grammar', 'Spanish Basics', 'Financial Literacy', 'SAT Vocabulary'] },
+  { id: 'college', title: '🎓 College & Career', subjects: ['Psychology 101', 'Biology 101', 'Chemistry 101', 'Anatomy & Physiology', 'Nursing Fundamentals', 'Dental Fundamentals', 'CompTIA Security+ Prep'] },
+  { id: 'other', title: '📚 More Subjects', subjects: [] },
+];
+const bandFor = (name) => {
+  const b = BANDS.find((x) => x.id !== 'other' && x.subjects.includes(name));
+  return b ? b.id : 'other';
+};
 
 function esc(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
@@ -113,11 +132,19 @@ async function renderSubjects(gameFilter){
     <div class="subj-grid" id="subj-list"><p class="muted">Loading…</p></div>`;
   try {
     SUBJECTS = await api('GET', '/api/subjects');
-    $('subj-list').innerHTML = SUBJECTS.map(s => `
+    const byBand = {};
+    SUBJECTS.forEach((s) => { const b = bandFor(s.subject); (byBand[b] = byBand[b] || []).push(s); });
+    const card = (s) => `
       <div class="subj" onclick="location.hash='#/subject/${encodeURIComponent(s.subject)}${g ? '?game=' + g.id : ''}'">
         <div class="icon">${iconFor(s.subject)}</div><h3>${esc(s.subject)}</h3>
         <div class="meta">${s.modules} module${s.modules === 1 ? '' : 's'} · ${s.questions} questions · ${s.plays || 0} plays</div>
-      </div>`).join('') || '<p class="muted">No subjects yet — create the first one!</p>';
+      </div>`;
+    $('subj-list').innerHTML = BANDS.map((b) => {
+      const items = byBand[b.id] || [];
+      if (!items.length) return '';
+      return `<h3 class="band-title" style="grid-column:1/-1;margin:18px 0 4px">${esc(b.title)}</h3>` +
+        items.map(card).join('');
+    }).join('') || '<p class="muted">No subjects yet — create the first one!</p>';
   } catch(e){ $('subj-list').innerHTML = '<p class="muted">Could not load subjects.</p>'; }
 }
 
