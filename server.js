@@ -15,6 +15,7 @@ const GAMES = [
   { id: 'sort', subjects: null },
   { id: 'type', subjects: null },
   { id: 'pop', subjects: null },
+  { id: 'speed', subjects: null },
 ];
 const GAME_IDS = GAMES.map((g) => g.id);
 
@@ -263,6 +264,8 @@ app.get('/api/games', (req, res) => {
       desc: 'No multiple choice. Type the answer from memory before the clock runs out.' },
     { id: 'pop', title: 'Balloon Pop', icon: '🎈', subjects: null,
       desc: 'Guess the hidden answer letter by letter — every wrong guess pops a balloon.' },
+    { id: 'speed', title: 'Speed Type', icon: '🚀', subjects: null,
+      desc: 'Type out real study material as fast as you can — WPM and accuracy tracked.' },
   ]);
 });
 
