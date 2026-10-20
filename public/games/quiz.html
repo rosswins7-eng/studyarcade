@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PSY 361 Exam 3 — Quiz Boss Battle</title>
+<title>Quiz Boss Battle — StudyArcade</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
   body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #0f1226; color: #eef1ff; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 16px; }
@@ -83,7 +83,7 @@
 <div id="app">
 
   <div class="card" id="screen-start">
-    <h1>PSY 361 Exam 3<br><span class="accent">Quiz Boss Battle</span></h1>
+    <h1><span id="gtitle">Loading…</span><br><span class="accent">Quiz Boss Battle</span></h1>
     <p class="sub">⚔️ A real boss fight: every correct answer deals <b>100 + streak×10 damage</b> to the boss 👹. Wrong answers and timeouts make the boss attack — lose a ❤️ each hit, and you only have <b>5 ❤️</b>. Drop the boss to 0 HP for a <b>+500 victory bonus</b> (+50 per heart left). 20 seconds per question — speed and streaks boost your score too.<br><br>
     <span id="roundlist"></span></p>
     <div id="roundselect"><p class="sub">Loading question set…</p></div>
@@ -153,6 +153,7 @@ async function loadSet(){
   QUESTIONS = set.questions.map(q => ({q: q.q, o: q.options, a: q.answer, why: q.explain}));
   ROUNDS = (set.rounds && set.rounds.length ? set.rounds : [{tag:'Round 1', title: set.title, desc: set.description || '', count: QUESTIONS.length, boss: false}]);
   document.title = set.title + ' — Quiz Boss Battle';
+  document.getElementById('gtitle').textContent = set.title;
 }
 async function submitScore(){
   try {
