@@ -28,7 +28,7 @@ const SCHEMA = [
   `CREATE TABLE IF NOT EXISTS users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL, email TEXT NOT NULL UNIQUE, pass_hash TEXT NOT NULL,
-    is_pro INTEGER NOT NULL DEFAULT 0,
+    is_pro INTEGER NOT NULL DEFAULT 0, xp INTEGER NOT NULL DEFAULT 0,
     created_at TEXT NOT NULL DEFAULT (datetime('now')))`,
   `CREATE TABLE IF NOT EXISTS sets (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -51,33 +51,45 @@ const SCHEMA = [
 
 async function init() {
   for (const s of SCHEMA) await run(s);
-  const n = await get('SELECT COUNT(*) AS n FROM sets');
-  if (!n || n.n === 0) await seed();
+  try { await run('ALTER TABLE users ADD COLUMN xp INTEGER NOT NULL DEFAULT 0'); } catch (e) { /* already exists */ }
+  await seed();
 }
 
 async function seed() {
-  const seeds = ['psy361.json', 'sat-vocab.json', 'spanish101.json'];
+  const lib = JSON.parse(fs.readFileSync(path.join(__dirname, 'seed', 'library.json'), 'utf8'));
   let sys = await get('SELECT id FROM users WHERE email = ?', ['system@studyarcade']);
   if (!sys) {
     const r = await run("INSERT INTO users (name, email, pass_hash) VALUES ('StudyArcade', 'system@studyarcade', 'seed') RETURNING id");
     sys = norm(r)[0];
   }
-  let order = 0;
-  for (const f of seeds) {
-    const s = JSON.parse(fs.readFileSync(path.join(__dirname, 'seed', f), 'utf8'));
+  // Retire legacy seed subjects superseded by the library (system-created only).
+  await run(`DELETE FROM sets WHERE creator_id = ? AND subject IN ('SAT Prep', 'Spanish 101')`, [sys.id]);
+  const have = new Set((await all('SELECT subject, module FROM sets')).map((r) => r.subject + '||' + r.module));
+  const orderBySubject = {};
+  let added = 0;
+  for (const s of lib) {
+    const modName = s.title; // library uses title as the display module name
+    if (have.has(s.subject + '||' + modName)) continue;
+    if (!(s.subject in orderBySubject)) {
+      const r = await get('SELECT COALESCE(MAX(module_order),0) AS m FROM sets WHERE subject = ?', [s.subject]);
+      orderBySubject[s.subject] = r ? r.m : 0;
+    }
+    const order = ++orderBySubject[s.subject];
     await run(
       `INSERT INTO sets (title, subject, module, module_order, description, questions_json, rounds_json, creator_id)
        VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
-      [s.title, s.subject, s.module || 'Module 1', ++order, s.description || '',
+      [s.title, s.subject, modName, order, s.description || '',
        JSON.stringify(s.questions), JSON.stringify(s.rounds || null), sys.id]);
-    console.log('Seeded:', s.subject, '-', s.module);
+    added++;
+    console.log('Seeded:', s.subject, '-', modName);
   }
+  if (added) console.log('Library seed: added', added, 'modules.');
 }
 
 module.exports = {
   init,
   getUserByEmail: (email) => get('SELECT * FROM users WHERE email = ?', [email]),
-  getUserById: (id) => get('SELECT id, name, email, is_pro FROM users WHERE id = ?', [id]),
+  getUserById: (id) => get('SELECT id, name, email, is_pro, xp FROM users WHERE id = ?', [id]),
   createUser: async (name, email, hash) => {
     const r = await run('INSERT INTO users (name, email, pass_hash) VALUES (?, ?, ?) RETURNING id', [name, email, hash]);
     return { id: norm(r)[0].id };
@@ -113,7 +125,7 @@ module.exports = {
     run('INSERT INTO scores (set_id, user_id, game, score, accuracy) VALUES (?, ?, ?, ?, ?)',
         [setId, userId, game, score, accuracy]),
   getLeaderboard: (setId, game) => all(`
-    SELECT u.name, MAX(s.score) AS best, MAX(s.accuracy) AS acc
+    SELECT u.name, u.xp, MAX(s.score) AS best, MAX(s.accuracy) AS acc
     FROM scores s JOIN users u ON u.id = s.user_id
     WHERE s.set_id = ? AND s.game = ? GROUP BY s.user_id ORDER BY best DESC LIMIT 20`, [setId, game]),
   getUserScores: (userId) => all(`
@@ -126,5 +138,10 @@ module.exports = {
     const r = await run('INSERT INTO generation_requests (user_id, subject, notes) VALUES (?, ?, ?) RETURNING id',
                         [userId, subject, notes]);
     return { id: norm(r)[0].id };
+  },
+  addXp: async (userId, amount) => {
+    await run('UPDATE users SET xp = xp + ? WHERE id = ?', [amount, userId]);
+    const r = await get('SELECT xp FROM users WHERE id = ?', [userId]);
+    return r ? r.xp : 0;
   },
 };
