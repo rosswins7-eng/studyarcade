@@ -47,6 +47,8 @@ const SCHEMA = [
     subject TEXT NOT NULL, notes TEXT NOT NULL,
     status TEXT NOT NULL DEFAULT 'pending',
     created_at TEXT NOT NULL DEFAULT (datetime('now')))`,
+  `CREATE TABLE IF NOT EXISTS sessions (
+    sid TEXT PRIMARY KEY, sess TEXT NOT NULL, expires INTEGER NOT NULL)`,
 ];
 
 async function init() {
@@ -108,6 +110,13 @@ module.exports = {
   listSets: () => all(`
     SELECT s.*, u.name AS creator_name FROM sets s LEFT JOIN users u ON u.id = s.creator_id
     ORDER BY s.subject, s.module_order, s.id`),
+  // Community: real users' sets only — excludes the official library (system@studyarcade seed user).
+  listCommunity: () => all(`
+    SELECT sets.id, sets.title, sets.subject, sets.module, sets.description, sets.plays, sets.created_at,
+           users.name AS creator_name, sets.questions_json
+    FROM sets LEFT JOIN users ON users.id = sets.creator_id
+    WHERE sets.creator_id IS NOT NULL AND users.email <> 'system@studyarcade'
+    ORDER BY sets.created_at DESC LIMIT 100`),
   createSet: async (s) => {
     const r = await run(
       `INSERT INTO sets (title, subject, module, module_order, description, questions_json, rounds_json, creator_id)
@@ -124,6 +133,14 @@ module.exports = {
   addScore: (setId, userId, game, score, accuracy) =>
     run('INSERT INTO scores (set_id, user_id, game, score, accuracy) VALUES (?, ?, ?, ?, ?)',
         [setId, userId, game, score, accuracy]),
+  // Persistent session store (survives server restarts, unlike MemoryStore).
+  getSession: (sid) => get('SELECT sid, sess, expires FROM sessions WHERE sid = ?', [sid]),
+  setSession: (sid, sess, expires) =>
+    run(`INSERT INTO sessions (sid, sess, expires) VALUES (?, ?, ?)
+         ON CONFLICT(sid) DO UPDATE SET sess = excluded.sess, expires = excluded.expires`,
+        [sid, sess, expires]),
+  destroySession: (sid) => run('DELETE FROM sessions WHERE sid = ?', [sid]),
+  clearExpiredSessions: () => run('DELETE FROM sessions WHERE expires <= ?', [Date.now()]),
   getLeaderboard: (setId, game) => all(`
     SELECT u.name, u.xp, MAX(s.score) AS best, MAX(s.accuracy) AS acc
     FROM scores s JOIN users u ON u.id = s.user_id
