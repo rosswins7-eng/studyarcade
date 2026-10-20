@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Balloon Pop — StudyArcade</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #0b0e22; color: #eef1ff; min-height: 100vh; display: flex; align-items: flex-start; justify-content: center; padding: 14px; }
+  #app { width: 100%; max-width: 640px; }
+  .card { background: #161b3a; border: 1px solid #2c3468; border-radius: 20px; padding: 26px 22px; box-shadow: 0 12px 40px rgba(0,0,0,.45); }
+  h1 { font-size: 1.65rem; margin-bottom: 8px; }
+  h1 .accent { color: #8b7bff; }
+  .sub { color: #a7b0d8; font-size: .95rem; line-height: 1.55; margin-bottom: 16px; }
+  .btn { display: block; width: 100%; padding: 15px; margin: 8px 0; font-size: 1.05rem; font-weight: 700; color: #fff; background: linear-gradient(135deg, #7c5cff, #00d4ff); border: none; border-radius: 14px; cursor: pointer; text-align: center; text-decoration: none; }
+  .btn:hover { filter: brightness(1.1); }
+  .btn:disabled { opacity: .45; cursor: default; }
+  .hidden { display: none !important; }
+  .howto { background: #1d2347; border-radius: 12px; padding: 14px 16px; margin-bottom: 18px; font-size: .9rem; line-height: 1.65; color: #c6cdf2; }
+  .howto b { color: #fff; }
+  .hud { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; font-size: .9rem; color: #a7b0d8; }
+  .hud b { color: #fff; font-size: 1.05rem; }
+  .timer-wrap { height: 8px; background: #262c55; border-radius: 99px; overflow: hidden; margin-bottom: 14px; }
+  #timerbar { height: 100%; width: 100%; background: #22c55e; border-radius: 99px; }
+  #timerbar.low { background: #ef4444; }
+  #clue { font-size: 1.12rem; font-weight: 700; line-height: 1.5; margin-bottom: 4px; }
+  #balloons { font-size: 2rem; text-align: center; letter-spacing: 4px; margin: 6px 0 2px; min-height: 2.7rem; }
+  #balloons .b { display: inline-block; transition: opacity .3s, filter .3s; }
+  #balloons .b.gone { opacity: .12; filter: grayscale(1); }
+  #balloons .b.pop { animation: bpop .3s ease; }
+  @keyframes bpop { 40% { transform: scale(1.6); } 100% { transform: scale(1); } }
+  #word { text-align: center; font-size: 1.65rem; font-weight: 800; margin: 8px 0 14px; word-break: break-word; }
+  #word span { display: inline-block; min-width: .92em; }
+  #word .sp { min-width: 1.1em; }
+  #keyboard { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
+  .key { padding: 12px 0; font-size: 1rem; font-weight: 700; color: #eef1ff; background: #232a55; border: 1px solid #3a4488; border-radius: 10px; cursor: pointer; }
+  .key:hover:not(:disabled) { background: #2c3468; }
+  .key:disabled { cursor: default; }
+  .key.good { background: #14532d; border-color: #22c55e; color: #4ade80; }
+  .key.bad { background: #5b1a1a; border-color: #ef4444; color: #f87171; opacity: .55; }
+  #feedback { min-height: 64px; margin: 12px 0 0; padding: 14px 16px; border-radius: 12px; font-size: .95rem; line-height: 1.55; display: none; }
+  #feedback.show { display: block; }
+  #feedback.good { background: #14532d; border-left: 4px solid #22c55e; }
+  #feedback.bad { background: #5b1a1a; border-left: 4px solid #ef4444; }
+  #feedback .ans { color: #4ade80; font-weight: 700; }
+  .stat-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px; margin: 18px 0; }
+  .stat { background: #232a55; border-radius: 14px; padding: 14px 8px; text-align: center; }
+  .stat .v { font-size: 1.5rem; font-weight: 800; }
+  .stat .l { font-size: .75rem; color: #a7b0d8; margin-top: 4px; }
+  #rank { font-size: 3.2rem; font-weight: 900; text-align: center; margin: 6px 0; background: linear-gradient(135deg, #ffd166, #ff5c5c); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .missed-item { background: #232a55; border-radius: 12px; padding: 12px 14px; margin: 8px 0; font-size: .88rem; line-height: 1.5; }
+  .missed-item b { color: #8b7bff; }
+  .missed-item .ans { color: #4ade80; font-weight: 600; }
+  #float { position: fixed; font-weight: 800; font-size: 1.3rem; color: #4ade80; pointer-events: none; opacity: 0; z-index: 50; }
+  @keyframes floatup { 0% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; transform: translateY(-46px); } }
+  #levelup-overlay { position: fixed; inset: 0; background: rgba(5,7,18,.93); z-index: 100; display: flex; align-items: center; justify-content: center; animation: fadein .25s ease; padding: 16px; }
+  #levelup-overlay .inner { text-align: center; animation: popin .45s cubic-bezier(.2,.7,.3,1.3); max-width: 420px; width: 100%; }
+  #levelup-overlay .big { font-size: 4.2rem; }
+  #levelup-overlay h1 { font-size: 2.3rem; margin: 8px 0; background: linear-gradient(135deg, #ffd166, #ff5c5c); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  #levelup-overlay p { color: #eef1ff; font-size: 1.1rem; margin-bottom: 20px; }
+  @keyframes fadein { from { opacity: 0; } }
+  @keyframes popin { 0% { transform: scale(.6); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+  @media (max-width: 480px) { .stat-grid { grid-template-columns: 1fr 1fr; } #word { font-size: 1.3rem; } .key { padding: 10px 0; font-size: .92rem; } }
+</style>
+</head>
+<body>
+<div id="float">+0</div>
+<div id="app">
+  <div class="card" id="screen-start">
+    <h1>🎈 Balloon <span class="accent">Pop</span></h1>
+    <div class="howto">🎈 The answer is hidden behind blanks — <b>guess it letter by letter</b>.<br>
+    💥 Every wrong guess <b>pops a balloon</b>. You have <b>6</b>.<br>
+    ⏱️ <b>30 seconds</b> per word.<br>
+    🏆 Crack it: <b>+100</b> plus <b>+25 for every balloon left</b>.</div>
+    <p class="sub" id="setinfo">Loading question set…</p>
+    <button class="btn" id="playbtn" onclick="startGame()" disabled>Loading…</button>
+    <p class="sub" id="signin-note" style="display:none">👤 <a href="/#account" style="color:#8b7bff">Sign in</a> to save your scores to the leaderboard.</p>
+  </div>
+
+  <div class="card hidden" id="screen-game">
+    <div class="hud">
+      <div>Score <b id="score">0</b></div>
+      <div>Solved <b id="solved">0</b></div>
+      <div>Word <b id="wnum">1</b>/<span id="wtotal">0</span></div>
+    </div>
+    <div class="timer-wrap"><div id="timerbar"></div></div>
+    <div id="clue"></div>
+    <div id="balloons"></div>
+    <div id="word"></div>
+    <div id="keyboard"></div>
+    <div id="feedback"></div>
+  </div>
+
+  <div class="card hidden" id="screen-end">
+    <h1>Balloon Pop <span class="accent">Complete</span></h1>
+    <div id="rank">S</div>
+    <div class="stat-grid">
+      <div class="stat"><div class="v" id="finalscore">0</div><div class="l">SCORE</div></div>
+      <div class="stat"><div class="v" id="finalacc">0%</div><div class="l">ACCURACY</div></div>
+      <div class="stat"><div class="v" id="finalxp">…</div><div class="l">XP EARNED</div></div>
+      <div class="stat"><div class="v" id="finalsolved">0/0</div><div class="l">WORDS SOLVED</div></div>
+    </div>
+    <div id="review"></div>
+    <button class="btn" onclick="location.reload()">↻ Play Again</button>
+    <a class="btn" id="btn-scoreboard" style="text-decoration:none" href="#">🏆 Scoreboard</a>
+    <a class="btn" id="btn-back" style="text-decoration:none" href="#">← Back</a>
+  </div>
+</div>
+<script src="sfx.js"></script>
+<script>
+const GAME_ID = 'pop';
+const PER_WORD = 30;
+const MAX_BALLOONS = 6;
+const MAX_WORDS = 10;
+let QUESTIONS = [], ELIGIBLE = [], SET_META = null, COMBINED_IDS = [];
+let queue = [], pos = 0, answer = '', guessed = new Set(), balloonsLeft = MAX_BALLOONS;
+let score = 0, solvedCount = 0, attempted = 0;
+let failed = [], wordDone = false, ended = false;
+let timerInt = null, timeLeft = PER_WORD, t0 = 0, advanceTO = null;
+const keyBtns = {};
+
+function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+function esc(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+async function loadSet(){
+  const params = new URLSearchParams(location.search);
+  let url = null;
+  if (params.get('sets')) url = '/api/sets/combined?ids=' + encodeURIComponent(params.get('sets'));
+  else if (params.get('set')) url = '/api/sets/' + encodeURIComponent(params.get('set'));
+  if (!url) throw new Error('missing set');
+  const r = await fetch(url);
+  if (!r.ok) throw new Error('not found');
+  const set = await r.json();
+  SET_META = set;
+  COMBINED_IDS = set.combinedIds || [set.id];
+  QUESTIONS = set.questions.map(q => ({q: q.q, o: q.options, a: q.answer, why: q.explain}));
+  ELIGIBLE = QUESTIONS.filter(q => {
+    const t = String(q.o[q.a] == null ? '' : q.o[q.a]).trim();
+    return t.length >= 3 && t.length <= 24 && /^[A-Za-z][A-Za-z .'’-]*$/.test(t);
+  });
+  document.title = set.title + ' — Balloon Pop';
+  return set;
+}
+
+function buildKeyboard(){
+  const kb = document.getElementById('keyboard');
+  kb.innerHTML = '';
+  'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').forEach(L => {
+    const b = document.createElement('button');
+    b.className = 'key';
+    b.textContent = L;
+    b.onclick = () => guess(L);
+    kb.appendChild(b);
+    keyBtns[L] = b;
+  });
+}
+
+function startGame(){
+  document.getElementById('screen-start').classList.add('hidden');
+  document.getElementById('screen-end').classList.add('hidden');
+  document.getElementById('screen-game').classList.remove('hidden');
+  queue = shuffle(ELIGIBLE.slice()).slice(0, MAX_WORDS);
+  pos = 0; score = 0; solvedCount = 0; attempted = 0; failed = []; ended = false;
+  document.getElementById('wtotal').textContent = queue.length;
+  updateHud();
+  renderWordScreen();
+}
+
+function renderWordScreen(){
+  if (ended) return;
+  if (pos >= queue.length) { endGame(); return; }
+  wordDone = false;
+  clearTimeout(advanceTO);
+  const q = queue[pos];
+  answer = String(q.o[q.a]).trim();
+  guessed = new Set();
+  balloonsLeft = MAX_BALLOONS;
+  document.getElementById('wnum').textContent = pos + 1;
+  document.getElementById('clue').textContent = q.q;
+  Object.values(keyBtns).forEach(b => { b.disabled = false; b.classList.remove('good', 'bad'); });
+  const fb = document.getElementById('feedback');
+  fb.className = ''; fb.innerHTML = '';
+  renderBalloons(-1);
+  renderWord();
+  startTimer();
+}
+
+function renderWord(){
+  const w = document.getElementById('word');
+  w.innerHTML = answer.split('').map(ch => {
+    if (/[A-Za-z]/.test(ch)) return '<span>' + (wordDone || guessed.has(ch.toUpperCase()) ? esc(ch) : '_') + '</span>';
+    if (ch === ' ') return '<span class="sp">&nbsp;</span>';
+    return '<span>' + esc(ch) + '</span>';
+  }).join('');
+}
+
+function renderBalloons(popIdx){
+  const el = document.getElementById('balloons');
+  el.innerHTML = '';
+  for (let i = 0; i < MAX_BALLOONS; i++){
+    const s = document.createElement('span');
+    s.className = 'b' + (i < balloonsLeft ? '' : ' gone');
+    s.textContent = '🎈';
+    if (i === popIdx) { s.textContent = '💥'; s.classList.add('pop'); }
+    el.appendChild(s);
+  }
+  if (popIdx >= 0) setTimeout(() => { if (!ended) renderBalloons(-1); }, 450);
+}
+
+function isSolved(){
+  return answer.split('').every(ch => !/[A-Za-z]/.test(ch) || guessed.has(ch.toUpperCase()));
+}
+
+function guess(L){
+  if (ended || wordDone) return;
+  L = String(L).toUpperCase();
+  if (!/^[A-Z]$/.test(L) || guessed.has(L)) return;
+  guessed.add(L);
+  SFX.play('click');
+  const btn = keyBtns[L];
+  if (answer.toUpperCase().includes(L)) {
+    if (btn) { btn.classList.add('good'); btn.disabled = true; }
+    renderWord();
+    if (isSolved()) onSolve();
+  } else {
+    if (btn) { btn.classList.add('bad'); btn.disabled = true; }
+    balloonsLeft--;
+    SFX.play('pop');
+    renderBalloons(balloonsLeft);
+    if (balloonsLeft <= 0) onFail(false);
+  }
+}
+
+function onSolve(){
+  wordDone = true;
+  clearInterval(timerInt);
+  solvedCount++; attempted++;
+  SFX.play('correct');
+  const pts = 100 + 25 * balloonsLeft;
+  score += pts;
+  floatPts('+' + pts);
+  const fb = document.getElementById('feedback');
+  fb.className = 'show good';
+  fb.innerHTML = '✅ <b>Solved!</b> +' + pts + ' pts — the answer was <span class="ans">' + esc(answer) + '</span>';
+  updateHud();
+  advanceTO = setTimeout(nextWord, 1500);
+}
+
+function onFail(timedOut){
+  if (wordDone || ended) return;
+  wordDone = true;
+  clearInterval(timerInt);
+  attempted++;
+  SFX.play('wrong');
+  const q = queue[pos];
+  failed.push({q: q.q, ans: answer, why: q.why});
+  renderWord();
+  const fb = document.getElementById('feedback');
+  fb.className = 'show bad';
+  fb.innerHTML = (timedOut ? '⏰ <b>Time up!</b>' : '💥 <b>Last balloon popped!</b>') +
+    ' The answer was <span class="ans">' + esc(answer) + '</span><br>' + esc(q.why);
+  updateHud();
+  advanceTO = setTimeout(nextWord, 2800);
+}
+
+function onTimeout(){
+  if (wordDone || ended) return;
+  onFail(true);
+}
+
+function nextWord(){
+  if (ended) return;
+  pos++;
+  renderWordScreen();
+}
+
+function startTimer(){
+  clearInterval(timerInt);
+  timeLeft = PER_WORD;
+  t0 = Date.now();
+  const bar = document.getElementById('timerbar');
+  bar.classList.remove('low');
+  timerInt = setInterval(() => {
+    timeLeft = PER_WORD - (Date.now() - t0) / 1000;
+    if (timeLeft <= 0) { timeLeft = 0; onTimeout(); return; }
+    bar.style.width = (timeLeft / PER_WORD * 100) + '%';
+    if (timeLeft < 6) bar.classList.add('low');
+  }, 100);
+}
+
+function updateHud(){
+  document.getElementById('score').textContent = score;
+  document.getElementById('solved').textContent = solvedCount;
+}
+
+function floatPts(txt){
+  const f = document.getElementById('float');
+  const s = document.getElementById('score').getBoundingClientRect();
+  f.style.left = (s.left + s.width / 2 - 20) + 'px';
+  f.style.top = (s.top - 10) + 'px';
+  f.textContent = txt;
+  f.style.animation = 'none'; void f.offsetWidth;
+  f.style.animation = 'floatup .8s ease forwards';
+}
+
+function setXp(t){ const el = document.getElementById('finalxp'); if (el) el.textContent = t; }
+
+function showLevelUp(level){
+  SFX.play('levelup');
+  const ov = document.createElement('div');
+  ov.id = 'levelup-overlay';
+  ov.innerHTML = '<div class="inner"><div class="big">🎉</div><h1>LEVEL UP!</h1><p>You reached <b>level ' + level + '</b></p><button class="btn">Keep going</button></div>';
+  ov.querySelector('button').onclick = () => ov.remove();
+  document.body.appendChild(ov);
+}
+
+async function submitScore(acc){
+  try {
+    const me = await (await fetch('/api/auth/me')).json();
+    if (!me) { setXp('—'); return; }
+    const r = await fetch('/api/sets/' + COMBINED_IDS[0] + '/scores', {
+      method: 'POST', headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ game: GAME_ID, score: score, accuracy: acc, setIds: COMBINED_IDS })
+    });
+    const d = await r.json().catch(() => ({}));
+    if (typeof d.xp_earned === 'number') setXp('+' + d.xp_earned);
+    else setXp('—');
+    if (d.leveled_up) showLevelUp(d.level);
+  } catch(e){ setXp('—'); }
+}
+
+function endGame(){
+  if (ended) return;
+  ended = true;
+  clearInterval(timerInt);
+  clearTimeout(advanceTO);
+  const acc = attempted ? Math.round(solvedCount / attempted * 100) : 0;
+  document.getElementById('screen-game').classList.add('hidden');
+  const s = document.getElementById('screen-end');
+  s.classList.remove('hidden');
+  document.getElementById('btn-scoreboard').href = '/#module/' + COMBINED_IDS[0] + '?game=' + GAME_ID;
+  document.getElementById('btn-back').href = '/#module/' + COMBINED_IDS[0];
+  document.getElementById('finalscore').textContent = score;
+  document.getElementById('finalacc').textContent = acc + '%';
+  document.getElementById('finalsolved').textContent = solvedCount + '/' + attempted;
+  document.getElementById('rank').textContent = acc >= 90 ? 'S' : acc >= 80 ? 'A' : acc >= 70 ? 'B' : acc >= 60 ? 'C' : 'D';
+  const rev = document.getElementById('review');
+  if (!failed.length) {
+    rev.innerHTML = '<p class="sub" style="text-align:center">🎈 Not a single balloon lost its word. Nothing to review.</p>';
+  } else {
+    rev.innerHTML = '<p class="sub"><b>Words that got away (' + failed.length + '):</b></p>' + failed.map(m =>
+      '<div class="missed-item"><b>' + esc(m.q) + '</b><br><span class="ans">Answer: ' + esc(m.ans) + '</span><br>' + esc(m.why) + '</div>'
+    ).join('');
+  }
+  submitScore(acc);
+}
+
+document.addEventListener('keydown', e => {
+  if (ended || wordDone) return;
+  if (document.getElementById('screen-game').classList.contains('hidden')) return;
+  if (/^[a-zA-Z]$/.test(e.key)) guess(e.key);
+});
+
+(function(){
+  SFX.renderBtn();
+  buildKeyboard();
+  loadSet().then(set => {
+    const info = document.getElementById('setinfo');
+    const btn = document.getElementById('playbtn');
+    if (ELIGIBLE.length < 4) {
+      info.innerHTML = '🎈 This set doesn\'t suit Balloon Pop — too few of its answers are short words or phrases (3–24 letters, no numbers or symbols). Try 🃏 Match Pairs or ⌨️ Type Attack for this set instead.';
+      btn.disabled = false;
+      btn.textContent = '← Pick another set';
+      btn.onclick = () => { location.href = '/#subjects'; };
+    } else {
+      info.textContent = set.title + ' · ' + ELIGIBLE.length + ' poppable answers · up to ' + Math.min(MAX_WORDS, ELIGIBLE.length) + ' words per game';
+      btn.disabled = false; btn.textContent = '▶ Play';
+    }
+    return fetch('/api/auth/me').then(r => r.json());
+  }).then(me => {
+    if (!me) document.getElementById('signin-note').style.display = 'block';
+  }).catch(() => {
+    document.getElementById('setinfo').textContent = 'Couldn\'t load this question set.';
+  });
+})();
+</script>
+</body>
+</html>

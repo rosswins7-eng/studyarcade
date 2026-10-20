@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Type Attack — StudyArcade</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #0b0e22; color: #eef1ff; min-height: 100vh; display: flex; align-items: flex-start; justify-content: center; padding: 14px; }
+  #app { width: 100%; max-width: 640px; }
+  .card { background: #161b3a; border: 1px solid #2c3468; border-radius: 20px; padding: 26px 22px; box-shadow: 0 12px 40px rgba(0,0,0,.45); }
+  h1 { font-size: 1.65rem; margin-bottom: 8px; }
+  h1 .accent { color: #8b7bff; }
+  .sub { color: #a7b0d8; font-size: .95rem; line-height: 1.55; margin-bottom: 16px; }
+  .btn { display: block; width: 100%; padding: 15px; margin: 8px 0; font-size: 1.05rem; font-weight: 700; color: #fff; background: linear-gradient(135deg, #7c5cff, #00d4ff); border: none; border-radius: 14px; cursor: pointer; text-align: center; }
+  .btn:hover { filter: brightness(1.1); }
+  .btn:disabled { opacity: .45; cursor: default; }
+  .hidden { display: none !important; }
+  .howto { background: #1d2347; border-radius: 12px; padding: 14px 16px; margin-bottom: 18px; font-size: .9rem; line-height: 1.65; color: #c6cdf2; }
+  .howto b { color: #fff; }
+  .hud { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; font-size: .9rem; color: #a7b0d8; }
+  .hud b { color: #fff; font-size: 1.05rem; }
+  #streak { color: #ffb020; font-weight: 700; }
+  .timer-wrap { height: 8px; background: #262c55; border-radius: 99px; overflow: hidden; margin-bottom: 14px; }
+  #timerbar { height: 100%; width: 100%; background: #22c55e; border-radius: 99px; }
+  #timerbar.low { background: #ef4444; }
+  #question { font-size: 1.15rem; font-weight: 700; line-height: 1.5; margin-bottom: 14px; }
+  #hintmask { display: none; font-size: 1.25rem; font-weight: 800; letter-spacing: 2px; color: #ffd166; background: #232a55; border-radius: 12px; padding: 12px 16px; margin-bottom: 12px; text-align: center; }
+  #hintrow { display: flex; gap: 10px; margin: 8px 0; }
+  #hintrow .btn { margin: 0; }
+  #hintbtn { flex: 1; background: #232a55; border: 2px solid #3a4488; }
+  #hintbtn:hover { border-color: #7c5cff; filter: none; }
+  #submitbtn { flex: 2; }
+  #answerbox { width: 100%; padding: 16px; font-size: 1.1rem; font-weight: 600; color: #fff; background: #0b0e22; border: 2px solid #3a4488; border-radius: 14px; outline: none; margin-bottom: 10px; }
+  #answerbox:focus { border-color: #7c5cff; }
+  #answerbox:disabled { opacity: .6; }
+  #feedback { min-height: 64px; margin: 10px 0; padding: 14px 16px; border-radius: 12px; font-size: .95rem; line-height: 1.55; display: none; }
+  #feedback.show { display: block; }
+  #feedback.good { background: #14532d; border-left: 4px solid #22c55e; }
+  #feedback.bad { background: #5b1a1a; border-left: 4px solid #ef4444; }
+  #feedback .ans { color: #4ade80; font-weight: 700; }
+  .stat-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px; margin: 18px 0; }
+  .stat { background: #232a55; border-radius: 14px; padding: 14px 8px; text-align: center; }
+  .stat .v { font-size: 1.5rem; font-weight: 800; }
+  .stat .l { font-size: .75rem; color: #a7b0d8; margin-top: 4px; }
+  #rank { font-size: 3.2rem; font-weight: 900; text-align: center; margin: 6px 0; background: linear-gradient(135deg, #ffd166, #ff5c5c); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .missed-item { background: #232a55; border-radius: 12px; padding: 12px 14px; margin: 8px 0; font-size: .88rem; line-height: 1.5; }
+  .missed-item b { color: #8b7bff; }
+  .missed-item .ans { color: #4ade80; font-weight: 600; }
+  #float { position: fixed; font-weight: 800; font-size: 1.3rem; color: #4ade80; pointer-events: none; opacity: 0; z-index: 50; }
+  @keyframes floatup { 0% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; transform: translateY(-46px); } }
+  #levelup-overlay { position: fixed; inset: 0; background: rgba(5,7,18,.93); z-index: 100; display: flex; align-items: center; justify-content: center; animation: fadein .25s ease; padding: 16px; }
+  #levelup-overlay .inner { text-align: center; animation: popin .45s cubic-bezier(.2,.7,.3,1.3); max-width: 420px; width: 100%; }
+  #levelup-overlay .big { font-size: 4.2rem; }
+  #levelup-overlay h1 { font-size: 2.3rem; margin: 8px 0; background: linear-gradient(135deg, #ffd166, #ff5c5c); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  #levelup-overlay p { color: #eef1ff; font-size: 1.1rem; margin-bottom: 20px; }
+  @keyframes fadein { from { opacity: 0; } }
+  @keyframes popin { 0% { transform: scale(.6); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+  @media (max-width: 480px) { .stat-grid { grid-template-columns: 1fr 1fr; } }
+</style>
+</head>
+<body>
+<div id="float">+0</div>
+<div id="app">
+  <div class="card" id="screen-start">
+    <h1>⌨️ Type <span class="accent">Attack</span></h1>
+    <div class="howto">⌨️ No multiple choice — type the answer. <b>Close counts:</b> typos are forgiven and getting the key words in any order works.<br>
+    ⚡ <b>15 seconds</b> per question. Faster = more points.<br>
+    💡 Stuck? A <b>hint</b> reveals the first letter and the word length — but answers after a hint score less.<br>
+    ❌ Miss it or run out of time and the answer is <b>revealed</b> — study it, then move on.<br>
+    🔥 Streaks multiply your score.</div>
+    <p class="sub" id="setinfo">Loading question set…</p>
+    <button class="btn" id="playbtn" onclick="startGame()" disabled>Loading…</button>
+    <p class="sub" id="signin-note" style="display:none">👤 <a href="/#account" style="color:#8b7bff">Sign in</a> to save your scores to the leaderboard.</p>
+  </div>
+
+  <div class="card hidden" id="screen-game">
+    <div class="hud">
+      <div>Score <b id="score">0</b></div>
+      <div id="streak"></div>
+      <div>Q <b id="qnum">1</b>/<span id="qtotal">0</span></div>
+    </div>
+    <div class="timer-wrap"><div id="timerbar"></div></div>
+    <div id="question"></div>
+    <div id="hintmask"></div>
+    <input id="answerbox" type="text" placeholder="Type the answer…" autocomplete="off" autocapitalize="off" spellcheck="false">
+    <div id="hintrow">
+      <button class="btn" id="hintbtn" onclick="showHint()">💡 Hint (−30)</button>
+      <button class="btn" id="submitbtn" onclick="checkAnswer()">Submit ⏎</button>
+    </div>
+    <div id="feedback"></div>
+  </div>
+
+  <div class="card hidden" id="screen-end">
+    <h1>Type Attack <span class="accent">Complete</span></h1>
+    <div id="rank">S</div>
+    <div class="stat-grid">
+      <div class="stat"><div class="v" id="finalscore">0</div><div class="l">SCORE</div></div>
+      <div class="stat"><div class="v" id="finalacc">0%</div><div class="l">ACCURACY</div></div>
+      <div class="stat"><div class="v" id="finalxp">…</div><div class="l">XP EARNED</div></div>
+      <div class="stat"><div class="v" id="finalstreak">0</div><div class="l">BEST STREAK</div></div>
+    </div>
+    <div id="review"></div>
+    <button class="btn" onclick="location.reload()">↻ Play Again</button>
+    <a class="btn ghost" id="lb-link" href="#">🏆 Scoreboard</a>
+    <a class="btn ghost" id="back-link" href="#">← Back</a>
+  </div>
+</div>
+<script src="sfx.js"></script>
+<script>
+const GAME_ID = 'type';
+const PER_Q = 15;
+let QUESTIONS = [], SET_META = null, COMBINED_IDS = [];
+let queue = [], pos = 0;
+let score = 0, streak = 0, bestStreak = 0, correctCount = 0, answeredCount = 0;
+let missed = [], answered = false, ended = false, hintUsed = false;
+let timerInt = null, timeLeft = PER_Q, t0 = 0, advanceTO = null;
+
+function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+function norm(s){ return String(s).toLowerCase().trim().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, ' ').trim(); }
+// Fuzzy acceptance: exact match, typo tolerance, or most key words present in any order.
+function levenshtein(a, b){
+  const m = a.length, n = b.length;
+  if (!m) return n; if (!n) return m;
+  let prev = Array.from({ length: n + 1 }, (_, i) => i);
+  for (let i = 1; i <= m; i++){
+    const cur = [i];
+    for (let j = 1; j <= n; j++) cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+    prev = cur;
+  }
+  return prev[n];
+}
+const FUZZ_STOP = new Set(['the','a','an','of','to','and','in','is','are','that','it','on','for','with','as','by','or','be','from']);
+function isAcceptable(given, target){
+  if (!given || !target) return false;
+  if (given === target) return true;
+  // typo tolerance scaled to answer length (short answers stay strict)
+  const tol = target.length <= 3 ? 0 : target.length <= 7 ? 1 : Math.max(2, Math.floor(target.length / 8));
+  if (levenshtein(given, target) <= tol) return true;
+  // multi-word answers: most key words in any order is good enough
+  const tw = target.split(' ').filter((w) => w && !FUZZ_STOP.has(w));
+  if (tw.length >= 2){
+    const gw = new Set(given.split(' '));
+    const hit = tw.filter((w) => gw.has(w)).length;
+    if (hit / tw.length >= 0.6) return true;
+  } else if (tw.length === 1){
+    // single-word answer typed with extra words around it ("mitochondria cell") still counts
+    if (given.split(' ').includes(tw[0])) return true;
+  }
+  return false;
+}
+
+async function loadSet(){
+  const params = new URLSearchParams(location.search);
+  let url = null;
+  if (params.get('sets')) url = '/api/sets/combined?ids=' + encodeURIComponent(params.get('sets'));
+  else if (params.get('set')) url = '/api/sets/' + encodeURIComponent(params.get('set'));
+  if (!url) throw new Error('missing set');
+  const r = await fetch(url);
+  if (!r.ok) throw new Error('not found');
+  const set = await r.json();
+  SET_META = set;
+  COMBINED_IDS = set.combinedIds || [set.id];
+  QUESTIONS = set.questions.map(q => ({q: q.q, o: q.options, a: q.answer, why: q.explain}));
+  document.title = set.title + ' — Type Attack';
+  return set;
+}
+
+function startGame(){
+  document.getElementById('screen-start').classList.add('hidden');
+  document.getElementById('screen-end').classList.add('hidden');
+  document.getElementById('screen-game').classList.remove('hidden');
+  queue = shuffle(QUESTIONS.slice());
+  pos = 0; score = 0; streak = 0; bestStreak = 0;
+  correctCount = 0; answeredCount = 0; missed = []; ended = false;
+  document.getElementById('qtotal').textContent = queue.length;
+  updateHud();
+  renderQuestion();
+}
+
+function renderQuestion(){
+  if (ended) return;
+  if (pos >= queue.length) { endGame(); return; }
+  answered = false;
+  hintUsed = false;
+  clearTimeout(advanceTO);
+  const q = queue[pos];
+  document.getElementById('qnum').textContent = pos + 1;
+  document.getElementById('question').textContent = q.q;
+  const box = document.getElementById('answerbox');
+  box.value = ''; box.disabled = false;
+  document.getElementById('submitbtn').disabled = false;
+  document.getElementById('hintbtn').disabled = false;
+  const hm = document.getElementById('hintmask');
+  hm.style.display = 'none'; hm.textContent = '';
+  const fb = document.getElementById('feedback');
+  fb.className = ''; fb.innerHTML = '';
+  startTimer();
+  setTimeout(() => { try { box.focus({preventScroll: true}); } catch(_){ box.focus(); } }, 60);
+}
+
+function startTimer(){
+  clearInterval(timerInt);
+  timeLeft = PER_Q;
+  t0 = Date.now();
+  const bar = document.getElementById('timerbar');
+  bar.classList.remove('low');
+  timerInt = setInterval(() => {
+    timeLeft = PER_Q - (Date.now() - t0) / 1000;
+    if (timeLeft <= 0) { timeLeft = 0; onTimeout(); return; }
+    bar.style.width = (timeLeft / PER_Q * 100) + '%';
+    if (timeLeft < 4) bar.classList.add('low');
+  }, 100);
+}
+
+function showHint(){
+  if (answered || ended || hintUsed) return;
+  const q = queue[pos];
+  const raw = String(q.o[q.a]);
+  let letters = 0, shown = false, mask = '';
+  for (const ch of raw) {
+    if (/[a-zA-Z]/.test(ch)) {
+      letters++;
+      mask += (!shown ? ch.toUpperCase() : '_') + ' ';
+      shown = true;
+    } else {
+      mask += ch + ' ';
+    }
+  }
+  const hm = document.getElementById('hintmask');
+  hm.textContent = mask.trim() + '  ·  ' + letters + (letters === 1 ? ' letter' : ' letters');
+  hm.style.display = 'block';
+  hintUsed = true;
+  SFX.play('hint');
+  document.getElementById('hintbtn').disabled = true;
+}
+
+function checkAnswer(){
+  if (answered || ended) return;
+  const q = queue[pos];
+  const target = norm(q.o[q.a]);
+  const given = norm(document.getElementById('answerbox').value);
+  if (!given) return;
+  answered = true;
+  clearInterval(timerInt);
+  answeredCount++;
+  if (isAcceptable(given, target)) onCorrect();
+  else onWrong('❌ <b>Not quite.</b> The answer was <span class="ans">' + q.o[q.a] + '</span><br>' + q.why);
+}
+
+function onCorrect(){
+  const q = queue[pos];
+  correctCount++; streak++; bestStreak = Math.max(bestStreak, streak);
+  SFX.play('correct');
+  const pts = (hintUsed ? 70 + Math.round(timeLeft) * 3 : 100 + Math.round(timeLeft) * 5) + Math.min(streak, 4) * 25;
+  score += pts;
+  floatPts('+' + pts);
+  const fb = document.getElementById('feedback');
+  fb.className = 'show good';
+  fb.innerHTML = '✅ <b>Correct!</b> +' + pts + ' pts';
+  document.getElementById('hintbtn').disabled = true;
+  updateHud();
+  advanceTO = setTimeout(nextQ, 1100);
+}
+
+function onWrong(html){
+  const q = queue[pos];
+  streak = 0;
+  SFX.play('wrong');
+  missed.push({q: q.q, ans: q.o[q.a], why: q.why});
+  const fb = document.getElementById('feedback');
+  fb.className = 'show bad';
+  fb.innerHTML = html;
+  document.getElementById('answerbox').disabled = true;
+  document.getElementById('submitbtn').disabled = true;
+  document.getElementById('hintbtn').disabled = true;
+  updateHud();
+  advanceTO = setTimeout(nextQ, 2000);
+}
+
+function onTimeout(){
+  if (answered || ended) return;
+  answered = true;
+  clearInterval(timerInt);
+  answeredCount++;
+  const q = queue[pos];
+  onWrong('⏰ <b>Time up.</b> The answer was <span class="ans">' + q.o[q.a] + '</span><br>' + q.why);
+}
+
+function nextQ(){
+  if (ended) return;
+  pos++;
+  renderQuestion();
+}
+
+function updateHud(){
+  document.getElementById('score').textContent = score;
+  document.getElementById('streak').textContent = streak >= 2 ? '🔥 x' + streak : '';
+}
+
+function floatPts(txt){
+  const f = document.getElementById('float');
+  const s = document.getElementById('score').getBoundingClientRect();
+  f.style.left = (s.left + s.width / 2 - 20) + 'px';
+  f.style.top = (s.top - 10) + 'px';
+  f.textContent = txt;
+  f.style.animation = 'none'; void f.offsetWidth;
+  f.style.animation = 'floatup .8s ease forwards';
+}
+
+function setXp(t){ const el = document.getElementById('finalxp'); if (el) el.textContent = t; }
+
+function showLevelUp(level){
+  SFX.play('levelup');
+  const ov = document.createElement('div');
+  ov.id = 'levelup-overlay';
+  ov.innerHTML = '<div class="inner"><div class="big">🎉</div><h1>LEVEL UP!</h1><p>You reached <b>level ' + level + '</b></p><button class="btn">Keep going</button></div>';
+  ov.querySelector('button').onclick = () => ov.remove();
+  document.body.appendChild(ov);
+}
+
+async function submitScore(acc){
+  try {
+    const me = await (await fetch('/api/auth/me')).json();
+    if (!me) { setXp('—'); return; }
+    const r = await fetch('/api/sets/' + COMBINED_IDS[0] + '/scores', {
+      method: 'POST', headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ game: GAME_ID, score: score, accuracy: acc, setIds: COMBINED_IDS })
+    });
+    const d = await r.json().catch(() => ({}));
+    if (typeof d.xp_earned === 'number') setXp('+' + d.xp_earned);
+    else setXp('—');
+    if (d.leveled_up) showLevelUp(d.level);
+  } catch(e){ setXp('—'); }
+}
+
+function endGame(){
+  if (ended) return;
+  ended = true;
+  clearInterval(timerInt);
+  clearTimeout(advanceTO);
+  const acc = answeredCount ? Math.round(correctCount / answeredCount * 100) : 0;
+  document.getElementById('screen-game').classList.add('hidden');
+  const s = document.getElementById('screen-end');
+  s.classList.remove('hidden');
+  document.getElementById('finalscore').textContent = score;
+  document.getElementById('finalacc').textContent = acc + '%';
+  document.getElementById('finalstreak').textContent = 'x' + bestStreak;
+  document.getElementById('rank').textContent = acc >= 90 ? 'S' : acc >= 80 ? 'A' : acc >= 70 ? 'B' : acc >= 60 ? 'C' : 'D';
+  const rev = document.getElementById('review');
+  if (!missed.length) {
+    rev.innerHTML = '<p class="sub" style="text-align:center">🔥 Flawless typing. Nothing to review.</p>';
+  } else {
+    rev.innerHTML = '<p class="sub"><b>Review these ' + missed.length + ':</b></p>' + missed.map(m =>
+      '<div class="missed-item"><b>' + m.q + '</b><br><span class="ans">Answer: ' + m.ans + '</span><br>' + m.why + '</div>'
+    ).join('');
+  }
+  submitScore(acc);
+}
+
+document.getElementById('answerbox').addEventListener('keydown', e => {
+  if (e.key === 'Enter') { checkAnswer(); return; }
+  // per-keystroke feedback: tick when the typed char matches the answer at that position
+  if (e.key && e.key.length === 1 && !answered && !ended && queue[pos]) {
+    const target = norm(queue[pos].o[queue[pos].a]);
+    const typed = norm(e.key);
+    if (typed && target[e.target.value.length] === typed) SFX.play('key');
+  }
+});
+
+(function(){
+  SFX.renderBtn();
+  loadSet().then(set => {
+    document.getElementById('setinfo').textContent = set.title + ' · ' + set.questions.length + ' questions';
+    document.getElementById('lb-link').href = '/#module/' + COMBINED_IDS[0] + '?game=type';
+    document.getElementById('back-link').href = '/#module/' + COMBINED_IDS[0];
+    const btn = document.getElementById('playbtn');
+    btn.disabled = false; btn.textContent = '▶ Play';
+    return fetch('/api/auth/me').then(r => r.json());
+  }).then(me => {
+    if (!me) document.getElementById('signin-note').style.display = 'block';
+  }).catch(() => {
+    document.getElementById('setinfo').textContent = 'Couldn\'t load this question set.';
+  });
+})();
+</script>
+</body>
+</html>
