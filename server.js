@@ -7,7 +7,20 @@ const db = require('./db');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const GAMES = ['quiz', 'asteroid', 'match'];
+// Game registry: subjects null = available everywhere; otherwise list of subject names.
+const GAMES = [
+  { id: 'quiz', subjects: null },
+  { id: 'asteroid', subjects: null },
+  { id: 'match', subjects: null },
+  { id: 'sort', subjects: null },
+  { id: 'type', subjects: null },
+  { id: 'memory', subjects: null },
+];
+const GAME_IDS = GAMES.map((g) => g.id);
+
+// Level curve: reaching level n needs 50*n*(n-1) total XP.
+const levelFor = (xp) => Math.max(1, Math.floor((1 + Math.sqrt(1 + 0.08 * (xp || 0))) / 2));
+const xpForLevel = (n) => 50 * n * (n - 1);
 
 app.use(express.json({ limit: '2mb' }));
 app.use(session({
@@ -60,7 +73,7 @@ app.post('/api/auth/logout', (req, res) => { req.session.destroy(() => res.json(
 app.get('/api/auth/me', ah(async (req, res) => {
   if (!req.session.userId) return res.json(null);
   const u = await db.getUserById(req.session.userId);
-  res.json(u ? { ...u, is_pro: !!u.is_pro } : null);
+  res.json(u ? { ...u, is_pro: !!u.is_pro, level: levelFor(u.xp) } : null);
 }));
 
 // ---------- subjects & modules ----------
@@ -136,16 +149,23 @@ app.delete('/api/sets/:id', authed, ah(async (req, res) => {
 // ---------- scores & leaderboards ----------
 app.post('/api/sets/:id/scores', authed, ah(async (req, res) => {
   const { game, score, accuracy, setIds } = req.body || {};
-  if (!GAMES.includes(game)) return res.status(400).json({ error: 'Unknown game.' });
+  if (!GAME_IDS.includes(game)) return res.status(400).json({ error: 'Unknown game.' });
   const ids = (Array.isArray(setIds) && setIds.length ? setIds : [parseInt(req.params.id)])
     .map(Number).filter(Boolean).slice(0, 20);
   for (const id of ids) await db.addScore(id, req.session.userId, game, score | 0, +accuracy || 0);
-  res.json({ ok: true });
+  // XP + levels: 1 XP per 10 score points + 25 for finishing.
+  const before = await db.getUserById(req.session.userId);
+  const xpEarned = Math.floor((score | 0) / 10) + 25;
+  const xp = await db.addXp(req.session.userId, xpEarned);
+  const levelBefore = levelFor(before.xp), level = levelFor(xp);
+  res.json({ ok: true, xp_earned: xpEarned, xp, level, leveled_up: level > levelBefore,
+             xp_next: xpForLevel(level + 1) });
 }));
 
 app.get('/api/sets/:id/leaderboard', ah(async (req, res) => {
-  const game = GAMES.includes(req.query.game) ? req.query.game : 'asteroid';
-  res.json(await db.getLeaderboard(req.params.id, game));
+  const game = GAME_IDS.includes(req.query.game) ? req.query.game : 'asteroid';
+  const rows = await db.getLeaderboard(req.params.id, game);
+  res.json(rows.map((r) => ({ ...r, level: levelFor(r.xp) })));
 }));
 
 app.get('/api/me/scores', authed, ah(async (req, res) => res.json(await db.getUserScores(req.session.userId))));
@@ -164,12 +184,18 @@ app.post('/api/generate', authed, ah(async (req, res) => {
 // ---------- games registry ----------
 app.get('/api/games', (req, res) => {
   res.json([
-    { id: 'asteroid', title: 'Asteroid Destroyer', icon: '☄️',
+    { id: 'asteroid', title: 'Asteroid Destroyer', icon: '☄️', subjects: null,
       desc: 'Answers drift through space. Drag the correct one into the black hole to blow it up.' },
-    { id: 'quiz', title: 'Quiz Boss Battle', icon: '⚡',
+    { id: 'quiz', title: 'Quiz Boss Battle', icon: '⚡', subjects: null,
       desc: 'Rapid-fire quiz combat. 20 seconds a question, streaks multiply your score.' },
-    { id: 'match', title: 'Match Pairs', icon: '🃏',
+    { id: 'match', title: 'Match Pairs', icon: '🃏', subjects: null,
       desc: 'Flip the cards and match each term to its definition. Clear the board fast for big points.' },
+    { id: 'sort', title: 'Sort Sprint', icon: '🗂️', subjects: null,
+      desc: 'Items drop in — fling each one into the right category bin before time runs out. Made for the dental teeth set.' },
+    { id: 'type', title: 'Type Attack', icon: '⌨️', subjects: null,
+      desc: 'No multiple choice. Type the answer from memory before the clock runs out.' },
+    { id: 'memory', title: 'Memory Match', icon: '🧩', subjects: null,
+      desc: 'Flip the cards and clear the board by matching questions to their answers.' },
   ]);
 });
 
