@@ -50,6 +50,7 @@ async function route(){
     else if (page === 'subjects') { showView('subjects'); await renderSubjects(q.game); }
     else if (page === 'subject' && arg) { showView('subject'); await renderSubject(decodeURIComponent(arg), q.game); }
     else if (page === 'module' && arg) { showView('module'); await renderModule(arg, q.game); }
+    else if (page === 'community') { showView('community'); await renderCommunity(); }
     else if (page === 'create') { showView('create'); renderCreate(); }
     else if (page === 'account') { showView('account'); renderAccount(); }
     else { showView('home'); await renderHome(); }
@@ -195,6 +196,26 @@ async function loadLb(id){
 }
 function setLbGame(g, id){ lbGame = g; renderModule(id); }
 
+// ---------- community ----------
+async function renderCommunity(){
+  const v = $('view-community');
+  v.innerHTML = `
+    <h2 class="section-title" style="margin-top:0">👥 Community</h2>
+    <p class="muted" style="margin-bottom:18px">Modules built by players like you — play any of them.</p>
+    <div class="cards" id="com-list"><p class="muted">Loading…</p></div>`;
+  try {
+    const sets = await api('GET', '/api/community');
+    $('com-list').innerHTML = sets.length ? sets.map(s => `
+      <div class="card">
+        <div class="icon">${iconFor(s.subject)}</div>
+        <h3>${esc(s.title)}</h3>
+        <p class="muted">${esc(s.subject)} · ${s.questions} question${s.questions === 1 ? '' : 's'} · ${s.plays || 0} plays · by ${esc(s.creator_name)}</p>
+        <a class="btn" href="#/module/${s.id}">▶ Play</a>
+      </div>`).join('')
+      : '<p class="muted">No community modules yet — be the first! <a href="#/create">Create one</a>.</p>';
+  } catch(e){ $('com-list').innerHTML = '<p class="muted">Could not load community modules.</p>'; }
+}
+
 // ---------- create ----------
 let qCount = 0;
 function renderCreate(){
@@ -221,7 +242,10 @@ function renderCreate(){
         <label>Description</label><textarea id="cdesc" style="min-height:70px" placeholder="What does this module cover?"></textarea>
         <label>Questions <span class="muted">(tick the correct answer)</span></label>
         <div id="qblocks"></div>
-        <button class="btn ghost" onclick="addQ()">+ Add question</button>
+        <div class="ctarow" style="justify-content:flex-start;align-items:center;gap:12px">
+          <button class="btn ghost" onclick="addQ()">+ Add question</button>
+          <span class="muted" id="qcounter"></span>
+        </div>
         <button class="btn" style="margin-top:14px" onclick="submitSet()">🚀 Publish module</button>
         <div class="toast" id="ctoast"></div>
       </div>
@@ -247,27 +271,49 @@ function addQ(){
   qCount++;
   const d = document.createElement('div');
   d.className = 'qblock'; d.id = 'q' + qCount;
-  d.innerHTML = `<div class="qhead"><span>Question ${qCount}</span><button class="btn small danger" onclick="this.closest('.qblock').remove()">✕</button></div>
+  d.innerHTML = `<div class="qhead"><span>Question ${qCount}</span><button class="btn small danger" onclick="removeQ(this)">✕</button></div>
     <input type="text" class="qq" placeholder="Question text" style="margin-bottom:6px">
     ${[0,1,2,3].map(i => `<div class="optrow"><input type="radio" name="q${qCount}c" ${i === 0 ? 'checked' : ''}><input type="text" class="qo" placeholder="Option ${i + 1}"></div>`).join('')}
     <input type="text" class="qe" placeholder="Explanation (shown when reviewing)" style="margin-top:6px">`;
   $('qblocks').appendChild(d);
+  updateQCount();
+}
+function removeQ(btn){
+  if (document.querySelectorAll('.qblock').length <= 1) return; // keep at least 1 block
+  btn.closest('.qblock').remove();
+  updateQCount();
+}
+function updateQCount(){
+  const n = document.querySelectorAll('.qblock').length;
+  const el = $('qcounter');
+  if (el) el.textContent = n + (n === 1 ? ' question' : ' questions');
 }
 async function submitSet(){
   try {
+    const title = $('ctitle').value.trim();
+    const subject = $('csubject').value.trim();
+    const module = $('cmodule').value.trim();
+    if (!title) return toast('ctoast', 'err', 'Give your module a title.');
+    if (!subject) return toast('ctoast', 'err', 'Give your module a subject.');
+    if (!module) return toast('ctoast', 'err', 'Give your module a name.');
     const questions = [];
-    document.querySelectorAll('.qblock').forEach(b => {
+    const blocks = [...document.querySelectorAll('.qblock')];
+    for (let i = 0; i < blocks.length; i++) {
+      const b = blocks[i];
       const q = b.querySelector('.qq').value.trim();
-      const opts = [...b.querySelectorAll('.qo')].map(i => i.value.trim());
+      const opts = [...b.querySelectorAll('.qo')].map(x => x.value.trim());
       const radios = [...b.querySelectorAll('input[type=radio]')];
       const answer = radios.findIndex(r => r.checked);
-      const explain = b.querySelector('.qe').value.trim() || '—';
-      if (q && opts.every(o => o)) questions.push({ q, options: opts, answer, explain });
-    });
+      const explain = b.querySelector('.qe').value.trim();
+      const anyFilled = q || opts.some(o => o) || explain;
+      if (!anyFilled) continue; // entirely empty block — skip silently
+      if (!q || opts.some(o => !o) || answer < 0)
+        return toast('ctoast', 'err', `Question ${i + 1}: fill in the question, all 4 options, and tick the correct answer.`);
+      questions.push({ q, options: opts, answer, explain: explain || '—' });
+    }
+    if (!questions.length) return toast('ctoast', 'err', 'Add at least one complete question.');
     const set = await api('POST', '/api/sets', {
-      title: $('ctitle').value.trim(), subject: $('csubject').value.trim(),
-      module: $('cmodule').value.trim(), description: $('cdesc').value.trim(),
-      questions,
+      title, subject, module, description: $('cdesc').value.trim(), questions,
     });
     toast('ctoast', 'ok', 'Published! Your module is live.');
     setTimeout(() => location.hash = '#/module/' + set.id, 900);
