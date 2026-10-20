@@ -1,0 +1,4 @@
+node_modules/
+studyarcade.db
+*.log
+.DS_Store
