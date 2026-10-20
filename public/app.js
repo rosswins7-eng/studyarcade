@@ -6,6 +6,10 @@ const iconFor = (s) => ICONS[s] || '📚';
 
 function esc(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
+// ---- levels (mirrors the backend curve) ----
+function levelFor(xp){ xp = Math.max(0, xp || 0); return Math.max(1, Math.floor((1 + Math.sqrt(1 + 0.08 * xp)) / 2)); }
+function xpForLevel(n){ return 50 * n * (n - 1); }
+
 async function api(method, url, body){
   const r = await fetch(url, {
     method, headers: {'Content-Type': 'application/json'},
@@ -314,7 +318,7 @@ function renderAccount(){
       : '<p class="muted">Nothing yet — <a href="#/create">create your first module</a>.</p>';
   }).catch(() => {});
   api('GET', '/api/me/scores').then(rows => {
-    const gname = { quiz: '⚡ Quiz', asteroid: '☄️ Asteroid', match: '🃏 Match' };
+    const gname = { quiz: '⚡ Quiz', asteroid: '☄️ Asteroid', match: '🃏 Match', sort: '🗂️ Sort', type: '⌨️ Type', memory: '🧩 Memory' };
     $('myscores').innerHTML = rows.length ? `
       <div class="card"><table class="lb"><tr><th>Module</th><th>Game</th><th>Best</th><th>Acc</th></tr>
       ${rows.map(r => `<tr><td>${esc(r.module)}</td><td>${gname[r.game] || r.game}</td><td>${r.best}</td><td>${Math.round(r.acc)}%</td></tr>`).join('')}
@@ -336,7 +340,17 @@ async function delSet(id){
   await api('DELETE', '/api/sets/' + id);
   renderAccount();
 }
-function syncNav(){ $('accountlink').textContent = ME ? '👤 ' + ME.name.split(' ')[0] : 'Sign in'; }
+function syncNav(){
+  const link = $('accountlink');
+  if (!ME) { link.textContent = 'Sign in'; return; }
+  const lvl = ME.level || levelFor(ME.xp || 0);
+  const xp = ME.xp || 0;
+  const cur = xpForLevel(lvl), next = xpForLevel(lvl + 1);
+  const pct = next > cur ? Math.min(100, Math.max(0, (xp - cur) / (next - cur) * 100)) : 100;
+  link.innerHTML = '👤 ' + esc(ME.name.split(' ')[0]) +
+    ' <span class="lvlbadge">Lv ' + lvl + '</span>' +
+    '<span class="xpbar" title="' + xp + ' / ' + next + ' XP"><span style="width:' + Math.round(pct) + '%"></span></span>';
+}
 
 // ---------- boot ----------
 (async function(){
