@@ -25,6 +25,12 @@
   #timerbar { height: 100%; width: 100%; background: #22c55e; border-radius: 99px; }
   #timerbar.low { background: #ef4444; }
   #question { font-size: 1.15rem; font-weight: 700; line-height: 1.5; margin-bottom: 14px; }
+  #hintmask { display: none; font-size: 1.25rem; font-weight: 800; letter-spacing: 2px; color: #ffd166; background: #232a55; border-radius: 12px; padding: 12px 16px; margin-bottom: 12px; text-align: center; }
+  #hintrow { display: flex; gap: 10px; margin: 8px 0; }
+  #hintrow .btn { margin: 0; }
+  #hintbtn { flex: 1; background: #232a55; border: 2px solid #3a4488; }
+  #hintbtn:hover { border-color: #7c5cff; filter: none; }
+  #submitbtn { flex: 2; }
   #answerbox { width: 100%; padding: 16px; font-size: 1.1rem; font-weight: 600; color: #fff; background: #0b0e22; border: 2px solid #3a4488; border-radius: 14px; outline: none; margin-bottom: 10px; }
   #answerbox:focus { border-color: #7c5cff; }
   #answerbox:disabled { opacity: .6; }
@@ -58,8 +64,9 @@
 <div id="app">
   <div class="card" id="screen-start">
     <h1>⌨️ Type <span class="accent">Attack</span></h1>
-    <div class="howto">⌨️ No multiple choice — <b>type the exact answer</b>.<br>
+    <div class="howto">⌨️ No multiple choice — type the answer. <b>Close counts:</b> typos are forgiven and getting the key words in any order works.<br>
     ⚡ <b>15 seconds</b> per question. Faster = more points.<br>
+    💡 Stuck? A <b>hint</b> reveals the first letter and the word length — but answers after a hint score less.<br>
     ❌ Miss it or run out of time and the answer is <b>revealed</b> — study it, then move on.<br>
     🔥 Streaks multiply your score.</div>
     <p class="sub" id="setinfo">Loading question set…</p>
@@ -75,8 +82,12 @@
     </div>
     <div class="timer-wrap"><div id="timerbar"></div></div>
     <div id="question"></div>
+    <div id="hintmask"></div>
     <input id="answerbox" type="text" placeholder="Type the answer…" autocomplete="off" autocapitalize="off" spellcheck="false">
-    <button class="btn" id="submitbtn" onclick="checkAnswer()">Submit ⏎</button>
+    <div id="hintrow">
+      <button class="btn" id="hintbtn" onclick="showHint()">💡 Hint (−30)</button>
+      <button class="btn" id="submitbtn" onclick="checkAnswer()">Submit ⏎</button>
+    </div>
     <div id="feedback"></div>
   </div>
 
@@ -91,6 +102,8 @@
     </div>
     <div id="review"></div>
     <button class="btn" onclick="location.reload()">↻ Play Again</button>
+    <a class="btn ghost" id="lb-link" href="#">🏆 Scoreboard</a>
+    <a class="btn ghost" id="back-link" href="#">← Back</a>
   </div>
 </div>
 <script>
@@ -99,11 +112,42 @@ const PER_Q = 15;
 let QUESTIONS = [], SET_META = null, COMBINED_IDS = [];
 let queue = [], pos = 0;
 let score = 0, streak = 0, bestStreak = 0, correctCount = 0, answeredCount = 0;
-let missed = [], answered = false, ended = false;
+let missed = [], answered = false, ended = false, hintUsed = false;
 let timerInt = null, timeLeft = PER_Q, t0 = 0, advanceTO = null;
 
 function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
 function norm(s){ return String(s).toLowerCase().trim().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, ' ').trim(); }
+// Fuzzy acceptance: exact match, typo tolerance, or most key words present in any order.
+function levenshtein(a, b){
+  const m = a.length, n = b.length;
+  if (!m) return n; if (!n) return m;
+  let prev = Array.from({ length: n + 1 }, (_, i) => i);
+  for (let i = 1; i <= m; i++){
+    const cur = [i];
+    for (let j = 1; j <= n; j++) cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+    prev = cur;
+  }
+  return prev[n];
+}
+const FUZZ_STOP = new Set(['the','a','an','of','to','and','in','is','are','that','it','on','for','with','as','by','or','be','from']);
+function isAcceptable(given, target){
+  if (!given || !target) return false;
+  if (given === target) return true;
+  // typo tolerance scaled to answer length (short answers stay strict)
+  const tol = target.length <= 3 ? 0 : target.length <= 7 ? 1 : Math.max(2, Math.floor(target.length / 8));
+  if (levenshtein(given, target) <= tol) return true;
+  // multi-word answers: most key words in any order is good enough
+  const tw = target.split(' ').filter((w) => w && !FUZZ_STOP.has(w));
+  if (tw.length >= 2){
+    const gw = new Set(given.split(' '));
+    const hit = tw.filter((w) => gw.has(w)).length;
+    if (hit / tw.length >= 0.6) return true;
+  } else if (tw.length === 1){
+    // single-word answer typed with extra words around it ("mitochondria cell") still counts
+    if (given.split(' ').includes(tw[0])) return true;
+  }
+  return false;
+}
 
 async function loadSet(){
   const params = new URLSearchParams(location.search);
@@ -137,6 +181,7 @@ function renderQuestion(){
   if (ended) return;
   if (pos >= queue.length) { endGame(); return; }
   answered = false;
+  hintUsed = false;
   clearTimeout(advanceTO);
   const q = queue[pos];
   document.getElementById('qnum').textContent = pos + 1;
@@ -144,6 +189,9 @@ function renderQuestion(){
   const box = document.getElementById('answerbox');
   box.value = ''; box.disabled = false;
   document.getElementById('submitbtn').disabled = false;
+  document.getElementById('hintbtn').disabled = false;
+  const hm = document.getElementById('hintmask');
+  hm.style.display = 'none'; hm.textContent = '';
   const fb = document.getElementById('feedback');
   fb.className = ''; fb.innerHTML = '';
   startTimer();
@@ -164,6 +212,27 @@ function startTimer(){
   }, 100);
 }
 
+function showHint(){
+  if (answered || ended || hintUsed) return;
+  const q = queue[pos];
+  const raw = String(q.o[q.a]);
+  let letters = 0, shown = false, mask = '';
+  for (const ch of raw) {
+    if (/[a-zA-Z]/.test(ch)) {
+      letters++;
+      mask += (!shown ? ch.toUpperCase() : '_') + ' ';
+      shown = true;
+    } else {
+      mask += ch + ' ';
+    }
+  }
+  const hm = document.getElementById('hintmask');
+  hm.textContent = mask.trim() + '  ·  ' + letters + (letters === 1 ? ' letter' : ' letters');
+  hm.style.display = 'block';
+  hintUsed = true;
+  document.getElementById('hintbtn').disabled = true;
+}
+
 function checkAnswer(){
   if (answered || ended) return;
   const q = queue[pos];
@@ -173,19 +242,20 @@ function checkAnswer(){
   answered = true;
   clearInterval(timerInt);
   answeredCount++;
-  if (given === target) onCorrect();
+  if (isAcceptable(given, target)) onCorrect();
   else onWrong('❌ <b>Not quite.</b> The answer was <span class="ans">' + q.o[q.a] + '</span><br>' + q.why);
 }
 
 function onCorrect(){
   const q = queue[pos];
   correctCount++; streak++; bestStreak = Math.max(bestStreak, streak);
-  const pts = 100 + Math.round(timeLeft) * 5 + Math.min(streak, 4) * 25;
+  const pts = (hintUsed ? 70 + Math.round(timeLeft) * 3 : 100 + Math.round(timeLeft) * 5) + Math.min(streak, 4) * 25;
   score += pts;
   floatPts('+' + pts);
   const fb = document.getElementById('feedback');
   fb.className = 'show good';
   fb.innerHTML = '✅ <b>Correct!</b> +' + pts + ' pts';
+  document.getElementById('hintbtn').disabled = true;
   updateHud();
   advanceTO = setTimeout(nextQ, 1100);
 }
@@ -199,6 +269,7 @@ function onWrong(html){
   fb.innerHTML = html;
   document.getElementById('answerbox').disabled = true;
   document.getElementById('submitbtn').disabled = true;
+  document.getElementById('hintbtn').disabled = true;
   updateHud();
   advanceTO = setTimeout(nextQ, 2000);
 }
@@ -289,6 +360,8 @@ document.getElementById('answerbox').addEventListener('keydown', e => {
 (function(){
   loadSet().then(set => {
     document.getElementById('setinfo').textContent = set.title + ' · ' + set.questions.length + ' questions';
+    document.getElementById('lb-link').href = '/#module/' + COMBINED_IDS[0] + '?game=type';
+    document.getElementById('back-link').href = '/#module/' + COMBINED_IDS[0];
     const btn = document.getElementById('playbtn');
     btn.disabled = false; btn.textContent = '▶ Play';
     return fetch('/api/auth/me').then(r => r.json());
