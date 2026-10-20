@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b0e22">
+<title>StudyArcade — Turn studying into games</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<nav>
+  <span class="logo" data-nav="#/">🎮 StudyArcade</span>
+  <a class="navlink" data-nav="#/" data-view="home">Home</a>
+  <a class="navlink" data-nav="#/games" data-view="games">Games</a>
+  <a class="navlink" data-nav="#/subjects" data-view="subjects">Subjects</a>
+  <a class="navlink" data-nav="#/create" data-view="create">Create</a>
+  <a class="navlink" data-nav="#/account" data-view="account" id="accountlink">Sign in</a>
+  <span class="navpill">Beta</span>
+</nav>
+<main>
+  <section id="view-home"></section>
+  <section id="view-games" class="hidden"></section>
+  <section id="view-subjects" class="hidden"></section>
+  <section id="view-subject" class="hidden"></section>
+  <section id="view-module" class="hidden"></section>
+  <section id="view-create" class="hidden"></section>
+  <section id="view-account" class="hidden"></section>
+</main>
+<footer>
+  <span class="logo">🎮 StudyArcade</span><br>
+  Turn your notes into games. Built for studying, not scrolling.
+</footer>
+<script src="/app.js"></script>
+<script>
+if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js').catch(() => {});
+</script>
+</body>
+</html>
