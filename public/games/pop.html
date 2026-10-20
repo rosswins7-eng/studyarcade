@@ -106,6 +106,7 @@
     <a class="btn" id="btn-back" style="text-decoration:none" href="#">← Back</a>
   </div>
 </div>
+<script src="sfx.js"></script>
 <script>
 const GAME_ID = 'pop';
 const PER_WORD = 30;
@@ -215,6 +216,7 @@ function guess(L){
   L = String(L).toUpperCase();
   if (!/^[A-Z]$/.test(L) || guessed.has(L)) return;
   guessed.add(L);
+  SFX.play('click');
   const btn = keyBtns[L];
   if (answer.toUpperCase().includes(L)) {
     if (btn) { btn.classList.add('good'); btn.disabled = true; }
@@ -223,6 +225,7 @@ function guess(L){
   } else {
     if (btn) { btn.classList.add('bad'); btn.disabled = true; }
     balloonsLeft--;
+    SFX.play('pop');
     renderBalloons(balloonsLeft);
     if (balloonsLeft <= 0) onFail(false);
   }
@@ -232,6 +235,7 @@ function onSolve(){
   wordDone = true;
   clearInterval(timerInt);
   solvedCount++; attempted++;
+  SFX.play('correct');
   const pts = 100 + 25 * balloonsLeft;
   score += pts;
   floatPts('+' + pts);
@@ -247,6 +251,7 @@ function onFail(timedOut){
   wordDone = true;
   clearInterval(timerInt);
   attempted++;
+  SFX.play('wrong');
   const q = queue[pos];
   failed.push({q: q.q, ans: answer, why: q.why});
   renderWord();
@@ -301,6 +306,7 @@ function floatPts(txt){
 function setXp(t){ const el = document.getElementById('finalxp'); if (el) el.textContent = t; }
 
 function showLevelUp(level){
+  SFX.play('levelup');
   const ov = document.createElement('div');
   ov.id = 'levelup-overlay';
   ov.innerHTML = '<div class="inner"><div class="big">🎉</div><h1>LEVEL UP!</h1><p>You reached <b>level ' + level + '</b></p><button class="btn">Keep going</button></div>';
@@ -356,6 +362,7 @@ document.addEventListener('keydown', e => {
 });
 
 (function(){
+  SFX.renderBtn();
   buildKeyboard();
   loadSet().then(set => {
     const info = document.getElementById('setinfo');

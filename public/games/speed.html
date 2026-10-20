@@ -87,6 +87,7 @@
     <a class="btn ghost" id="back-link" href="#">← Back</a>
   </div>
 </div>
+<script src="sfx.js"></script>
 <script>
 const GAME_ID = 'speed';
 const TIME_LIMIT = 60;
@@ -201,6 +202,7 @@ function handleKey(ch){
   totalKeys++;
   if (ch === target) {
     correctKeys++;
+    SFX.play('key');
     const cur = charAt(pos);
     cur.classList.remove('cur');
     cur.classList.add('done');
@@ -212,6 +214,7 @@ function handleKey(ch){
   } else {
     const cur = charAt(pos);
     cur.classList.add('err');
+    SFX.play('wrong');
     setTimeout(() => cur.classList.remove('err'), 220);
   }
   updateHud();
@@ -255,6 +258,7 @@ function newText(){
 function setXp(t){ const el = document.getElementById('finalxp'); if (el) el.textContent = t; }
 
 function showLevelUp(level){
+  SFX.play('levelup');
   const ov = document.createElement('div');
   ov.id = 'levelup-overlay';
   ov.innerHTML = '<div class="inner"><div class="big">🎉</div><h1>LEVEL UP!</h1><p>You reached <b>level ' + level + '</b></p><button class="btn">Keep going</button></div>';
@@ -283,6 +287,7 @@ function endGame(){
   if (ended) return;
   ended = true;
   clearInterval(timerInt);
+  if (pos >= PASSAGE.length) SFX.play('win'); // full passage typed
   const elapsed = started ? Math.max(0.1, (Date.now() - startTime) / 1000) : 0;
   const wpm = started ? Math.round((correctKeys / 5) / (elapsed / 60)) : 0;
   const acc = totalKeys ? correctKeys / totalKeys : 1;
@@ -294,7 +299,7 @@ function endGame(){
   document.getElementById('finalacc').textContent = Math.round(acc * 100) + '%';
   document.getElementById('finalscore').textContent = score;
   document.getElementById('rank').textContent = wpm >= 60 ? 'S' : wpm >= 45 ? 'A' : wpm >= 30 ? 'B' : wpm >= 18 ? 'C' : 'D';
-  submitScore(acc);
+  submitScore(acc * 100); // API expects percent like the other games
 }
 
 // Mobile: tap the passage to summon the keyboard, route input into the game.
@@ -309,6 +314,7 @@ document.getElementById('mobi-input').addEventListener('input', e => {
 });
 
 (function(){
+  SFX.renderBtn();
   loadSet().then(set => {
     document.getElementById('setinfo').textContent = set.title + ' · ' + set.questions.length + ' questions';
     document.getElementById('lb-link').href = '/#module/' + COMBINED_IDS[0] + '?game=speed';

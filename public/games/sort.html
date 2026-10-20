@@ -91,6 +91,7 @@
     <button class="btn" onclick="location.href='/#module/'+COMBINED_IDS[0]">← Back</button>
   </div>
 </div>
+<script src="sfx.js"></script>
 <script>
 const GAME_ID = 'sort';
 const TIME_LIMIT = 90;
@@ -245,6 +246,7 @@ function resolveBin(i){
     const pts = 100 + streak * 10;
     score += pts;
     floatPts('+' + pts);
+    SFX.play('correct');
     if (binEl) { binEl.classList.add('flash-good'); setTimeout(() => binEl.classList.remove('flash-good'), 400); }
     card.style.transition = 'transform .18s ease-in, opacity .18s ease-in';
     card.style.transform = 'translate(' + cardX + 'px,' + cardY + 'px) rotate(' + flyRot + 'deg) scale(.15)';
@@ -254,6 +256,7 @@ function resolveBin(i){
     missed.push({q: currentQ.q, ans: currentQ.o[currentQ.a], why: currentQ.why});
     if (binEl) { binEl.classList.add('flash-bad'); setTimeout(() => binEl.classList.remove('flash-bad'), 400); }
     floatPts('WRONG BIN', '#ef4444');
+    SFX.play('wrong');
     card.style.transition = 'opacity .25s ease-in';
     card.style.opacity = '0';
   }
@@ -269,6 +272,7 @@ function resolveMiss(){
   streak = 0;
   missed.push({q: currentQ.q, ans: currentQ.o[currentQ.a], why: currentQ.why});
   floatPts('MISS!', '#ef4444');
+  SFX.play('miss');
   updateHud();
   setTimeout(nextCard, 450);
 }
@@ -311,6 +315,7 @@ function resolveMiss(){
     }
     if (vy > -600) vy = -900;   // forgiveness: a weak flick still lobs upward
     lockCard = true;            // card is committed — no re-grab mid-flight
+    SFX.play('whoosh');
     flyVx = vx; flyVy = vy; flyRot = vx / 45;
     flying = true;
     lastT = performance.now();
@@ -354,6 +359,7 @@ function floatPts(txt, color){
 function setXp(t){ const el = document.getElementById('finalxp'); if (el) el.textContent = t; }
 
 function showLevelUp(level){
+  SFX.play('levelup');
   const ov = document.createElement('div');
   ov.id = 'levelup-overlay';
   ov.innerHTML = '<div class="inner"><div class="big">🎉</div><h1>LEVEL UP!</h1><p>You reached <b>level ' + level + '</b></p><button class="btn">Keep going</button></div>';
@@ -403,6 +409,7 @@ function endGame(timeout){
 }
 
 (function(){
+  SFX.renderBtn();
   loadSet().then(set => {
     document.getElementById('setinfo').textContent = set.title + ' · ' + set.questions.length + ' questions';
     const btn = document.getElementById('playbtn');

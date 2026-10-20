@@ -121,6 +121,7 @@
   </div>
 
 </div>
+<script src="sfx.js"></script>
 <script>const GAME_ID = 'asteroid';
 let QUESTIONS = [], ROUNDS = [], SET_META = null, COMBINED_IDS = [];
 async function loadSet(){
@@ -153,6 +154,7 @@ async function submitScore(){
   } catch(e){ return false; }
 }
 function showLevelUp(level){
+  SFX.play('levelup');
   const ov = document.createElement('div');
   ov.id = 'levelup-overlay';
   ov.innerHTML = '<div class="inner"><div class="big">🎉</div><h1>LEVEL UP!</h1><p>You reached <b>level ' + level + '</b></p><button class="btn" style="text-align:center">Keep going</button></div>';
@@ -313,6 +315,7 @@ function resolveDrop(a){
     const pts = 100 + Math.round(timeLeft / 20 * 100) + Math.min(streak, 4) * 25;
     score += pts;
     explode(a);
+    SFX.play('explode');
     floatPts('+' + pts);
     toast('💥 ASTEROID DESTROYED', '#4ade80');
     asteroids.forEach(x => { if (x !== a && !x.dead) { x.dead = true; x.el.style.transition = 'opacity .4s'; x.el.style.opacity = '0'; } });
@@ -322,6 +325,7 @@ function resolveDrop(a){
     streak = 0; score = Math.max(0, score - 25);
     updateHud();
     a.el.classList.remove('wrongflash'); void a.el.offsetWidth; a.el.classList.add('wrongflash');
+    SFX.play('wrong');
     toast('❌ WRONG — try again!', '#ef4444');
   }
 }
@@ -450,6 +454,7 @@ function endGame(){
 
 // ---- boot: load the question set, then build the round menu ----
 (function(){
+  SFX.renderBtn();
   const box = document.getElementById('roundselect');
   loadSet().then(() => {
     buildPlayOrder();

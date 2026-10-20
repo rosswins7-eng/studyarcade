@@ -137,6 +137,7 @@
   </div>
 
 </div>
+<script src="sfx.js"></script>
 <script>const GAME_ID = 'quiz';
 let QUESTIONS = [], ROUNDS = [], SET_META = null, COMBINED_IDS = [];
 async function loadSet(){
@@ -169,6 +170,7 @@ async function submitScore(){
   } catch(e){ return false; }
 }
 function showLevelUp(level){
+  SFX.play('levelup');
   const ov = document.createElement('div');
   ov.id = 'levelup-overlay';
   ov.innerHTML = '<div class="inner"><div class="big">🎉</div><h1>LEVEL UP!</h1><p>You reached <b>level ' + level + '</b></p><button class="btn" style="text-align:center">Keep going</button></div>';
@@ -350,6 +352,8 @@ function reveal(btn, ok){
     const dmg = 100 + streak * 10;
     bossHP = Math.max(0, bossHP - dmg);
     bossFlinch();
+    SFX.play('correct');
+    SFX.play('damage');
     floatDmg('-' + dmg + ' HP');
     if (bossHP <= 0) endReason = 'boss';
   } else {
@@ -358,6 +362,7 @@ function reveal(btn, ok){
     missed.push({q: q.q, ans: q.o[q.a], why: q.why});
     bossTaunt();
     bossAttackFx();
+    SFX.play('wrong');
     if (hearts <= 0) endReason = 'defeat';
   }
   renderBattle();
@@ -402,9 +407,11 @@ function endGame(){
   if (endReason === 'boss') {
     const bonus = 500 + 50 * hearts;
     score += bonus;
+    SFX.play('win');
     titleEl.innerHTML = '🏆 <span class="accent">BOSS DEFEATED!</span>';
     noteEl.innerHTML = 'Victory bonus: <b>+' + bonus + '</b> (500 + 50 × ' + hearts + ' ❤️ left)';
   } else if (endReason === 'defeat') {
+    SFX.play('lose');
     titleEl.innerHTML = '💀 <span class="accent">DEFEATED</span>';
     noteEl.innerHTML = 'The boss finished you with <b>' + Math.max(0, bossHP) + ' HP</b> left. Review below and run it back.';
   } else {
@@ -446,6 +453,7 @@ document.addEventListener('keydown', e => {
 
 // ---- boot ----
 (function(){
+  SFX.renderBtn();
   const box = document.getElementById('roundselect');
   loadSet().then(() => {
     buildPlayOrder();

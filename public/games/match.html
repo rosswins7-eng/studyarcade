@@ -93,6 +93,7 @@
     <a class="btn" id="btn-back" style="text-decoration:none" href="#">← Back</a>
   </div>
 </div>
+<script src="sfx.js"></script>
 <script>
 const GAME_ID = 'match';
 let QUESTIONS = [], SET_META = null, COMBINED_IDS = [];
@@ -160,6 +161,7 @@ function newBoard(){
 function flip(el){
   if (lock || el.classList.contains('flipped') || el.classList.contains('matched')) return;
   el.classList.add('flipped');
+  SFX.play('flip');
   flipped.push(el);
   if (flipped.length === 2) {
     lock = true;
@@ -169,6 +171,7 @@ function flip(el){
     if (a._pair === b._pair) {
       setTimeout(() => {
         a.classList.add('matched'); b.classList.add('matched');
+        SFX.play('correct');
         flipped = []; lock = false;
         matches++; streak++; bestStreak = Math.max(bestStreak, streak);
         const pts = 100 + Math.min(streak, 5) * 20;
@@ -180,6 +183,7 @@ function flip(el){
     } else {
       streak = 0;
       a.classList.add('wrong'); b.classList.add('wrong');
+      SFX.play('wrong');
       setTimeout(() => {
         a.classList.remove('flipped', 'wrong'); b.classList.remove('flipped', 'wrong');
         flipped = []; lock = false;
@@ -232,6 +236,7 @@ async function submitScore(acc){
   } catch(e){}
 }
 function showLevelUp(level){
+  SFX.play('levelup');
   const ov = document.createElement('div');
   ov.id = 'levelup-overlay';
   ov.innerHTML = '<div class="inner"><div class="big">🎉</div><h1>LEVEL UP!</h1><p>You reached <b>level ' + level + '</b></p><button class="btn" style="text-align:center">Keep going</button></div>';
@@ -270,6 +275,7 @@ function endGame(timeout){
 }
 
 (function(){
+  SFX.renderBtn();
   loadSet().then(set => {
     document.getElementById('setinfo').textContent = set.title + ' · ' + set.questions.length + ' questions → ' + Math.min(8, set.questions.length) + ' pairs per board';
     const btn = document.getElementById('playbtn');
