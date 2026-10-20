@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>PSY 361 — Asteroid Destroyer</title>
+<title>Asteroid Destroyer — StudyArcade</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
   html, body { overscroll-behavior: none; }
@@ -78,9 +78,8 @@
 <div id="app">
 
   <div class="card" id="screen-start">
-    <h1>PSY 361 Exam 3<br><span class="accent">☄️ Asteroid Destroyer</span></h1>
+    <h1><span id="gtitle">Loading…</span><br><span class="accent">☄️ Asteroid Destroyer</span></h1>
     <div class="howto">🪨 <b>4 asteroids</b> drift through space, each carrying an answer.<br>🕳️ <b>Drag the CORRECT one into the black hole</b> to blow it up.<br>❌ Wrong asteroid? It bounces back — minus points, streak lost.<br>⏱️ <b>20 seconds</b> per question. Fast destroys = bigger points.</div>
-    <p class="sub"><b>Round 1:</b> Warm-Up — The Self (Ch 5)<br><b>Round 2:</b> Freud &amp; Defense Mechanisms<br><b style="color:#ff5c5c">Round 3: BOSS — Scholar vs Scholar</b><br><b>Round 4:</b> Bonus — Closing the Gaps</p>
     <div id="roundselect"><p class="sub">Loading question set…</p></div>
     <p class="sub" id="signin-note" style="display:none">👤 <a href="/#account" onclick="event.preventDefault(); location.href='/#account';" style="color:#8b7bff">Sign in</a> to save your scores to the leaderboard.</p>
   </div>
@@ -138,6 +137,7 @@ async function loadSet(){
   QUESTIONS = set.questions.map(q => ({q: q.q, o: q.options, a: q.answer, why: q.explain}));
   ROUNDS = (set.rounds && set.rounds.length ? set.rounds : [{tag:'Round 1', title: set.title, desc: set.description || '', count: QUESTIONS.length, boss: false}]);
   document.title = set.title + ' — Asteroid Destroyer';
+  document.getElementById('gtitle').textContent = set.title;
 }
 async function submitScore(){
   try {
