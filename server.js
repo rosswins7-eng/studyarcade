@@ -24,11 +24,32 @@ const levelFor = (xp) => Math.max(1, Math.floor((1 + Math.sqrt(1 + 0.08 * (xp ||
 const xpForLevel = (n) => 50 * n * (n - 1);
 
 app.use(express.json({ limit: '2mb' }));
+// DB-backed session store: sessions survive server restarts (Render redeploys,
+// free-tier sleep/wake cycles) instead of dying with the in-memory store.
+class DbSessionStore extends session.Store {
+  get(sid, cb) {
+    db.getSession(sid).then((row) => {
+      if (!row || row.expires <= Date.now()) return cb(null, null);
+      try { cb(null, JSON.parse(row.sess)); } catch (e) { cb(e); }
+    }).catch(cb);
+  }
+  set(sid, sess, cb) {
+    const expires = (sess.cookie && sess.cookie.expires)
+      ? new Date(sess.cookie.expires).getTime()
+      : Date.now() + 30 * 24 * 3600 * 1000;
+    db.setSession(sid, JSON.stringify(sess), expires).then(() => cb && cb()).catch(cb);
+  }
+  touch(sid, sess, cb) { this.set(sid, sess, cb); }
+  destroy(sid, cb) { db.destroySession(sid).then(() => cb && cb()).catch(cb); }
+}
 app.use(session({
+  store: new DbSessionStore(db),
   secret: process.env.SESSION_SECRET || 'studyarcade-dev-secret-change-me',
   resave: false, saveUninitialized: false,
   cookie: { httpOnly: true, maxAge: 1000 * 60 * 60 * 24 * 30 },
 }));
+// Sweep expired sessions hourly so the table doesn't grow forever.
+setInterval(() => db.clearExpiredSessions().catch(() => {}), 3600 * 1000);
 
 const authed = (req, res, next) => {
   if (!req.session.userId) return res.status(401).json({ error: 'Sign in required.' });
@@ -109,6 +130,17 @@ app.get('/api/sets/combined', ah(async (req, res) => {
 }));
 
 app.get('/api/sets', ah(async (req, res) => res.json((await db.listSets()).map(db.publicSet))));
+
+// ---------- community ----------
+app.get('/api/community', ah(async (req, res) => {
+  const rows = await db.listCommunity();
+  res.json(rows.map((r) => ({
+    id: r.id, title: r.title, subject: r.subject, module: r.module,
+    description: r.description, plays: r.plays, created_at: r.created_at,
+    creator_name: r.creator_name || 'Unknown',
+    questions: JSON.parse(r.questions_json).length,
+  })));
+}));
 
 app.get('/api/sets/:id', ah(async (req, res) => {
   const row = await db.getSet(req.params.id);
