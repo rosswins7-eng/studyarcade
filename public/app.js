@@ -227,7 +227,7 @@ function renderCreate(){
     </div>
     <div id="cpane-ai" class="hidden">
       <div class="form">
-        <p class="muted" style="margin-bottom:10px">Paste your study notes — our AI turns them into a playable module. Requests are reviewed and published to the library.</p>
+        <p class="muted" style="margin-bottom:10px">Paste your study notes — we turn them into a playable module <b>instantly</b>. Works best with one <b>Term: definition</b> per line (at least 4 terms).</p>
         <label>Subject</label><input type="text" id="gencubject" placeholder="e.g. Psychology 101">
         <label>Your notes</label><textarea id="gennotes" style="min-height:170px" placeholder="Paste your study guide, chapter notes, key terms…"></textarea>
         <button class="btn" style="margin-top:14px" onclick="submitGen()">✨ Generate my game</button>
@@ -277,6 +277,7 @@ async function submitGen(){
     const r = await api('POST', '/api/generate', { subject: $('gencubject').value.trim(), notes: $('gennotes').value.trim() });
     toast('gtoast', 'ok', r.message);
     $('gennotes').value = '';
+    if (r.id) setTimeout(() => location.hash = '#/module/' + r.id, 900);
   } catch(e){ toast('gtoast', 'err', e.message); }
 }
 
@@ -318,7 +319,7 @@ function renderAccount(){
       : '<p class="muted">Nothing yet — <a href="#/create">create your first module</a>.</p>';
   }).catch(() => {});
   api('GET', '/api/me/scores').then(rows => {
-    const gname = { quiz: '⚡ Quiz', asteroid: '☄️ Asteroid', match: '🃏 Match', sort: '🗂️ Sort', type: '⌨️ Type', memory: '🧩 Memory' };
+    const gname = { quiz: '⚡ Quiz', asteroid: '☄️ Asteroid', match: '🃏 Match', sort: '🗂️ Sort', type: '⌨️ Type', pop: '🎈 Pop' };
     $('myscores').innerHTML = rows.length ? `
       <div class="card"><table class="lb"><tr><th>Module</th><th>Game</th><th>Best</th><th>Acc</th></tr>
       ${rows.map(r => `<tr><td>${esc(r.module)}</td><td>${gname[r.game] || r.game}</td><td>${r.best}</td><td>${Math.round(r.acc)}%</td></tr>`).join('')}
