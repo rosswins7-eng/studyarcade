@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>PSY 361 — Asteroid Destroyer</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  html, body { overscroll-behavior: none; }
+  body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #0b0e22; color: #eef1ff; min-height: 100vh; display: flex; align-items: flex-start; justify-content: center; padding: 12px; user-select: none; -webkit-user-select: none; }
+  #app { width: 100%; max-width: 700px; }
+  .card { background: #161b3a; border: 1px solid #2c3468; border-radius: 20px; padding: 26px 22px; box-shadow: 0 12px 40px rgba(0,0,0,.45); }
+  h1 { font-size: 1.65rem; margin-bottom: 8px; }
+  h1 .accent { color: #8b7bff; }
+  .sub { color: #a7b0d8; font-size: .95rem; line-height: 1.55; margin-bottom: 18px; }
+  .btn { display: block; width: 100%; padding: 15px; margin: 8px 0; font-size: 1.05rem; font-weight: 700; color: #fff; background: linear-gradient(135deg, #7c5cff, #00d4ff); border: none; border-radius: 14px; cursor: pointer; text-align: center; }
+  .btn:hover { filter: brightness(1.1); }
+  .hidden { display: none !important; }
+  .hud { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; font-size: .9rem; color: #a7b0d8; }
+  .hud b { color: #fff; font-size: 1.05rem; }
+  #streak { color: #ffb020; font-weight: 700; }
+  .progress-wrap { height: 8px; background: #262c55; border-radius: 99px; overflow: hidden; margin-bottom: 6px; }
+  #progress { height: 100%; width: 0%; background: linear-gradient(90deg, #7c5cff, #00d4ff); border-radius: 99px; transition: width .3s; }
+  .timer-wrap { height: 6px; background: #262c55; border-radius: 99px; overflow: hidden; margin-bottom: 10px; }
+  #timerbar { height: 100%; width: 100%; background: #22c55e; border-radius: 99px; }
+  #timerbar.low { background: #ef4444; }
+  #qbar { background: #1d2347; border: 1px solid #3a4488; border-radius: 14px; padding: 14px 16px; font-size: 1.05rem; font-weight: 600; line-height: 1.45; margin-bottom: 10px; }
+  #arena { position: relative; height: 52vh; min-height: 380px; max-height: 520px; background: radial-gradient(ellipse at 50% 30%, #141a3f 0%, #0b0e22 70%); border: 1px solid #2c3468; border-radius: 18px; overflow: hidden; touch-action: none; }
+  #arena::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(1px 1px at 12% 22%, #fff8, transparent), radial-gradient(1px 1px at 68% 8%, #fff6, transparent), radial-gradient(1.5px 1.5px at 84% 38%, #fff7, transparent), radial-gradient(1px 1px at 32% 66%, #fff5, transparent), radial-gradient(1px 1px at 52% 82%, #fff6, transparent), radial-gradient(1.5px 1.5px at 8% 78%, #fff5, transparent), radial-gradient(1px 1px at 92% 72%, #fff6, transparent); pointer-events: none; }
+  .asteroid { position: absolute; width: 150px; height: 150px; border-radius: 48% 52% 55% 45% / 52% 46% 54% 48%; background: radial-gradient(circle at 35% 32%, #9a8d78 0%, #6b5f4e 45%, #413a30 100%); box-shadow: inset -8px -10px 18px rgba(0,0,0,.5), inset 6px 8px 14px rgba(255,255,255,.12), 0 6px 18px rgba(0,0,0,.5); display: flex; align-items: center; justify-content: center; text-align: center; font-size: .7rem; font-weight: 600; line-height: 1.35; color: #fff; text-shadow: 0 1px 3px #000; padding: 26px 20px; cursor: grab; touch-action: none; z-index: 5; }
+  .asteroid.dragging { z-index: 20; cursor: grabbing; transform: scale(1.1); box-shadow: inset -8px -10px 18px rgba(0,0,0,.5), 0 0 24px #7c5cff; }
+  .asteroid.wrongflash { animation: wrongflash .45s; }
+  @keyframes wrongflash { 0%,100% { box-shadow: inset -8px -10px 18px rgba(0,0,0,.5), 0 6px 18px rgba(0,0,0,.5); } 50% { box-shadow: inset -8px -10px 18px rgba(0,0,0,.5), 0 0 30px #ef4444; background: radial-gradient(circle at 35% 32%, #c07a7a 0%, #7a4444 45%, #4a2626 100%); } }
+  .asteroid.correctring { outline: 4px solid #22c55e; outline-offset: 4px; }
+  #target { position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%); width: 138px; height: 138px; z-index: 4; pointer-events: none; }
+  #target .hole { position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle, #000 42%, #1c1038 62%, transparent 73%); border: 3px solid #7c5cff; box-shadow: 0 0 34px #7c5cff88, inset 0 0 22px #7c5cff55; }
+  #target .swirl { position: absolute; inset: -7px; border-radius: 50%; background: conic-gradient(from 0deg, transparent, #8b7bff66, transparent 40%, transparent 60%, #00d4ff55, transparent); animation: spin 3.2s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  #target .tlabel { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; text-align: center; font-size: .62rem; font-weight: 800; letter-spacing: .06em; color: #cfc6ff; padding: 30px; line-height: 1.4; }
+  .boom { position: absolute; font-size: 3.4rem; z-index: 30; pointer-events: none; animation: boom .55s ease-out forwards; transform: translate(-50%,-50%); }
+  @keyframes boom { 0% { transform: translate(-50%,-50%) scale(.4); opacity: 1; } 100% { transform: translate(-50%,-50%) scale(1.7); opacity: 0; } }
+  #toast { position: absolute; top: 14px; left: 50%; transform: translateX(-50%); background: #000c; border: 1px solid #3a4488; padding: 10px 20px; border-radius: 99px; font-weight: 800; font-size: .95rem; z-index: 40; pointer-events: none; opacity: 0; transition: opacity .2s; white-space: nowrap; }
+  #toast.show { opacity: 1; }
+  #float { position: fixed; font-weight: 800; font-size: 1.3rem; color: #4ade80; pointer-events: none; opacity: 0; z-index: 50; }
+  @keyframes floatup { 0% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; transform: translateY(-46px); } }
+  .round-tag { display: inline-block; font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #0f1226; background: #8b7bff; border-radius: 99px; padding: 5px 14px; margin-bottom: 12px; }
+  .round-tag.boss { background: #ff5c5c; }
+  .stat-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin: 18px 0; }
+  .stat { background: #232a55; border-radius: 14px; padding: 14px 8px; text-align: center; }
+  .stat .v { font-size: 1.5rem; font-weight: 800; }
+  .stat .l { font-size: .75rem; color: #a7b0d8; margin-top: 4px; }
+  #rank { font-size: 3.2rem; font-weight: 900; text-align: center; margin: 6px 0; background: linear-gradient(135deg, #ffd166, #ff5c5c); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .missed-item { background: #232a55; border-radius: 12px; padding: 12px 14px; margin: 8px 0; font-size: .88rem; line-height: 1.5; }
+  .missed-item b { color: #8b7bff; }
+  .missed-item .ans { color: #4ade80; font-weight: 600; }
+  .howto { background: #1d2347; border-radius: 12px; padding: 14px 16px; margin-bottom: 18px; font-size: .9rem; line-height: 1.6; color: #c6cdf2; }
+  .howto b { color: #fff; }
+  .qc { float: right; font-size: .78rem; opacity: .7; font-weight: 600; }
+  .bossbtn { background: linear-gradient(135deg, #c0392b, #e74c3c); }
+  .fullbtn { background: #2a3160; border: 2px solid #3a4488; }
+  @media (max-width: 480px) {
+    .asteroid { width: 118px; height: 118px; font-size: .6rem; padding: 20px 14px; }
+    #target { width: 108px; height: 108px; }
+    #target .tlabel { font-size: .55rem; padding: 24px; }
+    #arena { min-height: 340px; }
+  }
+</style>
+</head>
+<body>
+<div id="float">+0</div>
+<div id="app">
+
+  <div class="card" id="screen-start">
+    <h1>PSY 361 Exam 3<br><span class="accent">☄️ Asteroid Destroyer</span></h1>
+    <div class="howto">🪨 <b>4 asteroids</b> drift through space, each carrying an answer.<br>🕳️ <b>Drag the CORRECT one into the black hole</b> to blow it up.<br>❌ Wrong asteroid? It bounces back — minus points, streak lost.<br>⏱️ <b>20 seconds</b> per question. Fast destroys = bigger points.</div>
+    <p class="sub"><b>Round 1:</b> Warm-Up — The Self (Ch 5)<br><b>Round 2:</b> Freud &amp; Defense Mechanisms<br><b style="color:#ff5c5c">Round 3: BOSS — Scholar vs Scholar</b><br><b>Round 4:</b> Bonus — Closing the Gaps</p>
+    <div id="roundselect"><p class="sub">Loading question set…</p></div>
+    <p class="sub" id="signin-note" style="display:none">👤 <a href="/#account" onclick="event.preventDefault(); location.href='/#account';" style="color:#8b7bff">Sign in</a> to save your scores to the leaderboard.</p>
+  </div>
+
+  <div class="card hidden" id="screen-round">
+    <span class="round-tag" id="roundtag">Round 1</span>
+    <h1 id="roundtitle">Warm-Up</h1>
+    <p class="sub" id="rounddesc"></p>
+    <button class="btn" id="roundbtn" onclick="beginRound()">▶ Go</button>
+  </div>
+
+  <div class="hidden" id="screen-game">
+    <div class="hud">
+      <div>Score <b id="score">0</b></div>
+      <div id="streak"></div>
+      <div>Q <b id="qnum">1</b>/<span id="qtotal">30</span></div>
+    </div>
+    <div class="progress-wrap"><div id="progress"></div></div>
+    <div class="timer-wrap"><div id="timerbar"></div></div>
+    <div id="qbar"><span id="question"></span></div>
+    <div id="arena">
+      <div id="target"><div class="swirl"></div><div class="hole"></div><div class="tlabel">FEED THE CORRECT ANSWER</div></div>
+      <div id="toast"></div>
+    </div>
+  </div>
+
+  <div class="card hidden" id="screen-end">
+    <h1>Mission <span class="accent">Complete</span></h1>
+    <div id="rank">S</div>
+    <div class="stat-grid">
+      <div class="stat"><div class="v" id="finalscore">0</div><div class="l">SCORE</div></div>
+      <div class="stat"><div class="v" id="finalacc">0%</div><div class="l">ACCURACY</div></div>
+      <div class="stat"><div class="v" id="finalstreak">0</div><div class="l">BEST STREAK</div></div>
+    </div>
+    <div id="review"></div>
+    <button class="btn" onclick="location.reload()">↻ Play Again</button>
+  </div>
+
+</div>
+<script>const GAME_ID = 'asteroid';
+let QUESTIONS = [], ROUNDS = [], SET_META = null, COMBINED_IDS = [];
+async function loadSet(){
+  const params = new URLSearchParams(location.search);
+  let url = null;
+  if (params.get('sets')) url = '/api/sets/combined?ids=' + encodeURIComponent(params.get('sets'));
+  else if (params.get('set')) url = '/api/sets/' + encodeURIComponent(params.get('set'));
+  if (!url) throw new Error('missing set');
+  const r = await fetch(url);
+  if (!r.ok) throw new Error('set not found');
+  const set = await r.json();
+  SET_META = set;
+  COMBINED_IDS = set.combinedIds || [set.id];
+  QUESTIONS = set.questions.map(q => ({q: q.q, o: q.options, a: q.answer, why: q.explain}));
+  ROUNDS = (set.rounds && set.rounds.length ? set.rounds : [{tag:'Round 1', title: set.title, desc: set.description || '', count: QUESTIONS.length, boss: false}]);
+  document.title = set.title + ' — Asteroid Destroyer';
+}
+async function submitScore(){
+  try {
+    const me = await (await fetch('/api/auth/me')).json();
+    if (!me) return false;
+    await fetch('/api/sets/' + COMBINED_IDS[0] + '/scores', {
+      method: 'POST', headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ game: GAME_ID, score: score, accuracy: Math.round(correctCount / TOTAL_Q * 100), setIds: COMBINED_IDS })
+    });
+    return true;
+  } catch(e){ return false; }
+}
+</script>
+<script>
+/* ================= ENGINE ================= */
+let playOrder = [], pos = 0, score = 0, streak = 0, bestStreak = 0, correctCount = 0;
+let missed = [], asteroids = [], dragging = null, answered = false;
+let rafId = null, timerInt = null, timeLeft = 20, lastT = 0;
+let TOTAL_Q = 30;
+let singleRound = false;
+let roundBounds = [];
+const arena = document.getElementById('arena');
+const target = document.getElementById('target');
+
+function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+
+function startGame(){
+  singleRound = false;
+  buildPlayOrder();
+  pos = 0; score = 0; streak = 0; bestStreak = 0; correctCount = 0; missed = [];
+  updateHud();
+  showRoundIntro(0);
+}
+
+function buildPlayOrder(){
+  playOrder = []; roundBounds = [];
+  let idx = 0;
+  for (const r of ROUNDS){
+    roundBounds.push(idx);
+    playOrder = playOrder.concat(shuffle(QUESTIONS.slice(idx, idx + r.count)));
+    idx += r.count;
+  }
+  TOTAL_Q = playOrder.length;
+}
+
+function startRound(n){
+  singleRound = true;
+  const start = (typeof roundBounds[n] === 'number') ? roundBounds[n] : 0;
+  const count = (ROUNDS[n] && ROUNDS[n].count) || QUESTIONS.length;
+  playOrder = shuffle(QUESTIONS.slice(start, start + count));
+  TOTAL_Q = playOrder.length;
+  pos = 0; score = 0; streak = 0; bestStreak = 0; correctCount = 0; missed = [];
+  updateHud();
+  showRoundIntro(n);
+}
+
+function showRoundIntro(n){
+  stopLoop();
+  ['screen-start','screen-game','screen-end'].forEach(id => document.getElementById(id).classList.add('hidden'));
+  const s = document.getElementById('screen-round');
+  s.classList.remove('hidden');
+  const tag = document.getElementById('roundtag');
+  tag.textContent = ROUNDS[n].tag;
+  tag.classList.toggle('boss', !!ROUNDS[n].boss);
+  document.getElementById('roundtitle').textContent = ROUNDS[n].title;
+  document.getElementById('rounddesc').textContent = ROUNDS[n].desc;
+  document.getElementById('roundbtn').textContent = n === 0 ? '▶ Start Round 1' : '▶ Continue';
+}
+
+function beginRound(){
+  document.getElementById('screen-round').classList.add('hidden');
+  document.getElementById('screen-game').classList.remove('hidden');
+  startLoop();
+  renderQuestion(); // pos already points at this round's first question; nextQuestion() would re-trigger the round intro
+}
+
+function nextQuestion(){
+  if (pos >= TOTAL_Q) return endGame();
+  if (!singleRound) {
+    const ri = roundBounds.indexOf(pos);
+    if (ri > 0) return showRoundIntro(ri);
+  }
+  renderQuestion();
+}
+
+function renderQuestion(){
+  answered = false;
+  clearAsteroids();
+  const q = playOrder[pos];
+  document.getElementById('question').textContent = q.q;
+  document.getElementById('qnum').textContent = pos + 1;
+  document.getElementById('qtotal').textContent = TOTAL_Q;
+  document.getElementById('progress').style.width = (pos / TOTAL_Q * 100) + '%';
+  updateHud();
+  spawnAsteroids(q);
+  startTimer();
+}
+
+function spawnAsteroids(q){
+  const opts = shuffle(q.o.map((t, i) => ({t, ok: i === q.a})));
+  const W = arena.clientWidth, H = arena.clientHeight;
+  const slots = [[0.20,0.16],[0.70,0.16],[0.20,0.50],[0.68,0.50]];
+  opts.forEach((op, i) => {
+    const el = document.createElement('div');
+    el.className = 'asteroid';
+    el.textContent = op.t;
+    arena.appendChild(el);
+    const size = el.offsetWidth || 150;
+    const jx = (Math.random()-0.5)*0.08, jy = (Math.random()-0.5)*0.08;
+    const a = {
+      el, ok: op.ok, size,
+      x: (slots[i][0]+jx) * W - size/2,
+      y: (slots[i][1]+jy) * H,
+      vx: (Math.random()<0.5?-1:1) * (22 + Math.random()*22),
+      vy: (Math.random()<0.5?-1:1) * (18 + Math.random()*20),
+      dead: false
+    };
+    a.x = Math.max(0, Math.min(W - size, a.x));
+    a.y = Math.max(0, Math.min(H - size - 90, a.y));
+    el.style.left = a.x + 'px'; el.style.top = a.y + 'px';
+    el.addEventListener('pointerdown', e => {
+      if (answered || a.dead) return;
+      dragging = a;
+      el.classList.add('dragging');
+      try { el.setPointerCapture(e.pointerId); } catch(_){}
+      moveAst(e, a);
+      e.preventDefault();
+    });
+    el.addEventListener('pointermove', e => { if (dragging === a) moveAst(e, a); });
+    el.addEventListener('pointerup', e => {
+      if (dragging !== a) return;
+      dragging = null;
+      el.classList.remove('dragging');
+      resolveDrop(a);
+    });
+    el.addEventListener('pointercancel', () => {
+      if (dragging === a) { dragging = null; el.classList.remove('dragging'); }
+    });
+    asteroids.push(a);
+  });
+}
+
+function moveAst(e, a){
+  const r = arena.getBoundingClientRect();
+  const s = a.size;
+  a.x = Math.max(0, Math.min(r.width - s, e.clientX - r.left - s/2));
+  a.y = Math.max(0, Math.min(r.height - s, e.clientY - r.top - s/2));
+  a.el.style.left = a.x + 'px'; a.el.style.top = a.y + 'px';
+}
+
+function targetCenter(){
+  return { x: target.offsetLeft + target.offsetWidth/2, y: target.offsetTop + target.offsetHeight/2, r: target.offsetWidth/2 };
+}
+
+function resolveDrop(a){
+  if (answered || a.dead) return;
+  const t = targetCenter();
+  const cx = a.x + a.size/2, cy = a.y + a.size/2;
+  if (Math.hypot(cx - t.x, cy - t.y) > t.r + a.size * 0.32) return; // missed the hole — keep drifting
+  if (a.ok) {
+    answered = true;
+    clearInterval(timerInt);
+    correctCount++; streak++; bestStreak = Math.max(bestStreak, streak);
+    const pts = 100 + Math.round(timeLeft / 20 * 100) + Math.min(streak, 4) * 25;
+    score += pts;
+    explode(a);
+    floatPts('+' + pts);
+    toast('💥 ASTEROID DESTROYED', '#4ade80');
+    asteroids.forEach(x => { if (x !== a && !x.dead) { x.dead = true; x.el.style.transition = 'opacity .4s'; x.el.style.opacity = '0'; } });
+    updateHud();
+    setTimeout(() => { pos++; nextQuestion(); }, 850);
+  } else {
+    streak = 0; score = Math.max(0, score - 25);
+    updateHud();
+    a.el.classList.remove('wrongflash'); void a.el.offsetWidth; a.el.classList.add('wrongflash');
+    toast('❌ WRONG — try again!', '#ef4444');
+  }
+}
+
+function explode(a){
+  a.dead = true;
+  const b = document.createElement('div');
+  b.className = 'boom';
+  b.textContent = '💥';
+  b.style.left = (a.x + a.size/2) + 'px';
+  b.style.top = (a.y + a.size/2) + 'px';
+  arena.appendChild(b);
+  a.el.remove();
+  setTimeout(() => b.remove(), 600);
+}
+
+function clearAsteroids(){
+  asteroids.forEach(a => { try { a.el.remove(); } catch(_){} });
+  asteroids = []; dragging = null;
+}
+
+function startTimer(){
+  clearInterval(timerInt);
+  timeLeft = 20;
+  const bar = document.getElementById('timerbar');
+  bar.classList.remove('low');
+  const t0 = Date.now();
+  timerInt = setInterval(() => {
+    timeLeft = 20 - (Date.now() - t0) / 1000;
+    if (timeLeft <= 0) { onTimeout(); return; }
+    bar.style.width = (timeLeft / 20 * 100) + '%';
+    if (timeLeft < 5) bar.classList.add('low');
+  }, 100);
+}
+
+function onTimeout(){
+  if (answered) return;
+  answered = true;
+  clearInterval(timerInt);
+  streak = 0;
+  const q = playOrder[pos];
+  missed.push({q: q.q, ans: q.o[q.a], why: q.why});
+  const right = asteroids.find(a => a.ok);
+  if (right) right.el.classList.add('correctring');
+  toast('⏰ TIME UP', '#ffb020');
+  updateHud();
+  setTimeout(() => { pos++; nextQuestion(); }, 1600);
+}
+
+function startLoop(){
+  stopLoop();
+  lastT = performance.now();
+  const step = (t) => {
+    const dt = Math.min((t - lastT) / 1000, 0.05);
+    lastT = t;
+    const W = arena.clientWidth, H = arena.clientHeight;
+    for (const a of asteroids) {
+      if (a === dragging || a.dead) continue;
+      a.x += a.vx * dt; a.y += a.vy * dt;
+      const s = a.size;
+      if (a.x < 0) { a.x = 0; a.vx = Math.abs(a.vx); }
+      if (a.x > W - s) { a.x = W - s; a.vx = -Math.abs(a.vx); }
+      if (a.y < 0) { a.y = 0; a.vy = Math.abs(a.vy); }
+      if (a.y > H - s) { a.y = H - s; a.vy = -Math.abs(a.vy); }
+      a.el.style.left = a.x + 'px'; a.el.style.top = a.y + 'px';
+    }
+    rafId = requestAnimationFrame(step);
+  };
+  rafId = requestAnimationFrame(step);
+}
+
+function stopLoop(){ if (rafId) cancelAnimationFrame(rafId); rafId = null; }
+
+function updateHud(){
+  document.getElementById('score').textContent = score;
+  document.getElementById('streak').textContent = streak >= 2 ? '🔥 x' + streak : '';
+}
+
+function toast(msg, color){
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.style.color = color || '#fff';
+  t.classList.add('show');
+  clearTimeout(t._h);
+  t._h = setTimeout(() => t.classList.remove('show'), 1200);
+}
+
+function floatPts(txt){
+  const f = document.getElementById('float');
+  const s = document.getElementById('score').getBoundingClientRect();
+  f.style.left = (s.left + s.width/2 - 20) + 'px';
+  f.style.top = (s.top - 10) + 'px';
+  f.textContent = txt;
+  f.style.animation = 'none'; void f.offsetWidth;
+  f.style.animation = 'floatup .8s ease forwards';
+}
+
+function endGame(){
+  stopLoop();
+  submitScore();
+  clearInterval(timerInt);
+  clearAsteroids();
+  document.getElementById('screen-game').classList.add('hidden');
+  document.getElementById('screen-round').classList.add('hidden');
+  const s = document.getElementById('screen-end');
+  s.classList.remove('hidden');
+  const acc = Math.round(correctCount / TOTAL_Q * 100);
+  document.getElementById('finalscore').textContent = score;
+  document.getElementById('finalacc').textContent = acc + '%';
+  document.getElementById('finalstreak').textContent = 'x' + bestStreak;
+  document.getElementById('rank').textContent = acc >= 90 ? 'S' : acc >= 80 ? 'A' : acc >= 70 ? 'B' : acc >= 60 ? 'C' : 'D';
+  const rev = document.getElementById('review');
+  if (missed.length === 0) {
+    rev.innerHTML = '<p class="sub" style="text-align:center">🔥 Flawless. Go take that exam.</p>';
+  } else {
+    let h = '<p class="sub"><b>Review these ' + missed.length + ' before the exam:</b></p>';
+    missed.forEach(m => {
+      h += '<div class="missed-item"><b>Q:</b> ' + m.q + '<br><span class="ans">Answer: ' + m.ans + '</span><br>' + m.why + '</div>';
+    });
+    rev.innerHTML = h;
+  }
+  document.getElementById('progress').style.width = '100%';
+}
+
+// ---- boot: load the question set, then build the round menu ----
+(function(){
+  const box = document.getElementById('roundselect');
+  loadSet().then(() => {
+    buildPlayOrder();
+    box.innerHTML = '';
+    ROUNDS.forEach((r, i) => {
+      const b = document.createElement('button');
+      b.className = 'btn' + (r.boss ? ' bossbtn' : '');
+      b.innerHTML = '▶ ' + r.title + ' <span class="qc">' + r.count + ' Qs</span>';
+      b.onclick = () => startRound(i);
+      box.appendChild(b);
+    });
+    const full = document.createElement('button');
+    full.className = 'btn fullbtn';
+    full.textContent = '▶ Full Run — all ' + QUESTIONS.length + ' questions';
+    full.onclick = () => startGame();
+    box.appendChild(full);
+    return fetch('/api/auth/me').then(r => r.json());
+  }).then(me => {
+    if (!me) document.getElementById('signin-note').style.display = 'block';
+  }).catch(err => {
+    box.innerHTML = '<p class="sub">Couldn\'t load this question set. <a href="/" style="color:#8b7bff">Back home</a></p>';
+  });
+})();
+</script>
+</body>
+</html>
