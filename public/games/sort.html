@@ -23,18 +23,13 @@
   .timer-wrap { height: 8px; background: #262c55; border-radius: 99px; overflow: hidden; margin-bottom: 14px; }
   #timerbar { height: 100%; width: 100%; background: linear-gradient(90deg, #7c5cff, #00d4ff); border-radius: 99px; }
   #timerbar.low { background: #ef4444; }
-  #dropzone { position: relative; min-height: 170px; margin-bottom: 14px; }
-  #sortcard { position: relative; z-index: 5; background: #eef1ff; color: #141838; border-radius: 18px; padding: 28px 20px; font-size: 1.08rem; font-weight: 700; text-align: center; line-height: 1.45; min-height: 150px; display: flex; align-items: center; justify-content: center; cursor: grab; touch-action: none; box-shadow: 0 8px 24px rgba(0,0,0,.4); }
+  #playarea { position: relative; min-height: 440px; margin-bottom: 14px; overflow: hidden; border-radius: 16px; background: #11163c; border: 1px solid #2c3468; }
+  #bins { display: flex; gap: 8px; padding: 10px; }
+  .bin { flex: 1; background: #1d2347; border: 2px dashed #3a4488; border-radius: 14px; padding: 10px 6px; min-height: 90px; display: flex; align-items: center; justify-content: center; text-align: center; font-weight: 700; font-size: .82rem; line-height: 1.3; color: #eef1ff; transition: border-color .12s, background .12s; }
+  .bin.flash-good { border-color: #22c55e; background: #14532d; border-style: solid; box-shadow: 0 0 18px #22c55e88; }
+  .bin.flash-bad { border-color: #ef4444; background: #5b1a1a; border-style: solid; }
+  #sortcard { position: absolute; z-index: 5; width: min(78%, 340px); background: #eef1ff; color: #141838; border-radius: 18px; padding: 24px 18px; font-size: 1.05rem; font-weight: 700; text-align: center; line-height: 1.45; min-height: 130px; display: flex; align-items: center; justify-content: center; cursor: grab; touch-action: none; box-shadow: 0 8px 24px rgba(0,0,0,.4); }
   #sortcard.dragging { cursor: grabbing; box-shadow: 0 0 28px #7c5cff; z-index: 20; }
-  #sortcard.shake { animation: shake .4s; }
-  #sortcard.good { background: #d3f9df; }
-  @keyframes shake { 0%,100% { transform: translateX(0); } 20% { transform: translateX(-10px); } 40% { transform: translateX(10px); } 60% { transform: translateX(-6px); } 80% { transform: translateX(6px); } }
-  #bins { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
-  .bin { background: #1d2347; border: 2px dashed #3a4488; border-radius: 14px; padding: 14px 8px; min-height: 86px; display: flex; align-items: center; justify-content: center; text-align: center; font-weight: 700; font-size: .84rem; line-height: 1.35; cursor: pointer; color: #eef1ff; transition: border-color .12s, background .12s; }
-  .bin:hover { border-color: #7c5cff; }
-  .bin.hovered { border-color: #22c55e; background: #183a2b; }
-  .bin.flash-good { border-color: #22c55e; background: #14532d; }
-  .bin.flash-bad { border-color: #ef4444; background: #5b1a1a; }
   .stat-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px; margin: 18px 0; }
   .stat { background: #232a55; border-radius: 14px; padding: 14px 8px; text-align: center; }
   .stat .v { font-size: 1.5rem; font-weight: 800; }
@@ -52,7 +47,7 @@
   #levelup-overlay p { color: #eef1ff; font-size: 1.1rem; margin-bottom: 20px; }
   @keyframes fadein { from { opacity: 0; } }
   @keyframes popin { 0% { transform: scale(.6); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
-  @media (max-width: 480px) { #bins { grid-template-columns: repeat(2, 1fr); } .stat-grid { grid-template-columns: 1fr 1fr; } #sortcard { font-size: 1rem; } }
+  @media (max-width: 480px) { #bins { flex-wrap: wrap; } .bin { flex: 1 1 44%; min-height: 76px; } #playarea { min-height: 480px; } .stat-grid { grid-template-columns: 1fr 1fr; } #sortcard { font-size: 1rem; } }
 </style>
 </head>
 <body>
@@ -60,10 +55,9 @@
 <div id="app">
   <div class="card" id="screen-start">
     <h1>🗂️ Sort <span class="accent">Sprint</span></h1>
-    <div class="howto">📇 A question card appears — <b>sort it into the right bin</b>.<br>
-    👆 <b>Tap a bin</b> or <b>drag the card</b> into it.<br>
-    🔥 Correct sorts build your <b>streak</b> for bonus points. Wrong sort: −25.<br>
-    ⏱️ <b>90 seconds</b> — sort as many as you can.</div>
+    <div class="howto">🫳 Flick the card <b>UP</b> into the right bin — it flies with real physics.<br>
+    ❌ Miss the bins or land in the wrong one and the card is <b>gone</b>, no points.<br>
+    🔥 Streaks multiply your score. ⏱️ <b>90 seconds</b> — sort as many as you can.</div>
     <p class="sub" id="setinfo">Loading question set…</p>
     <button class="btn" id="playbtn" onclick="startGame()" disabled>Loading…</button>
     <p class="sub" id="signin-note" style="display:none">👤 <a href="/#account" style="color:#8b7bff">Sign in</a> to save your scores to the leaderboard.</p>
@@ -76,8 +70,10 @@
       <div>Sorted <b id="sorted">0</b>/<span id="qtotal">0</span></div>
     </div>
     <div class="timer-wrap"><div id="timerbar"></div></div>
-    <div id="dropzone"><div id="sortcard">…</div></div>
-    <div id="bins"></div>
+    <div id="playarea">
+      <div id="bins"></div>
+      <div id="sortcard">…</div>
+    </div>
   </div>
 
   <div class="card hidden" id="screen-end">
@@ -91,6 +87,8 @@
     </div>
     <div id="review"></div>
     <button class="btn" onclick="location.reload()">↻ Play Again</button>
+    <button class="btn" onclick="location.href='/#module/'+COMBINED_IDS[0]+'?game=sort'">🏆 Scoreboard</button>
+    <button class="btn" onclick="location.href='/#module/'+COMBINED_IDS[0]">← Back</button>
   </div>
 </div>
 <script>
@@ -153,11 +151,10 @@ function startGame(){
 function renderBins(){
   const box = document.getElementById('bins');
   box.innerHTML = '';
-  BINS.forEach((label, i) => {
+  BINS.forEach((label) => {
     const b = document.createElement('div');
     b.className = 'bin';
     b.textContent = label;
-    b.onclick = () => answer(i, b);
     box.appendChild(b);
   });
 }
@@ -166,77 +163,161 @@ function nextCard(){
   if (ended) return;
   if (!queue.length) { endGame(false); return; }
   currentQ = queue.shift();
-  lockCard = false;
+  lockCard = false; flying = false; dragging = false;
+  cancelAnimationFrame(rafId);
   if (!fixedBins) { BINS = currentQ.o.slice(); renderBins(); }
   const card = document.getElementById('sortcard');
   card.textContent = currentQ.q;
-  card.classList.remove('shake', 'good');
-  card.style.transform = '';
+  card.style.transition = '';
   card.style.opacity = '1';
+  placeCardAtSpawn();
 }
 
-function answer(binIdx, binEl){
-  if (ended || lockCard || !currentQ) return;
+// ---- throw physics: drag the card, fling it into a bin ----
+const GRAV = 2600;                 // px/s²
+let cardX = 0, cardY = 0;          // card offset from spawn point (px)
+let spawnX = 0, spawnY = 0;        // spawn point inside the play area (px)
+let dragging = false, flying = false;
+let grabDX = 0, grabDY = 0;        // pointer offset from card center at grab
+let velSamples = [];               // recent pointer samples {t, x, y}
+let flyVx = 0, flyVy = 0, flyRot = 0, lastT = 0, rafId = 0;
+
+function placeCardAtSpawn(){
+  const card = document.getElementById('sortcard');
+  const pa = document.getElementById('playarea');
+  spawnX = (pa.clientWidth - card.offsetWidth) / 2;
+  spawnY = pa.clientHeight - card.offsetHeight - 14;
+  card.style.left = spawnX + 'px';
+  card.style.top = spawnY + 'px';
+  cardX = 0; cardY = 0;
+  card.style.transform = 'translate(0px, 0px) rotate(0deg)';
+}
+
+function cardCenter(){
+  const card = document.getElementById('sortcard');
+  return { x: spawnX + cardX + card.offsetWidth / 2,
+           y: spawnY + cardY + card.offsetHeight / 2 };
+}
+
+function binAt(cx, cy){
+  const paRect = document.getElementById('playarea').getBoundingClientRect();
+  const bins = document.querySelectorAll('.bin');
+  for (let i = 0; i < bins.length; i++) {
+    const r = bins[i].getBoundingClientRect();
+    const bx = r.left - paRect.left, by = r.top - paRect.top;
+    if (cx >= bx && cx <= bx + r.width && cy >= by && cy <= by + r.height) return i;
+  }
+  return -1;
+}
+
+function flyStep(now){
+  if (!flying || ended) { flying = false; return; }
+  const dt = Math.min(0.05, (now - lastT) / 1000);
+  lastT = now;
+  flyVy += GRAV * dt;
+  cardX += flyVx * dt;
+  cardY += flyVy * dt;
+  flyRot = flyVx / 45;
+  const card = document.getElementById('sortcard');
+  card.style.transform = 'translate(' + cardX + 'px,' + cardY + 'px) rotate(' + flyRot + 'deg)';
+  const c = cardCenter();
+  const bi = binAt(c.x, c.y);
+  if (bi >= 0) { resolveBin(bi); return; }
+  const pa = document.getElementById('playarea');
+  if (c.y > pa.clientHeight + 80 || c.x < -80 || c.x > pa.clientWidth + 80 || c.y < -500) {
+    resolveMiss();
+    return;
+  }
+  rafId = requestAnimationFrame(flyStep);
+}
+
+function resolveBin(i){
+  flying = false;
+  cancelAnimationFrame(rafId);
+  if (ended || !currentQ) return;
   totalTries++;
-  const correct = BINS[binIdx] === currentQ.o[currentQ.a];
+  const card = document.getElementById('sortcard');
+  const bins = document.querySelectorAll('.bin');
+  const binEl = bins[i];
+  const correct = BINS[i] === currentQ.o[currentQ.a];
   if (correct) {
-    lockCard = true;
     correctCount++; sortedCount++; streak++;
     const pts = 100 + streak * 10;
     score += pts;
     floatPts('+' + pts);
-    if (binEl) { binEl.classList.add('flash-good'); setTimeout(() => binEl.classList.remove('flash-good'), 350); }
-    const card = document.getElementById('sortcard');
-    card.classList.add('good');
-    updateHud();
-    setTimeout(nextCard, 220);
+    if (binEl) { binEl.classList.add('flash-good'); setTimeout(() => binEl.classList.remove('flash-good'), 400); }
+    card.style.transition = 'transform .18s ease-in, opacity .18s ease-in';
+    card.style.transform = 'translate(' + cardX + 'px,' + cardY + 'px) rotate(' + flyRot + 'deg) scale(.15)';
+    card.style.opacity = '0';
   } else {
     streak = 0;
-    score = Math.max(0, score - 25);
     missed.push({q: currentQ.q, ans: currentQ.o[currentQ.a], why: currentQ.why});
-    const card = document.getElementById('sortcard');
-    card.classList.remove('shake'); void card.offsetWidth; card.classList.add('shake');
-    if (binEl) { binEl.classList.add('flash-bad'); setTimeout(() => binEl.classList.remove('flash-bad'), 350); }
-    updateHud();
+    if (binEl) { binEl.classList.add('flash-bad'); setTimeout(() => binEl.classList.remove('flash-bad'), 400); }
+    floatPts('WRONG BIN', '#ef4444');
+    card.style.transition = 'opacity .25s ease-in';
+    card.style.opacity = '0';
   }
+  updateHud();
+  setTimeout(nextCard, 450);
 }
 
-// ---- drag the card into a bin (pointer events: mouse + touch) ----
+function resolveMiss(){
+  flying = false;
+  cancelAnimationFrame(rafId);
+  if (ended || !currentQ) return;
+  totalTries++;
+  streak = 0;
+  missed.push({q: currentQ.q, ans: currentQ.o[currentQ.a], why: currentQ.why});
+  floatPts('MISS!', '#ef4444');
+  updateHud();
+  setTimeout(nextCard, 450);
+}
+
 (function(){
   const card = document.getElementById('sortcard');
-  let dragging = false, startX = 0, startY = 0, dx = 0, dy = 0, hoveredBin = null;
   card.addEventListener('pointerdown', e => {
-    if (ended || lockCard || !currentQ) return;
-    dragging = true; startX = e.clientX; startY = e.clientY; dx = 0; dy = 0;
+    if (ended || lockCard || flying || !currentQ) return;
+    dragging = true;
+    const r = card.getBoundingClientRect();
+    grabDX = e.clientX - (r.left + r.width / 2);
+    grabDY = e.clientY - (r.top + r.height / 2);
+    velSamples = [{ t: performance.now(), x: e.clientX, y: e.clientY }];
     card.classList.add('dragging');
     try { card.setPointerCapture(e.pointerId); } catch(_){}
     e.preventDefault();
   });
   card.addEventListener('pointermove', e => {
     if (!dragging) return;
-    dx = e.clientX - startX; dy = e.clientY - startY;
-    card.style.transform = 'translate(' + dx + 'px,' + dy + 'px) rotate(' + (dx / 40) + 'deg)';
-    const bins = document.querySelectorAll('.bin');
-    hoveredBin = null;
-    bins.forEach(b => {
-      const r = b.getBoundingClientRect();
-      const over = e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom;
-      b.classList.toggle('hovered', over);
-      if (over) hoveredBin = b;
-    });
+    const paRect = document.getElementById('playarea').getBoundingClientRect();
+    const cx = e.clientX - grabDX - paRect.left;
+    const cy = e.clientY - grabDY - paRect.top;
+    cardX = cx - spawnX - card.offsetWidth / 2;
+    cardY = cy - spawnY - card.offsetHeight / 2;
+    card.style.transform = 'translate(' + cardX + 'px,' + cardY + 'px) rotate(' + (cardX / 40) + 'deg)';
+    const now = performance.now();
+    velSamples.push({ t: now, x: e.clientX, y: e.clientY });
+    while (velSamples.length > 2 && now - velSamples[0].t > 110) velSamples.shift();
   });
-  function drop(){
+  function release(){
     if (!dragging) return;
     dragging = false;
     card.classList.remove('dragging');
-    document.querySelectorAll('.bin').forEach(b => b.classList.remove('hovered'));
-    const idx = hoveredBin ? [...document.querySelectorAll('.bin')].indexOf(hoveredBin) : -1;
-    hoveredBin = null;
-    card.style.transform = '';
-    if (idx >= 0) answer(idx, document.querySelectorAll('.bin')[idx]);
+    let vx = 0, vy = 0;
+    const s = velSamples;
+    if (s.length >= 2) {
+      const a = s[0], b = s[s.length - 1];
+      const dt = (b.t - a.t) / 1000;
+      if (dt > 0.005) { vx = (b.x - a.x) / dt; vy = (b.y - a.y) / dt; }
+    }
+    if (vy > -600) vy = -900;   // forgiveness: a weak flick still lobs upward
+    lockCard = true;            // card is committed — no re-grab mid-flight
+    flyVx = vx; flyVy = vy; flyRot = vx / 45;
+    flying = true;
+    lastT = performance.now();
+    rafId = requestAnimationFrame(flyStep);
   }
-  card.addEventListener('pointerup', drop);
-  card.addEventListener('pointercancel', drop);
+  card.addEventListener('pointerup', release);
+  card.addEventListener('pointercancel', release);
 })();
 
 function startTimer(){
@@ -259,11 +340,12 @@ function updateHud(){
   document.getElementById('streak').textContent = streak >= 2 ? '🔥 x' + streak : '';
 }
 
-function floatPts(txt){
+function floatPts(txt, color){
   const f = document.getElementById('float');
   const s = document.getElementById('score').getBoundingClientRect();
   f.style.left = (s.left + s.width / 2 - 20) + 'px';
   f.style.top = (s.top - 10) + 'px';
+  f.style.color = color || '#4ade80';
   f.textContent = txt;
   f.style.animation = 'none'; void f.offsetWidth;
   f.style.animation = 'floatup .8s ease forwards';
