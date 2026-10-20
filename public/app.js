@@ -49,7 +49,7 @@ async function route(){
     if (page === 'games') { showView('games'); await renderGames(); }
     else if (page === 'subjects') { showView('subjects'); await renderSubjects(q.game); }
     else if (page === 'subject' && arg) { showView('subject'); await renderSubject(decodeURIComponent(arg), q.game); }
-    else if (page === 'module' && arg) { showView('module'); await renderModule(arg); }
+    else if (page === 'module' && arg) { showView('module'); await renderModule(arg, q.game); }
     else if (page === 'create') { showView('create'); renderCreate(); }
     else if (page === 'account') { showView('account'); renderAccount(); }
     else { showView('home'); await renderHome(); }
@@ -165,7 +165,8 @@ function playSelected(gameId){
 
 // ---------- module detail ----------
 let lbGame = 'asteroid';
-async function renderModule(id){
+async function renderModule(id, game){
+  if (game && GAMES.some((g) => g.id === game)) lbGame = game;
   const v = $('view-module');
   v.innerHTML = `<p class="muted">Loading…</p>`;
   try {
@@ -319,7 +320,7 @@ function renderAccount(){
       : '<p class="muted">Nothing yet — <a href="#/create">create your first module</a>.</p>';
   }).catch(() => {});
   api('GET', '/api/me/scores').then(rows => {
-    const gname = { quiz: '⚡ Quiz', asteroid: '☄️ Asteroid', match: '🃏 Match', sort: '🗂️ Sort', type: '⌨️ Type', pop: '🎈 Pop' };
+    const gname = { quiz: '⚡ Quiz', asteroid: '☄️ Asteroid', match: '🃏 Match', sort: '🗂️ Sort', type: '⌨️ Type', pop: '🎈 Pop', speed: '🚀 Speed' };
     $('myscores').innerHTML = rows.length ? `
       <div class="card"><table class="lb"><tr><th>Module</th><th>Game</th><th>Best</th><th>Acc</th></tr>
       ${rows.map(r => `<tr><td>${esc(r.module)}</td><td>${gname[r.game] || r.game}</td><td>${r.best}</td><td>${Math.round(r.acc)}%</td></tr>`).join('')}
