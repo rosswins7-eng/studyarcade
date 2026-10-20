@@ -97,7 +97,7 @@
 const GAME_ID = 'sort';
 const TIME_LIMIT = 90;
 let QUESTIONS = [], SET_META = null, COMBINED_IDS = [];
-let BINS = [], queue = [], currentQ = null;
+let BINS = [], queue = [], currentQ = null, fixedBins = true;
 let score = 0, streak = 0, correctCount = 0, totalTries = 0, sortedCount = 0;
 let timerInt = null, timeLeft = TIME_LIMIT, startT = 0, ended = false;
 let missed = [], lockCard = false;
@@ -124,11 +124,23 @@ function startGame(){
   document.getElementById('screen-start').classList.add('hidden');
   document.getElementById('screen-end').classList.add('hidden');
   document.getElementById('screen-game').classList.remove('hidden');
-  // Bins = the 4 options of the first question. Only questions sharing that same
-  // option set can be sorted into them (matters for combined sets).
-  BINS = QUESTIONS[0].o.slice();
-  const key = BINS.slice().sort().join('|');
-  queue = shuffle(QUESTIONS.filter(q => q.o.slice().sort().join('|') === key));
+  // Bins mode: if many questions share one option set (category sets like the
+  // teeth drill), sort that group with fixed bins. Otherwise each card brings
+  // its own bins (re-rendered per card) so the game works on any set.
+  const groups = {};
+  QUESTIONS.forEach(q => {
+    const key = q.o.slice().sort().join('|');
+    (groups[key] = groups[key] || []).push(q);
+  });
+  const best = Object.values(groups).sort((a, b) => b.length - a.length)[0] || [];
+  if (best.length >= 4) {
+    fixedBins = true;
+    BINS = best[0].o.slice();
+    queue = shuffle(best.slice());
+  } else {
+    fixedBins = false;
+    queue = shuffle(QUESTIONS.slice());
+  }
   document.getElementById('qtotal').textContent = queue.length;
   score = 0; streak = 0; correctCount = 0; totalTries = 0; sortedCount = 0;
   missed = []; ended = false;
@@ -155,6 +167,7 @@ function nextCard(){
   if (!queue.length) { endGame(false); return; }
   currentQ = queue.shift();
   lockCard = false;
+  if (!fixedBins) { BINS = currentQ.o.slice(); renderBins(); }
   const card = document.getElementById('sortcard');
   card.textContent = currentQ.q;
   card.classList.remove('shake', 'good');
