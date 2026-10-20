@@ -7,6 +7,9 @@ nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center
 .navlink:hover { color: #fff; background: #1a2044; }
 .navlink.active { color: #fff; background: #2a3160; }
 .navpill { margin-left: auto; font-size: .75rem; font-weight: 700; color: #0b0e22; background: #ffd166; border-radius: 99px; padding: 6px 12px; white-space: nowrap; }
+.lvlbadge { display: inline-block; font-size: .72rem; font-weight: 800; color: #0b0e22; background: linear-gradient(135deg, #ffd166, #ff9f5c); border-radius: 99px; padding: 3px 10px; margin-left: 6px; vertical-align: 1px; }
+.xpbar { display: inline-block; width: 64px; height: 6px; background: #262c55; border-radius: 99px; margin-left: 8px; vertical-align: 2px; overflow: hidden; }
+.xpbar span { display: block; height: 100%; background: linear-gradient(90deg, #7c5cff, #00d4ff); border-radius: 99px; }
 main { max-width: 1020px; margin: 0 auto; padding: 24px 18px 60px; min-height: 70vh; }
 .hero { text-align: center; padding: 48px 12px 36px; }
 .hero h1 { font-size: clamp(2.1rem, 6vw, 3.4rem); font-weight: 900; line-height: 1.12; margin-bottom: 14px; }
