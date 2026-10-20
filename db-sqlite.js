@@ -13,6 +13,7 @@ CREATE TABLE IF NOT EXISTS users (
   email TEXT NOT NULL UNIQUE,
   pass_hash TEXT NOT NULL,
   is_pro INTEGER NOT NULL DEFAULT 0,
+  xp INTEGER NOT NULL DEFAULT 0,
   created_at TEXT NOT NULL DEFAULT (datetime('now'))
 );
 CREATE TABLE IF NOT EXISTS sets (
@@ -52,31 +53,43 @@ CREATE TABLE IF NOT EXISTS generation_requests (
 
 async function init() {
   db.exec(SCHEMA);
-  const n = db.prepare('SELECT COUNT(*) AS n FROM sets').get().n;
-  if (n === 0) await seed();
+  try { db.exec('ALTER TABLE users ADD COLUMN xp INTEGER NOT NULL DEFAULT 0'); } catch (e) { /* column already exists */ }
+  await seed();
 }
 
 async function seed() {
-  const seeds = ['psy361.json', 'sat-vocab.json', 'spanish101.json'];
+  const lib = JSON.parse(fs.readFileSync(path.join(__dirname, 'seed', 'library.json'), 'utf8'));
   let sys = db.prepare('SELECT id FROM users WHERE email = ?').get('system@studyarcade');
   if (!sys) {
     db.prepare("INSERT INTO users (name, email, pass_hash) VALUES ('StudyArcade', 'system@studyarcade', 'seed')").run();
     sys = db.prepare('SELECT id FROM users WHERE email = ?').get('system@studyarcade');
   }
+  // Retire legacy seed subjects superseded by the library (system-created only).
+  db.prepare(`DELETE FROM sets WHERE creator_id = ? AND subject IN ('SAT Prep', 'Spanish 101')`).run(sys.id);
+  const have = new Set(db.prepare('SELECT subject, module FROM sets').all()
+    .map((r) => r.subject + '||' + r.module));
+  const orderBySubject = {};
   const ins = db.prepare(`INSERT INTO sets (title, subject, module, module_order, description, questions_json, rounds_json, creator_id)
                           VALUES (?, ?, ?, ?, ?, ?, ?, ?)`);
-  let order = 0;
-  for (const f of seeds) {
-    const s = JSON.parse(fs.readFileSync(path.join(__dirname, 'seed', f), 'utf8'));
-    ins.run(s.title, s.subject, s.module || 'Module 1', ++order, s.description || '',
+  let added = 0;
+  for (const s of lib) {
+    const modName = s.title; // library uses title as the display module name
+    if (have.has(s.subject + '||' + modName)) continue;
+    if (!(s.subject in orderBySubject)) {
+      orderBySubject[s.subject] = db.prepare('SELECT COALESCE(MAX(module_order),0) AS m FROM sets WHERE subject = ?').get(s.subject).m;
+    }
+    const order = ++orderBySubject[s.subject];
+    ins.run(s.title, s.subject, modName, order, s.description || '',
             JSON.stringify(s.questions), JSON.stringify(s.rounds || null), sys.id);
-    console.log('Seeded:', s.subject, '-', s.module);
+    added++;
+    console.log('Seeded:', s.subject, '-', modName);
   }
+  if (added) console.log('Library seed: added', added, 'modules.');
 }
 
 const q = {
   getUserByEmail: async (email) => db.prepare('SELECT * FROM users WHERE email = ?').get(email),
-  getUserById: async (id) => db.prepare('SELECT id, name, email, is_pro FROM users WHERE id = ?').get(id),
+  getUserById: async (id) => db.prepare('SELECT id, name, email, is_pro, xp FROM users WHERE id = ?').get(id),
   createUser: async (name, email, hash) =>
     ({ id: db.prepare('INSERT INTO users (name, email, pass_hash) VALUES (?, ?, ?)').run(name, email, hash).lastInsertRowid }),
   listSubjects: async () => db.prepare(`
@@ -106,7 +119,7 @@ const q = {
       .run(setId, userId, game, score, accuracy);
   },
   getLeaderboard: async (setId, game) => db.prepare(`
-    SELECT u.name, MAX(s.score) AS best, MAX(s.accuracy) AS acc
+    SELECT u.name, u.xp, MAX(s.score) AS best, MAX(s.accuracy) AS acc
     FROM scores s JOIN users u ON u.id = s.user_id
     WHERE s.set_id = ? AND s.game = ? GROUP BY s.user_id ORDER BY best DESC LIMIT 20`).all(setId, game),
   getUserScores: async (userId) => db.prepare(`
@@ -118,6 +131,10 @@ const q = {
   addGenRequest: async (userId, subject, notes) => ({
     id: db.prepare('INSERT INTO generation_requests (user_id, subject, notes) VALUES (?, ?, ?)')
       .run(userId, subject, notes).lastInsertRowid }),
+  addXp: async (userId, amount) => {
+    db.prepare('UPDATE users SET xp = xp + ? WHERE id = ?').run(amount, userId);
+    return db.prepare('SELECT xp FROM users WHERE id = ?').get(userId).xp;
+  },
 };
 
 module.exports = { init, ...q };
