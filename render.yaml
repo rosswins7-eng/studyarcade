@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: studyarcade
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: TURSO_URL
+        sync: false
+      - key: TURSO_TOKEN
+        sync: false
+      - key: SESSION_SECRET
+        generateValue: true
