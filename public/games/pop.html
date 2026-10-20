@@ -102,6 +102,8 @@
     </div>
     <div id="review"></div>
     <button class="btn" onclick="location.reload()">↻ Play Again</button>
+    <a class="btn" id="btn-scoreboard" style="text-decoration:none" href="#">🏆 Scoreboard</a>
+    <a class="btn" id="btn-back" style="text-decoration:none" href="#">← Back</a>
   </div>
 </div>
 <script>
@@ -330,6 +332,8 @@ function endGame(){
   document.getElementById('screen-game').classList.add('hidden');
   const s = document.getElementById('screen-end');
   s.classList.remove('hidden');
+  document.getElementById('btn-scoreboard').href = '/#module/' + COMBINED_IDS[0] + '?game=' + GAME_ID;
+  document.getElementById('btn-back').href = '/#module/' + COMBINED_IDS[0];
   document.getElementById('finalscore').textContent = score;
   document.getElementById('finalacc').textContent = acc + '%';
   document.getElementById('finalsolved').textContent = solvedCount + '/' + attempted;
