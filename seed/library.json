@@ -1,0 +1,5927 @@
+[
+  {
+    "title": "Foundations & Research Methods",
+    "subject": "Psychology 101",
+    "module": "foundations-methods",
+    "description": "What psychology is, how psychologists study it, and how to spot a solid claim.",
+    "questions": [
+      {
+        "q": "Which approach explains behavior through unconscious drives and early childhood experience?",
+        "options": [
+          "Behaviorism",
+          "Psychoanalytic",
+          "Humanistic",
+          "Cognitive"
+        ],
+        "answer": 1,
+        "explain": "Freud's psychoanalytic approach centers unconscious drives and early childhood."
+      },
+      {
+        "q": "A researcher watches students in a cafeteria without interfering. This is:",
+        "options": [
+          "An experiment",
+          "Naturalistic observation",
+          "A case study",
+          "A survey"
+        ],
+        "answer": 1,
+        "explain": "Naturalistic observation means watching behavior in its natural setting without manipulating it."
+      },
+      {
+        "q": "In an experiment, the variable the researcher deliberately changes is the:",
+        "options": [
+          "Dependent variable",
+          "Confounding variable",
+          "Independent variable",
+          "Control variable"
+        ],
+        "answer": 2,
+        "explain": "The independent variable is manipulated; the dependent variable is measured."
+      },
+      {
+        "q": "Which correlation shows the strongest relationship?",
+        "options": [
+          "+0.20",
+          "-0.85",
+          "+0.60",
+          "0.00"
+        ],
+        "answer": 1,
+        "explain": "Strength is about distance from zero, not the sign: |-0.85| is the largest."
+      },
+      {
+        "q": "A single, deep study of one unusual patient is called a:",
+        "options": [
+          "Survey",
+          "Longitudinal study",
+          "Case study",
+          "Field experiment"
+        ],
+        "answer": 2,
+        "explain": "Case studies examine one person or group in depth — rich detail, weak generalizability."
+      },
+      {
+        "q": "Participants who unknowingly receive a fake treatment are in the:",
+        "options": [
+          "Experimental group",
+          "Placebo condition",
+          "Debriefing group",
+          "Random sample"
+        ],
+        "answer": 1,
+        "explain": "A placebo is an inert treatment; the placebo group is the comparison for expectancy effects."
+      },
+      {
+        "q": "Random assignment is used in experiments mainly to:",
+        "options": [
+          "Make the sample bigger",
+          "Equalize groups on outside variables",
+          "Guarantee honest answers",
+          "Speed up data collection"
+        ],
+        "answer": 1,
+        "explain": "Random assignment distributes individual differences evenly so the IV is the likely cause of differences."
+      },
+      {
+        "q": "The branch of psychology focused on mental processes like memory and problem-solving is:",
+        "options": [
+          "Cognitive psychology",
+          "Developmental psychology",
+          "Clinical psychology",
+          "Industrial psychology"
+        ],
+        "answer": 0,
+        "explain": "Cognitive psychology studies how people perceive, remember, think, and solve problems."
+      },
+      {
+        "q": "Which ethical rule requires explaining a study to participants afterward, especially after deception?",
+        "options": [
+          "Confidentiality",
+          "Informed consent",
+          "Debriefing",
+          "Debriefing is optional in all studies"
+        ],
+        "answer": 2,
+        "explain": "Debriefing explains the study's true purpose and clears up any deception."
+      },
+      {
+        "q": "Wilhelm Wundt is credited with:",
+        "options": [
+          "Founding behaviorism",
+          "Opening the first psychology laboratory (1879)",
+          "Creating the intelligence test",
+          "Discovering the unconscious"
+        ],
+        "answer": 1,
+        "explain": "Wundt opened the first psychology lab in Leipzig in 1879, marking psychology's start as a science."
+      }
+    ],
+    "rounds": [
+      {
+        "tag": "Foundations & Research Methods",
+        "title": "Foundations & Research Methods",
+        "desc": "What psychology is, how psychologists study it, and how to spot a solid claim.",
+        "count": 10,
+        "boss": false
+      }
+    ]
+  },
+  {
+    "title": "Freud & Psychoanalysis",
+    "subject": "Psychology 101",
+    "module": "freud-psychoanalysis",
+    "description": "Id, ego, superego; psychosexual stages; how Freud thought personality is built.",
+    "questions": [
+      {
+        "q": "According to Freud, the part of personality that operates on the pleasure principle is the:",
+        "options": [
+          "Ego",
+          "Superego",
+          "Id",
+          "Libido"
+        ],
+        "answer": 2,
+        "explain": "The id is present at birth and demands immediate gratification — the pleasure principle."
+      },
+      {
+        "q": "The ego operates on which principle?",
+        "options": [
+          "Pleasure principle",
+          "Reality principle",
+          "Morality principle",
+          "Nirvana principle"
+        ],
+        "answer": 1,
+        "explain": "The ego mediates between the id and reality, delaying gratification when needed."
+      },
+      {
+        "q": "The superego is best described as:",
+        "options": [
+          "The source of instincts",
+          "The conscience and moral ideals",
+          "The dream censor only",
+          "The conscious mind"
+        ],
+        "answer": 1,
+        "explain": "The superego holds internalized morals and ideals — it's where conscience lives."
+      },
+      {
+        "q": "Freud's first psychosexual stage, focused on feeding, is the:",
+        "options": [
+          "Anal stage",
+          "Phallic stage",
+          "Oral stage",
+          "Latency stage"
+        ],
+        "answer": 2,
+        "explain": "The oral stage (birth–~18 months) centers on the mouth: sucking and feeding."
+      },
+      {
+        "q": "During which stage does Freud say sexuality goes dormant and children focus on school and peers?",
+        "options": [
+          "Latency",
+          "Genital",
+          "Anal",
+          "Phallic"
+        ],
+        "answer": 0,
+        "explain": "Latency (roughly ages 6–puberty) is a quiet period — energy goes to skills and friendships."
+      },
+      {
+        "q": "The Oedipus complex occurs during which stage?",
+        "options": [
+          "Oral",
+          "Anal",
+          "Phallic",
+          "Genital"
+        ],
+        "answer": 2,
+        "explain": "In the phallic stage (ages 3–6), Freud claimed children desire the opposite-sex parent."
+      },
+      {
+        "q": "When an adult gets stuck at a psychosexual stage, Freud called it:",
+        "options": [
+          "Regression",
+          "Fixation",
+          "Repression",
+          "Sublimation"
+        ],
+        "answer": 1,
+        "explain": "Fixation is being stuck at a stage because of over- or under-gratification."
+      },
+      {
+        "q": "Freud's method of having patients say whatever comes to mind is:",
+        "options": [
+          "Dream analysis only",
+          "Free association",
+          "Hypnosis only",
+          "Transference"
+        ],
+        "answer": 1,
+        "explain": "Free association lets uncensored thoughts reveal unconscious material."
+      },
+      {
+        "q": "In therapy, when a patient redirects feelings about someone else onto the therapist, that's:",
+        "options": [
+          "Resistance",
+          "Transference",
+          "Catharsis",
+          "Projection"
+        ],
+        "answer": 1,
+        "explain": "Transference is redirecting feelings from a significant person onto the analyst."
+      },
+      {
+        "q": "Freud believed dreams were:",
+        "options": [
+          "Random neural noise",
+          "The royal road to the unconscious",
+          "Pure wish removal",
+          "Memories of past lives"
+        ],
+        "answer": 1,
+        "explain": "Freud called dreams 'the royal road to the unconscious' — wishes disguised in symbols."
+      },
+      {
+        "q": "The energy of the life instinct (libido) is said to drive which structure?",
+        "options": [
+          "Superego",
+          "Ego ideal",
+          "Id",
+          "Thanatos"
+        ],
+        "answer": 2,
+        "explain": "Libido is the psychic energy of the id's life instincts."
+      },
+      {
+        "q": "Freud's three levels of consciousness were the conscious, preconscious, and:",
+        "options": [
+          "Subconscious",
+          "Unconscious",
+          "Collective unconscious",
+          "Alter ego"
+        ],
+        "answer": 1,
+        "explain": "The unconscious holds repressed drives and memories outside awareness (note: 'subconscious' is not a Freudian term)."
+      }
+    ],
+    "rounds": [
+      {
+        "tag": "Freud & Psychoanalysis",
+        "title": "Freud & Psychoanalysis",
+        "desc": "Id, ego, superego; psychosexual stages; how Freud thought personality is built.",
+        "count": 12,
+        "boss": false
+      }
+    ]
+  },
+  {
+    "title": "Defense Mechanisms",
+    "subject": "Psychology 101",
+    "module": "defense-mechanisms",
+    "description": "The ego's toolkit: spot each defense from a real-life scenario.",
+    "questions": [
+      {
+        "q": "After bombing an exam, Maya insists the professor 'has it out for her' and never considers that she didn't study. She is blaming her own failure on someone else — actually she's attributing her shortcomings to others. This is:",
+        "options": [
+          "Rationalization",
+          "Projection",
+          "Displacement",
+          "Denial"
+        ],
+        "answer": 1,
+        "explain": "Projection: attributing your own unacceptable feelings or faults to someone else."
+      },
+      {
+        "q": "A man furious at his boss comes home and snaps at his dog. This is:",
+        "options": [
+          "Sublimation",
+          "Displacement",
+          "Reaction formation",
+          "Regression"
+        ],
+        "answer": 1,
+        "explain": "Displacement redirects an impulse toward a safer target."
+      },
+      {
+        "q": "An ex-smoker now lectures everyone about smoking and campaigns against it with unusual intensity. Freud would suspect:",
+        "options": [
+          "Reaction formation",
+          "Fixation",
+          "Identification",
+          "Intellectualization"
+        ],
+        "answer": 0,
+        "explain": "Reaction formation: expressing the exact opposite of an unacceptable urge."
+      },
+      {
+        "q": "A soldier recounts a traumatic battle in flat, purely factual detail, discussing strategy only. He is using:",
+        "options": [
+          "Denial",
+          "Intellectualization",
+          "Undoing",
+          "Somatization"
+        ],
+        "answer": 1,
+        "explain": "Intellectualization avoids painful feelings by focusing on abstract, factual analysis."
+      },
+      {
+        "q": "After a breakup, a student takes up boxing and channels everything into training. This healthy redirection is:",
+        "options": [
+          "Compensation",
+          "Sublimation",
+          "Fantasy",
+          "Introjection"
+        ],
+        "answer": 1,
+        "explain": "Sublimation channels unacceptable impulses into socially valued activities — Freud saw it as mature."
+      },
+      {
+        "q": "A four-year-old who was toilet-trained starts wetting the bed after a new sibling arrives. This is:",
+        "options": [
+          "Regression",
+          "Repression",
+          "Rationalization",
+          "Projection"
+        ],
+        "answer": 0,
+        "explain": "Regression: returning to behavior from an earlier developmental stage under stress."
+      },
+      {
+        "q": "A driver who caused an accident says 'well, the sun was in everyone's eyes, it could've happened to anybody.' This is:",
+        "options": [
+          "Rationalization",
+          "Denial",
+          "Displacement",
+          "Reaction formation"
+        ],
+        "answer": 0,
+        "explain": "Rationalization generates logical-sounding excuses to protect self-esteem."
+      },
+      {
+        "q": "A woman cannot remember a genuinely traumatic childhood event at all — the memory is simply gone from awareness. The mechanism is:",
+        "options": [
+          "Suppression only",
+          "Repression",
+          "Undoing",
+          "Identification"
+        ],
+        "answer": 1,
+        "explain": "Repression pushes threatening material out of conscious awareness entirely — Freud's foundational defense."
+      },
+      {
+        "q": "A patient refuses to accept a serious diagnosis, insisting the labs 'must have mixed up the samples,' week after week. This is:",
+        "options": [
+          "Denial",
+          "Regression",
+          "Projection",
+          "Sublimation"
+        ],
+        "answer": 0,
+        "explain": "Denial is refusing to accept a painful reality."
+      },
+      {
+        "q": "A shy student adopts the slang, style, and opinions of a popular athlete she admires, as if taking on his identity for protection. This is:",
+        "options": [
+          "Identification",
+          "Compensation",
+          "Fantasy",
+          "Undoing"
+        ],
+        "answer": 0,
+        "explain": "Identification: taking on the traits of someone more powerful or admired to bolster the self."
+      }
+    ],
+    "rounds": [
+      {
+        "tag": "Defense Mechanisms",
+        "title": "Defense Mechanisms",
+        "desc": "The ego's toolkit: spot each defense from a real-life scenario.",
+        "count": 10,
+        "boss": false
+      }
+    ]
+  },
+  {
+    "title": "Trait & Humanistic Personality",
+    "subject": "Psychology 101",
+    "module": "trait-humanistic",
+    "description": "The Big Five, Maslow, Rogers, and the self — plus the biases that distort how we see ourselves.",
+    "questions": [
+      {
+        "q": "The Big Five factor 'O' stands for:",
+        "options": [
+          "Optimism",
+          "Openness to experience",
+          "Orderliness",
+          "Outgoingness"
+        ],
+        "answer": 1,
+        "explain": "OCEAN: Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism."
+      },
+      {
+        "q": "Someone who is organized, dependable, and disciplined scores high in:",
+        "options": [
+          "Agreeableness",
+          "Conscientiousness",
+          "Neuroticism",
+          "Extraversion"
+        ],
+        "answer": 1,
+        "explain": "Conscientiousness covers self-discipline, planning, and dependability."
+      },
+      {
+        "q": "According to Maslow, the need at the very top of the hierarchy is:",
+        "options": [
+          "Esteem",
+          "Safety",
+          "Self-actualization",
+          "Belonging"
+        ],
+        "answer": 2,
+        "explain": "Self-actualization — fulfilling your potential — sits at the top, after basic needs are met."
+      },
+      {
+        "q": "Carl Rogers believed people flourish when they receive ___ from others.",
+        "options": [
+          "Strict discipline",
+          "Unconditional positive regard",
+          "Constant praise",
+          "Clear rules"
+        ],
+        "answer": 1,
+        "explain": "Unconditional positive regard — acceptance without conditions — lets the self-concept grow."
+      },
+      {
+        "q": "The gap between your actual self and your ideal self, in Rogers' terms, produces:",
+        "options": [
+          "Congruence",
+          "Incongruence",
+          "Self-efficacy",
+          "Flow"
+        ],
+        "answer": 1,
+        "explain": "Incongruence is the mismatch between self-concept and experience/ideal, producing anxiety."
+      },
+      {
+        "q": "Bandura's belief in your own ability to succeed at a task is called:",
+        "options": [
+          "Self-esteem",
+          "Self-efficacy",
+          "Locus of control",
+          "Self-concept"
+        ],
+        "answer": 1,
+        "explain": "Self-efficacy is task-specific confidence, built through mastery, modeling, and encouragement."
+      },
+      {
+        "q": "Rotter's 'locus of control': people who believe outcomes depend on their own actions have a(n):",
+        "options": [
+          "External locus",
+          "Internal locus",
+          "Fixed locus",
+          "Learned locus"
+        ],
+        "answer": 1,
+        "explain": "Internal locus = 'my choices drive outcomes'; external = 'luck and others decide.'"
+      },
+      {
+        "q": "The tendency to attribute your successes to yourself but your failures to outside forces is the:",
+        "options": [
+          "Fundamental attribution error",
+          "Self-serving bias",
+          "Halo effect",
+          "Actor-observer bias"
+        ],
+        "answer": 1,
+        "explain": "Self-serving bias protects self-esteem: wins are mine, losses are circumstances."
+      },
+      {
+        "q": "Feeling like a fraud who will be 'found out' despite real accomplishments is the:",
+        "options": [
+          "Imposter phenomenon",
+          "Spotlight effect",
+          "Dunning gap",
+          "Bystander effect"
+        ],
+        "answer": 0,
+        "explain": "The imposter phenomenon: high achievers who can't internalize their success."
+      },
+      {
+        "q": "BIRGing refers to:",
+        "options": [
+          "Blaming others for group failure",
+          "Basking in reflected glory of a successful group",
+          "Believing groups make better decisions",
+          "Bonding through shared hardship"
+        ],
+        "answer": 1,
+        "explain": "BIRGing = Basking In Reflected Glory — 'we won!' when your team wins, distance when it loses."
+      }
+    ],
+    "rounds": [
+      {
+        "tag": "Trait & Humanistic Personality",
+        "title": "Trait & Humanistic Personality",
+        "desc": "The Big Five, Maslow, Rogers, and the self — plus the biases that distort how we see ourselves.",
+        "count": 10,
+        "boss": false
+      }
+    ]
+  },
+  {
+    "title": "Object Relations & Closing the Gaps",
+    "subject": "Psychology 101",
+    "module": "object-relations-gaps",
+    "description": "Klein, Winnicott, Mahler — and the exam details students most often miss.",
+    "questions": [
+      {
+        "q": "Object relations theory shifts focus from Freud's drives to:",
+        "options": [
+          "Behavior and rewards",
+          "Early relationships with caregivers",
+          "Traits and genetics",
+          "Unconscious archetypes"
+        ],
+        "answer": 1,
+        "explain": "Object relations theorists argued relationships — especially with early caregivers — shape personality."
+      },
+      {
+        "q": "Melanie Klein is known for developing:",
+        "options": [
+          "Play therapy with children and object relations ideas",
+          "The hierarchy of needs",
+          "Classical conditioning",
+          "The Big Five"
+        ],
+        "answer": 0,
+        "explain": "Klein pioneered play therapy and argued infants form internal 'objects' from early experiences."
+      },
+      {
+        "q": "Winnicott's term for a blanket or toy that comforts a child separating from a caregiver is:",
+        "options": [
+          "Security object complex",
+          "Transitional object",
+          "Attachment anchor",
+          "Holding item"
+        ],
+        "answer": 1,
+        "explain": "A transitional object (like a blanket) helps the child bridge dependence and independence."
+      },
+      {
+        "q": "Winnicott's 'good enough mother' refers to a caregiver who:",
+        "options": [
+          "Never lets the child feel frustration",
+          "Is adequately responsive without being perfect",
+          "Follows strict feeding schedules",
+          "Prevents all separation anxiety"
+        ],
+        "answer": 1,
+        "explain": "'Good enough' care is responsive but imperfect — small frustrations help the child develop."
+      },
+      {
+        "q": "Margaret Mahler's theory centers on:",
+        "options": [
+          "Psychosexual stages",
+          "Separation-individuation in the first years of life",
+          "Adult midlife crises",
+          "Dream symbolism"
+        ],
+        "answer": 1,
+        "explain": "Mahler described how infants psychologically 'hatch' from symbiosis into separate selves."
+      },
+      {
+        "q": "In Mahler's phases, the period where infant and mother are experienced as one unit is:",
+        "options": [
+          "Differentiation",
+          "Practicing",
+          "Symbiosis",
+          "Rapprochement"
+        ],
+        "answer": 2,
+        "explain": "Symbiosis (roughly months 1–5): the infant experiences no boundary between self and mother."
+      },
+      {
+        "q": "A toddler who ventures off to explore, then returns to the caregiver for emotional 'refueling,' is in Mahler's:",
+        "options": [
+          "Rapprochement phase",
+          "Symbiotic phase",
+          "Anal phase",
+          "Latency phase"
+        ],
+        "answer": 0,
+        "explain": "Rapprochement: toddlers oscillate between independence and needing the caregiver close."
+      },
+      {
+        "q": "Anna Freud is best known in personality theory for:",
+        "options": [
+          "Founding humanistic psychology",
+          "Systematically cataloging defense mechanisms",
+          "Creating projective tests",
+          "Rejecting psychoanalysis entirely"
+        ],
+        "answer": 1,
+        "explain": "Anna Freud's 'The Ego and the Mechanisms of Defence' (1936) organized the defense mechanisms."
+      },
+      {
+        "q": "Freud's genital stage begins at:",
+        "options": [
+          "Age 2",
+          "Age 6",
+          "Puberty",
+          "Age 40"
+        ],
+        "answer": 2,
+        "explain": "The genital stage starts at puberty, when sexual interests mature toward adult relationships."
+      },
+      {
+        "q": "A patient unconsciously repeating childhood relationship patterns with the therapist is evidence of transference — the concept was central to which theorist's method?",
+        "options": [
+          "Skinner",
+          "Freud",
+          "Maslow",
+          "Eysenck"
+        ],
+        "answer": 1,
+        "explain": "Freud made transference a core tool of psychoanalytic treatment."
+      }
+    ],
+    "rounds": [
+      {
+        "tag": "Object Relations & Closing the Gaps",
+        "title": "Object Relations & Closing the Gaps",
+        "desc": "Klein, Winnicott, Mahler — and the exam details students most often miss.",
+        "count": 10,
+        "boss": false
+      }
+    ]
+  },
+  {
+    "title": "Social Psychology Essentials",
+    "subject": "Psychology 101",
+    "module": "social-psychology",
+    "description": "Attribution, conformity, obedience, and why groups change what we do.",
+    "questions": [
+      {
+        "q": "Overestimating personality and underestimating the situation when judging others is the:",
+        "options": [
+          "Self-serving bias",
+          "Fundamental attribution error",
+          "Just-world hypothesis",
+          "Groupthink"
+        ],
+        "answer": 1,
+        "explain": "The fundamental attribution error: we blame their character, excuse our own with circumstances."
+      },
+      {
+        "q": "In Milgram's obedience studies, about what share of participants delivered the maximum shock?",
+        "options": [
+          "About 10%",
+          "About 35%",
+          "About 65%",
+          "About 95%"
+        ],
+        "answer": 2,
+        "explain": "Roughly 65% went to the maximum 450V when prompted by the experimenter."
+      },
+      {
+        "q": "Asch's line studies demonstrated:",
+        "options": [
+          "Obedience to authority",
+          "Conformity to a unanimous group",
+          "Diffusion of responsibility",
+          "Social loafing"
+        ],
+        "answer": 1,
+        "explain": "Asch showed people will give an obviously wrong answer to match a unanimous group."
+      },
+      {
+        "q": "The presence of others making each person feel less responsible for helping is:",
+        "options": [
+          "Social facilitation",
+          "Diffusion of responsibility",
+          "Deindividuation",
+          "Polarization"
+        ],
+        "answer": 1,
+        "explain": "Diffusion of responsibility underlies the bystander effect — more witnesses, less help."
+      },
+      {
+        "q": "When being watched improves performance on easy tasks but hurts on hard ones, that's:",
+        "options": [
+          "Social loafing",
+          "Social facilitation",
+          "Groupthink",
+          "Compliance"
+        ],
+        "answer": 1,
+        "explain": "Social facilitation: arousal from an audience boosts dominant (well-learned) responses."
+      },
+      {
+        "q": "A group that suppresses dissent to preserve harmony, making a flawed decision, shows:",
+        "options": [
+          "Group polarization",
+          "Groupthink",
+          "Social loafing",
+          "Pluralistic ignorance"
+        ],
+        "answer": 1,
+        "explain": "Groupthink: cohesion and pressure for unanimity override realistic appraisal."
+      },
+      {
+        "q": "Cognitive dissonance is the discomfort from:",
+        "options": [
+          "Forgetting an appointment",
+          "Holding two conflicting attitudes or acting against your beliefs",
+          "Being in a large crowd",
+          "Failing a test"
+        ],
+        "answer": 1,
+        "explain": "Festinger: inconsistency between attitudes and behavior creates pressure to change one of them."
+      },
+      {
+        "q": "The foot-in-the-door technique works by:",
+        "options": [
+          "Starting with a huge request",
+          "Getting a small yes first, then asking for more",
+          "Offering a discount",
+          "Using fear appeals"
+        ],
+        "answer": 1,
+        "explain": "A small initial agreement makes a larger related request more likely to succeed."
+      },
+      {
+        "q": "Prejudice is best defined as a(n):",
+        "options": [
+          "Behavior toward a group",
+          "Unjustified negative attitude toward a group",
+          "Belief about a group only",
+          "Legal form of discrimination"
+        ],
+        "answer": 1,
+        "explain": "Prejudice = attitude; stereotype = belief; discrimination = behavior."
+      },
+      {
+        "q": "Thinking your own good traits explain your success but your rival's success is luck is an example of:",
+        "options": [
+          "Actor-observer harmony",
+          "Ultimate attribution error in groups",
+          "Self-serving bias",
+          "Mere exposure"
+        ],
+        "answer": 2,
+        "explain": "Self-serving bias — the same pattern, applied to the comparison in the question."
+      }
+    ],
+    "rounds": [
+      {
+        "tag": "Social Psychology Essentials",
+        "title": "Social Psychology Essentials",
+        "desc": "Attribution, conformity, obedience, and why groups change what we do.",
+        "count": 10,
+        "boss": false
+      }
+    ]
+  },
+  {
+    "title": "Cells & Energy",
+    "subject": "Biology 101",
+    "module": "cells-energy",
+    "description": "Organelles, membranes, photosynthesis, and cellular respiration.",
+    "questions": [
+      {
+        "q": "Which organelle produces most of a cell's ATP?",
+        "options": [
+          "Nucleus",
+          "Ribosome",
+          "Mitochondrion",
+          "Golgi apparatus"
+        ],
+        "answer": 2,
+        "explain": "Mitochondria run cellular respiration, producing most ATP."
+      },
+      {
+        "q": "The cell membrane is mainly built from a bilayer of:",
+        "options": [
+          "Proteins",
+          "Phospholipids",
+          "Carbohydrates",
+          "Nucleic acids"
+        ],
+        "answer": 1,
+        "explain": "The phospholipid bilayer forms the membrane's basic structure."
+      },
+      {
+        "q": "Photosynthesis takes place in the:",
+        "options": [
+          "Mitochondrion",
+          "Chloroplast",
+          "Vacuole",
+          "Lysosome"
+        ],
+        "answer": 1,
+        "explain": "Chloroplasts capture light energy to build sugars."
+      },
+      {
+        "q": "Which molecule is the cell's main energy currency?",
+        "options": [
+          "DNA",
+          "Glucose",
+          "ATP",
+          "NADH"
+        ],
+        "answer": 2,
+        "explain": "ATP stores and releases energy for cellular work."
+      },
+      {
+        "q": "Movement of water across a membrane from low to high solute concentration is:",
+        "options": [
+          "Diffusion",
+          "Osmosis",
+          "Active transport",
+          "Endocytosis"
+        ],
+        "answer": 1,
+        "explain": "Osmosis is water's diffusion across a selectively permeable membrane."
+      },
+      {
+        "q": "Which structure makes proteins?",
+        "options": [
+          "Ribosome",
+          "Lysosome",
+          "Cytoskeleton",
+          "Nucleolus only"
+        ],
+        "answer": 0,
+        "explain": "Ribosomes translate mRNA into proteins."
+      },
+      {
+        "q": "Plant cells differ from animal cells because plant cells have:",
+        "options": [
+          "A nucleus",
+          "Cell walls and chloroplasts",
+          "Ribosomes",
+          "Mitochondria"
+        ],
+        "answer": 1,
+        "explain": "Cell walls and chloroplasts are found in plant cells, not animal cells."
+      },
+      {
+        "q": "The overall equation for cellular respiration produces:",
+        "options": [
+          "Oxygen and glucose",
+          "Carbon dioxide, water, and ATP",
+          "Lactic acid only",
+          "Carbon monoxide"
+        ],
+        "answer": 1,
+        "explain": "Glucose + oxygen → carbon dioxide + water + ATP energy."
+      },
+      {
+        "q": "Enzymes speed up reactions by:",
+        "options": [
+          "Raising activation energy",
+          "Lowering activation energy",
+          "Adding heat",
+          "Changing the products"
+        ],
+        "answer": 1,
+        "explain": "Enzymes lower the activation energy needed for a reaction."
+      },
+      {
+        "q": "A solution with more solute than a cell, causing the cell to shrink, is:",
+        "options": [
+          "Hypotonic",
+          "Isotonic",
+          "Hypertonic",
+          "Neutral"
+        ],
+        "answer": 2,
+        "explain": "Hypertonic solutions draw water out of the cell."
+      }
+    ],
+    "rounds": [
+      {
+        "tag": "Cells & Energy",
+        "title": "Cells & Energy",
+        "desc": "Organelles, membranes, photosynthesis, and cellular respiration.",
+        "count": 10,
+        "boss": false
+      }
+    ]
+  },
+  {
+    "title": "Genetics & Heredity",
+    "subject": "Biology 101",
+    "module": "genetics-heredity",
+    "description": "DNA, Punnett squares, inheritance patterns, and mutations.",
+    "questions": [
+      {
+        "q": "The shape of DNA is a:",
+        "options": [
+          "Single helix",
+          "Double helix",
+          "Triple helix",
+          "Flat sheet"
+        ],
+        "answer": 1,
+        "explain": "Watson and Crick's model: DNA is a double helix."
+      },
+      {
+        "q": "In DNA, adenine (A) pairs with:",
+        "options": [
+          "Cytosine",
+          "Guanine",
+          "Thymine",
+          "Uracil"
+        ],
+        "answer": 2,
+        "explain": "Base pairing: A–T and C–G in DNA."
+      },
+      {
+        "q": "A genotype of two different alleles, like Bb, is called:",
+        "options": [
+          "Homozygous dominant",
+          "Heterozygous",
+          "Homozygous recessive",
+          "Hemizygous"
+        ],
+        "answer": 1,
+        "explain": "Heterozygous means two different alleles for a gene."
+      },
+      {
+        "q": "Crossing Bb × Bb, roughly what fraction of offspring show the recessive trait?",
+        "options": [
+          "0%",
+          "25%",
+          "50%",
+          "75%"
+        ],
+        "answer": 1,
+        "explain": "Bb × Bb gives 1 BB : 2 Bb : 1 bb — 25% show the recessive phenotype."
+      },
+      {
+        "q": "The process of copying DNA into RNA is:",
+        "options": [
+          "Translation",
+          "Transcription",
+          "Replication",
+          "Mutation"
+        ],
+        "answer": 1,
+        "explain": "Transcription makes RNA from a DNA template; translation builds protein."
+      },
+      {
+        "q": "Which RNA carries amino acids to the ribosome?",
+        "options": [
+          "mRNA",
+          "rRNA",
+          "tRNA",
+          "snRNA"
+        ],
+        "answer": 2,
+        "explain": "Transfer RNA (tRNA) brings amino acids matched to codons."
+      },
+      {
+        "q": "A change in a DNA sequence is called a:",
+        "options": [
+          "Crossing over",
+          "Mutation",
+          "Transcription error only",
+          "Allele drift"
+        ],
+        "answer": 1,
+        "explain": "Mutations are any changes to the DNA sequence."
+      },
+      {
+        "q": "Humans normally have how many chromosomes in a body cell?",
+        "options": [
+          "23",
+          "46",
+          "92",
+          "44"
+        ],
+        "answer": 1,
+        "explain": "46 chromosomes (23 pairs) in a typical human somatic cell."
+      },
+      {
+        "q": "An allele that masks another allele is:",
+        "options": [
+          "Recessive",
+          "Dominant",
+          "Codominant",
+          "Incomplete"
+        ],
+        "answer": 1,
+        "explain": "Dominant alleles are expressed even with one copy."
+      },
+      {
+        "q": "When both alleles show up fully in the phenotype (like AB blood), it's:",
+        "options": [
+          "Incomplete dominance",
+          "Codominance",
+          "Recessiveness",
+          "Epistasis"
+        ],
+        "answer": 1,
+        "explain": "Codominance: both traits appear, e.g., AB blood type."
+      }
+    ],
+    "rounds": [
+      {
+        "tag": "Genetics & Heredity",
+        "title": "Genetics & Heredity",
+        "desc": "DNA, Punnett squares, inheritance patterns, and mutations.",
+        "count": 10,
+        "boss": false
+      }
+    ]
+  },
+  {
+    "title": "Evolution & Natural Selection",
+    "subject": "Biology 101",
+    "module": "evolution",
+    "description": "Darwin, adaptation, speciation, and evidence for evolution.",
+    "questions": [
+      {
+        "q": "Natural selection acts on which level?",
+        "options": [
+          "Individual genes directly",
+          "Phenotypes of individuals",
+          "Entire species at once",
+          "Ecosystems"
+        ],
+        "answer": 1,
+        "explain": "Selection acts on phenotypes; evolution is the change in allele frequencies that follows."
+      },
+      {
+        "q": "Structures with the same origin but different functions (bat wing, human arm) are:",
+        "options": [
+          "Analogous",
+          "Homologous",
+          "Vestigial",
+          "Convergent"
+        ],
+        "answer": 1,
+        "explain": "Homologous structures share ancestry; analogous ones share function only."
+      },
+      {
+        "q": "A trait that improves survival and reproduction is an:",
+        "options": [
+          "Adaptation",
+          "Mutation only",
+          "Fossil",
+          "Allele"
+        ],
+        "answer": 0,
+        "explain": "Adaptations are heritable traits shaped by selection that aid fitness."
+      },
+      {
+        "q": "When two populations can no longer interbreed, they are separate:",
+        "options": [
+          "Families",
+          "Species",
+          "Genera",
+          "Communities"
+        ],
+        "answer": 1,
+        "explain": "Reproductive isolation defines separate species under the biological species concept."
+      },
+      {
+        "q": "Genetic drift has the biggest effect in:",
+        "options": [
+          "Large populations",
+          "Small populations",
+          "Stable environments",
+          "Asexual species only"
+        ],
+        "answer": 1,
+        "explain": "Random changes matter most when the population is small."
+      },
+      {
+        "q": "The raw material that natural selection works on comes from:",
+        "options": [
+          "Acquired traits",
+          "Heritable variation",
+          "Fossils",
+          "Climate"
+        ],
+        "answer": 1,
+        "explain": "Without heritable variation, selection has nothing to act on."
+      },
+      {
+        "q": "Darwin developed his theory partly from observing finches on the:",
+        "options": [
+          "Hawaiian Islands",
+          "Galápagos Islands",
+          "Canary Islands",
+          "Azores"
+        ],
+        "answer": 1,
+        "explain": "Galápagos finches' beaks varied by island and food source."
+      },
+      {
+        "q": "A structure with no current function, like the human appendix, is called:",
+        "options": [
+          "Homologous",
+          "Vestigial",
+          "Analogous",
+          "Adaptive"
+        ],
+        "answer": 1,
+        "explain": "Vestigial structures are reduced remnants of ancestral features."
+      }
+    ],
+    "rounds": [
+      {
+        "tag": "Evolution & Natural Selection",
+        "title": "Evolution & Natural Selection",
+        "desc": "Darwin, adaptation, speciation, and evidence for evolution.",
+        "count": 8,
+        "boss": false
+      }
+    ]
+  },
+  {
+    "title": "Ecology Basics",
+    "subject": "Biology 101",
+    "module": "ecology",
+    "description": "Food webs, cycles, populations, and how organisms interact.",
+    "questions": [
+      {
+        "q": "Organisms that make their own food are called:",
+        "options": [
+          "Consumers",
+          "Producers",
+          "Decomposers",
+          "Predators"
+        ],
+        "answer": 1,
+        "explain": "Producers (autotrophs) capture energy, usually by photosynthesis."
+      },
+      {
+        "q": "Roughly how much energy transfers from one trophic level to the next?",
+        "options": [
+          "90%",
+          "50%",
+          "10%",
+          "1%"
+        ],
+        "answer": 2,
+        "explain": "The 10% rule: most energy is lost as heat at each level."
+      },
+      {
+        "q": "A relationship where both species benefit is:",
+        "options": [
+          "Parasitism",
+          "Commensalism",
+          "Mutualism",
+          "Competition"
+        ],
+        "answer": 2,
+        "explain": "Mutualism benefits both partners."
+      },
+      {
+        "q": "The maximum population an environment can support long-term is its:",
+        "options": [
+          "Biotic potential",
+          "Carrying capacity",
+          "Limiting factor",
+          "Density"
+        ],
+        "answer": 1,
+        "explain": "Carrying capacity is set by resources like food, water, and space."
+      },
+      {
+        "q": "Bacteria that break down dead matter and return nutrients to soil are:",
+        "options": [
+          "Producers",
+          "Primary consumers",
+          "Decomposers",
+          "Apex predators"
+        ],
+        "answer": 2,
+        "explain": "Decomposers recycle nutrients back into the ecosystem."
+      },
+      {
+        "q": "Which cycle relies heavily on bacteria to fix an atmospheric gas into usable form?",
+        "options": [
+          "Water cycle",
+          "Carbon cycle",
+          "Nitrogen cycle",
+          "Phosphorus cycle"
+        ],
+        "answer": 2,
+        "explain": "Nitrogen-fixing bacteria convert N₂ into ammonia plants can use."
+      },
+      {
+        "q": "When a predator and prey compete over the same limited resource, that's:",
+        "options": [
+          "Mutualism",
+          "Interspecific competition",
+          "Commensalism",
+          "Succession"
+        ],
+        "answer": 1,
+        "explain": "Competition between different species is interspecific."
+      },
+      {
+        "q": "The first species to colonize bare rock after a disturbance are:",
+        "options": [
+          "Climax species",
+          "Pioneer species",
+          "Keystone species",
+          "Invasive species"
+        ],
+        "answer": 1,
+        "explain": "Pioneer species start ecological succession on bare surfaces."
+      }
+    ],
+    "rounds": [
+      {
+        "tag": "Ecology Basics",
+        "title": "Ecology Basics",
+        "desc": "Food webs, cycles, populations, and how organisms interact.",
+        "count": 8,
+        "boss": false
+      }
+    ]
+  },
+  {
+    "title": "Atoms & the Periodic Table",
+    "subject": "Chemistry 101",
+    "module": "atoms-periodic",
+    "description": "Subatomic particles, atomic numbers, groups, and periods.",
+    "questions": [
+      {
+        "q": "The atomic number of an element equals its number of:",
+        "options": [
+          "Neutrons",
+          "Protons",
+          "Electrons in the outer shell only",
+          "Isotopes"
+        ],
+        "answer": 1,
+        "explain": "Atomic number = proton count, which defines the element."
+      },
+      {
+        "q": "Which particle has a negative charge?",
+        "options": [
+          "Proton",
+          "Neutron",
+          "Electron",
+          "Nucleus"
+        ],
+        "answer": 2,
+        "explain": "Electrons carry a −1 charge; protons +1; neutrons 0."
+      },
+      {
+        "q": "Atoms of the same element with different numbers of neutrons are:",
+        "options": [
+          "Ions",
+          "Isotopes",
+          "Molecules",
+          "Allotropes"
+        ],
+        "answer": 1,
+        "explain": "Isotopes differ in neutrons, so they differ in mass."
+      },
+      {
+        "q": "Elements in the same column of the periodic table share:",
+        "options": [
+          "The same mass",
+          "Similar chemical properties",
+          "The same period",
+          "Identical atomic numbers"
+        ],
+        "answer": 1,
+        "explain": "Groups (columns) share valence-electron patterns and similar behavior."
+      },
+      {
+        "q": "How many electrons can the first shell hold?",
+        "options": [
+          "2",
+          "8",
+          "18",
+          "32"
+        ],
+        "answer": 0,
+        "explain": "The first shell holds a maximum of 2 electrons."
+      },
+      {
+        "q": "Sodium (Na) has atomic number 11. A neutral sodium atom has how many electrons?",
+        "options": [
+          "10",
+          "11",
+          "12",
+          "23"
+        ],
+        "answer": 1,
+        "explain": "Neutral atoms have equal protons and electrons: 11."
+      },
+      {
+        "q": "Which group contains the highly reactive alkali metals?",
+        "options": [
+          "Group 2",
+          "Group 17",
+          "Group 1",
+          "Group 18"
+        ],
+        "answer": 2,
+        "explain": "Group 1 (except hydrogen) are the alkali metals."
+      },
+      {
+        "q": "The noble gases are known for being:",
+        "options": [
+          "Highly reactive",
+          "Mostly unreactive/inert",
+          "All liquids",
+          "Metals"
+        ],
+        "answer": 1,
+        "explain": "Full outer shells make noble gases very unreactive."
+      },
+      {
+        "q": "An atom that gains or loses electrons becomes a(n):",
+        "options": [
+          "Isotope",
+          "Ion",
+          "Molecule",
+          "Compound"
+        ],
+        "answer": 1,
+        "explain": "Ions are charged atoms (or groups of atoms)."
+      },
+      {
+        "q": "The mass number equals protons plus:",
+        "options": [
+          "Electrons",
+          "Neutrons",
+          "Valence electrons",
+          "Shells"
+        ],
+        "answer": 1,
+        "explain": "Mass number = protons + neutrons."
+      }
+    ],
+    "rounds": [
+      {
+        "tag": "Atoms & the Periodic Table",
+        "title": "Atoms & the Periodic Table",
+        "desc": "Subatomic particles, atomic numbers, groups, and periods.",
+        "count": 10,
+        "boss": false
+      }
+    ]
+  },
+  {
+    "title": "Bonding & Reactions",
+    "subject": "Chemistry 101",
+    "module": "bonding-reactions",
+    "description": "Ionic vs covalent bonds, balancing equations, and reaction types.",
+    "questions": [
+      {
+        "q": "An ionic bond forms by:",
+        "options": [
+          "Sharing electrons",
+          "Transferring electrons",
+          "Splitting atoms",
+          "Hydrogen attraction"
+        ],
+        "answer": 1,
+        "explain": "Ionic bonds: electrons transfer, typically from a metal to a nonmetal."
+      },
+      {
+        "q": "A covalent bond involves:",
+        "options": [
+          "Transferring electrons",
+          "Sharing electrons",
+          "Free electrons in a sea",
+          "Nuclear fusion"
+        ],
+        "answer": 1,
+        "explain": "Covalent bonds share electron pairs between atoms."
+      },
+      {
+        "q": "The chemical formula H₂O tells you each molecule has:",
+        "options": [
+          "2 hydrogen and 1 oxygen atom",
+          "1 hydrogen and 2 oxygen atoms",
+          "2 of everything",
+          "Ionic charges"
+        ],
+        "answer": 0,
+        "explain": "Subscripts count atoms: H₂O = two H, one O."
+      },
+      {
+        "q": "In a balanced equation, atoms must be:",
+        "options": [
+          "Created on the product side",
+          "Equal in number on both sides",
+          "Doubled",
+          "Only gases"
+        ],
+        "answer": 1,
+        "explain": "Conservation of mass: same atoms in, same atoms out."
+      },
+      {
+        "q": "A reaction that releases heat is:",
+        "options": [
+          "Endothermic",
+          "Exothermic",
+          "Isothermic",
+          "Catalytic"
+        ],
+        "answer": 1,
+        "explain": "Exothermic reactions give off energy, usually as heat."
+      },
+      {
+        "q": "The pH scale measures:",
+        "options": [
+          "Temperature",
+          "Acidity/basicity",
+          "Pressure",
+          "Density"
+        ],
+        "answer": 1,
+        "explain": "pH < 7 acidic, 7 neutral, > 7 basic."
+      },
+      {
+        "q": "Which is a sign a chemical reaction occurred?",
+        "options": [
+          "Melting ice",
+          "Color change and gas bubbles",
+          "Cutting paper",
+          "Dissolving salt with no change"
+        ],
+        "answer": 1,
+        "explain": "Color change, gas, precipitate, or temperature change signal a reaction."
+      },
+      {
+        "q": "A catalyst speeds a reaction by:",
+        "options": [
+          "Being consumed",
+          "Lowering activation energy",
+          "Adding mass",
+          "Raising temperature only"
+        ],
+        "answer": 1,
+        "explain": "Catalysts lower activation energy and are not consumed."
+      },
+      {
+        "q": "Table salt (NaCl) is held together by which bond type?",
+        "options": [
+          "Covalent",
+          "Ionic",
+          "Hydrogen",
+          "Metallic"
+        ],
+        "answer": 1,
+        "explain": "Sodium transfers an electron to chlorine: a classic ionic compound."
+      },
+      {
+        "q": "Water molecules stick to each other mainly through:",
+        "options": [
+          "Ionic bonds",
+          "Hydrogen bonds",
+          "Nuclear bonds",
+          "Metallic bonds"
+        ],
+        "answer": 1,
+        "explain": "Hydrogen bonds between water molecules give water its cohesion."
+      }
+    ],
+    "rounds": [
+      {
+        "tag": "Bonding & Reactions",
+        "title": "Bonding & Reactions",
+        "desc": "Ionic vs covalent bonds, balancing equations, and reaction types.",
+        "count": 10,
+        "boss": false
+      }
+    ]
+  },
+  {
+    "title": "Acids, Bases & Solutions",
+    "subject": "Chemistry 101",
+    "module": "acids-solutions",
+    "description": "pH in daily life, neutralization, concentration, and mixtures.",
+    "questions": [
+      {
+        "q": "Pure water has a pH of:",
+        "options": [
+          "0",
+          "1",
+          "7",
+          "14"
+        ],
+        "answer": 2,
+        "explain": "pH 7 is neutral — pure water is neither acidic nor basic."
+      },
+      {
+        "q": "Lemon juice, with a pH around 2, is:",
+        "options": [
+          "Strongly basic",
+          "Acidic",
+          "Neutral",
+          "A buffer"
+        ],
+        "answer": 1,
+        "explain": "pH below 7 means acidic."
+      },
+      {
+        "q": "Mixing an acid and a base produces water and a salt in a ___ reaction.",
+        "options": [
+          "Combustion",
+          "Neutralization",
+          "Oxidation only",
+          "Precipitation only"
+        ],
+        "answer": 1,
+        "explain": "Neutralization: acid + base → salt + water."
+      },
+      {
+        "q": "The substance dissolved in a solution is the:",
+        "options": [
+          "Solvent",
+          "Solute",
+          "Mixture base",
+          "Catalyst"
+        ],
+        "answer": 1,
+        "explain": "Solute dissolves in the solvent (the larger amount)."
+      },
+      {
+        "q": "In salt water, water is the:",
+        "options": [
+          "Solute",
+          "Solvent",
+          "Precipitate",
+          "Acid"
+        ],
+        "answer": 1,
+        "explain": "Water does the dissolving, so it is the solvent."
+      },
+      {
+        "q": "A solution that cannot dissolve any more solute at that temperature is:",
+        "options": [
+          "Dilute",
+          "Saturated",
+          "Unsaturated",
+          "Supersaturated always"
+        ],
+        "answer": 1,
+        "explain": "Saturated = holding the maximum dissolved solute at equilibrium."
+      },
+      {
+        "q": "Which would increase how fast a solid dissolves in water?",
+        "options": [
+          "Cooling it",
+          "Stirring and crushing the solid",
+          "Using bigger chunks",
+          "Leaving it still"
+        ],
+        "answer": 1,
+        "explain": "Stirring and more surface area speed dissolving."
+      },
+      {
+        "q": "Baking soda is commonly used as a mild:",
+        "options": [
+          "Acid",
+          "Base",
+          "Salt only",
+          "Solvent"
+        ],
+        "answer": 1,
+        "explain": "Sodium bicarbonate is a weak base — it neutralizes acids."
+      }
+    ],
+    "rounds": [
+      {
+        "tag": "Acids, Bases & Solutions",
+        "title": "Acids, Bases & Solutions",
+        "desc": "pH in daily life, neutralization, concentration, and mixtures.",
+        "count": 8,
+        "boss": false
+      }
+    ]
+  },
+  {
+    "title": "Colonial Era & Revolution",
+    "subject": "AP US History",
+    "module": "colonial-revolution",
+    "description": "Colonies, taxation, independence, and the Constitution.",
+    "questions": [
+      {
+        "q": "The Declaration of Independence was adopted in:",
+        "options": [
+          "1775",
+          "1776",
+          "1781",
+          "1787"
+        ],
+        "answer": 1,
+        "explain": "Adopted July 4, 1776, primarily authored by Thomas Jefferson."
+      },
+      {
+        "q": "The British tax on printed materials that angered colonists was the:",
+        "options": [
+          "Tea Act",
+          "Stamp Act",
+          "Sugar Act",
+          "Townshend Acts"
+        ],
+        "answer": 1,
+        "explain": "The Stamp Act (1765) taxed printed goods and sparked 'no taxation without representation.'"
+      },
+      {
+        "q": "The first battles of the Revolutionary War were at:",
+        "options": [
+          "Yorktown",
+          "Saratoga",
+          "Lexington and Concord",
+          "Gettysburg"
+        ],
+        "answer": 2,
+        "explain": "Lexington and Concord, April 1775 — 'the shot heard round the world.'"
+      },
+      {
+        "q": "The Constitution was written in which year?",
+        "options": [
+          "1776",
+          "1783",
+          "1787",
+          "1791"
+        ],
+        "answer": 2,
+        "explain": "The Constitutional Convention met in Philadelphia in 1787."
+      },
+      {
+        "q": "The Bill of Rights consists of the first ___ amendments.",
+        "options": [
+          "5",
+          "10",
+          "12",
+          "27"
+        ],
+        "answer": 1,
+        "explain": "The first ten amendments, ratified in 1791, protect individual liberties."
+      },
+      {
+        "q": "The system that prevents any one branch from dominating is:",
+        "options": [
+          "Federalism",
+          "Checks and balances",
+          "Popular sovereignty",
+          "Judicial review"
+        ],
+        "answer": 1,
+        "explain": "Checks and balances let each branch limit the others."
+      },
+      {
+        "q": "The turning-point battle that convinced France to ally with America was:",
+        "options": [
+          "Bunker Hill",
+          "Saratoga",
+          "Trenton",
+          "Yorktown"
+        ],
+        "answer": 1,
+        "explain": "Saratoga (1777) proved the Americans could win, bringing French support."
+      },
+      {
+        "q": "The war effectively ended with the British surrender at:",
+        "options": [
+          "Yorktown",
+          "Boston",
+          "Charleston",
+          "Savannah"
+        ],
+        "answer": 0,
+        "explain": "Cornwallis surrendered at Yorktown in 1781."
+      }
+    ],
+    "rounds": [
+      {
+        "tag": "Colonial Era & Revolution",
+        "title": "Colonial Era & Revolution",
+        "desc": "Colonies, taxation, independence, and the Constitution.",
+        "count": 8,
+        "boss": false
+      }
+    ]
+  },
+  {
+    "title": "Civil War & Reconstruction",
+    "subject": "AP US History",
+    "module": "civil-war",
+    "description": "Slavery, secession, emancipation, and rebuilding the Union.",
+    "questions": [
+      {
+        "q": "The Civil War began in:",
+        "options": [
+          "1859",
+          "1861",
+          "1863",
+          "1865"
+        ],
+        "answer": 1,
+        "explain": "Fighting began at Fort Sumter in April 1861."
+      },
+      {
+        "q": "The Emancipation Proclamation freed enslaved people in:",
+        "options": [
+          "All US states",
+          "States in rebellion",
+          "Border states only",
+          "The District of Columbia only"
+        ],
+        "answer": 1,
+        "explain": "Lincoln's 1863 proclamation applied to Confederate states in rebellion."
+      },
+      {
+        "q": "Which amendment abolished slavery nationwide?",
+        "options": [
+          "13th",
+          "14th",
+          "15th",
+          "19th"
+        ],
+        "answer": 0,
+        "explain": "The 13th Amendment (1865) abolished slavery."
+      },
+      {
+        "q": "The amendment granting citizenship and equal protection is the:",
+        "options": [
+          "13th",
+          "14th",
+          "15th",
+          "1st"
+        ],
+        "answer": 1,
+        "explain": "The 14th Amendment (1868) defines citizenship and equal protection."
+      },
+      {
+        "q": "The bloodiest single day of the war was at:",
+        "options": [
+          "Gettysburg",
+          "Antietam",
+          "Shiloh",
+          "Vicksburg"
+        ],
+        "answer": 1,
+        "explain": "Antietam (1862) remains the bloodiest single day in US military history."
+      },
+      {
+        "q": "The Union general who accepted Lee's surrender was:",
+        "options": [
+          "Sherman",
+          "Grant",
+          "McClellan",
+          "Meade"
+        ],
+        "answer": 1,
+        "explain": "Ulysses S. Grant accepted the surrender at Appomattox in 1865."
+      },
+      {
+        "q": "The 15th Amendment addressed:",
+        "options": [
+          "Slavery",
+          "Voting rights regardless of race",
+          "Income tax",
+          "Women's suffrage"
+        ],
+        "answer": 1,
+        "explain": "Ratified 1870, it barred denying the vote based on race (for men)."
+      },
+      {
+        "q": "President Lincoln was assassinated in:",
+        "options": [
+          "1863",
+          "1864",
+          "1865",
+          "1866"
+        ],
+        "answer": 2,
+        "explain": "Lincoln was shot by John Wilkes Booth in April 1865, days after the war ended."
+      }
+    ],
+    "rounds": [
+      {
+        "tag": "Civil War & Reconstruction",
+        "title": "Civil War & Reconstruction",
+        "desc": "Slavery, secession, emancipation, and rebuilding the Union.",
+        "count": 8,
+        "boss": false
+      }
+    ]
+  },
+  {
+    "title": "Great Depression & WWII",
+    "subject": "AP US History",
+    "module": "depression-wwii",
+    "description": "The crash, the New Deal, and America's path through World War II.",
+    "questions": [
+      {
+        "q": "The stock market crash that began the Great Depression occurred in:",
+        "options": [
+          "1925",
+          "1929",
+          "1932",
+          "1939"
+        ],
+        "answer": 1,
+        "explain": "Black Tuesday, October 29, 1929."
+      },
+      {
+        "q": "Franklin D. Roosevelt's program to fight the Depression was the:",
+        "options": [
+          "Great Society",
+          "New Deal",
+          "Square Deal",
+          "Fair Deal"
+        ],
+        "answer": 1,
+        "explain": "The New Deal brought relief, recovery, and reform programs."
+      },
+      {
+        "q": "The attack that brought the US into WWII was on:",
+        "options": [
+          "Midway",
+          "Pearl Harbor",
+          "Guam",
+          "Iwo Jima"
+        ],
+        "answer": 1,
+        "explain": "Japan attacked Pearl Harbor on December 7, 1941."
+      },
+      {
+        "q": "D-Day, the Allied invasion of Normandy, was in:",
+        "options": [
+          "1943",
+          "1944",
+          "1945",
+          "1942"
+        ],
+        "answer": 1,
+        "explain": "June 6, 1944 — the largest seaborne invasion in history."
+      },
+      {
+        "q": "The Social Security Act was part of which program?",
+        "options": [
+          "The Great Society",
+          "The New Deal",
+          "The Marshall Plan",
+          "The GI Bill"
+        ],
+        "answer": 1,
+        "explain": "Passed in 1935 under the New Deal, it created old-age pensions."
+      },
+      {
+        "q": "WWII in Europe ended in:",
+        "options": [
+          "1944",
+          "1945",
+          "1946",
+          "1943"
+        ],
+        "answer": 1,
+        "explain": "V-E Day was May 8, 1945."
+      },
+      {
+        "q": "The US dropped atomic bombs on which two Japanese cities?",
+        "options": [
+          "Tokyo and Osaka",
+          "Hiroshima and Nagasaki",
+          "Kyoto and Kobe",
+          "Nagasaki and Tokyo"
+        ],
+        "answer": 1,
+        "explain": "Hiroshima (Aug 6) and Nagasaki (Aug 9), 1945."
+      },
+      {
+        "q": "The postwar US plan to rebuild Europe economically was the:",
+        "options": [
+          "Truman Doctrine",
+          "Marshall Plan",
+          "Lend-Lease Act",
+          "Monroe Doctrine"
+        ],
+        "answer": 1,
+        "explain": "The Marshall Plan (1948) funded European recovery and contained communism."
+      }
+    ],
+    "rounds": [
+      {
+        "tag": "Great Depression & WWII",
+        "title": "Great Depression & WWII",
+        "desc": "The crash, the New Deal, and America's path through World War II.",
+        "count": 8,
+        "boss": false
+      }
+    ]
+  },
+  {
+    "title": "High-Frequency Words A",
+    "subject": "SAT Vocabulary",
+    "module": "high-frequency-a",
+    "description": "Core SAT words: meanings, roots, and usage.",
+    "questions": [
+      {
+        "q": "'Meticulous' means:",
+        "options": [
+          "Careless",
+          "Extremely careful and precise",
+          "Very fast",
+          "Quite loud"
+        ],
+        "answer": 1,
+        "explain": "Meticulous = showing great attention to detail."
+      },
+      {
+        "q": "'Ambiguous' means:",
+        "options": [
+          "Clearly stated",
+          "Open to more than one interpretation",
+          "Extremely boring",
+          "Perfectly balanced"
+        ],
+        "answer": 1,
+        "explain": "Ambiguous language can be understood in multiple ways."
+      },
+      {
+        "q": "To 'mitigate' a problem is to:",
+        "options": [
+          "Make it worse",
+          "Make it less severe",
+          "Ignore it",
+          "Announce it"
+        ],
+        "answer": 1,
+        "explain": "Mitigate = reduce the seriousness or impact."
+      },
+      {
+        "q": "'Pragmatic' describes someone who is:",
+        "options": [
+          "Dreamy and idealistic",
+          "Practical and realistic",
+          "Loud and proud",
+          "Silent and shy"
+        ],
+        "answer": 1,
+        "explain": "Pragmatic people focus on what works in practice."
+      },
+      {
+        "q": "'Ephemeral' means:",
+        "options": [
+          "Lasting a very short time",
+          "Extremely heavy",
+          "Ancient and crumbling",
+          "Brightly colored"
+        ],
+        "answer": 0,
+        "explain": "Ephemeral things are fleeting — think a mayfly's lifespan."
+      },
+      {
+        "q": "A 'candid' answer is:",
+        "options": [
+          "Sweetened",
+          "Frank and honest",
+          "Confusing",
+          "Rehearsed"
+        ],
+        "answer": 1,
+        "explain": "Candid = truthful and straightforward."
+      },
+      {
+        "q": "'Diligent' means:",
+        "options": [
+          "Lazy but lucky",
+          "Hardworking and careful",
+          "Rich and famous",
+          "Quick-tempered"
+        ],
+        "answer": 1,
+        "explain": "Diligent workers are steady, careful, and persistent."
+      },
+      {
+        "q": "To 'refute' a claim is to:",
+        "options": [
+          "Repeat it",
+          "Prove it wrong",
+          "Forget it",
+          "Publish it"
+        ],
+        "answer": 1,
+        "explain": "Refute = disprove with evidence or argument."
+      },
+      {
+        "q": "'Superfluous' means:",
+        "options": [
+          "Essential",
+          "Unnecessary and extra",
+          "Extremely strong",
+          "Above average"
+        ],
+        "answer": 1,
+        "explain": "Superfluous = more than what's needed."
+      },
+      {
+        "q": "'Tenacious' means:",
+        "options": [
+          "Easily discouraged",
+          "Holding firmly to something; persistent",
+          "Quiet and timid",
+          "Generous with money"
+        ],
+        "answer": 1,
+        "explain": "Tenacious = not giving up easily."
+      }
+    ],
+    "rounds": [
+      {
+        "tag": "High-Frequency Words A",
+        "title": "High-Frequency Words A",
+        "desc": "Core SAT words: meanings, roots, and usage.",
+        "count": 10,
+        "boss": false
+      }
+    ]
+  },
+  {
+    "title": "High-Frequency Words B",
+    "subject": "SAT Vocabulary",
+    "module": "high-frequency-b",
+    "description": "Second wave of essential SAT vocabulary.",
+    "questions": [
+      {
+        "q": "'Aesthetic' relates to:",
+        "options": [
+          "Morality",
+          "Beauty and art",
+          "Speed",
+          "Wealth"
+        ],
+        "answer": 1,
+        "explain": "Aesthetics is the study of beauty and artistic taste."
+      },
+      {
+        "q": "'Benevolent' means:",
+        "options": [
+          "Cruel",
+          "Kind and generous",
+          "Cautious",
+          "Wealthy"
+        ],
+        "answer": 1,
+        "explain": "A benevolent person is well-meaning and charitable."
+      },
+      {
+        "q": "'Coerce' means:",
+        "options": [
+          "Persuade gently",
+          "Force someone to do something",
+          "Ask politely",
+          "Reward someone"
+        ],
+        "answer": 1,
+        "explain": "Coercion is persuasion by force or threats."
+      },
+      {
+        "q": "'Disdain' is:",
+        "options": [
+          "Deep respect",
+          "Contempt or scorn",
+          "Mild confusion",
+          "Great joy"
+        ],
+        "answer": 1,
+        "explain": "To disdain is to regard something as beneath you."
+      },
+      {
+        "q": "'Eloquent' speech is:",
+        "options": [
+          "Mumbled",
+          "Fluent and persuasive",
+          "Extremely long",
+          "Full of jokes"
+        ],
+        "answer": 1,
+        "explain": "Eloquent speakers express themselves powerfully and gracefully."
+      },
+      {
+        "q": "'Frugal' means:",
+        "options": [
+          "Wasteful",
+          "Careful with money; economical",
+          "Generous to a fault",
+          "Always hungry"
+        ],
+        "answer": 1,
+        "explain": "A frugal person avoids waste and spends carefully."
+      },
+      {
+        "q": "'Gregarious' people are:",
+        "options": [
+          "Shy",
+          "Sociable and fond of company",
+          "Aggressive",
+          "Solitary"
+        ],
+        "answer": 1,
+        "explain": "Gregarious = enjoys being around others."
+      },
+      {
+        "q": "'Hypothesis' is:",
+        "options": [
+          "A proven fact",
+          "A proposed explanation to test",
+          "A final conclusion",
+          "A lab tool"
+        ],
+        "answer": 1,
+        "explain": "A hypothesis is an educated, testable prediction."
+      },
+      {
+        "q": "'Innovative' means:",
+        "options": [
+          "Old-fashioned",
+          "Introducing new ideas; creative",
+          "Expensive",
+          "Risky and reckless"
+        ],
+        "answer": 1,
+        "explain": "Innovation = new methods or ideas."
+      },
+      {
+        "q": "'Juxtapose' means:",
+        "options": [
+          "To hide",
+          "To place side by side for comparison",
+          "To throw away",
+          "To enlarge"
+        ],
+        "answer": 1,
+        "explain": "Juxtaposition contrasts two things by placing them together."
+      }
+    ],
+    "rounds": [
+      {
+        "tag": "High-Frequency Words B",
+        "title": "High-Frequency Words B",
+        "desc": "Second wave of essential SAT vocabulary.",
+        "count": 10,
+        "boss": false
+      }
+    ]
+  },
+  {
+    "title": "Roots & Prefixes",
+    "subject": "SAT Vocabulary",
+    "module": "roots-prefixes",
+    "description": "Decode unfamiliar words by breaking them apart.",
+    "questions": [
+      {
+        "q": "The prefix 'bene-' (as in benefit) means:",
+        "options": [
+          "Bad",
+          "Good or well",
+          "Before",
+          "Against"
+        ],
+        "answer": 1,
+        "explain": "Bene- comes from Latin for 'good/well.'"
+      },
+      {
+        "q": "The root 'chron' (chronology) relates to:",
+        "options": [
+          "Order of birth",
+          "Time",
+          "Sound",
+          "Light"
+        ],
+        "answer": 1,
+        "explain": "Chron- comes from Greek 'khronos,' time."
+      },
+      {
+        "q": "'Malfunction' — the prefix 'mal-' means:",
+        "options": [
+          "Many",
+          "Bad or wrong",
+          "Half",
+          "Again"
+        ],
+        "answer": 1,
+        "explain": "Mal- = bad/wrongly, as in malice or malnutrition."
+      },
+      {
+        "q": "The root 'bio' (biology) means:",
+        "options": [
+          "Earth",
+          "Life",
+          "Water",
+          "Mind"
+        ],
+        "answer": 1,
+        "explain": "Bio- comes from Greek 'bios,' life."
+      },
+      {
+        "q": "'Interstate' — the prefix 'inter-' means:",
+        "options": [
+          "Within",
+          "Between or among",
+          "Below",
+          "Beyond"
+        ],
+        "answer": 1,
+        "explain": "Inter- = between, like international or interact."
+      },
+      {
+        "q": "The root 'scrib/script' (describe, manuscript) means:",
+        "options": [
+          "To build",
+          "To write",
+          "To cut",
+          "To see"
+        ],
+        "answer": 1,
+        "explain": "Scrib- comes from Latin 'scribere,' to write."
+      },
+      {
+        "q": "'Submarine' — the prefix 'sub-' means:",
+        "options": [
+          "Above",
+          "Under or below",
+          "Across",
+          "With"
+        ],
+        "answer": 1,
+        "explain": "Sub- = under, as in subway or submerge."
+      },
+      {
+        "q": "The root 'port' (transport, portable) means:",
+        "options": [
+          "To carry",
+          "To speak",
+          "To break",
+          "To measure"
+        ],
+        "answer": 0,
+        "explain": "Port- comes from Latin 'portare,' to carry."
+      }
+    ],
+    "rounds": [
+      {
+        "tag": "Roots & Prefixes",
+        "title": "Roots & Prefixes",
+        "desc": "Decode unfamiliar words by breaking them apart.",
+        "count": 8,
+        "boss": false
+      }
+    ]
+  },
+  {
+    "title": "Vital Signs & Patient Safety",
+    "subject": "Nursing Fundamentals",
+    "module": "vitals-safety",
+    "description": "Normal ranges, fall prevention, and the safety checks that matter.",
+    "questions": [
+      {
+        "q": "Normal adult resting heart rate is:",
+        "options": [
+          "40–60 bpm",
+          "60–100 bpm",
+          "100–120 bpm",
+          "120–140 bpm"
+        ],
+        "answer": 1,
+        "explain": "Normal adult resting pulse: 60–100 beats per minute."
+      },
+      {
+        "q": "A normal adult oral temperature is about:",
+        "options": [
+          "96.0°F",
+          "98.6°F",
+          "100.4°F",
+          "102°F"
+        ],
+        "answer": 1,
+        "explain": "98.6°F (37°C) is the standard average oral temperature."
+      },
+      {
+        "q": "Blood pressure of 120/80 — the 120 represents:",
+        "options": [
+          "Diastolic pressure",
+          "Systolic pressure",
+          "Pulse pressure",
+          "Mean arterial pressure"
+        ],
+        "answer": 1,
+        "explain": "The top number (systolic) is pressure during heart contraction."
+      },
+      {
+        "q": "Normal adult respiratory rate is:",
+        "options": [
+          "6–10 breaths/min",
+          "12–20 breaths/min",
+          "25–30 breaths/min",
+          "30–40 breaths/min"
+        ],
+        "answer": 1,
+        "explain": "Adults normally breathe 12–20 times per minute at rest."
+      },
+      {
+        "q": "Before giving any medication, the nurse first verifies:",
+        "options": [
+          "The patient's insurance",
+          "Patient identity with two identifiers",
+          "The room number only",
+          "The visitor list"
+        ],
+        "answer": 1,
+        "explain": "Two identifiers (e.g., name + DOB) are required before medication administration."
+      },
+      {
+        "q": "The best way to prevent falls in a hospitalized patient is to:",
+        "options": [
+          "Keep the bed in high position",
+          "Keep the call light within reach and answer promptly",
+          "Restrain all elderly patients",
+          "Dim all lights"
+        ],
+        "answer": 1,
+        "explain": "Call light access and prompt response are core fall-prevention measures."
+      },
+      {
+        "q": "SpO₂ measures:",
+        "options": [
+          "Blood pressure",
+          "Oxygen saturation of the blood",
+          "Blood sugar",
+          "Heart rhythm"
+        ],
+        "answer": 1,
+        "explain": "Pulse oximetry measures the percentage of hemoglobin carrying oxygen."
+      },
+      {
+        "q": "A temperature of 101.5°F in an adult is considered:",
+        "options": [
+          "Normal",
+          "Hypothermia",
+          "A fever",
+          "Hyperthermia emergency only"
+        ],
+        "answer": 2,
+        "explain": "Above 100.4°F is generally classified as a fever."
+      },
+      {
+        "q": "When should hand hygiene be performed?",
+        "options": [
+          "Only after touching a patient",
+          "Before and after patient contact",
+          "Only when hands look dirty",
+          "Once per shift"
+        ],
+        "answer": 1,
+        "explain": "Hand hygiene before and after every patient contact is the standard."
+      },
+      {
+        "q": "Bradycardia is a heart rate below:",
+        "options": [
+          "100 bpm",
+          "80 bpm",
+          "60 bpm",
+          "40 bpm"
+        ],
+        "answer": 2,
+        "explain": "Bradycardia = under 60 bpm; tachycardia = over 100 bpm."
+      }
+    ],
+    "rounds": [
+      {
+        "tag": "Vital Signs & Patient Safety",
+        "title": "Vital Signs & Patient Safety",
+        "desc": "Normal ranges, fall prevention, and the safety checks that matter.",
+        "count": 10,
+        "boss": false
+      }
+    ]
+  },
+  {
+    "title": "Medication Administration",
+    "subject": "Nursing Fundamentals",
+    "module": "med-administration",
+    "description": "The rights of med administration, routes, and dosage safety.",
+    "questions": [
+      {
+        "q": "The traditional 'Five Rights' of medication administration include right patient, right drug, right dose, right route, and right:",
+        "options": [
+          "Room",
+          "Time",
+          "Doctor",
+          "Pharmacy"
+        ],
+        "answer": 1,
+        "explain": "The fifth right is the right time."
+      },
+      {
+        "q": "The abbreviation 'PO' means a medication is given:",
+        "options": [
+          "By injection",
+          "By mouth",
+          "In the eye",
+          "Under the tongue"
+        ],
+        "answer": 1,
+        "explain": "PO = per os, by mouth."
+      },
+      {
+        "q": "'IM' indicates an injection into the:",
+        "options": [
+          "Vein",
+          "Muscle",
+          "Skin layer",
+          "Fat only"
+        ],
+        "answer": 1,
+        "explain": "IM = intramuscular."
+      },
+      {
+        "q": "A medication ordered 'STAT' should be given:",
+        "options": [
+          "At bedtime",
+          "Immediately",
+          "With food",
+          "Tomorrow"
+        ],
+        "answer": 1,
+        "explain": "STAT means immediately, as soon as possible."
+      },
+      {
+        "q": "Before administering a drug, the nurse should check for:",
+        "options": [
+          "The patient's favorite food",
+          "Allergies",
+          "Room temperature",
+          "Visiting hours"
+        ],
+        "answer": 1,
+        "explain": "Allergy checking is a critical safety step for every medication."
+      },
+      {
+        "q": "Sublingual medications are placed:",
+        "options": [
+          "On the skin",
+          "Under the tongue",
+          "In the rectum",
+          "In the ear"
+        ],
+        "answer": 1,
+        "explain": "Sublingual = under the tongue for rapid absorption."
+      },
+      {
+        "q": "If a patient refuses a medication, the nurse should:",
+        "options": [
+          "Force it",
+          "Hide it in food without telling them",
+          "Document the refusal and notify the provider",
+          "Skip documentation"
+        ],
+        "answer": 2,
+        "explain": "Patients have the right to refuse; document it and inform the provider."
+      },
+      {
+        "q": "The 'right documentation' means charting:",
+        "options": [
+          "Only if there's an error",
+          "After administration, accurately and promptly",
+          "Before the shift starts",
+          "At discharge only"
+        ],
+        "answer": 1,
+        "explain": "Document right after giving the medication — never before."
+      },
+      {
+        "q": "Insulin is typically given by which route?",
+        "options": [
+          "Oral",
+          "Subcutaneous",
+          "Intramuscular always",
+          "Topical"
+        ],
+        "answer": 1,
+        "explain": "Insulin is given subcutaneously (into fatty tissue)."
+      },
+      {
+        "q": "A nurse finds a medication error was made. The priority action is:",
+        "options": [
+          "Hide it",
+          "Assess the patient and report per policy",
+          "Wait until the next shift",
+          "Blame the pharmacy"
+        ],
+        "answer": 1,
+        "explain": "Patient safety first: assess, then report and complete an incident report."
+      }
+    ],
+    "rounds": [
+      {
+        "tag": "Medication Administration",
+        "title": "Medication Administration",
+        "desc": "The rights of med administration, routes, and dosage safety.",
+        "count": 10,
+        "boss": false
+      }
+    ]
+  },
+  {
+    "title": "Infection Control",
+    "subject": "Nursing Fundamentals",
+    "module": "infection-control",
+    "description": "Chain of infection, precautions, and PPE essentials.",
+    "questions": [
+      {
+        "q": "The single most effective way to break the chain of infection is:",
+        "options": [
+          "Wearing gloves at all times",
+          "Hand hygiene",
+          "Isolating every patient",
+          "Antibiotics"
+        ],
+        "answer": 1,
+        "explain": "Hand hygiene is the #1 infection-prevention measure."
+      },
+      {
+        "q": "Droplet precautions are used for infections spread by:",
+        "options": [
+          "Airborne particles over long distances",
+          "Large respiratory droplets",
+          "Blood only",
+          "Contaminated food"
+        ],
+        "answer": 1,
+        "explain": "Droplets (flu, pertussis) travel short distances — mask and distance matter."
+      },
+      {
+        "q": "Airborne precautions require which special mask?",
+        "options": [
+          "Surgical mask",
+          "N95 respirator",
+          "Cloth mask",
+          "Face shield only"
+        ],
+        "answer": 1,
+        "explain": "Airborne diseases like TB require a fit-tested N95 and a negative-pressure room."
+      },
+      {
+        "q": "Standard precautions apply to:",
+        "options": [
+          "Only patients with known infections",
+          "All patients, always",
+          "Only surgical patients",
+          "Only pediatric patients"
+        ],
+        "answer": 1,
+        "explain": "Standard precautions treat all blood/body fluids as potentially infectious, for every patient."
+      },
+      {
+        "q": "The correct order for removing (doffing) PPE starts with:",
+        "options": [
+          "Mask first",
+          "Gloves first",
+          "Gown first always",
+          "Eye protection first"
+        ],
+        "answer": 1,
+        "explain": "Gloves are the most contaminated — remove them first, then goggles, gown, mask."
+      },
+      {
+        "q": "Alcohol-based hand rub is NOT effective against:",
+        "options": [
+          "Influenza",
+          "C. difficile spores",
+          "MRSA",
+          "E. coli"
+        ],
+        "answer": 1,
+        "explain": "C. diff spores require soap-and-water washing."
+      },
+      {
+        "q": "Sharps containers should be replaced when they are:",
+        "options": [
+          "Completely full",
+          "About 3/4 full",
+          "Half full exactly",
+          "Once a year"
+        ],
+        "answer": 1,
+        "explain": "Replace sharps containers at the fill line, about three-quarters full."
+      },
+      {
+        "q": "Contact precautions require:",
+        "options": [
+          "N95 and negative pressure",
+          "Gown and gloves on entry",
+          "No PPE",
+          "Surgical mask only"
+        ],
+        "answer": 1,
+        "explain": "Contact precautions (e.g., MRSA, C. diff): gown + gloves when entering."
+      }
+    ],
+    "rounds": [
+      {
+        "tag": "Infection Control",
+        "title": "Infection Control",
+        "desc": "Chain of infection, precautions, and PPE essentials.",
+        "count": 8,
+        "boss": false
+      }
+    ]
+  },
+  {
+    "title": "Essentials & Greetings",
+    "subject": "Spanish Basics",
+    "module": "essentials",
+    "description": "Hello, goodbye, please, thank you — the survival phrases.",
+    "questions": [
+      {
+        "q": "'Thank you' in Spanish is:",
+        "options": [
+          "Por favor",
+          "Gracias",
+          "Perdón",
+          "Salud"
+        ],
+        "answer": 1,
+        "explain": "Gracias = thank you."
+      },
+      {
+        "q": "How do you say 'Good morning'?",
+        "options": [
+          "Buenas noches",
+          "Buenos días",
+          "Buenas tardes",
+          "Hasta luego"
+        ],
+        "answer": 1,
+        "explain": "Buenos días is used until around midday."
+      },
+      {
+        "q": "'Por favor' means:",
+        "options": [
+          "Excuse me",
+          "Please",
+          "You're welcome",
+          "Sorry"
+        ],
+        "answer": 1,
+        "explain": "Por favor = please."
+      },
+      {
+        "q": "'De nada' is the response to 'gracias' and means:",
+        "options": [
+          "Goodbye",
+          "You're welcome",
+          "See you later",
+          "No problem is wrong here"
+        ],
+        "answer": 1,
+        "explain": "De nada = you're welcome (literally 'of nothing')."
+      },
+      {
+        "q": "'¿Cómo estás?' asks:",
+        "options": [
+          "Where are you?",
+          "How are you?",
+          "What time is it?",
+          "What's your name?"
+        ],
+        "answer": 1,
+        "explain": "¿Cómo estás? = How are you? (informal)."
+      },
+      {
+        "q": "'Hasta luego' means:",
+        "options": [
+          "Good night",
+          "See you later",
+          "Welcome",
+          "Let's go"
+        ],
+        "answer": 1,
+        "explain": "Hasta luego = see you later."
+      },
+      {
+        "q": "The number 'seven' in Spanish is:",
+        "options": [
+          "Seis",
+          "Siete",
+          "Ocho",
+          "Nueve"
+        ],
+        "answer": 1,
+        "explain": "Uno, dos, tres, cuatro, cinco, seis, siete..."
+      },
+      {
+        "q": "'Lo siento' means:",
+        "options": [
+          "I'm hungry",
+          "I'm sorry",
+          "I understand",
+          "I'm lost"
+        ],
+        "answer": 1,
+        "explain": "Lo siento = I'm sorry."
+      },
+      {
+        "q": "'Buenas noches' is used:",
+        "options": [
+          "In the morning",
+          "In the afternoon",
+          "At night / as good night",
+          "Only at meals"
+        ],
+        "answer": 2,
+        "explain": "Buenas noches = good evening / good night."
+      },
+      {
+        "q": "'Me llamo...' means:",
+        "options": [
+          "I live in...",
+          "My name is...",
+          "I speak...",
+          "I want..."
+        ],
+        "answer": 1,
+        "explain": "Me llamo = my name is (literally 'I call myself')."
+      }
+    ],
+    "rounds": [
+      {
+        "tag": "Essentials & Greetings",
+        "title": "Essentials & Greetings",
+        "desc": "Hello, goodbye, please, thank you — the survival phrases.",
+        "count": 10,
+        "boss": false
+      }
+    ]
+  },
+  {
+    "title": "Food & Daily Life",
+    "subject": "Spanish Basics",
+    "module": "food-daily",
+    "description": "Ordering food, household words, and everyday nouns.",
+    "questions": [
+      {
+        "q": "'La manzana' is:",
+        "options": [
+          "The orange",
+          "The apple",
+          "The morning",
+          "The hand"
+        ],
+        "answer": 1,
+        "explain": "Manzana = apple."
+      },
+      {
+        "q": "How do you say 'water'?",
+        "options": [
+          "Leche",
+          "Agua",
+          "Jugo",
+          "Café"
+        ],
+        "answer": 1,
+        "explain": "Agua = water."
+      },
+      {
+        "q": "'El desayuno' refers to:",
+        "options": [
+          "Dinner",
+          "Lunch",
+          "Breakfast",
+          "A snack"
+        ],
+        "answer": 2,
+        "explain": "Desayuno = breakfast; almuerzo = lunch; cena = dinner."
+      },
+      {
+        "q": "'La casa' means:",
+        "options": [
+          "The car",
+          "The house",
+          "The dog",
+          "The street"
+        ],
+        "answer": 1,
+        "explain": "Casa = house/home."
+      },
+      {
+        "q": "'El perro' is:",
+        "options": [
+          "The cat",
+          "The bird",
+          "The dog",
+          "The fish"
+        ],
+        "answer": 2,
+        "explain": "Perro = dog; gato = cat."
+      },
+      {
+        "q": "To ask for the check at a restaurant: 'La ___, por favor.'",
+        "options": [
+          "Cuenta",
+          "Mesa",
+          "Carta",
+          "Silla"
+        ],
+        "answer": 0,
+        "explain": "La cuenta = the check/bill."
+      },
+      {
+        "q": "'El pan' is:",
+        "options": [
+          "Rice",
+          "Bread",
+          "Cheese",
+          "Soup"
+        ],
+        "answer": 1,
+        "explain": "Pan = bread."
+      },
+      {
+        "q": "'La leche' means:",
+        "options": [
+          "Juice",
+          "Milk",
+          "Coffee",
+          "Tea"
+        ],
+        "answer": 1,
+        "explain": "Leche = milk."
+      },
+      {
+        "q": "'Hoy' means:",
+        "options": [
+          "Yesterday",
+          "Today",
+          "Tomorrow",
+          "Now"
+        ],
+        "answer": 1,
+        "explain": "Hoy = today; mañana = tomorrow; ayer = yesterday."
+      },
+      {
+        "q": "'La escuela' is:",
+        "options": [
+          "The hospital",
+          "The school",
+          "The store",
+          "The park"
+        ],
+        "answer": 1,
+        "explain": "Escuela = school."
+      }
+    ],
+    "rounds": [
+      {
+        "tag": "Food & Daily Life",
+        "title": "Food & Daily Life",
+        "desc": "Ordering food, household words, and everyday nouns.",
+        "count": 10,
+        "boss": false
+      }
+    ]
+  },
+  {
+    "title": "Core Verbs",
+    "subject": "Spanish Basics",
+    "module": "core-verbs",
+    "description": "Ser, estar, tener, ir — the verbs everything else builds on.",
+    "questions": [
+      {
+        "q": "'Yo soy' means:",
+        "options": [
+          "I have",
+          "I am (permanent/identity)",
+          "I go",
+          "I want"
+        ],
+        "answer": 1,
+        "explain": "Soy is from ser — used for identity, origin, traits."
+      },
+      {
+        "q": "'Estoy cansado' means:",
+        "options": [
+          "I am tall",
+          "I am tired",
+          "I am hungry only",
+          "I am late"
+        ],
+        "answer": 1,
+        "explain": "Estar covers temporary states: estoy cansado = I am tired."
+      },
+      {
+        "q": "'Tener' means:",
+        "options": [
+          "To go",
+          "To have",
+          "To do",
+          "To see"
+        ],
+        "answer": 1,
+        "explain": "Tener = to have (also used for age and hunger expressions)."
+      },
+      {
+        "q": "'Voy' comes from the verb 'ir,' meaning:",
+        "options": [
+          "To eat",
+          "To go",
+          "To speak",
+          "To read"
+        ],
+        "answer": 1,
+        "explain": "Ir = to go; yo voy = I go / I'm going."
+      },
+      {
+        "q": "'Quiero' means:",
+        "options": [
+          "I need",
+          "I want",
+          "I know",
+          "I can"
+        ],
+        "answer": 1,
+        "explain": "Querer = to want; yo quiero = I want."
+      },
+      {
+        "q": "'Hablar' means:",
+        "options": [
+          "To listen",
+          "To speak",
+          "To write",
+          "To walk"
+        ],
+        "answer": 1,
+        "explain": "Hablar = to speak/talk."
+      },
+      {
+        "q": "Which verb would you use for location: 'La tienda ___ aquí'?",
+        "options": [
+          "Es",
+          "Está",
+          "Tiene",
+          "Va"
+        ],
+        "answer": 1,
+        "explain": "Locations use estar: está aquí = it is (located) here."
+      },
+      {
+        "q": "'Comer' means:",
+        "options": [
+          "To drink",
+          "To eat",
+          "To sleep",
+          "To run"
+        ],
+        "answer": 1,
+        "explain": "Comer = to eat."
+      },
+      {
+        "q": "'Puedo' (from poder) means:",
+        "options": [
+          "I want",
+          "I can / I am able",
+          "I must",
+          "I know"
+        ],
+        "answer": 1,
+        "explain": "Poder = to be able to; yo puedo = I can."
+      },
+      {
+        "q": "'Vivir' means:",
+        "options": [
+          "To visit",
+          "To live",
+          "To sell",
+          "To learn"
+        ],
+        "answer": 1,
+        "explain": "Vivir = to live."
+      }
+    ],
+    "rounds": [
+      {
+        "tag": "Core Verbs",
+        "title": "Core Verbs",
+        "desc": "Ser, estar, tener, ir — the verbs everything else builds on.",
+        "count": 10,
+        "boss": false
+      }
+    ]
+  },
+  {
+    "title": "Learning & Conditioning",
+    "subject": "Psychology 101",
+    "module": "learning-conditioning",
+    "description": "Pavlov, Skinner, Bandura — classical, operant, and observational learning.",
+    "questions": [
+      {
+        "q": "In Pavlov's experiment, the food is the:",
+        "options": [
+          "Conditioned stimulus",
+          "Unconditioned stimulus",
+          "Neutral stimulus",
+          "Conditioned response"
+        ],
+        "answer": 1,
+        "explain": "Food naturally triggers salivation — it's unconditioned (unlearned)."
+      },
+      {
+        "q": "After pairing, the bell alone causing salivation means the bell is now a:",
+        "options": [
+          "UCS",
+          "Conditioned stimulus",
+          "UCR",
+          "Neutral stimulus"
+        ],
+        "answer": 1,
+        "explain": "Once learned, the bell is the conditioned stimulus producing the conditioned response."
+      },
+      {
+        "q": "Salivating to a similar-sounding tone as well as the trained bell is:",
+        "options": [
+          "Discrimination",
+          "Extinction",
+          "Generalization",
+          "Shaping"
+        ],
+        "answer": 2,
+        "explain": "Generalization: responding to stimuli similar to the conditioned stimulus."
+      },
+      {
+        "q": "Removing an aversive stimulus to INCREASE a behavior is:",
+        "options": [
+          "Positive punishment",
+          "Negative reinforcement",
+          "Positive reinforcement",
+          "Negative punishment"
+        ],
+        "answer": 1,
+        "explain": "Negative reinforcement strengthens behavior by taking something unpleasant away (seatbelt buzzer)."
+      },
+      {
+        "q": "A slot machine pays out after an unpredictable number of pulls. That's a ___ schedule.",
+        "options": [
+          "Fixed-interval",
+          "Variable-ratio",
+          "Fixed-ratio",
+          "Variable-interval"
+        ],
+        "answer": 1,
+        "explain": "Variable-ratio: reward after an unpredictable number of responses — high, steady responding."
+      },
+      {
+        "q": "Paying a worker for every 10 items assembled is a ___ schedule.",
+        "options": [
+          "Variable-interval",
+          "Fixed-interval",
+          "Fixed-ratio",
+          "Continuous"
+        ],
+        "answer": 2,
+        "explain": "Fixed-ratio: reinforcement after a set number of responses."
+      },
+      {
+        "q": "Reinforcing closer and closer versions of a target behavior is called:",
+        "options": [
+          "Extinction",
+          "Shaping",
+          "Latent learning",
+          "Modeling"
+        ],
+        "answer": 1,
+        "explain": "Shaping builds complex behavior by rewarding successive approximations."
+      },
+      {
+        "q": "Bandura's Bobo doll study demonstrated:",
+        "options": [
+          "Classical conditioning",
+          "Observational learning",
+          "Insight learning",
+          "Habituation"
+        ],
+        "answer": 1,
+        "explain": "Children imitated an aggressive model — learning by watching, especially when the model was rewarded."
+      },
+      {
+        "q": "Tolman's rats learning a maze without rewards, then using it when rewards appear, showed:",
+        "options": [
+          "Latent learning and cognitive maps",
+          "Extinction",
+          "Spontaneous recovery",
+          "Fixed action patterns"
+        ],
+        "answer": 0,
+        "explain": "Latent learning: knowledge acquired without obvious reinforcement, stored as a cognitive map."
+      },
+      {
+        "q": "If a conditioned response fades when the CS is presented alone repeatedly, that's:",
+        "options": [
+          "Acquisition",
+          "Generalization",
+          "Extinction",
+          "Discrimination"
+        ],
+        "answer": 2,
+        "explain": "Extinction weakens the conditioned response when the CS no longer predicts the UCS."
+      }
+    ],
+    "rounds": [
+      {
+        "tag": "Learning & Conditioning",
+        "title": "Learning & Conditioning",
+        "desc": "Pavlov, Skinner, Bandura — classical, operant, and observational learning.",
+        "count": 10,
+        "boss": false
+      }
+    ]
+  },
+  {
+    "title": "Memory & Cognition",
+    "subject": "Psychology 101",
+    "module": "memory-cognition",
+    "description": "How memory is built, stored, lost — and the thinking shortcuts that misfire.",
+    "questions": [
+      {
+        "q": "Short-term memory holds about how many chunks of information?",
+        "options": [
+          "3 ± 1",
+          "7 ± 2",
+          "12 ± 3",
+          "Unlimited"
+        ],
+        "answer": 1,
+        "explain": "Miller's famous 7±2 chunks — expandable by chunking related bits together."
+      },
+      {
+        "q": "Visual sensory memory is called ___ memory; auditory is ___ memory.",
+        "options": [
+          "Echoic; iconic",
+          "Iconic; echoic",
+          "Procedural; declarative",
+          "Episodic; semantic"
+        ],
+        "answer": 1,
+        "explain": "Iconic = visual (~0.5s). Echoic = auditory (~3–4s)."
+      },
+      {
+        "q": "Memory for facts (capitals, definitions) is ___ memory; memory for personal events is ___.",
+        "options": [
+          "Episodic; semantic",
+          "Semantic; episodic",
+          "Procedural; semantic",
+          "Implicit; episodic"
+        ],
+        "answer": 1,
+        "explain": "Semantic = facts. Episodic = events from your life."
+      },
+      {
+        "q": "Old learning interfering with recall of new learning is ___ interference.",
+        "options": [
+          "Retroactive",
+          "Proactive",
+          "Constructive",
+          "Motivated"
+        ],
+        "answer": 1,
+        "explain": "Proactive: the OLD material pushes forward and blocks the new. Retroactive is the reverse."
+      },
+      {
+        "q": "Ebbinghaus's forgetting curve shows forgetting is:",
+        "options": [
+          "Slow at first, then rapid",
+          "Fastest right after learning",
+          "Linear over time",
+          "Only caused by interference"
+        ],
+        "answer": 1,
+        "explain": "Most forgetting happens in the first hours — which is why early review matters so much."
+      },
+      {
+        "q": "Judging how likely something is by how easily examples come to mind is the:",
+        "options": [
+          "Representativeness heuristic",
+          "Availability heuristic",
+          "Anchoring effect",
+          "Framing effect"
+        ],
+        "answer": 1,
+        "explain": "Availability: plane crashes feel common because vivid examples come to mind easily."
+      },
+      {
+        "q": "Loftus's research showed that the wording of a question ('smashed' vs 'hit') can:",
+        "options": [
+          "Improve eyewitness accuracy",
+          "Alter memories and create false details",
+          "Eliminate the misinformation effect",
+          "Only affect children"
+        ],
+        "answer": 1,
+        "explain": "Memory is reconstructive — post-event information can be woven into what people 'remember.'"
+      },
+      {
+        "q": "Patient H.M. could learn new skills but not form new explicit memories, showing that:",
+        "options": [
+          "All memory is one system",
+          "Explicit and procedural memory are separate systems",
+          "The hippocampus stores skills",
+          "Short-term memory was destroyed"
+        ],
+        "answer": 1,
+        "explain": "H.M.'s pattern proved memory has distinct systems with different brain bases."
+      },
+      {
+        "q": "Solving a problem by testing every possibility uses a(n):",
+        "options": [
+          "Heuristic",
+          "Algorithm",
+          "Insight burst",
+          "Functional fixedness"
+        ],
+        "answer": 1,
+        "explain": "Algorithms are exhaustive and guaranteed but slow; heuristics are fast shortcuts."
+      },
+      {
+        "q": "The tendency to seek information confirming what you already believe is:",
+        "options": [
+          "Hindsight bias",
+          "Confirmation bias",
+          "Overconfidence",
+          "Belief perseverance only"
+        ],
+        "answer": 1,
+        "explain": "Confirmation bias: we search for, notice, and remember confirming evidence."
+      }
+    ],
+    "rounds": [
+      {
+        "tag": "Memory & Cognition",
+        "title": "Memory & Cognition",
+        "desc": "How memory is built, stored, lost — and the thinking shortcuts that misfire.",
+        "count": 10,
+        "boss": false
+      }
+    ]
+  },
+  {
+    "title": "Development Across the Lifespan",
+    "subject": "Psychology 101",
+    "module": "development-lifespan",
+    "description": "Piaget's stages, Erikson's crises, attachment, and moral development.",
+    "questions": [
+      {
+        "q": "A baby who searches for a toy hidden under a blanket has mastered:",
+        "options": [
+          "Conservation",
+          "Object permanence",
+          "Egocentrism",
+          "Formal operations"
+        ],
+        "answer": 1,
+        "explain": "Object permanence (~8 months, sensorimotor stage): things exist even when unseen."
+      },
+      {
+        "q": "A child who thinks the taller glass must hold more juice lacks:",
+        "options": [
+          "Object permanence",
+          "Conservation",
+          "Assimilation",
+          "Attachment"
+        ],
+        "answer": 1,
+        "explain": "Conservation develops in the concrete operational stage; preoperational children center on one feature."
+      },
+      {
+        "q": "Piaget's stage for abstract, hypothetical reasoning is:",
+        "options": [
+          "Sensorimotor",
+          "Preoperational",
+          "Concrete operational",
+          "Formal operational"
+        ],
+        "answer": 3,
+        "explain": "Formal operational (12+): abstract and 'what if' thinking."
+      },
+      {
+        "q": "Erikson's crisis for adolescents is:",
+        "options": [
+          "Trust vs mistrust",
+          "Identity vs role confusion",
+          "Intimacy vs isolation",
+          "Industry vs inferiority"
+        ],
+        "answer": 1,
+        "explain": "Adolescence is about figuring out 'who am I?' — identity vs role confusion."
+      },
+      {
+        "q": "Erikson's crisis in infancy is:",
+        "options": [
+          "Autonomy vs shame",
+          "Trust vs mistrust",
+          "Initiative vs guilt",
+          "Generativity vs stagnation"
+        ],
+        "answer": 1,
+        "explain": "Consistent, responsive care in the first year builds basic trust."
+      },
+      {
+        "q": "Harlow's monkeys preferred the cloth mother over the wire mother that fed them, proving attachment depends on:",
+        "options": [
+          "Feeding",
+          "Contact comfort",
+          "Imprinting only",
+          "Temperature"
+        ],
+        "answer": 1,
+        "explain": "Contact comfort, not feeding, drove attachment — a landmark result."
+      },
+      {
+        "q": "In Ainsworth's Strange Situation, a baby who explores happily, is upset when mom leaves, and is soothed when she returns shows ___ attachment.",
+        "options": [
+          "Avoidant",
+          "Resistant",
+          "Secure",
+          "Disorganized"
+        ],
+        "answer": 2,
+        "explain": "Secure attachment (~60–65%): the caregiver works as a secure base."
+      },
+      {
+        "q": "Kohlberg's preconventional morality is based on:",
+        "options": [
+          "Laws and social order",
+          "Punishment avoidance and rewards",
+          "Universal ethical principles",
+          "Peer approval"
+        ],
+        "answer": 1,
+        "explain": "Preconventional: right = what avoids punishment or gains reward."
+      },
+      {
+        "q": "Vygotsky's term for what a child can do WITH help but not alone is the:",
+        "options": [
+          "Schema",
+          "Zone of proximal development",
+          "Scaffold limit",
+          "Critical period"
+        ],
+        "answer": 1,
+        "explain": "The ZPD is where good teaching aims — with scaffolding that fades as skill grows."
+      },
+      {
+        "q": "Fitting a new experience into an existing schema is ___; changing the schema is ___.",
+        "options": [
+          "Accommodation; assimilation",
+          "Assimilation; accommodation",
+          "Conservation; reversibility",
+          "Imprinting; attachment"
+        ],
+        "answer": 1,
+        "explain": "Assimilation fits new into old; accommodation rebuilds the schema."
+      }
+    ],
+    "rounds": [
+      {
+        "tag": "Development Across the Lifespan",
+        "title": "Development Across the Lifespan",
+        "desc": "Piaget's stages, Erikson's crises, attachment, and moral development.",
+        "count": 10,
+        "boss": false
+      }
+    ]
+  },
+  {
+    "title": "Brain & Biological Bases",
+    "subject": "Psychology 101",
+    "module": "brain-behavior",
+    "description": "Neurons, neurotransmitters, brain regions, and how we sense the world.",
+    "questions": [
+      {
+        "q": "The part of the neuron that RECEIVES signals from other neurons is the:",
+        "options": [
+          "Axon",
+          "Myelin sheath",
+          "Dendrites",
+          "Terminal buttons"
+        ],
+        "answer": 2,
+        "explain": "Dendrites receive; the axon sends. Myelin speeds the signal along the axon."
+      },
+      {
+        "q": "The fatty coating that speeds neural impulses is the:",
+        "options": [
+          "Synapse",
+          "Myelin sheath",
+          "Cortex",
+          "Vesicle"
+        ],
+        "answer": 1,
+        "explain": "Myelin insulates the axon; its breakdown (as in MS) slows signaling."
+      },
+      {
+        "q": "The junction where neurotransmitters cross between neurons is the:",
+        "options": [
+          "Axon hillock",
+          "Synapse",
+          "Node",
+          "Soma gap"
+        ],
+        "answer": 1,
+        "explain": "The synapse is the tiny gap where chemical messages cross."
+      },
+      {
+        "q": "Which neurotransmitter is most associated with reward and movement (and Parkinson's when lacking)?",
+        "options": [
+          "Serotonin",
+          "Dopamine",
+          "GABA",
+          "Acetylcholine"
+        ],
+        "answer": 1,
+        "explain": "Dopamine: reward, motivation, movement. Too little → Parkinson's symptoms."
+      },
+      {
+        "q": "The brain area most responsible for forming new explicit memories is the:",
+        "options": [
+          "Amygdala",
+          "Hippocampus",
+          "Cerebellum",
+          "Medulla"
+        ],
+        "answer": 1,
+        "explain": "The hippocampus consolidates explicit memories; the amygdala handles fear/emotion."
+      },
+      {
+        "q": "Phineas Gage's personality changed after damage to his ___ lobe.",
+        "options": [
+          "Occipital",
+          "Temporal",
+          "Frontal",
+          "Parietal"
+        ],
+        "answer": 2,
+        "explain": "Frontal lobe damage altered Gage's planning and personality — a famous localization case."
+      },
+      {
+        "q": "Broca's area damage causes difficulty ___; Wernicke's causes difficulty ___.",
+        "options": [
+          "Understanding; producing",
+          "Producing speech; understanding speech",
+          "Seeing; hearing",
+          "Moving; feeling"
+        ],
+        "answer": 1,
+        "explain": "Broca = speech production. Wernicke = language comprehension."
+      },
+      {
+        "q": "The sympathetic nervous system:",
+        "options": [
+          "Slows the heart for rest",
+          "Prepares fight-or-flight",
+          "Digests food",
+          "Is the same as the somatic system"
+        ],
+        "answer": 1,
+        "explain": "Sympathetic = accelerator (fight/flight); parasympathetic = brake (rest/digest)."
+      },
+      {
+        "q": "The minimum stimulus strength detected 50% of the time is the:",
+        "options": [
+          "Difference threshold",
+          "Absolute threshold",
+          "Weber fraction",
+          "Sensory adaptation point"
+        ],
+        "answer": 1,
+        "explain": "Absolute threshold: the weakest detectable stimulus, half the time."
+      },
+      {
+        "q": "Weber's law says the just-noticeable difference is a constant:",
+        "options": [
+          "Amount",
+          "Proportion",
+          "Frequency",
+          "Duration"
+        ],
+        "answer": 1,
+        "explain": "JND is proportional: 2% for weight — heavier objects need bigger absolute changes to notice."
+      }
+    ],
+    "rounds": [
+      {
+        "tag": "Brain & Biological Bases",
+        "title": "Brain & Biological Bases",
+        "desc": "Neurons, neurotransmitters, brain regions, and how we sense the world.",
+        "count": 10,
+        "boss": false
+      }
+    ]
+  },
+  {
+    "title": "Psychological Disorders & Therapy",
+    "subject": "Psychology 101",
+    "module": "disorders-therapy",
+    "description": "DSM-5 categories, signature symptoms, and matching therapies to schools.",
+    "questions": [
+      {
+        "q": "Hallucinations and delusions are called ___ symptoms of schizophrenia.",
+        "options": [
+          "Negative",
+          "Positive",
+          "Residual",
+          "Cognitive"
+        ],
+        "answer": 1,
+        "explain": "Positive symptoms ADD experiences (hallucinations, delusions). Negative symptoms subtract (flat affect, avolition)."
+      },
+      {
+        "q": "Flat affect and loss of motivation in schizophrenia are ___ symptoms.",
+        "options": [
+          "Positive",
+          "Negative",
+          "Manic",
+          "Dissociative"
+        ],
+        "answer": 1,
+        "explain": "Negative symptoms are absences: flat affect, poverty of speech, avolition."
+      },
+      {
+        "q": "OCD consists of obsessions, which are ___, and compulsions, which are ___.",
+        "options": [
+          "Rituals; thoughts",
+          "Intrusive thoughts; repetitive rituals",
+          "Fears; avoidances",
+          "Moods; impulses"
+        ],
+        "answer": 1,
+        "explain": "Obsessions are intrusive thoughts; compulsions are rituals meant to neutralize them."
+      },
+      {
+        "q": "A major depressive episode requires symptoms for at least:",
+        "options": [
+          "3 days",
+          "1 week",
+          "2 weeks",
+          "6 months"
+        ],
+        "answer": 2,
+        "explain": "Two weeks of depressed mood or anhedonia plus other symptoms marks a major depressive episode."
+      },
+      {
+        "q": "Bipolar disorder involves depressive episodes alternating with:",
+        "options": [
+          "Panic attacks",
+          "Mania",
+          "Phobias",
+          "Catatonia only"
+        ],
+        "answer": 1,
+        "explain": "Mania: elevated mood, racing thoughts, reduced need for sleep, risky behavior."
+      },
+      {
+        "q": "Systematic desensitization — gradual exposure paired with relaxation — is a ___ therapy.",
+        "options": [
+          "Psychoanalytic",
+          "Behavioral",
+          "Humanistic",
+          "Biomedical"
+        ],
+        "answer": 1,
+        "explain": "Wolpe's technique applies classical conditioning to unlearn fear."
+      },
+      {
+        "q": "Unconditional positive regard is the signature condition of ___ therapy.",
+        "options": [
+          "Cognitive",
+          "Humanistic (Rogers)",
+          "Behavioral",
+          "Psychodynamic"
+        ],
+        "answer": 1,
+        "explain": "Rogers' client-centered therapy: unconditional positive regard, empathy, genuineness."
+      },
+      {
+        "q": "Beck's cognitive therapy focuses on:",
+        "options": [
+          "Dream symbolism",
+          "Identifying and testing distorted thoughts",
+          "Free association",
+          "Token economies"
+        ],
+        "answer": 1,
+        "explain": "Cognitive therapy targets distorted thinking patterns that drive distress."
+      },
+      {
+        "q": "A diagnosis of antisocial personality disorder requires the person to be at least:",
+        "options": [
+          "12",
+          "16",
+          "18",
+          "21"
+        ],
+        "answer": 2,
+        "explain": "ASPD requires age 18+ plus evidence of conduct disorder before age 15."
+      },
+      {
+        "q": "The diathesis-stress model says disorders arise from:",
+        "options": [
+          "Stress alone",
+          "A vulnerability plus triggering stress",
+          "Genetics alone",
+          "Childhood alone"
+        ],
+        "answer": 1,
+        "explain": "Diathesis (predisposition) + stress = onset — the standard biopsychosocial explanation."
+      }
+    ],
+    "rounds": [
+      {
+        "tag": "Psychological Disorders & Therapy",
+        "title": "Psychological Disorders & Therapy",
+        "desc": "DSM-5 categories, signature symptoms, and matching therapies to schools.",
+        "count": 10,
+        "boss": false
+      }
+    ]
+  },
+  {
+    "title": "Human Body Systems",
+    "subject": "Biology 101",
+    "module": "human-body-systems",
+    "description": "Circulation, respiration, immunity, and homeostasis.",
+    "questions": [
+      {
+        "q": "Blood returning from the body enters the heart at the:",
+        "options": [
+          "Left atrium",
+          "Right atrium",
+          "Left ventricle",
+          "Aorta"
+        ],
+        "answer": 1,
+        "explain": "Body → right atrium → right ventricle → lungs → left atrium → left ventricle → body."
+      },
+      {
+        "q": "Gas exchange in the lungs happens in the:",
+        "options": [
+          "Bronchi",
+          "Alveoli",
+          "Trachea",
+          "Diaphragm"
+        ],
+        "answer": 1,
+        "explain": "Alveoli are tiny air sacs wrapped in capillaries where O₂ and CO₂ diffuse."
+      },
+      {
+        "q": "The protein in red blood cells that carries oxygen is:",
+        "options": [
+          "Insulin",
+          "Hemoglobin",
+          "Keratin",
+          "Amylase"
+        ],
+        "answer": 1,
+        "explain": "Hemoglobin binds oxygen in the lungs and releases it in tissues."
+      },
+      {
+        "q": "Vaccines work by:",
+        "options": [
+          "Killing viruses directly",
+          "Training memory cells before real infection",
+          "Adding antibiotics",
+          "Raising body temperature"
+        ],
+        "answer": 1,
+        "explain": "Vaccines present a harmless antigen so memory B/T cells are ready for the real pathogen."
+      },
+      {
+        "q": "Homeostasis is maintained mainly through ___ feedback.",
+        "options": [
+          "Positive",
+          "Negative",
+          "Neutral",
+          "Feedforward"
+        ],
+        "answer": 1,
+        "explain": "Negative feedback reverses a change (temperature, blood sugar). Positive feedback amplifies and is rare."
+      },
+      {
+        "q": "Which organ filters blood and produces urine?",
+        "options": [
+          "Liver",
+          "Kidney",
+          "Spleen",
+          "Pancreas"
+        ],
+        "answer": 1,
+        "explain": "Kidneys filter blood, balance fluids, and form urine."
+      },
+      {
+        "q": "Antibodies are produced by:",
+        "options": [
+          "Red blood cells",
+          "B cells (plasma cells)",
+          "Platelets",
+          "Neurons"
+        ],
+        "answer": 1,
+        "explain": "B cells mature into plasma cells that secrete antibodies against specific antigens."
+      },
+      {
+        "q": "The diaphragm contracting causes you to:",
+        "options": [
+          "Exhale",
+          "Inhale",
+          "Swallow",
+          "Cough"
+        ],
+        "answer": 1,
+        "explain": "The diaphragm flattens, expanding the chest, and air rushes in."
+      }
+    ],
+    "rounds": [
+      {
+        "tag": "Human Body Systems",
+        "title": "Human Body Systems",
+        "desc": "Circulation, respiration, immunity, and homeostasis.",
+        "count": 8,
+        "boss": false
+      }
+    ]
+  },
+  {
+    "title": "Microbes & Disease",
+    "subject": "Biology 101",
+    "module": "microbes-disease",
+    "description": "Bacteria vs viruses, transmission, and how we fight infection.",
+    "questions": [
+      {
+        "q": "Viruses differ from bacteria because viruses:",
+        "options": [
+          "Are single cells",
+          "Are not alive and must hijack a host cell",
+          "Have nuclei",
+          "Reproduce by binary fission"
+        ],
+        "answer": 1,
+        "explain": "Viruses are non-living particles of DNA/RNA in a protein coat — they need host cells to replicate."
+      },
+      {
+        "q": "Antibiotics are effective against:",
+        "options": [
+          "Viruses",
+          "Bacteria",
+          "All microbes",
+          "Prions"
+        ],
+        "answer": 1,
+        "explain": "Antibiotics attack bacterial structures. They do nothing against viruses."
+      },
+      {
+        "q": "Malaria is transmitted by a mosquito, making the mosquito a:",
+        "options": [
+          "Reservoir only",
+          "Vector",
+          "Pathogen",
+          "Host cell"
+        ],
+        "answer": 1,
+        "explain": "Vectors are organisms that carry pathogens between hosts."
+      },
+      {
+        "q": "Binary fission is how ___ reproduce.",
+        "options": [
+          "Viruses",
+          "Bacteria",
+          "Fungi only",
+          "Plants"
+        ],
+        "answer": 1,
+        "explain": "Bacteria copy their DNA and split into two — fast asexual reproduction."
+      },
+      {
+        "q": "Quarantine applies to people who are ___; isolation applies to people who are ___.",
+        "options": [
+          "Sick; exposed",
+          "Exposed; sick",
+          "Vaccinated; unvaccinated",
+          "Staff; patients"
+        ],
+        "answer": 1,
+        "explain": "Quarantine separates the exposed; isolation separates the ill."
+      },
+      {
+        "q": "Which of these diseases is caused by a virus?",
+        "options": [
+          "Strep throat",
+          "Tuberculosis",
+          "Influenza",
+          "Cholera"
+        ],
+        "answer": 2,
+        "explain": "Influenza is viral; strep, TB, and cholera are bacterial."
+      },
+      {
+        "q": "Antibiotic resistance develops mainly because:",
+        "options": [
+          "Patients ask for antibiotics",
+          "Incomplete courses select resistant survivors",
+          "Bacteria plan ahead",
+          "Viruses share genes"
+        ],
+        "answer": 1,
+        "explain": "Stopping early leaves the hardiest bacteria alive to multiply — selection in action."
+      },
+      {
+        "q": "Pasteurization protects food by:",
+        "options": [
+          "Freezing it solid",
+          "Heating to reduce pathogens",
+          "Adding antibiotics",
+          "Removing oxygen"
+        ],
+        "answer": 1,
+        "explain": "Pasteurization uses controlled heat to cut pathogen counts in milk and juices."
+      }
+    ],
+    "rounds": [
+      {
+        "tag": "Microbes & Disease",
+        "title": "Microbes & Disease",
+        "desc": "Bacteria vs viruses, transmission, and how we fight infection.",
+        "count": 8,
+        "boss": false
+      }
+    ]
+  },
+  {
+    "title": "Matter & Measurement",
+    "subject": "Chemistry 101",
+    "module": "matter-measurement",
+    "description": "States of matter, physical vs chemical change, density, and sig figs.",
+    "questions": [
+      {
+        "q": "Dry ice turning directly into gas is:",
+        "options": [
+          "Condensation",
+          "Sublimation",
+          "Deposition",
+          "Fusion"
+        ],
+        "answer": 1,
+        "explain": "Sublimation: solid → gas without becoming liquid."
+      },
+      {
+        "q": "Melting ice is a ___ change.",
+        "options": [
+          "Chemical",
+          "Physical",
+          "Nuclear",
+          "Permanent"
+        ],
+        "answer": 1,
+        "explain": "Phase changes are physical — the substance (H₂O) is unchanged."
+      },
+      {
+        "q": "Density is calculated as:",
+        "options": [
+          "Volume ÷ mass",
+          "Mass ÷ volume",
+          "Mass × volume",
+          "Mass + volume"
+        ],
+        "answer": 1,
+        "explain": "Density = mass/volume. Water's density is 1 g/mL."
+      },
+      {
+        "q": "An object with density 0.6 g/mL placed in water will:",
+        "options": [
+          "Sink",
+          "Float",
+          "Dissolve",
+          "Hover mid-water"
+        ],
+        "answer": 1,
+        "explain": "Less dense than water (1 g/mL) → it floats."
+      },
+      {
+        "q": "How many significant figures are in 0.00450?",
+        "options": [
+          "2",
+          "3",
+          "5",
+          "6"
+        ],
+        "answer": 1,
+        "explain": "Leading zeros don't count; the trailing zero after 5 does: 4, 5, 0 = 3 sig figs."
+      },
+      {
+        "q": "The metric prefix 'milli-' means:",
+        "options": [
+          "1000",
+          "1/100",
+          "1/1000",
+          "100"
+        ],
+        "answer": 2,
+        "explain": "Milli- = one thousandth (millimeter, milliliter)."
+      },
+      {
+        "q": "During a phase change, added heat:",
+        "options": [
+          "Raises temperature steadily",
+          "Does not raise temperature until the change completes",
+          "Lowers temperature",
+          "Creates new atoms"
+        ],
+        "answer": 1,
+        "explain": "The energy goes into breaking intermolecular attractions — temperature plateaus."
+      },
+      {
+        "q": "A homogeneous mixture is also called a:",
+        "options": [
+          "Compound",
+          "Solution",
+          "Suspension",
+          "Element"
+        ],
+        "answer": 1,
+        "explain": "Solutions are homogeneous mixtures — uniform throughout."
+      }
+    ],
+    "rounds": [
+      {
+        "tag": "Matter & Measurement",
+        "title": "Matter & Measurement",
+        "desc": "States of matter, physical vs chemical change, density, and sig figs.",
+        "count": 8,
+        "boss": false
+      }
+    ]
+  },
+  {
+    "title": "Gilded Age & Progressives",
+    "subject": "AP US History",
+    "module": "gilded-progressive",
+    "description": "Big business, labor, immigration, and the reform movements.",
+    "questions": [
+      {
+        "q": "Carnegie's steel empire used ___ integration — controlling every step from mines to mills.",
+        "options": [
+          "Horizontal",
+          "Vertical",
+          "Diagonal",
+          "Circular"
+        ],
+        "answer": 1,
+        "explain": "Vertical integration controls the whole supply chain; Rockefeller's horizontal integration bought competitors."
+      },
+      {
+        "q": "The Populist Party most strongly demanded:",
+        "options": [
+          "The gold standard only",
+          "Free silver and railroad regulation",
+          "Higher tariffs",
+          "Less immigration law"
+        ],
+        "answer": 1,
+        "explain": "Populists backed bimetallism ('free silver'), railroad regulation, and a graduated income tax."
+      },
+      {
+        "q": "Upton Sinclair's 'The Jungle' led directly to:",
+        "options": [
+          "The 17th Amendment",
+          "Meat Inspection and Pure Food & Drug Acts (1906)",
+          "Prohibition",
+          "The Federal Reserve"
+        ],
+        "answer": 1,
+        "explain": "Sinclair exposed meatpacking horrors; Congress passed food-safety laws in 1906."
+      },
+      {
+        "q": "The 17th Amendment established:",
+        "options": [
+          "Women's suffrage",
+          "Direct election of senators",
+          "Prohibition",
+          "Income tax"
+        ],
+        "answer": 1,
+        "explain": "A Progressive reform — senators elected directly by voters, not state legislatures."
+      },
+      {
+        "q": "The Spanish-American War (1898) resulted in the US gaining:",
+        "options": [
+          "Alaska and Hawaii only",
+          "Puerto Rico, Guam, and the Philippines",
+          "Cuba permanently",
+          "Panama"
+        ],
+        "answer": 1,
+        "explain": "The Treaty of Paris gave the US Puerto Rico, Guam, and the Philippines — an overseas empire."
+      },
+      {
+        "q": "Jane Addams is associated with:",
+        "options": [
+          "The NAACP founding",
+          "Settlement houses (Hull House)",
+          "The AFL",
+          "The Populist Party"
+        ],
+        "answer": 1,
+        "explain": "Hull House in Chicago provided services and reform energy in immigrant neighborhoods."
+      },
+      {
+        "q": "The Chinese Exclusion Act (1882) was the first US law to:",
+        "options": [
+          "Tax imports",
+          "Ban immigration by a specific nationality",
+          "Limit railroad rates",
+          "Ban trusts"
+        ],
+        "answer": 1,
+        "explain": "It barred Chinese labor immigration — the first nationality-based exclusion."
+      },
+      {
+        "q": "The Federal Reserve was created in 1913 under which president?",
+        "options": [
+          "Theodore Roosevelt",
+          "William Howard Taft",
+          "Woodrow Wilson",
+          "William McKinley"
+        ],
+        "answer": 2,
+        "explain": "Wilson's New Freedom program created the Federal Reserve System."
+      }
+    ],
+    "rounds": [
+      {
+        "tag": "Gilded Age & Progressives",
+        "title": "Gilded Age & Progressives",
+        "desc": "Big business, labor, immigration, and the reform movements.",
+        "count": 8,
+        "boss": false
+      }
+    ]
+  },
+  {
+    "title": "Cold War & Modern America",
+    "subject": "AP US History",
+    "module": "cold-war-modern",
+    "description": "Containment, civil rights, Vietnam, Watergate, and the conservative turn.",
+    "questions": [
+      {
+        "q": "The Truman Doctrine announced the US policy of:",
+        "options": [
+          "Isolationism",
+          "Containment of communism",
+          "Appeasement",
+          "Dollar diplomacy"
+        ],
+        "answer": 1,
+        "explain": "Containment: stop Soviet/communist expansion — the Cold War's guiding strategy."
+      },
+      {
+        "q": "Brown v. Board of Education (1954) ruled that:",
+        "options": [
+          "Segregation was acceptable",
+          "School segregation was unconstitutional",
+          "Busing was required immediately",
+          "States controlled all schooling"
+        ],
+        "answer": 1,
+        "explain": "The Court overturned 'separate but equal' in public education."
+      },
+      {
+        "q": "The closest the US and USSR came to nuclear war was the:",
+        "options": [
+          "Korean War",
+          "Cuban Missile Crisis (1962)",
+          "Berlin Airlift",
+          "Tet Offensive"
+        ],
+        "answer": 1,
+        "explain": "Thirteen days in October 1962 over Soviet missiles in Cuba."
+      },
+      {
+        "q": "The Civil Rights Act of 1964 banned:",
+        "options": [
+          "All poll taxes",
+          "Discrimination in public accommodations and employment",
+          "Literacy tests only",
+          "Segregated housing"
+        ],
+        "answer": 1,
+        "explain": "The 1964 act attacked segregation in public life and job discrimination."
+      },
+      {
+        "q": "The Gulf of Tonkin Resolution (1964):",
+        "options": [
+          "Ended the Vietnam War",
+          "Gave LBJ broad war powers in Vietnam",
+          "Created NATO",
+          "Banned the draft"
+        ],
+        "answer": 1,
+        "explain": "Congress authorized escalation in Vietnam without a formal declaration of war."
+      },
+      {
+        "q": "Watergate forced which president to resign?",
+        "options": [
+          "Johnson",
+          "Nixon",
+          "Ford",
+          "Carter"
+        ],
+        "answer": 1,
+        "explain": "Richard Nixon resigned in August 1974 — the only US president to do so."
+      },
+      {
+        "q": "Medicare and Medicaid were created as part of:",
+        "options": [
+          "The New Deal",
+          "The Great Society",
+          "The New Frontier only",
+          "Reaganomics"
+        ],
+        "answer": 1,
+        "explain": "LBJ's Great Society (1965): Medicare for seniors, Medicaid for low-income Americans."
+      },
+      {
+        "q": "The Voting Rights Act of 1965:",
+        "options": [
+          "Gave women the vote",
+          "Enabled federal enforcement of Black voting rights in the South",
+          "Lowered the voting age",
+          "Created the Electoral College"
+        ],
+        "answer": 1,
+        "explain": "Federal examiners and preclearance finally made the 15th Amendment real in the South."
+      }
+    ],
+    "rounds": [
+      {
+        "tag": "Cold War & Modern America",
+        "title": "Cold War & Modern America",
+        "desc": "Containment, civil rights, Vietnam, Watergate, and the conservative turn.",
+        "count": 8,
+        "boss": false
+      }
+    ]
+  },
+  {
+    "title": "Academic Words C",
+    "subject": "SAT Vocabulary",
+    "module": "academic-words-c",
+    "description": "Science- and history-passage vocabulary: arduous, novel, scrutinize, and more.",
+    "questions": [
+      {
+        "q": "'Arduous' means:",
+        "options": [
+          "Easy",
+          "Difficult and tiring",
+          "Quick",
+          "Ancient"
+        ],
+        "answer": 1,
+        "explain": "An arduous task demands real effort over time."
+      },
+      {
+        "q": "In an academic article, a 'novel' approach is:",
+        "options": [
+          "A fictional one",
+          "A new and original one",
+          "A long one",
+          "A popular one"
+        ],
+        "answer": 1,
+        "explain": "As an SAT adjective, 'novel' means new/original — not a book."
+      },
+      {
+        "q": "'Opaque' writing is:",
+        "options": [
+          "Crystal clear",
+          "Hard to understand",
+          "Very short",
+          "Handwritten"
+        ],
+        "answer": 1,
+        "explain": "Opaque = not transparent, literally or figuratively."
+      },
+      {
+        "q": "A 'prevalent' belief is:",
+        "options": [
+          "Rare",
+          "Widespread",
+          "Secret",
+          "New"
+        ],
+        "answer": 1,
+        "explain": "Prevalent = common, widespread in a place or time."
+      },
+      {
+        "q": "Someone 'reluctant' to speak is:",
+        "options": [
+          "Eager",
+          "Unwilling and hesitant",
+          "Unable",
+          "Forbidden"
+        ],
+        "answer": 1,
+        "explain": "Reluctant = hesitant, not wanting to do it."
+      },
+      {
+        "q": "To 'scrutinize' a document is to:",
+        "options": [
+          "Sign it quickly",
+          "Examine it closely",
+          "Destroy it",
+          "Summarize it loosely"
+        ],
+        "answer": 1,
+        "explain": "Scrutinize = inspect carefully and critically."
+      },
+      {
+        "q": "A 'tedious' task is:",
+        "options": [
+          "Exciting",
+          "Boringly long",
+          "Dangerous",
+          "Simple"
+        ],
+        "answer": 1,
+        "explain": "Tedious = tiresomely long or dull."
+      },
+      {
+        "q": "Results that 'validate' a theory:",
+        "options": [
+          "Weaken it",
+          "Confirm or support it",
+          "Ignore it",
+          "Publish it"
+        ],
+        "answer": 1,
+        "explain": "Validate = show to be sound or true."
+      },
+      {
+        "q": "A 'versatile' tool can:",
+        "options": [
+          "Only do one job",
+          "Do many jobs well",
+          "Break easily",
+          "Be used once"
+        ],
+        "answer": 1,
+        "explain": "Versatile = adaptable to many uses."
+      },
+      {
+        "q": "A 'zealous' supporter is:",
+        "options": [
+          "Indifferent",
+          "Passionately enthusiastic",
+          "Quietly opposed",
+          "Occasionally interested"
+        ],
+        "answer": 1,
+        "explain": "Zealous = filled with zeal — intense enthusiasm."
+      }
+    ],
+    "rounds": [
+      {
+        "tag": "Academic Words C",
+        "title": "Academic Words C",
+        "desc": "Science- and history-passage vocabulary: arduous, novel, scrutinize, and more.",
+        "count": 10,
+        "boss": false
+      }
+    ]
+  },
+  {
+    "title": "Pharmacology Basics",
+    "subject": "Nursing Fundamentals",
+    "module": "pharm-basics",
+    "description": "ADME, drug-class suffixes, and the antidotes every nurse knows.",
+    "questions": [
+      {
+        "q": "The 'M' in ADME (pharmacokinetics) stands for metabolism, which happens mainly in the:",
+        "options": [
+          "Kidneys",
+          "Liver",
+          "Lungs",
+          "Skin"
+        ],
+        "answer": 1,
+        "explain": "The liver metabolizes most drugs; the kidneys excrete most."
+      },
+      {
+        "q": "A drug's half-life is the time it takes for:",
+        "options": [
+          "The drug to start working",
+          "Half the drug to be eliminated",
+          "The drug to reach the brain",
+          "Tolerance to develop"
+        ],
+        "answer": 1,
+        "explain": "About 4–5 half-lives reach steady state or clear the drug."
+      },
+      {
+        "q": "Drugs ending in '-lol' (metoprolol) are usually:",
+        "options": [
+          "ACE inhibitors",
+          "Beta blockers",
+          "Statins",
+          "PPIs"
+        ],
+        "answer": 1,
+        "explain": "-lol = beta blocker: slows heart rate, lowers BP."
+      },
+      {
+        "q": "Drugs ending in '-pril' (lisinopril) are:",
+        "options": [
+          "Beta blockers",
+          "ACE inhibitors",
+          "Diuretics",
+          "Benzodiazepines"
+        ],
+        "answer": 1,
+        "explain": "-pril = ACE inhibitor; a dry cough is its classic side effect."
+      },
+      {
+        "q": "The antidote for opioid overdose is:",
+        "options": [
+          "Flumazenil",
+          "Naloxone",
+          "Vitamin K",
+          "Protamine"
+        ],
+        "answer": 1,
+        "explain": "Naloxone (Narcan) reverses opioids. Flumazenil reverses benzodiazepines."
+      },
+      {
+        "q": "Vitamin K is the antidote for:",
+        "options": [
+          "Heparin",
+          "Warfarin",
+          "Insulin",
+          "Acetaminophen"
+        ],
+        "answer": 1,
+        "explain": "Warfarin reversal = vitamin K. Heparin's antidote is protamine; acetaminophen's is N-acetylcysteine."
+      },
+      {
+        "q": "IV medications have 100% bioavailability because they:",
+        "options": [
+          "Are stronger",
+          "Bypass absorption and first-pass metabolism",
+          "Are given slowly",
+          "Skip the kidneys"
+        ],
+        "answer": 1,
+        "explain": "IV drugs go straight into circulation — nothing is lost to absorption or liver first pass."
+      },
+      {
+        "q": "Digoxin toxicity is made worse by low levels of:",
+        "options": [
+          "Sodium",
+          "Potassium",
+          "Calcium",
+          "Glucose"
+        ],
+        "answer": 1,
+        "explain": "Hypokalemia increases digoxin binding and toxicity risk — vision changes and arrhythmias result."
+      }
+    ],
+    "rounds": [
+      {
+        "tag": "Pharmacology Basics",
+        "title": "Pharmacology Basics",
+        "desc": "ADME, drug-class suffixes, and the antidotes every nurse knows.",
+        "count": 8,
+        "boss": false
+      }
+    ]
+  },
+  {
+    "title": "Travel, Directions & Family",
+    "subject": "Spanish Basics",
+    "module": "travel-family",
+    "description": "Getting around, describing people, family words, and possessives.",
+    "questions": [
+      {
+        "q": "'A la derecha' means:",
+        "options": [
+          "To the left",
+          "To the right",
+          "Straight ahead",
+          "Far away"
+        ],
+        "answer": 1,
+        "explain": "Derecha = right; izquierda = left; derecho/recto = straight."
+      },
+      {
+        "q": "'¿Dónde está la estación?' asks:",
+        "options": [
+          "What time is the station?",
+          "Where is the station?",
+          "Is this the station?",
+          "When does it leave?"
+        ],
+        "answer": 1,
+        "explain": "Dónde está…? = Where is…? — the essential travel question."
+      },
+      {
+        "q": "'Cerca' means ___ and 'lejos' means ___.",
+        "options": [
+          "Far; near",
+          "Near; far",
+          "Here; there",
+          "Now; later"
+        ],
+        "answer": 1,
+        "explain": "Cerca = near, lejos = far."
+      },
+      {
+        "q": "'La hermana' is:",
+        "options": [
+          "The brother",
+          "The sister",
+          "The mother",
+          "The cousin"
+        ],
+        "answer": 1,
+        "explain": "Hermano = brother, hermana = sister."
+      },
+      {
+        "q": "'Mis abuelos' means:",
+        "options": [
+          "My uncles",
+          "My grandparents",
+          "My parents",
+          "My cousins"
+        ],
+        "answer": 1,
+        "explain": "Abuelo/a = grandparent; abuelos = grandparents (or grandfathers)."
+      },
+      {
+        "q": "Which is correct for 'our house' (casa is feminine)?",
+        "options": [
+          "Nuestro casa",
+          "Nuestra casa",
+          "Nuestros casa",
+          "Mi casa nuestra"
+        ],
+        "answer": 1,
+        "explain": "Possessives agree with the thing owned: casa is feminine → nuestra."
+      },
+      {
+        "q": "'Simpático' in Spanish means:",
+        "options": [
+          "Sympathetic/sad",
+          "Nice and friendly",
+          "Simple",
+          "Similar"
+        ],
+        "answer": 1,
+        "explain": "A classic false friend — simpático means nice, pleasant, friendly."
+      },
+      {
+        "q": "'Voy a estudiar mañana' means:",
+        "options": [
+          "I studied yesterday",
+          "I'm going to study tomorrow",
+          "I want to study",
+          "I study every day"
+        ],
+        "answer": 1,
+        "explain": "Ir a + infinitive = the near future: 'going to' do something."
+      },
+      {
+        "q": "'El esposo' is:",
+        "options": [
+          "The son",
+          "The husband",
+          "The father",
+          "The boyfriend"
+        ],
+        "answer": 1,
+        "explain": "Esposo/a = husband/wife (spouse)."
+      },
+      {
+        "q": "'Son las tres y media' means:",
+        "options": [
+          "It's 3:15",
+          "It's 3:30",
+          "It's half past two",
+          "It's three o'clock"
+        ],
+        "answer": 1,
+        "explain": "Y media = :30 — son las tres y media = 3:30."
+      }
+    ],
+    "rounds": [
+      {
+        "tag": "Travel, Directions & Family",
+        "title": "Travel, Directions & Family",
+        "desc": "Getting around, describing people, family words, and possessives.",
+        "count": 10,
+        "boss": false
+      }
+    ]
+  },
+  {
+    "description": "Universal numbering, tooth types, surfaces, cusps, roots, and enamel — the map every dental exam starts with.",
+    "module": "tooth-anatomy-numbering",
+    "questions": [
+      {
+        "answer": 0,
+        "explain": "Numbering starts at the maxillary (upper) right third molar as #1, runs across the upper arch to #16, drops to the lower left third molar (#17), and ends at the lower right third molar (#32).",
+        "options": [
+          "Maxillary right third molar",
+          "Maxillary right central incisor",
+          "Mandibular left third molar",
+          "Maxillary left first molar"
+        ],
+        "q": "In the Universal Numbering System, tooth #1 is the:"
+      },
+      {
+        "answer": 1,
+        "explain": "Counting from #1 (upper right wisdom tooth), #8 is the maxillary right central incisor — the front tooth just right of the midline.",
+        "options": [
+          "Maxillary left central incisor",
+          "Maxillary right central incisor",
+          "Mandibular right canine",
+          "Maxillary right lateral incisor"
+        ],
+        "q": "Tooth #8 in the Universal system is the:"
+      },
+      {
+        "answer": 0,
+        "explain": "#30 is the mandibular right first molar — one of the most commonly restored teeth, and often the first permanent tooth to erupt around age six.",
+        "options": [
+          "Mandibular right first molar",
+          "Mandibular left first molar",
+          "Maxillary right first molar",
+          "Mandibular right second premolar"
+        ],
+        "q": "Tooth #30 is the:"
+      },
+      {
+        "answer": 1,
+        "explain": "Primary teeth use capital letters A through T (20 teeth total), starting at the upper right second molar (A) and following the same path as permanent numbering.",
+        "options": [
+          "Numbers 1–20",
+          "Letters A–T",
+          "Numbers 51–70",
+          "Letters a–t with a d-prefix"
+        ],
+        "q": "How are primary (deciduous) teeth identified in the Universal system?"
+      },
+      {
+        "answer": 2,
+        "explain": "Adults have 32 permanent teeth: 8 incisors, 4 canines, 8 premolars, and 12 molars including the third molars (wisdom teeth). Primary dentition has 20 — no premolars and no third molars.",
+        "options": [
+          "20",
+          "28",
+          "32",
+          "36"
+        ],
+        "q": "A full permanent dentition contains how many teeth?"
+      },
+      {
+        "answer": 1,
+        "explain": "Mesial faces the midline; distal faces away from it. Every tooth has exactly one mesial and one distal surface.",
+        "options": [
+          "Distal",
+          "Mesial",
+          "Buccal",
+          "Occlusal"
+        ],
+        "q": "The tooth surface facing toward the midline of the arch is the:"
+      },
+      {
+        "answer": 2,
+        "explain": "Posterior teeth meet on their occlusal surfaces; anterior teeth (incisors, canines) have an incisal edge instead — there is no occlusal surface in front.",
+        "options": [
+          "Incisal surface",
+          "Lingual surface",
+          "Occlusal surface",
+          "Facial surface"
+        ],
+        "q": "The chewing surface of a premolar or molar is called the:"
+      },
+      {
+        "answer": 2,
+        "explain": "Maxillary first molars typically have three roots — two buccal and one large palatal root — while mandibular molars usually have two (mesial and distal).",
+        "options": [
+          "One",
+          "Two",
+          "Three",
+          "Four"
+        ],
+        "q": "A maxillary first molar normally has how many roots?"
+      },
+      {
+        "answer": 1,
+        "explain": "The maxillary canine has the longest root of any tooth, which is why canines are often called the cornerstones of the arch.",
+        "options": [
+          "Maxillary central incisor",
+          "Maxillary canine",
+          "Mandibular first molar",
+          "Maxillary first premolar"
+        ],
+        "q": "Which tooth usually has the longest root in the mouth?"
+      },
+      {
+        "answer": 2,
+        "explain": "Enamel covers the crown and is about 96% mineral — harder than bone — but it contains no living cells, so once lost it cannot regenerate.",
+        "options": [
+          "Dentin",
+          "Bone",
+          "Enamel",
+          "Cementum"
+        ],
+        "q": "The hardest substance in the human body is:"
+      }
+    ],
+    "rounds": [
+      {
+        "boss": false,
+        "count": 10,
+        "desc": "Universal numbering, tooth types, surfaces, cusps, roots, and enamel — the map every dental exam starts with.",
+        "tag": "Tooth Anatomy & Numbering",
+        "title": "Tooth Anatomy & Numbering"
+      }
+    ],
+    "subject": "Dental Fundamentals",
+    "title": "Tooth Anatomy & Numbering"
+  },
+  {
+    "description": "Caries progression, gum disease, abscesses, and the oral-cancer warning signs that demand a biopsy or referral.",
+    "module": "oral-pathology",
+    "questions": [
+      {
+        "answer": 1,
+        "explain": "A white spot lesion is subsurface enamel demineralization — chalky white and still reversible with fluoride and plaque control before a cavity (cavitation) forms.",
+        "options": [
+          "Cavitation",
+          "White spot lesion",
+          "Periapical abscess",
+          "Pulp polyp"
+        ],
+        "q": "The earliest visible stage of tooth decay is a:"
+      },
+      {
+        "answer": 1,
+        "explain": "Streptococcus mutans ferments dietary sugars into acid; sustained acid drops plaque pH and dissolves enamel mineral — the core of the caries process.",
+        "options": [
+          "Porphyromonas gingivalis",
+          "Streptococcus mutans",
+          "Candida albicans",
+          "Staphylococcus aureus"
+        ],
+        "q": "The bacterium most strongly linked to starting dental caries is:"
+      },
+      {
+        "answer": 2,
+        "explain": "Gingivitis is reversible inflammation with no permanent damage. Periodontitis adds irreversible clinical attachment loss and bone loss — the finding that changes the diagnosis.",
+        "options": [
+          "Bleeding on probing",
+          "Plaque at the gumline",
+          "Loss of attachment and alveolar bone",
+          "Red, swollen gums"
+        ],
+        "q": "What separates periodontitis from gingivitis?"
+      },
+      {
+        "answer": 1,
+        "explain": "When pulp tissue dies — usually from deep caries or trauma — bacteria exit the root apex and form a periapical abscess, seen as a radiolucency at the root tip.",
+        "options": [
+          "A fractured cusp",
+          "A necrotic (dead) dental pulp",
+          "Gingival recession",
+          "An impacted wisdom tooth"
+        ],
+        "q": "A periapical abscess most often develops from:"
+      },
+      {
+        "answer": 1,
+        "explain": "Leukoplakia is a clinical description, not a diagnosis: a white plaque that won't rub off and can't be attributed to another condition. Because some are precancerous, persistent lesions are biopsied.",
+        "options": [
+          "Wipes off easily with gauze",
+          "Cannot be scraped off or diagnosed as another disease",
+          "Only occurs on the tongue",
+          "Is always cancerous"
+        ],
+        "q": "Leukoplakia is best defined as a white patch that:"
+      },
+      {
+        "answer": 1,
+        "explain": "Pseudomembranous candidiasis forms soft white plaques that wipe away to an erythematous (red) base — the wipe test is the quickest way to separate it from leukoplakia. It's common with dentures, recent antibiotics, and immune suppression.",
+        "options": [
+          "Cannot be removed",
+          "Wipe off, leaving a red, raw surface",
+          "Appear only on the lips",
+          "Are dark brown in color"
+        ],
+        "q": "Oral candidiasis (thrush) plaques typically:"
+      },
+      {
+        "answer": 1,
+        "explain": "Over 90% of oral cancers are squamous cell carcinomas arising from the surface epithelium; tobacco and alcohol are the dominant risk factors, with HPV driving many throat (oropharyngeal) cancers.",
+        "options": [
+          "Adenocarcinoma",
+          "Squamous cell carcinoma",
+          "Melanoma",
+          "Lymphoma"
+        ],
+        "q": "The most common type of oral cancer is:"
+      },
+      {
+        "answer": 1,
+        "explain": "Any ulcer, lump, or red/white patch persisting beyond two weeks must be evaluated for malignancy — early oral cancers are often painless, so 'it doesn't hurt' is not reassuring.",
+        "options": [
+          "A canker sore that heals in 10 days",
+          "An ulcer that has not healed after two weeks",
+          "A geographic tongue pattern",
+          "A small traumatic bite mark from yesterday"
+        ],
+        "q": "Which finding most urgently needs referral/biopsy?"
+      },
+      {
+        "answer": 1,
+        "explain": "Red lesions are rarer but far more dangerous: a large share of erythroplakias already show severe dysplasia or carcinoma at biopsy. High-risk sites include the lateral tongue and floor of the mouth.",
+        "options": [
+          "Is always a burn from hot food",
+          "Has a higher rate of severe dysplasia/cancer than leukoplakia",
+          "Is a normal tongue variant",
+          "Only affects denture wearers"
+        ],
+        "q": "Erythroplakia (a red patch) is concerning because it:"
+      },
+      {
+        "answer": 1,
+        "explain": "Aphthae form inside the mouth on non-keratinized mucosa (inner cheeks, lips, tongue underside) and are not infectious; cold sores are herpes simplex, contagious, and typically crust on the lip border.",
+        "options": [
+          "Are caused by herpes simplex virus",
+          "Occur on movable inner-mouth mucosa and are not contagious",
+          "Appear on the outer lip",
+          "Blister before ulcerating"
+        ],
+        "q": "Recurrent aphthous ulcers (canker sores) differ from cold sores because they:"
+      }
+    ],
+    "rounds": [
+      {
+        "boss": false,
+        "count": 10,
+        "desc": "Caries progression, gum disease, abscesses, and the oral-cancer warning signs that demand a biopsy or referral.",
+        "tag": "Oral Pathology",
+        "title": "Oral Pathology"
+      }
+    ],
+    "subject": "Dental Fundamentals",
+    "title": "Oral Pathology"
+  },
+  {
+    "description": "Lidocaine and articaine, infection antibiotics, endocarditis prophylaxis, and pain control — plus who needs caution.",
+    "module": "dental-pharmacology",
+    "questions": [
+      {
+        "answer": 1,
+        "explain": "2% lidocaine with epinephrine is the workhorse: reliable onset, moderate duration, and the vasoconstrictor extends working time. Benzocaine is topical only — it numbs surface tissue before the injection.",
+        "options": [
+          "Benzocaine gel",
+          "2% lidocaine with 1:100,000 epinephrine",
+          "3% mepivacaine plain",
+          "0.5% bupivacaine"
+        ],
+        "q": "The most commonly used local anesthetic in dentistry is:"
+      },
+      {
+        "answer": 1,
+        "explain": "Epinephrine is a vasoconstrictor: less blood flow at the site means the anesthetic washes out more slowly (longer duration), with less bleeding and lower peak blood levels of the drug.",
+        "options": [
+          "It makes the injection painless",
+          "It constricts local blood vessels, prolonging anesthesia and reducing bleeding",
+          "It sterilizes the injection site",
+          "It speeds up the onset to seconds"
+        ],
+        "q": "Why is epinephrine added to local anesthetic solutions?"
+      },
+      {
+        "answer": 1,
+        "explain": "Pulling back the plunger checks for blood return — a positive aspiration means the needle tip is intravascular, and injecting there could cause rapid systemic effects like a racing heart from epinephrine.",
+        "options": [
+          "Check the patient's blood pressure",
+          "Confirm the needle is not inside a blood vessel",
+          "Remove air from the cartridge",
+          "Test for allergy"
+        ],
+        "q": "Before depositing anesthetic, the clinician aspirates mainly to:"
+      },
+      {
+        "answer": 1,
+        "explain": "Cardiac patients tolerate small, carefully aspirated doses, but epinephrine can raise heart rate and blood pressure — so the total dose is limited, or a plain anesthetic like 3% mepivacaine is chosen for short procedures.",
+        "options": [
+          "Use unlimited amounts — it's only local",
+          "Limit the dose and consider a plain (no-epi) anesthetic",
+          "Avoid all dental treatment",
+          "Use epinephrine only in the front teeth"
+        ],
+        "q": "For a patient with significant cardiovascular disease, the safest approach to epinephrine is to:"
+      },
+      {
+        "answer": 1,
+        "explain": "Articaine's chemical structure gives it superior bone penetration, so a simple infiltration can sometimes numb lower molars where lidocaine usually needs a nerve block.",
+        "options": [
+          "Contains no epinephrine",
+          "Diffuses through bone better than other amides",
+          "Lasts 24 hours",
+          "Is the only anesthetic safe in pregnancy"
+        ],
+        "q": "Articaine 4% is often chosen for mandibular teeth because it:"
+      },
+      {
+        "answer": 1,
+        "explain": "Amoxicillin covers the mixed oral flora of a dental abscess well and is first-line. Antibiotics support — never replace — draining the infection and treating the tooth itself.",
+        "options": [
+          "Ciprofloxacin",
+          "Amoxicillin",
+          "Tetracycline",
+          "Vancomycin"
+        ],
+        "q": "The first-line antibiotic for a typical odontogenic (tooth) infection in a non-allergic adult is:"
+      },
+      {
+        "answer": 1,
+        "explain": "Clindamycin is the classic alternative for penicillin-allergic patients because it covers oral anaerobes and streptococci without the penicillin ring.",
+        "options": [
+          "Amoxicillin anyway at half dose",
+          "Clindamycin",
+          "Cephalexin IV",
+          "No antibiotic under any circumstances"
+        ],
+        "q": "A patient with a true penicillin allergy who needs an antibiotic for a dental infection is typically prescribed:"
+      },
+      {
+        "answer": 1,
+        "explain": "Per AHA guidance, high-risk cardiac patients take a single 2 g amoxicillin dose shortly before the appointment so blood levels peak during the procedure's brief bacteremia. Clindamycin 600 mg is the classic alternative for penicillin allergy.",
+        "options": [
+          "Amoxicillin 500 mg three times daily for a week",
+          "Amoxicillin 2 g by mouth, single dose 30–60 minutes before the procedure",
+          "Clindamycin for every patient",
+          "An antibiotic started the day after treatment"
+        ],
+        "q": "Standard antibiotic prophylaxis against infective endocarditis before invasive dental work (for high-risk patients) is:"
+      },
+      {
+        "answer": 1,
+        "explain": "Ibuprofen (an NSAID) blocks prostaglandin production, attacking the inflammation causing the pain; acetaminophen relieves pain centrally but has almost no anti-inflammatory effect — the two are often combined for stronger relief.",
+        "options": [
+          "It has no side effects",
+          "It is anti-inflammatory, and most dental pain is driven by inflammation",
+          "It works instantly",
+          "Acetaminophen never helps pain"
+        ],
+        "q": "Why is ibuprofen usually preferred over acetaminophen for post-extraction pain?"
+      },
+      {
+        "answer": 0,
+        "explain": "NSAIDs reduce the prostaglandins that protect the stomach lining and support kidney blood flow, so ulcer history, chronic kidney disease, and anticoagulant use are the classic cautions.",
+        "options": [
+          "A history of stomach ulcers or kidney disease",
+          "Seasonal allergies",
+          "Freckles",
+          "A knee replacement"
+        ],
+        "q": "NSAIDs like ibuprofen should be used cautiously or avoided in patients with:"
+      }
+    ],
+    "rounds": [
+      {
+        "boss": false,
+        "count": 10,
+        "desc": "Lidocaine and articaine, infection antibiotics, endocarditis prophylaxis, and pain control — plus who needs caution.",
+        "tag": "Dental Pharmacology",
+        "title": "Dental Pharmacology"
+      }
+    ],
+    "subject": "Dental Fundamentals",
+    "title": "Dental Pharmacology"
+  },
+  {
+    "description": "Amalgam vs composite, glass ionomer, luting cements, and impression materials — picking the right material for the job.",
+    "module": "dental-materials",
+    "questions": [
+      {
+        "answer": 1,
+        "explain": "Amalgam forms when liquid mercury is mixed (triturated) with a silver–tin–copper alloy powder; the set material is strong and durable, especially under heavy back-tooth chewing loads.",
+        "options": [
+          "Gold and platinum",
+          "Silver, tin, and copper powders",
+          "Titanium and nickel",
+          "Zinc and aluminum"
+        ],
+        "q": "Dental amalgam is an alloy of mercury combined mainly with:"
+      },
+      {
+        "answer": 1,
+        "explain": "Composite bonds to etched enamel and dentin, so the dentist removes less healthy tooth than amalgam's mechanical-retention shapes require — and it's tooth-colored.",
+        "options": [
+          "Never wears out",
+          "Bonds adhesively to tooth structure, allowing more conservative preparations",
+          "Contains no chemicals",
+          "Sets without any light or mixing"
+        ],
+        "q": "A key advantage of composite resin over amalgam is that it:"
+      },
+      {
+        "answer": 1,
+        "explain": "Glass ionomer chemically bonds to tooth and slowly releases fluoride, making it a favorite for root-surface lesions, pediatric fillings, and high-caries-risk patients — though it's weaker than composite.",
+        "options": [
+          "Is the strongest crown material",
+          "Releases fluoride and bonds chemically to tooth structure",
+          "Requires no mixing",
+          "Is radiolucent like decay"
+        ],
+        "q": "Glass ionomer cement is especially valued in dentistry because it:"
+      },
+      {
+        "answer": 1,
+        "explain": "Eugenol is a free-radical scavenger, so residual ZOE under a composite restoration can prevent the resin from curing properly — a classic materials-compatibility exam point.",
+        "options": [
+          "Stains teeth permanently",
+          "Inhibits the polymerization (setting) of composite resin",
+          "Makes enamel dissolve",
+          "Causes amalgam to expand"
+        ],
+        "q": "Zinc oxide–eugenol (ZOE) is known for its soothing effect on the pulp, but its eugenol:"
+      },
+      {
+        "answer": 1,
+        "explain": "Zinc phosphate holds crowns by mechanical interlocking into microscopic irregularities; it is strong in compression but has zero chemical adhesion and is acidic when freshly mixed.",
+        "options": [
+          "Bonds chemically to enamel",
+          "Retains crowns mechanically and has no true adhesion to tooth",
+          "Releases fluoride for years",
+          "Is used to take impressions"
+        ],
+        "q": "Zinc phosphate cement, one of the oldest luting cements:"
+      },
+      {
+        "answer": 1,
+        "explain": "Its polyacrylic acid chains bond to calcium in the tooth, and it's notably kind to the pulp — a gentler, adhesive alternative to zinc phosphate.",
+        "options": [
+          "Set under water",
+          "Bond chemically to tooth structure",
+          "Contain fluoride",
+          "Be tooth-colored"
+        ],
+        "q": "Polycarboxylate cement was historically important because it was the first cement to:"
+      },
+      {
+        "answer": 1,
+        "explain": "Alginate (irreversible hydrocolloid) is cheap and easy but dimensionally unstable — it gains and loses water fast, so casts must be poured within minutes for accuracy.",
+        "options": [
+          "Final crown impressions",
+          "Study models — and it must be poured promptly",
+          "Permanent cementation",
+          "Bite registrations only"
+        ],
+        "q": "Alginate impression material is best used for:"
+      },
+      {
+        "answer": 1,
+        "explain": "PVS captures fine detail and stays dimensionally stable for days, unlike alginate — which is why it's the standard for definitive restorative impressions.",
+        "options": [
+          "Alginate",
+          "PVS (polyvinyl siloxane / addition silicone)",
+          "Wax",
+          "Plaster"
+        ],
+        "q": "For a final crown-and-bridge impression, the most accurate, stable choice is:"
+      },
+      {
+        "answer": 1,
+        "explain": "Calcium hydroxide's high pH mildly irritates the pulp in a controlled way, prompting odontoblasts to lay down a reparative dentin bridge over a near-exposure.",
+        "options": [
+          "Cements the crown",
+          "Stimulates the pulp to form reparative (secondary) dentin",
+          "Whitens the tooth",
+          "Blocks all bacteria forever"
+        ],
+        "q": "Calcium hydroxide liner (e.g., Dycal) is placed in deep preparations because it:"
+      },
+      {
+        "answer": 1,
+        "explain": "Acid etching dissolves enamel rod ends, creating a frosted, high-energy surface full of micro-undercuts; resin tags lock into these, giving composite its bond strength.",
+        "options": [
+          "Bleach the tooth",
+          "Create microscopic pores that resin flows into for micromechanical retention",
+          "Kill all bacteria in the dentin",
+          "Make the tooth numb"
+        ],
+        "q": "Enamel is etched with phosphoric acid (about 37%) before bonding in order to:"
+      }
+    ],
+    "rounds": [
+      {
+        "boss": false,
+        "count": 10,
+        "desc": "Amalgam vs composite, glass ionomer, luting cements, and impression materials — picking the right material for the job.",
+        "tag": "Dental Materials",
+        "title": "Dental Materials"
+      }
+    ],
+    "subject": "Dental Fundamentals",
+    "title": "Dental Materials"
+  },
+  {
+    "description": "Probing depths, attachment loss, Stage I–IV periodontitis, scaling and root planing, and maintenance intervals.",
+    "module": "periodontics",
+    "questions": [
+      {
+        "answer": 1,
+        "explain": "Probing depths of 1–3 mm with no bleeding indicate health; deeper readings suggest a periodontal pocket has formed as attachment migrates down the root.",
+        "options": [
+          "0 mm",
+          "1–3 mm",
+          "5–6 mm",
+          "7+ mm"
+        ],
+        "q": "A healthy gingival sulcus typically probes at:"
+      },
+      {
+        "answer": 1,
+        "explain": "CAL uses the fixed CEJ landmark: probing depth plus gingival recession (when the margin sits below the CEJ). It measures total support lost, which pocket depth alone can hide.",
+        "options": [
+          "The gumline to the base of the pocket",
+          "The cementoenamel junction (CEJ) to the base of the pocket",
+          "The crown tip to the root tip",
+          "The bone crest to the apex"
+        ],
+        "q": "Clinical attachment loss (CAL) is measured from:"
+      },
+      {
+        "answer": 1,
+        "explain": "Inflamed pocket epithelium is thin and ulcerated, so gentle probing provokes bleeding; absence of bleeding is a strong sign of periodontal stability.",
+        "options": [
+          "The site is healthy",
+          "Active gingival inflammation",
+          "The probe was too sharp",
+          "The tooth is fractured"
+        ],
+        "q": "Bleeding on probing at a site indicates:"
+      },
+      {
+        "answer": 1,
+        "explain": "Staging runs by worst-site attachment loss: Stage I = 1–2 mm, Stage II = 3–4 mm, Stage III/IV = 5 mm or more, with increasing tooth-loss risk and treatment complexity.",
+        "options": [
+          "No loss",
+          "1–2 mm",
+          "3–4 mm",
+          "5 mm or more"
+        ],
+        "q": "Under the current staging system, Stage I periodontitis shows interdental CAL of about:"
+      },
+      {
+        "answer": 1,
+        "explain": "Stage II is moderate periodontitis — 3–4 mm of attachment loss and radiographic bone loss into the coronal third of the root (roughly 15–33%).",
+        "options": [
+          "1–2 mm",
+          "3–4 mm",
+          "Exactly 0 mm",
+          "10 mm"
+        ],
+        "q": "Stage II periodontitis corresponds to interdental CAL of:"
+      },
+      {
+        "answer": 1,
+        "explain": "SRP is the cornerstone nonsurgical therapy for periodontitis: thorough subgingival debridement so the gum can heal against a clean, smooth root and pocket depths shrink.",
+        "options": [
+          "A cosmetic polish above the gumline",
+          "Nonsurgical deep cleaning that removes calculus and smooths root surfaces below the gumline",
+          "Surgical reshaping of the jawbone",
+          "Whitening with a laser"
+        ],
+        "q": "Scaling and root planing (SRP) is best described as:"
+      },
+      {
+        "answer": 1,
+        "explain": "Periodontal pathogens recolonize pockets within weeks; the classic 3–4 month maintenance interval keeps bacterial loads below the threshold that restarts attachment loss.",
+        "options": [
+          "6 months",
+          "3–4 months",
+          "2 years",
+          "Only when pain occurs"
+        ],
+        "q": "After active periodontal therapy, supportive maintenance visits are typically scheduled every:"
+      },
+      {
+        "answer": 1,
+        "explain": "Smoking impairs blood flow and immune defense in the gums and blunts healing — smokers lose more attachment and respond worse to treatment; it also masks bleeding, hiding disease.",
+        "options": [
+          "Drinking coffee",
+          "Smoking/tobacco use",
+          "Eating spicy food",
+          "Mouth breathing"
+        ],
+        "q": "The strongest modifiable risk factor for periodontitis is:"
+      },
+      {
+        "answer": 1,
+        "explain": "Poorly controlled diabetes accelerates periodontal destruction, and periodontal inflammation in turn worsens insulin resistance and glycemic control — treating one helps the other.",
+        "options": [
+          "One-way: diabetes only",
+          "Bidirectional — each worsens the other",
+          "Nonexistent",
+          "Protective"
+        ],
+        "q": "The relationship between diabetes and periodontitis is:"
+      },
+      {
+        "answer": 1,
+        "explain": "When attachment loss reaches the fork between molar roots, cleaning becomes difficult and prognosis drops — furcation involvement is a key finding on molars.",
+        "options": [
+          "Decay on the chewing surface",
+          "Bone loss has entered the area where a multirooted tooth's roots divide",
+          "The tooth has three canals",
+          "The crown has fractured"
+        ],
+        "q": "Furcation involvement means:"
+      }
+    ],
+    "rounds": [
+      {
+        "boss": false,
+        "count": 10,
+        "desc": "Probing depths, attachment loss, Stage I–IV periodontitis, scaling and root planing, and maintenance intervals.",
+        "tag": "Periodontics",
+        "title": "Periodontics"
+      }
+    ],
+    "subject": "Dental Fundamentals",
+    "title": "Periodontics"
+  },
+  {
+    "description": "Reversible vs irreversible pulpitis, necrosis, periapical diagnosis, apex locators, and obturation with gutta-percha.",
+    "module": "endodontics",
+    "questions": [
+      {
+        "answer": 1,
+        "explain": "A brief, sharp response that fades = reversible pulpitis (the pulp can recover). Lingering or spontaneous pain means the inflamed pulp cannot recover — irreversible pulpitis, treated with root canal therapy or extraction.",
+        "options": [
+          "Reversible pulpitis",
+          "Irreversible pulpitis",
+          "A healthy pulp",
+          "Simple gum inflammation"
+        ],
+        "q": "Pain that lingers for 30+ seconds after a cold stimulus is removed suggests:"
+      },
+      {
+        "answer": 1,
+        "explain": "If the pulp can recover, conservative care — removing caries or leaky restorations and sealing the tooth — lets inflammation resolve; no endodontic treatment is needed.",
+        "options": [
+          "Full root canal therapy",
+          "Removing the irritant (e.g., replacing the leaking filling) and monitoring",
+          "Extracting the tooth",
+          "Antibiotics alone for a month"
+        ],
+        "q": "Reversible pulpitis is typically treated by:"
+      },
+      {
+        "answer": 1,
+        "explain": "A dead pulp can't respond: necrosis is the usual finding, though multirooted teeth can have mixed status and recently traumatized teeth can give false negatives, so results are confirmed with other tests.",
+        "options": [
+          "Reversible pulpitis",
+          "Pulpal necrosis",
+          "Hyperactive pulp",
+          "Normal pulp — always"
+        ],
+        "q": "A tooth that gives NO response to cold testing or electric pulp testing most likely has:"
+      },
+      {
+        "answer": 1,
+        "explain": "Percussion tenderness localizes inflammation to the periodontal ligament around the root apex — a hallmark of apical periodontitis, often from a dying pulp or a high bite.",
+        "options": [
+          "Gingiva only",
+          "Periapical tissues (symptomatic apical periodontitis)",
+          "Opposite arch",
+          "TMJ only"
+        ],
+        "q": "Pain on biting or percussion of a tooth points to inflammation in the:"
+      },
+      {
+        "answer": 1,
+        "explain": "Apex locators sense when a file reaches the apical constriction/foramen, letting the clinician set working length accurately (confirmed with a radiograph) and avoid over-instrumenting.",
+        "options": [
+          "Take the radiograph",
+          "Determine the working length by locating the apical constriction",
+          "Mix the sealer",
+          "Measure the crown height"
+        ],
+        "q": "An electronic apex locator is used during root canal therapy to:"
+      },
+      {
+        "answer": 1,
+        "explain": "Sodium hypochlorite dissolves organic tissue and kills bacteria inside the canal system — functions no file can accomplish in fins and lateral canals.",
+        "options": [
+          "Saline only",
+          "Sodium hypochlorite",
+          "Hydrogen peroxide 30%",
+          "Chlorhexidine mouthwash"
+        ],
+        "q": "The primary irrigant used to clean root canals is:"
+      },
+      {
+        "answer": 1,
+        "explain": "Gutta-percha — a rubbery, biocompatible material — is compacted with sealer to three-dimensionally fill and seal the cleaned canal space against re-infection.",
+        "options": [
+          "Amalgam",
+          "Gutta-percha with a sealer",
+          "Glass ionomer only",
+          "Composite resin"
+        ],
+        "q": "Canals are obturated (filled) primarily with:"
+      },
+      {
+        "answer": 1,
+        "explain": "The dam prevents saliva (and its bacteria) from contaminating the canal and stops small files or caustic irrigant from being swallowed or aspirated — a clinical and legal standard of care.",
+        "options": [
+          "It whitens the tooth",
+          "It isolates the tooth, keeping the canal aseptic and protecting the airway from instruments/irrigants",
+          "It replaces anesthesia",
+          "It is only for patient comfort"
+        ],
+        "q": "Why is a rubber dam mandatory for root canal treatment?"
+      },
+      {
+        "answer": 1,
+        "explain": "RCT follows a fixed logic: enter the pulp chamber, measure each canal, disinfect and shape, seal with gutta-percha, then protect the tooth — usually with a crown on back teeth.",
+        "options": [
+          "Crown first, then decide",
+          "Access opening → determine working length → clean & shape → obturate → restore the crown",
+          "Extract → clean → reimplant",
+          "Fill the crown → drill the root"
+        ],
+        "q": "In sequence, the major steps of root canal therapy are:"
+      },
+      {
+        "answer": 1,
+        "explain": "Chronic apical periodontitis destroys bone at the apex, producing the classic periapical radiolucency; treating the canal source usually allows the bone to heal.",
+        "options": [
+          "Normal anatomy in all cases",
+          "A periapical lesion (bone lost to inflammation from the necrotic pulp)",
+          "A metal artifact",
+          "A sinus cavity"
+        ],
+        "q": "A dark (radiolucent) circle at the tip of a root on a radiograph, in a non-vital tooth, most likely represents:"
+      }
+    ],
+    "rounds": [
+      {
+        "boss": false,
+        "count": 10,
+        "desc": "Reversible vs irreversible pulpitis, necrosis, periapical diagnosis, apex locators, and obturation with gutta-percha.",
+        "tag": "Endodontics",
+        "title": "Endodontics"
+      }
+    ],
+    "subject": "Dental Fundamentals",
+    "title": "Endodontics"
+  },
+  {
+    "description": "Bitewing vs periapical vs panoramic, ALARA, shielding, digital imaging, and reading radiolucent vs radiopaque.",
+    "module": "dental-radiology",
+    "questions": [
+      {
+        "answer": 1,
+        "explain": "Bitewings show the crowns of upper and lower teeth together with the alveolar crest — ideal geometry for spotting decay between teeth and early bone loss.",
+        "options": [
+          "Root fractures",
+          "Interproximal (between-the-teeth) caries and crestal bone levels",
+          "Impacted wisdom teeth",
+          "TMJ disorders"
+        ],
+        "q": "Bitewing radiographs are the best choice for detecting:"
+      },
+      {
+        "answer": 1,
+        "explain": "The PA is the diagnostic image for the whole tooth — apex included — which is why it's used for abscesses, root fractures, and endodontic working lengths.",
+        "options": [
+          "Only the crown",
+          "The entire tooth from crown tip to root apex plus surrounding bone",
+          "Both jaws in one image",
+          "Only soft tissues"
+        ],
+        "q": "A periapical (PA) radiograph shows:"
+      },
+      {
+        "answer": 1,
+        "explain": "Panoramic images trade fine detail for coverage: both jaws in one shot for wisdom teeth, large lesions, fractures, and growth assessment — but never for fine caries diagnosis.",
+        "options": [
+          "Finding tiny interproximal decay",
+          "A broad overview — impacted third molars, jaw lesions, trauma, and development",
+          "Checking a single filling margin",
+          "Replacing all other radiographs"
+        ],
+        "q": "A panoramic image is most useful for:"
+      },
+      {
+        "answer": 1,
+        "explain": "ALARA means every exposure must be justified and optimized — take only images that change care, and use fast receptors, collimation, and correct technique to keep dose minimal.",
+        "options": [
+          "Always Look At Radiographs Again",
+          "As Low As Reasonably Achievable",
+          "Annual Limits Are Required Always",
+          "Avoid Lead Aprons, Radiation Absent"
+        ],
+        "q": "ALARA, the guiding principle of dental radiography, stands for:"
+      },
+      {
+        "answer": 1,
+        "explain": "Lead shielding absorbs scatter; the thyroid collar matters because the thyroid is radiation-sensitive — especially in children — and sits close to the beam path.",
+        "options": [
+          "Hold the sensor in place",
+          "Shield the patient's torso and thyroid from scatter radiation",
+          "Improve image sharpness",
+          "Protect the operator only"
+        ],
+        "q": "During radiography, the lead apron and thyroid collar serve to:"
+      },
+      {
+        "answer": 1,
+        "explain": "Digital sensors are more sensitive than film, cutting dose significantly, and images appear immediately, can be enhanced, and are stored electronically — no darkroom chemistry.",
+        "options": [
+          "Uses more radiation",
+          "Uses less radiation and produces images instantly without chemicals",
+          "Cannot be enlarged or enhanced",
+          "Works without a computer sensor"
+        ],
+        "q": "Compared with traditional film, digital radiography generally:"
+      },
+      {
+        "answer": 1,
+        "explain": "Radiolucent = X-rays pass through easily, exposing the receptor more → dark. Soft tissue, pulp, decay, and abscesses are radiolucent; dense structures block rays and appear light.",
+        "options": [
+          "White",
+          "Dark",
+          "Shiny silver",
+          "Invisible in all cases"
+        ],
+        "q": "On a radiograph, a radiolucent structure appears:"
+      },
+      {
+        "answer": 1,
+        "explain": "Radiopacity tracks density: enamel is the most mineralized tissue in the body and metals block nearly all radiation, so both image bright white against darker dentin and bone.",
+        "options": [
+          "Dental pulp",
+          "Enamel and metallic restorations like amalgam",
+          "A periapical abscess",
+          "The periodontal ligament space"
+        ],
+        "q": "Which of these appears most radiopaque (bright white) on a radiograph?"
+      },
+      {
+        "answer": 1,
+        "explain": "When receptor and tooth are parallel and the beam is aimed at right angles to both, the image is dimensionally accurate — critical for endodontic measurements.",
+        "options": [
+          "Requires no holders",
+          "Produces the least distortion by keeping the receptor parallel to the tooth and the beam perpendicular",
+          "Uses half the radiation of any other method",
+          "Works only on front teeth"
+        ],
+        "q": "The paralleling technique is preferred for periapical images because it:"
+      },
+      {
+        "answer": 1,
+        "explain": "Routine images are deferred, but a needed diagnostic image (with apron/collar and modern low-dose technique) delivers negligible fetal exposure and should not be withheld in an emergency.",
+        "options": [
+          "Take a full series at every visit",
+          "Postpone elective images; take only diagnostically necessary ones with shielding",
+          "Never take any image under any circumstance, even emergencies",
+          "Double the exposure"
+        ],
+        "q": "For a pregnant patient, the standard approach to dental radiographs is to:"
+      }
+    ],
+    "rounds": [
+      {
+        "boss": false,
+        "count": 10,
+        "desc": "Bitewing vs periapical vs panoramic, ALARA, shielding, digital imaging, and reading radiolucent vs radiopaque.",
+        "tag": "Dental Radiology",
+        "title": "Dental Radiology"
+      }
+    ],
+    "subject": "Dental Fundamentals",
+    "title": "Dental Radiology"
+  },
+  {
+    "description": "Fluoride, sealants, home-care coaching, medical-history red flags, and recall intervals that keep disease from starting.",
+    "module": "preventive-care",
+    "questions": [
+      {
+        "answer": 1,
+        "explain": "Fluoride in plaque fluid drives calcium and phosphate back into early lesions (remineralization) and forms fluorapatite, which withstands acid better than the original enamel — plus it mildly inhibits bacterial enzymes.",
+        "options": [
+          "Coating teeth so bacteria slide off",
+          "Promoting remineralization and making enamel more acid-resistant",
+          "Killing all oral bacteria permanently",
+          "Replacing the need to brush"
+        ],
+        "q": "Fluoride protects teeth mainly by:"
+      },
+      {
+        "answer": 1,
+        "explain": "Varnish's sticky resin holds high-concentration fluoride (about 22,600 ppm) against the enamel for hours, and little is swallowed, so it's safe even for young children — applied 2–4 times a year for high-risk patients.",
+        "options": [
+          "Whiten teeth instantly",
+          "Deliver high-concentration fluoride that sticks to teeth for hours, for high-caries-risk patients",
+          "Seal pits permanently",
+          "Replace toothpaste"
+        ],
+        "q": "Professional fluoride varnish is applied in the office primarily to:"
+      },
+      {
+        "answer": 1,
+        "explain": "Molar grooves are too narrow for bristles but perfect for bacteria; sealants physically barricade them — most effective on newly erupted first and second permanent molars.",
+        "options": [
+          "Releasing calcium into saliva",
+          "Flowing resin into the deep grooves of molars so plaque and food can't lodge there",
+          "Making the whole tooth harder",
+          "Killing bacteria for a year"
+        ],
+        "q": "Pit-and-fissure sealants work by:"
+      },
+      {
+        "answer": 1,
+        "explain": "The 'six-year molars' erupt behind the baby teeth (no tooth is lost for them), and their deep fissures decay quickly — sealing soon after eruption gives the most protection.",
+        "options": [
+          "3",
+          "6",
+          "12",
+          "18"
+        ],
+        "q": "First permanent molars erupt around age ___ and should be sealed soon after eruption."
+      },
+      {
+        "answer": 1,
+        "explain": "Twice-daily two-minute brushing with fluoride toothpaste plus daily floss or interdental brushes is the evidence-based baseline; technique (gentle, angled at the gumline — e.g., Bass) matters more than force.",
+        "options": [
+          "Once a day, hard, for 30 seconds",
+          "Twice daily for two minutes with fluoride toothpaste, plus daily interdental cleaning",
+          "Only when teeth feel dirty",
+          "With a hard brush and no toothpaste"
+        ],
+        "q": "Effective home care coaching recommends brushing:"
+      },
+      {
+        "answer": 1,
+        "explain": "Bisphosphonates suppress bone turnover; after invasive procedures the jawbone may fail to heal, exposing necrotic bone (MRONJ) — so dental clearance and conservative planning before starting therapy matter.",
+        "options": [
+          "Excessive salivation",
+          "Medication-related osteonecrosis of the jaw (MRONJ) after extractions or surgery",
+          "Tooth whitening failure",
+          "Anesthesia wearing off early"
+        ],
+        "q": "A patient taking bisphosphonates is a red flag mainly because of the risk of:"
+      },
+      {
+        "answer": 1,
+        "explain": "Warfarin thins clotting; INR confirms anticoagulation intensity. Many minor procedures proceed without stopping warfarin if the INR is acceptable — stopping it risks dangerous clots, so the physician guides any changes.",
+        "options": [
+          "Blood sugar; check glucose",
+          "Bleeding risk; verify the INR is in a safe range (often in coordination with the physician)",
+          "Blood pressure only",
+          "No concern at all"
+        ],
+        "q": "Before extracting a tooth in a patient on warfarin, the key concern and check is:"
+      },
+      {
+        "answer": 1,
+        "explain": "Saliva is the mouth's defense system — buffering acid, washing debris, and delivering repair minerals. Losing it (medications, radiation, Sjögren's syndrome) is why dry-mouth patients get rapid, atypical decay.",
+        "options": [
+          "Contains no minerals",
+          "Buffers acids, clears food, and supplies calcium/phosphate for remineralization",
+          "Only aids speech",
+          "Makes teeth whiter"
+        ],
+        "q": "Dry mouth (xerostomia) sharply raises caries risk because saliva normally:"
+      },
+      {
+        "answer": 1,
+        "explain": "Each sugar exposure restarts a roughly 20–40 minute acid attack (the Stephan curve); frequent sipping and snacking keep pH low and demineralizing — frequency, not just amount, is the counseling target.",
+        "options": [
+          "Total sugar eaten at one meal",
+          "How often sugar is consumed through the day",
+          "Eating any carbohydrates at all",
+          "Drinking water with meals"
+        ],
+        "q": "For caries prevention, dietary counseling should emphasize that decay risk rises most with:"
+      },
+      {
+        "answer": 1,
+        "explain": "Six-month recalls remain the common default for low-risk patients (exam, cleaning, cancer screening), while high-risk patients — active perio, high caries rate, xerostomia — are seen every 3–4 months.",
+        "options": [
+          "Month",
+          "6 months",
+          "2 years",
+          "5 years"
+        ],
+        "q": "A standard recall interval for a healthy, low-risk adult is every:"
+      }
+    ],
+    "rounds": [
+      {
+        "boss": false,
+        "count": 10,
+        "desc": "Fluoride, sealants, home-care coaching, medical-history red flags, and recall intervals that keep disease from starting.",
+        "tag": "Preventive Dentistry",
+        "title": "Preventive Dentistry"
+      }
+    ],
+    "subject": "Dental Fundamentals",
+    "title": "Preventive Dentistry"
+  },
+  {
+    "description": "All 32 permanent teeth by Universal number — sort every tooth into its type. Built for Sort Sprint.",
+    "module": "tooth-numbering-drill",
+    "questions": [
+      {
+        "answer": 3,
+        "explain": "#1 is the upper right third molar (wisdom tooth) — numbering starts here, and it's the tooth most often impacted or missing.",
+        "options": [
+          "Incisor",
+          "Canine",
+          "Premolar",
+          "Molar"
+        ],
+        "q": "#1 · Upper Right 3rd Molar (Wisdom)"
+      },
+      {
+        "answer": 3,
+        "explain": "The second molar sits just in front of the wisdom tooth and usually erupts around age 12.",
+        "options": [
+          "Incisor",
+          "Canine",
+          "Premolar",
+          "Molar"
+        ],
+        "q": "#2 · Upper Right 2nd Molar"
+      },
+      {
+        "answer": 3,
+        "explain": "#3, the upper right first molar, typically has three roots and is a cornerstone of chewing.",
+        "options": [
+          "Incisor",
+          "Canine",
+          "Premolar",
+          "Molar"
+        ],
+        "q": "#3 · Upper Right 1st Molar"
+      },
+      {
+        "answer": 2,
+        "explain": "Premolars sit between the canines and molars; the second premolar usually has a single root.",
+        "options": [
+          "Incisor",
+          "Canine",
+          "Premolar",
+          "Molar"
+        ],
+        "q": "#4 · Upper Right 2nd Premolar"
+      },
+      {
+        "answer": 2,
+        "explain": "The upper first premolar often has two roots (buccal and palatal) — unlike most other premolars.",
+        "options": [
+          "Incisor",
+          "Canine",
+          "Premolar",
+          "Molar"
+        ],
+        "q": "#5 · Upper Right 1st Premolar"
+      },
+      {
+        "answer": 1,
+        "explain": "The canine is the pointed cornerstone tooth, and the upper canine has the longest root in the mouth.",
+        "options": [
+          "Incisor",
+          "Canine",
+          "Premolar",
+          "Molar"
+        ],
+        "q": "#6 · Upper Right Canine"
+      },
+      {
+        "answer": 0,
+        "explain": "Lateral incisors sit beside the centrals; upper laterals are the teeth most often congenitally missing after wisdom teeth.",
+        "options": [
+          "Incisor",
+          "Canine",
+          "Premolar",
+          "Molar"
+        ],
+        "q": "#7 · Upper Right Lateral Incisor"
+      },
+      {
+        "answer": 0,
+        "explain": "#8 is the upper right central incisor — the most visible tooth in the smile and the most commonly injured in falls.",
+        "options": [
+          "Incisor",
+          "Canine",
+          "Premolar",
+          "Molar"
+        ],
+        "q": "#8 · Upper Right Central Incisor"
+      },
+      {
+        "answer": 0,
+        "explain": "#9 mirrors #8 across the midline — the count crosses to the left side at the upper centrals.",
+        "options": [
+          "Incisor",
+          "Canine",
+          "Premolar",
+          "Molar"
+        ],
+        "q": "#9 · Upper Left Central Incisor"
+      },
+      {
+        "answer": 0,
+        "explain": "The upper left lateral incisor is #10, continuing the count outward from the midline.",
+        "options": [
+          "Incisor",
+          "Canine",
+          "Premolar",
+          "Molar"
+        ],
+        "q": "#10 · Upper Left Lateral Incisor"
+      },
+      {
+        "answer": 1,
+        "explain": "#11 is the upper left canine — upper canines are sometimes called eyeteeth.",
+        "options": [
+          "Incisor",
+          "Canine",
+          "Premolar",
+          "Molar"
+        ],
+        "q": "#11 · Upper Left Canine"
+      },
+      {
+        "answer": 2,
+        "explain": "The first premolar replaces the primary first molar — primary teeth have no premolars at all.",
+        "options": [
+          "Incisor",
+          "Canine",
+          "Premolar",
+          "Molar"
+        ],
+        "q": "#12 · Upper Left 1st Premolar"
+      },
+      {
+        "answer": 2,
+        "explain": "#13 is the upper left second premolar, a two-cusped tooth built for crushing.",
+        "options": [
+          "Incisor",
+          "Canine",
+          "Premolar",
+          "Molar"
+        ],
+        "q": "#13 · Upper Left 2nd Premolar"
+      },
+      {
+        "answer": 3,
+        "explain": "#14, the upper left first molar, erupts around age six behind the baby teeth — no baby tooth is lost for it.",
+        "options": [
+          "Incisor",
+          "Canine",
+          "Premolar",
+          "Molar"
+        ],
+        "q": "#14 · Upper Left 1st Molar"
+      },
+      {
+        "answer": 3,
+        "explain": "Second molars erupt around age 12, which is why they're nicknamed the 12-year molars.",
+        "options": [
+          "Incisor",
+          "Canine",
+          "Premolar",
+          "Molar"
+        ],
+        "q": "#15 · Upper Left 2nd Molar"
+      },
+      {
+        "answer": 3,
+        "explain": "#16 finishes the upper arch — the count then drops down to #17 on the lower left.",
+        "options": [
+          "Incisor",
+          "Canine",
+          "Premolar",
+          "Molar"
+        ],
+        "q": "#16 · Upper Left 3rd Molar (Wisdom)"
+      },
+      {
+        "answer": 3,
+        "explain": "#17 is the lower left wisdom tooth; lower third molars are the most commonly impacted teeth.",
+        "options": [
+          "Incisor",
+          "Canine",
+          "Premolar",
+          "Molar"
+        ],
+        "q": "#17 · Lower Left 3rd Molar (Wisdom)"
+      },
+      {
+        "answer": 3,
+        "explain": "Lower molars usually have two roots (mesial and distal) — unlike the three-rooted upper molars.",
+        "options": [
+          "Incisor",
+          "Canine",
+          "Premolar",
+          "Molar"
+        ],
+        "q": "#18 · Lower Left 2nd Molar"
+      },
+      {
+        "answer": 3,
+        "explain": "#19, the lower left first molar, is often the most heavily restored tooth because it erupts earliest and does the most chewing.",
+        "options": [
+          "Incisor",
+          "Canine",
+          "Premolar",
+          "Molar"
+        ],
+        "q": "#19 · Lower Left 1st Molar"
+      },
+      {
+        "answer": 2,
+        "explain": "#20 is the lower left second premolar, counting forward from the molars toward the midline.",
+        "options": [
+          "Incisor",
+          "Canine",
+          "Premolar",
+          "Molar"
+        ],
+        "q": "#20 · Lower Left 2nd Premolar"
+      },
+      {
+        "answer": 2,
+        "explain": "Lower premolars look more canine-like than upper premolars do, with one dominant buccal cusp.",
+        "options": [
+          "Incisor",
+          "Canine",
+          "Premolar",
+          "Molar"
+        ],
+        "q": "#21 · Lower Left 1st Premolar"
+      },
+      {
+        "answer": 1,
+        "explain": "#22 is the lower left canine — canines guide the bite during side-to-side jaw movement.",
+        "options": [
+          "Incisor",
+          "Canine",
+          "Premolar",
+          "Molar"
+        ],
+        "q": "#22 · Lower Left Canine"
+      },
+      {
+        "answer": 0,
+        "explain": "Lower incisors are the smallest teeth in the mouth, and #23 is the lower left lateral.",
+        "options": [
+          "Incisor",
+          "Canine",
+          "Premolar",
+          "Molar"
+        ],
+        "q": "#23 · Lower Left Lateral Incisor"
+      },
+      {
+        "answer": 0,
+        "explain": "#24 is the lower left central incisor, just left of the lower midline.",
+        "options": [
+          "Incisor",
+          "Canine",
+          "Premolar",
+          "Molar"
+        ],
+        "q": "#24 · Lower Left Central Incisor"
+      },
+      {
+        "answer": 0,
+        "explain": "#25 crosses the midline to the lower right central incisor.",
+        "options": [
+          "Incisor",
+          "Canine",
+          "Premolar",
+          "Molar"
+        ],
+        "q": "#25 · Lower Right Central Incisor"
+      },
+      {
+        "answer": 0,
+        "explain": "#26 is the lower right lateral incisor, slightly wider than the central beside it.",
+        "options": [
+          "Incisor",
+          "Canine",
+          "Premolar",
+          "Molar"
+        ],
+        "q": "#26 · Lower Right Lateral Incisor"
+      },
+      {
+        "answer": 1,
+        "explain": "#27 is the lower right canine — all four canines mark the corners of the dental arches.",
+        "options": [
+          "Incisor",
+          "Canine",
+          "Premolar",
+          "Molar"
+        ],
+        "q": "#27 · Lower Right Canine"
+      },
+      {
+        "answer": 2,
+        "explain": "#28 is the lower right first premolar; premolars are also called bicuspids for their two cusps.",
+        "options": [
+          "Incisor",
+          "Canine",
+          "Premolar",
+          "Molar"
+        ],
+        "q": "#28 · Lower Right 1st Premolar"
+      },
+      {
+        "answer": 2,
+        "explain": "#29 is the lower right second premolar, the last tooth before the molars on this side.",
+        "options": [
+          "Incisor",
+          "Canine",
+          "Premolar",
+          "Molar"
+        ],
+        "q": "#29 · Lower Right 2nd Premolar"
+      },
+      {
+        "answer": 3,
+        "explain": "#30, the lower right first molar, is a favorite exam answer — one of the most commonly crowned and root-canaled teeth.",
+        "options": [
+          "Incisor",
+          "Canine",
+          "Premolar",
+          "Molar"
+        ],
+        "q": "#30 · Lower Right 1st Molar"
+      },
+      {
+        "answer": 3,
+        "explain": "#31 is the lower right second molar, sitting just in front of the wisdom tooth.",
+        "options": [
+          "Incisor",
+          "Canine",
+          "Premolar",
+          "Molar"
+        ],
+        "q": "#31 · Lower Right 2nd Molar"
+      },
+      {
+        "answer": 3,
+        "explain": "#32 is the last tooth in the system — the lower right third molar completes the count of 32.",
+        "options": [
+          "Incisor",
+          "Canine",
+          "Premolar",
+          "Molar"
+        ],
+        "q": "#32 · Lower Right 3rd Molar (Wisdom)"
+      }
+    ],
+    "rounds": [
+      {
+        "boss": false,
+        "count": 32,
+        "desc": "Sort all 32 teeth",
+        "tag": "Tooth Numbering Drill",
+        "title": "Tooth Numbering Drill"
+      }
+    ],
+    "subject": "Dental Fundamentals",
+    "title": "Tooth Numbering Drill"
+  }
+]
