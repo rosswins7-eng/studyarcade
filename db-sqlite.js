@@ -49,6 +49,11 @@ CREATE TABLE IF NOT EXISTS generation_requests (
   status TEXT NOT NULL DEFAULT 'pending',
   created_at TEXT NOT NULL DEFAULT (datetime('now')),
   FOREIGN KEY (user_id) REFERENCES users(id)
+);
+CREATE TABLE IF NOT EXISTS sessions (
+  sid TEXT PRIMARY KEY,
+  sess TEXT NOT NULL,
+  expires INTEGER NOT NULL
 );`;
 
 async function init() {
@@ -106,6 +111,13 @@ const q = {
   listSets: async () => db.prepare(`
     SELECT s.*, u.name AS creator_name FROM sets s LEFT JOIN users u ON u.id = s.creator_id
     ORDER BY s.subject, s.module_order, s.id`).all(),
+  // Community: real users' sets only — excludes the official library (system@studyarcade seed user).
+  listCommunity: async () => db.prepare(`
+    SELECT sets.id, sets.title, sets.subject, sets.module, sets.description, sets.plays, sets.created_at,
+           users.name AS creator_name, sets.questions_json
+    FROM sets LEFT JOIN users ON users.id = sets.creator_id
+    WHERE sets.creator_id IS NOT NULL AND users.email <> 'system@studyarcade'
+    ORDER BY sets.created_at DESC LIMIT 100`).all(),
   createSet: async (s) => ({
     id: db.prepare(`INSERT INTO sets (title, subject, module, module_order, description, questions_json, rounds_json, creator_id)
                     VALUES (?, ?, ?, ?, ?, ?, ?, ?)`)
@@ -118,6 +130,12 @@ const q = {
     db.prepare('INSERT INTO scores (set_id, user_id, game, score, accuracy) VALUES (?, ?, ?, ?, ?)')
       .run(setId, userId, game, score, accuracy);
   },
+  // Persistent session store (survives server restarts, unlike MemoryStore).
+  getSession: async (sid) => db.prepare('SELECT sid, sess, expires FROM sessions WHERE sid = ?').get(sid),
+  setSession: async (sid, sess, expires) =>
+    db.prepare('INSERT OR REPLACE INTO sessions (sid, sess, expires) VALUES (?, ?, ?)').run(sid, sess, expires),
+  destroySession: async (sid) => { db.prepare('DELETE FROM sessions WHERE sid = ?').run(sid); },
+  clearExpiredSessions: async () => { db.prepare('DELETE FROM sessions WHERE expires <= ?').run(Date.now()); },
   getLeaderboard: async (setId, game) => db.prepare(`
     SELECT u.name, u.xp, MAX(s.score) AS best, MAX(s.accuracy) AS acc
     FROM scores s JOIN users u ON u.id = s.user_id
