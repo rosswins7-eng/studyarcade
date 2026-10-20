@@ -1,0 +1,544 @@
+{
+ "title": "PSY 361 — Exam 3: Personality",
+ "subject": "Psychology 101",
+ "module": "Exam 3: Personality (Chapters 5–6)",
+ "description": "Chapters 5 & 6: self-concept, self-esteem, Freud, defense mechanisms, Jung, Adler, Horney. 46 questions across 4 rounds.",
+ "rounds": [
+  {
+   "tag": "Round 1",
+   "title": "Warm-Up: The Self",
+   "desc": "Chapter 5 — self-concept, self-esteem, self-efficacy, self-regulation. Lock in the foundations.",
+   "count": 10,
+   "boss": false
+  },
+  {
+   "tag": "Round 2",
+   "title": "Freud & Defense Mechanisms",
+   "desc": "Id/ego/superego, psychosexual stages, and scenario-style defense mechanism questions — classic exam traps.",
+   "count": 10,
+   "boss": false
+  },
+  {
+   "tag": "Round 3 — Boss",
+   "title": "Scholar vs Scholar",
+   "desc": "Where exam points live. Freud vs Jung vs Adler vs Horney — prove you know where the theorists disagree.",
+   "count": 10,
+   "boss": true
+  },
+  {
+   "tag": "Round 4 — Bonus",
+   "title": "Closing the Gaps",
+   "desc": "Everything the first three rounds didn't cover — imposter syndrome, psychosexual stage details, transference, object-relations names, and more.",
+   "count": 16,
+   "boss": false
+  }
+ ],
+ "questions": [
+  {
+   "q": "Your self-concept is best described as…",
+   "options": [
+    "The cognitive structure (schema) that organizes knowledge about yourself",
+    "Your overall positive or negative evaluation of yourself",
+    "Your ability to override impulses for long-term goals",
+    "The social mask you wear around others"
+   ],
+   "answer": 0,
+   "explain": "Self-concept = the schema. The evaluation part is self-esteem."
+  },
+  {
+   "q": "In William James's terms, the “I” is…",
+   "options": [
+    "The active perceiver — the self doing the thinking",
+    "The self as an object being observed and evaluated",
+    "The self defined by social roles",
+    "Your inner moral conscience"
+   ],
+   "answer": 0,
+   "explain": "“I” = the thinker. “Me” = the self being observed and evaluated."
+  },
+  {
+   "q": "Body, clothing, possessions, home — which “self” (James)?",
+   "options": [
+    "Social self",
+    "Material self",
+    "Spiritual self",
+    "True self"
+   ],
+   "answer": 1,
+   "explain": "Material self = physical aspects: body, clothing, possessions, home."
+  },
+  {
+   "q": "Self-esteem is…",
+   "options": [
+    "Your overall positive or negative evaluation of yourself",
+    "Your belief you can perform a specific task",
+    "Adjusting your behavior to fit social situations",
+    "Treating yourself kindly when you fail"
+   ],
+   "answer": 0,
+   "explain": "Task-specific belief = self-efficacy. Adjusting behavior = self-monitoring."
+  },
+  {
+   "q": "Leary's sociometer theory says self-esteem works as…",
+   "options": [
+    "An internal gauge of social acceptance vs. rejection",
+    "A fixed trait set in childhood",
+    "A direct cause of life success",
+    "A measure of intellectual ability"
+   ],
+   "answer": 0,
+   "explain": "It drops when you sense exclusion — a social meter, not a success engine. Correlation ≠ causation."
+  },
+  {
+   "q": "“I believe I can nail this specific presentation” — that's…",
+   "options": [
+    "Self-efficacy",
+    "Self-esteem",
+    "Self-compassion",
+    "Self-monitoring"
+   ],
+   "answer": 0,
+   "explain": "Self-efficacy (Bandura) = belief about SPECIFIC tasks. Self-esteem is global."
+  },
+  {
+   "q": "Self-efficacy is built by all of these EXCEPT…",
+   "options": [
+    "Mastery experiences",
+    "Vicarious learning",
+    "Verbal persuasion",
+    "Avoiding every challenging task"
+   ],
+   "answer": 3,
+   "explain": "Bandura's four builders: mastery experiences, vicarious learning, verbal persuasion, managing arousal."
+  },
+  {
+   "q": "Which is NOT one of Neff's three parts of self-compassion?",
+   "options": [
+    "Self-kindness",
+    "Common humanity",
+    "Mindfulness",
+    "Harsh self-criticism to stay motivated"
+   ],
+   "answer": 3,
+   "explain": "Neff: self-kindness (not self-judgment), common humanity, mindfulness."
+  },
+  {
+   "q": "Self-regulation vs. self-control:",
+   "options": [
+    "Regulation is the broad process; control is the narrow subset of overriding impulses",
+    "They mean exactly the same thing",
+    "Control is broad; regulation is narrow",
+    "Regulation is unconscious; control is conscious"
+   ],
+   "answer": 0,
+   "explain": "Self-control = the narrow subset: overriding immediate temptations for long-term goals."
+  },
+  {
+   "q": "Higgins: actual-vs-ideal mismatch → ?  Actual-vs-ought mismatch → ?",
+   "options": [
+    "Dejection / sadness … agitation / anxiety",
+    "Agitation / anxiety … dejection / sadness",
+    "Anger … guilt",
+    "Pride … shame"
+   ],
+   "answer": 0,
+   "explain": "Ideal = hopes (missing them = dejection). Ought = duties (missing them = agitation)."
+  },
+  {
+   "q": "Id, ego, superego run on which principles, in order?",
+   "options": [
+    "Pleasure … reality … morals",
+    "Reality … pleasure … morals",
+    "Pleasure … morals … reality",
+    "Morals … reality … pleasure"
+   ],
+   "answer": 0,
+   "explain": "Id = pleasure principle, ego = reality principle, superego = morals and conscience."
+  },
+  {
+   "q": "Topographical vs. structural model:",
+   "options": [
+    "Topographical = levels of awareness; structural = parts of personality",
+    "Structural = levels of awareness; topographical = parts of personality",
+    "Both describe levels of awareness",
+    "Both describe parts of personality"
+   ],
+   "answer": 0,
+   "explain": "Classic exam trap: topographical = WHERE in the mind; structural = WHO is fighting."
+  },
+  {
+   "q": "After a brutal performance review, Maya goes home and yells at her roommate. Defense?",
+   "options": [
+    "Displacement",
+    "Projection",
+    "Reaction formation",
+    "Sublimation"
+   ],
+   "answer": 0,
+   "explain": "Displacement = redirecting feelings from the real target to a safer one."
+  },
+  {
+   "q": "Leo is attracted to his coworker but loudly insists she's “disgusting.” Defense?",
+   "options": [
+    "Reaction formation",
+    "Denial",
+    "Repression",
+    "Projection"
+   ],
+   "answer": 0,
+   "explain": "Reaction formation = expressing the exact OPPOSITE of a forbidden impulse."
+  },
+  {
+   "q": "Nina cheated on the exam but accuses her study partner of cheating. Defense?",
+   "options": [
+    "Projection",
+    "Displacement",
+    "Denial",
+    "Sublimation"
+   ],
+   "answer": 0,
+   "explain": "Projection = attributing YOUR unacceptable impulse to someone else."
+  },
+  {
+   "q": "Carlos channels his aggression into competitive boxing. Defense?",
+   "options": [
+    "Sublimation",
+    "Displacement",
+    "Reaction formation",
+    "Repression"
+   ],
+   "answer": 0,
+   "explain": "Sublimation = channeling forbidden drives into socially valued activity."
+  },
+  {
+   "q": "Refusing to accept an unpleasant reality (“I'm not sick, the test is wrong”):",
+   "options": [
+    "Denial",
+    "Repression",
+    "Projection",
+    "Regression"
+   ],
+   "answer": 0,
+   "explain": "Denial = refusing the reality. Repression pushes it fully out of awareness."
+  },
+  {
+   "q": "The remembered storyline and images of a dream — the surface level:",
+   "options": [
+    "Manifest content",
+    "Latent content",
+    "Day residue",
+    "Cathexis"
+   ],
+   "answer": 0,
+   "explain": "Manifest = surface story. Latent = the hidden unconscious meaning underneath."
+  },
+  {
+   "q": "Harsh toilet training → adult who is orderly, stingy, stubborn. Which fixation?",
+   "options": [
+    "Anal-retentive (anal stage)",
+    "Oral stage",
+    "Phallic stage",
+    "Anal-expulsive (anal stage)"
+   ],
+   "answer": 0,
+   "explain": "Harsh training → anal-retentive. Lax training → anal-expulsive (messy, rebellious)."
+  },
+  {
+   "q": "Which is NOT a standard criticism of Freud's theory?",
+   "options": [
+    "His concepts are unfalsifiable",
+    "He overemphasized sex and aggression",
+    "He relied too heavily on laboratory experiments",
+    "He built theory on unrepresentative case studies"
+   ],
+   "answer": 2,
+   "explain": "Freud famously did NOT run lab experiments — that's the opposite of the real criticisms."
+  },
+  {
+   "q": "Who said the unconscious includes a shared COLLECTIVE layer stocked with archetypes?",
+   "options": [
+    "Jung",
+    "Freud",
+    "Adler",
+    "Horney"
+   ],
+   "answer": 0,
+   "explain": "Jung's big break from Freud: the collective unconscious, inherited universal patterns."
+  },
+  {
+   "q": "Freud vs. Jung on “libido”:",
+   "options": [
+    "Freud = sexual energy; Jung = general psychic life-energy",
+    "Jung = sexual energy; Freud = general psychic life-energy",
+    "Both meant sexual energy only",
+    "Both meant general life-energy"
+   ],
+   "answer": 0,
+   "explain": "This exact disagreement is what SPLIT them."
+  },
+  {
+   "q": "“Striving for superiority” as the core human motive — whose idea?",
+   "options": [
+    "Adler",
+    "Freud",
+    "Horney",
+    "Jung"
+   ],
+   "answer": 0,
+   "explain": "Adler: not sex, but social striving to overcome inferiority."
+  },
+  {
+   "q": "Who fired back at “penis envy” with “womb envy”?",
+   "options": [
+    "Horney",
+    "Jung",
+    "Adler",
+    "Klein"
+   ],
+   "answer": 0,
+   "explain": "Horney argued culture — a male-dominated society — not anatomy, explains women's psychology."
+  },
+  {
+   "q": "Freud reads dreams BACKWARD (past forbidden wishes). Jung reads them…",
+   "options": [
+    "Forward — compensating the conscious attitude, pointing at growth",
+    "Backward, exactly like Freud",
+    "As random neural noise",
+    "As purely sexual symbols"
+   ],
+   "answer": 0,
+   "explain": "Jung: dreams are compensatory and prospective — they balance your conscious attitude."
+  },
+  {
+   "q": "“Basic anxiety” — a child feeling isolated and helpless in a hostile world. Whose concept?",
+   "options": [
+    "Horney",
+    "Adler",
+    "Freud",
+    "Winnicott"
+   ],
+   "answer": 0,
+   "explain": "Horney's core problem. Her fix = three coping styles: toward, against, away."
+  },
+  {
+   "q": "Coping by moving TOWARD, AGAINST, or AWAY from people — whose neurotic styles?",
+   "options": [
+    "Horney",
+    "Adler",
+    "Freud",
+    "Jung"
+   ],
+   "answer": 0,
+   "explain": "Horney: toward = compliance, against = aggression/dominance, away = detachment."
+  },
+  {
+   "q": "Individuation — integrating the shadow into a whole Self. Whose goal of development?",
+   "options": [
+    "Jung",
+    "Freud",
+    "Adler",
+    "Horney"
+   ],
+   "answer": 0,
+   "explain": "Jung's goal. Freud's = make the unconscious conscious. Adler's = build social interest."
+  },
+  {
+   "q": "Birth order shaping personality (firstborns responsible, middles competitive) — whose idea?",
+   "options": [
+    "Adler",
+    "Freud",
+    "Jung",
+    "Mahler"
+   ],
+   "answer": 0,
+   "explain": "Adler tied ordinal position to personality patterns."
+  },
+  {
+   "q": "The goal of Freudian therapy:",
+   "options": [
+    "Make the unconscious conscious",
+    "Individuation of the Self",
+    "Build social interest",
+    "Strengthen the persona"
+   ],
+   "answer": 0,
+   "explain": "Freud: insight via free association and dream analysis. Individuation = Jung. Social interest = Adler."
+  },
+  {
+   "q": "Despite straight A's, Jordan is convinced he's a fraud who'll be exposed any day. That's…",
+   "options": [
+    "Imposter phenomenon",
+    "Self-serving bias",
+    "Sociometer theory",
+    "Reaction formation"
+   ],
+   "answer": 0,
+   "explain": "Imposter phenomenon = doubting your accomplishments and fearing exposure despite evidence of competence."
+  },
+  {
+   "q": "After his team wins, Marcus keeps saying “WE won the championship.” That's…",
+   "options": [
+    "Basking in reflected glory (BIRGing)",
+    "Self-efficacy",
+    "Sublimation",
+    "Social interest"
+   ],
+   "answer": 0,
+   "explain": "BIRGing = boosting self-esteem by associating with others' successes."
+  },
+  {
+   "q": "Per the self-evaluation maintenance (SEM) model, when your close friend beats you at something that matters deeply to you, you tend to…",
+   "options": [
+    "Distance yourself from them",
+    "Bask in their glory",
+    "Feel proud without conflict",
+    "Develop social interest"
+   ],
+   "answer": 0,
+   "explain": "SEM: bask when they win where it DOESN'T matter to you; distance when they beat you where it DOES."
+  },
+  {
+   "q": "Explicit vs. implicit self-esteem:",
+   "options": [
+    "Explicit = conscious self-evaluation; implicit = automatic, unconscious",
+    "Explicit = unconscious; implicit = deliberate",
+    "Both are measured only by brain scans",
+    "They are the same thing"
+   ],
+   "answer": 0,
+   "explain": "Explicit = deliberate self-reports. Implicit = automatic, gut-level evaluation."
+  },
+  {
+   "q": "The “causation trap” in self-esteem research means…",
+   "options": [
+    "High self-esteem correlates with good outcomes, but boosting it doesn't cause success",
+    "Self-esteem directly causes higher income",
+    "Low self-esteem is always caused by parents",
+    "Self-esteem cannot be measured"
+   ],
+   "answer": 0,
+   "explain": "Correlation ≠ causation — a favorite exam trap."
+  },
+  {
+   "q": "“Possible selves” are…",
+   "options": [
+    "Mental images of who you might become, hope to become, or fear becoming",
+    "Your past selves that you regret",
+    "The masks you wear in social situations",
+    "Unconscious archetypes"
+   ],
+   "answer": 0,
+   "explain": "Possible selves motivate behavior — feared selves push you away, hoped-for selves pull you forward."
+  },
+  {
+   "q": "Transference is when…",
+   "options": [
+    "A patient redirects feelings from early relationships onto the therapist",
+    "The therapist falls asleep during sessions",
+    "Memories move from short- to long-term storage",
+    "A dream's latent content becomes manifest"
+   ],
+   "answer": 0,
+   "explain": "Transference = unconsciously redirecting early-relationship feelings onto the therapist."
+  },
+  {
+   "q": "Free association means…",
+   "options": [
+    "Saying whatever comes to mind uncensored, to surface unconscious material",
+    "Recalling only pleasant memories",
+    "A dream technique using fixed symbols",
+    "Linking archetypes to myths"
+   ],
+   "answer": 0,
+   "explain": "Freud's 'talking cure' tool: uncensored speech surfaces unconscious material."
+  },
+  {
+   "q": "Fixation at the oral stage (birth–18 months) can produce an adult who is…",
+   "options": [
+    "Dependent, prone to smoking or overeating",
+    "Orderly, stingy, and stubborn",
+    "Focused on school and friendships",
+    "Rebellious and messy"
+   ],
+   "answer": 0,
+   "explain": "Oral = mouth pleasure (sucking/biting). Orderly/stingy = anal-retentive; messy/rebellious = anal-expulsive."
+  },
+  {
+   "q": "In the phallic stage, the Oedipus complex resolves when the boy…",
+   "options": [
+    "Identifies with his father (driven by castration anxiety)",
+    "Rejects both parents entirely",
+    "Skips straight to the genital stage",
+    "Develops penis envy"
+   ],
+   "answer": 0,
+   "explain": "Boy desires mother, rivals father; castration anxiety drives identification with father."
+  },
+  {
+   "q": "During the latency stage, libido is…",
+   "options": [
+    "Dormant — energy goes to school, friends, and skills",
+    "Focused on the mouth",
+    "At its lifetime peak",
+    "Directed toward the opposite-sex parent"
+   ],
+   "answer": 0,
+   "explain": "Latency (~6 to puberty): sexual energy quiets; focus shifts to school and peers."
+  },
+  {
+   "q": "“Day residue” refers to…",
+   "options": [
+    "Recent waking experiences woven into dream imagery",
+    "The hidden meaning of a dream",
+    "Psychic energy invested in an idea",
+    "Morning-after memory loss"
+   ],
+   "answer": 0,
+   "explain": "Day residue = yesterday's experiences showing up in tonight's dream imagery."
+  },
+  {
+   "q": "Cathexis is…",
+   "options": [
+    "Investing psychic energy in a person, object, or idea",
+    "The moral conscience",
+    "A type of Freudian slip",
+    "Repressing a traumatic memory"
+   ],
+   "answer": 0,
+   "explain": "Cathexis = where you 'put' your libido — your psychic energy's target."
+  },
+  {
+   "q": "Match the object-relations theorist — “splitting” (seeing people as all-good or all-bad):",
+   "options": [
+    "Melanie Klein",
+    "D.W. Winnicott",
+    "Margaret Mahler",
+    "Alfred Adler"
+   ],
+   "answer": 0,
+   "explain": "Klein = splitting. Winnicott = good-enough mother, transitional objects. Mahler = separation-individuation."
+  },
+  {
+   "q": "The Persona vs. the Shadow (Jung):",
+   "options": [
+    "Persona = social mask; Shadow = dark hidden self",
+    "Persona = hidden self; Shadow = social mask",
+    "Both live only in the personal unconscious",
+    "Both describe extraversion"
+   ],
+   "answer": 0,
+   "explain": "Persona = the face you show the world. Shadow = the dark parts you hide — individuation integrates it."
+  },
+  {
+   "q": "Adler's “social interest” means…",
+   "options": [
+    "Healthy adjustment = caring about the community, not just yourself",
+    "Preferring group study over solo study",
+    "The sociometer gauge of acceptance",
+    "Seeking approval from others"
+   ],
+   "answer": 0,
+   "explain": "For Adler, mental health = contributing to the community, not just overcoming inferiority for yourself."
+  }
+ ]
+}
