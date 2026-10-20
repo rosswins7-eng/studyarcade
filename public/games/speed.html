@@ -104,10 +104,18 @@ function normalizePassage(s){
     .replace(/[–—―]/g, '-')
     .replace(/…/g, '...')
     .replace(/×/g, 'x')
+    .replace(/→/g, '->').replace(/←/g, '<-').replace(/↔/g, '<->').replace(/[⟶⟵]/g, '-')
+    .replace(/•/g, '-').replace(/°/g, '').replace(/≈/g, '~').replace(/≠/g, '!=')
+    .replace(/≥/g, '>=').replace(/≤/g, '<=').replace(/±/g, '+/-').replace(/÷/g, '/')
+    .replace(/½/g, '1/2').replace(/¼/g, '1/4').replace(/¾/g, '3/4')
+    .replace(/α/g, 'alpha').replace(/β/g, 'beta').replace(/γ/g, 'gamma').replace(/δ/g, 'delta')
+    .replace(/μ/g, 'mu').replace(/π/g, 'pi').replace(/σ/g, 'sigma').replace(/Δ/g, 'delta').replace(/Ω/g, 'ohm')
     .replace(/[⁰₀]/g, '0').replace(/[¹₁]/g, '1').replace(/[²₂]/g, '2')
     .replace(/[³₃]/g, '3').replace(/[⁴₄]/g, '4').replace(/[⁵₅]/g, '5')
     .replace(/[⁶₆]/g, '6').replace(/[⁷₇]/g, '7').replace(/[⁸₈]/g, '8')
     .replace(/[⁹₉]/g, '9')
+    // safety net: anything else non-ASCII is untypable on some devices — drop it
+    .replace(/[^\x20-\x7E]/g, '')
     .replace(/\s+/g, ' ')
     .trim();
 }
