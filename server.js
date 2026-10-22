@@ -70,6 +70,7 @@ app.post('/api/billing/webhook', express.raw({ type: 'application/json' }), asyn
 const GAMES = [
   { id: 'quiz', subjects: null },
   { id: 'asteroid', subjects: null },
+  { id: 'galaga', subjects: null },
   { id: 'match', subjects: null },
   { id: 'sort', subjects: null },
   { id: 'type', subjects: null },
@@ -423,6 +424,8 @@ app.get('/api/games', (req, res) => {
   res.json([
     { id: 'asteroid', title: 'Asteroid Destroyer', icon: '☄️', subjects: null,
       desc: 'Answers drift through space. Drag the correct one into the black hole to blow it up.' },
+    { id: 'galaga', title: 'Star Defender', icon: '🚀', subjects: null,
+      desc: 'Galaga-style shooter. Waves of enemy ships carry the answers — blast the correct one, dodge their fire.' },
     { id: 'quiz', title: 'Quiz Boss Battle', icon: '⚡', subjects: null,
       desc: 'Rapid-fire quiz combat. 20 seconds a question, streaks multiply your score.' },
     { id: 'match', title: 'Match Pairs', icon: '🃏', subjects: null,

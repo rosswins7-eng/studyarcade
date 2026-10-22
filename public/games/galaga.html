@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Star Defender — StudyArcade</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  html, body { overscroll-behavior: none; }
+  body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #0b0e22; color: #eef1ff; min-height: 100vh; display: flex; align-items: flex-start; justify-content: center; padding: 14px; user-select: none; -webkit-user-select: none; }
+  #app { width: 100%; max-width: 640px; }
+  .card { background: #161b3a; border: 1px solid #2c3468; border-radius: 20px; padding: 26px 22px; box-shadow: 0 12px 40px rgba(0,0,0,.45); }
+  h1 { font-size: 1.65rem; margin-bottom: 8px; }
+  h1 .accent { color: #8b7bff; }
+  .sub { color: #a7b0d8; font-size: .95rem; line-height: 1.55; margin-bottom: 16px; }
+  .btn { display: block; width: 100%; padding: 15px; margin: 8px 0; font-size: 1.05rem; font-weight: 700; color: #fff; background: linear-gradient(135deg, #7c5cff, #00d4ff); border: none; border-radius: 14px; cursor: pointer; text-align: center; }
+  .btn:hover { filter: brightness(1.1); }
+  .btn.small { width: auto; display: inline-block; padding: 9px 16px; font-size: .9rem; margin: 0; background: #232a55; border: 1px solid #3a4488; }
+  .hidden { display: none !important; }
+  .howto { background: #1d2347; border-radius: 12px; padding: 14px 16px; margin-bottom: 18px; font-size: .9rem; line-height: 1.65; color: #c6cdf2; }
+  .howto b { color: #fff; }
+  .hud { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; font-size: .9rem; color: #a7b0d8; }
+  .hud b { color: #fff; font-size: 1.05rem; }
+  #streak { color: #ffb020; font-weight: 700; }
+  #lives { font-size: 1rem; letter-spacing: 2px; }
+  /* ---- question banner (above the field) ---- */
+  #qbanner { background: #eef1ff; color: #141838; border-radius: 12px; padding: 11px 14px; font-size: .98rem; font-weight: 700; text-align: center; line-height: 1.4; min-height: 44px; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(0,0,0,.35); margin-bottom: 10px; }
+  /* ---- play field ---- */
+  #playarea { position: relative; height: 520px; margin-bottom: 12px; overflow: hidden; border-radius: 16px; background: radial-gradient(ellipse at 50% 20%, #141a45 0%, #0a0d28 62%, #070a20 100%); border: 1px solid #2c3468; touch-action: none; cursor: crosshair; }
+  #playarea::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(1px 1px at 12% 22%, #fff8, transparent), radial-gradient(1px 1px at 68% 8%, #fff6, transparent), radial-gradient(1.5px 1.5px at 84% 38%, #fff7, transparent), radial-gradient(1px 1px at 32% 66%, #fff5, transparent), radial-gradient(1px 1px at 52% 82%, #fff6, transparent), radial-gradient(1.5px 1.5px at 8% 78%, #fff5, transparent), radial-gradient(1px 1px at 92% 72%, #fff6, transparent), radial-gradient(1px 1px at 45% 45%, #fff4, transparent), radial-gradient(1px 1px at 25% 90%, #fff5, transparent); pointer-events: none; z-index: 0; }
+  /* ---- player ship ---- */
+  #ship { position: absolute; z-index: 20; width: 46px; height: 46px; left: 0; top: 0; pointer-events: none; will-change: transform; filter: drop-shadow(0 0 8px rgba(0,212,255,.55)); }
+  #ship.blink { animation: shipblink .16s steps(2) infinite; }
+  @keyframes shipblink { 50% { opacity: .25; } }
+  #ship .flame { position: absolute; left: 50%; bottom: -9px; width: 12px; height: 14px; margin-left: -6px; background: radial-gradient(ellipse at 50% 0%, #ffe9a8 0%, #ff9f1a 55%, rgba(255,92,92,0) 78%); border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%; animation: flameflick .12s ease-in-out infinite alternate; transform-origin: top center; }
+  @keyframes flameflick { from { transform: scaleY(.75); } to { transform: scaleY(1.2); } }
+  /* ---- enemies ---- */
+  .enemy { position: absolute; z-index: 10; left: 0; top: 0; pointer-events: none; will-change: transform; text-align: center; }
+  .enemy .eship { width: 44px; height: 38px; margin: 0 auto; filter: drop-shadow(0 0 7px rgba(255,92,92,.5)); animation: ebob 1.6s ease-in-out infinite alternate; }
+  @keyframes ebob { from { transform: translateY(0); } to { transform: translateY(3px); } }
+  .enemy .plate { margin: 4px auto 0; max-width: 100%; background: #232a55; border: 2px solid #4a57a8; border-radius: 9px; padding: 5px 6px; font-size: .72rem; font-weight: 700; line-height: 1.3; color: #eef1ff; overflow-wrap: break-word; box-shadow: 0 4px 10px rgba(0,0,0,.4); }
+  .enemy .plate.long { font-size: .62rem; }
+  .enemy .plate.xlong { font-size: .54rem; }
+  .enemy.correctflash .plate { border-color: #22c55e !important; background: #14532d !important; box-shadow: 0 0 18px #22c55e99; }
+  .enemy.dying { transition: opacity .3s, transform .3s; opacity: 0; }
+  /* ---- bolts ---- */
+  .bolt { position: absolute; z-index: 15; width: 5px; height: 16px; border-radius: 99px; pointer-events: none; will-change: transform; }
+  .bolt.pbolt { background: linear-gradient(180deg, #a5f3fc, #00d4ff); box-shadow: 0 0 9px #00d4ff; }
+  .bolt.ebolt { background: linear-gradient(180deg, #ff5c5c, #ffd166); box-shadow: 0 0 9px #ff5c5c; width: 6px; height: 13px; }
+  .boom { position: absolute; font-size: 3rem; z-index: 30; pointer-events: none; animation: boomfx .55s ease-out forwards; }
+  @keyframes boomfx { 0% { transform: translate(-50%,-50%) scale(.4); opacity: 1; } 100% { transform: translate(-50%,-50%) scale(1.7); opacity: 0; } }
+  #fxcanvas { position: absolute; inset: 0; z-index: 25; pointer-events: none; }
+  #dmgflash { position: absolute; inset: 0; z-index: 28; pointer-events: none; background: radial-gradient(ellipse at 50% 100%, rgba(239,68,68,.5), rgba(239,68,68,0) 62%); opacity: 0; transition: opacity .12s; }
+  #dmgflash.on { opacity: 1; }
+  #pauseveil { position: absolute; inset: 0; z-index: 60; background: rgba(5,7,18,.72); display: none; align-items: center; justify-content: center; text-align: center; font-size: 1.25rem; font-weight: 800; cursor: pointer; padding: 20px; }
+  #pauseveil.on { display: flex; }
+  #phasebar { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 32px; }
+  #phasemsg { color: #a7b0d8; font-size: .9rem; }
+  .stat-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px; margin: 18px 0; }
+  .stat { background: #232a55; border-radius: 14px; padding: 14px 8px; text-align: center; }
+  .stat .v { font-size: 1.5rem; font-weight: 800; }
+  .stat .l { font-size: .75rem; color: #a7b0d8; margin-top: 4px; }
+  #rank { font-size: 3.2rem; font-weight: 900; text-align: center; margin: 6px 0; background: linear-gradient(135deg, #ffd166, #ff5c5c); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .missed-item { background: #232a55; border-radius: 12px; padding: 12px 14px; margin: 8px 0; font-size: .88rem; line-height: 1.5; }
+  .missed-item b { color: #8b7bff; }
+  .missed-item .ans { color: #4ade80; font-weight: 600; }
+  #float { position: fixed; font-weight: 800; font-size: 1.3rem; color: #4ade80; pointer-events: none; opacity: 0; z-index: 50; }
+  @keyframes floatup { 0% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; transform: translateY(-46px); } }
+  #levelup-overlay { position: fixed; inset: 0; background: rgba(5,7,18,.93); z-index: 100; display: flex; align-items: center; justify-content: center; animation: fadein .25s ease; padding: 16px; }
+  #levelup-overlay .inner { text-align: center; animation: popin .45s cubic-bezier(.2,.7,.3,1.3); max-width: 420px; width: 100%; }
+  #levelup-overlay .big { font-size: 4.2rem; }
+  #levelup-overlay h1 { font-size: 2.3rem; margin: 8px 0; background: linear-gradient(135deg, #ffd166, #ff5c5c); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  #levelup-overlay p { color: #eef1ff; font-size: 1.1rem; margin-bottom: 20px; }
+  @keyframes fadein { from { opacity: 0; } }
+  @keyframes popin { 0% { transform: scale(.6); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+  @media (max-width: 480px) {
+    #playarea { height: 500px; }
+    #ship { width: 40px; height: 40px; }
+    .enemy .eship { width: 38px; height: 33px; }
+    .enemy .plate { font-size: .66rem; padding: 4px 4px; }
+    .enemy .plate.long { font-size: .57rem; }
+    .enemy .plate.xlong { font-size: .5rem; }
+    .stat-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+<div id="float">+0</div>
+<div id="app">
+  <div class="card" id="screen-start">
+    <h1>🚀 Star <span class="accent">Defender</span></h1>
+    <div class="howto">📖 Each <b>question</b> sends down a wave of <b>4 enemy ships</b> — every ship carries an answer on its plate.<br>
+    🎯 <b>Move</b> with your mouse, finger, or <b>← → ↑ ↓ / A D W S</b> keys. Your cannon <b>auto-fires</b> — line up under the ship with the <b>correct</b> answer and blast it!<br>
+    💥 Correct kill = <b>+100</b> plus a streak bonus. Blast the <b>wrong</b> ship and it still explodes — but it costs you a ❤️ <b>life</b> (you have <b>3</b>).<br>
+    🔴 Enemy bolts cost a life too — dodge them! If a ship reaches your line it loops back to the top, faster.<br>
+    🌊 Survive all <b>10 waves</b>. Every wave flies faster and shoots back harder.</div>
+    <p class="sub" id="setinfo">Loading question set…</p>
+    <button class="btn" id="playbtn" onclick="startGame()" disabled>Loading…</button>
+    <p class="sub" id="signin-note" style="display:none">👤 <a href="/#account" onclick="event.preventDefault(); location.href='/#account';" style="color:#8b7bff">Sign in</a> to save your scores to the leaderboard.</p>
+  </div>
+
+  <div class="card hidden" id="screen-game">
+    <div class="hud">
+      <div>Score <b id="score">0</b></div>
+      <div id="streak"></div>
+      <div>Wave <b id="qnum">1</b>/<span id="qtotal">10</span></div>
+      <div id="lives">❤️❤️❤️</div>
+    </div>
+    <div id="qbanner">…</div>
+    <div id="playarea">
+      <div id="ship">
+        <svg viewBox="0 0 46 46" width="100%" height="100%" aria-hidden="true">
+          <polygon points="23,1 29,20 42,36 31,33 27,42 19,42 15,33 4,36 17,20" fill="#2b3a7a" stroke="#7dd3fc" stroke-width="1.6"/>
+          <polygon points="23,4 31,30 23,25 15,30" fill="#a5f3fc"/>
+          <circle cx="23" cy="17" r="4.4" fill="#0ea5e9" stroke="#e0f2fe" stroke-width="1.4"/>
+        </svg>
+        <div class="flame"></div>
+      </div>
+      <div id="dmgflash"></div>
+      <canvas id="fxcanvas"></canvas>
+      <div id="pauseveil">⏸ Paused<br><span style="font-size:.9rem;font-weight:600;color:#a7b0d8">Tap or press P to resume</span></div>
+    </div>
+    <div id="phasebar">
+      <span id="phasemsg">Blast the ship carrying the correct answer!</span>
+      <button class="btn small" id="pausebtn" onclick="togglePause()">⏸ Pause</button>
+    </div>
+  </div>
+
+  <div class="card hidden" id="screen-end">
+    <h1>Star Defender <span class="accent">Done</span></h1>
+    <div id="rank">S</div>
+    <div class="stat-grid">
+      <div class="stat"><div class="v" id="finalscore">0</div><div class="l">SCORE</div></div>
+      <div class="stat"><div class="v" id="finalcorrect">0</div><div class="l">CORRECT</div></div>
+      <div class="stat"><div class="v" id="finalacc">0%</div><div class="l">ACCURACY</div></div>
+      <div class="stat"><div class="v" id="finalstreak">0</div><div class="l">BEST STREAK</div></div>
+    </div>
+    <p class="sub" style="text-align:center">XP earned: <span id="finalxp">…</span></p>
+    <p class="sub" id="end-signin-note" style="display:none;text-align:center">👤 <a href="/#account" onclick="event.preventDefault(); location.href='/#account';" style="color:#8b7bff">Sign in</a> to save your scores to the leaderboard.</p>
+    <div id="review"></div>
+    <button class="btn" onclick="location.reload()">↻ Play Again</button>
+    <button class="btn" onclick="location.href='/#module/'+COMBINED_IDS[0]+'?game=galaga'">🏆 Scoreboard</button>
+    <button class="btn" onclick="location.href='/#module/'+COMBINED_IDS[0]">← Back</button>
+  </div>
+</div>
+<script src="sfx.js"></script>
+<script>
+const GAME_ID = 'galaga';
+const MAX_QUESTIONS = 10;
+const MAX_LIVES = 3;
+const SHIP_W = 46, SHIP_H = 46;
+const GRAV_FX = 500; // particle gravity only
+
+let QUESTIONS = [], SET_META = null, COMBINED_IDS = [];
+let queue = [], currentQ = null;
+let score = 0, streak = 0, bestStreak = 0, correctCount = 0, resolved = 0;
+let lives = MAX_LIVES, totalQ = 0, ended = false;
+let missed = [];
+let timers = [];
+
+// ---- field state ----
+let phase = 'idle'; // idle | wave | pause (between waves) | ended
+let paused = false;
+let W = 0, H = 0;
+let player = { x: 0, y: 0, tx: 0, ty: 0, invulnUntil: 0 };
+let keys = {};
+let enemies = [];   // {el, correct, laneCx, y, h, nextShot, dead}
+let pbolts = [];    // {el, x, y}
+let ebolts = [];    // {el, x, y}
+let particles = [];
+let formT = 0;      // formation strafe clock
+let fireTimer = 0;
+let descendSpeed = 12;
+let rafId = 0, lastT = 0;
+
+function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+function $(id){ return document.getElementById(id); }
+function later(fn, ms){ const t = setTimeout(() => { timers = timers.filter(x => x !== t); fn(); }, ms); timers.push(t); return t; }
+function clearTimers(){ timers.forEach(clearTimeout); timers = []; }
+
+async function loadSet(){
+  const params = new URLSearchParams(location.search);
+  let url = null;
+  if (params.get('sets')) url = '/api/sets/combined?ids=' + encodeURIComponent(params.get('sets'));
+  else if (params.get('set')) url = '/api/sets/' + encodeURIComponent(params.get('set'));
+  if (!url) throw new Error('missing set');
+  const r = await fetch(url);
+  if (!r.ok) throw new Error('not found');
+  const set = await r.json();
+  SET_META = set;
+  COMBINED_IDS = set.combinedIds || [set.id];
+  QUESTIONS = set.questions.map(q => ({q: q.q, o: q.options, a: q.answer, why: q.explain}));
+  document.title = set.title + ' — Star Defender';
+  return set;
+}
+
+function startGame(){
+  clearTimers();
+  $('screen-start').classList.add('hidden');
+  $('screen-end').classList.add('hidden');
+  $('screen-game').classList.remove('hidden');
+  queue = shuffle(QUESTIONS.slice()).slice(0, MAX_QUESTIONS);
+  totalQ = queue.length;
+  score = 0; streak = 0; bestStreak = 0; correctCount = 0; resolved = 0;
+  lives = MAX_LIVES; missed = []; ended = false; paused = false;
+  $('qtotal').textContent = totalQ;
+  setupField();
+  player.x = W / 2; player.y = H - 64;
+  player.tx = player.x; player.ty = player.y;
+  drawShip();
+  updateHud();
+  nextWave();
+  lastT = performance.now();
+  cancelAnimationFrame(rafId);
+  rafId = requestAnimationFrame(loop);
+}
+
+function setupField(){
+  const pa = $('playarea');
+  W = pa.clientWidth; H = pa.clientHeight;
+  const cv = $('fxcanvas');
+  cv.width = W; cv.height = H;
+}
+
+function waveNum(){ return resolved + 1; }
+function fireInterval(){ return Math.max(0.13, 0.23 - (waveNum() - 1) * 0.011); }
+function enemyBoltSpeed(){ return 150 + waveNum() * 14; }
+function enemyShotGap(){
+  const base = Math.max(1.15, 2.7 - waveNum() * 0.18);
+  return base + Math.random() * base * 0.9;
+}
+
+function nextWave(){
+  if (ended) return;
+  if (!queue.length || lives <= 0) { endGame(lives <= 0); return; }
+  clearBolts();
+  const raw = queue.shift();
+  const opts = shuffle(raw.o.map((text, i) => ({ text: text, correct: i === raw.a })));
+  currentQ = { q: raw.q, why: raw.why, ans: raw.o[raw.a], options: opts };
+  $('qbanner').textContent = raw.q;
+  descendSpeed = 11 + waveNum() * 2.2;
+  formT = 0;
+  spawnEnemies(opts);
+  phase = 'wave';
+  fireTimer = 0.25;
+  $('phasemsg').textContent = 'Blast the ship carrying the correct answer!';
+  updateHud();
+}
+
+const ENEMY_SVG = '<svg viewBox="0 0 44 38" width="100%" height="100%" aria-hidden="true">'
+  + '<polygon points="22,37 15,18 3,4 13,7 18,1 26,1 31,7 41,4 29,18" fill="#5b2333" stroke="#ff8fa3" stroke-width="1.5"/>'
+  + '<polygon points="22,33 17,16 27,16" fill="#ff5c5c"/>'
+  + '<circle cx="22" cy="12" r="4" fill="#ffd166" stroke="#fff3" stroke-width="1"/></svg>';
+
+function spawnEnemies(opts){
+  clearEnemies();
+  const laneW = W / 4;
+  opts.forEach((o, i) => {
+    const el = document.createElement('div');
+    el.className = 'enemy';
+    el.style.width = (laneW - 6) + 'px';
+    const plateCls = o.text.length > 48 ? 'plate xlong' : o.text.length > 26 ? 'plate long' : 'plate';
+    el.innerHTML = '<div class="eship">' + ENEMY_SVG + '</div><div class="' + plateCls + '"></div>';
+    el.querySelector('.plate').textContent = o.text;
+    $('playarea').appendChild(el);
+    const e = {
+      el: el, correct: o.correct, text: o.text,
+      laneCx: laneW * (i + 0.5), laneW: laneW,
+      y: -86 - Math.random() * 20, h: 104,
+      nextShot: 1 + Math.random() * 1.6, dead: false
+    };
+    enemies.push(e);
+    drawEnemy(e);
+  });
+}
+
+function enemyX(e){
+  const amp = Math.min(24, e.laneW * 0.17);
+  return e.laneCx + Math.sin(formT * 1.35 + enemies.indexOf(e) * 0.8) * amp;
+}
+function drawEnemy(e){
+  e.el.style.transform = 'translate3d(' + (enemyX(e) - e.el.offsetWidth / 2) + 'px,' + e.y + 'px,0)';
+}
+function enemyRect(e){
+  const w = e.el.offsetWidth || (e.laneW - 6);
+  const h = e.el.offsetHeight || e.h;
+  return { x: enemyX(e) - w / 2, y: e.y, w: w, h: h };
+}
+
+function clearEnemies(){
+  enemies.forEach(e => { try { e.el.remove(); } catch(_){} });
+  enemies = [];
+}
+function clearBolts(){
+  pbolts.forEach(b => b.el.remove()); pbolts = [];
+  ebolts.forEach(b => b.el.remove()); ebolts = [];
+}
+
+function spawnBolt(x, y, enemy){
+  const el = document.createElement('div');
+  el.className = 'bolt ' + (enemy ? 'ebolt' : 'pbolt');
+  $('playarea').appendChild(el);
+  const b = { el: el, x: x, y: y };
+  el.style.transform = 'translate3d(' + (x - 3) + 'px,' + y + 'px,0)';
+  (enemy ? ebolts : pbolts).push(b);
+}
+
+function drawShip(){
+  const el = $('ship');
+  el.style.transform = 'translate3d(' + (player.x - SHIP_W / 2) + 'px,' + player.y + 'px,0)';
+  el.classList.toggle('blink', performance.now() < player.invulnUntil && phase === 'wave');
+}
+
+// ---- pointer movement ----
+(function(){
+  const pa = $('playarea');
+  function paPos(e){
+    const r = pa.getBoundingClientRect();
+    return { x: e.clientX - r.left, y: e.clientY - r.top };
+  }
+  pa.addEventListener('pointerdown', (e) => {
+    if (paused) { togglePause(false); return; }
+    const p = paPos(e); player.tx = p.x; player.ty = p.y;
+  });
+  pa.addEventListener('pointermove', (e) => {
+    if (paused) return;
+    const p = paPos(e); player.tx = p.x; player.ty = p.y;
+  });
+})();
+
+// ---- keyboard movement + pause ----
+window.addEventListener('keydown', (e) => {
+  if ($('screen-game').classList.contains('hidden')) return;
+  const k = e.key;
+  if (k === 'p' || k === 'P' || k === 'Escape') { togglePause(); e.preventDefault(); return; }
+  keys[k.length === 1 ? k.toLowerCase() : k] = true;
+  if (['ArrowLeft','ArrowRight','ArrowUp','ArrowDown',' '].includes(k)) e.preventDefault();
+});
+window.addEventListener('keyup', (e) => {
+  keys[e.key.length === 1 ? e.key.toLowerCase() : e.key] = false;
+});
+
+function togglePause(force){
+  if (ended || phase === 'idle') return;
+  paused = typeof force === 'boolean' ? force : !paused;
+  $('pauseveil').classList.toggle('on', paused);
+  $('pausebtn').textContent = paused ? '▶ Resume' : '⏸ Pause';
+  lastT = performance.now();
+}
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden && !ended && phase !== 'idle' && !$('screen-game').classList.contains('hidden')) togglePause(true);
+});
+window.addEventListener('blur', () => {
+  if (!ended && phase !== 'idle' && !$('screen-game').classList.contains('hidden')) togglePause(true);
+});
+$('pauseveil').addEventListener('click', () => togglePause(false));
+
+// ---- main loop ----
+function loop(now){
+  if (ended) return;
+  const dt = Math.min(0.033, (now - lastT) / 1000 || 0.016);
+  lastT = now;
+  if (!paused) stepGame(dt);
+  drawFx();
+  rafId = requestAnimationFrame(loop);
+}
+
+function stepGame(dt){
+  // Player keyboard movement
+  const KS = 430;
+  if (keys['ArrowLeft'] || keys['a']) player.tx -= KS * dt;
+  if (keys['ArrowRight'] || keys['d']) player.tx += KS * dt;
+  if (keys['ArrowUp'] || keys['w']) player.ty -= KS * dt;
+  if (keys['ArrowDown'] || keys['s']) player.ty += KS * dt;
+  // Clamp: x anywhere, y in the bottom band
+  player.tx = Math.max(SHIP_W / 2, Math.min(W - SHIP_W / 2, player.tx));
+  player.ty = Math.max(H - 150, Math.min(H - SHIP_H - 8, player.ty));
+  const lerp = Math.min(1, dt * 18);
+  player.x += (player.tx - player.x) * lerp;
+  player.y += (player.ty - player.y) * lerp;
+  drawShip();
+
+  if (phase !== 'wave') return;
+  formT += dt;
+
+  // Enemies descend + strafe; wrap at the player line (faster each wrap)
+  const playerLine = player.y - 6;
+  for (const e of enemies) {
+    if (e.dead) continue;
+    e.y += descendSpeed * dt;
+    const h = e.el.offsetHeight || e.h;
+    if (e.y + h >= playerLine) {
+      e.y = -h - 4;
+      descendSpeed = Math.min(60, descendSpeed * 1.18);
+    }
+    drawEnemy(e);
+    // Enemy fire
+    e.nextShot -= dt;
+    if (e.nextShot <= 0 && e.y > 0) {
+      e.nextShot = enemyShotGap();
+      spawnBolt(enemyX(e), e.y + 44, true);
+    }
+  }
+
+  // Auto-fire
+  fireTimer -= dt;
+  if (fireTimer <= 0) {
+    fireTimer = fireInterval();
+    spawnBolt(player.x, player.y - 14, false);
+  }
+
+  // Player bolts: move + collide
+  const PBV = 640;
+  for (let i = pbolts.length - 1; i >= 0; i--) {
+    const b = pbolts[i];
+    b.y -= PBV * dt;
+    if (b.y < -20) { b.el.remove(); pbolts.splice(i, 1); continue; }
+    b.el.style.transform = 'translate3d(' + (b.x - 3) + 'px,' + b.y + 'px,0)';
+    // Bolt reaches the lowest enemy in its column first.
+    let hit = null, hitBottom = -Infinity;
+    for (const e of enemies) {
+      if (e.dead) continue;
+      const r = enemyRect(e);
+      if (b.x >= r.x - 2 && b.x <= r.x + r.w + 2 && b.y >= r.y && b.y <= r.y + r.h) {
+        if (r.y + r.h > hitBottom) { hitBottom = r.y + r.h; hit = e; }
+      }
+    }
+    if (hit) { b.el.remove(); pbolts.splice(i, 1); killEnemy(hit); if (phase !== 'wave') return; }
+  }
+
+  // Enemy bolts: move + collide with player
+  const EBV = enemyBoltSpeed();
+  for (let i = ebolts.length - 1; i >= 0; i--) {
+    const b = ebolts[i];
+    b.y += EBV * dt;
+    if (b.y > H + 16) { b.el.remove(); ebolts.splice(i, 1); continue; }
+    b.el.style.transform = 'translate3d(' + (b.x - 3) + 'px,' + b.y + 'px,0)';
+    if (b.x >= player.x - SHIP_W / 2 + 5 && b.x <= player.x + SHIP_W / 2 - 5 &&
+        b.y >= player.y + 4 && b.y <= player.y + SHIP_H) {
+      b.el.remove(); ebolts.splice(i, 1);
+      onPlayerHit();
+      if (ended) return;
+    }
+  }
+}
+
+function explodeAt(x, y, colors){
+  const b = document.createElement('div');
+  b.className = 'boom';
+  b.textContent = '💥';
+  b.style.left = x + 'px';
+  b.style.top = y + 'px';
+  $('playarea').appendChild(b);
+  setTimeout(() => b.remove(), 600);
+  spawnParticles(x, y, colors);
+}
+
+function killEnemy(e){
+  if (e.dead || phase !== 'wave') return;
+  e.dead = true;
+  const r = enemyRect(e);
+  const cx = r.x + r.w / 2, cy = r.y + Math.min(40, r.h / 2);
+  resolved++;
+  if (e.correct) {
+    streak++; bestStreak = Math.max(bestStreak, streak); correctCount++;
+    const pts = 100 + Math.min(streak * 10, 50);
+    score += pts;
+    explodeAt(cx, cy, ['#ffd166', '#7c5cff', '#00d4ff', '#eef1ff']);
+    e.el.remove();
+    // Rest of the wave breaks off in a shower of sparks (no extra score).
+    enemies.forEach(o => { if (!o.dead) { o.dead = true; const or2 = enemyRect(o); explodeAt(or2.x + or2.w / 2, or2.y + 30, ['#a7b0d8', '#7c5cff', '#eef1ff']); o.el.remove(); } });
+    pbolts.forEach(b => b.el.remove()); pbolts = [];
+    floatPts('+' + pts);
+    SFX.play('explode'); SFX.play('correct');
+    $('phasemsg').textContent = '💥 Correct ship destroyed!';
+    phase = 'pause';
+    updateHud();
+    later(nextWave, 650);
+  } else {
+    streak = 0;
+    lives--;
+    missed.push({ q: currentQ.q, ans: currentQ.ans, why: currentQ.why });
+    explodeAt(cx, cy, ['#ff5c5c', '#ffd166', '#eef1ff']);
+    e.el.remove();
+    const right = enemies.find(o => o.correct);
+    if (right) right.el.classList.add('correctflash');
+    clearBolts();
+    damageFlash();
+    floatPts('WRONG SHIP! -1 ❤️', '#ef4444');
+    SFX.play('explode'); SFX.play('wrong');
+    $('phasemsg').textContent = '💔 Wrong ship! The green one was correct. ' + Math.max(0, lives) + (lives === 1 ? ' life' : ' lives') + ' left.';
+    phase = 'pause';
+    updateHud();
+    later(() => { if (lives <= 0) endGame(true); else nextWave(); }, 850);
+  }
+}
+
+function onPlayerHit(){
+  if (performance.now() < player.invulnUntil) return;
+  lives--;
+  streak = 0;
+  player.invulnUntil = performance.now() + 1000;
+  damageFlash();
+  spawnParticles(player.x, player.y + 16, ['#ef4444', '#ffd166', '#eef1ff']);
+  floatPts('-1 ❤️', '#ef4444');
+  SFX.play('damage');
+  $('phasemsg').textContent = lives > 0 ? '🔥 Hit! ' + lives + (lives === 1 ? ' life' : ' lives') + ' left — keep dodging.' : '🔥 Ship destroyed!';
+  updateHud();
+  if (lives <= 0) { phase = 'pause'; later(() => endGame(true), 500); }
+}
+
+function damageFlash(){
+  const fl = $('dmgflash');
+  fl.classList.add('on');
+  setTimeout(() => fl.classList.remove('on'), 260);
+}
+
+function spawnParticles(x, y, colors){
+  for (let i = 0; i < 22; i++) {
+    const a = Math.random() * Math.PI * 2, sp = 80 + Math.random() * 320;
+    particles.push({ x: x, y: y, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp - 80,
+                     life: 0.5 + Math.random() * 0.35, t: 0,
+                     color: colors[i % colors.length], size: 3 + Math.random() * 5 });
+  }
+}
+
+function drawFx(){
+  const cv = $('fxcanvas');
+  if (!cv || !W) return;
+  const ctx = cv.getContext('2d');
+  ctx.clearRect(0, 0, W, H);
+  const dt = 1 / 60;
+  particles = particles.filter(p => (p.t += dt) < p.life);
+  particles.forEach(p => {
+    p.vy += GRAV_FX * dt; p.x += p.vx * dt; p.y += p.vy * dt;
+    ctx.globalAlpha = Math.max(0, 1 - p.t / p.life);
+    ctx.fillStyle = p.color;
+    ctx.fillRect(p.x - p.size / 2, p.y - p.size / 2, p.size, p.size);
+  });
+  ctx.globalAlpha = 1;
+  if (phase === 'wave') drawShip(); // keep the invulnerability blink fresh
+}
+
+function updateHud(){
+  $('score').textContent = score;
+  $('streak').textContent = streak >= 2 ? '🔥 x' + streak : '';
+  $('qnum').textContent = Math.min(resolved + 1, totalQ || 1);
+  $('lives').textContent = '❤️'.repeat(Math.max(0, lives)) + '🖤'.repeat(Math.max(0, MAX_LIVES - lives));
+}
+
+function floatPts(txt, color){
+  const f = $('float');
+  const s = $('score').getBoundingClientRect();
+  f.style.left = (s.left + s.width / 2 - 20) + 'px';
+  f.style.top = (s.top - 10) + 'px';
+  f.style.color = color || '#4ade80';
+  f.textContent = txt;
+  f.style.animation = 'none'; void f.offsetWidth;
+  f.style.animation = 'floatup .8s ease forwards';
+}
+
+function setXp(t){ const el = $('finalxp'); if (el) el.textContent = t; }
+
+function showLevelUp(level){
+  SFX.play('levelup');
+  const ov = document.createElement('div');
+  ov.id = 'levelup-overlay';
+  ov.innerHTML = '<div class="inner"><div class="big">🎉</div><h1>LEVEL UP!</h1><p>You reached <b>level ' + level + '</b></p><button class="btn">Keep going</button></div>';
+  ov.querySelector('button').onclick = () => ov.remove();
+  document.body.appendChild(ov);
+}
+
+async function submitScore(acc){
+  try {
+    const me = await (await fetch('/api/auth/me')).json();
+    if (!me) {
+      setXp('—');
+      const note = $('end-signin-note');
+      if (note) note.style.display = 'block';
+      return;
+    }
+    const r = await fetch('/api/sets/' + COMBINED_IDS[0] + '/scores', {
+      method: 'POST', headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ game: GAME_ID, score: score, accuracy: acc, setIds: COMBINED_IDS })
+    });
+    const d = await r.json().catch(() => ({}));
+    if (typeof d.xp_earned === 'number') setXp('+' + d.xp_earned);
+    else setXp('—');
+    if (d.leveled_up) showLevelUp(d.level);
+  } catch(e){ setXp('—'); }
+}
+
+function endGame(outOfLives){
+  if (ended) return;
+  ended = true;
+  phase = 'ended';
+  clearTimers();
+  cancelAnimationFrame(rafId);
+  clearBolts();
+  clearEnemies();
+  const acc = resolved ? Math.round(correctCount / resolved * 100) : 0;
+  $('screen-game').classList.add('hidden');
+  const s = $('screen-end');
+  s.classList.remove('hidden');
+  s.querySelector('h1').innerHTML = outOfLives ? 'Ship <span class="accent">Destroyed!</span>' : 'Sector <span class="accent">Cleared!</span>';
+  SFX.play(outOfLives ? 'lose' : 'win');
+  $('finalscore').textContent = score;
+  $('finalcorrect').textContent = correctCount + '/' + resolved;
+  $('finalacc').textContent = acc + '%';
+  $('finalstreak').textContent = bestStreak;
+  $('rank').textContent = acc >= 90 ? 'S' : acc >= 75 ? 'A' : acc >= 60 ? 'B' : acc >= 40 ? 'C' : 'D';
+  const rev = $('review');
+  const seen = new Set();
+  const uniq = missed.filter(m => !seen.has(m.q) && seen.add(m.q));
+  if (!uniq.length) {
+    rev.innerHTML = '<p class="sub" style="text-align:center">🔥 Clean flying, ace. Nothing to review.</p>';
+  } else {
+    rev.innerHTML = '<p class="sub"><b>You blasted the wrong ship on these — review:</b></p>' + uniq.map(m =>
+      '<div class="missed-item"><b>' + m.q + '</b><br><span class="ans">Answer: ' + m.ans + '</span><br>' + m.why + '</div>'
+    ).join('');
+  }
+  submitScore(acc);
+}
+
+// ---- test hook (headless playtest driver) ----
+window.__galaga = {
+  start: startGame,
+  aim: function(x, y){ player.tx = x; if (typeof y === 'number') player.ty = y; },
+  pause: function(v){ togglePause(!!v); },
+  state: function(){
+    return { phase: phase, paused: paused, score: score, lives: lives, streak: streak,
+             bestStreak: bestStreak, correctCount: correctCount, resolved: resolved,
+             wave: Math.min(resolved + 1, totalQ || 1), totalQ: totalQ, ended: ended,
+             questionText: currentQ ? currentQ.q : null,
+             options: currentQ ? currentQ.options.map(o => o.text) : [],
+             playerX: player.x, playerY: player.y,
+             enemies: enemies.filter(e => !e.dead).map(e => {
+               const r = enemyRect(e);
+               return { cx: r.x + r.w / 2, cy: r.y + r.h / 2, y: r.y, h: r.h, correct: e.correct, text: e.text };
+             }),
+             pbolts: pbolts.length,
+             ebolts: ebolts.map(b => ({ x: b.x, y: b.y })) };
+  }
+};
+
+(function(){
+  SFX.renderBtn();
+  loadSet().then(set => {
+    document.getElementById('setinfo').textContent = set.title + ' · ' + set.questions.length + ' questions';
+    const btn = document.getElementById('playbtn');
+    btn.disabled = false; btn.textContent = '▶ Play';
+    return fetch('/api/auth/me').then(r => r.json());
+  }).then(me => {
+    if (!me) document.getElementById('signin-note').style.display = 'block';
+  }).catch(() => {
+    document.getElementById('setinfo').textContent = 'Couldn\'t load this question set.';
+  });
+})();
+</script>
+</body>
+</html>

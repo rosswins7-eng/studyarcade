@@ -481,7 +481,7 @@ async function renderAccount(q = {}){
   });
   api('GET', '/api/me/scores').then(rows => {
     const el = $('myscores'); if (!el) return;
-    const gname = { quiz: '⚡ Quiz', asteroid: '☄️ Asteroid', match: '🃏 Match', sort: '🏹 Slingshot', type: '⌨️ Type', pop: '🎈 Pop', speed: '🚀 Speed' };
+    const gname = { quiz: '⚡ Quiz', asteroid: '☄️ Asteroid', galaga: '🚀 Defender', match: '🃏 Match', sort: '🏹 Slingshot', type: '⌨️ Type', pop: '🎈 Pop', speed: '🚀 Speed' };
     el.innerHTML = rows.length ? `
       <div class="card"><table class="lb"><tr><th>Module</th><th>Game</th><th>Best</th><th>Acc</th></tr>
       ${rows.map(r => `<tr><td>${esc(r.module)}</td><td>${gname[r.game] || r.game}</td><td>${r.best}</td><td>${Math.round(r.acc)}%</td></tr>`).join('')}
