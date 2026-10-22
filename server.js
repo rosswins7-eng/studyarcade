@@ -6,7 +6,66 @@ const path = require('path');
 const db = require('./db');
 
 const app = express();
+app.set('trust proxy', 1);
 const PORT = process.env.PORT || 3000;
+
+// ---------- Stripe (lazy — boot never crashes without keys) ----------
+// Keys come ONLY from env: STRIPE_SECRET_KEY, STRIPE_PRICE_ID,
+// STRIPE_WEBHOOK_SECRET, PUBLIC_URL. Never hardcode them.
+const PUBLIC_URL = (process.env.PUBLIC_URL || '').replace(/\/$/, '');
+function getStripe() {
+  const key = process.env.STRIPE_SECRET_KEY;
+  if (!key) return null;
+  try {
+    if (!getStripe._client) getStripe._client = require('stripe')(key);
+    return getStripe._client;
+  } catch (e) { console.error('Stripe init failed:', e.message); return null; }
+}
+const paymentsNotLive = (res) => res.status(503).json({ error: 'Payments are not live yet.' });
+
+// Stripe webhook MUST see the raw body for signature verification, so this
+// route (with express.raw) is registered BEFORE express.json() below.
+app.post('/api/billing/webhook', express.raw({ type: 'application/json' }), async (req, res) => {
+  const stripe = getStripe();
+  const secret = process.env.STRIPE_WEBHOOK_SECRET;
+  // Without keys/secret a signature can never verify — reject like a bad signature.
+  if (!stripe || !secret) return res.status(400).json({ error: 'Webhook is not configured.' });
+  let event;
+  try {
+    event = stripe.webhooks.constructEvent(req.body, req.headers['stripe-signature'], secret);
+  } catch (e) {
+    console.error('Stripe webhook signature failed:', e.message);
+    return res.status(400).json({ error: 'Invalid signature.' });
+  }
+  try {
+    const obj = event.data.object || {};
+    if (event.type === 'checkout.session.completed') {
+      const userId = parseInt(obj.client_reference_id || (obj.metadata && obj.metadata.userId) || '');
+      const customerId = obj.customer || null;
+      const subId = obj.subscription || null;
+      let target = userId ? await db.getUserById(userId) : null;
+      if (!target && customerId) target = await db.getUserByStripeCustomer(customerId);
+      if (target) {
+        let isPro = true; // a completed subscription checkout = paid
+        if (subId) {
+          try {
+            const sub = await stripe.subscriptions.retrieve(subId);
+            isPro = sub.status === 'active' || sub.status === 'trialing';
+          } catch (e) { /* keep completed-checkout default */ }
+        }
+        await db.setUserPro(target.id, isPro, customerId, subId);
+      }
+    } else if (event.type === 'customer.subscription.created' || event.type === 'customer.subscription.updated') {
+      const isPro = obj.status === 'active' || obj.status === 'trialing';
+      const target = await db.getUserByStripeCustomer(obj.customer);
+      if (target) await db.setUserPro(target.id, isPro, obj.customer, obj.id);
+    } else if (event.type === 'customer.subscription.deleted') {
+      const target = await db.getUserByStripeCustomer(obj.customer);
+      if (target) await db.setUserPro(target.id, false, obj.customer, obj.id);
+    }
+  } catch (e) { console.error('Stripe webhook handling failed:', e); return res.status(500).json({ error: 'Webhook handling failed.' }); }
+  res.json({ received: true });
+});
 // Game registry: subjects null = available everywhere; otherwise list of subject names.
 const GAMES = [
   { id: 'quiz', subjects: null },
@@ -46,7 +105,11 @@ app.use(session({
   store: new DbSessionStore(db),
   secret: process.env.SESSION_SECRET || 'studyarcade-dev-secret-change-me',
   resave: false, saveUninitialized: false,
-  cookie: { httpOnly: true, maxAge: 1000 * 60 * 60 * 24 * 30 },
+  cookie: {
+    httpOnly: true, maxAge: 1000 * 60 * 60 * 24 * 30,
+    sameSite: 'lax',
+    secure: process.env.NODE_ENV === 'production',
+  },
 }));
 // Sweep expired sessions hourly so the table doesn't grow forever.
 setInterval(() => db.clearExpiredSessions().catch(() => {}), 3600 * 1000);
@@ -56,6 +119,25 @@ const authed = (req, res, next) => {
   next();
 };
 const ah = (fn) => (req, res, next) => Promise.resolve(fn(req, res, next)).catch(next);
+
+// ---------- Pro gating ----------
+// Official library = seeded by the system user (system@studyarcade) or legacy
+// creator_id NULL. A user's own sets and community sets are NEVER gated.
+const isOfficialSet = (row) => !row.creator_id || row.creator_email === 'system@studyarcade';
+const proRequired = (res, message) => res.status(402).json({
+  error: 'pro_required',
+  message: message || 'This is a StudyArcade Pro feature. Go Pro for $3.99/mo to unlock it.',
+});
+async function viewerIsPro(req) {
+  if (!req.session.userId) return false;
+  const u = await db.getUserById(req.session.userId);
+  return !!(u && u.is_pro);
+}
+function monthStartIso() {
+  const d = new Date();
+  const p = (n) => String(n).padStart(2, '0');
+  return `${d.getUTCFullYear()}-${p(d.getUTCMonth() + 1)}-01 00:00:00`;
+}
 
 function validateQuestions(qs) {
   if (!Array.isArray(qs) || qs.length === 0 || qs.length > 500) return 'Add 1–500 questions.';
@@ -78,7 +160,7 @@ app.post('/api/auth/register', ah(async (req, res) => {
     return res.status(409).json({ error: 'That email is already registered. Try signing in.' });
   const u = await db.createUser(name.trim(), email.toLowerCase(), bcrypt.hashSync(password, 10));
   req.session.userId = u.id;
-  res.json({ id: u.id, name: name.trim(), email: email.toLowerCase() });
+  res.json({ id: u.id, name: name.trim(), email: email.toLowerCase(), xp: 0, level: 1, is_pro: false });
 }));
 
 app.post('/api/auth/login', ah(async (req, res) => {
@@ -87,7 +169,7 @@ app.post('/api/auth/login', ah(async (req, res) => {
   if (!u || u.pass_hash === 'seed' || !bcrypt.compareSync(password || '', u.pass_hash))
     return res.status(401).json({ error: 'Wrong email or password.' });
   req.session.userId = u.id;
-  res.json({ id: u.id, name: u.name, email: u.email, is_pro: !!u.is_pro });
+  res.json({ id: u.id, name: u.name, email: u.email, is_pro: !!u.is_pro, xp: u.xp || 0, level: levelFor(u.xp) });
 }));
 
 app.post('/api/auth/logout', (req, res) => { req.session.destroy(() => res.json({ ok: true })); });
@@ -95,7 +177,49 @@ app.post('/api/auth/logout', (req, res) => { req.session.destroy(() => res.json(
 app.get('/api/auth/me', ah(async (req, res) => {
   if (!req.session.userId) return res.json(null);
   const u = await db.getUserById(req.session.userId);
-  res.json(u ? { ...u, is_pro: !!u.is_pro, level: levelFor(u.xp) } : null);
+  // Explicit shape (never leaks stripe ids): same fields login/register return.
+  res.json(u ? { id: u.id, name: u.name, email: u.email, is_pro: !!u.is_pro, xp: u.xp || 0, level: levelFor(u.xp) } : null);
+}));
+
+// ---------- billing ----------
+app.post('/api/billing/checkout', authed, ah(async (req, res) => {
+  const stripe = getStripe();
+  const priceId = process.env.STRIPE_PRICE_ID;
+  if (!stripe || !priceId) return paymentsNotLive(res);
+  const u = await db.getUserById(req.session.userId);
+  if (!u) return res.status(401).json({ error: 'Sign in required.' });
+  const base = PUBLIC_URL || `${req.protocol}://${req.get('host')}`;
+  try {
+    const params = {
+      mode: 'subscription',
+      line_items: [{ price: priceId, quantity: 1 }],
+      success_url: base + '/#/account?pro=success',
+      cancel_url: base + '/#/account?pro=cancelled',
+      client_reference_id: String(u.id),
+      metadata: { userId: String(u.id) },
+      subscription_data: { metadata: { userId: String(u.id) } },
+    };
+    if (u.stripe_customer_id) params.customer = u.stripe_customer_id;
+    else params.customer_email = u.email;
+    const s = await stripe.checkout.sessions.create(params);
+    res.json({ url: s.url, id: s.id });
+  } catch (e) { console.error('Stripe checkout failed:', e.message); res.status(500).json({ error: 'Could not start checkout.' }); }
+}));
+
+app.post('/api/billing/portal', authed, ah(async (req, res) => {
+  const stripe = getStripe();
+  if (!stripe) return paymentsNotLive(res);
+  const u = await db.getUserById(req.session.userId);
+  if (!u) return res.status(401).json({ error: 'Sign in required.' });
+  if (!u.stripe_customer_id) return res.status(400).json({ error: 'No billing account yet — go Pro first.' });
+  const base = PUBLIC_URL || `${req.protocol}://${req.get('host')}`;
+  try {
+    const s = await stripe.billingPortal.sessions.create({
+      customer: u.stripe_customer_id,
+      return_url: base + '/#/account',
+    });
+    res.json({ url: s.url });
+  } catch (e) { console.error('Stripe portal failed:', e.message); res.status(500).json({ error: 'Could not open billing portal.' }); }
 }));
 
 // ---------- subjects & modules ----------
@@ -112,6 +236,9 @@ app.get('/api/sets/combined', ah(async (req, res) => {
   if (!ids.length) return res.status(400).json({ error: 'Pick at least one module.' });
   const rows = await db.getSetsByIds(ids);
   if (!rows.length) return res.status(404).json({ error: 'No modules found.' });
+  // Library-depth gate: any gated official module in the combo blocks non-Pro.
+  if (rows.some((r) => isOfficialSet(r) && (r.module_order || 0) > 3) && !(await viewerIsPro(req)))
+    return proRequired(res, 'Modules past the first 3 of a subject are Pro. Go Pro for $3.99/mo to play the full library.');
   const questions = [], rounds = [], titles = [];
   for (const r of rows) {
     titles.push(r.module || r.title);
@@ -145,6 +272,9 @@ app.get('/api/community', ah(async (req, res) => {
 app.get('/api/sets/:id', ah(async (req, res) => {
   const row = await db.getSet(req.params.id);
   if (!row) return res.status(404).json({ error: 'Set not found.' });
+  // Library-depth gate (official sets only; own + community sets exempt).
+  if (isOfficialSet(row) && (row.module_order || 0) > 3 && !(await viewerIsPro(req)))
+    return proRequired(res, 'Modules past the first 3 of a subject are Pro. Go Pro for $3.99/mo to play the full library.');
   await db.bumpPlays(req.params.id);
   const full = db.fullSet(row);
   full.combinedIds = [row.id];
@@ -152,6 +282,9 @@ app.get('/api/sets/:id', ah(async (req, res) => {
 }));
 
 app.post('/api/sets', authed, ah(async (req, res) => {
+  // Free tier: 1 created set. Pro: unlimited.
+  if (!(await viewerIsPro(req)) && (await db.countUserSets(req.session.userId)) >= 1)
+    return proRequired(res, 'Free accounts can create 1 set. Go Pro for $3.99/mo for unlimited sets.');
   const { title, subject, module, description, questions, rounds } = req.body || {};
   if (!title || !subject) return res.status(400).json({ error: 'Title and subject are required.' });
   const err = validateQuestions(questions);
@@ -261,6 +394,10 @@ function genBuildQuestions(pairs) {
 }
 
 app.post('/api/generate', authed, ah(async (req, res) => {
+  // Free tier: 3 AI generations per calendar month. Pro: unlimited.
+  if (!(await viewerIsPro(req)) &&
+      (await db.countGenRequestsSince(req.session.userId, monthStartIso())) >= 3)
+    return proRequired(res, 'Free accounts get 3 AI generations a month. Go Pro for $3.99/mo for unlimited generation.');
   const { subject, notes } = req.body || {};
   if (!subject || !notes || notes.trim().length < 50)
     return res.status(400).json({ error: 'Add a subject and paste at least a few sentences of notes.' });
@@ -290,8 +427,8 @@ app.get('/api/games', (req, res) => {
       desc: 'Rapid-fire quiz combat. 20 seconds a question, streaks multiply your score.' },
     { id: 'match', title: 'Match Pairs', icon: '🃏', subjects: null,
       desc: 'Flip the cards and match each term to its definition. Clear the board fast for big points.' },
-    { id: 'sort', title: 'Sort Sprint', icon: '🗂️', subjects: null,
-      desc: 'Items drop in — fling each one into the right category bin before time runs out. Made for the dental teeth set.' },
+    { id: 'sort', title: 'Slingshot Smash', icon: '🏹', subjects: null,
+      desc: 'Drag the slingshot, aim, and smash the correct answer brick on the wall — wrong answers bounce back and cost a life.' },
     { id: 'type', title: 'Type Attack', icon: '⌨️', subjects: null,
       desc: 'No multiple choice. Type the answer from memory before the clock runs out.' },
     { id: 'pop', title: 'Balloon Pop', icon: '🎈', subjects: null,

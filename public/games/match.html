@@ -88,6 +88,7 @@
       <div class="stat"><div class="v" id="finaltime">0s</div><div class="l">TIME</div></div>
     </div>
     <div id="review"></div>
+    <p class="sub" id="signin-note-end" style="display:none; text-align:center">👤 <a href="/#account" style="color:#8b7bff">Sign in</a> to save your scores to the leaderboard.</p>
     <button class="btn" onclick="newBoard()">↻ New Board</button>
     <a class="btn" id="btn-scoreboard" style="text-decoration:none" href="#">🏆 Scoreboard</a>
     <a class="btn" id="btn-back" style="text-decoration:none" href="#">← Back</a>
@@ -226,7 +227,7 @@ function floatPts(txt){
 async function submitScore(acc){
   try {
     const me = await (await fetch('/api/auth/me')).json();
-    if (!me) return;
+    if (!me) { document.getElementById('signin-note-end').style.display = 'block'; return; }
     const r = await fetch('/api/sets/' + COMBINED_IDS[0] + '/scores', {
       method: 'POST', headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({ game: GAME_ID, score: score, accuracy: acc, setIds: COMBINED_IDS })
@@ -264,13 +265,19 @@ function endGame(timeout){
   document.getElementById('rank').textContent = acc >= 90 && !timeout ? 'S' : acc >= 75 ? 'A' : acc >= 60 ? 'B' : acc >= 40 ? 'C' : 'D';
   const rev = document.getElementById('review');
   const hard = pairs.filter(p => (pairTries[p.id] || 0) > 2);
-  if (!hard.length) {
-    rev.innerHTML = '<p class="sub" style="text-align:center">🔥 Clean board. Nothing to review.</p>';
-  } else {
-    rev.innerHTML = '<p class="sub"><b>These took you 3+ tries — review:</b></p>' + hard.map(p =>
-      '<div class="missed-item"><b>' + p.term + '</b><br><span class="ans">' + p.def + '</span><br>' + p.why + '</div>'
-    ).join('');
+  const matchedIds = new Set([...document.querySelectorAll('#board .mcard.matched')].map(el => el._pair));
+  const unmatched = timeout ? pairs.filter(p => !matchedIds.has(p.id)) : [];
+  const item = p =>
+    '<div class="missed-item"><b>' + p.term + '</b><br><span class="ans">' + p.def + '</span><br>' + p.why + '</div>';
+  let html = '';
+  if (unmatched.length) {
+    html += '<p class="sub"><b>⏰ Time ran out — these pairs were left:</b></p>' + unmatched.map(item).join('');
+    const rest = hard.filter(p => !unmatched.some(u => u.id === p.id));
+    if (rest.length) html += '<p class="sub"><b>These took you 3+ tries — review:</b></p>' + rest.map(item).join('');
+  } else if (hard.length) {
+    html += '<p class="sub"><b>These took you 3+ tries — review:</b></p>' + hard.map(item).join('');
   }
+  rev.innerHTML = html || '<p class="sub" style="text-align:center">🔥 Clean board. Nothing to review.</p>';
   updateHud();
 }
 

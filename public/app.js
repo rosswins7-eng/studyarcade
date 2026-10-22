@@ -35,8 +35,22 @@ async function api(method, url, body){
     body: body ? JSON.stringify(body) : undefined,
   });
   const data = await r.json().catch(() => ({}));
-  if (!r.ok) throw new Error(data.error || 'Something went wrong.');
+  if (!r.ok) {
+    const err = new Error(data.message || data.error || 'Something went wrong.');
+    err.status = r.status;
+    err.code = data.error || null;
+    throw err;
+  }
   return data;
+}
+
+const isProRequired = (e) => e && (e.code === 'pro_required' || e.status === 402);
+// Friendly Pro upsell for 402s: toast where one exists, then send them to the
+// account page where the Go Pro card lives.
+function proUpsell(e, toastId){
+  const msg = (e && e.message) || 'This is a StudyArcade Pro feature.';
+  if (toastId && $(toastId)) toast(toastId, 'err', msg + ' Taking you to Go Pro…');
+  setTimeout(() => { location.hash = '#/account'; }, 1200);
 }
 
 function showView(name){
@@ -71,7 +85,7 @@ async function route(){
     else if (page === 'module' && arg) { showView('module'); await renderModule(arg, q.game); }
     else if (page === 'community') { showView('community'); await renderCommunity(); }
     else if (page === 'create') { showView('create'); renderCreate(); }
-    else if (page === 'account') { showView('account'); renderAccount(); }
+    else if (page === 'account') { showView('account'); await renderAccount(q); }
     else { showView('home'); await renderHome(); }
   } catch(e){ console.error(e); }
 }
@@ -99,6 +113,16 @@ async function renderHome(){
       <div class="step"><div class="num">1</div><h3>Pick a subject</h3><p>Browse community-made modules — or build your own from your notes.</p></div>
       <div class="step"><div class="num">2</div><h3>Choose modules</h3><p>Drill one module or combine several into a mega-run.</p></div>
       <div class="step"><div class="num">3</div><h3>Play &amp; climb</h3><p>Destroy asteroids, flip matches, and land on the leaderboard.</p></div>
+    </div>
+    <h2 class="section-title">Pricing</h2>
+    <div class="cards">
+      <div class="card"><div class="icon">🆓</div><h3>Free</h3>
+        <p>First 3 modules of every subject · create 1 set · AI generator 3×/month · full Community access.</p>
+        <a class="btn ghost" href="#/subjects">Start free</a></div>
+      <div class="card"><div class="icon">⭐</div><h3>StudyArcade Pro — $3.99/mo</h3>
+        <p>The full library unlocked · unlimited sets · unlimited AI generation · Pro badge.</p>
+        <a class="btn" href="#/account">Go Pro — $3.99/mo</a>
+        <p class="muted" style="margin-top:8px">Cancel anytime. 7-day money-back guarantee.</p></div>
     </div>
     <h2 class="section-title">Starter subjects</h2>
     <div class="subj-grid" id="home-subjects"><p class="muted">Loading…</p></div>`;
@@ -186,8 +210,14 @@ function toggleMod(id, on){
   const c = $('selcount');
   if (c) c.textContent = `${selModules.length} selected`;
 }
-function playSelected(gameId){
+async function playSelected(gameId){
   if (!selModules.length) { alert('Select at least one module first.'); return; }
+  try {
+    await api('GET', '/api/sets/combined?ids=' + selModules.join(','));
+  } catch(e){
+    if (isProRequired(e)) { proUpsell(e); return; }
+    // Other errors: let the game page surface them as before.
+  }
   location.href = `/games/${gameId}.html?sets=` + selModules.join(',');
 }
 
@@ -210,7 +240,18 @@ async function renderModule(id, game){
       <div class="tabs" id="lbtabs">${GAMES.map(g => `<button class="tab${g.id === lbGame ? ' active' : ''}" onclick="setLbGame('${g.id}', ${m.id})">${g.icon} ${esc(g.title)}</button>`).join('')}</div>
       <div class="card" id="lbtable"><p class="muted">Loading…</p></div>`;
     await loadLb(m.id);
-  } catch(e){ v.innerHTML = `<p class="muted">Module not found. <a href="#/subjects">Back</a></p>`; }
+  } catch(e){
+    if (isProRequired(e)) {
+      v.innerHTML = `
+        <div class="card"><div class="icon">⭐</div><h3>This module is Pro</h3>
+        <p class="muted" style="margin:8px 0 14px">${esc(e.message)}</p>
+        <a class="btn" href="#/account">Go Pro — $3.99/mo</a>
+        <p class="muted" style="margin-top:8px">Cancel anytime. 7-day money-back guarantee.</p></div>
+        <p class="muted" style="margin-top:14px"><a href="#/subjects">← Back to subjects</a></p>`;
+    } else {
+      v.innerHTML = `<p class="muted">Module not found. <a href="#/subjects">Back</a></p>`;
+    }
+  }
 }
 async function loadLb(id){
   try {
@@ -344,7 +385,7 @@ async function submitSet(){
     });
     toast('ctoast', 'ok', 'Published! Your module is live.');
     setTimeout(() => location.hash = '#/module/' + set.id, 900);
-  } catch(e){ toast('ctoast', 'err', e.message); }
+  } catch(e){ if (isProRequired(e)) proUpsell(e, 'ctoast'); else toast('ctoast', 'err', e.message); }
 }
 async function submitGen(){
   try {
@@ -352,12 +393,32 @@ async function submitGen(){
     toast('gtoast', 'ok', r.message);
     $('gennotes').value = '';
     if (r.id) setTimeout(() => location.hash = '#/module/' + r.id, 900);
-  } catch(e){ toast('gtoast', 'err', e.message); }
+  } catch(e){ if (isProRequired(e)) proUpsell(e, 'gtoast'); else toast('gtoast', 'err', e.message); }
 }
 
 // ---------- account ----------
 let authTab = 'login';
-function renderAccount(){
+async function goPro(){
+  try {
+    const r = await api('POST', '/api/billing/checkout');
+    if (r.url) { location.href = r.url; return; }
+    toast('billingtoast', 'err', 'Payments launching soon.');
+  } catch(e){
+    if (e.status === 503) toast('billingtoast', 'err', 'Payments launching soon — Pro checkout is not live yet.');
+    else toast('billingtoast', 'err', e.message);
+  }
+}
+async function manageBilling(){
+  try {
+    const r = await api('POST', '/api/billing/portal');
+    if (r.url) { location.href = r.url; return; }
+    toast('billingtoast', 'err', 'Could not open billing.');
+  } catch(e){
+    if (e.status === 503) toast('billingtoast', 'err', 'Payments launching soon — billing is not live yet.');
+    else toast('billingtoast', 'err', e.message);
+  }
+}
+async function renderAccount(q = {}){
   const v = $('view-account');
   if (!ME) {
     v.innerHTML = `
@@ -375,6 +436,10 @@ function renderAccount(){
       </div>`;
     return;
   }
+  if (q && q.pro === 'success') {
+    // Webhook may lag a few seconds — re-fetch /me so the badge is fresh.
+    try { const fresh = await api('GET', '/api/auth/me'); if (fresh) { ME = fresh; syncNav(); } } catch(e){}
+  }
   v.innerHTML = `
     <h2 class="section-title" style="margin-top:0">👤 ${esc(ME.name)}</h2>
     <p class="muted" style="margin-bottom:18px">${esc(ME.email)} ${ME.is_pro ? '· <b style="color:#ffd166">PRO</b>' : ''}</p>
@@ -382,23 +447,49 @@ function renderAccount(){
       <a class="btn small" href="#/create">✨ New module</a>
       <button class="btn small ghost" onclick="logout()">Sign out</button>
     </div>
+    ${ME.is_pro ? `
+    <div class="card" style="margin-bottom:24px"><div class="icon">⭐</div><h3>StudyArcade Pro <span class="lvlbadge">PRO</span></h3>
+      <p class="muted" style="margin:8px 0 12px">Everything unlocked — full library, unlimited sets, unlimited AI generation.</p>
+      <button class="btn" onclick="manageBilling()">Manage billing</button>
+      <div class="toast" id="billingtoast"></div></div>`
+    : `
+    <div class="card" style="margin-bottom:24px"><div class="icon">⭐</div><h3>Go Pro — $3.99/mo</h3>
+      <p class="muted" style="margin:8px 0 12px">Unlock the full library (every module past the first 3 of each subject), unlimited set creation, and unlimited AI generation.</p>
+      <button class="btn" onclick="goPro()">Go Pro — $3.99/mo</button>
+      <p class="muted" style="margin-top:8px">Cancel anytime. 7-day money-back guarantee.</p>
+      <div class="toast" id="billingtoast"></div></div>`}
     <h2 class="section-title">My modules</h2><div id="mysets"><p class="muted">Loading…</p></div>
     <h2 class="section-title">My best scores</h2><div id="myscores"><p class="muted">Loading…</p></div>`;
+  if (q && q.pro === 'success') {
+    toast('billingtoast', 'ok', ME.is_pro
+      ? '🎉 Welcome to Pro! Everything is unlocked.'
+      : '🎉 Welcome to Pro! Payment received — if Pro does not show yet, give it a few seconds (confirmation can lag) and refresh.');
+  } else if (q && q.pro === 'cancelled') {
+    toast('billingtoast', 'err', 'Checkout cancelled — no charge was made.');
+  }
   api('GET', '/api/me/sets').then(sets => {
-    $('mysets').innerHTML = sets.length ? sets.map(s => `
+    const el = $('mysets'); if (!el) return;
+    el.innerHTML = sets.length ? sets.map(s => `
       <div class="mod"><div class="body"><h3>${esc(s.module)}</h3>
       <div class="meta">${esc(s.subject)} · ${s.questionCount} questions · ${s.plays} plays</div>
       <div class="actions"><a class="btn small ghost" href="#/module/${s.id}">View</a>
       <button class="btn small danger" onclick="delSet(${s.id})">Delete</button></div></div></div>`).join('')
       : '<p class="muted">Nothing yet — <a href="#/create">create your first module</a>.</p>';
-  }).catch(() => {});
+  }).catch((e) => {
+    const el = $('mysets'); if (!el) return;
+    el.innerHTML = `<p class="muted">Could not load your modules${e && e.message ? ' (' + esc(e.message) + ')' : ''} — the server may have been waking up. <button class="btn small ghost" onclick="renderAccount()">Retry</button></p>`;
+  });
   api('GET', '/api/me/scores').then(rows => {
-    const gname = { quiz: '⚡ Quiz', asteroid: '☄️ Asteroid', match: '🃏 Match', sort: '🗂️ Sort', type: '⌨️ Type', pop: '🎈 Pop', speed: '🚀 Speed' };
-    $('myscores').innerHTML = rows.length ? `
+    const el = $('myscores'); if (!el) return;
+    const gname = { quiz: '⚡ Quiz', asteroid: '☄️ Asteroid', match: '🃏 Match', sort: '🏹 Slingshot', type: '⌨️ Type', pop: '🎈 Pop', speed: '🚀 Speed' };
+    el.innerHTML = rows.length ? `
       <div class="card"><table class="lb"><tr><th>Module</th><th>Game</th><th>Best</th><th>Acc</th></tr>
       ${rows.map(r => `<tr><td>${esc(r.module)}</td><td>${gname[r.game] || r.game}</td><td>${r.best}</td><td>${Math.round(r.acc)}%</td></tr>`).join('')}
       </table></div>` : '<p class="muted">Play a game to set your first score.</p>';
-  }).catch(() => {});
+  }).catch((e) => {
+    const el = $('myscores'); if (!el) return;
+    el.innerHTML = `<p class="muted">Could not load your scores${e && e.message ? ' (' + esc(e.message) + ')' : ''} — the server may have been waking up. <button class="btn small ghost" onclick="renderAccount()">Retry</button></p>`;
+  });
 }
 async function doAuth(){
   try {
@@ -430,7 +521,12 @@ function syncNav(){
 // ---------- boot ----------
 (async function(){
   try { GAMES = await api('GET', '/api/games'); } catch(e){ GAMES = []; }
-  try { ME = await api('GET', '/api/auth/me'); } catch(e){}
+  try { ME = await api('GET', '/api/auth/me'); } catch(e){
+    // Server may be waking (Render free tier) — retry once before
+    // treating the user as signed out.
+    await new Promise((r) => setTimeout(r, 2000));
+    try { ME = await api('GET', '/api/auth/me'); } catch(e2){ ME = null; }
+  }
   syncNav();
   if (!location.hash) location.hash = '#/';
   route();

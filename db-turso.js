@@ -29,6 +29,7 @@ const SCHEMA = [
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL, email TEXT NOT NULL UNIQUE, pass_hash TEXT NOT NULL,
     is_pro INTEGER NOT NULL DEFAULT 0, xp INTEGER NOT NULL DEFAULT 0,
+    stripe_customer_id TEXT, stripe_sub_id TEXT,
     created_at TEXT NOT NULL DEFAULT (datetime('now')))`,
   `CREATE TABLE IF NOT EXISTS sets (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -54,6 +55,8 @@ const SCHEMA = [
 async function init() {
   for (const s of SCHEMA) await run(s);
   try { await run('ALTER TABLE users ADD COLUMN xp INTEGER NOT NULL DEFAULT 0'); } catch (e) { /* already exists */ }
+  try { await run('ALTER TABLE users ADD COLUMN stripe_customer_id TEXT'); } catch (e) { /* already exists */ }
+  try { await run('ALTER TABLE users ADD COLUMN stripe_sub_id TEXT'); } catch (e) { /* already exists */ }
   await seed();
 }
 
@@ -91,7 +94,22 @@ async function seed() {
 module.exports = {
   init,
   getUserByEmail: (email) => get('SELECT * FROM users WHERE email = ?', [email]),
-  getUserById: (id) => get('SELECT id, name, email, is_pro, xp FROM users WHERE id = ?', [id]),
+  getUserById: (id) => get('SELECT id, name, email, is_pro, xp, stripe_customer_id, stripe_sub_id FROM users WHERE id = ?', [id]),
+  getUserByStripeCustomer: (customerId) =>
+    customerId ? get('SELECT * FROM users WHERE stripe_customer_id = ?', [customerId]) : Promise.resolve(undefined),
+  setUserPro: async (userId, isPro, customerId, subId) => {
+    await run('UPDATE users SET is_pro = ? WHERE id = ?', [isPro ? 1 : 0, userId]);
+    if (customerId) await run('UPDATE users SET stripe_customer_id = ? WHERE id = ?', [customerId, userId]);
+    if (subId) await run('UPDATE users SET stripe_sub_id = ? WHERE id = ?', [subId, userId]);
+  },
+  countUserSets: async (userId) => {
+    const r = await get('SELECT COUNT(*) AS c FROM sets WHERE creator_id = ?', [userId]);
+    return r ? r.c : 0;
+  },
+  countGenRequestsSince: async (userId, isoDate) => {
+    const r = await get('SELECT COUNT(*) AS c FROM generation_requests WHERE user_id = ? AND created_at >= ?', [userId, isoDate]);
+    return r ? r.c : 0;
+  },
   createUser: async (name, email, hash) => {
     const r = await run('INSERT INTO users (name, email, pass_hash) VALUES (?, ?, ?) RETURNING id', [name, email, hash]);
     return { id: norm(r)[0].id };
@@ -103,9 +121,9 @@ module.exports = {
     SELECT s.*, u.name AS creator_name FROM sets s LEFT JOIN users u ON u.id = s.creator_id
     WHERE s.subject = ? ORDER BY s.module_order, s.id`, [subject]),
   getSet: (id) => get(`
-    SELECT s.*, u.name AS creator_name FROM sets s LEFT JOIN users u ON u.id = s.creator_id WHERE s.id = ?`, [id]),
+    SELECT s.*, u.name AS creator_name, u.email AS creator_email FROM sets s LEFT JOIN users u ON u.id = s.creator_id WHERE s.id = ?`, [id]),
   getSetsByIds: (ids) => ids.length ? all(`
-    SELECT s.*, u.name AS creator_name FROM sets s LEFT JOIN users u ON u.id = s.creator_id
+    SELECT s.*, u.name AS creator_name, u.email AS creator_email FROM sets s LEFT JOIN users u ON u.id = s.creator_id
     WHERE s.id IN (${ids.map(() => '?').join(',')})`, ids) : [],
   listSets: () => all(`
     SELECT s.*, u.name AS creator_name FROM sets s LEFT JOIN users u ON u.id = s.creator_id

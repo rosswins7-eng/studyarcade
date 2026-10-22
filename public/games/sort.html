@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Sort Sprint — StudyArcade</title>
+<title>Slingshot Smash — StudyArcade</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
   body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #0b0e22; color: #eef1ff; min-height: 100vh; display: flex; align-items: flex-start; justify-content: center; padding: 14px; user-select: none; -webkit-user-select: none; }
@@ -14,22 +14,78 @@
   .sub { color: #a7b0d8; font-size: .95rem; line-height: 1.55; margin-bottom: 16px; }
   .btn { display: block; width: 100%; padding: 15px; margin: 8px 0; font-size: 1.05rem; font-weight: 700; color: #fff; background: linear-gradient(135deg, #7c5cff, #00d4ff); border: none; border-radius: 14px; cursor: pointer; text-align: center; }
   .btn:hover { filter: brightness(1.1); }
+  .btn.small { width: auto; display: inline-block; padding: 9px 16px; font-size: .9rem; margin: 0; background: #232a55; border: 1px solid #3a4488; }
   .hidden { display: none !important; }
   .howto { background: #1d2347; border-radius: 12px; padding: 14px 16px; margin-bottom: 18px; font-size: .9rem; line-height: 1.65; color: #c6cdf2; }
   .howto b { color: #fff; }
-  .hud { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; font-size: .9rem; color: #a7b0d8; }
+  .hud { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; font-size: .9rem; color: #a7b0d8; }
   .hud b { color: #fff; font-size: 1.05rem; }
   #streak { color: #ffb020; font-weight: 700; }
-  .timer-wrap { height: 8px; background: #262c55; border-radius: 99px; overflow: hidden; margin-bottom: 14px; }
-  #timerbar { height: 100%; width: 100%; background: linear-gradient(90deg, #7c5cff, #00d4ff); border-radius: 99px; }
-  #timerbar.low { background: #ef4444; }
-  #playarea { position: relative; min-height: 440px; margin-bottom: 14px; overflow: hidden; border-radius: 16px; background: #11163c; border: 1px solid #2c3468; }
-  #bins { display: flex; gap: 8px; padding: 10px; }
-  .bin { flex: 1; background: #1d2347; border: 2px dashed #3a4488; border-radius: 14px; padding: 10px 6px; min-height: 90px; display: flex; align-items: center; justify-content: center; text-align: center; font-weight: 700; font-size: .82rem; line-height: 1.3; color: #eef1ff; transition: border-color .12s, background .12s; }
-  .bin.flash-good { border-color: #22c55e; background: #14532d; border-style: solid; box-shadow: 0 0 18px #22c55e88; }
-  .bin.flash-bad { border-color: #ef4444; background: #5b1a1a; border-style: solid; }
-  #sortcard { position: absolute; z-index: 5; width: min(78%, 340px); background: #eef1ff; color: #141838; border-radius: 18px; padding: 24px 18px; font-size: 1.05rem; font-weight: 700; text-align: center; line-height: 1.45; min-height: 130px; display: flex; align-items: center; justify-content: center; cursor: grab; touch-action: none; box-shadow: 0 8px 24px rgba(0,0,0,.4); }
-  #sortcard.dragging { cursor: grabbing; box-shadow: 0 0 28px #7c5cff; z-index: 20; }
+  #lives { font-size: 1rem; letter-spacing: 2px; }
+  #castlehpbar { width: 74px; height: 9px; background: #262c55; border-radius: 99px; overflow: hidden; display: inline-block; vertical-align: middle; margin-left: 5px; }
+  #castlehpfill { height: 100%; width: 100%; background: linear-gradient(90deg, #ff9f1a, #ffd166); border-radius: 99px; transition: width .4s ease; }
+  #playarea { position: relative; height: 520px; margin-bottom: 12px; overflow: hidden; border-radius: 16px; background: linear-gradient(180deg, #11163c 0%, #141b4e 58%, #1c1546 100%); border: 1px solid #2c3468; touch-action: none; }
+  /* ---- question banner (top) ---- */
+  #qbanner { position: relative; z-index: 8; margin: 10px 10px 0; background: #eef1ff; color: #141838; border-radius: 12px; padding: 10px 14px; font-size: .97rem; font-weight: 700; text-align: center; line-height: 1.4; min-height: 44px; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(0,0,0,.35); }
+  /* ---- answer cards (middle) ---- */
+  #answers { position: absolute; z-index: 7; left: 50%; transform: translateX(-50%); top: 88px; width: min(300px, 52%); display: flex; flex-direction: column; gap: 8px; transition: opacity .3s; }
+  .anscard { background: #232a55; border: 2px solid #3a4488; border-radius: 12px; padding: 11px 12px; font-weight: 600; font-size: .88rem; line-height: 1.35; color: #eef1ff; cursor: pointer; text-align: left; overflow-wrap: break-word; box-shadow: 0 4px 12px rgba(0,0,0,.3); transition: border-color .15s, background .15s, opacity .3s; }
+  .anscard:hover { border-color: #7c5cff; }
+  .anscard.selected { border-color: #ffd166; background: #2e3568; }
+  .anscard.flash-green { border-color: #22c55e !important; background: #14532d !important; box-shadow: 0 0 18px #22c55e88; opacity: 1 !important; }
+  #answers.dim .anscard { opacity: .32; }
+  #answers.dim .anscard.selected { opacity: .95; }
+  .flyclone { position: absolute; z-index: 40; background: #2e3568; border: 2px solid #ffd166; border-radius: 12px; padding: 8px 10px; font-weight: 700; font-size: .85rem; color: #eef1ff; pointer-events: none; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; }
+  /* ---- castle (far right) ---- */
+  #castlehpwrap { position: absolute; z-index: 6; right: 8px; bottom: 336px; width: 124px; text-align: center; font-size: .72rem; color: #ffd166; font-weight: 700; }
+  #castlehpwrap .track { height: 8px; background: #262c55; border-radius: 99px; overflow: hidden; margin-top: 3px; border: 1px solid #3a4488; }
+  #castlehpwrap .fill { height: 100%; width: 100%; background: linear-gradient(90deg, #ff9f1a, #ffd166); transition: width .4s ease; }
+  #castle { position: absolute; z-index: 5; right: 8px; bottom: 14px; width: 124px; height: 308px; }
+  #castle .tower { position: absolute; bottom: 0; width: 34px; height: 308px; background: linear-gradient(180deg, #3d4780, #2a3160); border: 2px solid #4a57a8; border-radius: 6px 6px 0 0; transition: transform .6s ease, opacity .6s ease; }
+  #castle .tower::before { content: ''; position: absolute; top: -13px; left: -2px; right: -2px; height: 13px; background: repeating-linear-gradient(90deg, #3d4780 0 10px, transparent 10px 19px); }
+  #castle .tower.left { left: 0; }
+  #castle .tower.right { right: 0; }
+  #castle .wallface { position: absolute; bottom: 0; left: 30px; right: 30px; height: 238px; background:
+      repeating-linear-gradient(0deg, transparent 0 26px, rgba(0,0,0,.25) 26px 28px),
+      repeating-linear-gradient(90deg, transparent 0 42px, rgba(0,0,0,.18) 42px 44px),
+      linear-gradient(180deg, #333d75, #272f5e);
+    border: 2px solid #4a57a8; border-radius: 4px 4px 0 0; transition: transform .6s ease, opacity .6s ease; }
+  #castle .cracks { position: absolute; inset: 0; z-index: 3; pointer-events: none; opacity: 0; transition: opacity .4s; background:
+      linear-gradient(115deg, transparent 46%, rgba(10,8,30,.85) 47%, transparent 48.5%),
+      linear-gradient(64deg, transparent 62%, rgba(10,8,30,.8) 63%, transparent 64.5%),
+      linear-gradient(150deg, transparent 24%, rgba(10,8,30,.75) 25%, transparent 26.5%),
+      linear-gradient(28deg, transparent 78%, rgba(10,8,30,.8) 79%, transparent 80.5%); }
+  #castle[data-stage="1"] .cracks { opacity: .45; }
+  #castle[data-stage="2"] .cracks { opacity: .75; }
+  #castle[data-stage="2"] .tower.right { transform: rotate(3.5deg) translateY(3px); }
+  #castle[data-stage="3"] .cracks { opacity: 1; }
+  #castle[data-stage="3"] .tower.right { transform: rotate(7deg) translateY(8px); }
+  #castle[data-stage="3"] .tower.left { transform: rotate(-4deg) translateY(4px); }
+  #castle[data-stage="3"] .wallface { filter: brightness(.82); }
+  #castle.crumbled .tower.left { transform: translate(-26px, 96px) rotate(-38deg); opacity: .3; }
+  #castle.crumbled .tower.right { transform: translate(26px, 96px) rotate(38deg); opacity: .3; }
+  #castle.crumbled .wallface { transform: translateY(120px) rotate(2deg); opacity: .25; }
+  #castle.shake { animation: castleshake .35s ease; }
+  @keyframes castleshake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-5px); } 60% { transform: translateX(5px); } }
+  #weakpoint { position: absolute; z-index: 6; width: 36px; height: 36px; border-radius: 9px; background: radial-gradient(circle at 50% 45%, #ffe9a8, #ff9f1a); border: 2px solid rgba(255,255,255,.55); box-shadow: 0 0 18px #ffd166cc; animation: wppulse 1.05s ease-in-out infinite; }
+  @keyframes wppulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.14); } }
+  /* ---- slingshot (far left) + stone ---- */
+  #sling { position: absolute; z-index: 20; width: 90px; height: 100px; margin-left: -45px; pointer-events: none; }
+  #sling .arm { position: absolute; bottom: 26px; width: 13px; height: 62px; background: linear-gradient(90deg, #6b4423, #96622f, #6b4423); border-radius: 7px; }
+  #sling .arm.left { left: 16px; transform: rotate(-17deg); transform-origin: bottom center; }
+  #sling .arm.right { right: 16px; transform: rotate(17deg); transform-origin: bottom center; }
+  #sling .grip { position: absolute; bottom: 0; left: 50%; margin-left: -9px; width: 18px; height: 44px; background: linear-gradient(90deg, #59371d, #7d4f28, #59371d); border-radius: 8px; }
+  #sling .base { position: absolute; bottom: -4px; left: 50%; margin-left: -30px; width: 60px; height: 10px; background: #3a2a18; border-radius: 99px; }
+  #sling.shake { animation: slingshake .45s ease; }
+  @keyframes slingshake { 0%,100% { transform: translateX(0); } 15% { transform: translateX(-9px) rotate(-3deg); } 35% { transform: translateX(8px) rotate(3deg); } 55% { transform: translateX(-6px); } 75% { transform: translateX(4px); } }
+  #stone { position: absolute; z-index: 25; left: 0; top: 0; height: 34px; min-width: 36px; max-width: 150px; padding: 0 11px; border-radius: 17px; background: radial-gradient(circle at 35% 30%, #ffe9a8, #c9a24d 58%, #8a6d2f); border: 2px solid #6e5622; color: #241a05; font-size: .68rem; font-weight: 800; display: none; align-items: center; justify-content: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; box-shadow: 0 3px 8px rgba(0,0,0,.5); cursor: grab; touch-action: none; }
+  #stone.grabbed { cursor: grabbing; box-shadow: 0 0 22px #ffd166, 0 3px 8px rgba(0,0,0,.5); }
+  #fxcanvas { position: absolute; inset: 0; z-index: 30; pointer-events: none; }
+  #ground { position: absolute; left: 0; right: 0; bottom: 0; height: 14px; z-index: 3; background: linear-gradient(180deg, #2c3468, #1a2050); border-top: 2px solid #3a4488; }
+  #dmgflash { position: absolute; inset: 0; z-index: 28; pointer-events: none; background: radial-gradient(ellipse at 8% 100%, rgba(239,68,68,.55), rgba(239,68,68,0) 60%); opacity: 0; transition: opacity .12s; }
+  #dmgflash.on { opacity: 1; }
+  #phasebar { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 36px; }
+  #phasemsg { color: #a7b0d8; font-size: .9rem; }
   .stat-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px; margin: 18px 0; }
   .stat { background: #232a55; border-radius: 14px; padding: 14px 8px; text-align: center; }
   .stat .v { font-size: 1.5rem; font-weight: 800; }
@@ -47,44 +103,79 @@
   #levelup-overlay p { color: #eef1ff; font-size: 1.1rem; margin-bottom: 20px; }
   @keyframes fadein { from { opacity: 0; } }
   @keyframes popin { 0% { transform: scale(.6); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
-  @media (max-width: 480px) { #bins { flex-wrap: wrap; } .bin { flex: 1 1 44%; min-height: 76px; } #playarea { min-height: 480px; } .stat-grid { grid-template-columns: 1fr 1fr; } #sortcard { font-size: 1rem; } }
+  @media (max-width: 480px) {
+    #playarea { height: 530px; }
+    #castle { width: 96px; height: 264px; }
+    #castle .tower { width: 26px; height: 264px; }
+    #castle .wallface { left: 22px; right: 22px; height: 200px; }
+    #castlehpwrap { width: 96px; bottom: 290px; }
+    #answers { width: 56%; top: 92px; }
+    .anscard { font-size: .8rem; padding: 9px 10px; }
+    #weakpoint { width: 30px; height: 30px; }
+    .stat-grid { grid-template-columns: 1fr 1fr; }
+  }
 </style>
 </head>
 <body>
 <div id="float">+0</div>
 <div id="app">
   <div class="card" id="screen-start">
-    <h1>🗂️ Sort <span class="accent">Sprint</span></h1>
-    <div class="howto">🫳 Flick the card <b>UP</b> into the right bin — it flies with real physics.<br>
-    ❌ Miss the bins or land in the wrong one and the card is <b>gone</b>, no points.<br>
-    🔥 Streaks multiply your score. ⏱️ <b>90 seconds</b> — sort as many as you can.</div>
+    <h1>🏹 Slingshot <span class="accent">Smash</span></h1>
+    <div class="howto">📖 The <b>question</b> appears at the top — <b>tap an answer</b> in the middle and it flies into your slingshot on the left.<br>
+    🎯 <b>Drag back</b> on the slingshot, aim with the dotted line, and <b>release</b> to fire your answer across the field at the <b>castle</b> on the right.<br>
+    💥 Correct answer = the castle takes damage. Land it on the glowing <b>weak point</b> for <b>+50</b>. Destroy the castle by answering them all!<br>
+    🪃 Wrong answer <b>bounces back</b> and hits YOU — lose a ❤️ life (you have <b>3</b>). Miss the castle entirely and you just pick again, no life lost.<br>
+    ⌨️ Keyboard: <b>1–4</b> pick an answer, <b>←/→</b> angle, <b>↑/↓</b> power, <b>Space</b> fires.</div>
     <p class="sub" id="setinfo">Loading question set…</p>
     <button class="btn" id="playbtn" onclick="startGame()" disabled>Loading…</button>
-    <p class="sub" id="signin-note" style="display:none">👤 <a href="/#account" style="color:#8b7bff">Sign in</a> to save your scores to the leaderboard.</p>
+    <p class="sub" id="signin-note" style="display:none">👤 <a href="/#account" onclick="event.preventDefault(); location.href='/#account';" style="color:#8b7bff">Sign in</a> to save your scores to the leaderboard.</p>
   </div>
 
   <div class="card hidden" id="screen-game">
     <div class="hud">
       <div>Score <b id="score">0</b></div>
       <div id="streak"></div>
-      <div>Sorted <b id="sorted">0</b>/<span id="qtotal">0</span></div>
+      <div>Question <b id="qnum">1</b>/<span id="qtotal">0</span></div>
+      <div>🏰 <b id="castlehp">0</b><span id="castlehpbar"><span id="castlehpfill" style="display:block"></span></span></div>
+      <div id="lives">❤️❤️❤️</div>
     </div>
-    <div class="timer-wrap"><div id="timerbar"></div></div>
     <div id="playarea">
-      <div id="bins"></div>
-      <div id="sortcard">…</div>
+      <div id="qbanner">…</div>
+      <div id="answers"></div>
+      <div id="ground"></div>
+      <div id="castlehpwrap">CASTLE HP<div class="track"><div class="fill" id="castlehpfill2"></div></div></div>
+      <div id="castle" data-stage="0">
+        <div class="tower left"></div>
+        <div class="wallface"></div>
+        <div class="tower right"></div>
+        <div class="cracks"></div>
+        <div id="weakpoint"></div>
+      </div>
+      <div id="sling">
+        <div class="arm left"></div><div class="arm right"></div>
+        <div class="grip"></div><div class="base"></div>
+      </div>
+      <div id="stone"></div>
+      <div id="dmgflash"></div>
+      <canvas id="fxcanvas"></canvas>
+    </div>
+    <div id="phasebar">
+      <span id="phasemsg">Pick an answer to load your slingshot.</span>
+      <button class="btn small hidden" id="changebtn" onclick="unloadAnswer()">↩ Change answer</button>
     </div>
   </div>
 
   <div class="card hidden" id="screen-end">
-    <h1>Sort <span class="accent">Done</span></h1>
+    <h1>Slingshot <span class="accent">Done</span></h1>
     <div id="rank">S</div>
     <div class="stat-grid">
       <div class="stat"><div class="v" id="finalscore">0</div><div class="l">SCORE</div></div>
+      <div class="stat"><div class="v" id="finalcorrect">0</div><div class="l">CORRECT</div></div>
       <div class="stat"><div class="v" id="finalacc">0%</div><div class="l">ACCURACY</div></div>
-      <div class="stat"><div class="v" id="finalxp">…</div><div class="l">XP EARNED</div></div>
-      <div class="stat"><div class="v" id="finalsorted">0</div><div class="l">SORTED</div></div>
+      <div class="stat"><div class="v" id="finalstreak">0</div><div class="l">BEST STREAK</div></div>
     </div>
+    <p class="sub" style="text-align:center">XP earned: <span id="finalxp">…</span></p>
+    <p class="sub" id="end-signin-note" style="display:none;text-align:center">👤 <a href="/#account" onclick="event.preventDefault(); location.href='/#account';" style="color:#8b7bff">Sign in</a> to save your scores to the leaderboard.</p>
     <div id="review"></div>
     <button class="btn" onclick="location.reload()">↻ Play Again</button>
     <button class="btn" onclick="location.href='/#module/'+COMBINED_IDS[0]+'?game=sort'">🏆 Scoreboard</button>
@@ -94,14 +185,36 @@
 <script src="sfx.js"></script>
 <script>
 const GAME_ID = 'sort';
-const TIME_LIMIT = 90;
+const MAX_QUESTIONS = 12;
+const MAX_LIVES = 3;
+const GRAV = 1600;                    // px/s^2
+const LAUNCH_K = 9.5;                 // launch speed per px of stretch
+const MAX_STRETCH = 115;              // px
+const MAX_SPEED = 1400;               // px/s
+const STONE_R = 16;
+
 let QUESTIONS = [], SET_META = null, COMBINED_IDS = [];
-let BINS = [], queue = [], currentQ = null, fixedBins = true;
-let score = 0, streak = 0, correctCount = 0, totalTries = 0, sortedCount = 0;
-let timerInt = null, timeLeft = TIME_LIMIT, startT = 0, ended = false;
-let missed = [], lockCard = false;
+let queue = [], currentQ = null, correctIdx = -1, loadedIdx = -1;
+let score = 0, streak = 0, bestStreak = 0, correctCount = 0, resolved = 0;
+let lives = MAX_LIVES, totalQ = 0, ended = false, castleDestroyed = false;
+let castleHp = 0, castleMax = 0;
+let missed = [];
+let timers = [];
+
+// ---- field state ----
+let phase = 'select';                 // select | loading | aim | flying | bounce | pause | ended
+let W = 0, H = 0;
+let anchor = { x: 0, y: 0 };          // slingshot pouch point
+let stone = { x: 0, y: 0, vx: 0, vy: 0, rot: 0, spinning: false, squash: 0 };
+let dragging = false, dragPos = null;
+let kbAngle = 24, kbPower = 72, kbAim = false;
+let particles = [];
+let rafId = 0, lastT = 0;
 
 function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+function $(id){ return document.getElementById(id); }
+function later(fn, ms){ const t = setTimeout(() => { timers = timers.filter(x => x !== t); fn(); }, ms); timers.push(t); return t; }
+function clearTimers(){ timers.forEach(clearTimeout); timers = []; }
 
 async function loadSet(){
   const params = new URLSearchParams(location.search);
@@ -115,239 +228,498 @@ async function loadSet(){
   SET_META = set;
   COMBINED_IDS = set.combinedIds || [set.id];
   QUESTIONS = set.questions.map(q => ({q: q.q, o: q.options, a: q.answer, why: q.explain}));
-  document.title = set.title + ' — Sort Sprint';
+  document.title = set.title + ' — Slingshot Smash';
   return set;
 }
 
 function startGame(){
-  document.getElementById('screen-start').classList.add('hidden');
-  document.getElementById('screen-end').classList.add('hidden');
-  document.getElementById('screen-game').classList.remove('hidden');
-  // Bins mode: if many questions share one option set (category sets like the
-  // teeth drill), sort that group with fixed bins. Otherwise each card brings
-  // its own bins (re-rendered per card) so the game works on any set.
-  const groups = {};
-  QUESTIONS.forEach(q => {
-    const key = q.o.slice().sort().join('|');
-    (groups[key] = groups[key] || []).push(q);
-  });
-  const best = Object.values(groups).sort((a, b) => b.length - a.length)[0] || [];
-  if (best.length >= 4) {
-    fixedBins = true;
-    BINS = best[0].o.slice();
-    queue = shuffle(best.slice());
-  } else {
-    fixedBins = false;
-    queue = shuffle(QUESTIONS.slice());
-  }
-  document.getElementById('qtotal').textContent = queue.length;
-  score = 0; streak = 0; correctCount = 0; totalTries = 0; sortedCount = 0;
-  missed = []; ended = false;
-  renderBins();
+  clearTimers();
+  $('screen-start').classList.add('hidden');
+  $('screen-end').classList.add('hidden');
+  $('screen-game').classList.remove('hidden');
+  // Randomized run: shuffle the WHOLE pool (across all combined modules),
+  // then take up to 12 — a different subset and order every run.
+  queue = shuffle(QUESTIONS.slice()).slice(0, MAX_QUESTIONS);
+  totalQ = queue.length;
+  castleMax = totalQ; castleHp = totalQ; castleDestroyed = false;
+  score = 0; streak = 0; bestStreak = 0; correctCount = 0; resolved = 0;
+  lives = MAX_LIVES; missed = []; ended = false;
+  $('qtotal').textContent = totalQ;
+  const castle = $('castle');
+  castle.classList.remove('crumbled', 'shake');
+  castle.dataset.stage = '0';
+  setupField();
+  updateCastleHud();
   updateHud();
-  startTimer();
-  nextCard();
+  nextQuestion();
+  lastT = performance.now();
+  cancelAnimationFrame(rafId);
+  rafId = requestAnimationFrame(loop);
 }
 
-function renderBins(){
-  const box = document.getElementById('bins');
+function setupField(){
+  const pa = $('playarea');
+  W = pa.clientWidth; H = pa.clientHeight;
+  anchor = { x: Math.max(52, Math.round(W * 0.15)), y: H - 118 };
+  const sling = $('sling');
+  sling.style.left = anchor.x + 'px';
+  sling.style.top = (anchor.y - 2) + 'px';
+  const cv = $('fxcanvas');
+  cv.width = W; cv.height = H;
+}
+
+function castleRect(){
+  const paRect = $('playarea').getBoundingClientRect();
+  const r = $('castle').getBoundingClientRect();
+  return { x: r.left - paRect.left, y: r.top - paRect.top, w: r.width, h: r.height };
+}
+function weakRect(){
+  const paRect = $('playarea').getBoundingClientRect();
+  const r = $('weakpoint').getBoundingClientRect();
+  return { x: r.left - paRect.left, y: r.top - paRect.top, w: r.width, h: r.height };
+}
+
+function placeWeakPoint(){
+  const c = $('castle');
+  const wp = $('weakpoint');
+  // The weak point sits on the castle's left face (the struck side — the left
+  // tower / wall edge), at a random height per question, so aiming for it is
+  // a real skill shot.
+  const maxY = Math.max(30, c.clientHeight - 76);
+  wp.style.left = (Math.random() * 16) + 'px';
+  wp.style.top = (22 + Math.random() * maxY) + 'px';
+}
+
+function nextQuestion(){
+  if (ended) return;
+  if (!queue.length || lives <= 0) { endGame(lives <= 0); return; }
+  const raw = queue.shift();
+  // Shuffle the 4 answer options per question (fixes answer-position bias).
+  const opts = shuffle(raw.o.map((text, i) => ({ text: text, correct: i === raw.a })));
+  correctIdx = opts.findIndex(o => o.correct);
+  currentQ = { q: raw.q, why: raw.why, ans: raw.o[raw.a], options: opts };
+  loadedIdx = -1;
+  $('qbanner').textContent = raw.q;
+  const box = $('answers');
+  box.classList.remove('dim');
   box.innerHTML = '';
-  BINS.forEach((label) => {
+  opts.forEach((o, i) => {
     const b = document.createElement('div');
-    b.className = 'bin';
-    b.textContent = label;
+    b.className = 'anscard';
+    b.textContent = (i + 1) + '.  ' + o.text;
+    b.addEventListener('click', () => selectAnswer(i));
     box.appendChild(b);
   });
-}
-
-function nextCard(){
-  if (ended) return;
-  if (!queue.length) { endGame(false); return; }
-  currentQ = queue.shift();
-  lockCard = false; flying = false; dragging = false;
-  cancelAnimationFrame(rafId);
-  if (!fixedBins) { BINS = currentQ.o.slice(); renderBins(); }
-  const card = document.getElementById('sortcard');
-  card.textContent = currentQ.q;
-  card.style.transition = '';
-  card.style.opacity = '1';
-  placeCardAtSpawn();
-}
-
-// ---- throw physics: drag the card, fling it into a bin ----
-const GRAV = 2600;                 // px/s²
-let cardX = 0, cardY = 0;          // card offset from spawn point (px)
-let spawnX = 0, spawnY = 0;        // spawn point inside the play area (px)
-let dragging = false, flying = false;
-let grabDX = 0, grabDY = 0;        // pointer offset from card center at grab
-let velSamples = [];               // recent pointer samples {t, x, y}
-let flyVx = 0, flyVy = 0, flyRot = 0, lastT = 0, rafId = 0;
-
-function placeCardAtSpawn(){
-  const card = document.getElementById('sortcard');
-  const pa = document.getElementById('playarea');
-  spawnX = (pa.clientWidth - card.offsetWidth) / 2;
-  spawnY = pa.clientHeight - card.offsetHeight - 14;
-  card.style.left = spawnX + 'px';
-  card.style.top = spawnY + 'px';
-  cardX = 0; cardY = 0;
-  card.style.transform = 'translate(0px, 0px) rotate(0deg)';
-}
-
-function cardCenter(){
-  const card = document.getElementById('sortcard');
-  return { x: spawnX + cardX + card.offsetWidth / 2,
-           y: spawnY + cardY + card.offsetHeight / 2 };
-}
-
-function binAt(cx, cy){
-  const paRect = document.getElementById('playarea').getBoundingClientRect();
-  const bins = document.querySelectorAll('.bin');
-  for (let i = 0; i < bins.length; i++) {
-    const r = bins[i].getBoundingClientRect();
-    const bx = r.left - paRect.left, by = r.top - paRect.top;
-    if (cx >= bx && cx <= bx + r.width && cy >= by && cy <= by + r.height) return i;
-  }
-  return -1;
-}
-
-function flyStep(now){
-  if (!flying || ended) { flying = false; return; }
-  const dt = Math.min(0.05, (now - lastT) / 1000);
-  lastT = now;
-  flyVy += GRAV * dt;
-  cardX += flyVx * dt;
-  cardY += flyVy * dt;
-  flyRot = flyVx / 45;
-  const card = document.getElementById('sortcard');
-  card.style.transform = 'translate(' + cardX + 'px,' + cardY + 'px) rotate(' + flyRot + 'deg)';
-  const c = cardCenter();
-  const bi = binAt(c.x, c.y);
-  if (bi >= 0) { resolveBin(bi); return; }
-  const pa = document.getElementById('playarea');
-  if (c.y > pa.clientHeight + 80 || c.x < -80 || c.x > pa.clientWidth + 80 || c.y < -500) {
-    resolveMiss();
-    return;
-  }
-  rafId = requestAnimationFrame(flyStep);
-}
-
-function resolveBin(i){
-  flying = false;
-  cancelAnimationFrame(rafId);
-  if (ended || !currentQ) return;
-  totalTries++;
-  const card = document.getElementById('sortcard');
-  const bins = document.querySelectorAll('.bin');
-  const binEl = bins[i];
-  const correct = BINS[i] === currentQ.o[currentQ.a];
-  if (correct) {
-    correctCount++; sortedCount++; streak++;
-    const pts = 100 + streak * 10;
-    score += pts;
-    floatPts('+' + pts);
-    SFX.play('correct');
-    if (binEl) { binEl.classList.add('flash-good'); setTimeout(() => binEl.classList.remove('flash-good'), 400); }
-    card.style.transition = 'transform .18s ease-in, opacity .18s ease-in';
-    card.style.transform = 'translate(' + cardX + 'px,' + cardY + 'px) rotate(' + flyRot + 'deg) scale(.15)';
-    card.style.opacity = '0';
-  } else {
-    streak = 0;
-    missed.push({q: currentQ.q, ans: currentQ.o[currentQ.a], why: currentQ.why});
-    if (binEl) { binEl.classList.add('flash-bad'); setTimeout(() => binEl.classList.remove('flash-bad'), 400); }
-    floatPts('WRONG BIN', '#ef4444');
-    SFX.play('wrong');
-    card.style.transition = 'opacity .25s ease-in';
-    card.style.opacity = '0';
-  }
+  placeWeakPoint();
+  phase = 'select';
+  kbAim = false;
+  hideStone();
+  $('changebtn').classList.add('hidden');
+  $('phasemsg').textContent = 'Pick an answer to load your slingshot.';
   updateHud();
-  setTimeout(nextCard, 450);
 }
 
-function resolveMiss(){
-  flying = false;
-  cancelAnimationFrame(rafId);
+// ---- answer selection -> load the slingshot ----
+function selectAnswer(i){
+  if (ended || !currentQ) return false;
+  if (phase !== 'select' && phase !== 'aim') return false;
+  if (phase === 'aim' && i === loadedIdx) return false;
+  if (i < 0 || i >= currentQ.options.length) return false;
+  phase = 'loading';
+  SFX.play('click');
+  const cards = $('answers').children;
+  for (let k = 0; k < cards.length; k++) cards[k].classList.toggle('selected', k === i);
+  const card = cards[i];
+  const paRect = $('playarea').getBoundingClientRect();
+  const r = card.getBoundingClientRect();
+  const clone = document.createElement('div');
+  clone.className = 'flyclone';
+  clone.textContent = currentQ.options[i].text;
+  const cx0 = r.left - paRect.left + r.width / 2;
+  const cy0 = r.top - paRect.top + r.height / 2;
+  clone.style.left = cx0 + 'px';
+  clone.style.top = cy0 + 'px';
+  clone.style.width = r.width + 'px';
+  clone.style.height = r.height + 'px';
+  clone.style.transform = 'translate(-50%,-50%)';
+  $('playarea').appendChild(clone);
+  const dx = anchor.x - cx0, dy = anchor.y - cy0;
+  const anim = clone.animate([
+    { transform: 'translate(-50%,-50%) scale(1)', opacity: 1 },
+    { transform: 'translate(' + dx + 'px,' + dy + 'px) translate(-50%,-50%) scale(.22)', opacity: .9 }
+  ], { duration: 380, easing: 'cubic-bezier(.3,.7,.4,1)' });
+  anim.onfinish = () => finishLoad(i, clone);
+  // Safety: if WAAPI is unavailable, load immediately.
+  if (!anim) finishLoad(i, clone);
+  return true;
+}
+
+function finishLoad(i, clone){
+  if (clone) clone.remove();
   if (ended || !currentQ) return;
-  totalTries++;
-  streak = 0;
-  missed.push({q: currentQ.q, ans: currentQ.o[currentQ.a], why: currentQ.why});
-  floatPts('MISS!', '#ef4444');
-  SFX.play('miss');
-  updateHud();
-  setTimeout(nextCard, 450);
+  loadedIdx = i;
+  phase = 'aim';
+  kbAim = false;
+  const s = $('stone');
+  s.textContent = currentQ.options[i].text;
+  s.style.display = 'flex';
+  stone.x = anchor.x; stone.y = anchor.y; stone.rot = 0; stone.spinning = false;
+  drawStone();
+  $('answers').classList.add('dim');
+  $('changebtn').classList.remove('hidden');
+  $('phasemsg').textContent = 'Loaded! Drag back on the slingshot and let go to fire.';
+  SFX.play('flip');
 }
 
+function unloadAnswer(){
+  if (phase !== 'aim' || ended) return false;
+  loadedIdx = -1;
+  phase = 'select';
+  hideStone();
+  $('answers').classList.remove('dim');
+  const cards = $('answers').children;
+  for (let k = 0; k < cards.length; k++) cards[k].classList.remove('selected');
+  $('changebtn').classList.add('hidden');
+  $('phasemsg').textContent = 'Pick an answer to load your slingshot.';
+  return true;
+}
+
+function hideStone(){
+  $('stone').style.display = 'none';
+  dragging = false; dragPos = null;
+  $('stone').classList.remove('grabbed');
+}
+
+function drawStone(){
+  const el = $('stone');
+  const ang = (stone.spinning || phase === 'flying' || phase === 'bounce')
+    ? Math.atan2(stone.vy, stone.vx) * 180 / Math.PI : stone.rot;
+  const sq = stone.squash > 0 ? ' scale(' + (1 + stone.squash) + ',' + (1 - stone.squash * 0.7) + ')' : '';
+  el.style.transform = 'translate(' + stone.x + 'px,' + stone.y + 'px) translate(-50%,-50%) rotate(' + ang + 'deg)' + sq;
+}
+
+// ---- firing ----
+function fire(vx, vy){
+  if (phase !== 'aim' || ended || loadedIdx < 0) return false;
+  const sp = Math.hypot(vx, vy);
+  if (sp > MAX_SPEED) { vx = vx / sp * MAX_SPEED; vy = vy / sp * MAX_SPEED; }
+  stone.x = anchor.x; stone.y = anchor.y;
+  stone.vx = vx; stone.vy = vy; stone.spinning = false; stone.squash = 0.22;
+  phase = 'flying';
+  dragging = false; dragPos = null; kbAim = false;
+  $('stone').classList.remove('grabbed');
+  $('changebtn').classList.add('hidden');
+  $('phasemsg').textContent = 'Away it goes…';
+  SFX.play('whoosh');
+  return true;
+}
+
+// Ballistic solve from the pouch to a target point.
+function solveVelocity(tx, ty, T){
+  const dx = tx - anchor.x, dy = ty - anchor.y;
+  return { vx: dx / T, vy: (dy - 0.5 * GRAV * T * T) / T };
+}
+
+function fireAtCastle(useWeak){
+  if (phase !== 'aim') return false;
+  const r = useWeak ? weakRect() : castleRect();
+  const tx = r.x + r.w / 2, ty = r.y + r.h / 2;
+  const dist = Math.hypot(tx - anchor.x, ty - anchor.y);
+  const T = Math.min(0.95, Math.max(0.5, dist / 620));
+  const v = solveVelocity(tx, ty, T);
+  return fire(v.vx, v.vy);
+}
+function fireMiss(){
+  // Weak shot: drops into the field well short of the castle.
+  return fire(235, -235);
+}
+
+// ---- pointer aiming ----
 (function(){
-  const card = document.getElementById('sortcard');
-  card.addEventListener('pointerdown', e => {
-    if (ended || lockCard || flying || !currentQ) return;
-    dragging = true;
-    const r = card.getBoundingClientRect();
-    grabDX = e.clientX - (r.left + r.width / 2);
-    grabDY = e.clientY - (r.top + r.height / 2);
-    velSamples = [{ t: performance.now(), x: e.clientX, y: e.clientY }];
-    card.classList.add('dragging');
-    try { card.setPointerCapture(e.pointerId); } catch(_){}
-    e.preventDefault();
+  const stoneEl = $('stone');
+  const pa = $('playarea');
+  function paPos(e){
+    const r = pa.getBoundingClientRect();
+    return { x: e.clientX - r.left, y: e.clientY - r.top };
+  }
+  pa.addEventListener('pointerdown', (e) => {
+    if (phase !== 'aim' || ended) return;
+    const p = paPos(e);
+    if (Math.hypot(p.x - stone.x, p.y - stone.y) <= 72) {
+      dragging = true; dragPos = p;
+      stoneEl.classList.add('grabbed');
+      try { pa.setPointerCapture(e.pointerId); } catch(_){}
+      e.preventDefault();
+    }
   });
-  card.addEventListener('pointermove', e => {
-    if (!dragging) return;
-    const paRect = document.getElementById('playarea').getBoundingClientRect();
-    const cx = e.clientX - grabDX - paRect.left;
-    const cy = e.clientY - grabDY - paRect.top;
-    cardX = cx - spawnX - card.offsetWidth / 2;
-    cardY = cy - spawnY - card.offsetHeight / 2;
-    card.style.transform = 'translate(' + cardX + 'px,' + cardY + 'px) rotate(' + (cardX / 40) + 'deg)';
-    const now = performance.now();
-    velSamples.push({ t: now, x: e.clientX, y: e.clientY });
-    while (velSamples.length > 2 && now - velSamples[0].t > 110) velSamples.shift();
-  });
+  window.addEventListener('pointermove', (e) => { if (dragging) dragPos = paPos(e); });
   function release(){
     if (!dragging) return;
     dragging = false;
-    card.classList.remove('dragging');
-    let vx = 0, vy = 0;
-    const s = velSamples;
-    if (s.length >= 2) {
-      const a = s[0], b = s[s.length - 1];
-      const dt = (b.t - a.t) / 1000;
-      if (dt > 0.005) { vx = (b.x - a.x) / dt; vy = (b.y - a.y) / dt; }
-    }
-    if (vy > -600) vy = -900;   // forgiveness: a weak flick still lobs upward
-    lockCard = true;            // card is committed — no re-grab mid-flight
-    SFX.play('whoosh');
-    flyVx = vx; flyVy = vy; flyRot = vx / 45;
-    flying = true;
-    lastT = performance.now();
-    rafId = requestAnimationFrame(flyStep);
+    stoneEl.classList.remove('grabbed');
+    const sx = anchor.x - stone.x, sy = anchor.y - stone.y;
+    if (Math.hypot(sx, sy) < 18) { stone.x = anchor.x; stone.y = anchor.y; drawStone(); return; }
+    fire(sx * LAUNCH_K, sy * LAUNCH_K);
   }
-  card.addEventListener('pointerup', release);
-  card.addEventListener('pointercancel', release);
+  window.addEventListener('pointerup', release);
+  window.addEventListener('pointercancel', release);
 })();
 
-function startTimer(){
-  clearInterval(timerInt);
-  timeLeft = TIME_LIMIT;
-  startT = Date.now();
-  const bar = document.getElementById('timerbar');
-  bar.classList.remove('low');
-  timerInt = setInterval(() => {
-    timeLeft = TIME_LIMIT - (Date.now() - startT) / 1000;
-    if (timeLeft <= 0) { timeLeft = 0; endGame(true); return; }
-    bar.style.width = (timeLeft / TIME_LIMIT * 100) + '%';
-    if (timeLeft < 15) bar.classList.add('low');
-  }, 200);
+function aimStonePos(){
+  if (!dragPos) return { x: anchor.x, y: anchor.y };
+  let dx = dragPos.x - anchor.x, dy = dragPos.y - anchor.y;
+  const d = Math.hypot(dx, dy);
+  if (d > MAX_STRETCH) { dx = dx / d * MAX_STRETCH; dy = dy / d * MAX_STRETCH; }
+  return { x: Math.max(STONE_R, anchor.x + dx), y: Math.min(H - STONE_R - 2, anchor.y + dy) };
+}
+
+// ---- keyboard: 1-4 select, arrows aim, Space fires ----
+window.addEventListener('keydown', (e) => {
+  if (ended || $('screen-game').classList.contains('hidden')) return;
+  const k = e.key;
+  let used = true;
+  if (k >= '1' && k <= '4' && (phase === 'select' || phase === 'aim')) selectAnswer(Number(k) - 1);
+  else if (phase === 'aim' && (k === 'ArrowLeft' || k === 'a' || k === 'A')) { kbAngle = Math.min(70, kbAngle + 3); kbAim = true; }
+  else if (phase === 'aim' && (k === 'ArrowRight' || k === 'd' || k === 'D')) { kbAngle = Math.max(4, kbAngle - 3); kbAim = true; }
+  else if (phase === 'aim' && (k === 'ArrowUp' || k === 'w' || k === 'W')) { kbPower = Math.min(100, kbPower + 3); kbAim = true; }
+  else if (phase === 'aim' && (k === 'ArrowDown' || k === 's' || k === 'S')) { kbPower = Math.max(25, kbPower - 3); kbAim = true; }
+  else if (k === ' ' && phase === 'aim') {
+    const rad = kbAngle * Math.PI / 180;
+    const sp = 380 + kbPower / 100 * (MAX_SPEED - 380);
+    fire(Math.cos(rad) * sp, -Math.sin(rad) * sp);
+  }
+  else used = false;
+  if (used) e.preventDefault();
+});
+
+// ---- physics / render loop ----
+function loop(now){
+  if (ended) return;
+  const dt = Math.min(0.033, (now - lastT) / 1000 || 0.016);
+  lastT = now;
+  stepPhysics(dt);
+  drawFx();
+  rafId = requestAnimationFrame(loop);
+}
+
+function stepPhysics(dt){
+  if (stone.squash > 0) stone.squash = Math.max(0, stone.squash - dt * 1.4);
+  if (phase === 'aim') {
+    if (dragging) { const p = aimStonePos(); stone.x = p.x; stone.y = p.y; }
+    else { stone.x = anchor.x; stone.y = anchor.y; }
+    drawStone();
+    return;
+  }
+  if (phase !== 'flying' && phase !== 'bounce') return;
+  const steps = 2, sdt = dt / steps;
+  for (let s = 0; s < steps; s++) {
+    stone.vy += GRAV * sdt;
+    stone.x += stone.vx * sdt;
+    stone.y += stone.vy * sdt;
+    if (stone.spinning) stone.rot += stone.vx * sdt * 1.2;
+    if (phase === 'flying') {
+      if (circleHitsCastle()) { onCastleHit(); break; }
+    } else if (phase === 'bounce') {
+      const d = Math.hypot(stone.x - anchor.x, stone.y - anchor.y);
+      if (d < 48 || stone.y >= H - STONE_R - 12) { onBounceHome(); break; }
+    }
+  }
+  if (phase === 'flying') {
+    // Missed the castle entirely: off-field or dropped short onto the ground.
+    if (stone.x > W + 40 || stone.x < -40 || stone.y < -90 || stone.y >= H - STONE_R - 12) onMiss();
+  }
+  if (phase === 'flying' || phase === 'bounce') drawStone();
+}
+
+function circleHitsCastle(){
+  const r = castleRect();
+  const cx = Math.max(r.x, Math.min(stone.x, r.x + r.w));
+  const cy = Math.max(r.y, Math.min(stone.y, r.y + r.h));
+  return Math.hypot(stone.x - cx, stone.y - cy) <= STONE_R;
+}
+function hitWeakPoint(){
+  // Judge by the contact point on the castle face (where the stone actually
+  // lands), with a small tolerance around the glowing zone.
+  const r = castleRect(), wr = weakRect();
+  const cx = Math.max(r.x, Math.min(stone.x, r.x + r.w));
+  const cy = Math.max(r.y, Math.min(stone.y, r.y + r.h));
+  return cx >= wr.x - 16 && cx <= wr.x + wr.w + 16 && cy >= wr.y - 16 && cy <= wr.y + wr.h + 16;
+}
+
+function onCastleHit(){
+  const hx = stone.x, hy = stone.y;
+  const wasCorrect = currentQ.options[loadedIdx].correct;
+  hideStone();
+  if (wasCorrect) {
+    phase = 'pause';
+    const weak = hitWeakPoint();
+    streak++; bestStreak = Math.max(bestStreak, streak); correctCount++; resolved++;
+    castleHp = Math.max(0, castleHp - 1);
+    let pts = 100 + streak * 10 + (weak ? 50 : 0);
+    score += pts;
+    spawnParticles(hx, hy, weak ? ['#ffd166', '#ffe9a8', '#ff9f1a', '#eef1ff'] : ['#ffd166', '#7c5cff', '#00d4ff', '#eef1ff']);
+    const castle = $('castle');
+    castle.classList.remove('shake'); void castle.offsetWidth; castle.classList.add('shake');
+    updateCastleDamage();
+    updateCastleHud();
+    floatPts('+' + pts + (weak ? ' WEAK POINT!' : ''));
+    SFX.play('explode'); SFX.play('correct');
+    $('phasemsg').textContent = weak ? '💥 Weak point smashed!' : '💥 Direct hit! Castle damaged.';
+    updateHud();
+    if (castleHp <= 0) {
+      castleDestroyed = true;
+      castle.classList.add('crumbled');
+      spawnParticles(hx, hy - 40, ['#ffd166', '#ff9f1a', '#a7b0d8', '#eef1ff']);
+      spawnParticles(hx - 30, hy + 30, ['#7c5cff', '#00d4ff', '#eef1ff']);
+      $('phasemsg').textContent = '🏰 Castle destroyed!';
+      later(() => endGame(false), 1050);
+    } else {
+      later(nextQuestionOrEnd, 700);
+    }
+  } else {
+    // Wrong answer: ricochet back across the field at the player.
+    phase = 'bounce';
+    streak = 0; resolved++;
+    missed.push({ q: currentQ.q, ans: currentQ.ans, why: currentQ.why });
+    const cards = $('answers').children;
+    if (cards[correctIdx]) cards[correctIdx].classList.add('flash-green');
+    floatPts('BOUNCED BACK!', '#ef4444');
+    SFX.play('wrong');
+    $('phasemsg').textContent = '🪃 Wrong — it\'s coming back at you!';
+    // Reflected velocity: back toward the slingshot, spinning.
+    stone.x = hx; stone.y = hy;
+    $('stone').style.display = 'flex';
+    const dx = anchor.x - hx, dy = anchor.y - hy;
+    const d = Math.hypot(dx, dy) || 1;
+    const back = Math.max(540, Math.hypot(stone.vx, stone.vy) * 0.6);
+    stone.vx = dx / d * back;
+    stone.vy = dy / d * back - 140;
+    stone.spinning = true;
+    updateHud();
+  }
+}
+
+function onBounceHome(){
+  phase = 'pause';
+  lives--;
+  hideStone();
+  const sling = $('sling');
+  sling.classList.remove('shake'); void sling.offsetWidth; sling.classList.add('shake');
+  const fl = $('dmgflash'); fl.classList.add('on'); setTimeout(() => fl.classList.remove('on'), 260);
+  spawnParticles(anchor.x, anchor.y, ['#ef4444', '#ffd166', '#eef1ff']);
+  floatPts('-1 ❤️', '#ef4444');
+  SFX.play('damage');
+  $('phasemsg').textContent = '💔 It hit you! ' + Math.max(0, lives) + (lives === 1 ? ' life' : ' lives') + ' left.';
+  updateHud();
+  later(nextQuestionOrEnd, 600);
+}
+
+function onMiss(){
+  phase = 'pause';
+  streak = 0;
+  hideStone();
+  floatPts('MISS — pick again!', '#a7b0d8');
+  SFX.play('miss');
+  $('phasemsg').textContent = '🌫️ Missed the castle — no life lost. Pick an answer and shoot again.';
+  updateHud();
+  later(() => {
+    if (ended || !currentQ) return;
+    // Same question, back to answer-select.
+    loadedIdx = -1;
+    phase = 'select';
+    kbAim = false;
+    $('answers').classList.remove('dim');
+    const cards = $('answers').children;
+    for (let k = 0; k < cards.length; k++) cards[k].classList.remove('selected');
+    $('phasemsg').textContent = 'Pick an answer to load your slingshot.';
+  }, 500);
+}
+
+function nextQuestionOrEnd(){
+  if (ended) return;
+  if (lives <= 0 || !queue.length) { endGame(lives <= 0); return; }
+  nextQuestion();
+}
+
+function updateCastleDamage(){
+  const pct = castleMax ? 1 - castleHp / castleMax : 0;
+  const castle = $('castle');
+  castle.dataset.stage = String(pct >= 0.66 ? 3 : pct >= 0.4 ? 2 : pct > 0 ? 1 : 0);
+}
+function updateCastleHud(){
+  $('castlehp').textContent = castleHp + '/' + castleMax;
+  const pct = castleMax ? Math.round(castleHp / castleMax * 100) : 0;
+  $('castlehpfill').style.width = pct + '%';
+  $('castlehpfill2').style.width = pct + '%';
+}
+
+function spawnParticles(x, y, colors){
+  for (let i = 0; i < 24; i++) {
+    const a = Math.random() * Math.PI * 2, sp = 90 + Math.random() * 340;
+    particles.push({ x: x, y: y, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp - 90,
+                     life: 0.55 + Math.random() * 0.35, t: 0,
+                     color: colors[i % colors.length], size: 3 + Math.random() * 5 });
+  }
+}
+
+function trajectoryPoints(){
+  let vx, vy, x, y;
+  if (phase !== 'aim') return [];
+  if (dragging) {
+    const sx = anchor.x - stone.x, sy = anchor.y - stone.y;
+    if (Math.hypot(sx, sy) < 6) return [];
+    vx = sx * LAUNCH_K; vy = sy * LAUNCH_K; x = stone.x; y = stone.y;
+  } else if (kbAim) {
+    const rad = kbAngle * Math.PI / 180;
+    const sp = 380 + kbPower / 100 * (MAX_SPEED - 380);
+    vx = Math.cos(rad) * sp; vy = -Math.sin(rad) * sp; x = anchor.x; y = anchor.y;
+  } else return [];
+  const pts = [], dt = 0.045;
+  for (let i = 0; i < 26; i++) {
+    vy += GRAV * dt; x += vx * dt; y += vy * dt;
+    if (y > H || x > W) break;
+    pts.push({ x: x, y: y });
+  }
+  return pts;
+}
+
+function drawFx(){
+  const cv = $('fxcanvas');
+  if (!cv || !W) return;
+  const ctx = cv.getContext('2d');
+  ctx.clearRect(0, 0, W, H);
+  if (phase === 'aim') {
+    ctx.strokeStyle = '#c94f4f'; ctx.lineWidth = 5; ctx.lineCap = 'round';
+    ctx.beginPath();
+    ctx.moveTo(anchor.x - 20, anchor.y + 4);
+    ctx.lineTo(stone.x, stone.y);
+    ctx.lineTo(anchor.x + 20, anchor.y + 4);
+    ctx.stroke();
+  }
+  const pts = trajectoryPoints();
+  ctx.fillStyle = 'rgba(238,241,255,.75)';
+  pts.forEach((p, i) => { if (i % 2) return; ctx.beginPath(); ctx.arc(p.x, p.y, 3.2, 0, Math.PI * 2); ctx.fill(); });
+  const dt = 1 / 60;
+  particles = particles.filter(p => (p.t += dt) < p.life);
+  particles.forEach(p => {
+    p.vy += GRAV * 0.55 * dt; p.x += p.vx * dt; p.y += p.vy * dt;
+    ctx.globalAlpha = Math.max(0, 1 - p.t / p.life);
+    ctx.fillStyle = p.color;
+    ctx.fillRect(p.x - p.size / 2, p.y - p.size / 2, p.size, p.size);
+  });
+  ctx.globalAlpha = 1;
 }
 
 function updateHud(){
-  document.getElementById('score').textContent = score;
-  document.getElementById('sorted').textContent = sortedCount;
-  document.getElementById('streak').textContent = streak >= 2 ? '🔥 x' + streak : '';
+  $('score').textContent = score;
+  $('streak').textContent = streak >= 2 ? '🔥 x' + streak : '';
+  $('qnum').textContent = Math.min(resolved + 1, totalQ || 1);
+  $('lives').textContent = '❤️'.repeat(Math.max(0, lives)) + '🖤'.repeat(Math.max(0, MAX_LIVES - lives));
 }
 
 function floatPts(txt, color){
-  const f = document.getElementById('float');
-  const s = document.getElementById('score').getBoundingClientRect();
+  const f = $('float');
+  const s = $('score').getBoundingClientRect();
   f.style.left = (s.left + s.width / 2 - 20) + 'px';
   f.style.top = (s.top - 10) + 'px';
   f.style.color = color || '#4ade80';
@@ -356,7 +728,7 @@ function floatPts(txt, color){
   f.style.animation = 'floatup .8s ease forwards';
 }
 
-function setXp(t){ const el = document.getElementById('finalxp'); if (el) el.textContent = t; }
+function setXp(t){ const el = $('finalxp'); if (el) el.textContent = t; }
 
 function showLevelUp(level){
   SFX.play('levelup');
@@ -370,7 +742,12 @@ function showLevelUp(level){
 async function submitScore(acc){
   try {
     const me = await (await fetch('/api/auth/me')).json();
-    if (!me) { setXp('—'); return; }
+    if (!me) {
+      setXp('—');
+      const note = $('end-signin-note');
+      if (note) note.style.display = 'block';
+      return;
+    }
     const r = await fetch('/api/sets/' + COMBINED_IDS[0] + '/scores', {
       method: 'POST', headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({ game: GAME_ID, score: score, accuracy: acc, setIds: COMBINED_IDS })
@@ -382,31 +759,63 @@ async function submitScore(acc){
   } catch(e){ setXp('—'); }
 }
 
-function endGame(timeout){
+function endGame(outOfLives){
   if (ended) return;
   ended = true;
-  clearInterval(timerInt);
-  const acc = totalTries ? Math.round(correctCount / totalTries * 100) : 0;
-  document.getElementById('screen-game').classList.add('hidden');
-  const s = document.getElementById('screen-end');
+  phase = 'ended';
+  clearTimers();
+  cancelAnimationFrame(rafId);
+  const acc = resolved ? Math.round(correctCount / resolved * 100) : 0;
+  $('screen-game').classList.add('hidden');
+  const s = $('screen-end');
   s.classList.remove('hidden');
-  s.querySelector('h1').innerHTML = timeout ? 'Time <span class="accent">Up</span>' : 'All <span class="accent">Sorted!</span>';
-  document.getElementById('finalscore').textContent = score;
-  document.getElementById('finalacc').textContent = acc + '%';
-  document.getElementById('finalsorted').textContent = sortedCount;
-  document.getElementById('rank').textContent = acc >= 90 ? 'S' : acc >= 75 ? 'A' : acc >= 60 ? 'B' : acc >= 40 ? 'C' : 'D';
-  const rev = document.getElementById('review');
+  s.querySelector('h1').innerHTML = outOfLives ? 'Out of <span class="accent">Lives!</span>'
+    : castleDestroyed ? 'Castle <span class="accent">Destroyed!</span>'
+    : 'Run <span class="accent">Complete!</span>';
+  SFX.play(outOfLives ? 'lose' : 'win');
+  $('finalscore').textContent = score;
+  $('finalcorrect').textContent = correctCount + '/' + resolved;
+  $('finalacc').textContent = acc + '%';
+  $('finalstreak').textContent = bestStreak;
+  $('rank').textContent = acc >= 90 ? 'S' : acc >= 75 ? 'A' : acc >= 60 ? 'B' : acc >= 40 ? 'C' : 'D';
+  const rev = $('review');
   const seen = new Set();
   const uniq = missed.filter(m => !seen.has(m.q) && seen.add(m.q));
   if (!uniq.length) {
-    rev.innerHTML = '<p class="sub" style="text-align:center">🔥 Clean sorting. Nothing to review.</p>';
+    rev.innerHTML = '<p class="sub" style="text-align:center">🔥 Clean shooting. Nothing to review.</p>';
   } else {
-    rev.innerHTML = '<p class="sub"><b>These tripped you up — review:</b></p>' + uniq.map(m =>
+    rev.innerHTML = '<p class="sub"><b>These bounced back on you — review:</b></p>' + uniq.map(m =>
       '<div class="missed-item"><b>' + m.q + '</b><br><span class="ans">Answer: ' + m.ans + '</span><br>' + m.why + '</div>'
     ).join('');
   }
   submitScore(acc);
 }
+
+// ---- test hook (headless playtest driver) ----
+window.__sling = {
+  start: startGame,
+  selectAnswer: selectAnswer,
+  unload: unloadAnswer,
+  fireAtCastle: fireAtCastle,
+  fireMiss: fireMiss,
+  runOrder: function(){
+    const out = [];
+    if (currentQ) out.push(currentQ.q);
+    queue.forEach(q => out.push(q.q));
+    return out;
+  },
+  state: function(){
+    return { phase: phase, score: score, lives: lives, streak: streak, bestStreak: bestStreak,
+             correctCount: correctCount, resolved: resolved,
+             questionNumber: Math.min(resolved + 1, totalQ || 1), totalQ: totalQ,
+             correctIdx: correctIdx, loadedIdx: loadedIdx,
+             castleHp: castleHp, castleMax: castleMax, castleDestroyed: castleDestroyed,
+             ended: ended, questionText: currentQ ? currentQ.q : null,
+             stoneVisible: $('stone').style.display === 'flex',
+             stoneLabel: $('stone').textContent,
+             options: currentQ ? currentQ.options.map(o => o.text) : [] };
+  }
+};
 
 (function(){
   SFX.renderBtn();

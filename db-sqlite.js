@@ -14,6 +14,8 @@ CREATE TABLE IF NOT EXISTS users (
   pass_hash TEXT NOT NULL,
   is_pro INTEGER NOT NULL DEFAULT 0,
   xp INTEGER NOT NULL DEFAULT 0,
+  stripe_customer_id TEXT,
+  stripe_sub_id TEXT,
   created_at TEXT NOT NULL DEFAULT (datetime('now'))
 );
 CREATE TABLE IF NOT EXISTS sets (
@@ -59,6 +61,8 @@ CREATE TABLE IF NOT EXISTS sessions (
 async function init() {
   db.exec(SCHEMA);
   try { db.exec('ALTER TABLE users ADD COLUMN xp INTEGER NOT NULL DEFAULT 0'); } catch (e) { /* column already exists */ }
+  try { db.exec('ALTER TABLE users ADD COLUMN stripe_customer_id TEXT'); } catch (e) { /* column already exists */ }
+  try { db.exec('ALTER TABLE users ADD COLUMN stripe_sub_id TEXT'); } catch (e) { /* column already exists */ }
   await seed();
 }
 
@@ -94,7 +98,18 @@ async function seed() {
 
 const q = {
   getUserByEmail: async (email) => db.prepare('SELECT * FROM users WHERE email = ?').get(email),
-  getUserById: async (id) => db.prepare('SELECT id, name, email, is_pro, xp FROM users WHERE id = ?').get(id),
+  getUserById: async (id) => db.prepare('SELECT id, name, email, is_pro, xp, stripe_customer_id, stripe_sub_id FROM users WHERE id = ?').get(id),
+  getUserByStripeCustomer: async (customerId) =>
+    customerId ? db.prepare('SELECT * FROM users WHERE stripe_customer_id = ?').get(customerId) : undefined,
+  setUserPro: async (userId, isPro, customerId, subId) => {
+    db.prepare('UPDATE users SET is_pro = ? WHERE id = ?').run(isPro ? 1 : 0, userId);
+    if (customerId) db.prepare('UPDATE users SET stripe_customer_id = ? WHERE id = ?').run(customerId, userId);
+    if (subId) db.prepare('UPDATE users SET stripe_sub_id = ? WHERE id = ?').run(subId, userId);
+  },
+  countUserSets: async (userId) =>
+    db.prepare('SELECT COUNT(*) AS c FROM sets WHERE creator_id = ?').get(userId).c,
+  countGenRequestsSince: async (userId, isoDate) =>
+    db.prepare('SELECT COUNT(*) AS c FROM generation_requests WHERE user_id = ? AND created_at >= ?').get(userId, isoDate).c,
   createUser: async (name, email, hash) =>
     ({ id: db.prepare('INSERT INTO users (name, email, pass_hash) VALUES (?, ?, ?)').run(name, email, hash).lastInsertRowid }),
   listSubjects: async () => db.prepare(`
@@ -104,9 +119,9 @@ const q = {
     SELECT s.*, u.name AS creator_name FROM sets s LEFT JOIN users u ON u.id = s.creator_id
     WHERE s.subject = ? ORDER BY s.module_order, s.id`).all(subject),
   getSet: async (id) => db.prepare(`
-    SELECT s.*, u.name AS creator_name FROM sets s LEFT JOIN users u ON u.id = s.creator_id WHERE s.id = ?`).get(id),
+    SELECT s.*, u.name AS creator_name, u.email AS creator_email FROM sets s LEFT JOIN users u ON u.id = s.creator_id WHERE s.id = ?`).get(id),
   getSetsByIds: async (ids) => ids.length ? db.prepare(`
-    SELECT s.*, u.name AS creator_name FROM sets s LEFT JOIN users u ON u.id = s.creator_id
+    SELECT s.*, u.name AS creator_name, u.email AS creator_email FROM sets s LEFT JOIN users u ON u.id = s.creator_id
     WHERE s.id IN (${ids.map(() => '?').join(',')})`).all(...ids) : [],
   listSets: async () => db.prepare(`
     SELECT s.*, u.name AS creator_name FROM sets s LEFT JOIN users u ON u.id = s.creator_id

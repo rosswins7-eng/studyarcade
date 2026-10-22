@@ -131,6 +131,7 @@
       <div class="stat"><div class="v" id="finalstreak">0</div><div class="l">BEST STREAK</div></div>
     </div>
     <div id="review"></div>
+    <p class="sub" id="signin-note-end" style="display:none; text-align:center">👤 <a href="/#account" onclick="event.preventDefault(); location.href='/#account';" style="color:#8b7bff">Sign in</a> to save your scores to the leaderboard.</p>
     <button class="btn primary" onclick="location.reload()">↻ Run It Back</button>
     <button class="btn" style="text-align:center" onclick="goScoreboard()">🏆 Scoreboard</button>
     <button class="btn" style="text-align:center" onclick="goModule()">← Back</button>
@@ -159,7 +160,7 @@ async function loadSet(){
 async function submitScore(){
   try {
     const me = await (await fetch('/api/auth/me')).json();
-    if (!me) return false;
+    if (!me) { document.getElementById('signin-note-end').style.display = 'block'; return false; }
     const r = await fetch('/api/sets/' + COMBINED_IDS[0] + '/scores', {
       method: 'POST', headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({ game: GAME_ID, score: score, accuracy: answeredCount ? Math.round(correctCount / answeredCount * 100) : 0, setIds: COMBINED_IDS })
@@ -458,7 +459,7 @@ document.addEventListener('keydown', e => {
   loadSet().then(() => {
     buildPlayOrder();
     document.getElementById('roundlist').innerHTML =
-      ROUNDS.map((r,i) => '<b>' + r.tag + ':</b> ' + r.title).join('<br>');
+      ROUNDS.map((r,i) => r.tag === r.title ? '<b>' + r.title + '</b>' : '<b>' + r.tag + ':</b> ' + r.title).join('<br>');
     box.innerHTML = '';
     ROUNDS.forEach((r, i) => {
       const b = document.createElement('button');
