@@ -343,6 +343,15 @@ app.get('/api/me/sets', authed, ah(async (req, res) => res.json((await db.getUse
 // ("Term: definition") and definitional sentences ("X is ..."), then builds
 // forward + reverse MCQs with shuffled distractors. Instant, no API key needed.
 const GEN_STOP = new Set(['this','that','it','they','we','you','he','she','the','a','an','there','here','these','those','my','our','their','its']);
+const GEN_CODE_TERM = /^[A-Za-z]{1,5}\d+[A-Za-z0-9]*$/; // LO5, CH8, Q12 — labels, not concepts
+const GEN_LABEL_TERM = /^(lo|obj|objective|chapter|ch|module|mod|unit|topic|section|sec|part|page|fig|figure|table|slide|week|day|learning objectives?|key terms?|notes?|vocabulary|definitions?|summary|overview|introduction)$/i;
+function genIsJunkTerm(term) {
+  const t = term.trim();
+  if (GEN_CODE_TERM.test(t)) return true;
+  if (GEN_LABEL_TERM.test(t)) return true;
+  if (/^\d+$/.test(t)) return true;
+  return false;
+}
 function genExtractPairs(notes) {
   const pairs = [], seen = new Set();
   const push = (term, def) => {
@@ -351,6 +360,7 @@ function genExtractPairs(notes) {
     if (!term || !def) return;
     if (term.length < 3 || term.length > 60 || def.length < 15 || def.length > 400) return;
     if (term.split(/\s+/).length > 8) return;
+    if (genIsJunkTerm(term)) return;
     if (GEN_STOP.has(term.toLowerCase().split(/\s+/)[0])) return;
     const k = term.toLowerCase();
     if (seen.has(k)) return;
@@ -370,6 +380,7 @@ function genExtractPairs(notes) {
 function genShort(s, n = 140) { s = s.trim(); return s.length > n ? s.slice(0, n - 1) + '…' : s; }
 function genShuffle(a) { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
 function genBuildQuestions(pairs) {
+  pairs = pairs.filter((p) => !genIsJunkTerm(p.term));
   const qs = [];
   const defs = pairs.map((p) => genShort(p.def));
   const terms = pairs.map((p) => p.term);
