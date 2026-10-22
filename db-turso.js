@@ -163,7 +163,10 @@ module.exports = {
     const r = await get('SELECT COALESCE(MAX(module_order),0) AS m FROM sets WHERE subject = ?', [subject]);
     return r ? r.m : 0;
   },
-  deleteSet: (id) => run('DELETE FROM sets WHERE id = ?', [id]),
+  deleteSet: async (id) => {
+    await run('DELETE FROM scores WHERE set_id = ?', [id]);
+    await run('DELETE FROM sets WHERE id = ?', [id]);
+  },
   bumpPlays: (id) => run('UPDATE sets SET plays = plays + 1 WHERE id = ?', [id]),
   addScore: (setId, userId, game, score, accuracy) =>
     run('INSERT INTO scores (set_id, user_id, game, score, accuracy) VALUES (?, ?, ?, ?, ?)',
@@ -185,7 +188,7 @@ module.exports = {
     FROM scores s JOIN sets st ON st.id = s.set_id
     WHERE s.user_id = ? GROUP BY s.set_id, s.game ORDER BY s.created_at DESC`, [userId]),
   getUserSets: (userId) =>
-    all('SELECT * FROM sets WHERE creator_id = ? ORDER BY created_at DESC', [userId]),
+    all('SELECT sets.*, users.name AS creator_name FROM sets LEFT JOIN users ON users.id = sets.creator_id WHERE sets.creator_id = ? ORDER BY sets.created_at DESC', [userId]),
   addGenRequest: async (userId, subject, notes) => {
     const r = await run('INSERT INTO generation_requests (user_id, subject, notes) VALUES (?, ?, ?) RETURNING id',
                         [userId, subject, notes]);

@@ -154,7 +154,10 @@ const q = {
       .run(s.title, s.subject, s.module, s.module_order, s.description, s.questionsJson, s.roundsJson, s.creatorId).lastInsertRowid }),
   maxModuleOrder: async (subject) =>
     db.prepare('SELECT COALESCE(MAX(module_order),0) AS m FROM sets WHERE subject = ?').get(subject).m,
-  deleteSet: async (id) => { db.prepare('DELETE FROM sets WHERE id = ?').run(id); },
+  deleteSet: async (id) => {
+    db.prepare('DELETE FROM scores WHERE set_id = ?').run(id);
+    db.prepare('DELETE FROM sets WHERE id = ?').run(id);
+  },
   bumpPlays: async (id) => { db.prepare('UPDATE sets SET plays = plays + 1 WHERE id = ?').run(id); },
   addScore: async (setId, userId, game, score, accuracy) => {
     db.prepare('INSERT INTO scores (set_id, user_id, game, score, accuracy) VALUES (?, ?, ?, ?, ?)')
@@ -175,7 +178,7 @@ const q = {
     FROM scores s JOIN sets st ON st.id = s.set_id
     WHERE s.user_id = ? GROUP BY s.set_id, s.game ORDER BY s.created_at DESC`).all(userId),
   getUserSets: async (userId) =>
-    db.prepare('SELECT * FROM sets WHERE creator_id = ? ORDER BY created_at DESC').all(userId),
+    db.prepare('SELECT sets.*, users.name AS creator_name FROM sets LEFT JOIN users ON users.id = sets.creator_id WHERE sets.creator_id = ? ORDER BY sets.created_at DESC').all(userId),
   addGenRequest: async (userId, subject, notes) => ({
     id: db.prepare('INSERT INTO generation_requests (user_id, subject, notes) VALUES (?, ?, ?)')
       .run(userId, subject, notes).lastInsertRowid }),
