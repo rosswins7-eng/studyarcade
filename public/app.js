@@ -48,7 +48,7 @@ const isProRequired = (e) => e && (e.code === 'pro_required' || e.status === 402
 // Friendly Pro upsell for 402s: toast where one exists, then send them to the
 // account page where the Go Pro card lives.
 function proUpsell(e, toastId){
-  const msg = (e && e.message) || 'This is a StudyArcade Pro feature.';
+  const msg = (e && e.message) || 'This is a StudyClash Pro feature.';
   if (toastId && $(toastId)) toast(toastId, 'err', msg + ' Taking you to Go Pro…');
   setTimeout(() => { location.hash = '#/account'; }, 1200);
 }
@@ -119,7 +119,7 @@ async function renderHome(){
       <div class="card"><div class="icon">🆓</div><h3>Free</h3>
         <p>First 3 modules of every subject · create 1 set · AI generator 3×/month · full Community access.</p>
         <a class="btn ghost" href="#/subjects">Start free</a></div>
-      <div class="card"><div class="icon">⭐</div><h3>StudyArcade Pro — $3.99/mo</h3>
+      <div class="card"><div class="icon">⭐</div><h3>StudyClash Pro — $3.99/mo</h3>
         <p>The full library unlocked · unlimited sets · unlimited AI generation · Pro badge.</p>
         <a class="btn" href="#/account">Go Pro — $3.99/mo</a>
         <p class="muted" style="margin-top:8px">Cancel anytime. 7-day money-back guarantee.</p></div>
@@ -448,7 +448,7 @@ async function renderAccount(q = {}){
       <button class="btn small ghost" onclick="logout()">Sign out</button>
     </div>
     ${ME.is_pro ? `
-    <div class="card" style="margin-bottom:24px"><div class="icon">⭐</div><h3>StudyArcade Pro <span class="lvlbadge">PRO</span></h3>
+    <div class="card" style="margin-bottom:24px"><div class="icon">⭐</div><h3>StudyClash Pro <span class="lvlbadge">PRO</span></h3>
       <p class="muted" style="margin:8px 0 12px">Everything unlocked — full library, unlimited sets, unlimited AI generation.</p>
       <button class="btn" onclick="manageBilling()">Manage billing</button>
       <div class="toast" id="billingtoast"></div></div>`

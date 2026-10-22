@@ -127,7 +127,7 @@ const ah = (fn) => (req, res, next) => Promise.resolve(fn(req, res, next)).catch
 const isOfficialSet = (row) => !row.creator_id || row.creator_email === 'system@studyarcade';
 const proRequired = (res, message) => res.status(402).json({
   error: 'pro_required',
-  message: message || 'This is a StudyArcade Pro feature. Go Pro for $3.99/mo to unlock it.',
+  message: message || 'This is a StudyClash Pro feature. Go Pro for $3.99/mo to unlock it.',
 });
 async function viewerIsPro(req) {
   if (!req.session.userId) return false;
@@ -457,5 +457,5 @@ app.use(express.static(path.join(__dirname, 'public'), { extensions: ['html'] })
 app.use((err, req, res, next) => { console.error(err); res.status(500).json({ error: 'Server error.' }); });
 
 db.init().then(() => {
-  app.listen(PORT, () => console.log(`StudyArcade running on http://localhost:${PORT}`));
+  app.listen(PORT, () => console.log(`StudyClash running on http://localhost:${PORT}`));
 }).catch((e) => { console.error('DB init failed:', e.message); process.exit(1); });

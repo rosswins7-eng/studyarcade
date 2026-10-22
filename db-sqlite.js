@@ -88,6 +88,7 @@ async function seed() {
     db.prepare("INSERT INTO users (name, email, pass_hash) VALUES ('StudyArcade', 'system@studyarcade', 'seed')").run();
     sys = db.prepare('SELECT id FROM users WHERE email = ?').get('system@studyarcade');
   }
+  db.prepare("UPDATE users SET name = 'StudyClash' WHERE email = 'system@studyarcade'").run();
   // Retire legacy seed subjects superseded by the library (system-created only).
   db.prepare(`DELETE FROM sets WHERE creator_id = ? AND subject IN ('SAT Prep', 'Spanish 101')`).run(sys.id);
   const have = new Set(db.prepare('SELECT subject, module FROM sets').all()

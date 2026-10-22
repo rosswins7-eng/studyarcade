@@ -84,6 +84,7 @@ async function seed() {
     const r = await run("INSERT INTO users (name, email, pass_hash) VALUES ('StudyArcade', 'system@studyarcade', 'seed') RETURNING id");
     sys = norm(r)[0];
   }
+  await run("UPDATE users SET name = 'StudyClash' WHERE email = 'system@studyarcade'", []);
   // Retire legacy seed subjects superseded by the library (system-created only).
   await run(`DELETE FROM sets WHERE creator_id = ? AND subject IN ('SAT Prep', 'Spanish 101')`, [sys.id]);
   const have = new Set((await all('SELECT subject, module FROM sets')).map((r) => r.subject + '||' + r.module));

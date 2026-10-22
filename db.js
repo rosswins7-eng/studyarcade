@@ -13,7 +13,7 @@ function publicSet(row) {
     description: row.description,
     questionCount: JSON.parse(row.questions_json).length,
     rounds: row.rounds_json ? JSON.parse(row.rounds_json) : null,
-    creator: row.creator_name || 'StudyArcade',
+    creator: row.creator_name || 'StudyClash',
     plays: row.plays, created_at: row.created_at,
   };
 }
