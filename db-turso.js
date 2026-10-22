@@ -58,6 +58,23 @@ async function init() {
   try { await run('ALTER TABLE users ADD COLUMN stripe_customer_id TEXT'); } catch (e) { /* already exists */ }
   try { await run('ALTER TABLE users ADD COLUMN stripe_sub_id TEXT'); } catch (e) { /* already exists */ }
   await seed();
+  await applyProgression();
+}
+
+// Keep the official library's module order matching seed/progression.json
+// (basics -> advanced learning path), even for sets seeded by earlier builds.
+async function applyProgression() {
+  try {
+    const prog = JSON.parse(fs.readFileSync(path.join(__dirname, 'seed', 'progression.json'), 'utf8'));
+    const sys = await get('SELECT id FROM users WHERE email = ?', ['system@studyarcade']);
+    if (!sys) return;
+    for (const [subject, titles] of Object.entries(prog)) {
+      for (let i = 0; i < titles.length; i++) {
+        await run('UPDATE sets SET module_order = ? WHERE creator_id = ? AND subject = ? AND module = ?',
+          [i + 1, sys.id, subject, titles[i]]);
+      }
+    }
+  } catch (e) { console.log('Progression order skipped:', e.message); }
 }
 
 async function seed() {

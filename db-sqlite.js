@@ -64,6 +64,21 @@ async function init() {
   try { db.exec('ALTER TABLE users ADD COLUMN stripe_customer_id TEXT'); } catch (e) { /* column already exists */ }
   try { db.exec('ALTER TABLE users ADD COLUMN stripe_sub_id TEXT'); } catch (e) { /* column already exists */ }
   await seed();
+  applyProgression();
+}
+
+// Keep the official library's module order matching seed/progression.json
+// (basics -> advanced learning path), even for sets seeded by earlier builds.
+function applyProgression() {
+  try {
+    const prog = JSON.parse(fs.readFileSync(path.join(__dirname, 'seed', 'progression.json'), 'utf8'));
+    const sys = db.prepare('SELECT id FROM users WHERE email = ?').get('system@studyarcade');
+    if (!sys) return;
+    const upd = db.prepare('UPDATE sets SET module_order = ? WHERE creator_id = ? AND subject = ? AND module = ?');
+    for (const [subject, titles] of Object.entries(prog)) {
+      titles.forEach((t, i) => upd.run(i + 1, sys.id, subject, t));
+    }
+  } catch (e) { console.log('Progression order skipped:', e.message); }
 }
 
 async function seed() {
