@@ -108,14 +108,18 @@ const PROFILE_CATALOG = {
     { id: 'ember', e: '🔥', name: 'Ember', min: 20 }, { id: 'crown', e: '👑', name: 'Crown', min: 35 },
     { id: 'gem', e: '💎', name: 'Gem', min: 50 }, { id: 'superstar', e: '🌟', name: 'Superstar', min: 75 },
     { id: 'champion', e: '🏆', name: 'Champion', min: 100 }, { id: 'comet', e: '☄️', name: 'Comet', min: 250 },
-    { id: 'galaxy', e: '🌌', name: 'Galaxy', min: 500 }
+    { id: 'galaxy', e: '🌌', name: 'Galaxy', min: 500 },
+    { id: 'pumpkin', e: '🎃', name: 'Pumpkin', min: 1 }, { id: 'ghost', e: '👻', name: 'Ghost', min: 1 },
+    { id: 'bat', e: '🦇', name: 'Bat', min: 3 }, { id: 'skull', e: '💀', name: 'Skull', min: 5 },
+    { id: 'wizard', e: '🧙', name: 'Wizard', min: 8 }
   ],
   frames: [
     { id: 'none', name: 'No frame', min: 1 }, { id: 'bronze', name: 'Bronze Ring', min: 5 },
     { id: 'silver', name: 'Silver Ring', min: 15 }, { id: 'gold', name: 'Gold Ring', min: 30 },
     { id: 'crystal', name: 'Crystal Aura', min: 50 }, { id: 'flame', name: 'Flame Aura', min: 75 },
     { id: 'galaxyswirl', name: 'Galaxy Swirl', min: 100 }, { id: 'rainbow', name: 'Rainbow Pulse', min: 250 },
-    { id: 'glimmer', name: '✨ Glimmering', min: 1000 }
+    { id: 'glimmer', name: '✨ Glimmering', min: 1000 },
+    { id: 'spooky', name: '🎃 Haunted Aura', min: 5 }
   ],
   colors: [
     { id: 'violet', name: 'Violet', css: 'linear-gradient(135deg,#7c5cff,#00d4ff)', min: 1 },
@@ -134,7 +138,8 @@ const PROFILE_CATALOG = {
     { id: 'scholar', text: 'Scholar', min: 12 }, { id: 'ace', text: 'Quiz Ace', min: 20 },
     { id: 'master', text: 'Quiz Master', min: 35 }, { id: 'sage', text: 'Study Sage', min: 50 },
     { id: 'legend', text: 'Study Legend', min: 100 }, { id: 'mythic', text: 'Mythic Scholar', min: 250 },
-    { id: 'eternal', text: 'Eternal Scholar ✨', min: 1000 }
+    { id: 'eternal', text: 'Eternal Scholar ✨', min: 1000 },
+    { id: 'pumpkin-scholar', text: '🎃 Pumpkin Scholar', min: 3 }
   ]
 };
 const catItem = (kind, id) => PROFILE_CATALOG[kind].find((x) => x.id === id) || null;
