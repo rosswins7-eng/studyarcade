@@ -22,8 +22,7 @@
   .hud b { color: #fff; font-size: 1.05rem; }
   #streak { color: #ffb020; font-weight: 700; }
   .timer-wrap { height: 8px; background: #262c55; border-radius: 99px; overflow: hidden; margin-bottom: 14px; }
-  #timerbar { height: 100%; width: 100%; background: #22c55e; border-radius: 99px; }
-  #timerbar.low { background: #ef4444; }
+  #progressbar { height: 100%; width: 0%; background: linear-gradient(90deg, #7c5cff, #00d4ff); border-radius: 99px; transition: width .35s ease; }
   #question { font-size: 1.15rem; font-weight: 700; line-height: 1.5; margin-bottom: 14px; }
   #hintmask { display: none; font-size: 1.25rem; font-weight: 800; letter-spacing: 2px; color: #ffd166; background: #232a55; border-radius: 12px; padding: 12px 16px; margin-bottom: 12px; text-align: center; }
   #hintrow { display: flex; gap: 10px; margin: 8px 0; }
@@ -65,10 +64,10 @@
   <div class="card" id="screen-start">
     <h1>⌨️ Type <span class="accent">Attack</span></h1>
     <div class="howto">⌨️ No multiple choice — type the answer. <b>Close counts:</b> typos are forgiven and getting the key words in any order works.<br>
-    ⚡ <b>15 seconds</b> per question. Faster = more points.<br>
+    🕊️ <b>No time limit</b> — take as long as you need to read the question. Faster correct answers still earn more points.<br>
     💡 Stuck? A <b>hint</b> reveals the first letter and the word length — but answers after a hint score less.<br>
-    ❌ Miss it or run out of time and the answer is <b>revealed</b> — study it, then move on.<br>
-    🔥 Streaks multiply your score.</div>
+    ❌ Miss it and the answer is <b>revealed</b> — study it, then move on.<br>
+    🔥 Streaks multiply your score. The bar at the top tracks how much of the set you've completed.</div>
     <p class="sub" id="setinfo">Loading question set…</p>
     <button class="btn" id="playbtn" onclick="startGame()" disabled>Loading…</button>
     <p class="sub" id="signin-note" style="display:none">👤 <a href="/#account" style="color:#8b7bff">Sign in</a> to save your scores to the leaderboard.</p>
@@ -80,7 +79,7 @@
       <div id="streak"></div>
       <div>Q <b id="qnum">1</b>/<span id="qtotal">0</span></div>
     </div>
-    <div class="timer-wrap"><div id="timerbar"></div></div>
+    <div class="timer-wrap"><div id="progressbar"></div></div>
     <div id="question"></div>
     <div id="hintmask"></div>
     <input id="answerbox" type="text" placeholder="Type the answer…" autocomplete="off" autocapitalize="off" spellcheck="false">
@@ -110,12 +109,17 @@
 <script src="sfx.js"></script>
 <script>
 const GAME_ID = 'type';
-const PER_Q = 15;
 let QUESTIONS = [], SET_META = null, COMBINED_IDS = [];
 let queue = [], pos = 0;
 let score = 0, streak = 0, bestStreak = 0, correctCount = 0, answeredCount = 0;
 let missed = [], answered = false, ended = false, hintUsed = false;
-let timerInt = null, timeLeft = PER_Q, t0 = 0, advanceTO = null;
+let t0 = 0, advanceTO = null;
+// No time limit: the clock only measures how fast you answered, for points.
+// Elapsed seconds on the current question (0 before it renders).
+function elapsedSecs(){ return t0 ? (Date.now() - t0) / 1000 : 0; }
+// Speed bonus decays with time taken but never punishes — a slow correct
+// answer still earns its base points. ~+80 instantly, ~+40 at 10s, 0 at 20s+.
+function speedBonus(){ return Math.max(0, 80 - Math.round(elapsedSecs()) * 4); }
 
 function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
 function norm(s){ return String(s).toLowerCase().trim().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, ' ').trim(); }
@@ -196,22 +200,16 @@ function renderQuestion(){
   hm.style.display = 'none'; hm.textContent = '';
   const fb = document.getElementById('feedback');
   fb.className = ''; fb.innerHTML = '';
-  startTimer();
+  t0 = Date.now();
+  updateProgress();
   setTimeout(() => { try { box.focus({preventScroll: true}); } catch(_){ box.focus(); } }, 60);
 }
 
-function startTimer(){
-  clearInterval(timerInt);
-  timeLeft = PER_Q;
-  t0 = Date.now();
-  const bar = document.getElementById('timerbar');
-  bar.classList.remove('low');
-  timerInt = setInterval(() => {
-    timeLeft = PER_Q - (Date.now() - t0) / 1000;
-    if (timeLeft <= 0) { timeLeft = 0; onTimeout(); return; }
-    bar.style.width = (timeLeft / PER_Q * 100) + '%';
-    if (timeLeft < 4) bar.classList.add('low');
-  }, 100);
+// Progress = how much of the set has been completed (answered questions).
+function updateProgress(){
+  const total = queue.length || 1;
+  const done = Math.min(pos + (answered ? 1 : 0), total);
+  document.getElementById('progressbar').style.width = (done / total * 100) + '%';
 }
 
 function showHint(){
@@ -243,7 +241,6 @@ function checkAnswer(){
   const given = norm(document.getElementById('answerbox').value);
   if (!given) return;
   answered = true;
-  clearInterval(timerInt);
   answeredCount++;
   if (isAcceptable(given, target)) onCorrect();
   else onWrong('❌ <b>Not quite.</b> The answer was <span class="ans">' + q.o[q.a] + '</span><br>' + q.why);
@@ -253,14 +250,16 @@ function onCorrect(){
   const q = queue[pos];
   correctCount++; streak++; bestStreak = Math.max(bestStreak, streak);
   SFX.play('correct');
-  const pts = (hintUsed ? 70 + Math.round(timeLeft) * 3 : 100 + Math.round(timeLeft) * 5) + Math.min(streak, 4) * 25;
+  const secs = elapsedSecs();
+  const pts = (hintUsed ? 70 + Math.round(speedBonus() / 2) : 100 + speedBonus()) + Math.min(streak, 4) * 25;
   score += pts;
   floatPts('+' + pts);
   const fb = document.getElementById('feedback');
   fb.className = 'show good';
-  fb.innerHTML = '✅ <b>Correct!</b> +' + pts + ' pts';
+  fb.innerHTML = '✅ <b>Correct!</b> +' + pts + ' pts · ' + secs.toFixed(1) + 's';
   document.getElementById('hintbtn').disabled = true;
   updateHud();
+  updateProgress();
   advanceTO = setTimeout(nextQ, 1100);
 }
 
@@ -276,16 +275,8 @@ function onWrong(html){
   document.getElementById('submitbtn').disabled = true;
   document.getElementById('hintbtn').disabled = true;
   updateHud();
+  updateProgress();
   advanceTO = setTimeout(nextQ, 2000);
-}
-
-function onTimeout(){
-  if (answered || ended) return;
-  answered = true;
-  clearInterval(timerInt);
-  answeredCount++;
-  const q = queue[pos];
-  onWrong('⏰ <b>Time up.</b> The answer was <span class="ans">' + q.o[q.a] + '</span><br>' + q.why);
 }
 
 function nextQ(){
@@ -338,7 +329,6 @@ async function submitScore(acc){
 function endGame(){
   if (ended) return;
   ended = true;
-  clearInterval(timerInt);
   clearTimeout(advanceTO);
   const acc = answeredCount ? Math.round(correctCount / answeredCount * 100) : 0;
   document.getElementById('screen-game').classList.add('hidden');
