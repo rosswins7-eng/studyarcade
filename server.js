@@ -90,6 +90,72 @@ const GAME_IDS = GAMES.map((g) => g.id);
 const levelFor = (xp) => Math.max(1, Math.floor((1 + Math.sqrt(1 + 0.08 * (xp || 0))) / 2));
 const xpForLevel = (n) => 50 * n * (n - 1);
 
+// ---------- profile customization catalog (level-gated cosmetics) ----------
+// Levels are the progression currency: cosmetics unlock as you level, all the
+// way to the Lv 1000 glimmering frame. The server is the source of truth —
+// PATCH /api/auth/profile enforces unlock levels, the frontend just renders.
+const PROFILE_CATALOG = {
+  avatars: [
+    { id: 'smile', e: '😀', name: 'Smiley', min: 1 }, { id: 'owl', e: '🦉', name: 'Owl', min: 1 },
+    { id: 'panda', e: '🐼', name: 'Panda', min: 1 }, { id: 'fox', e: '🦊', name: 'Fox', min: 1 },
+    { id: 'frog', e: '🐸', name: 'Frog', min: 1 }, { id: 'cat', e: '🐱', name: 'Cat', min: 1 },
+    { id: 'bot', e: '🤖', name: 'Bot', min: 3 }, { id: 'octo', e: '🐙', name: 'Octo', min: 3 },
+    { id: 'rocket', e: '🚀', name: 'Rocket', min: 5 }, { id: 'invader', e: '👾', name: 'Invader', min: 5 },
+    { id: 'scholar', e: '🧑‍🎓', name: 'Scholar', min: 8 }, { id: 'ninja', e: '🥷', name: 'Ninja', min: 8 },
+    { id: 'dragon', e: '🐲', name: 'Dragon', min: 12 }, { id: 'unicorn', e: '🦄', name: 'Unicorn', min: 12 },
+    { id: 'ember', e: '🔥', name: 'Ember', min: 20 }, { id: 'crown', e: '👑', name: 'Crown', min: 35 },
+    { id: 'gem', e: '💎', name: 'Gem', min: 50 }, { id: 'superstar', e: '🌟', name: 'Superstar', min: 75 },
+    { id: 'champion', e: '🏆', name: 'Champion', min: 100 }, { id: 'comet', e: '☄️', name: 'Comet', min: 250 },
+    { id: 'galaxy', e: '🌌', name: 'Galaxy', min: 500 }
+  ],
+  frames: [
+    { id: 'none', name: 'No frame', min: 1 }, { id: 'bronze', name: 'Bronze Ring', min: 5 },
+    { id: 'silver', name: 'Silver Ring', min: 15 }, { id: 'gold', name: 'Gold Ring', min: 30 },
+    { id: 'crystal', name: 'Crystal Aura', min: 50 }, { id: 'flame', name: 'Flame Aura', min: 75 },
+    { id: 'galaxyswirl', name: 'Galaxy Swirl', min: 100 }, { id: 'rainbow', name: 'Rainbow Pulse', min: 250 },
+    { id: 'glimmer', name: '✨ Glimmering', min: 1000 }
+  ],
+  colors: [
+    { id: 'violet', name: 'Violet', css: 'linear-gradient(135deg,#7c5cff,#00d4ff)', min: 1 },
+    { id: 'crimson', name: 'Crimson', css: 'linear-gradient(135deg,#ef4444,#ff8a5c)', min: 3 },
+    { id: 'emerald', name: 'Emerald', css: 'linear-gradient(135deg,#22c55e,#a3e635)', min: 5 },
+    { id: 'ocean', name: 'Ocean', css: 'linear-gradient(135deg,#2563eb,#06b6d4)', min: 10 },
+    { id: 'sunset', name: 'Sunset', css: 'linear-gradient(135deg,#f59e0b,#ef4444,#ec4899)', min: 20 },
+    { id: 'royal', name: 'Royal', css: 'linear-gradient(135deg,#7c3aed,#db2777)', min: 40 },
+    { id: 'gold', name: 'Gold', css: 'linear-gradient(135deg,#ffd166,#f59e0b)', min: 60 },
+    { id: 'aurora', name: 'Aurora', css: 'linear-gradient(135deg,#34d399,#60a5fa,#a78bfa)', min: 150 },
+    { id: 'prism', name: 'Prism', css: 'linear-gradient(135deg,#f43f5e,#f59e0b,#84cc16,#06b6d4,#8b5cf6)', min: 400 }
+  ],
+  titles: [
+    { id: 'newcomer', text: 'Newcomer', min: 1 }, { id: 'learner', text: 'Keen Learner', min: 3 },
+    { id: 'grinder', text: 'Quiz Grinder', min: 5 }, { id: 'striker', text: 'Boss Striker', min: 8 },
+    { id: 'scholar', text: 'Scholar', min: 12 }, { id: 'ace', text: 'Quiz Ace', min: 20 },
+    { id: 'master', text: 'Quiz Master', min: 35 }, { id: 'sage', text: 'Study Sage', min: 50 },
+    { id: 'legend', text: 'Study Legend', min: 100 }, { id: 'mythic', text: 'Mythic Scholar', min: 250 },
+    { id: 'eternal', text: 'Eternal Scholar ✨', min: 1000 }
+  ]
+};
+const catItem = (kind, id) => PROFILE_CATALOG[kind].find((x) => x.id === id) || null;
+// Resolve a user's stored cosmetic ids to display values (defaults if unset).
+function cosmeticsOf(u) {
+  const av = catItem('avatars', u.avatar_id) || PROFILE_CATALOG.avatars[0];
+  const fr = catItem('frames', u.frame_id) || PROFILE_CATALOG.frames[0];
+  const co = catItem('colors', u.color_id) || PROFILE_CATALOG.colors[0];
+  const ti = catItem('titles', u.title_id) || PROFILE_CATALOG.titles[0];
+  return {
+    avatar_id: av.id, avatar: av.e,
+    frame_id: fr.id, frame_name: fr.name,
+    color_id: co.id, color_css: co.css,
+    title_id: ti.id, title: ti.text,
+    bio: u.bio || ''
+  };
+}
+// The one public shape for the signed-in user (never leaks stripe ids).
+function publicUser(u) {
+  if (!u) return null;
+  return { id: u.id, name: u.name, email: u.email, is_pro: userIsPro(u), xp: u.xp || 0, level: levelFor(u.xp), ...cosmeticsOf(u) };
+}
+
 app.use(express.json({ limit: '2mb' }));
 // DB-backed session store: sessions survive server restarts (Render redeploys,
 // free-tier sleep/wake cycles) instead of dying with the in-memory store.
@@ -168,7 +234,7 @@ app.post('/api/auth/register', ah(async (req, res) => {
     return res.status(409).json({ error: 'That email is already registered. Try signing in.' });
   const u = await db.createUser(name.trim(), email.toLowerCase(), bcrypt.hashSync(password, 10));
   req.session.userId = u.id;
-  res.json({ id: u.id, name: name.trim(), email: email.toLowerCase(), xp: 0, level: 1, is_pro: false });
+  res.json(publicUser({ ...u, name: name.trim(), email: email.toLowerCase(), xp: 0, is_pro: 0 }));
 }));
 
 app.post('/api/auth/login', ah(async (req, res) => {
@@ -177,7 +243,7 @@ app.post('/api/auth/login', ah(async (req, res) => {
   if (!u || u.pass_hash === 'seed' || !bcrypt.compareSync(password || '', u.pass_hash))
     return res.status(401).json({ error: 'Wrong email or password.' });
   req.session.userId = u.id;
-  res.json({ id: u.id, name: u.name, email: u.email, is_pro: userIsPro(u), xp: u.xp || 0, level: levelFor(u.xp) });
+  res.json(publicUser(await db.getUserById(u.id)));
 }));
 
 app.post('/api/auth/logout', (req, res) => { req.session.destroy(() => res.json({ ok: true })); });
@@ -186,7 +252,53 @@ app.get('/api/auth/me', ah(async (req, res) => {
   if (!req.session.userId) return res.json(null);
   const u = await db.getUserById(req.session.userId);
   // Explicit shape (never leaks stripe ids): same fields login/register return.
-  res.json(u ? { id: u.id, name: u.name, email: u.email, is_pro: userIsPro(u), xp: u.xp || 0, level: levelFor(u.xp) } : null);
+  res.json(publicUser(u));
+}));
+
+// ---------- profile customization ----------
+app.get('/api/profile/catalog', (req, res) => res.json(PROFILE_CATALOG));
+
+app.patch('/api/auth/profile', authed, ah(async (req, res) => {
+  const u = await db.getUserById(req.session.userId);
+  if (!u) return res.status(401).json({ error: 'Sign in required.' });
+  const lvl = levelFor(u.xp);
+  const b = req.body || {};
+  const fields = {};
+  const pick = (kind, key) => {
+    if (b[key] === undefined) return true;
+    const item = catItem(kind, b[key]);
+    if (!item) { res.status(400).json({ error: 'Unknown ' + key.replace('_id', '') + '.' }); return false; }
+    if (lvl < item.min) { res.status(403).json({ error: '🔒 "' + (item.name || item.text) + '" unlocks at level ' + item.min + ' — you are level ' + lvl + '.', locked: true, need: item.min }); return false; }
+    fields[key] = item.id;
+    return true;
+  };
+  if (!pick('avatars', 'avatar_id')) return;
+  if (!pick('frames', 'frame_id')) return;
+  if (!pick('colors', 'color_id')) return;
+  if (!pick('titles', 'title_id')) return;
+  if (b.name !== undefined) {
+    const name = String(b.name).trim();
+    if (name.length < 2 || name.length > 30) return res.status(400).json({ error: 'Display name must be 2–30 characters.' });
+    fields.name = name;
+  }
+  if (b.bio !== undefined) {
+    const bio = String(b.bio).replace(/\s+/g, ' ').trim();
+    if (bio.length > 140) return res.status(400).json({ error: 'Bio must be 140 characters or less.' });
+    fields.bio = bio;
+  }
+  if (Object.keys(fields).length) await db.updateProfile(u.id, fields);
+  res.json(publicUser(await db.getUserById(u.id)));
+}));
+
+// Public profile — what other players see (no email, no billing fields).
+app.get('/api/users/:id', ah(async (req, res) => {
+  const u = await db.getUserById(parseInt(req.params.id));
+  if (!u) return res.status(404).json({ error: 'Player not found.' });
+  const stats = await db.getUserStats(u.id);
+  res.json({
+    id: u.id, name: u.name, xp: u.xp || 0, level: levelFor(u.xp), is_pro: userIsPro(u),
+    created_at: u.created_at, ...cosmeticsOf(u), stats
+  });
 }));
 
 // ---------- billing ----------
@@ -339,7 +451,7 @@ app.post('/api/sets/:id/scores', authed, ah(async (req, res) => {
 app.get('/api/sets/:id/leaderboard', ah(async (req, res) => {
   const game = GAME_IDS.includes(req.query.game) ? req.query.game : 'asteroid';
   const rows = await db.getLeaderboard(req.params.id, game);
-  res.json(rows.map((r) => ({ ...r, level: levelFor(r.xp) })));
+  res.json(rows.map((r) => ({ ...r, level: levelFor(r.xp), ...cosmeticsOf(r) })));
 }));
 
 app.get('/api/me/scores', authed, ah(async (req, res) => res.json(await db.getUserScores(req.session.userId))));

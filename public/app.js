@@ -258,7 +258,7 @@ async function loadLb(id){
     const rows = await api('GET', `/api/sets/${id}/leaderboard?game=${lbGame}`);
     $('lbtable').innerHTML = rows.length ? `
       <table class="lb"><tr><th>#</th><th>Player</th><th>Best</th><th>Accuracy</th></tr>
-      ${rows.map((r, i) => `<tr><td>${i + 1}</td><td>${esc(r.name)}</td><td>${r.best}</td><td>${Math.round(r.acc)}%</td></tr>`).join('')}
+      ${rows.map((r, i) => `<tr><td>${i + 1}</td><td>${avatarHtml(r, 'avatar-sm')} ${r.user_id ? `<a href="javascript:void(0)" onclick="openProfile(${r.user_id})">${esc(r.name)}</a>` : esc(r.name)}<div class="ptitle">${esc(r.title || '')} · Lv ${r.level || 1}</div></td><td>${r.best}</td><td>${Math.round(r.acc)}%</td></tr>`).join('')}
       </table>` : '<p class="muted">No scores yet — be the first.</p>';
   } catch(e){ $('lbtable').innerHTML = '<p class="muted">Could not load leaderboard.</p>'; }
 }
@@ -418,6 +418,97 @@ async function manageBilling(){
     else toast('billingtoast', 'err', e.message);
   }
 }
+
+// ---------- profile customization ----------
+let CATALOG = null, draft = null;
+function avatarHtml(c, cls){
+  return `<span class="avatar-wrap frame-${esc(c.frame_id || 'none')} ${cls || ''}"><span class="avatar">${c.avatar || '😀'}</span></span>`;
+}
+async function renderCustomize(){
+  const host = $('customize');
+  if (!host || !ME) return;
+  if (!CATALOG) { try { CATALOG = await api('GET', '/api/profile/catalog'); } catch(e){ host.innerHTML = ''; return; } }
+  if (!draft) draft = { avatar_id: ME.avatar_id, frame_id: ME.frame_id, color_id: ME.color_id, title_id: ME.title_id };
+  const lvl = ME.level || levelFor(ME.xp || 0);
+  const av = CATALOG.avatars.find(a => a.id === draft.avatar_id) || CATALOG.avatars[0];
+  const fr = CATALOG.frames.find(f => f.id === draft.frame_id) || CATALOG.frames[0];
+  const co = CATALOG.colors.find(c => c.id === draft.color_id) || CATALOG.colors[0];
+  const ti = CATALOG.titles.find(t => t.id === draft.title_id) || CATALOG.titles[0];
+  const locked = (min) => lvl < min;
+  const pickBtn = (kind, item, inner) => `<button class="pick${draft[kind] === item.id ? ' sel' : ''}${locked(item.min) ? ' locked' : ''}" title="${esc(item.name || item.text)}${locked(item.min) ? ' — unlocks at Lv ' + item.min : ''}" onclick="pickCosmetic('${kind}','${item.id}',${item.min})">${inner}${locked(item.min) ? `<span class="lock">🔒 Lv ${item.min}</span>` : ''}</button>`;
+  host.innerHTML = `
+  <div class="card" style="margin-bottom:24px">
+    <h3 style="margin-bottom:6px">🎨 Your profile</h3>
+    <p class="muted" style="margin-bottom:14px">This is how other players see you — on leaderboards and your public profile. Playing earns XP, XP earns levels, and levels unlock the good stuff… all the way to the ✨ Glimmering frame at Lv 1000.</p>
+    <div class="profile-banner" style="background:${co.css}">
+      ${avatarHtml({ avatar: av.e, frame_id: fr.id }, 'avatar-lg')}
+      <div>
+        <div class="pb-name">${esc(ME.name)} <span class="lvlbadge">Lv ${lvl}</span>${ME.is_pro ? ' <span class="lvlbadge">PRO</span>' : ''}</div>
+        <div class="pb-title">${esc(ti.text)}</div>
+        <div class="pb-bio">${esc(ME.bio || '')}</div>
+      </div>
+    </div>
+    <h4 class="picklabel">Avatar</h4>
+    <div class="picker-grid">${CATALOG.avatars.map(a => pickBtn('avatar_id', a, a.e)).join('')}</div>
+    <h4 class="picklabel">Icon frame</h4>
+    <div class="picker-grid frames">${CATALOG.frames.map(f => pickBtn('frame_id', f, avatarHtml({ avatar: av.e, frame_id: f.id }, 'avatar-sm'))).join('')}</div>
+    <h4 class="picklabel">Banner color</h4>
+    <div class="pickrow">${CATALOG.colors.map(c => `<button class="swatch${draft.color_id === c.id ? ' sel' : ''}${locked(c.min) ? ' locked' : ''}" style="background:${c.css}" title="${esc(c.name)}${locked(c.min) ? ' — unlocks at Lv ' + c.min : ''}" onclick="pickCosmetic('color_id','${c.id}',${c.min})">${locked(c.min) ? '🔒' : ''}</button>`).join('')}</div>
+    <h4 class="picklabel">Title</h4>
+    <div class="pickrow">${CATALOG.titles.map(t => `<button class="titlechip${draft.title_id === t.id ? ' sel' : ''}${locked(t.min) ? ' locked' : ''}" onclick="pickCosmetic('title_id','${t.id}',${t.min})">${esc(t.text)}${locked(t.min) ? ` <span class="lockinline">🔒 Lv ${t.min}</span>` : ''}</button>`).join('')}</div>
+    <h4 class="picklabel">Display name &amp; bio</h4>
+    <input id="pfname" class="pfinput" maxlength="30" value="${esc(ME.name)}">
+    <textarea id="pfbio" class="pfinput" rows="2" maxlength="140" placeholder="A short bio other players can see (max 140 characters)">${esc(ME.bio || '')}</textarea>
+    <button class="btn" onclick="saveProfile()">Save profile</button>
+    <div class="toast" id="profiletoast"></div>
+  </div>`;
+}
+function pickCosmetic(kind, id, min){
+  const lvl = ME.level || levelFor(ME.xp || 0);
+  if (lvl < min) { toast('profiletoast', 'err', '🔒 That unlocks at level ' + min + ' — you are level ' + lvl + '. Keep playing!'); return; }
+  draft[kind] = id;
+  renderCustomize();
+}
+async function saveProfile(){
+  try {
+    ME = await api('PATCH', '/api/auth/profile', { ...draft, name: $('pfname').value, bio: $('pfbio').value });
+    draft = null;
+    syncNav(); renderCustomize();
+    toast('profiletoast', 'ok', '✅ Profile saved — looking sharp.');
+  } catch(e){ toast('profiletoast', 'err', e.message); }
+}
+// ---------- public profiles ----------
+function openProfile(id){
+  let m = $('profilemodal');
+  if (!m) {
+    document.body.insertAdjacentHTML('beforeend', '<div id="profilemodal" class="pmodal-back hidden" onclick="if(event.target===this)closeProfile()"><div class="pmodal card" id="pmodalcard"></div></div>');
+    m = $('profilemodal');
+  }
+  m.classList.remove('hidden');
+  $('pmodalcard').innerHTML = '<p class="muted">Loading profile…</p>';
+  api('GET', '/api/users/' + id).then(p => {
+    $('pmodalcard').innerHTML = `
+      <div class="profile-banner" style="background:${p.color_css}">
+        ${avatarHtml(p, 'avatar-lg')}
+        <div>
+          <div class="pb-name">${esc(p.name)} <span class="lvlbadge">Lv ${p.level}</span>${p.is_pro ? ' <span class="lvlbadge">PRO</span>' : ''}</div>
+          <div class="pb-title">${esc(p.title)}</div>
+          <div class="pb-bio">${esc(p.bio || '')}</div>
+        </div>
+      </div>
+      <div class="pstats">
+        <div class="pstat"><div class="v">${p.xp}</div><div class="l">XP</div></div>
+        <div class="pstat"><div class="v">${p.stats.games}</div><div class="l">GAMES PLAYED</div></div>
+        <div class="pstat"><div class="v">${p.stats.best_score}</div><div class="l">BEST SCORE</div></div>
+        <div class="pstat"><div class="v">${p.stats.sets_created}</div><div class="l">SETS CREATED</div></div>
+      </div>
+      <p class="muted" style="text-align:center">Playing since ${esc(String(p.created_at || '').slice(0, 10))}</p>
+      <button class="btn" onclick="closeProfile()">Close</button>`;
+  }).catch(() => { $('pmodalcard').innerHTML = '<p class="muted">Could not load that profile.</p><button class="btn" onclick="closeProfile()">Close</button>'; });
+}
+function closeProfile(){ const m = $('profilemodal'); if (m) m.classList.add('hidden'); }
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeProfile(); });
+
 async function renderAccount(q = {}){
   const v = $('view-account');
   if (!ME) {
@@ -458,6 +549,7 @@ async function renderAccount(q = {}){
       <button class="btn" onclick="goPro()">Go Pro — $3.99/mo</button>
       <p class="muted" style="margin-top:8px">Cancel anytime. 7-day money-back guarantee.</p>
       <div class="toast" id="billingtoast"></div></div>`}
+    <div id="customize"><p class="muted">Loading profile studio…</p></div>
     <h2 class="section-title">My modules</h2><div id="mysets"><p class="muted">Loading…</p></div>
     <h2 class="section-title">My best scores</h2><div id="myscores"><p class="muted">Loading…</p></div>`;
   if (q && q.pro === 'success') {
@@ -467,6 +559,7 @@ async function renderAccount(q = {}){
   } else if (q && q.pro === 'cancelled') {
     toast('billingtoast', 'err', 'Checkout cancelled — no charge was made.');
   }
+  renderCustomize();
   api('GET', '/api/me/sets').then(sets => {
     const el = $('mysets'); if (!el) return;
     el.innerHTML = sets.length ? sets.map(s => `
@@ -513,7 +606,7 @@ function syncNav(){
   const xp = ME.xp || 0;
   const cur = xpForLevel(lvl), next = xpForLevel(lvl + 1);
   const pct = next > cur ? Math.min(100, Math.max(0, (xp - cur) / (next - cur) * 100)) : 100;
-  link.innerHTML = '👤 ' + esc(ME.name.split(' ')[0]) +
+  link.innerHTML = (ME.avatar || '👤') + ' ' + esc(ME.name.split(' ')[0]) +
     ' <span class="lvlbadge">Lv ' + lvl + '</span>' +
     '<span class="xpbar" title="' + xp + ' / ' + next + ' XP"><span style="width:' + Math.round(pct) + '%"></span></span>';
 }

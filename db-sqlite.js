@@ -63,6 +63,11 @@ async function init() {
   try { db.exec('ALTER TABLE users ADD COLUMN xp INTEGER NOT NULL DEFAULT 0'); } catch (e) { /* column already exists */ }
   try { db.exec('ALTER TABLE users ADD COLUMN stripe_customer_id TEXT'); } catch (e) { /* column already exists */ }
   try { db.exec('ALTER TABLE users ADD COLUMN stripe_sub_id TEXT'); } catch (e) { /* column already exists */ }
+  try { db.exec('ALTER TABLE users ADD COLUMN avatar_id TEXT'); } catch (e) { /* column already exists */ }
+  try { db.exec('ALTER TABLE users ADD COLUMN frame_id TEXT'); } catch (e) { /* column already exists */ }
+  try { db.exec('ALTER TABLE users ADD COLUMN color_id TEXT'); } catch (e) { /* column already exists */ }
+  try { db.exec('ALTER TABLE users ADD COLUMN title_id TEXT'); } catch (e) { /* column already exists */ }
+  try { db.exec('ALTER TABLE users ADD COLUMN bio TEXT'); } catch (e) { /* column already exists */ }
   await seed();
   applyProgression();
 }
@@ -114,7 +119,7 @@ async function seed() {
 
 const q = {
   getUserByEmail: async (email) => db.prepare('SELECT * FROM users WHERE email = ?').get(email),
-  getUserById: async (id) => db.prepare('SELECT id, name, email, is_pro, xp, stripe_customer_id, stripe_sub_id FROM users WHERE id = ?').get(id),
+  getUserById: async (id) => db.prepare('SELECT id, name, email, is_pro, xp, stripe_customer_id, stripe_sub_id, avatar_id, frame_id, color_id, title_id, bio, created_at FROM users WHERE id = ?').get(id),
   getUserByStripeCustomer: async (customerId) =>
     customerId ? db.prepare('SELECT * FROM users WHERE stripe_customer_id = ?').get(customerId) : undefined,
   setUserPro: async (userId, isPro, customerId, subId) => {
@@ -171,9 +176,21 @@ const q = {
   destroySession: async (sid) => { db.prepare('DELETE FROM sessions WHERE sid = ?').run(sid); },
   clearExpiredSessions: async () => { db.prepare('DELETE FROM sessions WHERE expires <= ?').run(Date.now()); },
   getLeaderboard: async (setId, game) => db.prepare(`
-    SELECT u.name, u.xp, MAX(s.score) AS best, MAX(s.accuracy) AS acc
+    SELECT u.id AS user_id, u.name, u.xp, u.avatar_id, u.frame_id, u.color_id, u.title_id, MAX(s.score) AS best, MAX(s.accuracy) AS acc
     FROM scores s JOIN users u ON u.id = s.user_id
     WHERE s.set_id = ? AND s.game = ? GROUP BY s.user_id ORDER BY best DESC LIMIT 20`).all(setId, game),
+  updateProfile: async (userId, fields) => {
+    const OK = ['name', 'bio', 'avatar_id', 'frame_id', 'color_id', 'title_id'];
+    const keys = Object.keys(fields).filter((k) => OK.includes(k));
+    if (!keys.length) return;
+    db.prepare('UPDATE users SET ' + keys.map((k) => k + ' = ?').join(', ') + ' WHERE id = ?')
+      .run(...keys.map((k) => fields[k]), userId);
+  },
+  getUserStats: async (userId) => {
+    const g = db.prepare('SELECT COUNT(*) AS games, MAX(score) AS best_score FROM scores WHERE user_id = ?').get(userId);
+    const c = db.prepare('SELECT COUNT(*) AS sets_created FROM sets WHERE creator_id = ?').get(userId);
+    return { games: g.games || 0, best_score: g.best_score || 0, sets_created: c.sets_created || 0 };
+  },
   getUserScores: async (userId) => db.prepare(`
     SELECT s.set_id, st.title, st.subject, st.module, s.game, MAX(s.score) AS best, MAX(s.accuracy) AS acc
     FROM scores s JOIN sets st ON st.id = s.set_id

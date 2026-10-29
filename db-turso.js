@@ -57,6 +57,11 @@ async function init() {
   try { await run('ALTER TABLE users ADD COLUMN xp INTEGER NOT NULL DEFAULT 0'); } catch (e) { /* already exists */ }
   try { await run('ALTER TABLE users ADD COLUMN stripe_customer_id TEXT'); } catch (e) { /* already exists */ }
   try { await run('ALTER TABLE users ADD COLUMN stripe_sub_id TEXT'); } catch (e) { /* already exists */ }
+  try { await run('ALTER TABLE users ADD COLUMN avatar_id TEXT'); } catch (e) { /* already exists */ }
+  try { await run('ALTER TABLE users ADD COLUMN frame_id TEXT'); } catch (e) { /* already exists */ }
+  try { await run('ALTER TABLE users ADD COLUMN color_id TEXT'); } catch (e) { /* already exists */ }
+  try { await run('ALTER TABLE users ADD COLUMN title_id TEXT'); } catch (e) { /* already exists */ }
+  try { await run('ALTER TABLE users ADD COLUMN bio TEXT'); } catch (e) { /* already exists */ }
   await seed();
   await applyProgression();
 }
@@ -112,7 +117,7 @@ async function seed() {
 module.exports = {
   init,
   getUserByEmail: (email) => get('SELECT * FROM users WHERE email = ?', [email]),
-  getUserById: (id) => get('SELECT id, name, email, is_pro, xp, stripe_customer_id, stripe_sub_id FROM users WHERE id = ?', [id]),
+  getUserById: (id) => get('SELECT id, name, email, is_pro, xp, stripe_customer_id, stripe_sub_id, avatar_id, frame_id, color_id, title_id, bio, created_at FROM users WHERE id = ?', [id]),
   getUserByStripeCustomer: (customerId) =>
     customerId ? get('SELECT * FROM users WHERE stripe_customer_id = ?', [customerId]) : Promise.resolve(undefined),
   setUserPro: async (userId, isPro, customerId, subId) => {
@@ -181,9 +186,20 @@ module.exports = {
   destroySession: (sid) => run('DELETE FROM sessions WHERE sid = ?', [sid]),
   clearExpiredSessions: () => run('DELETE FROM sessions WHERE expires <= ?', [Date.now()]),
   getLeaderboard: (setId, game) => all(`
-    SELECT u.name, u.xp, MAX(s.score) AS best, MAX(s.accuracy) AS acc
+    SELECT u.id AS user_id, u.name, u.xp, u.avatar_id, u.frame_id, u.color_id, u.title_id, MAX(s.score) AS best, MAX(s.accuracy) AS acc
     FROM scores s JOIN users u ON u.id = s.user_id
     WHERE s.set_id = ? AND s.game = ? GROUP BY s.user_id ORDER BY best DESC LIMIT 20`, [setId, game]),
+  updateProfile: async (userId, fields) => {
+    const OK = ['name', 'bio', 'avatar_id', 'frame_id', 'color_id', 'title_id'];
+    const keys = Object.keys(fields).filter((k) => OK.includes(k));
+    if (!keys.length) return;
+    await run('UPDATE users SET ' + keys.map((k) => k + ' = ?').join(', ') + ' WHERE id = ?', [...keys.map((k) => fields[k]), userId]);
+  },
+  getUserStats: async (userId) => {
+    const g = await get('SELECT COUNT(*) AS games, MAX(score) AS best_score FROM scores WHERE user_id = ?', [userId]);
+    const c = await get('SELECT COUNT(*) AS sets_created FROM sets WHERE creator_id = ?', [userId]);
+    return { games: (g && g.games) || 0, best_score: (g && g.best_score) || 0, sets_created: (c && c.sets_created) || 0 };
+  },
   getUserScores: (userId) => all(`
     SELECT s.set_id, st.title, st.subject, st.module, s.game, MAX(s.score) AS best, MAX(s.accuracy) AS acc
     FROM scores s JOIN sets st ON st.id = s.set_id
