@@ -569,17 +569,43 @@ function step(dt){
 
 // ================= drawing =================
 function rr(x, y, w, h, r){ cx.beginPath(); cx.roundRect(x, y, w, h, r); }
-function drawChip(x, y, letter, text, color, inRange){
-  const label = letter + ' · ' + (text.length > 20 ? text.slice(0, 19) + '…' : text);
-  cx.font = '700 14px "Segoe UI", sans-serif';
-  const wdt = cx.measureText(label).width + 20;
-  const bx = Math.max(6, Math.min(W - wdt - 6, x - wdt / 2)), by = y;
-  cx.fillStyle = inRange ? 'rgba(255,209,102,.92)' : 'rgba(13,16,38,.88)';
-  rr(bx, by, wdt, 26, 13); cx.fill();
-  cx.strokeStyle = color; cx.lineWidth = inRange ? 2.5 : 1.5; rr(bx, by, wdt, 26, 13); cx.stroke();
+function wrapText(text, max){
+  const words = String(text).split(/\s+/).filter(Boolean);
+  const lines = []; let cur = '';
+  for (const word of words){
+    const next = cur ? cur + ' ' + word : word;
+    if (next.length > max && cur) { lines.push(cur); cur = word; }
+    else cur = next;
+  }
+  if (cur) lines.push(cur);
+  if (lines.length > 3) { const cut = lines.slice(0, 3); cut[2] = cut[2].replace(/.$/, '…'); return cut; }
+  return lines;
+}
+function drawChip(x, y, letter, text, color, inRange, anchor){
+  // Full answer text, word-wrapped — no truncation except extreme lengths
+  // (the legend under the arena always carries the complete text too).
+  const lines = wrapText(letter + ' · ' + text, 24);
+  cx.font = '700 15px "Segoe UI", sans-serif';
+  const wdt = Math.max(...lines.map(l => cx.measureText(l).width)) + 20;
+  const hgt = lines.length * 18 + 12;
+  let bx, by;
+  if (anchor === 'left') { bx = x - wdt; by = y - hgt / 2; }
+  else if (anchor === 'bottom') { bx = x - wdt / 2; by = y; }
+  else { bx = x - wdt / 2; by = y - hgt; } // top
+  bx = Math.max(6, Math.min(W - wdt - 6, bx));
+  by = Math.max(4, Math.min(H - hgt - 4, by));
+  cx.fillStyle = inRange ? 'rgba(255,209,102,.94)' : 'rgba(13,16,38,.9)';
+  rr(bx, by, wdt, hgt, 12); cx.fill();
+  cx.strokeStyle = color; cx.lineWidth = inRange ? 2.5 : 1.5; rr(bx, by, wdt, hgt, 12); cx.stroke();
   cx.fillStyle = inRange ? '#141838' : '#eef1ff';
   cx.textAlign = 'center'; cx.textBaseline = 'middle';
-  cx.fillText(label, bx + wdt / 2, by + 14);
+  lines.forEach((l, i) => cx.fillText(l, bx + wdt / 2, by + 15 + i * 18));
+}
+const CHIP_ANCHOR = { head: 'top', core: 'left', fistL: 'bottom', fistR: 'bottom' };
+function chipPoint(p, px, py){
+  if (p.id === 'core') return { x: px - p.r - 8, y: py };
+  if (p.id === 'head') return { x: px, y: py - p.r - 8 };
+  return { x: px, y: py + p.r + 8 };
 }
 function drawBoss(t){
   const dying = state === 'dying';
@@ -650,7 +676,7 @@ function drawBoss(t){
     }
     cx.beginPath(); cx.arc(px, py, p.r + 3, 0, Math.PI * 2);
     cx.strokeStyle = p.color; cx.lineWidth = 2; cx.globalAlpha = 0.65; cx.stroke(); cx.globalAlpha = 1;
-    drawChip(px, py - p.r - 34, 'ABCD'[i], partAnswers[i] ? partAnswers[i].t : '', p.color, inRange);
+    const cp = chipPoint(p, px, py); drawChip(cp.x, cp.y, 'ABCD'[i], partAnswers[i] ? partAnswers[i].t : '', p.color, inRange, CHIP_ANCHOR[p.id]);
   });
 }
 function drawPlayer(t){
