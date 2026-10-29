@@ -23,6 +23,13 @@ function getStripe() {
 }
 const paymentsNotLive = (res) => res.status(503).json({ error: 'Payments are not live yet.' });
 
+// Owner comp: these accounts always have Pro, regardless of subscription
+// state. Stripe webhooks must never revoke them (see setProSafe below).
+const LIFETIME_PRO_EMAILS = new Set(['rosswins77@gmail.com']);
+const userIsPro = (u) => !!(u && (u.is_pro || LIFETIME_PRO_EMAILS.has((u.email || '').toLowerCase())));
+const setProSafe = (db, target, val, customerId, subId) =>
+  db.setUserPro(target.id, LIFETIME_PRO_EMAILS.has((target.email || '').toLowerCase()) ? true : val, customerId, subId);
+
 // Stripe webhook MUST see the raw body for signature verification, so this
 // route (with express.raw) is registered BEFORE express.json() below.
 app.post('/api/billing/webhook', express.raw({ type: 'application/json' }), async (req, res) => {
@@ -53,15 +60,15 @@ app.post('/api/billing/webhook', express.raw({ type: 'application/json' }), asyn
             isPro = sub.status === 'active' || sub.status === 'trialing';
           } catch (e) { /* keep completed-checkout default */ }
         }
-        await db.setUserPro(target.id, isPro, customerId, subId);
+        await setProSafe(db, target, isPro, customerId, subId);
       }
     } else if (event.type === 'customer.subscription.created' || event.type === 'customer.subscription.updated') {
       const isPro = obj.status === 'active' || obj.status === 'trialing';
       const target = await db.getUserByStripeCustomer(obj.customer);
-      if (target) await db.setUserPro(target.id, isPro, obj.customer, obj.id);
+      if (target) await setProSafe(db, target, isPro, obj.customer, obj.id);
     } else if (event.type === 'customer.subscription.deleted') {
       const target = await db.getUserByStripeCustomer(obj.customer);
-      if (target) await db.setUserPro(target.id, false, obj.customer, obj.id);
+      if (target) await setProSafe(db, target, false, obj.customer, obj.id);
     }
   } catch (e) { console.error('Stripe webhook handling failed:', e); return res.status(500).json({ error: 'Webhook handling failed.' }); }
   res.json({ received: true });
@@ -132,7 +139,7 @@ const proRequired = (res, message) => res.status(402).json({
 async function viewerIsPro(req) {
   if (!req.session.userId) return false;
   const u = await db.getUserById(req.session.userId);
-  return !!(u && u.is_pro);
+  return userIsPro(u);
 }
 function monthStartIso() {
   const d = new Date();
@@ -170,7 +177,7 @@ app.post('/api/auth/login', ah(async (req, res) => {
   if (!u || u.pass_hash === 'seed' || !bcrypt.compareSync(password || '', u.pass_hash))
     return res.status(401).json({ error: 'Wrong email or password.' });
   req.session.userId = u.id;
-  res.json({ id: u.id, name: u.name, email: u.email, is_pro: !!u.is_pro, xp: u.xp || 0, level: levelFor(u.xp) });
+  res.json({ id: u.id, name: u.name, email: u.email, is_pro: userIsPro(u), xp: u.xp || 0, level: levelFor(u.xp) });
 }));
 
 app.post('/api/auth/logout', (req, res) => { req.session.destroy(() => res.json({ ok: true })); });
@@ -179,7 +186,7 @@ app.get('/api/auth/me', ah(async (req, res) => {
   if (!req.session.userId) return res.json(null);
   const u = await db.getUserById(req.session.userId);
   // Explicit shape (never leaks stripe ids): same fields login/register return.
-  res.json(u ? { id: u.id, name: u.name, email: u.email, is_pro: !!u.is_pro, xp: u.xp || 0, level: levelFor(u.xp) } : null);
+  res.json(u ? { id: u.id, name: u.name, email: u.email, is_pro: userIsPro(u), xp: u.xp || 0, level: levelFor(u.xp) } : null);
 }));
 
 // ---------- billing ----------
