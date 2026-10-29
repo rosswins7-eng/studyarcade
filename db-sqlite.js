@@ -176,7 +176,7 @@ const q = {
   destroySession: async (sid) => { db.prepare('DELETE FROM sessions WHERE sid = ?').run(sid); },
   clearExpiredSessions: async () => { db.prepare('DELETE FROM sessions WHERE expires <= ?').run(Date.now()); },
   getLeaderboard: async (setId, game) => db.prepare(`
-    SELECT u.id AS user_id, u.name, u.xp, u.avatar_id, u.frame_id, u.color_id, u.title_id, MAX(s.score) AS best, MAX(s.accuracy) AS acc
+    SELECT u.id AS user_id, u.name, u.email, u.xp, u.avatar_id, u.frame_id, u.color_id, u.title_id, MAX(s.score) AS best, MAX(s.accuracy) AS acc
     FROM scores s JOIN users u ON u.id = s.user_id
     WHERE s.set_id = ? AND s.game = ? GROUP BY s.user_id ORDER BY best DESC LIMIT 20`).all(setId, game),
   updateProfile: async (userId, fields) => {
@@ -190,6 +190,14 @@ const q = {
     const g = db.prepare('SELECT COUNT(*) AS games, MAX(score) AS best_score FROM scores WHERE user_id = ?').get(userId);
     const c = db.prepare('SELECT COUNT(*) AS sets_created FROM sets WHERE creator_id = ?').get(userId);
     return { games: g.games || 0, best_score: g.best_score || 0, sets_created: c.sets_created || 0 };
+  },
+  getLevelLeaders: async (limit) => db.prepare(
+    'SELECT id AS user_id, name, email, xp, is_pro, avatar_id, frame_id, color_id, title_id FROM users ORDER BY xp DESC LIMIT ?').all(limit),
+  getUserRank: async (userId) => {
+    const me = db.prepare('SELECT xp FROM users WHERE id = ?').get(userId);
+    if (!me) return null;
+    const c = db.prepare('SELECT COUNT(*) AS ahead FROM users WHERE xp > ?').get(me.xp);
+    return { user_id: userId, rank: (c.ahead || 0) + 1, xp: me.xp };
   },
   getUserScores: async (userId) => db.prepare(`
     SELECT s.set_id, st.title, st.subject, st.module, s.game, MAX(s.score) AS best, MAX(s.accuracy) AS acc

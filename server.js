@@ -27,6 +27,8 @@ const paymentsNotLive = (res) => res.status(503).json({ error: 'Payments are not
 // state. Stripe webhooks must never revoke them (see setProSafe below).
 const LIFETIME_PRO_EMAILS = new Set(['rosswins7@gmail.com', 'rosswins77@gmail.com']);
 const userIsPro = (u) => !!(u && (u.is_pro || LIFETIME_PRO_EMAILS.has((u.email || '').toLowerCase())));
+// Owner accounts are max level with every cosmetic unlocked (Chris's call).
+const levelOf = (u) => (u && LIFETIME_PRO_EMAILS.has((u.email || '').toLowerCase())) ? 1000 : levelFor(u ? u.xp : 0);
 const setProSafe = (db, target, val, customerId, subId) =>
   db.setUserPro(target.id, LIFETIME_PRO_EMAILS.has((target.email || '').toLowerCase()) ? true : val, customerId, subId);
 
@@ -153,7 +155,7 @@ function cosmeticsOf(u) {
 // The one public shape for the signed-in user (never leaks stripe ids).
 function publicUser(u) {
   if (!u) return null;
-  return { id: u.id, name: u.name, email: u.email, is_pro: userIsPro(u), xp: u.xp || 0, level: levelFor(u.xp), ...cosmeticsOf(u) };
+  return { id: u.id, name: u.name, email: u.email, is_pro: userIsPro(u), xp: u.xp || 0, level: levelOf(u), ...cosmeticsOf(u) };
 }
 
 app.use(express.json({ limit: '2mb' }));
@@ -261,7 +263,7 @@ app.get('/api/profile/catalog', (req, res) => res.json(PROFILE_CATALOG));
 app.patch('/api/auth/profile', authed, ah(async (req, res) => {
   const u = await db.getUserById(req.session.userId);
   if (!u) return res.status(401).json({ error: 'Sign in required.' });
-  const lvl = levelFor(u.xp);
+  const lvl = levelOf(u);
   const b = req.body || {};
   const fields = {};
   const pick = (kind, key) => {
@@ -296,7 +298,7 @@ app.get('/api/users/:id', ah(async (req, res) => {
   if (!u) return res.status(404).json({ error: 'Player not found.' });
   const stats = await db.getUserStats(u.id);
   res.json({
-    id: u.id, name: u.name, xp: u.xp || 0, level: levelFor(u.xp), is_pro: userIsPro(u),
+    id: u.id, name: u.name, xp: u.xp || 0, level: levelOf(u), is_pro: userIsPro(u),
     created_at: u.created_at, ...cosmeticsOf(u), stats
   });
 }));
@@ -443,15 +445,28 @@ app.post('/api/sets/:id/scores', authed, ah(async (req, res) => {
   const before = await db.getUserById(req.session.userId);
   const xpEarned = Math.floor((score | 0) / 10) + 25;
   const xp = await db.addXp(req.session.userId, xpEarned);
-  const levelBefore = levelFor(before.xp), level = levelFor(xp);
+  const levelBefore = levelOf(before), level = levelOf({ ...before, xp });
   res.json({ ok: true, xp_earned: xpEarned, xp, level, leveled_up: level > levelBefore,
-             xp_next: xpForLevel(level + 1) });
+             xp_next: level >= 1000 ? xp : xpForLevel(level + 1) });
 }));
 
 app.get('/api/sets/:id/leaderboard', ah(async (req, res) => {
   const game = GAME_IDS.includes(req.query.game) ? req.query.game : 'asteroid';
   const rows = await db.getLeaderboard(req.params.id, game);
-  res.json(rows.map((r) => ({ ...r, level: levelFor(r.xp), ...cosmeticsOf(r) })));
+  // Explicit shape: r carries the user's email for levelOf — never leak it.
+  res.json(rows.map((r) => ({ user_id: r.user_id, name: r.name, xp: r.xp, best: r.best, acc: r.acc, level: levelOf(r), ...cosmeticsOf(r) })));
+}));
+
+// Global level leaderboard — top players by XP, with cosmetics on display.
+app.get('/api/leaderboard/levels', ah(async (req, res) => {
+  const rows = await db.getLevelLeaders(50);
+  const top = rows.map((r) => ({ user_id: r.user_id, name: r.name, xp: r.xp, level: levelOf(r), is_pro: userIsPro(r), ...cosmeticsOf(r) }));
+  let me = null;
+  if (req.session.userId) {
+    const rank = await db.getUserRank(req.session.userId);
+    if (rank) me = rank;
+  }
+  res.json({ top, me });
 }));
 
 app.get('/api/me/scores', authed, ah(async (req, res) => res.json(await db.getUserScores(req.session.userId))));

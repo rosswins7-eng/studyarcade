@@ -186,7 +186,7 @@ module.exports = {
   destroySession: (sid) => run('DELETE FROM sessions WHERE sid = ?', [sid]),
   clearExpiredSessions: () => run('DELETE FROM sessions WHERE expires <= ?', [Date.now()]),
   getLeaderboard: (setId, game) => all(`
-    SELECT u.id AS user_id, u.name, u.xp, u.avatar_id, u.frame_id, u.color_id, u.title_id, MAX(s.score) AS best, MAX(s.accuracy) AS acc
+    SELECT u.id AS user_id, u.name, u.email, u.xp, u.avatar_id, u.frame_id, u.color_id, u.title_id, MAX(s.score) AS best, MAX(s.accuracy) AS acc
     FROM scores s JOIN users u ON u.id = s.user_id
     WHERE s.set_id = ? AND s.game = ? GROUP BY s.user_id ORDER BY best DESC LIMIT 20`, [setId, game]),
   updateProfile: async (userId, fields) => {
@@ -199,6 +199,14 @@ module.exports = {
     const g = await get('SELECT COUNT(*) AS games, MAX(score) AS best_score FROM scores WHERE user_id = ?', [userId]);
     const c = await get('SELECT COUNT(*) AS sets_created FROM sets WHERE creator_id = ?', [userId]);
     return { games: (g && g.games) || 0, best_score: (g && g.best_score) || 0, sets_created: (c && c.sets_created) || 0 };
+  },
+  getLevelLeaders: (limit) => all(
+    'SELECT id AS user_id, name, email, xp, is_pro, avatar_id, frame_id, color_id, title_id FROM users ORDER BY xp DESC LIMIT ?', [limit]),
+  getUserRank: async (userId) => {
+    const me = await get('SELECT xp FROM users WHERE id = ?', [userId]);
+    if (!me) return null;
+    const c = await get('SELECT COUNT(*) AS ahead FROM users WHERE xp > ?', [me.xp]);
+    return { user_id: userId, rank: ((c && c.ahead) || 0) + 1, xp: me.xp };
   },
   getUserScores: (userId) => all(`
     SELECT s.set_id, st.title, st.subject, st.module, s.game, MAX(s.score) AS best, MAX(s.accuracy) AS acc

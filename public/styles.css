@@ -127,3 +127,4 @@ a { color: #8b7bff; }
 .pstat .v { font-size: 1.3rem; font-weight: 800; }
 .pstat .l { font-size: .68rem; color: #a7b0d8; margin-top: 3px; }
 @media (max-width: 560px) { .pstats { grid-template-columns: 1fr 1fr; } }
+tr.myrank td { background: rgba(255,209,102,.10); }

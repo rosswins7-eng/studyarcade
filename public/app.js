@@ -84,6 +84,7 @@ async function route(){
     else if (page === 'subject' && arg) { showView('subject'); await renderSubject(decodeURIComponent(arg), q.game); }
     else if (page === 'module' && arg) { showView('module'); await renderModule(arg, q.game); }
     else if (page === 'community') { showView('community'); await renderCommunity(); }
+    else if (page === 'ranks') { showView('ranks'); await renderRanks(); }
     else if (page === 'create') { showView('create'); renderCreate(); }
     else if (page === 'account') { showView('account'); await renderAccount(q); }
     else { showView('home'); await renderHome(); }
@@ -263,6 +264,27 @@ async function loadLb(id){
   } catch(e){ $('lbtable').innerHTML = '<p class="muted">Could not load leaderboard.</p>'; }
 }
 function setLbGame(g, id){ lbGame = g; renderModule(id); }
+
+
+// ---------- level leaderboard ----------
+async function renderRanks(){
+  const v = $('view-ranks');
+  v.innerHTML = `
+    <h2 class="section-title" style="margin-top:0">🏆 Level Leaderboard</h2>
+    <p class="muted" style="margin-bottom:18px">The highest-level players on StudyClash. XP comes from playing — levels unlock profile cosmetics, all the way to the ✨ Glimmering frame at Lv 1000.</p>
+    <div id="rankstable"><p class="muted">Loading…</p></div>`;
+  try {
+    const data = await api('GET', '/api/leaderboard/levels');
+    const medals = ['🥇', '🥈', '🥉'];
+    const inTop = ME && data.top.some(r => r.user_id === ME.id);
+    $('rankstable').innerHTML = `
+      <div class="card"><table class="lb"><tr><th>#</th><th>Player</th><th>Level</th><th>XP</th></tr>
+      ${data.top.map((r, i) => `<tr${ME && r.user_id === ME.id ? ' class="myrank"' : ''}><td>${medals[i] || (i + 1)}</td><td>${avatarHtml(r, 'avatar-sm')} <a href="javascript:void(0)" onclick="openProfile(${r.user_id})">${esc(r.name)}</a>${r.is_pro ? ' <span class="lvlbadge">PRO</span>' : ''}<div class="ptitle">${esc(r.title || '')}</div></td><td><span class="lvlbadge">Lv ${r.level}</span></td><td>${r.xp}</td></tr>`).join('')}
+      </table></div>
+      ${ME && data.me && !inTop ? `<p class="muted" style="margin-top:14px;text-align:center">Your rank: <b style="color:#fff">#${data.me.rank}</b> · Lv ${ME.level} · ${data.me.xp} XP — keep climbing!</p>` : ''}
+      ${!ME ? '<p class="muted" style="margin-top:14px;text-align:center"><a href="#/account">Sign in</a> to join the board.</p>' : ''}`;
+  } catch(e){ $('rankstable').innerHTML = '<p class="muted">Could not load the leaderboard.</p>'; }
+}
 
 // ---------- community ----------
 async function renderCommunity(){
@@ -605,7 +627,7 @@ function syncNav(){
   const lvl = ME.level || levelFor(ME.xp || 0);
   const xp = ME.xp || 0;
   const cur = xpForLevel(lvl), next = xpForLevel(lvl + 1);
-  const pct = next > cur ? Math.min(100, Math.max(0, (xp - cur) / (next - cur) * 100)) : 100;
+  const pct = lvl >= 1000 ? 100 : (next > cur ? Math.min(100, Math.max(0, (xp - cur) / (next - cur) * 100)) : 100);
   link.innerHTML = (ME.avatar || '👤') + ' ' + esc(ME.name.split(' ')[0]) +
     ' <span class="lvlbadge">Lv ' + lvl + '</span>' +
     '<span class="xpbar" title="' + xp + ' / ' + next + ' XP"><span style="width:' + Math.round(pct) + '%"></span></span>';
