@@ -25,7 +25,7 @@ const paymentsNotLive = (res) => res.status(503).json({ error: 'Payments are not
 
 // Owner comp: these accounts always have Pro, regardless of subscription
 // state. Stripe webhooks must never revoke them (see setProSafe below).
-const LIFETIME_PRO_EMAILS = new Set(['rosswins77@gmail.com']);
+const LIFETIME_PRO_EMAILS = new Set(['rosswins7@gmail.com', 'rosswins77@gmail.com']);
 const userIsPro = (u) => !!(u && (u.is_pro || LIFETIME_PRO_EMAILS.has((u.email || '').toLowerCase())));
 const setProSafe = (db, target, val, customerId, subId) =>
   db.setUserPro(target.id, LIFETIME_PRO_EMAILS.has((target.email || '').toLowerCase()) ? true : val, customerId, subId);
