@@ -90,7 +90,7 @@
   <div class="card" id="screen-start">
     <h1>🚀 Star <span class="accent">Defender</span></h1>
     <div class="howto">📖 Each <b>question</b> sends down a wave of <b>4 enemy ships</b> — every ship carries an answer on its plate.<br>
-    🎯 <b>Move</b> with your mouse, finger, or <b>← → ↑ ↓ / A D W S</b> keys. Your cannon <b>auto-fires</b> — line up under the ship with the <b>correct</b> answer and blast it!<br>
+    🎯 <b>Move</b> with your mouse, finger, or <b>← → ↑ ↓ / A D W S</b> keys. <b>Hold SPACE</b> (or <b>press-and-hold</b> on the field) to fire — no auto-fire, your trigger finger does the work. Line up under the ship with the <b>correct</b> answer and blast it!<br>
     💥 Correct kill = <b>+100</b> plus a streak bonus. Blast the <b>wrong</b> ship and it still explodes — but it costs you a ❤️ <b>life</b> (you have <b>3</b>).<br>
     🔴 Enemy bolts cost a life too — dodge them! If a ship reaches your line it loops back to the top, faster.<br>
     🌊 Survive all <b>10 waves</b>. Every wave flies faster and shoots back harder.</div>
@@ -121,7 +121,7 @@
       <div id="pauseveil">⏸ Paused<br><span style="font-size:.9rem;font-weight:600;color:#a7b0d8">Tap or press P to resume</span></div>
     </div>
     <div id="phasebar">
-      <span id="phasemsg">Blast the ship carrying the correct answer!</span>
+      <span id="phasemsg">Hold SPACE or press-and-hold to fire — blast the correct ship!</span>
       <button class="btn small" id="pausebtn" onclick="togglePause()">⏸ Pause</button>
     </div>
   </div>
@@ -170,6 +170,7 @@ let ebolts = [];    // {el, x, y}
 let particles = [];
 let formT = 0;      // formation strafe clock
 let fireTimer = 0;
+let firingPointer = false; // press-and-hold on the field = trigger held
 let descendSpeed = 12;
 let rafId = 0, lastT = 0;
 
@@ -243,7 +244,7 @@ function nextWave(){
   spawnEnemies(opts);
   phase = 'wave';
   fireTimer = 0.25;
-  $('phasemsg').textContent = 'Blast the ship carrying the correct answer!';
+  $('phasemsg').textContent = 'Hold SPACE or press-and-hold to fire — blast the correct ship!';
   updateHud();
 }
 
@@ -320,12 +321,15 @@ function drawShip(){
   }
   pa.addEventListener('pointerdown', (e) => {
     if (paused) { togglePause(false); return; }
+    firingPointer = true;
     const p = paPos(e); player.tx = p.x; player.ty = p.y;
   });
   pa.addEventListener('pointermove', (e) => {
     if (paused) return;
     const p = paPos(e); player.tx = p.x; player.ty = p.y;
   });
+  window.addEventListener('pointerup', () => { firingPointer = false; });
+  window.addEventListener('pointercancel', () => { firingPointer = false; });
 })();
 
 // ---- keyboard movement + pause ----
@@ -402,12 +406,15 @@ function stepGame(dt){
     }
   }
 
-  // Auto-fire
+  // Manual fire (Chris: no auto-shoot) — hold Space / J, or press-and-hold
+  // on the field. Fire rate is unchanged; it's just gated on the trigger.
+  const firing = keys[' '] || keys['j'] || firingPointer;
   fireTimer -= dt;
-  if (fireTimer <= 0) {
+  if (firing && fireTimer <= 0) {
     fireTimer = fireInterval();
     spawnBolt(player.x, player.y - 14, false);
   }
+  if (!firing) fireTimer = Math.min(fireTimer, 0.02); // next press fires instantly
 
   // Player bolts: move + collide
   const PBV = 640;
