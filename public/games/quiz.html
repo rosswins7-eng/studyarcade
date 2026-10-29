@@ -47,7 +47,7 @@
   @keyframes shake { 0%,100% { transform: translateX(0); } 20% { transform: translateX(-8px); } 40% { transform: translateX(8px); } 60% { transform: translateX(-5px); } 80% { transform: translateX(5px); } }
   canvas { display: block; width: 100%; height: auto; background: #10142e; touch-action: none; }
   #dmgflash { position: absolute; inset: 0; background: rgba(239,68,68,.30); opacity: 0; pointer-events: none; }
-  #legend { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+  #legend { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 10px; }
   .leg { background: #232a55; border: 1px solid #3a4488; border-radius: 12px; padding: 9px 12px; font-size: .9rem; line-height: 1.4; transition: border-color .2s, background .2s; }
   .leg b { color: #ffd166; margin-right: 6px; }
   .leg .part { color: #8b7bff; font-size: .78rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; display: block; }
@@ -91,7 +91,7 @@
 
   <div class="card" id="screen-start">
     <h1><span id="gtitle">Loading…</span><br><span class="accent">Quiz Boss Battle</span></h1>
-    <p class="sub">⚔️ A real arena fight, not a clicker. You are a knight: <b>move with WASD / arrows</b> (or the touch stick), <b>attack with Space</b>. Each question, the <b>4 answers live on the boss's body parts</b> — Head, Core, and both Fists. Run up to the part carrying the <b>correct answer</b> and strike it: that's the weak point, worth <b>100 + streak×10 damage</b>.<br>
+    <p class="sub">⚔️ A real arena fight, not a clicker. You are a knight: <b>move with WASD / arrows</b> (or the touch stick), <b>attack with Space</b>. Each question, the <b>4 answers are listed under the question</b>, each assigned a <b>letter (A–D) and a body part</b> — Head, Core, or a Fist. Run up to the part wearing the <b>correct answer's letter</b> and strike it: that's the weak point, worth <b>100 + streak×10 damage</b>.<br>
     ☄️ Strike a <b>wrong</b> part and the boss rains fireballs on you — <b>red circles</b> mark where they'll land, so <b>keep moving</b>. Get caught and you lose a ❤️ (you have <b>5</b>). And it escalates: every wrong answer <b>doubles</b> the next volley — 1, 2, 4, 8, 16…<br>
     🏆 Drop the boss to 0 HP for a <b>+500 victory bonus</b> (+50 per ❤️ left). Clean dodges pay +30. Questions advance on their own — no buttons, just fight.<br><br>
     <span id="roundlist"></span></p>
@@ -122,12 +122,12 @@
     </div>
     <div class="progress-wrap"><div id="progress"></div></div>
     <div id="question"></div>
+    <div id="legend"></div>
     <div id="banner"></div>
     <div id="arenawrap">
       <canvas id="arena" width="900" height="520"></canvas>
       <div id="dmgflash"></div>
     </div>
-    <div id="legend"></div>
     <div id="explain"></div>
     <div id="touch">
       <div id="stick"><div id="sticknob"></div></div>
@@ -305,7 +305,7 @@ function loadQuestion(){
     '<div class="leg" id="leg-' + p.id + '"><span class="part">' + p.name + '</span><b>' + 'ABCD'[i] + '</b>' + partAnswers[i].t + '</div>').join('');
   const ex = document.getElementById('explain');
   ex.classList.remove('show'); ex.innerHTML = '';
-  banner('Run to the part holding the right answer and strike it! ⚔️', '');
+  banner('Read the answers up top — run to the part with the right letter and strike! ⚔️', '');
   updateHud();
 }
 function showExplain(wasCorrect, struckPartId){
@@ -569,43 +569,19 @@ function step(dt){
 
 // ================= drawing =================
 function rr(x, y, w, h, r){ cx.beginPath(); cx.roundRect(x, y, w, h, r); }
-function wrapText(text, max){
-  const words = String(text).split(/\s+/).filter(Boolean);
-  const lines = []; let cur = '';
-  for (const word of words){
-    const next = cur ? cur + ' ' + word : word;
-    if (next.length > max && cur) { lines.push(cur); cur = word; }
-    else cur = next;
-  }
-  if (cur) lines.push(cur);
-  if (lines.length > 3) { const cut = lines.slice(0, 3); cut[2] = cut[2].replace(/.$/, '…'); return cut; }
-  return lines;
-}
-function drawChip(x, y, letter, text, color, inRange, anchor){
-  // Full answer text, word-wrapped — no truncation except extreme lengths
-  // (the legend under the arena always carries the complete text too).
-  const lines = wrapText(letter + ' · ' + text, 24);
-  cx.font = '700 15px "Segoe UI", sans-serif';
-  const wdt = Math.max(...lines.map(l => cx.measureText(l).width)) + 20;
-  const hgt = lines.length * 18 + 12;
-  let bx, by;
-  if (anchor === 'left') { bx = x - wdt; by = y - hgt / 2; }
-  else if (anchor === 'bottom') { bx = x - wdt / 2; by = y; }
-  else { bx = x - wdt / 2; by = y - hgt; } // top
-  bx = Math.max(6, Math.min(W - wdt - 6, bx));
-  by = Math.max(4, Math.min(H - hgt - 4, by));
-  cx.fillStyle = inRange ? 'rgba(255,209,102,.94)' : 'rgba(13,16,38,.9)';
-  rr(bx, by, wdt, hgt, 12); cx.fill();
-  cx.strokeStyle = color; cx.lineWidth = inRange ? 2.5 : 1.5; rr(bx, by, wdt, hgt, 12); cx.stroke();
-  cx.fillStyle = inRange ? '#141838' : '#eef1ff';
+function drawLetterBadge(x, y, letter, color, inRange){
+  cx.beginPath(); cx.arc(x, y, 17, 0, Math.PI * 2);
+  cx.fillStyle = inRange ? '#ffd166' : 'rgba(13,16,38,.92)'; cx.fill();
+  cx.strokeStyle = color; cx.lineWidth = inRange ? 3 : 2; cx.stroke();
+  cx.fillStyle = inRange ? '#141838' : '#fff';
+  cx.font = '800 17px "Segoe UI", sans-serif';
   cx.textAlign = 'center'; cx.textBaseline = 'middle';
-  lines.forEach((l, i) => cx.fillText(l, bx + wdt / 2, by + 15 + i * 18));
+  cx.fillText(letter, x, y + 1);
 }
-const CHIP_ANCHOR = { head: 'top', core: 'left', fistL: 'bottom', fistR: 'bottom' };
-function chipPoint(p, px, py){
-  if (p.id === 'core') return { x: px - p.r - 8, y: py };
-  if (p.id === 'head') return { x: px, y: py - p.r - 8 };
-  return { x: px, y: py + p.r + 8 };
+function badgePoint(p, px, py){
+  if (p.id === 'core') return { x: px - p.r - 16, y: py };
+  if (p.id === 'head') return { x: px, y: py - p.r - 16 };
+  return { x: px, y: py + p.r + 16 };
 }
 function drawBoss(t){
   const dying = state === 'dying';
@@ -676,7 +652,7 @@ function drawBoss(t){
     }
     cx.beginPath(); cx.arc(px, py, p.r + 3, 0, Math.PI * 2);
     cx.strokeStyle = p.color; cx.lineWidth = 2; cx.globalAlpha = 0.65; cx.stroke(); cx.globalAlpha = 1;
-    const cp = chipPoint(p, px, py); drawChip(cp.x, cp.y, 'ABCD'[i], partAnswers[i] ? partAnswers[i].t : '', p.color, inRange, CHIP_ANCHOR[p.id]);
+    const bp = badgePoint(p, px, py); drawLetterBadge(bp.x, bp.y, 'ABCD'[i], p.color, inRange);
   });
 }
 function drawPlayer(t){
