@@ -85,6 +85,7 @@ const GAMES = [
   { id: 'match', subjects: null },
   { id: 'sort', subjects: null },
   { id: 'type', subjects: null },
+  { id: 'math', subjects: null },
   { id: 'pop', subjects: null },
   { id: 'speed', subjects: null },
 ];
@@ -591,6 +592,8 @@ app.get('/api/games', (req, res) => {
       desc: 'Drag the slingshot, aim, and smash the correct answer brick on the wall — wrong answers bounce back and cost a life.' },
     { id: 'type', title: 'Type Attack', icon: '⌨️', subjects: null,
       desc: 'No multiple choice. Type the answer from memory before the clock runs out.' },
+    { id: 'math', title: 'Math Rush', icon: '🧮', subjects: null,
+      desc: 'Built for math: when the answer is a number there are no choices — type it on the pad. Fractions count (1/2 = 0.5), streaks build combos, 3 hearts.' },
     { id: 'pop', title: 'Balloon Pop', icon: '🎈', subjects: null,
       desc: 'Guess the hidden answer letter by letter — every wrong guess pops a balloon.' },
     { id: 'speed', title: 'Speed Type', icon: '🚀', subjects: null,
