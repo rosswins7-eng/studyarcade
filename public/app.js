@@ -23,6 +23,28 @@ const bandFor = (name) => {
   return b ? b.id : 'other';
 };
 
+// ---- K-12: grade selector (0 = Kindergarten) ----
+// Subject -> [first grade, last grade] it serves. Unmapped subjects are
+// college/career and stay out of the K-12 view.
+const GRADE_SPAN = {
+  'Kids Reading': [0, 2], 'Kids Science': [0, 5], 'Kids Geography': [2, 5],
+  'Elementary Math': [1, 5], 'Pre-Algebra': [6, 8], 'Algebra 1': [8, 10],
+  'Geometry': [9, 11], 'English & Grammar': [6, 12], 'Spanish Basics': [6, 12],
+  'World History': [6, 12], 'AP US History': [10, 12], 'Biology 101': [9, 12],
+  'Chemistry 101': [10, 12], 'Physics Basics': [9, 12],
+  'Computer Science Basics': [6, 12], 'Financial Literacy': [9, 12],
+  'SAT Vocabulary': [9, 12],
+};
+const GRADE_CATS = [
+  { id: 'math', title: '🔢 Math', subjects: ['Elementary Math', 'Pre-Algebra', 'Algebra 1', 'Geometry'] },
+  { id: 'ela', title: '📖 Reading & English', subjects: ['Kids Reading', 'English & Grammar', 'SAT Vocabulary'] },
+  { id: 'science', title: '🔬 Science', subjects: ['Kids Science', 'Biology 101', 'Chemistry 101', 'Physics Basics'] },
+  { id: 'social', title: '🌎 Social Studies', subjects: ['Kids Geography', 'World History', 'AP US History'] },
+  { id: 'more', title: '✨ More Subjects', subjects: ['Spanish Basics', 'Computer Science Basics', 'Financial Literacy'] },
+];
+const gradeLabel = (g) => (g === 0 ? 'K' : String(g));
+const gradeName = (g) => (g === 0 ? 'Kindergarten' : 'Grade ' + g);
+
 function esc(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
 // ---- levels (mirrors the backend curve) ----
@@ -81,6 +103,7 @@ async function route(){
   try {
     if (page === 'games') { showView('games'); await renderGames(); }
     else if (page === 'subjects') { showView('subjects'); await renderSubjects(q.game); }
+    else if (page === 'k12') { showView('k12'); await renderK12(arg, q.game); }
     else if (page === 'subject' && arg) { showView('subject'); await renderSubject(decodeURIComponent(arg), q.game); }
     else if (page === 'module' && arg) { showView('module'); await renderModule(arg, q.game); }
     else if (page === 'community') { showView('community'); await renderCommunity(); }
@@ -104,6 +127,7 @@ async function renderHome(){
       <p>Pick a subject, choose your modules, and turn them into games you actually want to play. Missed questions become your review list.</p>
       <div class="ctarow">
         <a class="btn" href="#/subjects">▶ Play now</a>
+        <a class="btn ghost" href="#/k12">🎒 K-12 by grade</a>
         <a class="btn ghost" href="#/create">✨ Create a set</a>
       </div>
     </div>
@@ -171,6 +195,48 @@ async function renderSubjects(gameFilter){
         items.map(card).join('');
     }).join('') || '<p class="muted">No subjects yet — create the first one!</p>';
   } catch(e){ $('subj-list').innerHTML = '<p class="muted">Could not load subjects.</p>'; }
+}
+
+// ---------- K-12: pick a grade, see that grade's subjects ----------
+async function renderK12(gradeArg, gameFilter){
+  const v = $('view-k12');
+  let grade = null;
+  if (gradeArg !== undefined && gradeArg !== '') {
+    grade = (gradeArg === 'k' || gradeArg === 'K') ? 0 : parseInt(gradeArg, 10);
+    if (isNaN(grade) || grade < 0 || grade > 12) grade = null;
+    else try { localStorage.setItem('sc_grade', String(grade)); } catch(e){}
+  } else {
+    try { const s = localStorage.getItem('sc_grade'); if (s !== null) grade = parseInt(s, 10); } catch(e){}
+  }
+  const g = GAMES.find(x => x.id === gameFilter);
+  const chips = Array.from({ length: 13 }, (_, i) =>
+    `<button class="tab${grade === i ? ' active' : ''}" onclick="location.hash='#/k12/${i === 0 ? 'k' : i}${g ? '?game=' + g.id : ''}'">${gradeLabel(i)}</button>`).join('');
+  v.innerHTML = `
+    <h2 class="section-title" style="margin-top:0">🎒 K-12 — pick your grade</h2>
+    <p class="muted" style="margin-bottom:14px">A full school year of quests for every grade: 9 units (September–May), 4 quests per unit, in Math, Reading &amp; English, Science, and Social Studies.${g ? ` Playing <b>${g.icon} ${esc(g.title)}</b>.` : ''}</p>
+    <div class="tabs">${chips}</div>
+    <div id="k12-list">${grade === null ? '<p class="muted">👆 Choose a grade to see its subjects and quests.</p>' : '<p class="muted">Loading…</p>'}</div>`;
+  if (grade === null) return;
+  try {
+    SUBJECTS = await api('GET', '/api/subjects');
+    const mine = SUBJECTS.filter((s) => {
+      const span = GRADE_SPAN[s.subject];
+      return span && grade >= span[0] && grade <= span[1];
+    });
+    const byName = Object.fromEntries(mine.map((s) => [s.subject, s]));
+    const card = (s) => `
+      <div class="subj" onclick="location.hash='#/subject/${encodeURIComponent(s.subject)}${g ? '?game=' + g.id : ''}'">
+        <div class="icon">${iconFor(s.subject)}</div><h3>${esc(s.subject)}</h3>
+        <div class="meta">${s.modules} quest${s.modules === 1 ? '' : 's'} · ${s.questions} questions · ${s.plays || 0} plays</div>
+      </div>`;
+    const html = GRADE_CATS.map((c) => {
+      const items = c.subjects.map((n) => byName[n]).filter(Boolean);
+      if (!items.length) return '';
+      return `<h3 class="band-title" style="grid-column:1/-1;margin:18px 0 4px">${esc(c.title)}</h3>` + items.map(card).join('');
+    }).join('');
+    $('k12-list').innerHTML = `<h3 class="band-title" style="margin:6px 0 10px">${gradeName(grade)}</h3>` +
+      `<div class="subj-grid">${html || '<p class="muted">No subjects for this grade yet — the year of quests is being built.</p>'}</div>`;
+  } catch(e){ $('k12-list').innerHTML = '<p class="muted">Could not load subjects.</p>'; }
 }
 
 // ---------- subject detail: selectable modules ----------
