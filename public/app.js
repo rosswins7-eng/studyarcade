@@ -8,13 +8,13 @@ const ICONS = {
   'AP US History': '🏛️', 'World History': '🌍', 'English & Grammar': '✍️',
   'Spanish Basics': '🇪🇸', 'SAT Vocabulary': '📖', 'Nursing Fundamentals': '🩺',
   'Dental Fundamentals': '🦷', 'Financial Literacy': '💰',
-  'Elementary Math': '🧮', 'Kindergarten Math': '🍎', 'Kids Science': '🔬', 'Kids Reading': '📖', 'Kids Geography': '🗺️', 'Kids Social Studies': '🗽', 'Elementary Reading': '📚',
+  'Elementary Math': '🧮', 'Kindergarten Math': '🍎', 'Kids Science': '🔬', 'Kids Reading': '📖', 'Kids Geography': '🗺️', 'Kids Social Studies': '🗽', 'Elementary Reading': '📚', 'Middle School Science': '🧪',
 };
 const iconFor = (s) => ICONS[s] || '📚';
 // Age bands for the Subjects page. Unmapped subjects fall into 'other'.
 const BANDS = [
   { id: 'elementary', title: '🧒 Elementary School', subjects: ['Kindergarten Math', 'Elementary Math', 'Kids Science', 'Kids Reading', 'Kids Geography', 'Kids Social Studies', 'Elementary Reading'] },
-  { id: 'teen', title: '🎒 Teen / High School', subjects: ['Algebra 1', 'Pre-Algebra', 'Geometry', 'Physics Basics', 'Computer Science Basics', 'AP US History', 'World History', 'English & Grammar', 'Spanish Basics', 'Financial Literacy', 'SAT Vocabulary'] },
+  { id: 'teen', title: '🎒 Teen / High School', subjects: ['Middle School Science', 'Algebra 1', 'Pre-Algebra', 'Geometry', 'Physics Basics', 'Computer Science Basics', 'AP US History', 'World History', 'English & Grammar', 'Spanish Basics', 'Financial Literacy', 'SAT Vocabulary'] },
   { id: 'college', title: '🎓 College & Career', subjects: ['Psychology 101', 'Biology 101', 'Chemistry 101', 'Anatomy & Physiology', 'Nursing Fundamentals', 'Dental Fundamentals', 'CompTIA Security+ Prep'] },
   { id: 'other', title: '📚 More Subjects', subjects: [] },
 ];
@@ -27,7 +27,7 @@ const bandFor = (name) => {
 // Subject -> [first grade, last grade] it serves. Unmapped subjects are
 // college/career and stay out of the K-12 view.
 const GRADE_SPAN = {
-  'Kindergarten Math': [0, 1], 'Kids Social Studies': [0, 2], 'Elementary Reading': [3, 5], 'Kids Reading': [0, 2], 'Kids Science': [0, 5], 'Kids Geography': [2, 5],
+  'Kindergarten Math': [0, 1], 'Kids Social Studies': [0, 2], 'Elementary Reading': [3, 5], 'Middle School Science': [6, 8], 'Kids Reading': [0, 2], 'Kids Science': [0, 5], 'Kids Geography': [2, 5],
   'Elementary Math': [1, 5], 'Pre-Algebra': [6, 8], 'Algebra 1': [8, 10],
   'Geometry': [9, 11], 'English & Grammar': [6, 12], 'Spanish Basics': [6, 12],
   'World History': [6, 12], 'AP US History': [10, 12], 'Biology 101': [9, 12],
@@ -38,7 +38,7 @@ const GRADE_SPAN = {
 const GRADE_CATS = [
   { id: 'math', title: '🔢 Math', subjects: ['Kindergarten Math', 'Elementary Math', 'Pre-Algebra', 'Algebra 1', 'Geometry'] },
   { id: 'ela', title: '📖 Reading & English', subjects: ['Kids Reading', 'Elementary Reading', 'English & Grammar', 'SAT Vocabulary'] },
-  { id: 'science', title: '🔬 Science', subjects: ['Kids Science', 'Biology 101', 'Chemistry 101', 'Physics Basics'] },
+  { id: 'science', title: '🔬 Science', subjects: ['Kids Science', 'Middle School Science', 'Biology 101', 'Chemistry 101', 'Physics Basics'] },
   { id: 'social', title: '🌎 Social Studies', subjects: ['Kids Social Studies', 'Kids Geography', 'World History', 'AP US History'] },
   { id: 'more', title: '✨ More Subjects', subjects: ['Spanish Basics', 'Computer Science Basics', 'Financial Literacy'] },
 ];
