@@ -28484,5 +28484,8537 @@
     "boss": false
    }
   ]
+ },
+ {
+  "title": "Counting 0-10 - Quest 1",
+  "subject": "Kindergarten Math",
+  "module": "kindergarten-math-u1-q1",
+  "description": "Numbers up to 10: counting, reading, and writing them.",
+  "questions": [
+   {
+    "q": "Count back: what comes before 4?",
+    "options": [
+     "1",
+     "0",
+     "6",
+     "3"
+    ],
+    "answer": 3,
+    "explain": "Counting in order, the number before 4 is 3."
+   },
+   {
+    "q": "How do you write the number 1 as a word?",
+    "options": [
+     "four",
+     "five",
+     "one",
+     "seventeen"
+    ],
+    "answer": 2,
+    "explain": "The number 1 is written as the word 'one'."
+   },
+   {
+    "q": "Which number is the word 'six'?",
+    "options": [
+     "9",
+     "7",
+     "6",
+     "4"
+    ],
+    "answer": 2,
+    "explain": "The word 'six' means the number 6."
+   },
+   {
+    "q": "Count back: what comes before 6?",
+    "options": [
+     "5",
+     "7",
+     "4",
+     "8"
+    ],
+    "answer": 0,
+    "explain": "Counting in order, the number before 6 is 5."
+   },
+   {
+    "q": "How do you write the number 8 as a word?",
+    "options": [
+     "twelve",
+     "fifteen",
+     "eight",
+     "sixteen"
+    ],
+    "answer": 2,
+    "explain": "The number 8 is written as the word 'eight'."
+   },
+   {
+    "q": "Which number matches the word 'eight'?",
+    "options": [
+     "5",
+     "8",
+     "6",
+     "11"
+    ],
+    "answer": 1,
+    "explain": "The word 'eight' means the number 8."
+   },
+   {
+    "q": "Count the pluses: + +  How many pluses are there?",
+    "options": [
+     "12",
+     "1",
+     "2",
+     "3"
+    ],
+    "answer": 2,
+    "explain": "Count each star one by one: there are 2."
+   },
+   {
+    "q": "What number is missing? 2, __, 4, 5",
+    "options": [
+     "2",
+     "3",
+     "4",
+     "0"
+    ],
+    "answer": 1,
+    "explain": "The numbers count up by 1, so the missing number is 3."
+   },
+   {
+    "q": "What number comes right after 0?",
+    "options": [
+     "1",
+     "2",
+     "4",
+     "3"
+    ],
+    "answer": 0,
+    "explain": "Counting in order, the number after 0 is 1."
+   },
+   {
+    "q": "Count the pluses: + + +  How many pluses are there?",
+    "options": [
+     "6",
+     "1",
+     "4",
+     "3"
+    ],
+    "answer": 3,
+    "explain": "Count each star one by one: there are 3."
+   },
+   {
+    "q": "Find the missing number: 3, __, 5, 6",
+    "options": [
+     "5",
+     "4",
+     "3",
+     "2"
+    ],
+    "answer": 1,
+    "explain": "The numbers count up by 1, so the missing number is 4."
+   },
+   {
+    "q": "What number comes right after 2?",
+    "options": [
+     "1",
+     "3",
+     "5",
+     "0"
+    ],
+    "answer": 1,
+    "explain": "Counting in order, the number after 2 is 3."
+   },
+   {
+    "q": "Which word matches the number 0?",
+    "options": [
+     "zero",
+     "fifteen",
+     "three",
+     "five"
+    ],
+    "answer": 0,
+    "explain": "The number 0 is written as the word 'zero'."
+   },
+   {
+    "q": "Which number is the word 'four'?",
+    "options": [
+     "2",
+     "4",
+     "1",
+     "5"
+    ],
+    "answer": 1,
+    "explain": "The word 'four' means the number 4."
+   },
+   {
+    "q": "Which number comes just before 4?",
+    "options": [
+     "0",
+     "6",
+     "5",
+     "3"
+    ],
+    "answer": 3,
+    "explain": "Counting in order, the number before 4 is 3."
+   },
+   {
+    "q": "How do you write the number 9 as a word?",
+    "options": [
+     "seven",
+     "two",
+     "zero",
+     "nine"
+    ],
+    "answer": 3,
+    "explain": "The number 9 is written as the word 'nine'."
+   },
+   {
+    "q": "Count up: what comes after 8?",
+    "options": [
+     "7",
+     "12",
+     "8",
+     "9"
+    ],
+    "answer": 3,
+    "explain": "Counting in order, the number after 8 is 9."
+   },
+   {
+    "q": "Which word matches the number 6?",
+    "options": [
+     "six",
+     "five",
+     "eighteen",
+     "one"
+    ],
+    "answer": 0,
+    "explain": "The number 6 is written as the word 'six'."
+   },
+   {
+    "q": "Count up: what comes after 7?",
+    "options": [
+     "8",
+     "9",
+     "5",
+     "6"
+    ],
+    "answer": 0,
+    "explain": "Counting in order, the number after 7 is 8."
+   },
+   {
+    "q": "Count the marks: # # # # # # # # #  How many marks are there?",
+    "options": [
+     "12",
+     "11",
+     "9",
+     "6"
+    ],
+    "answer": 2,
+    "explain": "Count each star one by one: there are 9."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Counting 0-10",
+    "title": "Counting 0-10 - Quest 1",
+    "desc": "Numbers up to 10: counting, reading, and writing them.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Counting 0-10 - Quest 2",
+  "subject": "Kindergarten Math",
+  "module": "kindergarten-math-u1-q2",
+  "description": "Numbers up to 10: counting, reading, and writing them.",
+  "questions": [
+   {
+    "q": "Which number comes just before 9?",
+    "options": [
+     "8",
+     "7",
+     "11",
+     "6"
+    ],
+    "answer": 0,
+    "explain": "Counting in order, the number before 9 is 8."
+   },
+   {
+    "q": "How do you write the number 6 as a word?",
+    "options": [
+     "twelve",
+     "four",
+     "zero",
+     "six"
+    ],
+    "answer": 3,
+    "explain": "The number 6 is written as the word 'six'."
+   },
+   {
+    "q": "Which number is the word 'nine'?",
+    "options": [
+     "12",
+     "7",
+     "9",
+     "8"
+    ],
+    "answer": 2,
+    "explain": "The word 'nine' means the number 9."
+   },
+   {
+    "q": "Which number comes just before 3?",
+    "options": [
+     "1",
+     "0",
+     "3",
+     "2"
+    ],
+    "answer": 3,
+    "explain": "Counting in order, the number before 3 is 2."
+   },
+   {
+    "q": "Which word matches the number 4?",
+    "options": [
+     "seventeen",
+     "two",
+     "fifteen",
+     "four"
+    ],
+    "answer": 3,
+    "explain": "The number 4 is written as the word 'four'."
+   },
+   {
+    "q": "Which number comes just after 2?",
+    "options": [
+     "2",
+     "5",
+     "3",
+     "6"
+    ],
+    "answer": 2,
+    "explain": "Counting in order, the number after 2 is 3."
+   },
+   {
+    "q": "Count the circles: o o  How many circles are there?",
+    "options": [
+     "12",
+     "2",
+     "5",
+     "3"
+    ],
+    "answer": 1,
+    "explain": "Count each star one by one: there are 2."
+   },
+   {
+    "q": "What number is missing? 2, 3, __, 5",
+    "options": [
+     "4",
+     "5",
+     "6",
+     "2"
+    ],
+    "answer": 0,
+    "explain": "The numbers count up by 1, so the missing number is 4."
+   },
+   {
+    "q": "Which number comes just after 5?",
+    "options": [
+     "9",
+     "4",
+     "3",
+     "6"
+    ],
+    "answer": 3,
+    "explain": "Counting in order, the number after 5 is 6."
+   },
+   {
+    "q": "Count the marks: # # # #  How many marks are there?",
+    "options": [
+     "4",
+     "5",
+     "1",
+     "6"
+    ],
+    "answer": 0,
+    "explain": "Count each star one by one: there are 4."
+   },
+   {
+    "q": "Find the missing number: 1, __, 3, 4",
+    "options": [
+     "2",
+     "4",
+     "1",
+     "5"
+    ],
+    "answer": 0,
+    "explain": "The numbers count up by 1, so the missing number is 2."
+   },
+   {
+    "q": "Count up: what comes after 1?",
+    "options": [
+     "2",
+     "0",
+     "12",
+     "4"
+    ],
+    "answer": 0,
+    "explain": "Counting in order, the number after 1 is 2."
+   },
+   {
+    "q": "Count the pluses: + + + + + + + + +  How many pluses are there?",
+    "options": [
+     "8",
+     "9",
+     "12",
+     "11"
+    ],
+    "answer": 1,
+    "explain": "Count each star one by one: there are 9."
+   },
+   {
+    "q": "Find the missing number: 1, 2, __, 4",
+    "options": [
+     "4",
+     "3",
+     "1",
+     "2"
+    ],
+    "answer": 1,
+    "explain": "The numbers count up by 1, so the missing number is 3."
+   },
+   {
+    "q": "What number comes right after 3?",
+    "options": [
+     "1",
+     "6",
+     "4",
+     "7"
+    ],
+    "answer": 2,
+    "explain": "Counting in order, the number after 3 is 4."
+   },
+   {
+    "q": "Count the circles: o o o  How many circles are there?",
+    "options": [
+     "0",
+     "3",
+     "4",
+     "6"
+    ],
+    "answer": 1,
+    "explain": "Count each star one by one: there are 3."
+   },
+   {
+    "q": "Find the missing number: 4, 5, __, 7",
+    "options": [
+     "8",
+     "4",
+     "6",
+     "9"
+    ],
+    "answer": 2,
+    "explain": "The numbers count up by 1, so the missing number is 6."
+   },
+   {
+    "q": "What number comes right after 7?",
+    "options": [
+     "11",
+     "9",
+     "8",
+     "10"
+    ],
+    "answer": 2,
+    "explain": "Counting in order, the number after 7 is 8."
+   },
+   {
+    "q": "Count the marks: # # # # #  How many marks are there?",
+    "options": [
+     "4",
+     "5",
+     "6",
+     "7"
+    ],
+    "answer": 1,
+    "explain": "Count each star one by one: there are 5."
+   },
+   {
+    "q": "What number is missing? 0, __, 2, 3",
+    "options": [
+     "2",
+     "4",
+     "0",
+     "1"
+    ],
+    "answer": 3,
+    "explain": "The numbers count up by 1, so the missing number is 1."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Counting 0-10",
+    "title": "Counting 0-10 - Quest 2",
+    "desc": "Numbers up to 10: counting, reading, and writing them.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Counting 0-10 - Quest 3",
+  "subject": "Kindergarten Math",
+  "module": "kindergarten-math-u1-q3",
+  "description": "Numbers up to 10: counting, reading, and writing them.",
+  "questions": [
+   {
+    "q": "What number comes right before 6?",
+    "options": [
+     "6",
+     "5",
+     "2",
+     "3"
+    ],
+    "answer": 1,
+    "explain": "Counting in order, the number before 6 is 5."
+   },
+   {
+    "q": "Which number comes just after 4?",
+    "options": [
+     "7",
+     "5",
+     "6",
+     "8"
+    ],
+    "answer": 1,
+    "explain": "Counting in order, the number after 4 is 5."
+   },
+   {
+    "q": "Count the circles: o o o o o o o o o o  How many circles are there?",
+    "options": [
+     "10",
+     "8",
+     "0",
+     "11"
+    ],
+    "answer": 0,
+    "explain": "Count each star one by one: there are 10."
+   },
+   {
+    "q": "What number is missing? 3, 4, __, 6",
+    "options": [
+     "5",
+     "6",
+     "7",
+     "2"
+    ],
+    "answer": 0,
+    "explain": "The numbers count up by 1, so the missing number is 5."
+   },
+   {
+    "q": "Count up: what comes after 4?",
+    "options": [
+     "3",
+     "5",
+     "2",
+     "8"
+    ],
+    "answer": 1,
+    "explain": "Counting in order, the number after 4 is 5."
+   },
+   {
+    "q": "Count the marks: # # #  How many marks are there?",
+    "options": [
+     "13",
+     "4",
+     "0",
+     "3"
+    ],
+    "answer": 3,
+    "explain": "Count each star one by one: there are 3."
+   },
+   {
+    "q": "Which number is the word 'eight'?",
+    "options": [
+     "10",
+     "9",
+     "8",
+     "7"
+    ],
+    "answer": 2,
+    "explain": "The word 'eight' means the number 8."
+   },
+   {
+    "q": "What number comes right before 4?",
+    "options": [
+     "2",
+     "4",
+     "3",
+     "6"
+    ],
+    "answer": 2,
+    "explain": "Counting in order, the number before 4 is 3."
+   },
+   {
+    "q": "What number is missing? 4, __, 6, 7",
+    "options": [
+     "5",
+     "8",
+     "2",
+     "4"
+    ],
+    "answer": 0,
+    "explain": "The numbers count up by 1, so the missing number is 5."
+   },
+   {
+    "q": "Which number comes just after 7?",
+    "options": [
+     "5",
+     "7",
+     "10",
+     "8"
+    ],
+    "answer": 3,
+    "explain": "Counting in order, the number after 7 is 8."
+   },
+   {
+    "q": "Count the pluses: + + + + + + + +  How many pluses are there?",
+    "options": [
+     "8",
+     "6",
+     "5",
+     "10"
+    ],
+    "answer": 0,
+    "explain": "Count each star one by one: there are 8."
+   },
+   {
+    "q": "Find the missing number: 4, __, 6, 7",
+    "options": [
+     "7",
+     "2",
+     "5",
+     "3"
+    ],
+    "answer": 2,
+    "explain": "The numbers count up by 1, so the missing number is 5."
+   },
+   {
+    "q": "Count the circles: o o o o o o o o  How many circles are there?",
+    "options": [
+     "11",
+     "8",
+     "10",
+     "9"
+    ],
+    "answer": 1,
+    "explain": "Count each star one by one: there are 8."
+   },
+   {
+    "q": "Which number matches the word 'ten'?",
+    "options": [
+     "12",
+     "13",
+     "10",
+     "8"
+    ],
+    "answer": 2,
+    "explain": "The word 'ten' means the number 10."
+   },
+   {
+    "q": "Count the pluses: +  How many pluses are there?",
+    "options": [
+     "11",
+     "3",
+     "4",
+     "1"
+    ],
+    "answer": 3,
+    "explain": "Count each star one by one: there are 1."
+   },
+   {
+    "q": "Find the missing number: 2, __, 4, 5",
+    "options": [
+     "6",
+     "5",
+     "4",
+     "3"
+    ],
+    "answer": 3,
+    "explain": "The numbers count up by 1, so the missing number is 3."
+   },
+   {
+    "q": "What number comes right before 1?",
+    "options": [
+     "3",
+     "2",
+     "1",
+     "0"
+    ],
+    "answer": 3,
+    "explain": "Counting in order, the number before 1 is 0."
+   },
+   {
+    "q": "Find the missing number: 0, __, 2, 3",
+    "options": [
+     "3",
+     "1",
+     "11",
+     "2"
+    ],
+    "answer": 1,
+    "explain": "The numbers count up by 1, so the missing number is 1."
+   },
+   {
+    "q": "Count the pluses: + + + + + + + + + +  How many pluses are there?",
+    "options": [
+     "8",
+     "12",
+     "10",
+     "0"
+    ],
+    "answer": 2,
+    "explain": "Count each star one by one: there are 10."
+   },
+   {
+    "q": "Which number matches the word 'three'?",
+    "options": [
+     "3",
+     "1",
+     "5",
+     "4"
+    ],
+    "answer": 0,
+    "explain": "The word 'three' means the number 3."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Counting 0-10",
+    "title": "Counting 0-10 - Quest 3",
+    "desc": "Numbers up to 10: counting, reading, and writing them.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Counting 0-10 - Quest 4",
+  "subject": "Kindergarten Math",
+  "module": "kindergarten-math-u1-q4",
+  "description": "Numbers up to 10: counting, reading, and writing them.",
+  "questions": [
+   {
+    "q": "Which number comes just before 8?",
+    "options": [
+     "10",
+     "4",
+     "7",
+     "9"
+    ],
+    "answer": 2,
+    "explain": "Counting in order, the number before 8 is 7."
+   },
+   {
+    "q": "What number is missing? 5, 6, __, 8",
+    "options": [
+     "7",
+     "4",
+     "6",
+     "5"
+    ],
+    "answer": 0,
+    "explain": "The numbers count up by 1, so the missing number is 7."
+   },
+   {
+    "q": "Count up: what comes after 3?",
+    "options": [
+     "5",
+     "4",
+     "3",
+     "7"
+    ],
+    "answer": 1,
+    "explain": "Counting in order, the number after 3 is 4."
+   },
+   {
+    "q": "Which number is the word 'seven'?",
+    "options": [
+     "5",
+     "7",
+     "9",
+     "8"
+    ],
+    "answer": 1,
+    "explain": "The word 'seven' means the number 7."
+   },
+   {
+    "q": "Which word matches the number 8?",
+    "options": [
+     "eighteen",
+     "eight",
+     "fifteen",
+     "nine"
+    ],
+    "answer": 1,
+    "explain": "The number 8 is written as the word 'eight'."
+   },
+   {
+    "q": "Which number comes just after 3?",
+    "options": [
+     "2",
+     "7",
+     "4",
+     "1"
+    ],
+    "answer": 2,
+    "explain": "Counting in order, the number after 3 is 4."
+   },
+   {
+    "q": "Count the circles: o o o o o o o o o  How many circles are there?",
+    "options": [
+     "7",
+     "11",
+     "6",
+     "9"
+    ],
+    "answer": 3,
+    "explain": "Count each star one by one: there are 9."
+   },
+   {
+    "q": "Which number is the word 'two'?",
+    "options": [
+     "5",
+     "0",
+     "4",
+     "2"
+    ],
+    "answer": 3,
+    "explain": "The word 'two' means the number 2."
+   },
+   {
+    "q": "Which number comes just before 10?",
+    "options": [
+     "9",
+     "6",
+     "10",
+     "7"
+    ],
+    "answer": 0,
+    "explain": "Counting in order, the number before 10 is 9."
+   },
+   {
+    "q": "Find the missing number: 3, 4, __, 6",
+    "options": [
+     "5",
+     "3",
+     "8",
+     "4"
+    ],
+    "answer": 0,
+    "explain": "The numbers count up by 1, so the missing number is 5."
+   },
+   {
+    "q": "What number comes right after 9?",
+    "options": [
+     "10",
+     "7",
+     "12",
+     "0"
+    ],
+    "answer": 0,
+    "explain": "Counting in order, the number after 9 is 10."
+   },
+   {
+    "q": "Which word matches the number 10?",
+    "options": [
+     "seventeen",
+     "zero",
+     "six",
+     "ten"
+    ],
+    "answer": 3,
+    "explain": "The number 10 is written as the word 'ten'."
+   },
+   {
+    "q": "Which number matches the word 'four'?",
+    "options": [
+     "6",
+     "2",
+     "4",
+     "5"
+    ],
+    "answer": 2,
+    "explain": "The word 'four' means the number 4."
+   },
+   {
+    "q": "What number comes right before 7?",
+    "options": [
+     "6",
+     "7",
+     "4",
+     "3"
+    ],
+    "answer": 0,
+    "explain": "Counting in order, the number before 7 is 6."
+   },
+   {
+    "q": "Which word matches the number 7?",
+    "options": [
+     "eight",
+     "sixteen",
+     "seven",
+     "zero"
+    ],
+    "answer": 2,
+    "explain": "The number 7 is written as the word 'seven'."
+   },
+   {
+    "q": "Which number comes just before 7?",
+    "options": [
+     "9",
+     "6",
+     "5",
+     "3"
+    ],
+    "answer": 1,
+    "explain": "Counting in order, the number before 7 is 6."
+   },
+   {
+    "q": "How do you write the number 4 as a word?",
+    "options": [
+     "nine",
+     "eighteen",
+     "three",
+     "four"
+    ],
+    "answer": 3,
+    "explain": "The number 4 is written as the word 'four'."
+   },
+   {
+    "q": "Which number comes just before 2?",
+    "options": [
+     "11",
+     "3",
+     "2",
+     "1"
+    ],
+    "answer": 3,
+    "explain": "Counting in order, the number before 2 is 1."
+   },
+   {
+    "q": "Which number comes just before 6?",
+    "options": [
+     "3",
+     "2",
+     "5",
+     "8"
+    ],
+    "answer": 2,
+    "explain": "Counting in order, the number before 6 is 5."
+   },
+   {
+    "q": "Which word matches the number 2?",
+    "options": [
+     "one",
+     "two",
+     "eleven",
+     "five"
+    ],
+    "answer": 1,
+    "explain": "The number 2 is written as the word 'two'."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Counting 0-10",
+    "title": "Counting 0-10 - Quest 4",
+    "desc": "Numbers up to 10: counting, reading, and writing them.",
+    "count": 20,
+    "boss": true
+   }
+  ]
+ },
+ {
+  "title": "Numbers 11-20 - Quest 1",
+  "subject": "Kindergarten Math",
+  "module": "kindergarten-math-u2-q1",
+  "description": "Teen numbers: counting on, ten-and-ones, and number words.",
+  "questions": [
+   {
+    "q": "Count back: what comes before 12?",
+    "options": [
+     "14",
+     "11",
+     "1",
+     "13"
+    ],
+    "answer": 1,
+    "explain": "Counting in order, the number before 12 is 11."
+   },
+   {
+    "q": "10 + ___ = 12. What is the missing number?",
+    "options": [
+     "12",
+     "4",
+     "2",
+     "3"
+    ],
+    "answer": 2,
+    "explain": "12 = 10 + 2, so it has 1 ten and 2 ones."
+   },
+   {
+    "q": "Count back: what comes before 11?",
+    "options": [
+     "9",
+     "12",
+     "10",
+     "11"
+    ],
+    "answer": 2,
+    "explain": "Counting in order, the number before 11 is 10."
+   },
+   {
+    "q": "The number 19 is 1 ten and how many ones?",
+    "options": [
+     "9",
+     "6",
+     "11",
+     "10"
+    ],
+    "answer": 0,
+    "explain": "19 = 10 + 9, so it has 1 ten and 9 ones."
+   },
+   {
+    "q": "Which number comes just after 11?",
+    "options": [
+     "9",
+     "22",
+     "12",
+     "11"
+    ],
+    "answer": 2,
+    "explain": "Counting in order, the number after 11 is 12."
+   },
+   {
+    "q": "Count the pluses: + + + + + + + + + + + + + + + +  How many pluses are there?",
+    "options": [
+     "6",
+     "16",
+     "13",
+     "17"
+    ],
+    "answer": 1,
+    "explain": "Count each star one by one: there are 16."
+   },
+   {
+    "q": "What number is missing? 15, 16, __, 18",
+    "options": [
+     "17",
+     "19",
+     "7",
+     "15"
+    ],
+    "answer": 0,
+    "explain": "The numbers count up by 1, so the missing number is 17."
+   },
+   {
+    "q": "Count the marks: # # # # # # #  How many marks are there?",
+    "options": [
+     "10",
+     "7",
+     "6",
+     "17"
+    ],
+    "answer": 1,
+    "explain": "Count each star one by one: there are 7."
+   },
+   {
+    "q": "Which word matches the number 13?",
+    "options": [
+     "thirteen",
+     "eighteen",
+     "nine",
+     "sixteen"
+    ],
+    "answer": 0,
+    "explain": "The number 13 is written as the word 'thirteen'."
+   },
+   {
+    "q": "Which number comes just after 10?",
+    "options": [
+     "9",
+     "14",
+     "10",
+     "11"
+    ],
+    "answer": 3,
+    "explain": "Counting in order, the number after 10 is 11."
+   },
+   {
+    "q": "Count the stars: * *  How many stars are there?",
+    "options": [
+     "0",
+     "4",
+     "2",
+     "3"
+    ],
+    "answer": 2,
+    "explain": "Count each star one by one: there are 2."
+   },
+   {
+    "q": "How do you write the number 18 as a word?",
+    "options": [
+     "fifteen",
+     "nine",
+     "seven",
+     "eighteen"
+    ],
+    "answer": 3,
+    "explain": "The number 18 is written as the word 'eighteen'."
+   },
+   {
+    "q": "What number comes right after 14?",
+    "options": [
+     "13",
+     "15",
+     "18",
+     "16"
+    ],
+    "answer": 1,
+    "explain": "Counting in order, the number after 14 is 15."
+   },
+   {
+    "q": "Count the pluses: + + + + + + + + + + + + + + + + + + +  How many pluses are there?",
+    "options": [
+     "20",
+     "21",
+     "19",
+     "17"
+    ],
+    "answer": 2,
+    "explain": "Count each star one by one: there are 19."
+   },
+   {
+    "q": "Find the missing number: 13, __, 15, 16",
+    "options": [
+     "4",
+     "14",
+     "16",
+     "11"
+    ],
+    "answer": 1,
+    "explain": "The numbers count up by 1, so the missing number is 14."
+   },
+   {
+    "q": "Count the pluses: + + + + + + + + + + + +  How many pluses are there?",
+    "options": [
+     "12",
+     "11",
+     "15",
+     "9"
+    ],
+    "answer": 0,
+    "explain": "Count each star one by one: there are 12."
+   },
+   {
+    "q": "How do you write the number 19 as a word?",
+    "options": [
+     "nineteen",
+     "eighteen",
+     "five",
+     "three"
+    ],
+    "answer": 0,
+    "explain": "The number 19 is written as the word 'nineteen'."
+   },
+   {
+    "q": "Count up: what comes after 2?",
+    "options": [
+     "5",
+     "0",
+     "1",
+     "3"
+    ],
+    "answer": 3,
+    "explain": "Counting in order, the number after 2 is 3."
+   },
+   {
+    "q": "Count the pluses: + + + + + + + + + + + + + + + + + +  How many pluses are there?",
+    "options": [
+     "21",
+     "15",
+     "17",
+     "18"
+    ],
+    "answer": 3,
+    "explain": "Count each star one by one: there are 18."
+   },
+   {
+    "q": "Which word matches the number 1?",
+    "options": [
+     "four",
+     "seven",
+     "ten",
+     "one"
+    ],
+    "answer": 3,
+    "explain": "The number 1 is written as the word 'one'."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Numbers 11-20",
+    "title": "Numbers 11-20 - Quest 1",
+    "desc": "Teen numbers: counting on, ten-and-ones, and number words.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Numbers 11-20 - Quest 2",
+  "subject": "Kindergarten Math",
+  "module": "kindergarten-math-u2-q2",
+  "description": "Teen numbers: counting on, ten-and-ones, and number words.",
+  "questions": [
+   {
+    "q": "What number comes right before 20?",
+    "options": [
+     "19",
+     "17",
+     "21",
+     "16"
+    ],
+    "answer": 0,
+    "explain": "Counting in order, the number before 20 is 19."
+   },
+   {
+    "q": "How do you write the number 10 as a word?",
+    "options": [
+     "eighteen",
+     "four",
+     "nineteen",
+     "ten"
+    ],
+    "answer": 3,
+    "explain": "The number 10 is written as the word 'ten'."
+   },
+   {
+    "q": "Which number comes just after 14?",
+    "options": [
+     "17",
+     "5",
+     "15",
+     "18"
+    ],
+    "answer": 2,
+    "explain": "Counting in order, the number after 14 is 15."
+   },
+   {
+    "q": "Count the pluses: + + + + + + + + + + + + + + + + +  How many pluses are there?",
+    "options": [
+     "15",
+     "14",
+     "7",
+     "17"
+    ],
+    "answer": 3,
+    "explain": "Count each star one by one: there are 17."
+   },
+   {
+    "q": "How do you write the number 14 as a word?",
+    "options": [
+     "ten",
+     "eleven",
+     "fourteen",
+     "nineteen"
+    ],
+    "answer": 2,
+    "explain": "The number 14 is written as the word 'fourteen'."
+   },
+   {
+    "q": "Count up: what comes after 17?",
+    "options": [
+     "20",
+     "21",
+     "19",
+     "18"
+    ],
+    "answer": 3,
+    "explain": "Counting in order, the number after 17 is 18."
+   },
+   {
+    "q": "Count the marks: # # # # # # # # # # # #  How many marks are there?",
+    "options": [
+     "11",
+     "12",
+     "15",
+     "14"
+    ],
+    "answer": 1,
+    "explain": "Count each star one by one: there are 12."
+   },
+   {
+    "q": "How do you write the number 3 as a word?",
+    "options": [
+     "eleven",
+     "three",
+     "twenty",
+     "eight"
+    ],
+    "answer": 1,
+    "explain": "The number 3 is written as the word 'three'."
+   },
+   {
+    "q": "What number comes right before 17?",
+    "options": [
+     "13",
+     "18",
+     "16",
+     "15"
+    ],
+    "answer": 2,
+    "explain": "Counting in order, the number before 17 is 16."
+   },
+   {
+    "q": "In the number 19, the 1 is one ten. How many ones are left?",
+    "options": [
+     "9",
+     "7",
+     "8",
+     "12"
+    ],
+    "answer": 0,
+    "explain": "19 = 10 + 9, so it has 1 ten and 9 ones."
+   },
+   {
+    "q": "Find the missing number: 14, __, 16, 17",
+    "options": [
+     "15",
+     "17",
+     "14",
+     "18"
+    ],
+    "answer": 0,
+    "explain": "The numbers count up by 1, so the missing number is 15."
+   },
+   {
+    "q": "Which number comes just before 18?",
+    "options": [
+     "15",
+     "19",
+     "20",
+     "17"
+    ],
+    "answer": 3,
+    "explain": "Counting in order, the number before 18 is 17."
+   },
+   {
+    "q": "The number 11 is 1 ten and how many ones?",
+    "options": [
+     "2",
+     "1",
+     "11",
+     "3"
+    ],
+    "answer": 1,
+    "explain": "11 = 10 + 1, so it has 1 ten and 1 ones."
+   },
+   {
+    "q": "Find the missing number: 2, 3, __, 5",
+    "options": [
+     "1",
+     "4",
+     "6",
+     "5"
+    ],
+    "answer": 1,
+    "explain": "The numbers count up by 1, so the missing number is 4."
+   },
+   {
+    "q": "Which number comes just before 14?",
+    "options": [
+     "3",
+     "11",
+     "13",
+     "16"
+    ],
+    "answer": 2,
+    "explain": "Counting in order, the number before 14 is 13."
+   },
+   {
+    "q": "In the number 14, the 1 is one ten. How many ones are left?",
+    "options": [
+     "4",
+     "7",
+     "6",
+     "2"
+    ],
+    "answer": 0,
+    "explain": "14 = 10 + 4, so it has 1 ten and 4 ones."
+   },
+   {
+    "q": "What number is missing? 5, __, 7, 8",
+    "options": [
+     "6",
+     "8",
+     "5",
+     "7"
+    ],
+    "answer": 0,
+    "explain": "The numbers count up by 1, so the missing number is 6."
+   },
+   {
+    "q": "Which number comes just before 5?",
+    "options": [
+     "7",
+     "4",
+     "14",
+     "2"
+    ],
+    "answer": 1,
+    "explain": "Counting in order, the number before 5 is 4."
+   },
+   {
+    "q": "10 + ___ = 17. What is the missing number?",
+    "options": [
+     "4",
+     "6",
+     "9",
+     "7"
+    ],
+    "answer": 3,
+    "explain": "17 = 10 + 7, so it has 1 ten and 7 ones."
+   },
+   {
+    "q": "What number comes right before 19?",
+    "options": [
+     "19",
+     "15",
+     "18",
+     "8"
+    ],
+    "answer": 2,
+    "explain": "Counting in order, the number before 19 is 18."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Numbers 11-20",
+    "title": "Numbers 11-20 - Quest 2",
+    "desc": "Teen numbers: counting on, ten-and-ones, and number words.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Numbers 11-20 - Quest 3",
+  "subject": "Kindergarten Math",
+  "module": "kindergarten-math-u2-q3",
+  "description": "Teen numbers: counting on, ten-and-ones, and number words.",
+  "questions": [
+   {
+    "q": "Count the pluses: + + + +  How many pluses are there?",
+    "options": [
+     "7",
+     "4",
+     "5",
+     "1"
+    ],
+    "answer": 1,
+    "explain": "Count each star one by one: there are 4."
+   },
+   {
+    "q": "Count up: what comes after 12?",
+    "options": [
+     "11",
+     "14",
+     "16",
+     "13"
+    ],
+    "answer": 3,
+    "explain": "Counting in order, the number after 12 is 13."
+   },
+   {
+    "q": "Count the circles: o o o o o o o o o o o o o o o o o o o  How many circles are there?",
+    "options": [
+     "9",
+     "19",
+     "20",
+     "16"
+    ],
+    "answer": 1,
+    "explain": "Count each star one by one: there are 19."
+   },
+   {
+    "q": "Find the missing number: 6, __, 8, 9",
+    "options": [
+     "7",
+     "17",
+     "6",
+     "8"
+    ],
+    "answer": 0,
+    "explain": "The numbers count up by 1, so the missing number is 7."
+   },
+   {
+    "q": "What number comes right before 2?",
+    "options": [
+     "2",
+     "0",
+     "11",
+     "1"
+    ],
+    "answer": 3,
+    "explain": "Counting in order, the number before 2 is 1."
+   },
+   {
+    "q": "The number 16 is 1 ten and how many ones?",
+    "options": [
+     "9",
+     "6",
+     "8",
+     "3"
+    ],
+    "answer": 1,
+    "explain": "16 = 10 + 6, so it has 1 ten and 6 ones."
+   },
+   {
+    "q": "What number is missing? 15, __, 17, 18",
+    "options": [
+     "19",
+     "14",
+     "17",
+     "16"
+    ],
+    "answer": 3,
+    "explain": "The numbers count up by 1, so the missing number is 16."
+   },
+   {
+    "q": "Count back: what comes before 20?",
+    "options": [
+     "19",
+     "21",
+     "17",
+     "22"
+    ],
+    "answer": 0,
+    "explain": "Counting in order, the number before 20 is 19."
+   },
+   {
+    "q": "How do you write the number 13 as a word?",
+    "options": [
+     "fourteen",
+     "eighteen",
+     "eleven",
+     "thirteen"
+    ],
+    "answer": 3,
+    "explain": "The number 13 is written as the word 'thirteen'."
+   },
+   {
+    "q": "What number comes right before 9?",
+    "options": [
+     "8",
+     "5",
+     "10",
+     "7"
+    ],
+    "answer": 0,
+    "explain": "Counting in order, the number before 9 is 8."
+   },
+   {
+    "q": "Find the missing number: 7, __, 9, 10",
+    "options": [
+     "5",
+     "9",
+     "8",
+     "18"
+    ],
+    "answer": 2,
+    "explain": "The numbers count up by 1, so the missing number is 8."
+   },
+   {
+    "q": "Count back: what comes before 10?",
+    "options": [
+     "6",
+     "7",
+     "9",
+     "19"
+    ],
+    "answer": 2,
+    "explain": "Counting in order, the number before 10 is 9."
+   },
+   {
+    "q": "The number 14 is 1 ten and how many ones?",
+    "options": [
+     "1",
+     "6",
+     "4",
+     "7"
+    ],
+    "answer": 2,
+    "explain": "14 = 10 + 4, so it has 1 ten and 4 ones."
+   },
+   {
+    "q": "What number comes right before 14?",
+    "options": [
+     "12",
+     "13",
+     "10",
+     "11"
+    ],
+    "answer": 1,
+    "explain": "Counting in order, the number before 14 is 13."
+   },
+   {
+    "q": "In the number 11, the 1 is one ten. How many ones are left?",
+    "options": [
+     "2",
+     "11",
+     "3",
+     "1"
+    ],
+    "answer": 3,
+    "explain": "11 = 10 + 1, so it has 1 ten and 1 ones."
+   },
+   {
+    "q": "What number is missing? 0, 1, __, 3",
+    "options": [
+     "5",
+     "0",
+     "2",
+     "3"
+    ],
+    "answer": 2,
+    "explain": "The numbers count up by 1, so the missing number is 2."
+   },
+   {
+    "q": "Count back: what comes before 2?",
+    "options": [
+     "1",
+     "2",
+     "4",
+     "3"
+    ],
+    "answer": 0,
+    "explain": "Counting in order, the number before 2 is 1."
+   },
+   {
+    "q": "Count back: what comes before 19?",
+    "options": [
+     "18",
+     "17",
+     "16",
+     "8"
+    ],
+    "answer": 0,
+    "explain": "Counting in order, the number before 19 is 18."
+   },
+   {
+    "q": "10 + ___ = 14. What is the missing number?",
+    "options": [
+     "1",
+     "3",
+     "4",
+     "2"
+    ],
+    "answer": 2,
+    "explain": "14 = 10 + 4, so it has 1 ten and 4 ones."
+   },
+   {
+    "q": "Find the missing number: 8, __, 10, 11",
+    "options": [
+     "19",
+     "9",
+     "8",
+     "7"
+    ],
+    "answer": 1,
+    "explain": "The numbers count up by 1, so the missing number is 9."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Numbers 11-20",
+    "title": "Numbers 11-20 - Quest 3",
+    "desc": "Teen numbers: counting on, ten-and-ones, and number words.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Numbers 11-20 - Quest 4",
+  "subject": "Kindergarten Math",
+  "module": "kindergarten-math-u2-q4",
+  "description": "Teen numbers: counting on, ten-and-ones, and number words.",
+  "questions": [
+   {
+    "q": "The number 17 is 1 ten and how many ones?",
+    "options": [
+     "8",
+     "6",
+     "7",
+     "10"
+    ],
+    "answer": 2,
+    "explain": "17 = 10 + 7, so it has 1 ten and 7 ones."
+   },
+   {
+    "q": "What number comes right after 18?",
+    "options": [
+     "22",
+     "20",
+     "19",
+     "18"
+    ],
+    "answer": 2,
+    "explain": "Counting in order, the number after 18 is 19."
+   },
+   {
+    "q": "Count the circles: o o o o o o o  How many circles are there?",
+    "options": [
+     "4",
+     "8",
+     "6",
+     "7"
+    ],
+    "answer": 3,
+    "explain": "Count each star one by one: there are 7."
+   },
+   {
+    "q": "Which word matches the number 5?",
+    "options": [
+     "twenty",
+     "five",
+     "sixteen",
+     "one"
+    ],
+    "answer": 1,
+    "explain": "The number 5 is written as the word 'five'."
+   },
+   {
+    "q": "Count up: what comes after 6?",
+    "options": [
+     "7",
+     "8",
+     "17",
+     "5"
+    ],
+    "answer": 0,
+    "explain": "Counting in order, the number after 6 is 7."
+   },
+   {
+    "q": "Count the pluses: + + + + + + + + + + + + +  How many pluses are there?",
+    "options": [
+     "13",
+     "12",
+     "11",
+     "14"
+    ],
+    "answer": 0,
+    "explain": "Count each star one by one: there are 13."
+   },
+   {
+    "q": "Which number comes just after 6?",
+    "options": [
+     "9",
+     "17",
+     "7",
+     "6"
+    ],
+    "answer": 2,
+    "explain": "Counting in order, the number after 6 is 7."
+   },
+   {
+    "q": "Count the circles: o  How many circles are there?",
+    "options": [
+     "3",
+     "1",
+     "0",
+     "4"
+    ],
+    "answer": 1,
+    "explain": "Count each star one by one: there are 1."
+   },
+   {
+    "q": "Which word matches the number 19?",
+    "options": [
+     "twelve",
+     "nineteen",
+     "nine",
+     "fifteen"
+    ],
+    "answer": 1,
+    "explain": "The number 19 is written as the word 'nineteen'."
+   },
+   {
+    "q": "Which number comes just after 1?",
+    "options": [
+     "4",
+     "5",
+     "2",
+     "12"
+    ],
+    "answer": 2,
+    "explain": "Counting in order, the number after 1 is 2."
+   },
+   {
+    "q": "How do you write the number 12 as a word?",
+    "options": [
+     "twelve",
+     "six",
+     "two",
+     "one"
+    ],
+    "answer": 0,
+    "explain": "The number 12 is written as the word 'twelve'."
+   },
+   {
+    "q": "Count the stars: * * * * * * *  How many stars are there?",
+    "options": [
+     "6",
+     "7",
+     "10",
+     "9"
+    ],
+    "answer": 1,
+    "explain": "Count each star one by one: there are 7."
+   },
+   {
+    "q": "How do you write the number 15 as a word?",
+    "options": [
+     "one",
+     "fifteen",
+     "zero",
+     "three"
+    ],
+    "answer": 1,
+    "explain": "The number 15 is written as the word 'fifteen'."
+   },
+   {
+    "q": "What number comes right before 10?",
+    "options": [
+     "7",
+     "19",
+     "9",
+     "6"
+    ],
+    "answer": 2,
+    "explain": "Counting in order, the number before 10 is 9."
+   },
+   {
+    "q": "In the number 17, the 1 is one ten. How many ones are left?",
+    "options": [
+     "10",
+     "8",
+     "5",
+     "7"
+    ],
+    "answer": 3,
+    "explain": "17 = 10 + 7, so it has 1 ten and 7 ones."
+   },
+   {
+    "q": "Find the missing number: 10, __, 12, 13",
+    "options": [
+     "8",
+     "14",
+     "1",
+     "11"
+    ],
+    "answer": 3,
+    "explain": "The numbers count up by 1, so the missing number is 11."
+   },
+   {
+    "q": "Which word matches the number 18?",
+    "options": [
+     "eighteen",
+     "one",
+     "four",
+     "fifteen"
+    ],
+    "answer": 0,
+    "explain": "The number 18 is written as the word 'eighteen'."
+   },
+   {
+    "q": "Count back: what comes before 14?",
+    "options": [
+     "10",
+     "14",
+     "3",
+     "13"
+    ],
+    "answer": 3,
+    "explain": "Counting in order, the number before 14 is 13."
+   },
+   {
+    "q": "The number 12 is 1 ten and how many ones?",
+    "options": [
+     "2",
+     "12",
+     "4",
+     "5"
+    ],
+    "answer": 0,
+    "explain": "12 = 10 + 2, so it has 1 ten and 2 ones."
+   },
+   {
+    "q": "Count back: what comes before 16?",
+    "options": [
+     "14",
+     "13",
+     "16",
+     "15"
+    ],
+    "answer": 3,
+    "explain": "Counting in order, the number before 16 is 15."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Numbers 11-20",
+    "title": "Numbers 11-20 - Quest 4",
+    "desc": "Teen numbers: counting on, ten-and-ones, and number words.",
+    "count": 20,
+    "boss": true
+   }
+  ]
+ },
+ {
+  "title": "Comparing & Ordering - Quest 1",
+  "subject": "Kindergarten Math",
+  "module": "kindergarten-math-u3-q1",
+  "description": "Bigger, smaller, more, fewer, and putting numbers in order.",
+  "questions": [
+   {
+    "q": "Which number is smaller, 12 or 8?",
+    "options": [
+     "12",
+     "8",
+     "10",
+     "11"
+    ],
+    "answer": 1,
+    "explain": "8 is less than 12, so 8 is smaller."
+   },
+   {
+    "q": "What number is missing? 6, 7, __, 9",
+    "options": [
+     "5",
+     "10",
+     "7",
+     "8"
+    ],
+    "answer": 3,
+    "explain": "The numbers count up by 1, so the missing number is 8."
+   },
+   {
+    "q": "Which number is bigger, 4 or 16?",
+    "options": [
+     "4",
+     "18",
+     "16",
+     "14"
+    ],
+    "answer": 2,
+    "explain": "16 is more than 4, so 16 is bigger."
+   },
+   {
+    "q": "First row: *  Second row: * * * *  Which row has MORE stars?",
+    "options": [
+     "The second row",
+     "The first row",
+     "They are the same",
+     "You cannot tell"
+    ],
+    "answer": 0,
+    "explain": "The second row has 4 stars and the first row has 1, so the second row has more."
+   },
+   {
+    "q": "Which number is bigger, 9 or 16?",
+    "options": [
+     "9",
+     "18",
+     "14",
+     "16"
+    ],
+    "answer": 3,
+    "explain": "16 is more than 9, so 16 is bigger."
+   },
+   {
+    "q": "First row: * * *  Second row: * *  Which row has MORE stars?",
+    "options": [
+     "The second row",
+     "They are the same",
+     "You cannot tell",
+     "The first row"
+    ],
+    "answer": 3,
+    "explain": "The first row has 3 stars and the second row has 2, so the first row has more."
+   },
+   {
+    "q": "Count the pluses: + + + + + +  How many pluses are there?",
+    "options": [
+     "6",
+     "8",
+     "3",
+     "5"
+    ],
+    "answer": 0,
+    "explain": "Count each star one by one: there are 6."
+   },
+   {
+    "q": "Which number is smaller, 11 or 10?",
+    "options": [
+     "11",
+     "12",
+     "10",
+     "13"
+    ],
+    "answer": 2,
+    "explain": "10 is less than 11, so 10 is smaller."
+   },
+   {
+    "q": "What number is missing? 4, 5, __, 7",
+    "options": [
+     "8",
+     "7",
+     "6",
+     "9"
+    ],
+    "answer": 2,
+    "explain": "The numbers count up by 1, so the missing number is 6."
+   },
+   {
+    "q": "Which number is bigger, 1 or 11?",
+    "options": [
+     "1",
+     "11",
+     "13",
+     "9"
+    ],
+    "answer": 1,
+    "explain": "11 is more than 1, so 11 is bigger."
+   },
+   {
+    "q": "First row: * * * * * * * * *  Second row: * *  Which row has MORE stars?",
+    "options": [
+     "The second row",
+     "They are the same",
+     "The first row",
+     "You cannot tell"
+    ],
+    "answer": 2,
+    "explain": "The first row has 9 stars and the second row has 2, so the first row has more."
+   },
+   {
+    "q": "What number comes right after 10?",
+    "options": [
+     "21",
+     "11",
+     "10",
+     "1"
+    ],
+    "answer": 1,
+    "explain": "Counting in order, the number after 10 is 11."
+   },
+   {
+    "q": "Which number is bigger, 4 or 13?",
+    "options": [
+     "4",
+     "15",
+     "11",
+     "13"
+    ],
+    "answer": 3,
+    "explain": "13 is more than 4, so 13 is bigger."
+   },
+   {
+    "q": "First row: *  Second row: * * * * * * *  Which row has MORE stars?",
+    "options": [
+     "The second row",
+     "The first row",
+     "They are the same",
+     "You cannot tell"
+    ],
+    "answer": 0,
+    "explain": "The second row has 7 stars and the first row has 1, so the second row has more."
+   },
+   {
+    "q": "Count up: what comes after 5?",
+    "options": [
+     "3",
+     "5",
+     "16",
+     "6"
+    ],
+    "answer": 3,
+    "explain": "Counting in order, the number after 5 is 6."
+   },
+   {
+    "q": "Which number is bigger, 11 or 7?",
+    "options": [
+     "7",
+     "11",
+     "13",
+     "9"
+    ],
+    "answer": 1,
+    "explain": "11 is more than 7, so 11 is bigger."
+   },
+   {
+    "q": "First row: * * * * * * *  Second row: *  Which row has MORE stars?",
+    "options": [
+     "The second row",
+     "They are the same",
+     "The first row",
+     "You cannot tell"
+    ],
+    "answer": 2,
+    "explain": "The first row has 7 stars and the second row has 1, so the first row has more."
+   },
+   {
+    "q": "Count the stars: * * * *  How many stars are there?",
+    "options": [
+     "4",
+     "7",
+     "1",
+     "6"
+    ],
+    "answer": 0,
+    "explain": "Count each star one by one: there are 4."
+   },
+   {
+    "q": "Which number is smaller, 13 or 17?",
+    "options": [
+     "13",
+     "17",
+     "15",
+     "16"
+    ],
+    "answer": 0,
+    "explain": "13 is less than 17, so 13 is smaller."
+   },
+   {
+    "q": "What number is missing? 10, __, 12, 13",
+    "options": [
+     "14",
+     "11",
+     "12",
+     "10"
+    ],
+    "answer": 1,
+    "explain": "The numbers count up by 1, so the missing number is 11."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Comparing & Ordering",
+    "title": "Comparing & Ordering - Quest 1",
+    "desc": "Bigger, smaller, more, fewer, and putting numbers in order.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Comparing & Ordering - Quest 2",
+  "subject": "Kindergarten Math",
+  "module": "kindergarten-math-u3-q2",
+  "description": "Bigger, smaller, more, fewer, and putting numbers in order.",
+  "questions": [
+   {
+    "q": "First row: * * * * * * * * * *  Second row: * *  Which row has MORE stars?",
+    "options": [
+     "The first row",
+     "The second row",
+     "They are the same",
+     "You cannot tell"
+    ],
+    "answer": 0,
+    "explain": "The first row has 10 stars and the second row has 2, so the first row has more."
+   },
+   {
+    "q": "Which number is bigger, 9 or 13?",
+    "options": [
+     "13",
+     "9",
+     "15",
+     "11"
+    ],
+    "answer": 0,
+    "explain": "13 is more than 9, so 13 is bigger."
+   },
+   {
+    "q": "First row: * * * * * * * * * *  Second row: * * *  Which row has MORE stars?",
+    "options": [
+     "The second row",
+     "The first row",
+     "They are the same",
+     "You cannot tell"
+    ],
+    "answer": 1,
+    "explain": "The first row has 10 stars and the second row has 3, so the first row has more."
+   },
+   {
+    "q": "Count the circles: o o o o o o o o o o o o o  How many circles are there?",
+    "options": [
+     "15",
+     "13",
+     "11",
+     "10"
+    ],
+    "answer": 1,
+    "explain": "Count each star one by one: there are 13."
+   },
+   {
+    "q": "First row: * * * * * * * *  Second row: * * * * *  Which row has MORE stars?",
+    "options": [
+     "The second row",
+     "They are the same",
+     "The first row",
+     "You cannot tell"
+    ],
+    "answer": 2,
+    "explain": "The first row has 8 stars and the second row has 5, so the first row has more."
+   },
+   {
+    "q": "Which number is bigger, 8 or 7?",
+    "options": [
+     "8",
+     "7",
+     "10",
+     "6"
+    ],
+    "answer": 0,
+    "explain": "8 is more than 7, so 8 is bigger."
+   },
+   {
+    "q": "First row: * * * * * * * * *  Second row: * * * * * * * * * *  Which row has MORE stars?",
+    "options": [
+     "The first row",
+     "The second row",
+     "They are the same",
+     "You cannot tell"
+    ],
+    "answer": 1,
+    "explain": "The second row has 10 stars and the first row has 9, so the second row has more."
+   },
+   {
+    "q": "Which number comes just after 13?",
+    "options": [
+     "16",
+     "4",
+     "13",
+     "14"
+    ],
+    "answer": 3,
+    "explain": "Counting in order, the number after 13 is 14."
+   },
+   {
+    "q": "Which number is bigger, 9 or 15?",
+    "options": [
+     "9",
+     "17",
+     "15",
+     "13"
+    ],
+    "answer": 2,
+    "explain": "15 is more than 9, so 15 is bigger."
+   },
+   {
+    "q": "First row: * * * * * * * *  Second row: * * * * * * * * * *  Which row has MORE stars?",
+    "options": [
+     "The first row",
+     "They are the same",
+     "The second row",
+     "You cannot tell"
+    ],
+    "answer": 2,
+    "explain": "The second row has 10 stars and the first row has 8, so the second row has more."
+   },
+   {
+    "q": "Count the stars: *  How many stars are there?",
+    "options": [
+     "0",
+     "2",
+     "1",
+     "3"
+    ],
+    "answer": 2,
+    "explain": "Count each star one by one: there are 1."
+   },
+   {
+    "q": "First row: * * * * *  Second row: * * * * * * *  Which row has MORE stars?",
+    "options": [
+     "The second row",
+     "The first row",
+     "They are the same",
+     "You cannot tell"
+    ],
+    "answer": 0,
+    "explain": "The second row has 7 stars and the first row has 5, so the second row has more."
+   },
+   {
+    "q": "Count the pluses: + + + + + + + + + + + + + +  How many pluses are there?",
+    "options": [
+     "14",
+     "12",
+     "4",
+     "11"
+    ],
+    "answer": 0,
+    "explain": "Count each star one by one: there are 14."
+   },
+   {
+    "q": "Which number is smaller, 15 or 19?",
+    "options": [
+     "19",
+     "17",
+     "18",
+     "15"
+    ],
+    "answer": 3,
+    "explain": "15 is less than 19, so 15 is smaller."
+   },
+   {
+    "q": "Find the missing number: 14, 15, __, 17",
+    "options": [
+     "13",
+     "16",
+     "17",
+     "14"
+    ],
+    "answer": 1,
+    "explain": "The numbers count up by 1, so the missing number is 16."
+   },
+   {
+    "q": "Which number is bigger, 17 or 12?",
+    "options": [
+     "12",
+     "19",
+     "17",
+     "15"
+    ],
+    "answer": 2,
+    "explain": "17 is more than 12, so 17 is bigger."
+   },
+   {
+    "q": "First row: *  Second row: * * * * * * * * *  Which row has MORE stars?",
+    "options": [
+     "The first row",
+     "They are the same",
+     "You cannot tell",
+     "The second row"
+    ],
+    "answer": 3,
+    "explain": "The second row has 9 stars and the first row has 1, so the second row has more."
+   },
+   {
+    "q": "Count up: what comes after 16?",
+    "options": [
+     "18",
+     "7",
+     "16",
+     "17"
+    ],
+    "answer": 3,
+    "explain": "Counting in order, the number after 16 is 17."
+   },
+   {
+    "q": "Which number is bigger, 17 or 2?",
+    "options": [
+     "2",
+     "17",
+     "19",
+     "15"
+    ],
+    "answer": 1,
+    "explain": "17 is more than 2, so 17 is bigger."
+   },
+   {
+    "q": "First row: * * * *  Second row: * * * * * *  Which row has MORE stars?",
+    "options": [
+     "The first row",
+     "They are the same",
+     "You cannot tell",
+     "The second row"
+    ],
+    "answer": 3,
+    "explain": "The second row has 6 stars and the first row has 4, so the second row has more."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Comparing & Ordering",
+    "title": "Comparing & Ordering - Quest 2",
+    "desc": "Bigger, smaller, more, fewer, and putting numbers in order.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Comparing & Ordering - Quest 3",
+  "subject": "Kindergarten Math",
+  "module": "kindergarten-math-u3-q3",
+  "description": "Bigger, smaller, more, fewer, and putting numbers in order.",
+  "questions": [
+   {
+    "q": "Which number is smaller, 5 or 16?",
+    "options": [
+     "5",
+     "16",
+     "7",
+     "8"
+    ],
+    "answer": 0,
+    "explain": "5 is less than 16, so 5 is smaller."
+   },
+   {
+    "q": "What number is missing? 10, 11, __, 13",
+    "options": [
+     "12",
+     "9",
+     "13",
+     "14"
+    ],
+    "answer": 0,
+    "explain": "The numbers count up by 1, so the missing number is 12."
+   },
+   {
+    "q": "Count the circles: o o o o o  How many circles are there?",
+    "options": [
+     "5",
+     "6",
+     "7",
+     "3"
+    ],
+    "answer": 0,
+    "explain": "Count each star one by one: there are 5."
+   },
+   {
+    "q": "Which number is smaller, 2 or 9?",
+    "options": [
+     "9",
+     "4",
+     "2",
+     "5"
+    ],
+    "answer": 2,
+    "explain": "2 is less than 9, so 2 is smaller."
+   },
+   {
+    "q": "Find the missing number: 0, 1, __, 3",
+    "options": [
+     "3",
+     "0",
+     "2",
+     "1"
+    ],
+    "answer": 2,
+    "explain": "The numbers count up by 1, so the missing number is 2."
+   },
+   {
+    "q": "Count the stars: * * * * * * * * * * * *  How many stars are there?",
+    "options": [
+     "10",
+     "12",
+     "2",
+     "13"
+    ],
+    "answer": 1,
+    "explain": "Count each star one by one: there are 12."
+   },
+   {
+    "q": "Which number is smaller, 18 or 6?",
+    "options": [
+     "18",
+     "8",
+     "6",
+     "9"
+    ],
+    "answer": 2,
+    "explain": "6 is less than 18, so 6 is smaller."
+   },
+   {
+    "q": "Which number is bigger, 10 or 4?",
+    "options": [
+     "4",
+     "12",
+     "8",
+     "10"
+    ],
+    "answer": 3,
+    "explain": "10 is more than 4, so 10 is bigger."
+   },
+   {
+    "q": "First row: * * * *  Second row: * * * * * * *  Which row has MORE stars?",
+    "options": [
+     "The second row",
+     "The first row",
+     "They are the same",
+     "You cannot tell"
+    ],
+    "answer": 0,
+    "explain": "The second row has 7 stars and the first row has 4, so the second row has more."
+   },
+   {
+    "q": "Count up: what comes after 15?",
+    "options": [
+     "16",
+     "15",
+     "14",
+     "17"
+    ],
+    "answer": 0,
+    "explain": "Counting in order, the number after 15 is 16."
+   },
+   {
+    "q": "Which number is bigger, 17 or 10?",
+    "options": [
+     "10",
+     "19",
+     "17",
+     "15"
+    ],
+    "answer": 2,
+    "explain": "17 is more than 10, so 17 is bigger."
+   },
+   {
+    "q": "First row: * * * *  Second row: * * * * *  Which row has MORE stars?",
+    "options": [
+     "The first row",
+     "They are the same",
+     "You cannot tell",
+     "The second row"
+    ],
+    "answer": 3,
+    "explain": "The second row has 5 stars and the first row has 4, so the second row has more."
+   },
+   {
+    "q": "What number comes right after 1?",
+    "options": [
+     "4",
+     "2",
+     "5",
+     "12"
+    ],
+    "answer": 1,
+    "explain": "Counting in order, the number after 1 is 2."
+   },
+   {
+    "q": "Which number is bigger, 8 or 17?",
+    "options": [
+     "8",
+     "19",
+     "15",
+     "17"
+    ],
+    "answer": 3,
+    "explain": "17 is more than 8, so 17 is bigger."
+   },
+   {
+    "q": "Find the missing number: 15, __, 17, 18",
+    "options": [
+     "14",
+     "16",
+     "15",
+     "18"
+    ],
+    "answer": 1,
+    "explain": "The numbers count up by 1, so the missing number is 16."
+   },
+   {
+    "q": "Count the marks: # # # # # # # # # # #  How many marks are there?",
+    "options": [
+     "14",
+     "11",
+     "10",
+     "13"
+    ],
+    "answer": 1,
+    "explain": "Count each star one by one: there are 11."
+   },
+   {
+    "q": "First row: * * *  Second row: * * * * *  Which row has MORE stars?",
+    "options": [
+     "The first row",
+     "They are the same",
+     "The second row",
+     "You cannot tell"
+    ],
+    "answer": 2,
+    "explain": "The second row has 5 stars and the first row has 3, so the second row has more."
+   },
+   {
+    "q": "What number comes right after 19?",
+    "options": [
+     "10",
+     "18",
+     "22",
+     "20"
+    ],
+    "answer": 3,
+    "explain": "Counting in order, the number after 19 is 20."
+   },
+   {
+    "q": "Which number is bigger, 11 or 16?",
+    "options": [
+     "11",
+     "18",
+     "14",
+     "16"
+    ],
+    "answer": 3,
+    "explain": "16 is more than 11, so 16 is bigger."
+   },
+   {
+    "q": "First row: * * * * *  Second row: * * * * * * * * * *  Which row has MORE stars?",
+    "options": [
+     "The first row",
+     "The second row",
+     "They are the same",
+     "You cannot tell"
+    ],
+    "answer": 1,
+    "explain": "The second row has 10 stars and the first row has 5, so the second row has more."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Comparing & Ordering",
+    "title": "Comparing & Ordering - Quest 3",
+    "desc": "Bigger, smaller, more, fewer, and putting numbers in order.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Comparing & Ordering - Quest 4",
+  "subject": "Kindergarten Math",
+  "module": "kindergarten-math-u3-q4",
+  "description": "Bigger, smaller, more, fewer, and putting numbers in order.",
+  "questions": [
+   {
+    "q": "Which number is smaller, 20 or 17?",
+    "options": [
+     "17",
+     "20",
+     "19",
+     "21"
+    ],
+    "answer": 0,
+    "explain": "17 is less than 20, so 17 is smaller."
+   },
+   {
+    "q": "Count up: what comes after 9?",
+    "options": [
+     "20",
+     "8",
+     "7",
+     "10"
+    ],
+    "answer": 3,
+    "explain": "Counting in order, the number after 9 is 10."
+   },
+   {
+    "q": "Which number is bigger, 7 or 8?",
+    "options": [
+     "7",
+     "8",
+     "10",
+     "6"
+    ],
+    "answer": 1,
+    "explain": "8 is more than 7, so 8 is bigger."
+   },
+   {
+    "q": "Find the missing number: 5, 6, __, 8",
+    "options": [
+     "8",
+     "5",
+     "7",
+     "10"
+    ],
+    "answer": 2,
+    "explain": "The numbers count up by 1, so the missing number is 7."
+   },
+   {
+    "q": "Which number is bigger, 2 or 3?",
+    "options": [
+     "3",
+     "2",
+     "5",
+     "1"
+    ],
+    "answer": 0,
+    "explain": "3 is more than 2, so 3 is bigger."
+   },
+   {
+    "q": "First row: * * * * * * * *  Second row: *  Which row has MORE stars?",
+    "options": [
+     "The second row",
+     "They are the same",
+     "The first row",
+     "You cannot tell"
+    ],
+    "answer": 2,
+    "explain": "The first row has 8 stars and the second row has 1, so the first row has more."
+   },
+   {
+    "q": "Which number comes just after 17?",
+    "options": [
+     "8",
+     "21",
+     "17",
+     "18"
+    ],
+    "answer": 3,
+    "explain": "Counting in order, the number after 17 is 18."
+   },
+   {
+    "q": "Which number is bigger, 13 or 7?",
+    "options": [
+     "7",
+     "13",
+     "15",
+     "11"
+    ],
+    "answer": 1,
+    "explain": "13 is more than 7, so 13 is bigger."
+   },
+   {
+    "q": "First row: *  Second row: * *  Which row has MORE stars?",
+    "options": [
+     "The first row",
+     "They are the same",
+     "You cannot tell",
+     "The second row"
+    ],
+    "answer": 3,
+    "explain": "The second row has 2 stars and the first row has 1, so the second row has more."
+   },
+   {
+    "q": "Which number comes just after 19?",
+    "options": [
+     "10",
+     "22",
+     "20",
+     "17"
+    ],
+    "answer": 2,
+    "explain": "Counting in order, the number after 19 is 20."
+   },
+   {
+    "q": "Which number is bigger, 16 or 19?",
+    "options": [
+     "19",
+     "16",
+     "21",
+     "17"
+    ],
+    "answer": 0,
+    "explain": "19 is more than 16, so 19 is bigger."
+   },
+   {
+    "q": "First row: * * * * * * * *  Second row: * * * *  Which row has MORE stars?",
+    "options": [
+     "The second row",
+     "They are the same",
+     "You cannot tell",
+     "The first row"
+    ],
+    "answer": 3,
+    "explain": "The first row has 8 stars and the second row has 4, so the first row has more."
+   },
+   {
+    "q": "Which number comes just after 16?",
+    "options": [
+     "17",
+     "16",
+     "14",
+     "7"
+    ],
+    "answer": 0,
+    "explain": "Counting in order, the number after 16 is 17."
+   },
+   {
+    "q": "Which number is smaller, 6 or 9?",
+    "options": [
+     "9",
+     "8",
+     "6",
+     "10"
+    ],
+    "answer": 2,
+    "explain": "6 is less than 9, so 6 is smaller."
+   },
+   {
+    "q": "Count the circles: o o o o o o o o o o o o o o  How many circles are there?",
+    "options": [
+     "14",
+     "17",
+     "13",
+     "12"
+    ],
+    "answer": 0,
+    "explain": "Count each star one by one: there are 14."
+   },
+   {
+    "q": "Which number is smaller, 7 or 15?",
+    "options": [
+     "15",
+     "7",
+     "9",
+     "10"
+    ],
+    "answer": 1,
+    "explain": "7 is less than 15, so 7 is smaller."
+   },
+   {
+    "q": "First row: * * * * * * * * *  Second row: * * * * * * * *  Which row has MORE stars?",
+    "options": [
+     "The second row",
+     "They are the same",
+     "The first row",
+     "You cannot tell"
+    ],
+    "answer": 2,
+    "explain": "The first row has 9 stars and the second row has 8, so the first row has more."
+   },
+   {
+    "q": "What number comes right after 13?",
+    "options": [
+     "13",
+     "14",
+     "11",
+     "12"
+    ],
+    "answer": 1,
+    "explain": "Counting in order, the number after 13 is 14."
+   },
+   {
+    "q": "Which number is bigger, 14 or 7?",
+    "options": [
+     "7",
+     "16",
+     "12",
+     "14"
+    ],
+    "answer": 3,
+    "explain": "14 is more than 7, so 14 is bigger."
+   },
+   {
+    "q": "First row: * * * * * *  Second row: * * * *  Which row has MORE stars?",
+    "options": [
+     "The second row",
+     "The first row",
+     "They are the same",
+     "You cannot tell"
+    ],
+    "answer": 1,
+    "explain": "The first row has 6 stars and the second row has 4, so the first row has more."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Comparing & Ordering",
+    "title": "Comparing & Ordering - Quest 4",
+    "desc": "Bigger, smaller, more, fewer, and putting numbers in order.",
+    "count": 20,
+    "boss": true
+   }
+  ]
+ },
+ {
+  "title": "Addition to 5 - Quest 1",
+  "subject": "Kindergarten Math",
+  "module": "kindergarten-math-u4-q1",
+  "description": "Joining groups of 5 or fewer and counting on.",
+  "questions": [
+   {
+    "q": "What is 4 + 1?",
+    "options": [
+     "8",
+     "6",
+     "5",
+     "3"
+    ],
+    "answer": 2,
+    "explain": "4 + 1 = 5. Count them all together to get 5."
+   },
+   {
+    "q": "What is 3 + 3?",
+    "options": [
+     "7",
+     "6",
+     "9",
+     "4"
+    ],
+    "answer": 1,
+    "explain": "Doubles: 3 + 3 = 6."
+   },
+   {
+    "q": "Mia has 3 blocks and gets 1 more. How many blocks does Mia have now?",
+    "options": [
+     "6",
+     "7",
+     "5",
+     "4"
+    ],
+    "answer": 3,
+    "explain": "3 + 1 = 4. Count them all together to get 4."
+   },
+   {
+    "q": "What is 1 + 1?",
+    "options": [
+     "5",
+     "12",
+     "1",
+     "2"
+    ],
+    "answer": 3,
+    "explain": "Doubles: 1 + 1 = 2."
+   },
+   {
+    "q": "What number makes this true? 2 + ___ = 3",
+    "options": [
+     "3",
+     "4",
+     "1",
+     "2"
+    ],
+    "answer": 2,
+    "explain": "2 + 1 = 3, so the missing number is 1."
+   },
+   {
+    "q": "What is 5 + 5?",
+    "options": [
+     "10",
+     "13",
+     "9",
+     "0"
+    ],
+    "answer": 0,
+    "explain": "Doubles: 5 + 5 = 10."
+   },
+   {
+    "q": "What is 5 + 0?",
+    "options": [
+     "5",
+     "3",
+     "6",
+     "4"
+    ],
+    "answer": 0,
+    "explain": "5 + 0 = 5. Count them all together to get 5."
+   },
+   {
+    "q": "What is 4 + 4?",
+    "options": [
+     "11",
+     "9",
+     "5",
+     "8"
+    ],
+    "answer": 3,
+    "explain": "Doubles: 4 + 4 = 8."
+   },
+   {
+    "q": "Ivy has 3 crayons and gets 2 more. How many crayons does Ivy have now?",
+    "options": [
+     "3",
+     "4",
+     "5",
+     "2"
+    ],
+    "answer": 2,
+    "explain": "3 + 2 = 5. Count them all together to get 5."
+   },
+   {
+    "q": "What is 3 + 0?",
+    "options": [
+     "3",
+     "6",
+     "2",
+     "1"
+    ],
+    "answer": 0,
+    "explain": "3 + 0 = 3. Count them all together to get 3."
+   },
+   {
+    "q": "What number makes this true? 1 + ___ = 2",
+    "options": [
+     "1",
+     "3",
+     "0",
+     "2"
+    ],
+    "answer": 0,
+    "explain": "1 + 1 = 2, so the missing number is 1."
+   },
+   {
+    "q": "What is 3 + 1?",
+    "options": [
+     "2",
+     "5",
+     "1",
+     "4"
+    ],
+    "answer": 3,
+    "explain": "3 + 1 = 4. Count them all together to get 4."
+   },
+   {
+    "q": "What number makes this true? 3 + ___ = 5",
+    "options": [
+     "5",
+     "1",
+     "2",
+     "0"
+    ],
+    "answer": 2,
+    "explain": "3 + 2 = 5, so the missing number is 2."
+   },
+   {
+    "q": "What is 1 + 4?",
+    "options": [
+     "4",
+     "3",
+     "7",
+     "5"
+    ],
+    "answer": 3,
+    "explain": "1 + 4 = 5. Count them all together to get 5."
+   },
+   {
+    "q": "What number makes this true? 1 + ___ = 4",
+    "options": [
+     "1",
+     "3",
+     "0",
+     "5"
+    ],
+    "answer": 1,
+    "explain": "1 + 3 = 4, so the missing number is 3."
+   },
+   {
+    "q": "Eli has 4 pencils and gets 1 more. How many pencils does Eli have now?",
+    "options": [
+     "2",
+     "7",
+     "5",
+     "6"
+    ],
+    "answer": 2,
+    "explain": "4 + 1 = 5. Count them all together to get 5."
+   },
+   {
+    "q": "What is 0 + 5?",
+    "options": [
+     "8",
+     "5",
+     "3",
+     "2"
+    ],
+    "answer": 1,
+    "explain": "0 + 5 = 5. Count them all together to get 5."
+   },
+   {
+    "q": "What number makes this true? 0 + ___ = 2",
+    "options": [
+     "0",
+     "2",
+     "4",
+     "3"
+    ],
+    "answer": 1,
+    "explain": "0 + 2 = 2, so the missing number is 2."
+   },
+   {
+    "q": "Ava has 3 seashells and gets 0 more. How many seashells does Ava have now?",
+    "options": [
+     "4",
+     "3",
+     "1",
+     "0"
+    ],
+    "answer": 1,
+    "explain": "3 + 0 = 3. Count them all together to get 3."
+   },
+   {
+    "q": "Zoe has 3 crayons and gets 2 more. How many crayons does Zoe have now?",
+    "options": [
+     "5",
+     "4",
+     "6",
+     "3"
+    ],
+    "answer": 0,
+    "explain": "3 + 2 = 5. Count them all together to get 5."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Addition to 5",
+    "title": "Addition to 5 - Quest 1",
+    "desc": "Joining groups of 5 or fewer and counting on.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Addition to 5 - Quest 2",
+  "subject": "Kindergarten Math",
+  "module": "kindergarten-math-u4-q2",
+  "description": "Joining groups of 5 or fewer and counting on.",
+  "questions": [
+   {
+    "q": "Owen has 1 pencil and gets 3 more. How many pencils does Owen have now?",
+    "options": [
+     "4",
+     "7",
+     "5",
+     "3"
+    ],
+    "answer": 0,
+    "explain": "1 + 3 = 4. Count them all together to get 4."
+   },
+   {
+    "q": "Ava has 3 cookies and gets 0 more. How many cookies does Ava have now?",
+    "options": [
+     "2",
+     "3",
+     "5",
+     "0"
+    ],
+    "answer": 1,
+    "explain": "3 + 0 = 3. Count them all together to get 3."
+   },
+   {
+    "q": "What is 4 + 0?",
+    "options": [
+     "6",
+     "4",
+     "1",
+     "7"
+    ],
+    "answer": 1,
+    "explain": "4 + 0 = 4. Count them all together to get 4."
+   },
+   {
+    "q": "What number makes this true? 0 + ___ = 3",
+    "options": [
+     "3",
+     "6",
+     "4",
+     "5"
+    ],
+    "answer": 0,
+    "explain": "0 + 3 = 3, so the missing number is 3."
+   },
+   {
+    "q": "Sam has 0 seashells and gets 3 more. How many seashells does Sam have now?",
+    "options": [
+     "2",
+     "0",
+     "3",
+     "5"
+    ],
+    "answer": 2,
+    "explain": "0 + 3 = 3. Count them all together to get 3."
+   },
+   {
+    "q": "Leo has 5 marbles and gets 0 more. How many marbles does Leo have now?",
+    "options": [
+     "4",
+     "6",
+     "7",
+     "5"
+    ],
+    "answer": 3,
+    "explain": "5 + 0 = 5. Count them all together to get 5."
+   },
+   {
+    "q": "What number makes this true? 4 + ___ = 4",
+    "options": [
+     "1",
+     "0",
+     "3",
+     "2"
+    ],
+    "answer": 1,
+    "explain": "4 + 0 = 4, so the missing number is 0."
+   },
+   {
+    "q": "Ruby has 3 apples and gets 1 more. How many apples does Ruby have now?",
+    "options": [
+     "3",
+     "7",
+     "5",
+     "4"
+    ],
+    "answer": 3,
+    "explain": "3 + 1 = 4. Count them all together to get 4."
+   },
+   {
+    "q": "What number makes this true? 3 + ___ = 3",
+    "options": [
+     "1",
+     "3",
+     "0",
+     "2"
+    ],
+    "answer": 2,
+    "explain": "3 + 0 = 3, so the missing number is 0."
+   },
+   {
+    "q": "What is 2 + 2?",
+    "options": [
+     "4",
+     "1",
+     "7",
+     "3"
+    ],
+    "answer": 0,
+    "explain": "Doubles: 2 + 2 = 4."
+   },
+   {
+    "q": "Eli has 0 stickers and gets 4 more. How many stickers does Eli have now?",
+    "options": [
+     "2",
+     "6",
+     "4",
+     "5"
+    ],
+    "answer": 2,
+    "explain": "0 + 4 = 4. Count them all together to get 4."
+   },
+   {
+    "q": "What is 3 + 2?",
+    "options": [
+     "5",
+     "6",
+     "3",
+     "2"
+    ],
+    "answer": 0,
+    "explain": "3 + 2 = 5. Count them all together to get 5."
+   },
+   {
+    "q": "What number makes this true? 0 + ___ = 5",
+    "options": [
+     "7",
+     "8",
+     "3",
+     "5"
+    ],
+    "answer": 3,
+    "explain": "0 + 5 = 5, so the missing number is 5."
+   },
+   {
+    "q": "Nora has 3 seashells and gets 0 more. How many seashells does Nora have now?",
+    "options": [
+     "6",
+     "3",
+     "2",
+     "0"
+    ],
+    "answer": 1,
+    "explain": "3 + 0 = 3. Count them all together to get 3."
+   },
+   {
+    "q": "Count the pluses: + + + + +  How many pluses are there?",
+    "options": [
+     "8",
+     "3",
+     "7",
+     "5"
+    ],
+    "answer": 3,
+    "explain": "Count each star one by one: there are 5."
+   },
+   {
+    "q": "What is 0 + 3?",
+    "options": [
+     "1",
+     "0",
+     "3",
+     "4"
+    ],
+    "answer": 2,
+    "explain": "0 + 3 = 3. Count them all together to get 3."
+   },
+   {
+    "q": "Noah has 2 buttons and gets 1 more. How many buttons does Noah have now?",
+    "options": [
+     "1",
+     "3",
+     "5",
+     "2"
+    ],
+    "answer": 1,
+    "explain": "2 + 1 = 3. Count them all together to get 3."
+   },
+   {
+    "q": "What number makes this true? 2 + ___ = 5",
+    "options": [
+     "4",
+     "6",
+     "0",
+     "3"
+    ],
+    "answer": 3,
+    "explain": "2 + 3 = 5, so the missing number is 3."
+   },
+   {
+    "q": "Mia has 0 apples and gets 0 more. How many apples does Mia have now?",
+    "options": [
+     "0",
+     "3",
+     "1",
+     "2"
+    ],
+    "answer": 0,
+    "explain": "0 + 0 = 0. Count them all together to get 0."
+   },
+   {
+    "q": "Ava has 5 crayons and gets 0 more. How many crayons does Ava have now?",
+    "options": [
+     "6",
+     "4",
+     "5",
+     "8"
+    ],
+    "answer": 2,
+    "explain": "5 + 0 = 5. Count them all together to get 5."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Addition to 5",
+    "title": "Addition to 5 - Quest 2",
+    "desc": "Joining groups of 5 or fewer and counting on.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Addition to 5 - Quest 3",
+  "subject": "Kindergarten Math",
+  "module": "kindergarten-math-u4-q3",
+  "description": "Joining groups of 5 or fewer and counting on.",
+  "questions": [
+   {
+    "q": "Noah has 0 crayons and gets 5 more. How many crayons does Noah have now?",
+    "options": [
+     "2",
+     "7",
+     "4",
+     "5"
+    ],
+    "answer": 3,
+    "explain": "0 + 5 = 5. Count them all together to get 5."
+   },
+   {
+    "q": "What is 2 + 1?",
+    "options": [
+     "4",
+     "3",
+     "6",
+     "2"
+    ],
+    "answer": 1,
+    "explain": "2 + 1 = 3. Count them all together to get 3."
+   },
+   {
+    "q": "What number makes this true? 3 + ___ = 4",
+    "options": [
+     "3",
+     "1",
+     "2",
+     "0"
+    ],
+    "answer": 1,
+    "explain": "3 + 1 = 4, so the missing number is 1."
+   },
+   {
+    "q": "Sam has 1 marble and gets 2 more. How many marbles does Sam have now?",
+    "options": [
+     "4",
+     "0",
+     "3",
+     "2"
+    ],
+    "answer": 2,
+    "explain": "1 + 2 = 3. Count them all together to get 3."
+   },
+   {
+    "q": "Noah has 5 marbles and gets 0 more. How many marbles does Noah have now?",
+    "options": [
+     "5",
+     "7",
+     "4",
+     "8"
+    ],
+    "answer": 0,
+    "explain": "5 + 0 = 5. Count them all together to get 5."
+   },
+   {
+    "q": "What number makes this true? 0 + ___ = 4",
+    "options": [
+     "4",
+     "3",
+     "7",
+     "5"
+    ],
+    "answer": 0,
+    "explain": "0 + 4 = 4, so the missing number is 4."
+   },
+   {
+    "q": "Owen has 1 pencil and gets 4 more. How many pencils does Owen have now?",
+    "options": [
+     "2",
+     "6",
+     "4",
+     "5"
+    ],
+    "answer": 3,
+    "explain": "1 + 4 = 5. Count them all together to get 5."
+   },
+   {
+    "q": "Leo has 3 apples and gets 1 more. How many apples does Leo have now?",
+    "options": [
+     "7",
+     "4",
+     "6",
+     "5"
+    ],
+    "answer": 1,
+    "explain": "3 + 1 = 4. Count them all together to get 4."
+   },
+   {
+    "q": "Zoe has 5 blocks and gets 0 more. How many blocks does Zoe have now?",
+    "options": [
+     "5",
+     "7",
+     "3",
+     "8"
+    ],
+    "answer": 0,
+    "explain": "5 + 0 = 5. Count them all together to get 5."
+   },
+   {
+    "q": "Nora has 0 blocks and gets 5 more. How many blocks does Nora have now?",
+    "options": [
+     "8",
+     "2",
+     "5",
+     "3"
+    ],
+    "answer": 2,
+    "explain": "0 + 5 = 5. Count them all together to get 5."
+   },
+   {
+    "q": "What number makes this true? 1 + ___ = 5",
+    "options": [
+     "3",
+     "1",
+     "2",
+     "4"
+    ],
+    "answer": 3,
+    "explain": "1 + 4 = 5, so the missing number is 4."
+   },
+   {
+    "q": "Eli has 3 crayons and gets 2 more. How many crayons does Eli have now?",
+    "options": [
+     "7",
+     "5",
+     "2",
+     "8"
+    ],
+    "answer": 1,
+    "explain": "3 + 2 = 5. Count them all together to get 5."
+   },
+   {
+    "q": "Ruby has 0 stickers and gets 1 more. How many stickers does Ruby have now?",
+    "options": [
+     "3",
+     "4",
+     "1",
+     "0"
+    ],
+    "answer": 2,
+    "explain": "0 + 1 = 1. Count them all together to get 1."
+   },
+   {
+    "q": "Mia has 1 block and gets 0 more. How many blocks does Mia have now?",
+    "options": [
+     "4",
+     "1",
+     "2",
+     "3"
+    ],
+    "answer": 1,
+    "explain": "1 + 0 = 1. Count them all together to get 1."
+   },
+   {
+    "q": "Leo has 1 marble and gets 2 more. How many marbles does Leo have now?",
+    "options": [
+     "1",
+     "5",
+     "3",
+     "4"
+    ],
+    "answer": 2,
+    "explain": "1 + 2 = 3. Count them all together to get 3."
+   },
+   {
+    "q": "What is 0 + 1?",
+    "options": [
+     "1",
+     "4",
+     "3",
+     "2"
+    ],
+    "answer": 0,
+    "explain": "0 + 1 = 1. Count them all together to get 1."
+   },
+   {
+    "q": "Leo has 0 pencils and gets 3 more. How many pencils does Leo have now?",
+    "options": [
+     "4",
+     "2",
+     "3",
+     "6"
+    ],
+    "answer": 2,
+    "explain": "0 + 3 = 3. Count them all together to get 3."
+   },
+   {
+    "q": "Count the marks: #  How many marks are there?",
+    "options": [
+     "1",
+     "0",
+     "2",
+     "3"
+    ],
+    "answer": 0,
+    "explain": "Count each star one by one: there are 1."
+   },
+   {
+    "q": "Nora has 0 buttons and gets 1 more. How many buttons does Nora have now?",
+    "options": [
+     "0",
+     "2",
+     "4",
+     "1"
+    ],
+    "answer": 3,
+    "explain": "0 + 1 = 1. Count them all together to get 1."
+   },
+   {
+    "q": "Ivy has 4 buttons and gets 0 more. How many buttons does Ivy have now?",
+    "options": [
+     "5",
+     "1",
+     "3",
+     "4"
+    ],
+    "answer": 3,
+    "explain": "4 + 0 = 4. Count them all together to get 4."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Addition to 5",
+    "title": "Addition to 5 - Quest 3",
+    "desc": "Joining groups of 5 or fewer and counting on.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Addition to 5 - Quest 4",
+  "subject": "Kindergarten Math",
+  "module": "kindergarten-math-u4-q4",
+  "description": "Joining groups of 5 or fewer and counting on.",
+  "questions": [
+   {
+    "q": "What number makes this true? 5 + ___ = 5",
+    "options": [
+     "2",
+     "1",
+     "3",
+     "0"
+    ],
+    "answer": 3,
+    "explain": "5 + 0 = 5, so the missing number is 0."
+   },
+   {
+    "q": "Noah has 1 marble and gets 2 more. How many marbles does Noah have now?",
+    "options": [
+     "2",
+     "4",
+     "3",
+     "0"
+    ],
+    "answer": 2,
+    "explain": "1 + 2 = 3. Count them all together to get 3."
+   },
+   {
+    "q": "What number makes this true? 4 + ___ = 5",
+    "options": [
+     "3",
+     "1",
+     "2",
+     "4"
+    ],
+    "answer": 1,
+    "explain": "4 + 1 = 5, so the missing number is 1."
+   },
+   {
+    "q": "Noah has 2 stickers and gets 0 more. How many stickers does Noah have now?",
+    "options": [
+     "2",
+     "4",
+     "5",
+     "0"
+    ],
+    "answer": 0,
+    "explain": "2 + 0 = 2. Count them all together to get 2."
+   },
+   {
+    "q": "Nora has 0 cupcakes and gets 1 more. How many cupcakes does Nora have now?",
+    "options": [
+     "1",
+     "0",
+     "4",
+     "3"
+    ],
+    "answer": 0,
+    "explain": "0 + 1 = 1. Count them all together to get 1."
+   },
+   {
+    "q": "Count the circles: o o o o o o  How many circles are there?",
+    "options": [
+     "5",
+     "4",
+     "7",
+     "6"
+    ],
+    "answer": 3,
+    "explain": "Count each star one by one: there are 6."
+   },
+   {
+    "q": "Sam has 0 blocks and gets 4 more. How many blocks does Sam have now?",
+    "options": [
+     "7",
+     "4",
+     "6",
+     "2"
+    ],
+    "answer": 1,
+    "explain": "0 + 4 = 4. Count them all together to get 4."
+   },
+   {
+    "q": "Eli has 1 button and gets 3 more. How many buttons does Eli have now?",
+    "options": [
+     "1",
+     "7",
+     "3",
+     "4"
+    ],
+    "answer": 3,
+    "explain": "1 + 3 = 4. Count them all together to get 4."
+   },
+   {
+    "q": "What number makes this true? 1 + ___ = 3",
+    "options": [
+     "5",
+     "4",
+     "3",
+     "2"
+    ],
+    "answer": 3,
+    "explain": "1 + 2 = 3, so the missing number is 2."
+   },
+   {
+    "q": "What is 2 + 0?",
+    "options": [
+     "2",
+     "5",
+     "4",
+     "3"
+    ],
+    "answer": 0,
+    "explain": "2 + 0 = 2. Count them all together to get 2."
+   },
+   {
+    "q": "What number makes this true? 2 + ___ = 2",
+    "options": [
+     "0",
+     "2",
+     "3",
+     "1"
+    ],
+    "answer": 0,
+    "explain": "2 + 0 = 2, so the missing number is 0."
+   },
+   {
+    "q": "Owen has 0 stickers and gets 5 more. How many stickers does Owen have now?",
+    "options": [
+     "3",
+     "4",
+     "5",
+     "2"
+    ],
+    "answer": 2,
+    "explain": "0 + 5 = 5. Count them all together to get 5."
+   },
+   {
+    "q": "What is 0 + 2?",
+    "options": [
+     "4",
+     "3",
+     "2",
+     "1"
+    ],
+    "answer": 2,
+    "explain": "0 + 2 = 2. Count them all together to get 2."
+   },
+   {
+    "q": "Noah has 1 apple and gets 1 more. How many apples does Noah have now?",
+    "options": [
+     "1",
+     "4",
+     "0",
+     "2"
+    ],
+    "answer": 3,
+    "explain": "1 + 1 = 2. Count them all together to get 2."
+   },
+   {
+    "q": "Nora has 0 buttons and gets 0 more. How many buttons does Nora have now?",
+    "options": [
+     "3",
+     "2",
+     "0",
+     "1"
+    ],
+    "answer": 2,
+    "explain": "0 + 0 = 0. Count them all together to get 0."
+   },
+   {
+    "q": "Count the pluses: + + + + + + +  How many pluses are there?",
+    "options": [
+     "9",
+     "7",
+     "5",
+     "4"
+    ],
+    "answer": 1,
+    "explain": "Count each star one by one: there are 7."
+   },
+   {
+    "q": "Leo has 4 stickers and gets 0 more. How many stickers does Leo have now?",
+    "options": [
+     "1",
+     "2",
+     "4",
+     "3"
+    ],
+    "answer": 2,
+    "explain": "4 + 0 = 4. Count them all together to get 4."
+   },
+   {
+    "q": "Count the stars: * * *  How many stars are there?",
+    "options": [
+     "2",
+     "3",
+     "0",
+     "13"
+    ],
+    "answer": 1,
+    "explain": "Count each star one by one: there are 3."
+   },
+   {
+    "q": "Ivy has 2 stickers and gets 0 more. How many stickers does Ivy have now?",
+    "options": [
+     "3",
+     "2",
+     "5",
+     "4"
+    ],
+    "answer": 1,
+    "explain": "2 + 0 = 2. Count them all together to get 2."
+   },
+   {
+    "q": "Liam has 1 button and gets 3 more. How many buttons does Liam have now?",
+    "options": [
+     "4",
+     "5",
+     "2",
+     "7"
+    ],
+    "answer": 0,
+    "explain": "1 + 3 = 4. Count them all together to get 4."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Addition to 5",
+    "title": "Addition to 5 - Quest 4",
+    "desc": "Joining groups of 5 or fewer and counting on.",
+    "count": 20,
+    "boss": true
+   }
+  ]
+ },
+ {
+  "title": "Addition to 10 - Quest 1",
+  "subject": "Kindergarten Math",
+  "module": "kindergarten-math-u5-q1",
+  "description": "Adding within 10, doubles, and missing numbers.",
+  "questions": [
+   {
+    "q": "Leo has 1 sticker and gets 2 more. How many stickers does Leo have now?",
+    "options": [
+     "5",
+     "2",
+     "3",
+     "6"
+    ],
+    "answer": 2,
+    "explain": "1 + 2 = 3. Count them all together to get 3."
+   },
+   {
+    "q": "What is 1 + 7?",
+    "options": [
+     "7",
+     "10",
+     "8",
+     "6"
+    ],
+    "answer": 2,
+    "explain": "1 + 7 = 8. Count them all together to get 8."
+   },
+   {
+    "q": "What number comes right after 17?",
+    "options": [
+     "19",
+     "16",
+     "18",
+     "8"
+    ],
+    "answer": 2,
+    "explain": "Counting in order, the number after 17 is 18."
+   },
+   {
+    "q": "What is 10 + 0?",
+    "options": [
+     "7",
+     "0",
+     "10",
+     "9"
+    ],
+    "answer": 2,
+    "explain": "10 + 0 = 10. Count them all together to get 10."
+   },
+   {
+    "q": "Count up: what comes after 19?",
+    "options": [
+     "20",
+     "17",
+     "22",
+     "18"
+    ],
+    "answer": 0,
+    "explain": "Counting in order, the number after 19 is 20."
+   },
+   {
+    "q": "Owen has 1 button and gets 2 more. How many buttons does Owen have now?",
+    "options": [
+     "1",
+     "4",
+     "6",
+     "3"
+    ],
+    "answer": 3,
+    "explain": "1 + 2 = 3. Count them all together to get 3."
+   },
+   {
+    "q": "Count up: what comes after 10?",
+    "options": [
+     "10",
+     "11",
+     "8",
+     "1"
+    ],
+    "answer": 1,
+    "explain": "Counting in order, the number after 10 is 11."
+   },
+   {
+    "q": "What is 6 + 4?",
+    "options": [
+     "13",
+     "10",
+     "8",
+     "7"
+    ],
+    "answer": 1,
+    "explain": "6 + 4 = 10. Count them all together to get 10."
+   },
+   {
+    "q": "What is 9 + 0?",
+    "options": [
+     "11",
+     "10",
+     "9",
+     "6"
+    ],
+    "answer": 2,
+    "explain": "9 + 0 = 9. Count them all together to get 9."
+   },
+   {
+    "q": "What is 8 + 0?",
+    "options": [
+     "11",
+     "8",
+     "7",
+     "9"
+    ],
+    "answer": 1,
+    "explain": "8 + 0 = 8. Count them all together to get 8."
+   },
+   {
+    "q": "What number makes this true? 2 + ___ = 6",
+    "options": [
+     "4",
+     "2",
+     "6",
+     "3"
+    ],
+    "answer": 0,
+    "explain": "2 + 4 = 6, so the missing number is 4."
+   },
+   {
+    "q": "Eli has 5 seashells and gets 3 more. How many seashells does Eli have now?",
+    "options": [
+     "11",
+     "7",
+     "9",
+     "8"
+    ],
+    "answer": 3,
+    "explain": "5 + 3 = 8. Count them all together to get 8."
+   },
+   {
+    "q": "What number comes right after 11?",
+    "options": [
+     "10",
+     "9",
+     "2",
+     "12"
+    ],
+    "answer": 3,
+    "explain": "Counting in order, the number after 11 is 12."
+   },
+   {
+    "q": "What is 8 + 1?",
+    "options": [
+     "10",
+     "9",
+     "11",
+     "8"
+    ],
+    "answer": 1,
+    "explain": "8 + 1 = 9. Count them all together to get 9."
+   },
+   {
+    "q": "Liam has 0 stickers and gets 3 more. How many stickers does Liam have now?",
+    "options": [
+     "3",
+     "4",
+     "1",
+     "2"
+    ],
+    "answer": 0,
+    "explain": "0 + 3 = 3. Count them all together to get 3."
+   },
+   {
+    "q": "Ruby has 5 marbles and gets 1 more. How many marbles does Ruby have now?",
+    "options": [
+     "4",
+     "8",
+     "3",
+     "6"
+    ],
+    "answer": 3,
+    "explain": "5 + 1 = 6. Count them all together to get 6."
+   },
+   {
+    "q": "What number makes this true? 4 + ___ = 7",
+    "options": [
+     "3",
+     "5",
+     "4",
+     "0"
+    ],
+    "answer": 0,
+    "explain": "4 + 3 = 7, so the missing number is 3."
+   },
+   {
+    "q": "What is 1 + 8?",
+    "options": [
+     "9",
+     "11",
+     "7",
+     "8"
+    ],
+    "answer": 0,
+    "explain": "1 + 8 = 9. Count them all together to get 9."
+   },
+   {
+    "q": "What is 1 + 5?",
+    "options": [
+     "8",
+     "3",
+     "5",
+     "6"
+    ],
+    "answer": 3,
+    "explain": "1 + 5 = 6. Count them all together to get 6."
+   },
+   {
+    "q": "Which number comes just after 0?",
+    "options": [
+     "3",
+     "1",
+     "11",
+     "4"
+    ],
+    "answer": 1,
+    "explain": "Counting in order, the number after 0 is 1."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Addition to 10",
+    "title": "Addition to 10 - Quest 1",
+    "desc": "Adding within 10, doubles, and missing numbers.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Addition to 10 - Quest 2",
+  "subject": "Kindergarten Math",
+  "module": "kindergarten-math-u5-q2",
+  "description": "Adding within 10, doubles, and missing numbers.",
+  "questions": [
+   {
+    "q": "What is 7 + 2?",
+    "options": [
+     "7",
+     "9",
+     "8",
+     "12"
+    ],
+    "answer": 1,
+    "explain": "7 + 2 = 9. Count them all together to get 9."
+   },
+   {
+    "q": "Count up: what comes after 11?",
+    "options": [
+     "13",
+     "14",
+     "12",
+     "15"
+    ],
+    "answer": 2,
+    "explain": "Counting in order, the number after 11 is 12."
+   },
+   {
+    "q": "Liam has 0 cupcakes and gets 2 more. How many cupcakes does Liam have now?",
+    "options": [
+     "2",
+     "3",
+     "0",
+     "4"
+    ],
+    "answer": 0,
+    "explain": "0 + 2 = 2. Count them all together to get 2."
+   },
+   {
+    "q": "What number comes right after 16?",
+    "options": [
+     "20",
+     "15",
+     "19",
+     "17"
+    ],
+    "answer": 3,
+    "explain": "Counting in order, the number after 16 is 17."
+   },
+   {
+    "q": "What is 8 + 2?",
+    "options": [
+     "10",
+     "12",
+     "11",
+     "9"
+    ],
+    "answer": 0,
+    "explain": "8 + 2 = 10. Count them all together to get 10."
+   },
+   {
+    "q": "Ruby has 9 cupcakes and gets 1 more. How many cupcakes does Ruby have now?",
+    "options": [
+     "10",
+     "12",
+     "11",
+     "9"
+    ],
+    "answer": 0,
+    "explain": "9 + 1 = 10. Count them all together to get 10."
+   },
+   {
+    "q": "Ruby has 6 cookies and gets 2 more. How many cookies does Ruby have now?",
+    "options": [
+     "9",
+     "8",
+     "11",
+     "5"
+    ],
+    "answer": 1,
+    "explain": "6 + 2 = 8. Count them all together to get 8."
+   },
+   {
+    "q": "What number makes this true? 1 + ___ = 8",
+    "options": [
+     "10",
+     "5",
+     "8",
+     "7"
+    ],
+    "answer": 3,
+    "explain": "1 + 7 = 8, so the missing number is 7."
+   },
+   {
+    "q": "Nora has 8 cupcakes and gets 1 more. How many cupcakes does Nora have now?",
+    "options": [
+     "8",
+     "11",
+     "9",
+     "7"
+    ],
+    "answer": 2,
+    "explain": "8 + 1 = 9. Count them all together to get 9."
+   },
+   {
+    "q": "Count up: what comes after 0?",
+    "options": [
+     "0",
+     "1",
+     "11",
+     "2"
+    ],
+    "answer": 1,
+    "explain": "Counting in order, the number after 0 is 1."
+   },
+   {
+    "q": "What is 7 + 1?",
+    "options": [
+     "10",
+     "9",
+     "8",
+     "11"
+    ],
+    "answer": 2,
+    "explain": "7 + 1 = 8. Count them all together to get 8."
+   },
+   {
+    "q": "Count up: what comes after 18?",
+    "options": [
+     "18",
+     "9",
+     "19",
+     "22"
+    ],
+    "answer": 2,
+    "explain": "Counting in order, the number after 18 is 19."
+   },
+   {
+    "q": "Nora has 5 apples and gets 0 more. How many apples does Nora have now?",
+    "options": [
+     "8",
+     "3",
+     "2",
+     "5"
+    ],
+    "answer": 3,
+    "explain": "5 + 0 = 5. Count them all together to get 5."
+   },
+   {
+    "q": "What is 0 + 0?",
+    "options": [
+     "10",
+     "0",
+     "3",
+     "1"
+    ],
+    "answer": 1,
+    "explain": "0 + 0 = 0. Count them all together to get 0."
+   },
+   {
+    "q": "What is 2 + 4?",
+    "options": [
+     "4",
+     "6",
+     "7",
+     "3"
+    ],
+    "answer": 1,
+    "explain": "2 + 4 = 6. Count them all together to get 6."
+   },
+   {
+    "q": "What number makes this true? 3 + ___ = 7",
+    "options": [
+     "7",
+     "6",
+     "3",
+     "4"
+    ],
+    "answer": 3,
+    "explain": "3 + 4 = 7, so the missing number is 4."
+   },
+   {
+    "q": "What is 7 + 3?",
+    "options": [
+     "13",
+     "7",
+     "11",
+     "10"
+    ],
+    "answer": 3,
+    "explain": "7 + 3 = 10. Count them all together to get 10."
+   },
+   {
+    "q": "Mia has 9 crayons and gets 1 more. How many crayons does Mia have now?",
+    "options": [
+     "10",
+     "9",
+     "7",
+     "11"
+    ],
+    "answer": 0,
+    "explain": "9 + 1 = 10. Count them all together to get 10."
+   },
+   {
+    "q": "Which number comes just after 15?",
+    "options": [
+     "19",
+     "17",
+     "16",
+     "13"
+    ],
+    "answer": 2,
+    "explain": "Counting in order, the number after 15 is 16."
+   },
+   {
+    "q": "Liam has 3 blocks and gets 7 more. How many blocks does Liam have now?",
+    "options": [
+     "10",
+     "0",
+     "11",
+     "13"
+    ],
+    "answer": 0,
+    "explain": "3 + 7 = 10. Count them all together to get 10."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Addition to 10",
+    "title": "Addition to 10 - Quest 2",
+    "desc": "Adding within 10, doubles, and missing numbers.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Addition to 10 - Quest 3",
+  "subject": "Kindergarten Math",
+  "module": "kindergarten-math-u5-q3",
+  "description": "Adding within 10, doubles, and missing numbers.",
+  "questions": [
+   {
+    "q": "What is 6 + 2?",
+    "options": [
+     "8",
+     "11",
+     "7",
+     "6"
+    ],
+    "answer": 0,
+    "explain": "6 + 2 = 8. Count them all together to get 8."
+   },
+   {
+    "q": "Owen has 9 blocks and gets 0 more. How many blocks does Owen have now?",
+    "options": [
+     "9",
+     "10",
+     "12",
+     "11"
+    ],
+    "answer": 0,
+    "explain": "9 + 0 = 9. Count them all together to get 9."
+   },
+   {
+    "q": "What is 4 + 5?",
+    "options": [
+     "6",
+     "10",
+     "11",
+     "9"
+    ],
+    "answer": 3,
+    "explain": "4 + 5 = 9. Count them all together to get 9."
+   },
+   {
+    "q": "What number makes this true? 8 + ___ = 10",
+    "options": [
+     "4",
+     "0",
+     "2",
+     "12"
+    ],
+    "answer": 2,
+    "explain": "8 + 2 = 10, so the missing number is 2."
+   },
+   {
+    "q": "What is 2 + 6?",
+    "options": [
+     "6",
+     "8",
+     "5",
+     "7"
+    ],
+    "answer": 1,
+    "explain": "2 + 6 = 8. Count them all together to get 8."
+   },
+   {
+    "q": "Mia has 5 pencils and gets 0 more. How many pencils does Mia have now?",
+    "options": [
+     "3",
+     "8",
+     "5",
+     "7"
+    ],
+    "answer": 2,
+    "explain": "5 + 0 = 5. Count them all together to get 5."
+   },
+   {
+    "q": "What number makes this true? 0 + ___ = 7",
+    "options": [
+     "7",
+     "6",
+     "5",
+     "9"
+    ],
+    "answer": 0,
+    "explain": "0 + 7 = 7, so the missing number is 7."
+   },
+   {
+    "q": "Nora has 1 button and gets 3 more. How many buttons does Nora have now?",
+    "options": [
+     "14",
+     "1",
+     "3",
+     "4"
+    ],
+    "answer": 3,
+    "explain": "1 + 3 = 4. Count them all together to get 4."
+   },
+   {
+    "q": "Eli has 4 stickers and gets 5 more. How many stickers does Eli have now?",
+    "options": [
+     "6",
+     "8",
+     "7",
+     "9"
+    ],
+    "answer": 3,
+    "explain": "4 + 5 = 9. Count them all together to get 9."
+   },
+   {
+    "q": "Eli has 1 cookie and gets 2 more. How many cookies does Eli have now?",
+    "options": [
+     "13",
+     "3",
+     "6",
+     "2"
+    ],
+    "answer": 1,
+    "explain": "1 + 2 = 3. Count them all together to get 3."
+   },
+   {
+    "q": "What is 0 + 4?",
+    "options": [
+     "5",
+     "2",
+     "4",
+     "3"
+    ],
+    "answer": 2,
+    "explain": "0 + 4 = 4. Count them all together to get 4."
+   },
+   {
+    "q": "Count up: what comes after 14?",
+    "options": [
+     "5",
+     "13",
+     "15",
+     "12"
+    ],
+    "answer": 2,
+    "explain": "Counting in order, the number after 14 is 15."
+   },
+   {
+    "q": "What is 5 + 2?",
+    "options": [
+     "5",
+     "8",
+     "9",
+     "7"
+    ],
+    "answer": 3,
+    "explain": "5 + 2 = 7. Count them all together to get 7."
+   },
+   {
+    "q": "Which number comes just after 18?",
+    "options": [
+     "21",
+     "19",
+     "9",
+     "17"
+    ],
+    "answer": 1,
+    "explain": "Counting in order, the number after 18 is 19."
+   },
+   {
+    "q": "What is 9 + 1?",
+    "options": [
+     "11",
+     "10",
+     "8",
+     "12"
+    ],
+    "answer": 1,
+    "explain": "9 + 1 = 10. Count them all together to get 10."
+   },
+   {
+    "q": "Which number comes just after 12?",
+    "options": [
+     "13",
+     "3",
+     "15",
+     "10"
+    ],
+    "answer": 0,
+    "explain": "Counting in order, the number after 12 is 13."
+   },
+   {
+    "q": "Eli has 1 cookie and gets 5 more. How many cookies does Eli have now?",
+    "options": [
+     "7",
+     "4",
+     "6",
+     "5"
+    ],
+    "answer": 2,
+    "explain": "1 + 5 = 6. Count them all together to get 6."
+   },
+   {
+    "q": "What number makes this true? 5 + ___ = 8",
+    "options": [
+     "3",
+     "5",
+     "13",
+     "4"
+    ],
+    "answer": 0,
+    "explain": "5 + 3 = 8, so the missing number is 3."
+   },
+   {
+    "q": "Eli has 4 cookies and gets 0 more. How many cookies does Eli have now?",
+    "options": [
+     "1",
+     "4",
+     "3",
+     "2"
+    ],
+    "answer": 1,
+    "explain": "4 + 0 = 4. Count them all together to get 4."
+   },
+   {
+    "q": "Ivy has 6 apples and gets 0 more. How many apples does Ivy have now?",
+    "options": [
+     "3",
+     "9",
+     "7",
+     "6"
+    ],
+    "answer": 3,
+    "explain": "6 + 0 = 6. Count them all together to get 6."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Addition to 10",
+    "title": "Addition to 10 - Quest 3",
+    "desc": "Adding within 10, doubles, and missing numbers.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Addition to 10 - Quest 4",
+  "subject": "Kindergarten Math",
+  "module": "kindergarten-math-u5-q4",
+  "description": "Adding within 10, doubles, and missing numbers.",
+  "questions": [
+   {
+    "q": "What is 1 + 9?",
+    "options": [
+     "9",
+     "0",
+     "12",
+     "10"
+    ],
+    "answer": 3,
+    "explain": "1 + 9 = 10. Count them all together to get 10."
+   },
+   {
+    "q": "Liam has 10 blocks and gets 0 more. How many blocks does Liam have now?",
+    "options": [
+     "11",
+     "12",
+     "10",
+     "9"
+    ],
+    "answer": 2,
+    "explain": "10 + 0 = 10. Count them all together to get 10."
+   },
+   {
+    "q": "What number makes this true? 8 + ___ = 9",
+    "options": [
+     "1",
+     "2",
+     "0",
+     "11"
+    ],
+    "answer": 0,
+    "explain": "8 + 1 = 9, so the missing number is 1."
+   },
+   {
+    "q": "Liam has 4 blocks and gets 2 more. How many blocks does Liam have now?",
+    "options": [
+     "7",
+     "6",
+     "5",
+     "4"
+    ],
+    "answer": 1,
+    "explain": "4 + 2 = 6. Count them all together to get 6."
+   },
+   {
+    "q": "Liam has 4 cookies and gets 6 more. How many cookies does Liam have now?",
+    "options": [
+     "8",
+     "7",
+     "10",
+     "13"
+    ],
+    "answer": 2,
+    "explain": "4 + 6 = 10. Count them all together to get 10."
+   },
+   {
+    "q": "Noah has 5 blocks and gets 5 more. How many blocks does Noah have now?",
+    "options": [
+     "7",
+     "12",
+     "10",
+     "8"
+    ],
+    "answer": 2,
+    "explain": "5 + 5 = 10. Count them all together to get 10."
+   },
+   {
+    "q": "Zoe has 4 blocks and gets 0 more. How many blocks does Zoe have now?",
+    "options": [
+     "4",
+     "14",
+     "3",
+     "2"
+    ],
+    "answer": 0,
+    "explain": "4 + 0 = 4. Count them all together to get 4."
+   },
+   {
+    "q": "What number makes this true? 4 + ___ = 6",
+    "options": [
+     "1",
+     "2",
+     "5",
+     "12"
+    ],
+    "answer": 1,
+    "explain": "4 + 2 = 6, so the missing number is 2."
+   },
+   {
+    "q": "Liam has 2 marbles and gets 0 more. How many marbles does Liam have now?",
+    "options": [
+     "4",
+     "1",
+     "12",
+     "2"
+    ],
+    "answer": 3,
+    "explain": "2 + 0 = 2. Count them all together to get 2."
+   },
+   {
+    "q": "What number makes this true? 6 + ___ = 6",
+    "options": [
+     "10",
+     "1",
+     "0",
+     "2"
+    ],
+    "answer": 2,
+    "explain": "6 + 0 = 6, so the missing number is 0."
+   },
+   {
+    "q": "Leo has 3 blocks and gets 5 more. How many blocks does Leo have now?",
+    "options": [
+     "6",
+     "8",
+     "5",
+     "11"
+    ],
+    "answer": 1,
+    "explain": "3 + 5 = 8. Count them all together to get 8."
+   },
+   {
+    "q": "What number makes this true? 4 + ___ = 9",
+    "options": [
+     "3",
+     "7",
+     "6",
+     "5"
+    ],
+    "answer": 3,
+    "explain": "4 + 5 = 9, so the missing number is 5."
+   },
+   {
+    "q": "What is 3 + 7?",
+    "options": [
+     "8",
+     "11",
+     "12",
+     "10"
+    ],
+    "answer": 3,
+    "explain": "3 + 7 = 10. Count them all together to get 10."
+   },
+   {
+    "q": "What number makes this true? 1 + ___ = 6",
+    "options": [
+     "5",
+     "3",
+     "8",
+     "6"
+    ],
+    "answer": 0,
+    "explain": "1 + 5 = 6, so the missing number is 5."
+   },
+   {
+    "q": "Count up: what comes after 13?",
+    "options": [
+     "4",
+     "14",
+     "16",
+     "15"
+    ],
+    "answer": 1,
+    "explain": "Counting in order, the number after 13 is 14."
+   },
+   {
+    "q": "Zoe has 3 pencils and gets 6 more. How many pencils does Zoe have now?",
+    "options": [
+     "9",
+     "8",
+     "6",
+     "11"
+    ],
+    "answer": 0,
+    "explain": "3 + 6 = 9. Count them all together to get 9."
+   },
+   {
+    "q": "Mia has 0 buttons and gets 6 more. How many buttons does Mia have now?",
+    "options": [
+     "9",
+     "6",
+     "7",
+     "8"
+    ],
+    "answer": 1,
+    "explain": "0 + 6 = 6. Count them all together to get 6."
+   },
+   {
+    "q": "Which number comes just after 8?",
+    "options": [
+     "8",
+     "7",
+     "19",
+     "9"
+    ],
+    "answer": 3,
+    "explain": "Counting in order, the number after 8 is 9."
+   },
+   {
+    "q": "Sam has 9 stickers and gets 1 more. How many stickers does Sam have now?",
+    "options": [
+     "13",
+     "9",
+     "10",
+     "12"
+    ],
+    "answer": 2,
+    "explain": "9 + 1 = 10. Count them all together to get 10."
+   },
+   {
+    "q": "Leo has 1 marble and gets 6 more. How many marbles does Leo have now?",
+    "options": [
+     "7",
+     "9",
+     "5",
+     "4"
+    ],
+    "answer": 0,
+    "explain": "1 + 6 = 7. Count them all together to get 7."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Addition to 10",
+    "title": "Addition to 10 - Quest 4",
+    "desc": "Adding within 10, doubles, and missing numbers.",
+    "count": 20,
+    "boss": true
+   }
+  ]
+ },
+ {
+  "title": "Subtraction within 10 - Quest 1",
+  "subject": "Kindergarten Math",
+  "module": "kindergarten-math-u6-q1",
+  "description": "Taking away within 10 and simple story problems.",
+  "questions": [
+   {
+    "q": "What is 3 - 3?",
+    "options": [
+     "2",
+     "1",
+     "10",
+     "0"
+    ],
+    "answer": 3,
+    "explain": "3 - 3 = 0. Take 3 away from 3 and 0 are left."
+   },
+   {
+    "q": "What number makes this true? 2 + ___ = 10",
+    "options": [
+     "5",
+     "8",
+     "9",
+     "7"
+    ],
+    "answer": 1,
+    "explain": "2 + 8 = 10, so the missing number is 8."
+   },
+   {
+    "q": "What is 7 - 7?",
+    "options": [
+     "2",
+     "10",
+     "0",
+     "3"
+    ],
+    "answer": 2,
+    "explain": "7 - 7 = 0. Take 7 away from 7 and 0 are left."
+   },
+   {
+    "q": "Nora has 2 cupcakes and gives away 2. How many cupcakes are left?",
+    "options": [
+     "3",
+     "2",
+     "0",
+     "1"
+    ],
+    "answer": 2,
+    "explain": "2 - 2 = 0. Take 2 away from 2 and 0 are left."
+   },
+   {
+    "q": "Noah has 3 cupcakes and gives away 1. How many cupcakes are left?",
+    "options": [
+     "3",
+     "2",
+     "0",
+     "1"
+    ],
+    "answer": 1,
+    "explain": "3 - 1 = 2. Take 1 away from 3 and 2 are left."
+   },
+   {
+    "q": "What is 1 - 1?",
+    "options": [
+     "0",
+     "3",
+     "2",
+     "1"
+    ],
+    "answer": 0,
+    "explain": "1 - 1 = 0. Take 1 away from 1 and 0 are left."
+   },
+   {
+    "q": "Zoe has 10 cookies and gives away 6. How many cookies are left?",
+    "options": [
+     "6",
+     "4",
+     "3",
+     "2"
+    ],
+    "answer": 1,
+    "explain": "10 - 6 = 4. Take 6 away from 10 and 4 are left."
+   },
+   {
+    "q": "What is 5 - 2?",
+    "options": [
+     "3",
+     "0",
+     "6",
+     "5"
+    ],
+    "answer": 0,
+    "explain": "5 - 2 = 3. Take 2 away from 5 and 3 are left."
+   },
+   {
+    "q": "What is 9 - 4?",
+    "options": [
+     "2",
+     "5",
+     "4",
+     "8"
+    ],
+    "answer": 1,
+    "explain": "9 - 4 = 5. Take 4 away from 9 and 5 are left."
+   },
+   {
+    "q": "What is 5 - 3?",
+    "options": [
+     "4",
+     "0",
+     "5",
+     "2"
+    ],
+    "answer": 3,
+    "explain": "5 - 3 = 2. Take 3 away from 5 and 2 are left."
+   },
+   {
+    "q": "Count the circles: o o o o  How many circles are there?",
+    "options": [
+     "7",
+     "6",
+     "4",
+     "3"
+    ],
+    "answer": 2,
+    "explain": "Count each star one by one: there are 4."
+   },
+   {
+    "q": "Ava has 1 apple and gives away 1. How many apples are left?",
+    "options": [
+     "10",
+     "3",
+     "0",
+     "2"
+    ],
+    "answer": 2,
+    "explain": "1 - 1 = 0. Take 1 away from 1 and 0 are left."
+   },
+   {
+    "q": "What number makes this true? 2 + ___ = 8",
+    "options": [
+     "8",
+     "4",
+     "7",
+     "6"
+    ],
+    "answer": 3,
+    "explain": "2 + 6 = 8, so the missing number is 6."
+   },
+   {
+    "q": "What is 5 - 1?",
+    "options": [
+     "7",
+     "5",
+     "2",
+     "4"
+    ],
+    "answer": 3,
+    "explain": "5 - 1 = 4. Take 1 away from 5 and 4 are left."
+   },
+   {
+    "q": "Zoe has 5 marbles and gives away 3. How many marbles are left?",
+    "options": [
+     "5",
+     "2",
+     "1",
+     "4"
+    ],
+    "answer": 1,
+    "explain": "5 - 3 = 2. Take 3 away from 5 and 2 are left."
+   },
+   {
+    "q": "Count the marks: # # # # # #  How many marks are there?",
+    "options": [
+     "8",
+     "4",
+     "6",
+     "5"
+    ],
+    "answer": 2,
+    "explain": "Count each star one by one: there are 6."
+   },
+   {
+    "q": "Leo has 4 cupcakes and gives away 4. How many cupcakes are left?",
+    "options": [
+     "10",
+     "3",
+     "2",
+     "0"
+    ],
+    "answer": 3,
+    "explain": "4 - 4 = 0. Take 4 away from 4 and 0 are left."
+   },
+   {
+    "q": "What is 2 - 2?",
+    "options": [
+     "0",
+     "10",
+     "2",
+     "3"
+    ],
+    "answer": 0,
+    "explain": "2 - 2 = 0. Take 2 away from 2 and 0 are left."
+   },
+   {
+    "q": "What is 4 - 1?",
+    "options": [
+     "3",
+     "0",
+     "1",
+     "2"
+    ],
+    "answer": 0,
+    "explain": "4 - 1 = 3. Take 1 away from 4 and 3 are left."
+   },
+   {
+    "q": "Liam has 4 seashells and gives away 3. How many seashells are left?",
+    "options": [
+     "1",
+     "0",
+     "11",
+     "2"
+    ],
+    "answer": 0,
+    "explain": "4 - 3 = 1. Take 3 away from 4 and 1 are left."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Subtraction within 10",
+    "title": "Subtraction within 10 - Quest 1",
+    "desc": "Taking away within 10 and simple story problems.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Subtraction within 10 - Quest 2",
+  "subject": "Kindergarten Math",
+  "module": "kindergarten-math-u6-q2",
+  "description": "Taking away within 10 and simple story problems.",
+  "questions": [
+   {
+    "q": "What is 7 - 6?",
+    "options": [
+     "11",
+     "1",
+     "2",
+     "0"
+    ],
+    "answer": 1,
+    "explain": "7 - 6 = 1. Take 6 away from 7 and 1 are left."
+   },
+   {
+    "q": "What is 9 - 7?",
+    "options": [
+     "12",
+     "0",
+     "2",
+     "4"
+    ],
+    "answer": 2,
+    "explain": "9 - 7 = 2. Take 7 away from 9 and 2 are left."
+   },
+   {
+    "q": "Eli has 4 crayons and gives away 1. How many crayons are left?",
+    "options": [
+     "5",
+     "0",
+     "3",
+     "4"
+    ],
+    "answer": 2,
+    "explain": "4 - 1 = 3. Take 1 away from 4 and 3 are left."
+   },
+   {
+    "q": "Sam has 7 buttons and gives away 0. How many buttons are left?",
+    "options": [
+     "4",
+     "8",
+     "6",
+     "7"
+    ],
+    "answer": 3,
+    "explain": "7 - 0 = 7. Take 0 away from 7 and 7 are left."
+   },
+   {
+    "q": "What is 4 - 4?",
+    "options": [
+     "1",
+     "2",
+     "3",
+     "0"
+    ],
+    "answer": 3,
+    "explain": "4 - 4 = 0. Take 4 away from 4 and 0 are left."
+   },
+   {
+    "q": "Liam has 4 blocks and gives away 0. How many blocks are left?",
+    "options": [
+     "2",
+     "4",
+     "5",
+     "3"
+    ],
+    "answer": 1,
+    "explain": "4 - 0 = 4. Take 0 away from 4 and 4 are left."
+   },
+   {
+    "q": "Noah has 5 marbles and gives away 0. How many marbles are left?",
+    "options": [
+     "5",
+     "7",
+     "3",
+     "4"
+    ],
+    "answer": 0,
+    "explain": "5 - 0 = 5. Take 0 away from 5 and 5 are left."
+   },
+   {
+    "q": "Noah has 4 blocks and gives away 3. How many blocks are left?",
+    "options": [
+     "0",
+     "3",
+     "1",
+     "4"
+    ],
+    "answer": 2,
+    "explain": "4 - 3 = 1. Take 3 away from 4 and 1 are left."
+   },
+   {
+    "q": "Sam has 3 buttons and gives away 2. How many buttons are left?",
+    "options": [
+     "1",
+     "2",
+     "11",
+     "0"
+    ],
+    "answer": 0,
+    "explain": "3 - 2 = 1. Take 2 away from 3 and 1 are left."
+   },
+   {
+    "q": "What is 1 - 0?",
+    "options": [
+     "0",
+     "4",
+     "2",
+     "1"
+    ],
+    "answer": 3,
+    "explain": "1 - 0 = 1. Take 0 away from 1 and 1 are left."
+   },
+   {
+    "q": "Count the stars: * * * * * * * *  How many stars are there?",
+    "options": [
+     "9",
+     "11",
+     "6",
+     "8"
+    ],
+    "answer": 3,
+    "explain": "Count each star one by one: there are 8."
+   },
+   {
+    "q": "What number makes this true? 0 + ___ = 6",
+    "options": [
+     "5",
+     "3",
+     "6",
+     "7"
+    ],
+    "answer": 2,
+    "explain": "0 + 6 = 6, so the missing number is 6."
+   },
+   {
+    "q": "What is 10 - 10?",
+    "options": [
+     "2",
+     "0",
+     "3",
+     "10"
+    ],
+    "answer": 1,
+    "explain": "10 - 10 = 0. Take 10 away from 10 and 0 are left."
+   },
+   {
+    "q": "Noah has 5 buttons and gives away 2. How many buttons are left?",
+    "options": [
+     "3",
+     "5",
+     "6",
+     "0"
+    ],
+    "answer": 0,
+    "explain": "5 - 2 = 3. Take 2 away from 5 and 3 are left."
+   },
+   {
+    "q": "What is 2 - 1?",
+    "options": [
+     "4",
+     "1",
+     "0",
+     "11"
+    ],
+    "answer": 1,
+    "explain": "2 - 1 = 1. Take 1 away from 2 and 1 are left."
+   },
+   {
+    "q": "What number makes this true? 4 + ___ = 10",
+    "options": [
+     "6",
+     "8",
+     "3",
+     "9"
+    ],
+    "answer": 0,
+    "explain": "4 + 6 = 10, so the missing number is 6."
+   },
+   {
+    "q": "Noah has 6 marbles and gives away 6. How many marbles are left?",
+    "options": [
+     "2",
+     "0",
+     "1",
+     "10"
+    ],
+    "answer": 1,
+    "explain": "6 - 6 = 0. Take 6 away from 6 and 0 are left."
+   },
+   {
+    "q": "Sam has 3 marbles and gives away 3. How many marbles are left?",
+    "options": [
+     "3",
+     "1",
+     "2",
+     "0"
+    ],
+    "answer": 3,
+    "explain": "3 - 3 = 0. Take 3 away from 3 and 0 are left."
+   },
+   {
+    "q": "What is 6 - 5?",
+    "options": [
+     "0",
+     "11",
+     "1",
+     "2"
+    ],
+    "answer": 2,
+    "explain": "6 - 5 = 1. Take 5 away from 6 and 1 are left."
+   },
+   {
+    "q": "Ruby has 3 cupcakes and gives away 2. How many cupcakes are left?",
+    "options": [
+     "1",
+     "0",
+     "2",
+     "3"
+    ],
+    "answer": 0,
+    "explain": "3 - 2 = 1. Take 2 away from 3 and 1 are left."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Subtraction within 10",
+    "title": "Subtraction within 10 - Quest 2",
+    "desc": "Taking away within 10 and simple story problems.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Subtraction within 10 - Quest 3",
+  "subject": "Kindergarten Math",
+  "module": "kindergarten-math-u6-q3",
+  "description": "Taking away within 10 and simple story problems.",
+  "questions": [
+   {
+    "q": "What is 8 - 8?",
+    "options": [
+     "1",
+     "2",
+     "0",
+     "3"
+    ],
+    "answer": 2,
+    "explain": "8 - 8 = 0. Take 8 away from 8 and 0 are left."
+   },
+   {
+    "q": "Sam has 10 apples and gives away 4. How many apples are left?",
+    "options": [
+     "5",
+     "7",
+     "8",
+     "6"
+    ],
+    "answer": 3,
+    "explain": "10 - 4 = 6. Take 4 away from 10 and 6 are left."
+   },
+   {
+    "q": "What is 5 - 4?",
+    "options": [
+     "2",
+     "1",
+     "4",
+     "0"
+    ],
+    "answer": 1,
+    "explain": "5 - 4 = 1. Take 4 away from 5 and 1 are left."
+   },
+   {
+    "q": "Eli has 5 cookies and gives away 4. How many cookies are left?",
+    "options": [
+     "2",
+     "1",
+     "11",
+     "4"
+    ],
+    "answer": 1,
+    "explain": "5 - 4 = 1. Take 4 away from 5 and 1 are left."
+   },
+   {
+    "q": "What is 3 - 1?",
+    "options": [
+     "0",
+     "4",
+     "2",
+     "5"
+    ],
+    "answer": 2,
+    "explain": "3 - 1 = 2. Take 1 away from 3 and 2 are left."
+   },
+   {
+    "q": "Noah has 10 cookies and gives away 3. How many cookies are left?",
+    "options": [
+     "5",
+     "8",
+     "4",
+     "7"
+    ],
+    "answer": 3,
+    "explain": "10 - 3 = 7. Take 3 away from 10 and 7 are left."
+   },
+   {
+    "q": "Owen has 5 pencils and gives away 5. How many pencils are left?",
+    "options": [
+     "0",
+     "3",
+     "1",
+     "2"
+    ],
+    "answer": 0,
+    "explain": "5 - 5 = 0. Take 5 away from 5 and 0 are left."
+   },
+   {
+    "q": "What is 3 - 2?",
+    "options": [
+     "11",
+     "4",
+     "1",
+     "0"
+    ],
+    "answer": 2,
+    "explain": "3 - 2 = 1. Take 2 away from 3 and 1 are left."
+   },
+   {
+    "q": "Mia has 5 crayons and gives away 2. How many crayons are left?",
+    "options": [
+     "3",
+     "4",
+     "6",
+     "1"
+    ],
+    "answer": 0,
+    "explain": "5 - 2 = 3. Take 2 away from 5 and 3 are left."
+   },
+   {
+    "q": "Sam has 9 seashells and gives away 4. How many seashells are left?",
+    "options": [
+     "3",
+     "6",
+     "8",
+     "5"
+    ],
+    "answer": 3,
+    "explain": "9 - 4 = 5. Take 4 away from 9 and 5 are left."
+   },
+   {
+    "q": "Zoe has 4 seashells and gives away 2. How many seashells are left?",
+    "options": [
+     "4",
+     "2",
+     "0",
+     "3"
+    ],
+    "answer": 1,
+    "explain": "4 - 2 = 2. Take 2 away from 4 and 2 are left."
+   },
+   {
+    "q": "What is 8 - 6?",
+    "options": [
+     "2",
+     "5",
+     "0",
+     "4"
+    ],
+    "answer": 0,
+    "explain": "8 - 6 = 2. Take 6 away from 8 and 2 are left."
+   },
+   {
+    "q": "What number makes this true? 7 + ___ = 8",
+    "options": [
+     "4",
+     "1",
+     "3",
+     "11"
+    ],
+    "answer": 1,
+    "explain": "7 + 1 = 8, so the missing number is 1."
+   },
+   {
+    "q": "What is 6 - 6?",
+    "options": [
+     "10",
+     "3",
+     "0",
+     "1"
+    ],
+    "answer": 2,
+    "explain": "6 - 6 = 0. Take 6 away from 6 and 0 are left."
+   },
+   {
+    "q": "What is 2 - 0?",
+    "options": [
+     "2",
+     "0",
+     "1",
+     "3"
+    ],
+    "answer": 0,
+    "explain": "2 - 0 = 2. Take 0 away from 2 and 2 are left."
+   },
+   {
+    "q": "Count the stars: * * * * * *  How many stars are there?",
+    "options": [
+     "3",
+     "4",
+     "7",
+     "6"
+    ],
+    "answer": 3,
+    "explain": "Count each star one by one: there are 6."
+   },
+   {
+    "q": "What is 4 - 3?",
+    "options": [
+     "2",
+     "0",
+     "3",
+     "1"
+    ],
+    "answer": 3,
+    "explain": "4 - 3 = 1. Take 3 away from 4 and 1 are left."
+   },
+   {
+    "q": "What number makes this true? 3 + ___ = 10",
+    "options": [
+     "10",
+     "7",
+     "6",
+     "5"
+    ],
+    "answer": 1,
+    "explain": "3 + 7 = 10, so the missing number is 7."
+   },
+   {
+    "q": "What is 10 - 8?",
+    "options": [
+     "2",
+     "1",
+     "5",
+     "0"
+    ],
+    "answer": 0,
+    "explain": "10 - 8 = 2. Take 8 away from 10 and 2 are left."
+   },
+   {
+    "q": "What is 4 - 0?",
+    "options": [
+     "7",
+     "6",
+     "4",
+     "5"
+    ],
+    "answer": 2,
+    "explain": "4 - 0 = 4. Take 0 away from 4 and 4 are left."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Subtraction within 10",
+    "title": "Subtraction within 10 - Quest 3",
+    "desc": "Taking away within 10 and simple story problems.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Subtraction within 10 - Quest 4",
+  "subject": "Kindergarten Math",
+  "module": "kindergarten-math-u6-q4",
+  "description": "Taking away within 10 and simple story problems.",
+  "questions": [
+   {
+    "q": "Eli has 2 apples and gives away 2. How many apples are left?",
+    "options": [
+     "0",
+     "1",
+     "2",
+     "3"
+    ],
+    "answer": 0,
+    "explain": "2 - 2 = 0. Take 2 away from 2 and 0 are left."
+   },
+   {
+    "q": "Count the marks: # # # # # # # #  How many marks are there?",
+    "options": [
+     "11",
+     "5",
+     "9",
+     "8"
+    ],
+    "answer": 3,
+    "explain": "Count each star one by one: there are 8."
+   },
+   {
+    "q": "Owen has 10 crayons and gives away 0. How many crayons are left?",
+    "options": [
+     "9",
+     "12",
+     "0",
+     "10"
+    ],
+    "answer": 3,
+    "explain": "10 - 0 = 10. Take 0 away from 10 and 10 are left."
+   },
+   {
+    "q": "What number makes this true? 6 + ___ = 10",
+    "options": [
+     "1",
+     "4",
+     "7",
+     "6"
+    ],
+    "answer": 1,
+    "explain": "6 + 4 = 10, so the missing number is 4."
+   },
+   {
+    "q": "What is 7 - 2?",
+    "options": [
+     "7",
+     "4",
+     "5",
+     "8"
+    ],
+    "answer": 2,
+    "explain": "7 - 2 = 5. Take 2 away from 7 and 5 are left."
+   },
+   {
+    "q": "Zoe has 5 apples and gives away 1. How many apples are left?",
+    "options": [
+     "4",
+     "2",
+     "1",
+     "6"
+    ],
+    "answer": 0,
+    "explain": "5 - 1 = 4. Take 1 away from 5 and 4 are left."
+   },
+   {
+    "q": "Sam has 7 cupcakes and gives away 2. How many cupcakes are left?",
+    "options": [
+     "8",
+     "5",
+     "3",
+     "7"
+    ],
+    "answer": 1,
+    "explain": "7 - 2 = 5. Take 2 away from 7 and 5 are left."
+   },
+   {
+    "q": "What is 4 - 2?",
+    "options": [
+     "4",
+     "3",
+     "0",
+     "2"
+    ],
+    "answer": 3,
+    "explain": "4 - 2 = 2. Take 2 away from 4 and 2 are left."
+   },
+   {
+    "q": "Count the marks: # # # # # # # # # #  How many marks are there?",
+    "options": [
+     "8",
+     "13",
+     "10",
+     "0"
+    ],
+    "answer": 2,
+    "explain": "Count each star one by one: there are 10."
+   },
+   {
+    "q": "Sam has 3 pencils and gives away 2. How many pencils are left?",
+    "options": [
+     "0",
+     "1",
+     "4",
+     "2"
+    ],
+    "answer": 1,
+    "explain": "3 - 2 = 1. Take 2 away from 3 and 1 are left."
+   },
+   {
+    "q": "Sam has 3 pencils and gives away 1. How many pencils are left?",
+    "options": [
+     "5",
+     "2",
+     "1",
+     "4"
+    ],
+    "answer": 1,
+    "explain": "3 - 1 = 2. Take 1 away from 3 and 2 are left."
+   },
+   {
+    "q": "Leo has 4 stickers and gives away 2. How many stickers are left?",
+    "options": [
+     "0",
+     "2",
+     "3",
+     "1"
+    ],
+    "answer": 1,
+    "explain": "4 - 2 = 2. Take 2 away from 4 and 2 are left."
+   },
+   {
+    "q": "Liam has 5 crayons and gives away 4. How many crayons are left?",
+    "options": [
+     "4",
+     "0",
+     "2",
+     "1"
+    ],
+    "answer": 3,
+    "explain": "5 - 4 = 1. Take 4 away from 5 and 1 are left."
+   },
+   {
+    "q": "Zoe has 3 apples and gives away 1. How many apples are left?",
+    "options": [
+     "2",
+     "1",
+     "5",
+     "3"
+    ],
+    "answer": 0,
+    "explain": "3 - 1 = 2. Take 1 away from 3 and 2 are left."
+   },
+   {
+    "q": "Ivy has 3 cupcakes and gives away 2. How many cupcakes are left?",
+    "options": [
+     "1",
+     "0",
+     "2",
+     "4"
+    ],
+    "answer": 0,
+    "explain": "3 - 2 = 1. Take 2 away from 3 and 1 are left."
+   },
+   {
+    "q": "Leo has 5 marbles and gives away 0. How many marbles are left?",
+    "options": [
+     "3",
+     "4",
+     "2",
+     "5"
+    ],
+    "answer": 3,
+    "explain": "5 - 0 = 5. Take 0 away from 5 and 5 are left."
+   },
+   {
+    "q": "Mia has 10 marbles and gives away 2. How many marbles are left?",
+    "options": [
+     "7",
+     "9",
+     "8",
+     "5"
+    ],
+    "answer": 2,
+    "explain": "10 - 2 = 8. Take 2 away from 10 and 8 are left."
+   },
+   {
+    "q": "Leo has 7 pencils and gives away 4. How many pencils are left?",
+    "options": [
+     "5",
+     "0",
+     "3",
+     "13"
+    ],
+    "answer": 2,
+    "explain": "7 - 4 = 3. Take 4 away from 7 and 3 are left."
+   },
+   {
+    "q": "What number makes this true? 9 + ___ = 9",
+    "options": [
+     "0",
+     "3",
+     "1",
+     "10"
+    ],
+    "answer": 0,
+    "explain": "9 + 0 = 9, so the missing number is 0."
+   },
+   {
+    "q": "What is 8 - 5?",
+    "options": [
+     "5",
+     "0",
+     "3",
+     "2"
+    ],
+    "answer": 2,
+    "explain": "8 - 5 = 3. Take 5 away from 8 and 3 are left."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Subtraction within 10",
+    "title": "Subtraction within 10 - Quest 4",
+    "desc": "Taking away within 10 and simple story problems.",
+    "count": 20,
+    "boss": true
+   }
+  ]
+ },
+ {
+  "title": "Shapes & Solids - Quest 1",
+  "subject": "Kindergarten Math",
+  "module": "kindergarten-math-u7-q1",
+  "description": "Flat shapes, their sides and corners, and 3-D solids in the real world.",
+  "questions": [
+   {
+    "q": "How many sides does a square have?",
+    "options": [
+     "6",
+     "3",
+     "7",
+     "4"
+    ],
+    "answer": 3,
+    "explain": "Count the straight edges: a square has 4 sides."
+   },
+   {
+    "q": "Which shape has exactly 3 sides?",
+    "options": [
+     "square",
+     "circle",
+     "pentagon",
+     "triangle"
+    ],
+    "answer": 3,
+    "explain": "A triangle has exactly 3 sides."
+   },
+   {
+    "q": "Count the circles: o o o o o o o o o o o  How many circles are there?",
+    "options": [
+     "11",
+     "9",
+     "12",
+     "10"
+    ],
+    "answer": 0,
+    "explain": "Count each star one by one: there are 11."
+   },
+   {
+    "q": "How many sides does a rectangle have?",
+    "options": [
+     "4",
+     "2",
+     "7",
+     "5"
+    ],
+    "answer": 0,
+    "explain": "Count the straight edges: a rectangle has 4 sides."
+   },
+   {
+    "q": "Which shape has exactly 5 sides?",
+    "options": [
+     "square",
+     "pentagon",
+     "triangle",
+     "circle"
+    ],
+    "answer": 1,
+    "explain": "A pentagon has exactly 5 sides."
+   },
+   {
+    "q": "Which shape looks like a square tilted onto one corner?",
+    "options": [
+     "diamond",
+     "circle",
+     "oval",
+     "heart"
+    ],
+    "answer": 0,
+    "explain": "A diamond looks like a square tilted onto one corner."
+   },
+   {
+    "q": "What solid shape is a soup can?",
+    "options": [
+     "cube",
+     "sphere",
+     "cylinder",
+     "cone"
+    ],
+    "answer": 2,
+    "explain": "A soup can is shaped like a cylinder."
+   },
+   {
+    "q": "Which solid shape has a point at the top and a round bottom?",
+    "options": [
+     "cube",
+     "sphere",
+     "cone",
+     "cylinder"
+    ],
+    "answer": 2,
+    "explain": "A cone has a pointy top and a round, flat bottom."
+   },
+   {
+    "q": "Which shape has two round bumps on top and a point at the bottom?",
+    "options": [
+     "circle",
+     "heart",
+     "square",
+     "triangle"
+    ],
+    "answer": 1,
+    "explain": "A heart has two round bumps on top and a point at the bottom."
+   },
+   {
+    "q": "What solid shape is a cardboard box?",
+    "options": [
+     "sphere",
+     "cone",
+     "cube",
+     "cylinder"
+    ],
+    "answer": 2,
+    "explain": "A cardboard box is shaped like a cube."
+   },
+   {
+    "q": "Which solid shape can roll like a ball?",
+    "options": [
+     "cube",
+     "cone",
+     "pyramid",
+     "sphere"
+    ],
+    "answer": 3,
+    "explain": "A sphere is round all over, so it can roll like a ball."
+   },
+   {
+    "q": "Which shape has 5 points?",
+    "options": [
+     "circle",
+     "star",
+     "square",
+     "oval"
+    ],
+    "answer": 1,
+    "explain": "A star has 5 points."
+   },
+   {
+    "q": "What solid shape is a water bottle?",
+    "options": [
+     "cube",
+     "sphere",
+     "cone",
+     "cylinder"
+    ],
+    "answer": 3,
+    "explain": "A water bottle is shaped like a cylinder."
+   },
+   {
+    "q": "How many sides does a pentagon have?",
+    "options": [
+     "7",
+     "2",
+     "5",
+     "6"
+    ],
+    "answer": 2,
+    "explain": "Count the straight edges: a pentagon has 5 sides."
+   },
+   {
+    "q": "Which shape has exactly 6 sides?",
+    "options": [
+     "pentagon",
+     "square",
+     "hexagon",
+     "circle"
+    ],
+    "answer": 2,
+    "explain": "A hexagon has exactly 6 sides."
+   },
+   {
+    "q": "Which solid shape looks like a box?",
+    "options": [
+     "cube",
+     "sphere",
+     "cone",
+     "cylinder"
+    ],
+    "answer": 0,
+    "explain": "A cube has 6 square faces, just like a box."
+   },
+   {
+    "q": "Which shape has 3 sides and 3 corners?",
+    "options": [
+     "square",
+     "triangle",
+     "circle",
+     "rectangle"
+    ],
+    "answer": 1,
+    "explain": "A triangle has 3 sides and 3 corners."
+   },
+   {
+    "q": "Which shape has exactly 4 sides?",
+    "options": [
+     "triangle",
+     "square",
+     "circle",
+     "hexagon"
+    ],
+    "answer": 1,
+    "explain": "A square has exactly 4 sides."
+   },
+   {
+    "q": "What solid shape is a basketball?",
+    "options": [
+     "cube",
+     "cone",
+     "cylinder",
+     "sphere"
+    ],
+    "answer": 3,
+    "explain": "A basketball is shaped like a sphere."
+   },
+   {
+    "q": "How many sides does a hexagon have?",
+    "options": [
+     "6",
+     "7",
+     "9",
+     "8"
+    ],
+    "answer": 0,
+    "explain": "Count the straight edges: a hexagon has 6 sides."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Shapes & Solids",
+    "title": "Shapes & Solids - Quest 1",
+    "desc": "Flat shapes, their sides and corners, and 3-D solids in the real world.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Shapes & Solids - Quest 2",
+  "subject": "Kindergarten Math",
+  "module": "kindergarten-math-u7-q2",
+  "description": "Flat shapes, their sides and corners, and 3-D solids in the real world.",
+  "questions": [
+   {
+    "q": "What solid shape is an ice cream cone?",
+    "options": [
+     "cube",
+     "sphere",
+     "cylinder",
+     "cone"
+    ],
+    "answer": 3,
+    "explain": "An ice cream cone is shaped like a cone."
+   },
+   {
+    "q": "Which shape has 4 sides and 4 corners, with long and short sides?",
+    "options": [
+     "circle",
+     "triangle",
+     "rectangle",
+     "star"
+    ],
+    "answer": 2,
+    "explain": "A rectangle has 4 sides and 4 corners, with long and short sides."
+   },
+   {
+    "q": "How many sides does a triangle have?",
+    "options": [
+     "6",
+     "4",
+     "2",
+     "3"
+    ],
+    "answer": 3,
+    "explain": "Count the straight edges: a triangle has 3 sides."
+   },
+   {
+    "q": "Which shape has exactly 0 sides?",
+    "options": [
+     "triangle",
+     "square",
+     "circle",
+     "pentagon"
+    ],
+    "answer": 2,
+    "explain": "A circle has exactly 0 sides."
+   },
+   {
+    "q": "Which shape is round like a circle but stretched out like an egg?",
+    "options": [
+     "square",
+     "triangle",
+     "oval",
+     "star"
+    ],
+    "answer": 2,
+    "explain": "A oval is round like a circle but stretched out like an egg."
+   },
+   {
+    "q": "Which shape has 4 equal sides and 4 corners?",
+    "options": [
+     "circle",
+     "square",
+     "triangle",
+     "oval"
+    ],
+    "answer": 1,
+    "explain": "A square has 4 equal sides and 4 corners."
+   },
+   {
+    "q": "Which shape has no corners and is perfectly round?",
+    "options": [
+     "square",
+     "triangle",
+     "rectangle",
+     "circle"
+    ],
+    "answer": 3,
+    "explain": "A circle has no corners and is perfectly round."
+   },
+   {
+    "q": "What solid shape is a globe?",
+    "options": [
+     "sphere",
+     "cube",
+     "cone",
+     "cylinder"
+    ],
+    "answer": 0,
+    "explain": "A globe is shaped like a sphere."
+   },
+   {
+    "q": "What solid shape is a dice?",
+    "options": [
+     "sphere",
+     "cone",
+     "cylinder",
+     "cube"
+    ],
+    "answer": 3,
+    "explain": "A dice is shaped like a cube."
+   },
+   {
+    "q": "What solid shape is a party hat?",
+    "options": [
+     "cone",
+     "cube",
+     "sphere",
+     "cylinder"
+    ],
+    "answer": 0,
+    "explain": "A party hat is shaped like a cone."
+   },
+   {
+    "q": "Count the marks: # #  How many marks are there?",
+    "options": [
+     "2",
+     "4",
+     "0",
+     "12"
+    ],
+    "answer": 0,
+    "explain": "Count each star one by one: there are 2."
+   },
+   {
+    "q": "Count the stars: * * * * * * * * * *  How many stars are there?",
+    "options": [
+     "10",
+     "8",
+     "11",
+     "0"
+    ],
+    "answer": 0,
+    "explain": "Count each star one by one: there are 10."
+   },
+   {
+    "q": "What solid shape is a traffic cone?",
+    "options": [
+     "cube",
+     "sphere",
+     "cone",
+     "cylinder"
+    ],
+    "answer": 2,
+    "explain": "A traffic cone is shaped like a cone."
+   },
+   {
+    "q": "Count the pluses: + + + + + + + + + + +  How many pluses are there?",
+    "options": [
+     "13",
+     "11",
+     "14",
+     "10"
+    ],
+    "answer": 1,
+    "explain": "Count each star one by one: there are 11."
+   },
+   {
+    "q": "Count the stars: * * * * *  How many stars are there?",
+    "options": [
+     "2",
+     "6",
+     "15",
+     "5"
+    ],
+    "answer": 3,
+    "explain": "Count each star one by one: there are 5."
+   },
+   {
+    "q": "Count the stars: * * * * * * * * *  How many stars are there?",
+    "options": [
+     "10",
+     "9",
+     "12",
+     "11"
+    ],
+    "answer": 1,
+    "explain": "Count each star one by one: there are 9."
+   },
+   {
+    "q": "Count the circles: o o o o o o o o o o o o  How many circles are there?",
+    "options": [
+     "12",
+     "14",
+     "9",
+     "10"
+    ],
+    "answer": 0,
+    "explain": "Count each star one by one: there are 12."
+   },
+   {
+    "q": "Count the stars: * * * * * * * * * * *  How many stars are there?",
+    "options": [
+     "1",
+     "11",
+     "9",
+     "14"
+    ],
+    "answer": 1,
+    "explain": "Count each star one by one: there are 11."
+   },
+   {
+    "q": "Count back: what comes before 4?",
+    "options": [
+     "1",
+     "0",
+     "6",
+     "3"
+    ],
+    "answer": 3,
+    "explain": "Counting in order, the number before 4 is 3."
+   },
+   {
+    "q": "How do you write the number 1 as a word?",
+    "options": [
+     "four",
+     "five",
+     "one",
+     "seventeen"
+    ],
+    "answer": 2,
+    "explain": "The number 1 is written as the word 'one'."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Shapes & Solids",
+    "title": "Shapes & Solids - Quest 2",
+    "desc": "Flat shapes, their sides and corners, and 3-D solids in the real world.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Shapes & Solids - Quest 3",
+  "subject": "Kindergarten Math",
+  "module": "kindergarten-math-u7-q3",
+  "description": "Flat shapes, their sides and corners, and 3-D solids in the real world.",
+  "questions": [
+   {
+    "q": "Count back: what comes before 4?",
+    "options": [
+     "1",
+     "0",
+     "6",
+     "3"
+    ],
+    "answer": 3,
+    "explain": "Counting in order, the number before 4 is 3."
+   },
+   {
+    "q": "How do you write the number 1 as a word?",
+    "options": [
+     "four",
+     "five",
+     "one",
+     "seventeen"
+    ],
+    "answer": 2,
+    "explain": "The number 1 is written as the word 'one'."
+   },
+   {
+    "q": "Which number is the word 'six'?",
+    "options": [
+     "9",
+     "7",
+     "6",
+     "4"
+    ],
+    "answer": 2,
+    "explain": "The word 'six' means the number 6."
+   },
+   {
+    "q": "Count back: what comes before 6?",
+    "options": [
+     "5",
+     "7",
+     "4",
+     "8"
+    ],
+    "answer": 0,
+    "explain": "Counting in order, the number before 6 is 5."
+   },
+   {
+    "q": "How do you write the number 8 as a word?",
+    "options": [
+     "twelve",
+     "fifteen",
+     "eight",
+     "sixteen"
+    ],
+    "answer": 2,
+    "explain": "The number 8 is written as the word 'eight'."
+   },
+   {
+    "q": "Which number matches the word 'eight'?",
+    "options": [
+     "5",
+     "8",
+     "6",
+     "11"
+    ],
+    "answer": 1,
+    "explain": "The word 'eight' means the number 8."
+   },
+   {
+    "q": "Count the pluses: + +  How many pluses are there?",
+    "options": [
+     "12",
+     "1",
+     "2",
+     "3"
+    ],
+    "answer": 2,
+    "explain": "Count each star one by one: there are 2."
+   },
+   {
+    "q": "What number is missing? 2, __, 4, 5",
+    "options": [
+     "2",
+     "3",
+     "4",
+     "0"
+    ],
+    "answer": 1,
+    "explain": "The numbers count up by 1, so the missing number is 3."
+   },
+   {
+    "q": "What number comes right after 0?",
+    "options": [
+     "1",
+     "2",
+     "4",
+     "3"
+    ],
+    "answer": 0,
+    "explain": "Counting in order, the number after 0 is 1."
+   },
+   {
+    "q": "Count the pluses: + + +  How many pluses are there?",
+    "options": [
+     "6",
+     "1",
+     "4",
+     "3"
+    ],
+    "answer": 3,
+    "explain": "Count each star one by one: there are 3."
+   },
+   {
+    "q": "Find the missing number: 3, __, 5, 6",
+    "options": [
+     "5",
+     "4",
+     "3",
+     "2"
+    ],
+    "answer": 1,
+    "explain": "The numbers count up by 1, so the missing number is 4."
+   },
+   {
+    "q": "What number comes right after 2?",
+    "options": [
+     "1",
+     "3",
+     "5",
+     "0"
+    ],
+    "answer": 1,
+    "explain": "Counting in order, the number after 2 is 3."
+   },
+   {
+    "q": "Which word matches the number 0?",
+    "options": [
+     "zero",
+     "fifteen",
+     "three",
+     "five"
+    ],
+    "answer": 0,
+    "explain": "The number 0 is written as the word 'zero'."
+   },
+   {
+    "q": "Which number is the word 'four'?",
+    "options": [
+     "2",
+     "4",
+     "1",
+     "5"
+    ],
+    "answer": 1,
+    "explain": "The word 'four' means the number 4."
+   },
+   {
+    "q": "Which number comes just before 4?",
+    "options": [
+     "0",
+     "6",
+     "5",
+     "3"
+    ],
+    "answer": 3,
+    "explain": "Counting in order, the number before 4 is 3."
+   },
+   {
+    "q": "How do you write the number 9 as a word?",
+    "options": [
+     "seven",
+     "two",
+     "zero",
+     "nine"
+    ],
+    "answer": 3,
+    "explain": "The number 9 is written as the word 'nine'."
+   },
+   {
+    "q": "Count up: what comes after 8?",
+    "options": [
+     "7",
+     "12",
+     "8",
+     "9"
+    ],
+    "answer": 3,
+    "explain": "Counting in order, the number after 8 is 9."
+   },
+   {
+    "q": "Which word matches the number 6?",
+    "options": [
+     "six",
+     "five",
+     "eighteen",
+     "one"
+    ],
+    "answer": 0,
+    "explain": "The number 6 is written as the word 'six'."
+   },
+   {
+    "q": "Count up: what comes after 7?",
+    "options": [
+     "8",
+     "9",
+     "5",
+     "6"
+    ],
+    "answer": 0,
+    "explain": "Counting in order, the number after 7 is 8."
+   },
+   {
+    "q": "Count the marks: # # # # # # # # #  How many marks are there?",
+    "options": [
+     "12",
+     "11",
+     "9",
+     "6"
+    ],
+    "answer": 2,
+    "explain": "Count each star one by one: there are 9."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Shapes & Solids",
+    "title": "Shapes & Solids - Quest 3",
+    "desc": "Flat shapes, their sides and corners, and 3-D solids in the real world.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Shapes & Solids - Quest 4",
+  "subject": "Kindergarten Math",
+  "module": "kindergarten-math-u7-q4",
+  "description": "Flat shapes, their sides and corners, and 3-D solids in the real world.",
+  "questions": [
+   {
+    "q": "Count back: what comes before 4?",
+    "options": [
+     "1",
+     "0",
+     "6",
+     "3"
+    ],
+    "answer": 3,
+    "explain": "Counting in order, the number before 4 is 3."
+   },
+   {
+    "q": "How do you write the number 1 as a word?",
+    "options": [
+     "four",
+     "five",
+     "one",
+     "seventeen"
+    ],
+    "answer": 2,
+    "explain": "The number 1 is written as the word 'one'."
+   },
+   {
+    "q": "Which number is the word 'six'?",
+    "options": [
+     "9",
+     "7",
+     "6",
+     "4"
+    ],
+    "answer": 2,
+    "explain": "The word 'six' means the number 6."
+   },
+   {
+    "q": "Count back: what comes before 6?",
+    "options": [
+     "5",
+     "7",
+     "4",
+     "8"
+    ],
+    "answer": 0,
+    "explain": "Counting in order, the number before 6 is 5."
+   },
+   {
+    "q": "How do you write the number 8 as a word?",
+    "options": [
+     "twelve",
+     "fifteen",
+     "eight",
+     "sixteen"
+    ],
+    "answer": 2,
+    "explain": "The number 8 is written as the word 'eight'."
+   },
+   {
+    "q": "Which number matches the word 'eight'?",
+    "options": [
+     "5",
+     "8",
+     "6",
+     "11"
+    ],
+    "answer": 1,
+    "explain": "The word 'eight' means the number 8."
+   },
+   {
+    "q": "Count the pluses: + +  How many pluses are there?",
+    "options": [
+     "12",
+     "1",
+     "2",
+     "3"
+    ],
+    "answer": 2,
+    "explain": "Count each star one by one: there are 2."
+   },
+   {
+    "q": "What number is missing? 2, __, 4, 5",
+    "options": [
+     "2",
+     "3",
+     "4",
+     "0"
+    ],
+    "answer": 1,
+    "explain": "The numbers count up by 1, so the missing number is 3."
+   },
+   {
+    "q": "What number comes right after 0?",
+    "options": [
+     "1",
+     "2",
+     "4",
+     "3"
+    ],
+    "answer": 0,
+    "explain": "Counting in order, the number after 0 is 1."
+   },
+   {
+    "q": "Count the pluses: + + +  How many pluses are there?",
+    "options": [
+     "6",
+     "1",
+     "4",
+     "3"
+    ],
+    "answer": 3,
+    "explain": "Count each star one by one: there are 3."
+   },
+   {
+    "q": "Find the missing number: 3, __, 5, 6",
+    "options": [
+     "5",
+     "4",
+     "3",
+     "2"
+    ],
+    "answer": 1,
+    "explain": "The numbers count up by 1, so the missing number is 4."
+   },
+   {
+    "q": "What number comes right after 2?",
+    "options": [
+     "1",
+     "3",
+     "5",
+     "0"
+    ],
+    "answer": 1,
+    "explain": "Counting in order, the number after 2 is 3."
+   },
+   {
+    "q": "Which word matches the number 0?",
+    "options": [
+     "zero",
+     "fifteen",
+     "three",
+     "five"
+    ],
+    "answer": 0,
+    "explain": "The number 0 is written as the word 'zero'."
+   },
+   {
+    "q": "Which number is the word 'four'?",
+    "options": [
+     "2",
+     "4",
+     "1",
+     "5"
+    ],
+    "answer": 1,
+    "explain": "The word 'four' means the number 4."
+   },
+   {
+    "q": "Which number comes just before 4?",
+    "options": [
+     "0",
+     "6",
+     "5",
+     "3"
+    ],
+    "answer": 3,
+    "explain": "Counting in order, the number before 4 is 3."
+   },
+   {
+    "q": "How do you write the number 9 as a word?",
+    "options": [
+     "seven",
+     "two",
+     "zero",
+     "nine"
+    ],
+    "answer": 3,
+    "explain": "The number 9 is written as the word 'nine'."
+   },
+   {
+    "q": "Count up: what comes after 8?",
+    "options": [
+     "7",
+     "12",
+     "8",
+     "9"
+    ],
+    "answer": 3,
+    "explain": "Counting in order, the number after 8 is 9."
+   },
+   {
+    "q": "Which word matches the number 6?",
+    "options": [
+     "six",
+     "five",
+     "eighteen",
+     "one"
+    ],
+    "answer": 0,
+    "explain": "The number 6 is written as the word 'six'."
+   },
+   {
+    "q": "Count up: what comes after 7?",
+    "options": [
+     "8",
+     "9",
+     "5",
+     "6"
+    ],
+    "answer": 0,
+    "explain": "Counting in order, the number after 7 is 8."
+   },
+   {
+    "q": "Count the marks: # # # # # # # # #  How many marks are there?",
+    "options": [
+     "12",
+     "11",
+     "9",
+     "6"
+    ],
+    "answer": 2,
+    "explain": "Count each star one by one: there are 9."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Shapes & Solids",
+    "title": "Shapes & Solids - Quest 4",
+    "desc": "Flat shapes, their sides and corners, and 3-D solids in the real world.",
+    "count": 20,
+    "boss": true
+   }
+  ]
+ },
+ {
+  "title": "Patterns & Sorting - Quest 1",
+  "subject": "Kindergarten Math",
+  "module": "kindergarten-math-u8-q1",
+  "description": "Repeating patterns, what comes next, and sorting by size.",
+  "questions": [
+   {
+    "q": "What comes next in the pattern? blue, orange, blue, orange, ___",
+    "options": [
+     "orange",
+     "black",
+     "blue",
+     "white"
+    ],
+    "answer": 2,
+    "explain": "The pattern repeats blue, orange - so blue comes next."
+   },
+   {
+    "q": "Which is the COLDEST?",
+    "options": [
+     "a campfire",
+     "an ice cube",
+     "the Sun",
+     "warm soup"
+    ],
+    "answer": 1,
+    "explain": "An ice cube is frozen, so it is colder than a fire, the Sun, or warm soup."
+   },
+   {
+    "q": "What comes next in the pattern? 3, 4, 5, ___",
+    "options": [
+     "9",
+     "16",
+     "8",
+     "6"
+    ],
+    "answer": 3,
+    "explain": "The numbers count up by 1, so 6 comes next."
+   },
+   {
+    "q": "Which of these is the HEAVIEST?",
+    "options": [
+     "a feather",
+     "a puppy",
+     "an elephant",
+     "a balloon"
+    ],
+    "answer": 2,
+    "explain": "An elephant weighs far more than a feather, a puppy, or a balloon."
+   },
+   {
+    "q": "Which animal is the BIGGEST?",
+    "options": [
+     "a goldfish",
+     "a blue whale",
+     "a robin",
+     "a mouse"
+    ],
+    "answer": 1,
+    "explain": "A blue whale is the biggest animal of all - bigger than a goldfish, a robin, or a mouse."
+   },
+   {
+    "q": "What comes next in the pattern? star, star, circle, star, star, ___",
+    "options": [
+     "circle",
+     "star",
+     "heart",
+     "oval"
+    ],
+    "answer": 0,
+    "explain": "Two stars then one circle - the pattern repeats, so circle comes next."
+   },
+   {
+    "q": "Which of these is the TALLEST?",
+    "options": [
+     "a mouse",
+     "a cat",
+     "a duck",
+     "a giraffe"
+    ],
+    "answer": 3,
+    "explain": "A giraffe is much taller than a mouse, a cat, or a duck."
+   },
+   {
+    "q": "Which is the HOTTEST?",
+    "options": [
+     "an ice cube",
+     "a snowball",
+     "a puddle",
+     "the Sun"
+    ],
+    "answer": 3,
+    "explain": "The Sun is a star and is hotter than ice, snow, or water in a puddle."
+   },
+   {
+    "q": "What comes next in the pattern? green, blue, green, blue, ___",
+    "options": [
+     "blue",
+     "black",
+     "green",
+     "white"
+    ],
+    "answer": 2,
+    "explain": "The pattern repeats green, blue - so green comes next."
+   },
+   {
+    "q": "Which animal is the FASTEST?",
+    "options": [
+     "a turtle",
+     "a snail",
+     "a cheetah",
+     "a duck"
+    ],
+    "answer": 2,
+    "explain": "A cheetah can run faster than a turtle, a snail, or a duck."
+   },
+   {
+    "q": "What comes next in the pattern? star, star, square, star, star, ___",
+    "options": [
+     "square",
+     "star",
+     "heart",
+     "oval"
+    ],
+    "answer": 0,
+    "explain": "Two stars then one square - the pattern repeats, so square comes next."
+   },
+   {
+    "q": "Which of these is the SMALLEST?",
+    "options": [
+     "a dog",
+     "an ant",
+     "a horse",
+     "an elephant"
+    ],
+    "answer": 1,
+    "explain": "An ant is tiny - smaller than a dog, a horse, or an elephant."
+   },
+   {
+    "q": "Which animal is the LONGEST?",
+    "options": [
+     "a snake",
+     "a frog",
+     "a bee",
+     "a mouse"
+    ],
+    "answer": 0,
+    "explain": "A snake's body stretches out much longer than a frog, a bee, or a mouse."
+   },
+   {
+    "q": "What comes next in the pattern? circle, circle, triangle, circle, circle, ___",
+    "options": [
+     "triangle",
+     "circle",
+     "heart",
+     "oval"
+    ],
+    "answer": 0,
+    "explain": "Two circles then one triangle - the pattern repeats, so triangle comes next."
+   },
+   {
+    "q": "What number is missing? 11, __, 13, 14",
+    "options": [
+     "9",
+     "10",
+     "14",
+     "12"
+    ],
+    "answer": 3,
+    "explain": "The numbers count up by 1, so the missing number is 12."
+   },
+   {
+    "q": "Mia has 4 pencils and gets 5 more. How many pencils does Mia have now?",
+    "options": [
+     "12",
+     "9",
+     "8",
+     "7"
+    ],
+    "answer": 1,
+    "explain": "4 + 5 = 9. Count them all together to get 9."
+   },
+   {
+    "q": "What comes next in the pattern? 6, 7, 8, ___",
+    "options": [
+     "7",
+     "11",
+     "9",
+     "6"
+    ],
+    "answer": 2,
+    "explain": "The numbers count up by 1, so 9 comes next."
+   },
+   {
+    "q": "Leo has 4 stickers and gets 2 more. How many stickers does Leo have now?",
+    "options": [
+     "9",
+     "6",
+     "4",
+     "7"
+    ],
+    "answer": 1,
+    "explain": "4 + 2 = 6. Count them all together to get 6."
+   },
+   {
+    "q": "What comes next in the pattern? purple, yellow, purple, yellow, ___",
+    "options": [
+     "yellow",
+     "black",
+     "white",
+     "purple"
+    ],
+    "answer": 3,
+    "explain": "The pattern repeats purple, yellow - so purple comes next."
+   },
+   {
+    "q": "Find the missing number: 7, 8, __, 10",
+    "options": [
+     "9",
+     "8",
+     "10",
+     "12"
+    ],
+    "answer": 0,
+    "explain": "The numbers count up by 1, so the missing number is 9."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Patterns & Sorting",
+    "title": "Patterns & Sorting - Quest 1",
+    "desc": "Repeating patterns, what comes next, and sorting by size.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Patterns & Sorting - Quest 2",
+  "subject": "Kindergarten Math",
+  "module": "kindergarten-math-u8-q2",
+  "description": "Repeating patterns, what comes next, and sorting by size.",
+  "questions": [
+   {
+    "q": "What comes next in the pattern? 7, 8, 9, ___",
+    "options": [
+     "0",
+     "11",
+     "20",
+     "10"
+    ],
+    "answer": 3,
+    "explain": "The numbers count up by 1, so 10 comes next."
+   },
+   {
+    "q": "Find the missing number: 12, __, 14, 15",
+    "options": [
+     "13",
+     "10",
+     "16",
+     "3"
+    ],
+    "answer": 0,
+    "explain": "The numbers count up by 1, so the missing number is 13."
+   },
+   {
+    "q": "Liam has 9 apples and gets 1 more. How many apples does Liam have now?",
+    "options": [
+     "12",
+     "8",
+     "9",
+     "10"
+    ],
+    "answer": 3,
+    "explain": "9 + 1 = 10. Count them all together to get 10."
+   },
+   {
+    "q": "What comes next in the pattern? square, square, circle, square, square, ___",
+    "options": [
+     "square",
+     "heart",
+     "circle",
+     "oval"
+    ],
+    "answer": 2,
+    "explain": "Two squares then one circle - the pattern repeats, so circle comes next."
+   },
+   {
+    "q": "Ava has 10 blocks and gets 0 more. How many blocks does Ava have now?",
+    "options": [
+     "13",
+     "12",
+     "10",
+     "7"
+    ],
+    "answer": 2,
+    "explain": "10 + 0 = 10. Count them all together to get 10."
+   },
+   {
+    "q": "What comes next in the pattern? 1, 2, 3, ___",
+    "options": [
+     "4",
+     "3",
+     "7",
+     "5"
+    ],
+    "answer": 0,
+    "explain": "The numbers count up by 1, so 4 comes next."
+   },
+   {
+    "q": "Find the missing number: 12, 13, __, 15",
+    "options": [
+     "12",
+     "17",
+     "4",
+     "14"
+    ],
+    "answer": 3,
+    "explain": "The numbers count up by 1, so the missing number is 14."
+   },
+   {
+    "q": "Liam has 0 seashells and gets 1 more. How many seashells does Liam have now?",
+    "options": [
+     "1",
+     "2",
+     "0",
+     "11"
+    ],
+    "answer": 0,
+    "explain": "0 + 1 = 1. Count them all together to get 1."
+   },
+   {
+    "q": "What comes next in the pattern? 4, 5, 6, ___",
+    "options": [
+     "9",
+     "4",
+     "7",
+     "5"
+    ],
+    "answer": 2,
+    "explain": "The numbers count up by 1, so 7 comes next."
+   },
+   {
+    "q": "Find the missing number: 9, 10, __, 12",
+    "options": [
+     "12",
+     "10",
+     "14",
+     "11"
+    ],
+    "answer": 3,
+    "explain": "The numbers count up by 1, so the missing number is 11."
+   },
+   {
+    "q": "What is 4 + 3?",
+    "options": [
+     "10",
+     "7",
+     "4",
+     "5"
+    ],
+    "answer": 1,
+    "explain": "4 + 3 = 7. Count them all together to get 7."
+   },
+   {
+    "q": "What comes next in the pattern? blue, purple, blue, purple, ___",
+    "options": [
+     "purple",
+     "black",
+     "white",
+     "blue"
+    ],
+    "answer": 3,
+    "explain": "The pattern repeats blue, purple - so blue comes next."
+   },
+   {
+    "q": "What comes next in the pattern? 9, 10, 11, ___",
+    "options": [
+     "9",
+     "12",
+     "13",
+     "11"
+    ],
+    "answer": 1,
+    "explain": "The numbers count up by 1, so 12 comes next."
+   },
+   {
+    "q": "Ava has 1 apple and gets 5 more. How many apples does Ava have now?",
+    "options": [
+     "3",
+     "9",
+     "6",
+     "5"
+    ],
+    "answer": 2,
+    "explain": "1 + 5 = 6. Count them all together to get 6."
+   },
+   {
+    "q": "What comes next in the pattern? square, square, triangle, square, square, ___",
+    "options": [
+     "triangle",
+     "square",
+     "heart",
+     "oval"
+    ],
+    "answer": 0,
+    "explain": "Two squares then one triangle - the pattern repeats, so triangle comes next."
+   },
+   {
+    "q": "Leo has 1 cupcake and gets 1 more. How many cupcakes does Leo have now?",
+    "options": [
+     "3",
+     "2",
+     "12",
+     "1"
+    ],
+    "answer": 1,
+    "explain": "1 + 1 = 2. Count them all together to get 2."
+   },
+   {
+    "q": "What comes next in the pattern? purple, orange, purple, orange, ___",
+    "options": [
+     "purple",
+     "orange",
+     "black",
+     "white"
+    ],
+    "answer": 0,
+    "explain": "The pattern repeats purple, orange - so purple comes next."
+   },
+   {
+    "q": "What number is missing? 9, 10, __, 12",
+    "options": [
+     "8",
+     "11",
+     "12",
+     "14"
+    ],
+    "answer": 1,
+    "explain": "The numbers count up by 1, so the missing number is 11."
+   },
+   {
+    "q": "Noah has 1 seashell and gets 5 more. How many seashells does Noah have now?",
+    "options": [
+     "4",
+     "8",
+     "6",
+     "9"
+    ],
+    "answer": 2,
+    "explain": "1 + 5 = 6. Count them all together to get 6."
+   },
+   {
+    "q": "Liam has 6 seashells and gets 2 more. How many seashells does Liam have now?",
+    "options": [
+     "9",
+     "8",
+     "11",
+     "7"
+    ],
+    "answer": 1,
+    "explain": "6 + 2 = 8. Count them all together to get 8."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Patterns & Sorting",
+    "title": "Patterns & Sorting - Quest 2",
+    "desc": "Repeating patterns, what comes next, and sorting by size.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Patterns & Sorting - Quest 3",
+  "subject": "Kindergarten Math",
+  "module": "kindergarten-math-u8-q3",
+  "description": "Repeating patterns, what comes next, and sorting by size.",
+  "questions": [
+   {
+    "q": "What comes next in the pattern? orange, blue, orange, blue, ___",
+    "options": [
+     "orange",
+     "blue",
+     "black",
+     "white"
+    ],
+    "answer": 0,
+    "explain": "The pattern repeats orange, blue - so orange comes next."
+   },
+   {
+    "q": "Sam has 1 pencil and gets 9 more. How many pencils does Sam have now?",
+    "options": [
+     "10",
+     "7",
+     "13",
+     "9"
+    ],
+    "answer": 0,
+    "explain": "1 + 9 = 10. Count them all together to get 10."
+   },
+   {
+    "q": "What number is missing? 8, 9, __, 11",
+    "options": [
+     "8",
+     "12",
+     "10",
+     "13"
+    ],
+    "answer": 2,
+    "explain": "The numbers count up by 1, so the missing number is 10."
+   },
+   {
+    "q": "Ivy has 1 marble and gets 6 more. How many marbles does Ivy have now?",
+    "options": [
+     "5",
+     "8",
+     "7",
+     "10"
+    ],
+    "answer": 2,
+    "explain": "1 + 6 = 7. Count them all together to get 7."
+   },
+   {
+    "q": "What comes next in the pattern? triangle, triangle, circle, triangle, triangle, ___",
+    "options": [
+     "circle",
+     "triangle",
+     "heart",
+     "oval"
+    ],
+    "answer": 0,
+    "explain": "Two triangles then one circle - the pattern repeats, so circle comes next."
+   },
+   {
+    "q": "Liam has 6 seashells and gets 3 more. How many seashells does Liam have now?",
+    "options": [
+     "12",
+     "7",
+     "6",
+     "9"
+    ],
+    "answer": 3,
+    "explain": "6 + 3 = 9. Count them all together to get 9."
+   },
+   {
+    "q": "What comes next in the pattern? 11, 12, 13, ___",
+    "options": [
+     "11",
+     "14",
+     "13",
+     "15"
+    ],
+    "answer": 1,
+    "explain": "The numbers count up by 1, so 14 comes next."
+   },
+   {
+    "q": "What comes next in the pattern? blue, red, blue, red, ___",
+    "options": [
+     "red",
+     "blue",
+     "black",
+     "white"
+    ],
+    "answer": 1,
+    "explain": "The pattern repeats blue, red - so blue comes next."
+   },
+   {
+    "q": "Eli has 9 blocks and gets 0 more. How many blocks does Eli have now?",
+    "options": [
+     "9",
+     "12",
+     "8",
+     "10"
+    ],
+    "answer": 0,
+    "explain": "9 + 0 = 9. Count them all together to get 9."
+   },
+   {
+    "q": "What comes next in the pattern? 10, 11, 12, ___",
+    "options": [
+     "16",
+     "14",
+     "13",
+     "3"
+    ],
+    "answer": 2,
+    "explain": "The numbers count up by 1, so 13 comes next."
+   },
+   {
+    "q": "Noah has 6 cookies and gets 4 more. How many cookies does Noah have now?",
+    "options": [
+     "11",
+     "9",
+     "0",
+     "10"
+    ],
+    "answer": 3,
+    "explain": "6 + 4 = 10. Count them all together to get 10."
+   },
+   {
+    "q": "What comes next in the pattern? square, square, star, square, square, ___",
+    "options": [
+     "square",
+     "heart",
+     "star",
+     "oval"
+    ],
+    "answer": 2,
+    "explain": "Two squares then one star - the pattern repeats, so star comes next."
+   },
+   {
+    "q": "Find the missing number: 6, 7, __, 9",
+    "options": [
+     "8",
+     "11",
+     "10",
+     "7"
+    ],
+    "answer": 0,
+    "explain": "The numbers count up by 1, so the missing number is 8."
+   },
+   {
+    "q": "Eli has 10 crayons and gets 0 more. How many crayons does Eli have now?",
+    "options": [
+     "9",
+     "10",
+     "13",
+     "0"
+    ],
+    "answer": 1,
+    "explain": "10 + 0 = 10. Count them all together to get 10."
+   },
+   {
+    "q": "What comes next in the pattern? triangle, triangle, star, triangle, triangle, ___",
+    "options": [
+     "triangle",
+     "star",
+     "heart",
+     "oval"
+    ],
+    "answer": 1,
+    "explain": "Two triangles then one star - the pattern repeats, so star comes next."
+   },
+   {
+    "q": "What number is missing? 1, __, 3, 4",
+    "options": [
+     "4",
+     "2",
+     "12",
+     "3"
+    ],
+    "answer": 1,
+    "explain": "The numbers count up by 1, so the missing number is 2."
+   },
+   {
+    "q": "What is 0 + 7?",
+    "options": [
+     "6",
+     "8",
+     "5",
+     "7"
+    ],
+    "answer": 3,
+    "explain": "0 + 7 = 7. Count them all together to get 7."
+   },
+   {
+    "q": "What comes next in the pattern? yellow, blue, yellow, blue, ___",
+    "options": [
+     "blue",
+     "black",
+     "yellow",
+     "white"
+    ],
+    "answer": 2,
+    "explain": "The pattern repeats yellow, blue - so yellow comes next."
+   },
+   {
+    "q": "What comes next in the pattern? circle, circle, star, circle, circle, ___",
+    "options": [
+     "circle",
+     "heart",
+     "oval",
+     "star"
+    ],
+    "answer": 3,
+    "explain": "Two circles then one star - the pattern repeats, so star comes next."
+   },
+   {
+    "q": "What comes next in the pattern? circle, circle, square, circle, circle, ___",
+    "options": [
+     "circle",
+     "heart",
+     "oval",
+     "square"
+    ],
+    "answer": 3,
+    "explain": "Two circles then one square - the pattern repeats, so square comes next."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Patterns & Sorting",
+    "title": "Patterns & Sorting - Quest 3",
+    "desc": "Repeating patterns, what comes next, and sorting by size.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Patterns & Sorting - Quest 4",
+  "subject": "Kindergarten Math",
+  "module": "kindergarten-math-u8-q4",
+  "description": "Repeating patterns, what comes next, and sorting by size.",
+  "questions": [
+   {
+    "q": "What comes next in the pattern? blue, yellow, blue, yellow, ___",
+    "options": [
+     "blue",
+     "yellow",
+     "black",
+     "white"
+    ],
+    "answer": 0,
+    "explain": "The pattern repeats blue, yellow - so blue comes next."
+   },
+   {
+    "q": "What comes next in the pattern? 12, 13, 14, ___",
+    "options": [
+     "5",
+     "13",
+     "15",
+     "18"
+    ],
+    "answer": 2,
+    "explain": "The numbers count up by 1, so 15 comes next."
+   },
+   {
+    "q": "Leo has 6 buttons and gets 3 more. How many buttons does Leo have now?",
+    "options": [
+     "7",
+     "12",
+     "6",
+     "9"
+    ],
+    "answer": 3,
+    "explain": "6 + 3 = 9. Count them all together to get 9."
+   },
+   {
+    "q": "What comes next in the pattern? star, star, triangle, star, star, ___",
+    "options": [
+     "triangle",
+     "star",
+     "heart",
+     "oval"
+    ],
+    "answer": 0,
+    "explain": "Two stars then one triangle - the pattern repeats, so triangle comes next."
+   },
+   {
+    "q": "Sam has 4 blocks and gets 6 more. How many blocks does Sam have now?",
+    "options": [
+     "13",
+     "10",
+     "0",
+     "9"
+    ],
+    "answer": 1,
+    "explain": "4 + 6 = 10. Count them all together to get 10."
+   },
+   {
+    "q": "What comes next in the pattern? green, purple, green, purple, ___",
+    "options": [
+     "purple",
+     "green",
+     "black",
+     "white"
+    ],
+    "answer": 1,
+    "explain": "The pattern repeats green, purple - so green comes next."
+   },
+   {
+    "q": "What number is missing? 7, 8, __, 10",
+    "options": [
+     "6",
+     "10",
+     "7",
+     "9"
+    ],
+    "answer": 3,
+    "explain": "The numbers count up by 1, so the missing number is 9."
+   },
+   {
+    "q": "Sam has 4 buttons and gets 6 more. How many buttons does Sam have now?",
+    "options": [
+     "13",
+     "7",
+     "11",
+     "10"
+    ],
+    "answer": 3,
+    "explain": "4 + 6 = 10. Count them all together to get 10."
+   },
+   {
+    "q": "Sam has 2 cupcakes and gets 1 more. How many cupcakes does Sam have now?",
+    "options": [
+     "3",
+     "4",
+     "13",
+     "1"
+    ],
+    "answer": 0,
+    "explain": "2 + 1 = 3. Count them all together to get 3."
+   },
+   {
+    "q": "What comes next in the pattern? red, yellow, red, yellow, ___",
+    "options": [
+     "yellow",
+     "black",
+     "red",
+     "white"
+    ],
+    "answer": 2,
+    "explain": "The pattern repeats red, yellow - so red comes next."
+   },
+   {
+    "q": "What is 6 + 0?",
+    "options": [
+     "6",
+     "7",
+     "5",
+     "9"
+    ],
+    "answer": 0,
+    "explain": "6 + 0 = 6. Count them all together to get 6."
+   },
+   {
+    "q": "What comes next in the pattern? purple, green, purple, green, ___",
+    "options": [
+     "green",
+     "black",
+     "purple",
+     "white"
+    ],
+    "answer": 2,
+    "explain": "The pattern repeats purple, green - so purple comes next."
+   },
+   {
+    "q": "Owen has 4 cookies and gets 6 more. How many cookies does Owen have now?",
+    "options": [
+     "7",
+     "10",
+     "11",
+     "9"
+    ],
+    "answer": 1,
+    "explain": "4 + 6 = 10. Count them all together to get 10."
+   },
+   {
+    "q": "Liam has 3 stickers and gets 3 more. How many stickers does Liam have now?",
+    "options": [
+     "8",
+     "7",
+     "9",
+     "6"
+    ],
+    "answer": 3,
+    "explain": "3 + 3 = 6. Count them all together to get 6."
+   },
+   {
+    "q": "Ruby has 0 cookies and gets 0 more. How many cookies does Ruby have now?",
+    "options": [
+     "10",
+     "0",
+     "2",
+     "3"
+    ],
+    "answer": 1,
+    "explain": "0 + 0 = 0. Count them all together to get 0."
+   },
+   {
+    "q": "What comes next in the pattern? red, purple, red, purple, ___",
+    "options": [
+     "purple",
+     "black",
+     "red",
+     "white"
+    ],
+    "answer": 2,
+    "explain": "The pattern repeats red, purple - so red comes next."
+   },
+   {
+    "q": "Zoe has 8 marbles and gets 0 more. How many marbles does Zoe have now?",
+    "options": [
+     "8",
+     "7",
+     "10",
+     "9"
+    ],
+    "answer": 0,
+    "explain": "8 + 0 = 8. Count them all together to get 8."
+   },
+   {
+    "q": "Ruby has 9 pencils and gets 0 more. How many pencils does Ruby have now?",
+    "options": [
+     "10",
+     "6",
+     "7",
+     "9"
+    ],
+    "answer": 3,
+    "explain": "9 + 0 = 9. Count them all together to get 9."
+   },
+   {
+    "q": "Ruby has 9 buttons and gets 0 more. How many buttons does Ruby have now?",
+    "options": [
+     "10",
+     "9",
+     "12",
+     "11"
+    ],
+    "answer": 1,
+    "explain": "9 + 0 = 9. Count them all together to get 9."
+   },
+   {
+    "q": "What comes next in the pattern? red, blue, red, blue, ___",
+    "options": [
+     "blue",
+     "black",
+     "red",
+     "white"
+    ],
+    "answer": 2,
+    "explain": "The pattern repeats red, blue - so red comes next."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Patterns & Sorting",
+    "title": "Patterns & Sorting - Quest 4",
+    "desc": "Repeating patterns, what comes next, and sorting by size.",
+    "count": 20,
+    "boss": true
+   }
+  ]
+ },
+ {
+  "title": "Measurement & Money - Quest 1",
+  "subject": "Kindergarten Math",
+  "module": "kindergarten-math-u9-q1",
+  "description": "Comparing lengths and weights, coins and their values, and days of the week.",
+  "questions": [
+   {
+    "q": "How much is a penny worth?",
+    "options": [
+     "5 cents",
+     "1 cent",
+     "10 cents",
+     "25 cents"
+    ],
+    "answer": 1,
+    "explain": "A penny is worth 1 cent."
+   },
+   {
+    "q": "What day comes right after Thursday?",
+    "options": [
+     "Wednesday",
+     "Sunday",
+     "Friday",
+     "Saturday"
+    ],
+    "answer": 2,
+    "explain": "The days go in order: after Thursday comes Friday."
+   },
+   {
+    "q": "Zoe has 1 block and gives away 1. How many blocks are left?",
+    "options": [
+     "10",
+     "3",
+     "1",
+     "0"
+    ],
+    "answer": 3,
+    "explain": "1 - 1 = 0. Take 1 away from 1 and 0 are left."
+   },
+   {
+    "q": "How much is a nickel worth?",
+    "options": [
+     "5 cents",
+     "1 cent",
+     "10 cents",
+     "25 cents"
+    ],
+    "answer": 0,
+    "explain": "A nickel is worth 5 cents."
+   },
+   {
+    "q": "What day comes right after Wednesday?",
+    "options": [
+     "Saturday",
+     "Sunday",
+     "Thursday",
+     "Tuesday"
+    ],
+    "answer": 2,
+    "explain": "The days go in order: after Wednesday comes Thursday."
+   },
+   {
+    "q": "What is 10 - 2?",
+    "options": [
+     "8",
+     "10",
+     "9",
+     "7"
+    ],
+    "answer": 0,
+    "explain": "10 - 2 = 8. Take 2 away from 10 and 8 are left."
+   },
+   {
+    "q": "Which holds less water, a spoon or a bucket?",
+    "options": [
+     "a bucket",
+     "a spoon",
+     "They are the same",
+     "Neither one"
+    ],
+    "answer": 1,
+    "explain": "A spoon is tiny, so it holds much less water than a bucket."
+   },
+   {
+    "q": "What day comes right after Saturday?",
+    "options": [
+     "Thursday",
+     "Saturday",
+     "Tuesday",
+     "Sunday"
+    ],
+    "answer": 3,
+    "explain": "The days go in order: after Saturday comes Sunday."
+   },
+   {
+    "q": "Which is heavier, a book or a car?",
+    "options": [
+     "a book",
+     "They are the same",
+     "Neither one",
+     "a car"
+    ],
+    "answer": 3,
+    "explain": "A car is made of metal and weighs far more than a book."
+   },
+   {
+    "q": "What day comes right after Monday?",
+    "options": [
+     "Friday",
+     "Thursday",
+     "Tuesday",
+     "Monday"
+    ],
+    "answer": 2,
+    "explain": "The days go in order: after Monday comes Tuesday."
+   },
+   {
+    "q": "Owen has 8 buttons and gives away 3. How many buttons are left?",
+    "options": [
+     "3",
+     "5",
+     "4",
+     "8"
+    ],
+    "answer": 1,
+    "explain": "8 - 3 = 5. Take 3 away from 8 and 5 are left."
+   },
+   {
+    "q": "What day comes right after Tuesday?",
+    "options": [
+     "Tuesday",
+     "Thursday",
+     "Friday",
+     "Wednesday"
+    ],
+    "answer": 3,
+    "explain": "The days go in order: after Tuesday comes Wednesday."
+   },
+   {
+    "q": "Owen has 10 crayons and gives away 3. How many crayons are left?",
+    "options": [
+     "8",
+     "5",
+     "7",
+     "4"
+    ],
+    "answer": 2,
+    "explain": "10 - 3 = 7. Take 3 away from 10 and 7 are left."
+   },
+   {
+    "q": "How much is a quarter worth?",
+    "options": [
+     "25 cents",
+     "1 cent",
+     "5 cents",
+     "10 cents"
+    ],
+    "answer": 0,
+    "explain": "A quarter is worth 25 cents."
+   },
+   {
+    "q": "Owen has 8 cookies and gives away 6. How many cookies are left?",
+    "options": [
+     "0",
+     "2",
+     "12",
+     "3"
+    ],
+    "answer": 1,
+    "explain": "8 - 6 = 2. Take 6 away from 8 and 2 are left."
+   },
+   {
+    "q": "Which is taller, a kindergartner or a tree?",
+    "options": [
+     "a kindergartner",
+     "They are the same",
+     "a tree",
+     "Neither one"
+    ],
+    "answer": 2,
+    "explain": "A tree grows far taller than a child."
+   },
+   {
+    "q": "How much is a dime worth?",
+    "options": [
+     "10 cents",
+     "1 cent",
+     "5 cents",
+     "25 cents"
+    ],
+    "answer": 0,
+    "explain": "A dime is worth 10 cents."
+   },
+   {
+    "q": "Ruby has 8 crayons and gives away 4. How many crayons are left?",
+    "options": [
+     "2",
+     "3",
+     "6",
+     "4"
+    ],
+    "answer": 3,
+    "explain": "8 - 4 = 4. Take 4 away from 8 and 4 are left."
+   },
+   {
+    "q": "Ava has 9 stickers and gives away 7. How many stickers are left?",
+    "options": [
+     "2",
+     "1",
+     "3",
+     "12"
+    ],
+    "answer": 0,
+    "explain": "9 - 7 = 2. Take 7 away from 9 and 2 are left."
+   },
+   {
+    "q": "What day comes right after Friday?",
+    "options": [
+     "Wednesday",
+     "Saturday",
+     "Thursday",
+     "Monday"
+    ],
+    "answer": 1,
+    "explain": "The days go in order: after Friday comes Saturday."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Measurement & Money",
+    "title": "Measurement & Money - Quest 1",
+    "desc": "Comparing lengths and weights, coins and their values, and days of the week.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Measurement & Money - Quest 2",
+  "subject": "Kindergarten Math",
+  "module": "kindergarten-math-u9-q2",
+  "description": "Comparing lengths and weights, coins and their values, and days of the week.",
+  "questions": [
+   {
+    "q": "What is 10 - 1?",
+    "options": [
+     "9",
+     "7",
+     "10",
+     "12"
+    ],
+    "answer": 0,
+    "explain": "10 - 1 = 9. Take 1 away from 10 and 9 are left."
+   },
+   {
+    "q": "Which is shorter, a crayon or a jump rope?",
+    "options": [
+     "a jump rope",
+     "They are the same",
+     "Neither one",
+     "a crayon"
+    ],
+    "answer": 3,
+    "explain": "A crayon is small and short; a jump rope stretches far."
+   },
+   {
+    "q": "What is 10 - 0?",
+    "options": [
+     "8",
+     "0",
+     "10",
+     "12"
+    ],
+    "answer": 2,
+    "explain": "10 - 0 = 10. Take 0 away from 10 and 10 are left."
+   },
+   {
+    "q": "Ruby has 3 pencils and gives away 2. How many pencils are left?",
+    "options": [
+     "2",
+     "1",
+     "4",
+     "3"
+    ],
+    "answer": 1,
+    "explain": "3 - 2 = 1. Take 2 away from 3 and 1 are left."
+   },
+   {
+    "q": "Noah has 8 crayons and gives away 6. How many crayons are left?",
+    "options": [
+     "2",
+     "5",
+     "1",
+     "4"
+    ],
+    "answer": 0,
+    "explain": "8 - 6 = 2. Take 6 away from 8 and 2 are left."
+   },
+   {
+    "q": "What is 7 - 5?",
+    "options": [
+     "4",
+     "3",
+     "2",
+     "12"
+    ],
+    "answer": 2,
+    "explain": "7 - 5 = 2. Take 5 away from 7 and 2 are left."
+   },
+   {
+    "q": "Ruby has 4 pencils and gives away 0. How many pencils are left?",
+    "options": [
+     "7",
+     "3",
+     "1",
+     "4"
+    ],
+    "answer": 3,
+    "explain": "4 - 0 = 4. Take 0 away from 4 and 4 are left."
+   },
+   {
+    "q": "Mia has 7 cookies and gives away 6. How many cookies are left?",
+    "options": [
+     "2",
+     "4",
+     "1",
+     "0"
+    ],
+    "answer": 2,
+    "explain": "7 - 6 = 1. Take 6 away from 7 and 1 are left."
+   },
+   {
+    "q": "Liam has 8 blocks and gives away 5. How many blocks are left?",
+    "options": [
+     "2",
+     "13",
+     "4",
+     "3"
+    ],
+    "answer": 3,
+    "explain": "8 - 5 = 3. Take 5 away from 8 and 3 are left."
+   },
+   {
+    "q": "Eli has 10 pencils and gives away 7. How many pencils are left?",
+    "options": [
+     "3",
+     "1",
+     "0",
+     "2"
+    ],
+    "answer": 0,
+    "explain": "10 - 7 = 3. Take 7 away from 10 and 3 are left."
+   },
+   {
+    "q": "Which holds more water, a cup or a bathtub?",
+    "options": [
+     "a cup",
+     "a bathtub",
+     "They are the same",
+     "Neither one"
+    ],
+    "answer": 1,
+    "explain": "A bathtub is much bigger, so it holds much more water."
+   },
+   {
+    "q": "Ava has 7 apples and gives away 4. How many apples are left?",
+    "options": [
+     "0",
+     "1",
+     "3",
+     "2"
+    ],
+    "answer": 2,
+    "explain": "7 - 4 = 3. Take 4 away from 7 and 3 are left."
+   },
+   {
+    "q": "Zoe has 10 cupcakes and gives away 1. How many cupcakes are left?",
+    "options": [
+     "6",
+     "9",
+     "11",
+     "10"
+    ],
+    "answer": 1,
+    "explain": "10 - 1 = 9. Take 1 away from 10 and 9 are left."
+   },
+   {
+    "q": "Noah has 5 pencils and gives away 2. How many pencils are left?",
+    "options": [
+     "5",
+     "4",
+     "1",
+     "3"
+    ],
+    "answer": 3,
+    "explain": "5 - 2 = 3. Take 2 away from 5 and 3 are left."
+   },
+   {
+    "q": "Sam has 6 seashells and gives away 5. How many seashells are left?",
+    "options": [
+     "1",
+     "3",
+     "0",
+     "4"
+    ],
+    "answer": 0,
+    "explain": "6 - 5 = 1. Take 5 away from 6 and 1 are left."
+   },
+   {
+    "q": "Ruby has 2 pencils and gives away 0. How many pencils are left?",
+    "options": [
+     "3",
+     "1",
+     "2",
+     "5"
+    ],
+    "answer": 2,
+    "explain": "2 - 0 = 2. Take 0 away from 2 and 2 are left."
+   },
+   {
+    "q": "What is 9 - 2?",
+    "options": [
+     "4",
+     "10",
+     "6",
+     "7"
+    ],
+    "answer": 3,
+    "explain": "9 - 2 = 7. Take 2 away from 9 and 7 are left."
+   },
+   {
+    "q": "What is 9 - 0?",
+    "options": [
+     "7",
+     "9",
+     "11",
+     "6"
+    ],
+    "answer": 1,
+    "explain": "9 - 0 = 9. Take 0 away from 9 and 9 are left."
+   },
+   {
+    "q": "Nora has 9 buttons and gives away 1. How many buttons are left?",
+    "options": [
+     "8",
+     "6",
+     "9",
+     "5"
+    ],
+    "answer": 0,
+    "explain": "9 - 1 = 8. Take 1 away from 9 and 8 are left."
+   },
+   {
+    "q": "Ava has 8 crayons and gives away 6. How many crayons are left?",
+    "options": [
+     "12",
+     "2",
+     "0",
+     "5"
+    ],
+    "answer": 1,
+    "explain": "8 - 6 = 2. Take 6 away from 8 and 2 are left."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Measurement & Money",
+    "title": "Measurement & Money - Quest 2",
+    "desc": "Comparing lengths and weights, coins and their values, and days of the week.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Measurement & Money - Quest 3",
+  "subject": "Kindergarten Math",
+  "module": "kindergarten-math-u9-q3",
+  "description": "Comparing lengths and weights, coins and their values, and days of the week.",
+  "questions": [
+   {
+    "q": "Sam has 10 apples and gives away 7. How many apples are left?",
+    "options": [
+     "3",
+     "2",
+     "4",
+     "1"
+    ],
+    "answer": 0,
+    "explain": "10 - 7 = 3. Take 7 away from 10 and 3 are left."
+   },
+   {
+    "q": "Ruby has 6 seashells and gives away 3. How many seashells are left?",
+    "options": [
+     "1",
+     "5",
+     "6",
+     "3"
+    ],
+    "answer": 3,
+    "explain": "6 - 3 = 3. Take 3 away from 6 and 3 are left."
+   },
+   {
+    "q": "Zoe has 3 marbles and gives away 0. How many marbles are left?",
+    "options": [
+     "2",
+     "3",
+     "5",
+     "6"
+    ],
+    "answer": 1,
+    "explain": "3 - 0 = 3. Take 0 away from 3 and 3 are left."
+   },
+   {
+    "q": "Ivy has 6 blocks and gives away 0. How many blocks are left?",
+    "options": [
+     "8",
+     "3",
+     "4",
+     "6"
+    ],
+    "answer": 3,
+    "explain": "6 - 0 = 6. Take 0 away from 6 and 6 are left."
+   },
+   {
+    "q": "Liam has 10 blocks and gives away 1. How many blocks are left?",
+    "options": [
+     "6",
+     "11",
+     "9",
+     "7"
+    ],
+    "answer": 2,
+    "explain": "10 - 1 = 9. Take 1 away from 10 and 9 are left."
+   },
+   {
+    "q": "Nora has 10 pencils and gives away 6. How many pencils are left?",
+    "options": [
+     "1",
+     "5",
+     "4",
+     "7"
+    ],
+    "answer": 2,
+    "explain": "10 - 6 = 4. Take 6 away from 10 and 4 are left."
+   },
+   {
+    "q": "Noah has 8 pencils and gives away 4. How many pencils are left?",
+    "options": [
+     "2",
+     "4",
+     "1",
+     "6"
+    ],
+    "answer": 1,
+    "explain": "8 - 4 = 4. Take 4 away from 8 and 4 are left."
+   },
+   {
+    "q": "Ruby has 3 buttons and gives away 1. How many buttons are left?",
+    "options": [
+     "12",
+     "3",
+     "0",
+     "2"
+    ],
+    "answer": 3,
+    "explain": "3 - 1 = 2. Take 1 away from 3 and 2 are left."
+   },
+   {
+    "q": "What is 9 - 6?",
+    "options": [
+     "5",
+     "3",
+     "13",
+     "1"
+    ],
+    "answer": 1,
+    "explain": "9 - 6 = 3. Take 6 away from 9 and 3 are left."
+   },
+   {
+    "q": "What is 9 - 1?",
+    "options": [
+     "10",
+     "8",
+     "9",
+     "6"
+    ],
+    "answer": 1,
+    "explain": "9 - 1 = 8. Take 1 away from 9 and 8 are left."
+   },
+   {
+    "q": "Ava has 1 button and gives away 0. How many buttons are left?",
+    "options": [
+     "2",
+     "11",
+     "4",
+     "1"
+    ],
+    "answer": 3,
+    "explain": "1 - 0 = 1. Take 0 away from 1 and 1 are left."
+   },
+   {
+    "q": "Which is longer, a pencil or a school bus?",
+    "options": [
+     "a pencil",
+     "They are the same",
+     "a school bus",
+     "Neither one"
+    ],
+    "answer": 2,
+    "explain": "A school bus is many, many times longer than a pencil."
+   },
+   {
+    "q": "Owen has 6 apples and gives away 0. How many apples are left?",
+    "options": [
+     "8",
+     "6",
+     "9",
+     "3"
+    ],
+    "answer": 1,
+    "explain": "6 - 0 = 6. Take 0 away from 6 and 6 are left."
+   },
+   {
+    "q": "What is 6 - 1?",
+    "options": [
+     "3",
+     "6",
+     "5",
+     "8"
+    ],
+    "answer": 2,
+    "explain": "6 - 1 = 5. Take 1 away from 6 and 5 are left."
+   },
+   {
+    "q": "Owen has 1 pencil and gives away 0. How many pencils are left?",
+    "options": [
+     "1",
+     "11",
+     "0",
+     "3"
+    ],
+    "answer": 0,
+    "explain": "1 - 0 = 1. Take 0 away from 1 and 1 are left."
+   },
+   {
+    "q": "Eli has 2 seashells and gives away 0. How many seashells are left?",
+    "options": [
+     "0",
+     "1",
+     "3",
+     "2"
+    ],
+    "answer": 3,
+    "explain": "2 - 0 = 2. Take 0 away from 2 and 2 are left."
+   },
+   {
+    "q": "Leo has 4 crayons and gives away 1. How many crayons are left?",
+    "options": [
+     "13",
+     "0",
+     "3",
+     "1"
+    ],
+    "answer": 2,
+    "explain": "4 - 1 = 3. Take 1 away from 4 and 3 are left."
+   },
+   {
+    "q": "Owen has 6 blocks and gives away 0. How many blocks are left?",
+    "options": [
+     "6",
+     "3",
+     "8",
+     "4"
+    ],
+    "answer": 0,
+    "explain": "6 - 0 = 6. Take 0 away from 6 and 6 are left."
+   },
+   {
+    "q": "Nora has 1 button and gives away 0. How many buttons are left?",
+    "options": [
+     "1",
+     "11",
+     "2",
+     "4"
+    ],
+    "answer": 0,
+    "explain": "1 - 0 = 1. Take 0 away from 1 and 1 are left."
+   },
+   {
+    "q": "Ava has 4 crayons and gives away 0. How many crayons are left?",
+    "options": [
+     "4",
+     "3",
+     "5",
+     "7"
+    ],
+    "answer": 0,
+    "explain": "4 - 0 = 4. Take 0 away from 4 and 4 are left."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Measurement & Money",
+    "title": "Measurement & Money - Quest 3",
+    "desc": "Comparing lengths and weights, coins and their values, and days of the week.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Measurement & Money - Quest 4",
+  "subject": "Kindergarten Math",
+  "module": "kindergarten-math-u9-q4",
+  "description": "Comparing lengths and weights, coins and their values, and days of the week.",
+  "questions": [
+   {
+    "q": "What is 3 - 0?",
+    "options": [
+     "3",
+     "1",
+     "4",
+     "13"
+    ],
+    "answer": 0,
+    "explain": "3 - 0 = 3. Take 0 away from 3 and 3 are left."
+   },
+   {
+    "q": "Sam has 6 buttons and gives away 4. How many buttons are left?",
+    "options": [
+     "1",
+     "2",
+     "3",
+     "4"
+    ],
+    "answer": 1,
+    "explain": "6 - 4 = 2. Take 4 away from 6 and 2 are left."
+   },
+   {
+    "q": "Noah has 2 cookies and gives away 0. How many cookies are left?",
+    "options": [
+     "2",
+     "3",
+     "12",
+     "5"
+    ],
+    "answer": 0,
+    "explain": "2 - 0 = 2. Take 0 away from 2 and 2 are left."
+   },
+   {
+    "q": "Nora has 2 stickers and gives away 1. How many stickers are left?",
+    "options": [
+     "0",
+     "1",
+     "2",
+     "11"
+    ],
+    "answer": 1,
+    "explain": "2 - 1 = 1. Take 1 away from 2 and 1 are left."
+   },
+   {
+    "q": "Eli has 5 marbles and gives away 3. How many marbles are left?",
+    "options": [
+     "5",
+     "12",
+     "2",
+     "0"
+    ],
+    "answer": 2,
+    "explain": "5 - 3 = 2. Take 3 away from 5 and 2 are left."
+   },
+   {
+    "q": "Ivy has 9 pencils and gives away 1. How many pencils are left?",
+    "options": [
+     "8",
+     "10",
+     "11",
+     "7"
+    ],
+    "answer": 0,
+    "explain": "9 - 1 = 8. Take 1 away from 9 and 8 are left."
+   },
+   {
+    "q": "Eli has 1 seashell and gives away 1. How many seashells are left?",
+    "options": [
+     "10",
+     "0",
+     "2",
+     "3"
+    ],
+    "answer": 1,
+    "explain": "1 - 1 = 0. Take 1 away from 1 and 0 are left."
+   },
+   {
+    "q": "What is 9 - 5?",
+    "options": [
+     "5",
+     "4",
+     "6",
+     "3"
+    ],
+    "answer": 1,
+    "explain": "9 - 5 = 4. Take 5 away from 9 and 4 are left."
+   },
+   {
+    "q": "What is 5 - 0?",
+    "options": [
+     "5",
+     "6",
+     "2",
+     "7"
+    ],
+    "answer": 0,
+    "explain": "5 - 0 = 5. Take 0 away from 5 and 5 are left."
+   },
+   {
+    "q": "Liam has 3 cupcakes and gives away 2. How many cupcakes are left?",
+    "options": [
+     "2",
+     "0",
+     "1",
+     "4"
+    ],
+    "answer": 2,
+    "explain": "3 - 2 = 1. Take 2 away from 3 and 1 are left."
+   },
+   {
+    "q": "Ivy has 9 apples and gives away 8. How many apples are left?",
+    "options": [
+     "1",
+     "0",
+     "11",
+     "3"
+    ],
+    "answer": 0,
+    "explain": "9 - 8 = 1. Take 8 away from 9 and 1 are left."
+   },
+   {
+    "q": "Owen has 9 cupcakes and gives away 5. How many cupcakes are left?",
+    "options": [
+     "3",
+     "5",
+     "7",
+     "4"
+    ],
+    "answer": 3,
+    "explain": "9 - 5 = 4. Take 5 away from 9 and 4 are left."
+   },
+   {
+    "q": "Eli has 2 marbles and gives away 0. How many marbles are left?",
+    "options": [
+     "1",
+     "4",
+     "12",
+     "2"
+    ],
+    "answer": 3,
+    "explain": "2 - 0 = 2. Take 0 away from 2 and 2 are left."
+   },
+   {
+    "q": "Sam has 3 marbles and gives away 2. How many marbles are left?",
+    "options": [
+     "11",
+     "2",
+     "1",
+     "3"
+    ],
+    "answer": 2,
+    "explain": "3 - 2 = 1. Take 2 away from 3 and 1 are left."
+   },
+   {
+    "q": "Liam has 3 stickers and gives away 1. How many stickers are left?",
+    "options": [
+     "0",
+     "2",
+     "5",
+     "1"
+    ],
+    "answer": 1,
+    "explain": "3 - 1 = 2. Take 1 away from 3 and 2 are left."
+   },
+   {
+    "q": "Ava has 5 stickers and gives away 0. How many stickers are left?",
+    "options": [
+     "6",
+     "7",
+     "8",
+     "5"
+    ],
+    "answer": 3,
+    "explain": "5 - 0 = 5. Take 0 away from 5 and 5 are left."
+   },
+   {
+    "q": "Ivy has 10 buttons and gives away 5. How many buttons are left?",
+    "options": [
+     "7",
+     "4",
+     "6",
+     "5"
+    ],
+    "answer": 3,
+    "explain": "10 - 5 = 5. Take 5 away from 10 and 5 are left."
+   },
+   {
+    "q": "What is 8 - 7?",
+    "options": [
+     "4",
+     "11",
+     "3",
+     "1"
+    ],
+    "answer": 3,
+    "explain": "8 - 7 = 1. Take 7 away from 8 and 1 are left."
+   },
+   {
+    "q": "Liam has 8 blocks and gives away 1. How many blocks are left?",
+    "options": [
+     "6",
+     "4",
+     "7",
+     "10"
+    ],
+    "answer": 2,
+    "explain": "8 - 1 = 7. Take 1 away from 8 and 7 are left."
+   },
+   {
+    "q": "What is 6 - 4?",
+    "options": [
+     "0",
+     "1",
+     "2",
+     "3"
+    ],
+    "answer": 2,
+    "explain": "6 - 4 = 2. Take 4 away from 6 and 2 are left."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Measurement & Money",
+    "title": "Measurement & Money - Quest 4",
+    "desc": "Comparing lengths and weights, coins and their values, and days of the week.",
+    "count": 20,
+    "boss": true
+   }
+  ]
  }
 ]
