@@ -62585,5 +62585,8537 @@
     "boss": true
    }
   ]
+ },
+ {
+  "title": "Year Quest: Letters & Sounds - Quest 1",
+  "subject": "Kids Reading",
+  "module": "kids-reading-yq-u1-q1",
+  "description": "Learn the letters of the alphabet and the sounds they make. Quest 1 of 4 in this unit.",
+  "questions": [
+   {
+    "q": "Which word starts with the letter V?",
+    "options": [
+     "jam",
+     "van",
+     "tiger",
+     "igloo"
+    ],
+    "answer": 1,
+    "explain": "Van starts with the letter V."
+   },
+   {
+    "q": "Which of these letters is NOT a vowel?",
+    "options": [
+     "I",
+     "T",
+     "A",
+     "U"
+    ],
+    "answer": 1,
+    "explain": "The letter T is a consonant, not a vowel."
+   },
+   {
+    "q": "Which letter comes right before Q in the alphabet?",
+    "options": [
+     "A",
+     "J",
+     "P",
+     "R"
+    ],
+    "answer": 2,
+    "explain": "P comes right before Q in the alphabet."
+   },
+   {
+    "q": "Which letter comes right after Q in the alphabet?",
+    "options": [
+     "Y",
+     "X",
+     "R",
+     "O"
+    ],
+    "answer": 2,
+    "explain": "R comes right after Q in the alphabet."
+   },
+   {
+    "q": "Which letter is the capital match for h?",
+    "options": [
+     "F",
+     "N",
+     "H",
+     "K"
+    ],
+    "answer": 2,
+    "explain": "h and H are the same letter."
+   },
+   {
+    "q": "Which word starts with the same sound as sun?",
+    "options": [
+     "van",
+     "snake",
+     "fish",
+     "hat"
+    ],
+    "answer": 1,
+    "explain": "Sun and snake both start with the letter S."
+   },
+   {
+    "q": "What letter does the word egg start with?",
+    "options": [
+     "E",
+     "A",
+     "R",
+     "J"
+    ],
+    "answer": 0,
+    "explain": "The word egg starts with the letter E."
+   },
+   {
+    "q": "Which letter comes right after T in the alphabet?",
+    "options": [
+     "U",
+     "Y",
+     "M",
+     "L"
+    ],
+    "answer": 0,
+    "explain": "U comes right after T in the alphabet."
+   },
+   {
+    "q": "Which word starts with the letter R?",
+    "options": [
+     "ostrich",
+     "rabbit",
+     "dog",
+     "umbrella"
+    ],
+    "answer": 1,
+    "explain": "Rabbit starts with the letter R."
+   },
+   {
+    "q": "Which word starts with the letter A?",
+    "options": [
+     "apple",
+     "cat",
+     "umbrella",
+     "ostrich"
+    ],
+    "answer": 0,
+    "explain": "Apple starts with the letter A."
+   },
+   {
+    "q": "Which letter is the capital match for k?",
+    "options": [
+     "G",
+     "O",
+     "M",
+     "K"
+    ],
+    "answer": 3,
+    "explain": "k and K are the same letter."
+   },
+   {
+    "q": "Which letter comes right after G in the alphabet?",
+    "options": [
+     "Y",
+     "H",
+     "P",
+     "D"
+    ],
+    "answer": 1,
+    "explain": "H comes right after G in the alphabet."
+   },
+   {
+    "q": "Which letter comes right before Z in the alphabet?",
+    "options": [
+     "Y",
+     "T",
+     "V",
+     "H"
+    ],
+    "answer": 0,
+    "explain": "Y comes right before Z in the alphabet."
+   },
+   {
+    "q": "Which letter comes right before R in the alphabet?",
+    "options": [
+     "M",
+     "R",
+     "Q",
+     "X"
+    ],
+    "answer": 2,
+    "explain": "Q comes right before R in the alphabet."
+   },
+   {
+    "q": "Which of these letters is one of the five vowels?",
+    "options": [
+     "X",
+     "S",
+     "D",
+     "O"
+    ],
+    "answer": 3,
+    "explain": "The vowels are A, E, I, O, and U, and O is one of them."
+   },
+   {
+    "q": "What letter does the word jam start with?",
+    "options": [
+     "A",
+     "P",
+     "V",
+     "J"
+    ],
+    "answer": 3,
+    "explain": "The word jam starts with the letter J."
+   },
+   {
+    "q": "Which letter is the lowercase match for H?",
+    "options": [
+     "d",
+     "q",
+     "h",
+     "c"
+    ],
+    "answer": 2,
+    "explain": "H and h are the same letter."
+   },
+   {
+    "q": "Which letter is the lowercase match for G?",
+    "options": [
+     "u",
+     "f",
+     "b",
+     "g"
+    ],
+    "answer": 3,
+    "explain": "G and g are the same letter."
+   },
+   {
+    "q": "What letter does the word queen start with?",
+    "options": [
+     "Q",
+     "D",
+     "L",
+     "B"
+    ],
+    "answer": 0,
+    "explain": "The word queen starts with the letter Q."
+   },
+   {
+    "q": "Which letter comes right before M in the alphabet?",
+    "options": [
+     "R",
+     "Y",
+     "F",
+     "L"
+    ],
+    "answer": 3,
+    "explain": "L comes right before M in the alphabet."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Letters & Sounds",
+    "title": "Year Quest: Letters & Sounds - Quest 1",
+    "desc": "Learn the letters of the alphabet and the sounds they make. Quest 1 of 4 in this unit.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Year Quest: Letters & Sounds - Quest 2",
+  "subject": "Kids Reading",
+  "module": "kids-reading-yq-u1-q2",
+  "description": "Learn the letters of the alphabet and the sounds they make. Quest 2 of 4 in this unit.",
+  "questions": [
+   {
+    "q": "Which word starts with the same sound as jam?",
+    "options": [
+     "penguin",
+     "jelly",
+     "egg",
+     "zipper"
+    ],
+    "answer": 1,
+    "explain": "Jam and jelly both start with the letter J."
+   },
+   {
+    "q": "Which letter is the lowercase match for W?",
+    "options": [
+     "w",
+     "a",
+     "r",
+     "k"
+    ],
+    "answer": 0,
+    "explain": "W and w are the same letter."
+   },
+   {
+    "q": "Which letter comes right before Q in the alphabet?",
+    "options": [
+     "T",
+     "P",
+     "J",
+     "F"
+    ],
+    "answer": 1,
+    "explain": "P comes right before Q in the alphabet."
+   },
+   {
+    "q": "Which word starts with the same sound as pig?",
+    "options": [
+     "tiger",
+     "penguin",
+     "mouse",
+     "hat"
+    ],
+    "answer": 1,
+    "explain": "Pig and penguin both start with the letter P."
+   },
+   {
+    "q": "Which letter comes right after Y in the alphabet?",
+    "options": [
+     "Z",
+     "A",
+     "E",
+     "S"
+    ],
+    "answer": 0,
+    "explain": "Z comes right after Y in the alphabet."
+   },
+   {
+    "q": "Which letter comes right after I in the alphabet?",
+    "options": [
+     "P",
+     "M",
+     "Q",
+     "J"
+    ],
+    "answer": 3,
+    "explain": "J comes right after I in the alphabet."
+   },
+   {
+    "q": "Which letter comes right before E in the alphabet?",
+    "options": [
+     "D",
+     "B",
+     "P",
+     "H"
+    ],
+    "answer": 0,
+    "explain": "D comes right before E in the alphabet."
+   },
+   {
+    "q": "Which of these letters is NOT a vowel?",
+    "options": [
+     "A",
+     "O",
+     "B",
+     "E"
+    ],
+    "answer": 2,
+    "explain": "The letter B is a consonant, not a vowel."
+   },
+   {
+    "q": "Which word starts with the letter Q?",
+    "options": [
+     "igloo",
+     "cat",
+     "rabbit",
+     "queen"
+    ],
+    "answer": 3,
+    "explain": "Queen starts with the letter Q."
+   },
+   {
+    "q": "Which letter comes right before W in the alphabet?",
+    "options": [
+     "V",
+     "I",
+     "X",
+     "B"
+    ],
+    "answer": 0,
+    "explain": "V comes right before W in the alphabet."
+   },
+   {
+    "q": "Which word starts with the same sound as moon?",
+    "options": [
+     "rabbit",
+     "snake",
+     "mouse",
+     "wolf"
+    ],
+    "answer": 2,
+    "explain": "Moon and mouse both start with the letter M."
+   },
+   {
+    "q": "Which letter is the capital match for d?",
+    "options": [
+     "R",
+     "D",
+     "O",
+     "K"
+    ],
+    "answer": 1,
+    "explain": "d and D are the same letter."
+   },
+   {
+    "q": "Which letter comes right before R in the alphabet?",
+    "options": [
+     "C",
+     "Q",
+     "V",
+     "I"
+    ],
+    "answer": 1,
+    "explain": "Q comes right before R in the alphabet."
+   },
+   {
+    "q": "What letter does the word moon start with?",
+    "options": [
+     "M",
+     "J",
+     "B",
+     "N"
+    ],
+    "answer": 0,
+    "explain": "The word moon starts with the letter M."
+   },
+   {
+    "q": "Which letter comes right after W in the alphabet?",
+    "options": [
+     "O",
+     "D",
+     "X",
+     "H"
+    ],
+    "answer": 2,
+    "explain": "X comes right after W in the alphabet."
+   },
+   {
+    "q": "Which letter is the lowercase match for A?",
+    "options": [
+     "w",
+     "y",
+     "s",
+     "a"
+    ],
+    "answer": 3,
+    "explain": "A and a are the same letter."
+   },
+   {
+    "q": "Which letter comes right before I in the alphabet?",
+    "options": [
+     "I",
+     "R",
+     "Q",
+     "H"
+    ],
+    "answer": 3,
+    "explain": "H comes right before I in the alphabet."
+   },
+   {
+    "q": "What letter does the word cat start with?",
+    "options": [
+     "F",
+     "I",
+     "S",
+     "C"
+    ],
+    "answer": 3,
+    "explain": "The word cat starts with the letter C."
+   },
+   {
+    "q": "Which word starts with the letter T?",
+    "options": [
+     "umbrella",
+     "jam",
+     "tiger",
+     "moon"
+    ],
+    "answer": 2,
+    "explain": "Tiger starts with the letter T."
+   },
+   {
+    "q": "What letter does the word dog start with?",
+    "options": [
+     "U",
+     "H",
+     "D",
+     "J"
+    ],
+    "answer": 2,
+    "explain": "The word dog starts with the letter D."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Letters & Sounds",
+    "title": "Year Quest: Letters & Sounds - Quest 2",
+    "desc": "Learn the letters of the alphabet and the sounds they make. Quest 2 of 4 in this unit.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Year Quest: Letters & Sounds - Quest 3",
+  "subject": "Kids Reading",
+  "module": "kids-reading-yq-u1-q3",
+  "description": "Learn the letters of the alphabet and the sounds they make. Quest 3 of 4 in this unit.",
+  "questions": [
+   {
+    "q": "Which letter comes right after W in the alphabet?",
+    "options": [
+     "X",
+     "R",
+     "G",
+     "W"
+    ],
+    "answer": 0,
+    "explain": "X comes right after W in the alphabet."
+   },
+   {
+    "q": "Which word starts with the letter V?",
+    "options": [
+     "kite",
+     "van",
+     "moon",
+     "nest"
+    ],
+    "answer": 1,
+    "explain": "Van starts with the letter V."
+   },
+   {
+    "q": "Which word starts with the same sound as tiger?",
+    "options": [
+     "turtle",
+     "wolf",
+     "kite",
+     "frog"
+    ],
+    "answer": 0,
+    "explain": "Tiger and turtle both start with the letter T."
+   },
+   {
+    "q": "Which letter is the lowercase match for T?",
+    "options": [
+     "e",
+     "t",
+     "n",
+     "u"
+    ],
+    "answer": 1,
+    "explain": "T and t are the same letter."
+   },
+   {
+    "q": "Which letter is the capital match for u?",
+    "options": [
+     "R",
+     "Y",
+     "U",
+     "B"
+    ],
+    "answer": 2,
+    "explain": "u and U are the same letter."
+   },
+   {
+    "q": "Which word starts with the same sound as nest?",
+    "options": [
+     "frog",
+     "ball",
+     "nose",
+     "whale"
+    ],
+    "answer": 2,
+    "explain": "Nest and nose both start with the letter N."
+   },
+   {
+    "q": "Which word starts with the letter H?",
+    "options": [
+     "nest",
+     "hat",
+     "umbrella",
+     "yo-yo"
+    ],
+    "answer": 1,
+    "explain": "Hat starts with the letter H."
+   },
+   {
+    "q": "Which letter is the capital match for g?",
+    "options": [
+     "G",
+     "P",
+     "W",
+     "A"
+    ],
+    "answer": 0,
+    "explain": "g and G are the same letter."
+   },
+   {
+    "q": "Which letter is the capital match for t?",
+    "options": [
+     "H",
+     "T",
+     "J",
+     "W"
+    ],
+    "answer": 1,
+    "explain": "t and T are the same letter."
+   },
+   {
+    "q": "Which word starts with the letter L?",
+    "options": [
+     "moon",
+     "goat",
+     "lion",
+     "cat"
+    ],
+    "answer": 2,
+    "explain": "Lion starts with the letter L."
+   },
+   {
+    "q": "Which letter is the lowercase match for S?",
+    "options": [
+     "w",
+     "s",
+     "g",
+     "e"
+    ],
+    "answer": 1,
+    "explain": "S and s are the same letter."
+   },
+   {
+    "q": "What letter does the word whale start with?",
+    "options": [
+     "W",
+     "D",
+     "F",
+     "E"
+    ],
+    "answer": 0,
+    "explain": "The word whale starts with the letter W."
+   },
+   {
+    "q": "Which letter is the lowercase match for D?",
+    "options": [
+     "a",
+     "t",
+     "d",
+     "n"
+    ],
+    "answer": 2,
+    "explain": "D and d are the same letter."
+   },
+   {
+    "q": "Which word starts with the same sound as igloo?",
+    "options": [
+     "moon",
+     "ostrich",
+     "pig",
+     "insect"
+    ],
+    "answer": 3,
+    "explain": "Igloo and insect both start with the letter I."
+   },
+   {
+    "q": "Which word starts with the letter P?",
+    "options": [
+     "pig",
+     "fish",
+     "van",
+     "rabbit"
+    ],
+    "answer": 0,
+    "explain": "Pig starts with the letter P."
+   },
+   {
+    "q": "Pick the letter that is a vowel.",
+    "options": [
+     "N",
+     "Y",
+     "L",
+     "I"
+    ],
+    "answer": 3,
+    "explain": "The vowels are A, E, I, O, and U, and I is one of them."
+   },
+   {
+    "q": "Which letter is the capital match for p?",
+    "options": [
+     "Z",
+     "J",
+     "S",
+     "P"
+    ],
+    "answer": 3,
+    "explain": "p and P are the same letter."
+   },
+   {
+    "q": "Which letter is the lowercase match for Q?",
+    "options": [
+     "j",
+     "p",
+     "q",
+     "z"
+    ],
+    "answer": 2,
+    "explain": "Q and q are the same letter."
+   },
+   {
+    "q": "Which letter comes right after X in the alphabet?",
+    "options": [
+     "N",
+     "J",
+     "W",
+     "Y"
+    ],
+    "answer": 3,
+    "explain": "Y comes right after X in the alphabet."
+   },
+   {
+    "q": "Which letter is the capital match for j?",
+    "options": [
+     "Y",
+     "D",
+     "T",
+     "J"
+    ],
+    "answer": 3,
+    "explain": "j and J are the same letter."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Letters & Sounds",
+    "title": "Year Quest: Letters & Sounds - Quest 3",
+    "desc": "Learn the letters of the alphabet and the sounds they make. Quest 3 of 4 in this unit.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Year Quest: Letters & Sounds - Quest 4",
+  "subject": "Kids Reading",
+  "module": "kids-reading-yq-u1-q4",
+  "description": "Learn the letters of the alphabet and the sounds they make. Quest 4 of 4 in this unit.",
+  "questions": [
+   {
+    "q": "Pick the letter that is a vowel.",
+    "options": [
+     "Z",
+     "R",
+     "S",
+     "I"
+    ],
+    "answer": 3,
+    "explain": "The vowels are A, E, I, O, and U, and I is one of them."
+   },
+   {
+    "q": "Which letter is the capital match for w?",
+    "options": [
+     "A",
+     "T",
+     "W",
+     "M"
+    ],
+    "answer": 2,
+    "explain": "w and W are the same letter."
+   },
+   {
+    "q": "Which letter is the lowercase match for I?",
+    "options": [
+     "i",
+     "r",
+     "c",
+     "d"
+    ],
+    "answer": 0,
+    "explain": "I and i are the same letter."
+   },
+   {
+    "q": "Which letter is the capital match for c?",
+    "options": [
+     "M",
+     "A",
+     "C",
+     "W"
+    ],
+    "answer": 2,
+    "explain": "c and C are the same letter."
+   },
+   {
+    "q": "Which of these letters is NOT a vowel?",
+    "options": [
+     "U",
+     "R",
+     "E",
+     "A"
+    ],
+    "answer": 1,
+    "explain": "The letter R is a consonant, not a vowel."
+   },
+   {
+    "q": "What letter does the word hat start with?",
+    "options": [
+     "N",
+     "K",
+     "W",
+     "H"
+    ],
+    "answer": 3,
+    "explain": "The word hat starts with the letter H."
+   },
+   {
+    "q": "What letter does the word cat start with?",
+    "options": [
+     "E",
+     "Y",
+     "C",
+     "F"
+    ],
+    "answer": 2,
+    "explain": "The word cat starts with the letter C."
+   },
+   {
+    "q": "Which letter comes right before U in the alphabet?",
+    "options": [
+     "M",
+     "V",
+     "O",
+     "T"
+    ],
+    "answer": 3,
+    "explain": "T comes right before U in the alphabet."
+   },
+   {
+    "q": "Which word starts with the same sound as queen?",
+    "options": [
+     "quilt",
+     "rain",
+     "tiger",
+     "zebra"
+    ],
+    "answer": 0,
+    "explain": "Queen and quilt both start with the letter Q."
+   },
+   {
+    "q": "Which letter comes right before S in the alphabet?",
+    "options": [
+     "R",
+     "E",
+     "X",
+     "P"
+    ],
+    "answer": 0,
+    "explain": "R comes right before S in the alphabet."
+   },
+   {
+    "q": "Which word starts with the same sound as nest?",
+    "options": [
+     "nose",
+     "ostrich",
+     "yellow",
+     "egg"
+    ],
+    "answer": 0,
+    "explain": "Nest and nose both start with the letter N."
+   },
+   {
+    "q": "What letter does the word queen start with?",
+    "options": [
+     "J",
+     "Q",
+     "F",
+     "L"
+    ],
+    "answer": 1,
+    "explain": "The word queen starts with the letter Q."
+   },
+   {
+    "q": "Which word starts with the letter Q?",
+    "options": [
+     "igloo",
+     "goat",
+     "queen",
+     "zebra"
+    ],
+    "answer": 2,
+    "explain": "Queen starts with the letter Q."
+   },
+   {
+    "q": "What letter does the word fish start with?",
+    "options": [
+     "L",
+     "B",
+     "Y",
+     "F"
+    ],
+    "answer": 3,
+    "explain": "The word fish starts with the letter F."
+   },
+   {
+    "q": "Which word starts with the same sound as ostrich?",
+    "options": [
+     "whale",
+     "octopus",
+     "quilt",
+     "horse"
+    ],
+    "answer": 1,
+    "explain": "Ostrich and octopus both start with the letter O."
+   },
+   {
+    "q": "What letter does the word umbrella start with?",
+    "options": [
+     "G",
+     "Y",
+     "U",
+     "W"
+    ],
+    "answer": 2,
+    "explain": "The word umbrella starts with the letter U."
+   },
+   {
+    "q": "Which letter comes right after P in the alphabet?",
+    "options": [
+     "G",
+     "Q",
+     "T",
+     "H"
+    ],
+    "answer": 1,
+    "explain": "Q comes right after P in the alphabet."
+   },
+   {
+    "q": "What letter does the word whale start with?",
+    "options": [
+     "J",
+     "M",
+     "S",
+     "W"
+    ],
+    "answer": 3,
+    "explain": "The word whale starts with the letter W."
+   },
+   {
+    "q": "Which letter comes right before K in the alphabet?",
+    "options": [
+     "S",
+     "J",
+     "F",
+     "O"
+    ],
+    "answer": 1,
+    "explain": "J comes right before K in the alphabet."
+   },
+   {
+    "q": "Which letter comes right before N in the alphabet?",
+    "options": [
+     "M",
+     "J",
+     "O",
+     "A"
+    ],
+    "answer": 0,
+    "explain": "M comes right before N in the alphabet."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Letters & Sounds",
+    "title": "Year Quest: Letters & Sounds - Quest 4",
+    "desc": "Learn the letters of the alphabet and the sounds they make. Quest 4 of 4 in this unit.",
+    "count": 20,
+    "boss": true
+   }
+  ]
+ },
+ {
+  "title": "Year Quest: Short Vowel Words - Quest 1",
+  "subject": "Kids Reading",
+  "module": "kids-reading-yq-u2-q1",
+  "description": "Practice words with short vowel sounds like cat, bed, and pig. Quest 1 of 4 in this unit.",
+  "questions": [
+   {
+    "q": "Which word rhymes with dot?",
+    "options": [
+     "big",
+     "sun",
+     "mop",
+     "hot"
+    ],
+    "answer": 3,
+    "explain": "Dot and hot both end with the -ot sound."
+   },
+   {
+    "q": "Which word rhymes with bit?",
+    "options": [
+     "sit",
+     "bed",
+     "wig",
+     "man"
+    ],
+    "answer": 0,
+    "explain": "Bit and sit both end with the -it sound."
+   },
+   {
+    "q": "Which word has the same vowel sound as sun?",
+    "options": [
+     "hot",
+     "bus",
+     "hat",
+     "cob"
+    ],
+    "answer": 1,
+    "explain": "Sun and bus both have a short u sound."
+   },
+   {
+    "q": "Which word rhymes with bat?",
+    "options": [
+     "pot",
+     "log",
+     "cat",
+     "led"
+    ],
+    "answer": 2,
+    "explain": "Bat and cat both end with the -at sound."
+   },
+   {
+    "q": "In the word hat, which letter makes the middle sound?",
+    "options": [
+     "e",
+     "i",
+     "a",
+     "u"
+    ],
+    "answer": 2,
+    "explain": "The word hat has a short a sound in the middle."
+   },
+   {
+    "q": "Which vowel fills the blank to make a word? b_g - a tiny creepy crawly animal.",
+    "options": [
+     "i",
+     "o",
+     "e",
+     "u"
+    ],
+    "answer": 3,
+    "explain": "The word is bug, so the missing vowel is u."
+   },
+   {
+    "q": "In the word leg, which letter makes the middle sound?",
+    "options": [
+     "i",
+     "a",
+     "e",
+     "u"
+    ],
+    "answer": 2,
+    "explain": "The word leg has a short e sound in the middle."
+   },
+   {
+    "q": "Which word has the same vowel sound as hop?",
+    "options": [
+     "lip",
+     "bat",
+     "mop",
+     "leg"
+    ],
+    "answer": 2,
+    "explain": "Hop and mop both have a short o sound."
+   },
+   {
+    "q": "Which word has the same vowel sound as cat?",
+    "options": [
+     "pig",
+     "log",
+     "sun",
+     "map"
+    ],
+    "answer": 3,
+    "explain": "Cat and map both have a short a sound."
+   },
+   {
+    "q": "In the word pan, which letter makes the middle sound?",
+    "options": [
+     "o",
+     "a",
+     "e",
+     "u"
+    ],
+    "answer": 1,
+    "explain": "The word pan has a short a sound in the middle."
+   },
+   {
+    "q": "Pick the word with a short u sound.",
+    "options": [
+     "ran",
+     "sun",
+     "fin",
+     "net"
+    ],
+    "answer": 1,
+    "explain": "The word sun has a short u sound."
+   },
+   {
+    "q": "Which word rhymes with cub?",
+    "options": [
+     "men",
+     "bug",
+     "cat",
+     "tub"
+    ],
+    "answer": 3,
+    "explain": "Cub and tub both end with the -ub sound."
+   },
+   {
+    "q": "Which word has the short u sound in the middle?",
+    "options": [
+     "nut",
+     "ten",
+     "box",
+     "pin"
+    ],
+    "answer": 0,
+    "explain": "The word nut has a short u sound."
+   },
+   {
+    "q": "In the word bag, which letter makes the middle sound?",
+    "options": [
+     "a",
+     "e",
+     "i",
+     "o"
+    ],
+    "answer": 0,
+    "explain": "The word bag has a short a sound in the middle."
+   },
+   {
+    "q": "Which word has the same vowel sound as fin?",
+    "options": [
+     "pig",
+     "log",
+     "leg",
+     "box"
+    ],
+    "answer": 0,
+    "explain": "Fin and pig both have a short i sound."
+   },
+   {
+    "q": "In the word jet, which letter makes the middle sound?",
+    "options": [
+     "a",
+     "u",
+     "e",
+     "o"
+    ],
+    "answer": 2,
+    "explain": "The word jet has a short e sound in the middle."
+   },
+   {
+    "q": "In the word ten, which letter makes the middle sound?",
+    "options": [
+     "e",
+     "a",
+     "o",
+     "i"
+    ],
+    "answer": 0,
+    "explain": "The word ten has a short e sound in the middle."
+   },
+   {
+    "q": "Which word has the same vowel sound as rug?",
+    "options": [
+     "hat",
+     "bus",
+     "pan",
+     "fin"
+    ],
+    "answer": 1,
+    "explain": "Rug and bus both have a short u sound."
+   },
+   {
+    "q": "Which vowel fills the blank to make a word? r_d - the color of a stop sign.",
+    "options": [
+     "i",
+     "u",
+     "o",
+     "e"
+    ],
+    "answer": 3,
+    "explain": "The word is red, so the missing vowel is e."
+   },
+   {
+    "q": "Which word rhymes with rug?",
+    "options": [
+     "fix",
+     "bug",
+     "man",
+     "pot"
+    ],
+    "answer": 1,
+    "explain": "Rug and bug both end with the -ug sound."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Short Vowel Words",
+    "title": "Year Quest: Short Vowel Words - Quest 1",
+    "desc": "Practice words with short vowel sounds like cat, bed, and pig. Quest 1 of 4 in this unit.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Year Quest: Short Vowel Words - Quest 2",
+  "subject": "Kids Reading",
+  "module": "kids-reading-yq-u2-q2",
+  "description": "Practice words with short vowel sounds like cat, bed, and pig. Quest 2 of 4 in this unit.",
+  "questions": [
+   {
+    "q": "Which word rhymes with pen?",
+    "options": [
+     "hen",
+     "ran",
+     "rug",
+     "hop"
+    ],
+    "answer": 0,
+    "explain": "Pen and hen both end with the -en sound."
+   },
+   {
+    "q": "In the word egg, which letter makes the middle sound?",
+    "options": [
+     "i",
+     "u",
+     "a",
+     "e"
+    ],
+    "answer": 3,
+    "explain": "The word egg has a short e sound in the middle."
+   },
+   {
+    "q": "In the word bed, which letter makes the middle sound?",
+    "options": [
+     "a",
+     "e",
+     "o",
+     "u"
+    ],
+    "answer": 1,
+    "explain": "The word bed has a short e sound in the middle."
+   },
+   {
+    "q": "In the word leg, which letter makes the middle sound?",
+    "options": [
+     "i",
+     "u",
+     "e",
+     "o"
+    ],
+    "answer": 2,
+    "explain": "The word leg has a short e sound in the middle."
+   },
+   {
+    "q": "Which vowel fills the blank to make a word? r_d - the color of a stop sign.",
+    "options": [
+     "e",
+     "i",
+     "u",
+     "a"
+    ],
+    "answer": 0,
+    "explain": "The word is red, so the missing vowel is e."
+   },
+   {
+    "q": "Pick the word with a short i sound.",
+    "options": [
+     "sad",
+     "pin",
+     "pen",
+     "cap"
+    ],
+    "answer": 1,
+    "explain": "The word pin has a short i sound."
+   },
+   {
+    "q": "Which word has the same vowel sound as nut?",
+    "options": [
+     "jet",
+     "bus",
+     "ran",
+     "bag"
+    ],
+    "answer": 1,
+    "explain": "Nut and bus both have a short u sound."
+   },
+   {
+    "q": "Which word has the same vowel sound as sad?",
+    "options": [
+     "hop",
+     "bus",
+     "cat",
+     "bug"
+    ],
+    "answer": 2,
+    "explain": "Sad and cat both have a short a sound."
+   },
+   {
+    "q": "Which vowel fills the blank to make a word? s_x - the number after five.",
+    "options": [
+     "o",
+     "a",
+     "u",
+     "i"
+    ],
+    "answer": 3,
+    "explain": "The word is six, so the missing vowel is i."
+   },
+   {
+    "q": "Which word has a short a sound?",
+    "options": [
+     "six",
+     "sad",
+     "ten",
+     "fox"
+    ],
+    "answer": 1,
+    "explain": "The word sad has a short a sound."
+   },
+   {
+    "q": "Which word makes the short o sound?",
+    "options": [
+     "dig",
+     "jam",
+     "hop",
+     "ran"
+    ],
+    "answer": 2,
+    "explain": "The word hop has a short o sound."
+   },
+   {
+    "q": "Which word rhymes with ran?",
+    "options": [
+     "can",
+     "bug",
+     "pop",
+     "mop"
+    ],
+    "answer": 0,
+    "explain": "Ran and can both end with the -an sound."
+   },
+   {
+    "q": "In the word fin, which letter makes the middle sound?",
+    "options": [
+     "o",
+     "u",
+     "e",
+     "i"
+    ],
+    "answer": 3,
+    "explain": "The word fin has a short i sound in the middle."
+   },
+   {
+    "q": "Which word has the same vowel sound as log?",
+    "options": [
+     "sad",
+     "pan",
+     "pig",
+     "mop"
+    ],
+    "answer": 3,
+    "explain": "Log and mop both have a short o sound."
+   },
+   {
+    "q": "Pick the word with a short a sound.",
+    "options": [
+     "bat",
+     "mop",
+     "pin",
+     "sit"
+    ],
+    "answer": 0,
+    "explain": "The word bat has a short a sound."
+   },
+   {
+    "q": "In the word pen, which letter makes the middle sound?",
+    "options": [
+     "u",
+     "e",
+     "a",
+     "o"
+    ],
+    "answer": 1,
+    "explain": "The word pen has a short e sound in the middle."
+   },
+   {
+    "q": "Which word has the same vowel sound as cup?",
+    "options": [
+     "bus",
+     "bed",
+     "fin",
+     "lip"
+    ],
+    "answer": 0,
+    "explain": "Cup and bus both have a short u sound."
+   },
+   {
+    "q": "Which word has a short i sound?",
+    "options": [
+     "hat",
+     "web",
+     "cap",
+     "win"
+    ],
+    "answer": 3,
+    "explain": "The word win has a short i sound."
+   },
+   {
+    "q": "Which word rhymes with tub?",
+    "options": [
+     "bat",
+     "fed",
+     "cub",
+     "fun"
+    ],
+    "answer": 2,
+    "explain": "Tub and cub both end with the -ub sound."
+   },
+   {
+    "q": "Which word rhymes with can?",
+    "options": [
+     "sun",
+     "bug",
+     "man",
+     "fog"
+    ],
+    "answer": 2,
+    "explain": "Can and man both end with the -an sound."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Short Vowel Words",
+    "title": "Year Quest: Short Vowel Words - Quest 2",
+    "desc": "Practice words with short vowel sounds like cat, bed, and pig. Quest 2 of 4 in this unit.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Year Quest: Short Vowel Words - Quest 3",
+  "subject": "Kids Reading",
+  "module": "kids-reading-yq-u2-q3",
+  "description": "Practice words with short vowel sounds like cat, bed, and pig. Quest 3 of 4 in this unit.",
+  "questions": [
+   {
+    "q": "Which word rhymes with hug?",
+    "options": [
+     "bug",
+     "run",
+     "rub",
+     "pig"
+    ],
+    "answer": 0,
+    "explain": "Hug and bug both end with the -ug sound."
+   },
+   {
+    "q": "Which word has a short e sound?",
+    "options": [
+     "cut",
+     "jam",
+     "fox",
+     "web"
+    ],
+    "answer": 3,
+    "explain": "The word web has a short e sound."
+   },
+   {
+    "q": "Which word has the short e sound in the middle?",
+    "options": [
+     "ten",
+     "run",
+     "pig",
+     "cob"
+    ],
+    "answer": 0,
+    "explain": "The word ten has a short e sound."
+   },
+   {
+    "q": "In the word fin, which letter makes the middle sound?",
+    "options": [
+     "o",
+     "u",
+     "e",
+     "i"
+    ],
+    "answer": 3,
+    "explain": "The word fin has a short i sound in the middle."
+   },
+   {
+    "q": "In the word big, which letter makes the middle sound?",
+    "options": [
+     "a",
+     "e",
+     "i",
+     "o"
+    ],
+    "answer": 2,
+    "explain": "The word big has a short i sound in the middle."
+   },
+   {
+    "q": "Which word rhymes with cub?",
+    "options": [
+     "hop",
+     "bug",
+     "big",
+     "tub"
+    ],
+    "answer": 3,
+    "explain": "Cub and tub both end with the -ub sound."
+   },
+   {
+    "q": "Which vowel fills the blank to make a word? f_x - a wild animal with a bushy tail.",
+    "options": [
+     "o",
+     "e",
+     "a",
+     "i"
+    ],
+    "answer": 0,
+    "explain": "The word is fox, so the missing vowel is o."
+   },
+   {
+    "q": "In the word net, which letter makes the middle sound?",
+    "options": [
+     "e",
+     "i",
+     "u",
+     "a"
+    ],
+    "answer": 0,
+    "explain": "The word net has a short e sound in the middle."
+   },
+   {
+    "q": "In the word cut, which letter makes the middle sound?",
+    "options": [
+     "o",
+     "u",
+     "a",
+     "i"
+    ],
+    "answer": 1,
+    "explain": "The word cut has a short u sound in the middle."
+   },
+   {
+    "q": "Which vowel fills the blank to make a word? h_t - you wear it on your head.",
+    "options": [
+     "e",
+     "o",
+     "i",
+     "a"
+    ],
+    "answer": 3,
+    "explain": "The word is hat, so the missing vowel is a."
+   },
+   {
+    "q": "Which word has the same vowel sound as box?",
+    "options": [
+     "cat",
+     "cup",
+     "mop",
+     "bat"
+    ],
+    "answer": 2,
+    "explain": "Box and mop both have a short o sound."
+   },
+   {
+    "q": "Which word has the same vowel sound as fox?",
+    "options": [
+     "jet",
+     "mop",
+     "sun",
+     "fin"
+    ],
+    "answer": 1,
+    "explain": "Fox and mop both have a short o sound."
+   },
+   {
+    "q": "Which word makes the short i sound?",
+    "options": [
+     "hen",
+     "sit",
+     "bus",
+     "pot"
+    ],
+    "answer": 1,
+    "explain": "The word sit has a short i sound."
+   },
+   {
+    "q": "Which word has the same vowel sound as cap?",
+    "options": [
+     "win",
+     "hot",
+     "cat",
+     "cup"
+    ],
+    "answer": 2,
+    "explain": "Cap and cat both have a short a sound."
+   },
+   {
+    "q": "Which word has the same vowel sound as bus?",
+    "options": [
+     "web",
+     "box",
+     "cup",
+     "bat"
+    ],
+    "answer": 2,
+    "explain": "Bus and cup both have a short u sound."
+   },
+   {
+    "q": "Which vowel fills the blank to make a word? p_g - a farm animal that says oink.",
+    "options": [
+     "e",
+     "u",
+     "i",
+     "a"
+    ],
+    "answer": 2,
+    "explain": "The word is pig, so the missing vowel is i."
+   },
+   {
+    "q": "Which word rhymes with dog?",
+    "options": [
+     "run",
+     "log",
+     "sun",
+     "red"
+    ],
+    "answer": 1,
+    "explain": "Dog and log both end with the -og sound."
+   },
+   {
+    "q": "Which word has the same vowel sound as nut?",
+    "options": [
+     "ten",
+     "bag",
+     "bed",
+     "bus"
+    ],
+    "answer": 3,
+    "explain": "Nut and bus both have a short u sound."
+   },
+   {
+    "q": "Which word has the same vowel sound as cup?",
+    "options": [
+     "bat",
+     "bus",
+     "red",
+     "hat"
+    ],
+    "answer": 1,
+    "explain": "Cup and bus both have a short u sound."
+   },
+   {
+    "q": "Which word rhymes with hot?",
+    "options": [
+     "pot",
+     "bit",
+     "men",
+     "bug"
+    ],
+    "answer": 0,
+    "explain": "Hot and pot both end with the -ot sound."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Short Vowel Words",
+    "title": "Year Quest: Short Vowel Words - Quest 3",
+    "desc": "Practice words with short vowel sounds like cat, bed, and pig. Quest 3 of 4 in this unit.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Year Quest: Short Vowel Words - Quest 4",
+  "subject": "Kids Reading",
+  "module": "kids-reading-yq-u2-q4",
+  "description": "Practice words with short vowel sounds like cat, bed, and pig. Quest 4 of 4 in this unit.",
+  "questions": [
+   {
+    "q": "Pick the word with a short a sound.",
+    "options": [
+     "big",
+     "log",
+     "bat",
+     "web"
+    ],
+    "answer": 2,
+    "explain": "The word bat has a short a sound."
+   },
+   {
+    "q": "Which word has the same vowel sound as bed?",
+    "options": [
+     "run",
+     "hen",
+     "bag",
+     "rug"
+    ],
+    "answer": 1,
+    "explain": "Bed and hen both have a short e sound."
+   },
+   {
+    "q": "Which word has the same vowel sound as cat?",
+    "options": [
+     "mud",
+     "hen",
+     "pot",
+     "map"
+    ],
+    "answer": 3,
+    "explain": "Cat and map both have a short a sound."
+   },
+   {
+    "q": "In the word rug, which letter makes the middle sound?",
+    "options": [
+     "e",
+     "o",
+     "u",
+     "i"
+    ],
+    "answer": 2,
+    "explain": "The word rug has a short u sound in the middle."
+   },
+   {
+    "q": "Which word has the same vowel sound as web?",
+    "options": [
+     "pan",
+     "pig",
+     "bed",
+     "dog"
+    ],
+    "answer": 2,
+    "explain": "Web and bed both have a short e sound."
+   },
+   {
+    "q": "Which word makes the short e sound?",
+    "options": [
+     "jet",
+     "rug",
+     "dog",
+     "mud"
+    ],
+    "answer": 0,
+    "explain": "The word jet has a short e sound."
+   },
+   {
+    "q": "Which word rhymes with fit?",
+    "options": [
+     "sit",
+     "cub",
+     "ten",
+     "pan"
+    ],
+    "answer": 0,
+    "explain": "Fit and sit both end with the -it sound."
+   },
+   {
+    "q": "Which vowel fills the blank to make a word? n_t - you catch fish or butterflies with it.",
+    "options": [
+     "i",
+     "o",
+     "a",
+     "e"
+    ],
+    "answer": 3,
+    "explain": "The word is net, so the missing vowel is e."
+   },
+   {
+    "q": "Which vowel fills the blank to make a word? w_b - a spider makes it to catch bugs.",
+    "options": [
+     "i",
+     "e",
+     "a",
+     "u"
+    ],
+    "answer": 1,
+    "explain": "The word is web, so the missing vowel is e."
+   },
+   {
+    "q": "In the word cat, which letter makes the middle sound?",
+    "options": [
+     "i",
+     "e",
+     "a",
+     "u"
+    ],
+    "answer": 2,
+    "explain": "The word cat has a short a sound in the middle."
+   },
+   {
+    "q": "Which vowel fills the blank to make a word? h_n - a bird that lays eggs.",
+    "options": [
+     "u",
+     "i",
+     "o",
+     "e"
+    ],
+    "answer": 3,
+    "explain": "The word is hen, so the missing vowel is e."
+   },
+   {
+    "q": "Which word rhymes with sun?",
+    "options": [
+     "pig",
+     "run",
+     "six",
+     "mix"
+    ],
+    "answer": 1,
+    "explain": "Sun and run both end with the -un sound."
+   },
+   {
+    "q": "Which word has the same vowel sound as jet?",
+    "options": [
+     "bed",
+     "lip",
+     "log",
+     "cut"
+    ],
+    "answer": 0,
+    "explain": "Jet and bed both have a short e sound."
+   },
+   {
+    "q": "Which vowel fills the blank to make a word? d_g - a pet that says woof.",
+    "options": [
+     "o",
+     "e",
+     "u",
+     "a"
+    ],
+    "answer": 0,
+    "explain": "The word is dog, so the missing vowel is o."
+   },
+   {
+    "q": "Which word has the same vowel sound as bug?",
+    "options": [
+     "net",
+     "mop",
+     "bus",
+     "jet"
+    ],
+    "answer": 2,
+    "explain": "Bug and bus both have a short u sound."
+   },
+   {
+    "q": "In the word lip, which letter makes the middle sound?",
+    "options": [
+     "a",
+     "o",
+     "u",
+     "i"
+    ],
+    "answer": 3,
+    "explain": "The word lip has a short i sound in the middle."
+   },
+   {
+    "q": "Which word rhymes with ran?",
+    "options": [
+     "led",
+     "hot",
+     "fit",
+     "can"
+    ],
+    "answer": 3,
+    "explain": "Ran and can both end with the -an sound."
+   },
+   {
+    "q": "Which word rhymes with fed?",
+    "options": [
+     "bug",
+     "bed",
+     "men",
+     "dot"
+    ],
+    "answer": 1,
+    "explain": "Fed and bed both end with the -ed sound."
+   },
+   {
+    "q": "Which word has the same vowel sound as dig?",
+    "options": [
+     "bat",
+     "pig",
+     "pen",
+     "sun"
+    ],
+    "answer": 1,
+    "explain": "Dig and pig both have a short i sound."
+   },
+   {
+    "q": "Which word has the same vowel sound as lip?",
+    "options": [
+     "pig",
+     "fox",
+     "hen",
+     "web"
+    ],
+    "answer": 0,
+    "explain": "Lip and pig both have a short i sound."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Short Vowel Words",
+    "title": "Year Quest: Short Vowel Words - Quest 4",
+    "desc": "Practice words with short vowel sounds like cat, bed, and pig. Quest 4 of 4 in this unit.",
+    "count": 20,
+    "boss": true
+   }
+  ]
+ },
+ {
+  "title": "Year Quest: Blends & Word Families - Quest 1",
+  "subject": "Kids Reading",
+  "module": "kids-reading-yq-u3-q1",
+  "description": "Blend beginning sounds together and learn word families. Quest 1 of 4 in this unit.",
+  "questions": [
+   {
+    "q": "What blend starts the word plane?",
+    "options": [
+     "sm",
+     "cr",
+     "pl",
+     "sl"
+    ],
+    "answer": 2,
+    "explain": "The word plane starts with the letters pl."
+   },
+   {
+    "q": "Which two letters make the last sound in the word lunch?",
+    "options": [
+     "ck",
+     "ch",
+     "ll",
+     "ss"
+    ],
+    "answer": 1,
+    "explain": "The word lunch ends with the letters ch, which make one sound."
+   },
+   {
+    "q": "Which word belongs to the -og word family?",
+    "options": [
+     "mix",
+     "cub",
+     "dog",
+     "mop"
+    ],
+    "answer": 2,
+    "explain": "The word dog ends with -og, so it is in the -og family."
+   },
+   {
+    "q": "Which two letters make the last sound in the word teeth?",
+    "options": [
+     "ss",
+     "ch",
+     "th",
+     "ll"
+    ],
+    "answer": 2,
+    "explain": "The word teeth ends with the letters th, which make one sound."
+   },
+   {
+    "q": "Which word belongs to the -ig word family?",
+    "options": [
+     "mug",
+     "rug",
+     "pig",
+     "sun"
+    ],
+    "answer": 2,
+    "explain": "The word pig ends with -ig, so it is in the -ig family."
+   },
+   {
+    "q": "Which word starts with the blend sn?",
+    "options": [
+     "snail",
+     "dragon",
+     "sled",
+     "friend"
+    ],
+    "answer": 0,
+    "explain": "The word snail starts with the blend sn."
+   },
+   {
+    "q": "Which word belongs to the -op word family?",
+    "options": [
+     "pen",
+     "pop",
+     "run",
+     "bun"
+    ],
+    "answer": 1,
+    "explain": "The word pop ends with -op, so it is in the -op family."
+   },
+   {
+    "q": "What blend starts the word blue?",
+    "options": [
+     "br",
+     "sm",
+     "tr",
+     "bl"
+    ],
+    "answer": 3,
+    "explain": "The word blue starts with the letters bl."
+   },
+   {
+    "q": "What blend starts the word sweet?",
+    "options": [
+     "sw",
+     "bl",
+     "br",
+     "pl"
+    ],
+    "answer": 0,
+    "explain": "The word sweet starts with the letters sw."
+   },
+   {
+    "q": "Which word starts with the th sound?",
+    "options": [
+     "whale",
+     "this",
+     "green",
+     "cloud"
+    ],
+    "answer": 1,
+    "explain": "The word this starts with the th sound."
+   },
+   {
+    "q": "Which word ends with the ch sound?",
+    "options": [
+     "fruit",
+     "snake",
+     "flower",
+     "peach"
+    ],
+    "answer": 3,
+    "explain": "The word peach ends with the ch sound."
+   },
+   {
+    "q": "Which word starts with the blend pl?",
+    "options": [
+     "crayon",
+     "plant",
+     "grapes",
+     "flower"
+    ],
+    "answer": 1,
+    "explain": "The word plant starts with the blend pl."
+   },
+   {
+    "q": "Which word is in the same word family as hot?",
+    "options": [
+     "pot",
+     "bun",
+     "cat",
+     "sun"
+    ],
+    "answer": 0,
+    "explain": "Hot and pot both end with -ot."
+   },
+   {
+    "q": "Which word is in the same word family as mix?",
+    "options": [
+     "dog",
+     "mat",
+     "mug",
+     "six"
+    ],
+    "answer": 3,
+    "explain": "Mix and six both end with -ix."
+   },
+   {
+    "q": "Which word is in the same word family as led?",
+    "options": [
+     "mat",
+     "dig",
+     "bed",
+     "dot"
+    ],
+    "answer": 2,
+    "explain": "Led and bed both end with -ed."
+   },
+   {
+    "q": "Which word ends with the th sound?",
+    "options": [
+     "fruit",
+     "teeth",
+     "blue",
+     "sweet"
+    ],
+    "answer": 1,
+    "explain": "The word teeth ends with the th sound."
+   },
+   {
+    "q": "Which word ends with the sh sound?",
+    "options": [
+     "wish",
+     "small",
+     "plane",
+     "flower"
+    ],
+    "answer": 0,
+    "explain": "The word wish ends with the sh sound."
+   },
+   {
+    "q": "What blend starts the word swim?",
+    "options": [
+     "sp",
+     "dr",
+     "tr",
+     "sw"
+    ],
+    "answer": 3,
+    "explain": "The word swim starts with the letters sw."
+   },
+   {
+    "q": "What blend starts the word truck?",
+    "options": [
+     "sl",
+     "bl",
+     "fl",
+     "tr"
+    ],
+    "answer": 3,
+    "explain": "The word truck starts with the letters tr."
+   },
+   {
+    "q": "What blend starts the word train?",
+    "options": [
+     "tr",
+     "sm",
+     "gr",
+     "st"
+    ],
+    "answer": 0,
+    "explain": "The word train starts with the letters tr."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Blends & Word Families",
+    "title": "Year Quest: Blends & Word Families - Quest 1",
+    "desc": "Blend beginning sounds together and learn word families. Quest 1 of 4 in this unit.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Year Quest: Blends & Word Families - Quest 2",
+  "subject": "Kids Reading",
+  "module": "kids-reading-yq-u3-q2",
+  "description": "Blend beginning sounds together and learn word families. Quest 2 of 4 in this unit.",
+  "questions": [
+   {
+    "q": "Which word belongs to the -op word family?",
+    "options": [
+     "ten",
+     "pop",
+     "bed",
+     "dog"
+    ],
+    "answer": 1,
+    "explain": "The word pop ends with -op, so it is in the -op family."
+   },
+   {
+    "q": "Which word starts with the blend cr?",
+    "options": [
+     "clock",
+     "star",
+     "crown",
+     "snake"
+    ],
+    "answer": 2,
+    "explain": "The word crown starts with the blend cr."
+   },
+   {
+    "q": "What blend starts the word sleep?",
+    "options": [
+     "sl",
+     "st",
+     "br",
+     "fr"
+    ],
+    "answer": 0,
+    "explain": "The word sleep starts with the letters sl."
+   },
+   {
+    "q": "What blend starts the word snow?",
+    "options": [
+     "dr",
+     "fr",
+     "cl",
+     "sn"
+    ],
+    "answer": 3,
+    "explain": "The word snow starts with the letters sn."
+   },
+   {
+    "q": "What blend starts the word drum?",
+    "options": [
+     "gr",
+     "cl",
+     "sm",
+     "dr"
+    ],
+    "answer": 3,
+    "explain": "The word drum starts with the letters dr."
+   },
+   {
+    "q": "Which two letters make the first sound in the word whale?",
+    "options": [
+     "bl",
+     "wh",
+     "dr",
+     "gr"
+    ],
+    "answer": 1,
+    "explain": "The word whale starts with the letters wh, which make one sound."
+   },
+   {
+    "q": "Which word belongs to the -ug word family?",
+    "options": [
+     "wig",
+     "men",
+     "hug",
+     "sub"
+    ],
+    "answer": 2,
+    "explain": "The word hug ends with -ug, so it is in the -ug family."
+   },
+   {
+    "q": "Which word belongs to the -ed word family?",
+    "options": [
+     "wig",
+     "red",
+     "fun",
+     "man"
+    ],
+    "answer": 1,
+    "explain": "The word red ends with -ed, so it is in the -ed family."
+   },
+   {
+    "q": "What blend starts the word plant?",
+    "options": [
+     "bl",
+     "cl",
+     "fr",
+     "pl"
+    ],
+    "answer": 3,
+    "explain": "The word plant starts with the letters pl."
+   },
+   {
+    "q": "Which word starts with the blend dr?",
+    "options": [
+     "train",
+     "swim",
+     "drum",
+     "plane"
+    ],
+    "answer": 2,
+    "explain": "The word drum starts with the blend dr."
+   },
+   {
+    "q": "Which word is in the same word family as man?",
+    "options": [
+     "fed",
+     "mat",
+     "big",
+     "can"
+    ],
+    "answer": 3,
+    "explain": "Man and can both end with -an."
+   },
+   {
+    "q": "Which word is in the same word family as cub?",
+    "options": [
+     "ran",
+     "hug",
+     "pen",
+     "tub"
+    ],
+    "answer": 3,
+    "explain": "Cub and tub both end with -ub."
+   },
+   {
+    "q": "Which word ends with the sh sound?",
+    "options": [
+     "fish",
+     "crab",
+     "snake",
+     "lunch"
+    ],
+    "answer": 0,
+    "explain": "The word fish ends with the sh sound."
+   },
+   {
+    "q": "Which word belongs to the -at word family?",
+    "options": [
+     "wig",
+     "led",
+     "cat",
+     "dog"
+    ],
+    "answer": 2,
+    "explain": "The word cat ends with -at, so it is in the -at family."
+   },
+   {
+    "q": "Which word begins with the blend sm?",
+    "options": [
+     "small",
+     "dress",
+     "star",
+     "dragon"
+    ],
+    "answer": 0,
+    "explain": "The word small starts with the blend sm."
+   },
+   {
+    "q": "Which word ends with the th sound?",
+    "options": [
+     "moth",
+     "train",
+     "frog",
+     "swing"
+    ],
+    "answer": 0,
+    "explain": "The word moth ends with the th sound."
+   },
+   {
+    "q": "What blend starts the word spoon?",
+    "options": [
+     "fl",
+     "sp",
+     "fr",
+     "dr"
+    ],
+    "answer": 1,
+    "explain": "The word spoon starts with the letters sp."
+   },
+   {
+    "q": "Which word is in the same word family as rub?",
+    "options": [
+     "rug",
+     "tub",
+     "dig",
+     "fun"
+    ],
+    "answer": 1,
+    "explain": "Rub and tub both end with -ub."
+   },
+   {
+    "q": "What blend starts the word black?",
+    "options": [
+     "bl",
+     "st",
+     "sn",
+     "dr"
+    ],
+    "answer": 0,
+    "explain": "The word black starts with the letters bl."
+   },
+   {
+    "q": "Which word starts with the ch sound?",
+    "options": [
+     "snake",
+     "spider",
+     "chick",
+     "fly"
+    ],
+    "answer": 2,
+    "explain": "The word chick starts with the ch sound."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Blends & Word Families",
+    "title": "Year Quest: Blends & Word Families - Quest 2",
+    "desc": "Blend beginning sounds together and learn word families. Quest 2 of 4 in this unit.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Year Quest: Blends & Word Families - Quest 3",
+  "subject": "Kids Reading",
+  "module": "kids-reading-yq-u3-q3",
+  "description": "Blend beginning sounds together and learn word families. Quest 3 of 4 in this unit.",
+  "questions": [
+   {
+    "q": "Which word is in the same word family as hop?",
+    "options": [
+     "mop",
+     "hug",
+     "led",
+     "mug"
+    ],
+    "answer": 0,
+    "explain": "Hop and mop both end with -op."
+   },
+   {
+    "q": "Which word is in the same word family as big?",
+    "options": [
+     "pig",
+     "led",
+     "bit",
+     "cub"
+    ],
+    "answer": 0,
+    "explain": "Big and pig both end with -ig."
+   },
+   {
+    "q": "Which two letters make the first sound in the word this?",
+    "options": [
+     "sw",
+     "th",
+     "sl",
+     "cr"
+    ],
+    "answer": 1,
+    "explain": "The word this starts with the letters th, which make one sound."
+   },
+   {
+    "q": "What blend starts the word sled?",
+    "options": [
+     "sl",
+     "cr",
+     "sm",
+     "sp"
+    ],
+    "answer": 0,
+    "explain": "The word sled starts with the letters sl."
+   },
+   {
+    "q": "Which word begins with the blend tr?",
+    "options": [
+     "frog",
+     "train",
+     "grass",
+     "friend"
+    ],
+    "answer": 1,
+    "explain": "The word train starts with the blend tr."
+   },
+   {
+    "q": "Which word starts with the blend sn?",
+    "options": [
+     "grapes",
+     "black",
+     "cloud",
+     "snail"
+    ],
+    "answer": 3,
+    "explain": "The word snail starts with the blend sn."
+   },
+   {
+    "q": "Which word begins with the blend sm?",
+    "options": [
+     "flag",
+     "stand",
+     "sled",
+     "small"
+    ],
+    "answer": 3,
+    "explain": "The word small starts with the blend sm."
+   },
+   {
+    "q": "Which word starts with the blend cr?",
+    "options": [
+     "fly",
+     "crown",
+     "swing",
+     "stop"
+    ],
+    "answer": 1,
+    "explain": "The word crown starts with the blend cr."
+   },
+   {
+    "q": "What blend starts the word train?",
+    "options": [
+     "dr",
+     "bl",
+     "tr",
+     "pl"
+    ],
+    "answer": 2,
+    "explain": "The word train starts with the letters tr."
+   },
+   {
+    "q": "Which two letters make the first sound in the word chair?",
+    "options": [
+     "sn",
+     "wh",
+     "ch",
+     "fl"
+    ],
+    "answer": 2,
+    "explain": "The word chair starts with the letters ch, which make one sound."
+   },
+   {
+    "q": "What blend starts the word swing?",
+    "options": [
+     "sw",
+     "gr",
+     "st",
+     "sm"
+    ],
+    "answer": 0,
+    "explain": "The word swing starts with the letters sw."
+   },
+   {
+    "q": "What blend starts the word plant?",
+    "options": [
+     "dr",
+     "pl",
+     "br",
+     "sl"
+    ],
+    "answer": 1,
+    "explain": "The word plant starts with the letters pl."
+   },
+   {
+    "q": "Which word starts with the blend dr?",
+    "options": [
+     "plane",
+     "grapes",
+     "dragon",
+     "clap"
+    ],
+    "answer": 2,
+    "explain": "The word dragon starts with the blend dr."
+   },
+   {
+    "q": "Which word starts with the blend cl?",
+    "options": [
+     "star",
+     "flag",
+     "smile",
+     "cloud"
+    ],
+    "answer": 3,
+    "explain": "The word cloud starts with the blend cl."
+   },
+   {
+    "q": "Which two letters make the last sound in the word wish?",
+    "options": [
+     "th",
+     "sh",
+     "ch",
+     "ss"
+    ],
+    "answer": 1,
+    "explain": "The word wish ends with the letters sh, which make one sound."
+   },
+   {
+    "q": "Which word belongs to the -ix word family?",
+    "options": [
+     "dot",
+     "sub",
+     "six",
+     "hug"
+    ],
+    "answer": 2,
+    "explain": "The word six ends with -ix, so it is in the -ix family."
+   },
+   {
+    "q": "Which word begins with the blend dr?",
+    "options": [
+     "swim",
+     "star",
+     "bread",
+     "dress"
+    ],
+    "answer": 3,
+    "explain": "The word dress starts with the blend dr."
+   },
+   {
+    "q": "Which word belongs to the -ug word family?",
+    "options": [
+     "hen",
+     "pot",
+     "mug",
+     "rub"
+    ],
+    "answer": 2,
+    "explain": "The word mug ends with -ug, so it is in the -ug family."
+   },
+   {
+    "q": "What blend starts the word clock?",
+    "options": [
+     "cl",
+     "pl",
+     "fr",
+     "sn"
+    ],
+    "answer": 0,
+    "explain": "The word clock starts with the letters cl."
+   },
+   {
+    "q": "What blend starts the word block?",
+    "options": [
+     "fr",
+     "dr",
+     "pl",
+     "bl"
+    ],
+    "answer": 3,
+    "explain": "The word block starts with the letters bl."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Blends & Word Families",
+    "title": "Year Quest: Blends & Word Families - Quest 3",
+    "desc": "Blend beginning sounds together and learn word families. Quest 3 of 4 in this unit.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Year Quest: Blends & Word Families - Quest 4",
+  "subject": "Kids Reading",
+  "module": "kids-reading-yq-u3-q4",
+  "description": "Blend beginning sounds together and learn word families. Quest 4 of 4 in this unit.",
+  "questions": [
+   {
+    "q": "What blend starts the word snow?",
+    "options": [
+     "sn",
+     "fl",
+     "cr",
+     "dr"
+    ],
+    "answer": 0,
+    "explain": "The word snow starts with the letters sn."
+   },
+   {
+    "q": "Which word is in the same word family as big?",
+    "options": [
+     "man",
+     "pen",
+     "sub",
+     "pig"
+    ],
+    "answer": 3,
+    "explain": "Big and pig both end with -ig."
+   },
+   {
+    "q": "What blend starts the word blue?",
+    "options": [
+     "sm",
+     "cr",
+     "bl",
+     "sl"
+    ],
+    "answer": 2,
+    "explain": "The word blue starts with the letters bl."
+   },
+   {
+    "q": "Which word belongs to the -un word family?",
+    "options": [
+     "dig",
+     "six",
+     "fun",
+     "jog"
+    ],
+    "answer": 2,
+    "explain": "The word fun ends with -un, so it is in the -un family."
+   },
+   {
+    "q": "What blend starts the word flag?",
+    "options": [
+     "fr",
+     "dr",
+     "gr",
+     "fl"
+    ],
+    "answer": 3,
+    "explain": "The word flag starts with the letters fl."
+   },
+   {
+    "q": "Which word belongs to the -ot word family?",
+    "options": [
+     "dog",
+     "fix",
+     "dot",
+     "run"
+    ],
+    "answer": 2,
+    "explain": "The word dot ends with -ot, so it is in the -ot family."
+   },
+   {
+    "q": "What blend starts the word dress?",
+    "options": [
+     "bl",
+     "dr",
+     "pl",
+     "tr"
+    ],
+    "answer": 1,
+    "explain": "The word dress starts with the letters dr."
+   },
+   {
+    "q": "Which word belongs to the -ig word family?",
+    "options": [
+     "dig",
+     "log",
+     "cub",
+     "man"
+    ],
+    "answer": 0,
+    "explain": "The word dig ends with -ig, so it is in the -ig family."
+   },
+   {
+    "q": "Which word is in the same word family as bug?",
+    "options": [
+     "pan",
+     "sub",
+     "rug",
+     "sit"
+    ],
+    "answer": 2,
+    "explain": "Bug and rug both end with -ug."
+   },
+   {
+    "q": "What blend starts the word sweet?",
+    "options": [
+     "sl",
+     "st",
+     "sw",
+     "sn"
+    ],
+    "answer": 2,
+    "explain": "The word sweet starts with the letters sw."
+   },
+   {
+    "q": "Which word belongs to the -op word family?",
+    "options": [
+     "bun",
+     "tub",
+     "lot",
+     "hop"
+    ],
+    "answer": 3,
+    "explain": "The word hop ends with -op, so it is in the -op family."
+   },
+   {
+    "q": "Which two letters make the last sound in the word peach?",
+    "options": [
+     "ck",
+     "ll",
+     "th",
+     "ch"
+    ],
+    "answer": 3,
+    "explain": "The word peach ends with the letters ch, which make one sound."
+   },
+   {
+    "q": "Which word starts with the blend dr?",
+    "options": [
+     "sweet",
+     "dragon",
+     "frog",
+     "green"
+    ],
+    "answer": 1,
+    "explain": "The word dragon starts with the blend dr."
+   },
+   {
+    "q": "What blend starts the word spoon?",
+    "options": [
+     "bl",
+     "sp",
+     "cr",
+     "tr"
+    ],
+    "answer": 1,
+    "explain": "The word spoon starts with the letters sp."
+   },
+   {
+    "q": "Which word ends with the th sound?",
+    "options": [
+     "bath",
+     "wish",
+     "smell",
+     "spider"
+    ],
+    "answer": 0,
+    "explain": "The word bath ends with the th sound."
+   },
+   {
+    "q": "Which word starts with the blend st?",
+    "options": [
+     "tree",
+     "stand",
+     "black",
+     "clap"
+    ],
+    "answer": 1,
+    "explain": "The word stand starts with the blend st."
+   },
+   {
+    "q": "Which word is in the same word family as fix?",
+    "options": [
+     "six",
+     "hot",
+     "rug",
+     "log"
+    ],
+    "answer": 0,
+    "explain": "Fix and six both end with -ix."
+   },
+   {
+    "q": "Which word is in the same word family as mug?",
+    "options": [
+     "bug",
+     "rub",
+     "mop",
+     "lot"
+    ],
+    "answer": 0,
+    "explain": "Mug and bug both end with -ug."
+   },
+   {
+    "q": "Which word starts with the th sound?",
+    "options": [
+     "small",
+     "three",
+     "crayon",
+     "block"
+    ],
+    "answer": 1,
+    "explain": "The word three starts with the th sound."
+   },
+   {
+    "q": "Which two letters make the first sound in the word whale?",
+    "options": [
+     "cl",
+     "th",
+     "ch",
+     "wh"
+    ],
+    "answer": 3,
+    "explain": "The word whale starts with the letters wh, which make one sound."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Blends & Word Families",
+    "title": "Year Quest: Blends & Word Families - Quest 4",
+    "desc": "Blend beginning sounds together and learn word families. Quest 4 of 4 in this unit.",
+    "count": 20,
+    "boss": true
+   }
+  ]
+ },
+ {
+  "title": "Year Quest: Sight Words & Sentences - Quest 1",
+  "subject": "Kids Reading",
+  "module": "kids-reading-yq-u4-q1",
+  "description": "Learn sight words by heart and read simple sentences. Quest 1 of 4 in this unit.",
+  "questions": [
+   {
+    "q": "Which sight word means more than two but less than four?",
+    "options": [
+     "four",
+     "three",
+     "one",
+     "two"
+    ],
+    "answer": 1,
+    "explain": "Three comes between two and four."
+   },
+   {
+    "q": "Which sight word would you use to ask about a person?",
+    "options": [
+     "what",
+     "where",
+     "who",
+     "when"
+    ],
+    "answer": 2,
+    "explain": "Who is the word for asking about a person."
+   },
+   {
+    "q": "Tom can not find his hat. It is under the bed. Where is the hat?",
+    "options": [
+     "by the door",
+     "on the table",
+     "in the box",
+     "under the bed"
+    ],
+    "answer": 3,
+    "explain": "The story says the hat is under the bed."
+   },
+   {
+    "q": "Which sight word means the number after one?",
+    "options": [
+     "two",
+     "three",
+     "ten",
+     "one"
+    ],
+    "answer": 0,
+    "explain": "Two comes right after one when you count."
+   },
+   {
+    "q": "I can jump and I can play. What two things can I do?",
+    "options": [
+     "jump and play",
+     "eat and sleep",
+     "run and sit",
+     "read and sing"
+    ],
+    "answer": 0,
+    "explain": "The sentence says I can jump and I can play."
+   },
+   {
+    "q": "Look at the red ball. It is big and round. What color is the ball?",
+    "options": [
+     "red",
+     "green",
+     "blue",
+     "yellow"
+    ],
+    "answer": 0,
+    "explain": "The story says the ball is red."
+   },
+   {
+    "q": "Which sight word fills the blank? I like ___ read books.",
+    "options": [
+     "the",
+     "to",
+     "is",
+     "and"
+    ],
+    "answer": 1,
+    "explain": "I like to read books, so the missing word is to."
+   },
+   {
+    "q": "Mom said, 'Time to eat!' What did Mom say it is time to do?",
+    "options": [
+     "run",
+     "eat",
+     "sleep",
+     "play"
+    ],
+    "answer": 1,
+    "explain": "Mom said it is time to eat."
+   },
+   {
+    "q": "The girl is happy. She has a new book. Why is the girl happy?",
+    "options": [
+     "She lost her book.",
+     "She has a dog.",
+     "She is tired.",
+     "She has a new book."
+    ],
+    "answer": 3,
+    "explain": "The story says the girl is happy because she has a new book."
+   },
+   {
+    "q": "Which sight word fills the blank? I have ___ apples.",
+    "options": [
+     "say",
+     "and",
+     "is",
+     "two"
+    ],
+    "answer": 3,
+    "explain": "I have two apples, so the missing word is two."
+   },
+   {
+    "q": "Which sight word fills the blank? My dog is ___ and brown.",
+    "options": [
+     "is",
+     "the",
+     "run",
+     "black"
+    ],
+    "answer": 3,
+    "explain": "Black and brown are the two colors of the dog."
+   },
+   {
+    "q": "Which sight word fills the blank? Here is ___ book.",
+    "options": [
+     "is",
+     "run",
+     "and",
+     "my"
+    ],
+    "answer": 3,
+    "explain": "Here is my book, so the missing word is my."
+   },
+   {
+    "q": "Which sight word fills the blank? The frog can ___ up high.",
+    "options": [
+     "is",
+     "jump",
+     "and",
+     "the"
+    ],
+    "answer": 1,
+    "explain": "The frog can jump up high, so the missing word is jump."
+   },
+   {
+    "q": "Which sight word means to move fast on your feet?",
+    "options": [
+     "run",
+     "sit",
+     "see",
+     "read"
+    ],
+    "answer": 0,
+    "explain": "Run means to move fast on your feet."
+   },
+   {
+    "q": "Which sight word fills the blank? ___ am happy today.",
+    "options": [
+     "Is",
+     "And",
+     "I",
+     "The"
+    ],
+    "answer": 2,
+    "explain": "The sentence starts with the sight word I."
+   },
+   {
+    "q": "Which sight word fills the blank? Come and play with ___.",
+    "options": [
+     "me",
+     "is",
+     "the",
+     "and"
+    ],
+    "answer": 0,
+    "explain": "Come and play with me, so the missing word is me."
+   },
+   {
+    "q": "Which sight word fills the blank? She ___ my friend.",
+    "options": [
+     "and",
+     "the",
+     "is",
+     "can"
+    ],
+    "answer": 2,
+    "explain": "She is my friend, so the missing word is is."
+   },
+   {
+    "q": "Which sight word fills the blank? ___ like to play outside.",
+    "options": [
+     "Said",
+     "Is",
+     "We",
+     "Am"
+    ],
+    "answer": 2,
+    "explain": "We is the sight word that fits at the start of this sentence."
+   },
+   {
+    "q": "Which sight word fills the blank? ___ away, little bug!",
+    "options": [
+     "Is",
+     "And",
+     "Go",
+     "The"
+    ],
+    "answer": 2,
+    "explain": "Go away is what you say to make something leave."
+   },
+   {
+    "q": "Which sight word fills the blank? Look at ___ dog run.",
+    "options": [
+     "am",
+     "the",
+     "is",
+     "and"
+    ],
+    "answer": 1,
+    "explain": "Look at the dog run, so the missing word is the."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Sight Words & Sentences",
+    "title": "Year Quest: Sight Words & Sentences - Quest 1",
+    "desc": "Learn sight words by heart and read simple sentences. Quest 1 of 4 in this unit.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Year Quest: Sight Words & Sentences - Quest 2",
+  "subject": "Kids Reading",
+  "module": "kids-reading-yq-u4-q2",
+  "description": "Learn sight words by heart and read simple sentences. Quest 2 of 4 in this unit.",
+  "questions": [
+   {
+    "q": "Which sight word fills the blank? I like ___ read books.",
+    "options": [
+     "and",
+     "is",
+     "the",
+     "to"
+    ],
+    "answer": 3,
+    "explain": "I like to read books, so the missing word is to."
+   },
+   {
+    "q": "Which sight word fills the blank? We will play ___ school.",
+    "options": [
+     "and",
+     "the",
+     "after",
+     "is"
+    ],
+    "answer": 2,
+    "explain": "We will play after school, so the missing word is after."
+   },
+   {
+    "q": "Which sight word would you use to ask about a person?",
+    "options": [
+     "when",
+     "where",
+     "what",
+     "who"
+    ],
+    "answer": 3,
+    "explain": "Who is the word for asking about a person."
+   },
+   {
+    "q": "Sam has a little dog. The dog likes to run. What does the dog like to do?",
+    "options": [
+     "sit",
+     "eat",
+     "run",
+     "sleep"
+    ],
+    "answer": 2,
+    "explain": "The story says the dog likes to run."
+   },
+   {
+    "q": "Which sight word fills the blank? I have ___ apples.",
+    "options": [
+     "two",
+     "and",
+     "say",
+     "is"
+    ],
+    "answer": 0,
+    "explain": "I have two apples, so the missing word is two."
+   },
+   {
+    "q": "Mom said, 'Time to eat!' What did Mom say it is time to do?",
+    "options": [
+     "run",
+     "eat",
+     "play",
+     "sleep"
+    ],
+    "answer": 1,
+    "explain": "Mom said it is time to eat."
+   },
+   {
+    "q": "Which sight word is the color of the sky on a sunny day?",
+    "options": [
+     "red",
+     "yellow",
+     "green",
+     "blue"
+    ],
+    "answer": 3,
+    "explain": "The sky on a sunny day is blue."
+   },
+   {
+    "q": "Which sight word fills the blank? The frog can ___ up high.",
+    "options": [
+     "the",
+     "jump",
+     "and",
+     "is"
+    ],
+    "answer": 1,
+    "explain": "The frog can jump up high, so the missing word is jump."
+   },
+   {
+    "q": "Which sight word fills the blank? You ___ my best friend.",
+    "options": [
+     "are",
+     "and",
+     "is",
+     "the"
+    ],
+    "answer": 0,
+    "explain": "You are my best friend, so the missing word is are."
+   },
+   {
+    "q": "The cat is little. It likes to sleep in the sun. What does the cat like to do?",
+    "options": [
+     "run in the rain",
+     "eat fish",
+     "play with a ball",
+     "sleep in the sun"
+    ],
+    "answer": 3,
+    "explain": "The story says the cat likes to sleep in the sun."
+   },
+   {
+    "q": "Which sight word fills the blank? She ___ my friend.",
+    "options": [
+     "and",
+     "is",
+     "the",
+     "can"
+    ],
+    "answer": 1,
+    "explain": "She is my friend, so the missing word is is."
+   },
+   {
+    "q": "Which sight word is the opposite of down?",
+    "options": [
+     "in",
+     "go",
+     "up",
+     "on"
+    ],
+    "answer": 2,
+    "explain": "Up is the opposite of down."
+   },
+   {
+    "q": "Which sight word fills the blank? I want ___ cookie, please.",
+    "options": [
+     "run",
+     "and",
+     "is",
+     "a"
+    ],
+    "answer": 3,
+    "explain": "I want a cookie, so the missing word is a."
+   },
+   {
+    "q": "Which sight word fills the blank? Please ___ here and sit.",
+    "options": [
+     "and",
+     "the",
+     "come",
+     "is"
+    ],
+    "answer": 2,
+    "explain": "Please come here and sit, so the missing word is come."
+   },
+   {
+    "q": "Which sight word names what you do with your eyes?",
+    "options": [
+     "run",
+     "said",
+     "see",
+     "eat"
+    ],
+    "answer": 2,
+    "explain": "You see with your eyes."
+   },
+   {
+    "q": "We play at the park. We like the big slide. Where do we play?",
+    "options": [
+     "at home",
+     "at the park",
+     "at school",
+     "at the beach"
+    ],
+    "answer": 1,
+    "explain": "The story says we play at the park."
+   },
+   {
+    "q": "Which sight word fills the blank? I ___ a red ball.",
+    "options": [
+     "see",
+     "the",
+     "is",
+     "up"
+    ],
+    "answer": 0,
+    "explain": "I see a red ball, so the missing word is see."
+   },
+   {
+    "q": "Which sight word fills the blank? Here is ___ book.",
+    "options": [
+     "is",
+     "my",
+     "and",
+     "run"
+    ],
+    "answer": 1,
+    "explain": "Here is my book, so the missing word is my."
+   },
+   {
+    "q": "Which sight word means more than two but less than four?",
+    "options": [
+     "three",
+     "two",
+     "four",
+     "one"
+    ],
+    "answer": 0,
+    "explain": "Three comes between two and four."
+   },
+   {
+    "q": "Which sight word fills the blank? ___ am happy today.",
+    "options": [
+     "I",
+     "And",
+     "The",
+     "Is"
+    ],
+    "answer": 0,
+    "explain": "The sentence starts with the sight word I."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Sight Words & Sentences",
+    "title": "Year Quest: Sight Words & Sentences - Quest 2",
+    "desc": "Learn sight words by heart and read simple sentences. Quest 2 of 4 in this unit.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Year Quest: Sight Words & Sentences - Quest 3",
+  "subject": "Kids Reading",
+  "module": "kids-reading-yq-u4-q3",
+  "description": "Learn sight words by heart and read simple sentences. Quest 3 of 4 in this unit.",
+  "questions": [
+   {
+    "q": "Which sight word means the number after one?",
+    "options": [
+     "ten",
+     "one",
+     "two",
+     "three"
+    ],
+    "answer": 2,
+    "explain": "Two comes right after one when you count."
+   },
+   {
+    "q": "Which sight word is the color of the sky on a sunny day?",
+    "options": [
+     "green",
+     "blue",
+     "red",
+     "yellow"
+    ],
+    "answer": 1,
+    "explain": "The sky on a sunny day is blue."
+   },
+   {
+    "q": "Which sight word fills the blank? ___ sun is hot today.",
+    "options": [
+     "Run",
+     "And",
+     "Am",
+     "The"
+    ],
+    "answer": 3,
+    "explain": "The is the sight word that goes before sun."
+   },
+   {
+    "q": "Which sight word fills the blank? ___ am happy today.",
+    "options": [
+     "I",
+     "The",
+     "Is",
+     "And"
+    ],
+    "answer": 0,
+    "explain": "The sentence starts with the sight word I."
+   },
+   {
+    "q": "Which sight word fills the blank? I have ___ apples.",
+    "options": [
+     "two",
+     "say",
+     "and",
+     "is"
+    ],
+    "answer": 0,
+    "explain": "I have two apples, so the missing word is two."
+   },
+   {
+    "q": "Which sight word fills the blank? ___ said the funny word?",
+    "options": [
+     "Who",
+     "And",
+     "The",
+     "Is"
+    ],
+    "answer": 0,
+    "explain": "The question asks about a person, so it starts with Who."
+   },
+   {
+    "q": "Which sight word fills the blank? I want ___ cookie, please.",
+    "options": [
+     "is",
+     "run",
+     "a",
+     "and"
+    ],
+    "answer": 2,
+    "explain": "I want a cookie, so the missing word is a."
+   },
+   {
+    "q": "Which sight word is the opposite of down?",
+    "options": [
+     "on",
+     "up",
+     "go",
+     "in"
+    ],
+    "answer": 1,
+    "explain": "Up is the opposite of down."
+   },
+   {
+    "q": "Which sight word fills the blank? It is fun ___ play.",
+    "options": [
+     "is",
+     "to",
+     "and",
+     "the"
+    ],
+    "answer": 1,
+    "explain": "It is fun to play, so the missing word is to."
+   },
+   {
+    "q": "Which sight word means at this place, not far away?",
+    "options": [
+     "down",
+     "away",
+     "there",
+     "here"
+    ],
+    "answer": 3,
+    "explain": "Here means at this place."
+   },
+   {
+    "q": "Which sight word fills the blank? The little bird can ___.",
+    "options": [
+     "and",
+     "is",
+     "the",
+     "fly"
+    ],
+    "answer": 3,
+    "explain": "The little bird can fly, so the missing word is fly."
+   },
+   {
+    "q": "The fish is in the water. Where is the fish?",
+    "options": [
+     "in the water",
+     "in a tree",
+     "in a box",
+     "in the sand"
+    ],
+    "answer": 0,
+    "explain": "The story says the fish is in the water."
+   },
+   {
+    "q": "Which sight word means more than two but less than four?",
+    "options": [
+     "two",
+     "four",
+     "one",
+     "three"
+    ],
+    "answer": 3,
+    "explain": "Three comes between two and four."
+   },
+   {
+    "q": "Which sight word do you say when you agree with someone?",
+    "options": [
+     "up",
+     "yes",
+     "no",
+     "go"
+    ],
+    "answer": 1,
+    "explain": "Yes is the word you say when you agree."
+   },
+   {
+    "q": "The cat is little. It likes to sleep in the sun. What does the cat like to do?",
+    "options": [
+     "run in the rain",
+     "play with a ball",
+     "sleep in the sun",
+     "eat fish"
+    ],
+    "answer": 2,
+    "explain": "The story says the cat likes to sleep in the sun."
+   },
+   {
+    "q": "Which sight word fills the blank? The frog can ___ up high.",
+    "options": [
+     "jump",
+     "the",
+     "and",
+     "is"
+    ],
+    "answer": 0,
+    "explain": "The frog can jump up high, so the missing word is jump."
+   },
+   {
+    "q": "Tom can not find his hat. It is under the bed. Where is the hat?",
+    "options": [
+     "by the door",
+     "on the table",
+     "in the box",
+     "under the bed"
+    ],
+    "answer": 3,
+    "explain": "The story says the hat is under the bed."
+   },
+   {
+    "q": "Which sight word fills the blank? Did you ___ that fish?",
+    "options": [
+     "is",
+     "and",
+     "see",
+     "the"
+    ],
+    "answer": 2,
+    "explain": "Did you see that fish, so the missing word is see."
+   },
+   {
+    "q": "Which sight word fills the blank? Please ___ here and sit.",
+    "options": [
+     "is",
+     "come",
+     "the",
+     "and"
+    ],
+    "answer": 1,
+    "explain": "Please come here and sit, so the missing word is come."
+   },
+   {
+    "q": "The boy has three fish. How many fish does the boy have?",
+    "options": [
+     "four",
+     "two",
+     "three",
+     "one"
+    ],
+    "answer": 2,
+    "explain": "The story says the boy has three fish."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Sight Words & Sentences",
+    "title": "Year Quest: Sight Words & Sentences - Quest 3",
+    "desc": "Learn sight words by heart and read simple sentences. Quest 3 of 4 in this unit.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Year Quest: Sight Words & Sentences - Quest 4",
+  "subject": "Kids Reading",
+  "module": "kids-reading-yq-u4-q4",
+  "description": "Learn sight words by heart and read simple sentences. Quest 4 of 4 in this unit.",
+  "questions": [
+   {
+    "q": "Which sight word fills the blank? He can ___ very fast.",
+    "options": [
+     "and",
+     "the",
+     "is",
+     "run"
+    ],
+    "answer": 3,
+    "explain": "He can run very fast, so the missing word is run."
+   },
+   {
+    "q": "Which sight word means to move fast on your feet?",
+    "options": [
+     "see",
+     "run",
+     "read",
+     "sit"
+    ],
+    "answer": 1,
+    "explain": "Run means to move fast on your feet."
+   },
+   {
+    "q": "The cat is little. It likes to sleep in the sun. What does the cat like to do?",
+    "options": [
+     "play with a ball",
+     "eat fish",
+     "sleep in the sun",
+     "run in the rain"
+    ],
+    "answer": 2,
+    "explain": "The story says the cat likes to sleep in the sun."
+   },
+   {
+    "q": "Which sight word fills the blank? The baby is ___ little.",
+    "options": [
+     "is",
+     "the",
+     "so",
+     "and"
+    ],
+    "answer": 2,
+    "explain": "The baby is so little, so the missing word is so."
+   },
+   {
+    "q": "Which sight word fills the blank? You ___ my best friend.",
+    "options": [
+     "the",
+     "and",
+     "are",
+     "is"
+    ],
+    "answer": 2,
+    "explain": "You are my best friend, so the missing word is are."
+   },
+   {
+    "q": "Which sight word fills the blank? Look at ___ dog run.",
+    "options": [
+     "the",
+     "is",
+     "and",
+     "am"
+    ],
+    "answer": 0,
+    "explain": "Look at the dog run, so the missing word is the."
+   },
+   {
+    "q": "Which sight word fills the blank? Did you ___ that fish?",
+    "options": [
+     "is",
+     "see",
+     "the",
+     "and"
+    ],
+    "answer": 1,
+    "explain": "Did you see that fish, so the missing word is see."
+   },
+   {
+    "q": "Which sight word fills the blank? I like ___ read books.",
+    "options": [
+     "is",
+     "to",
+     "the",
+     "and"
+    ],
+    "answer": 1,
+    "explain": "I like to read books, so the missing word is to."
+   },
+   {
+    "q": "Tom can not find his hat. It is under the bed. Where is the hat?",
+    "options": [
+     "on the table",
+     "under the bed",
+     "by the door",
+     "in the box"
+    ],
+    "answer": 1,
+    "explain": "The story says the hat is under the bed."
+   },
+   {
+    "q": "Which sight word fills the blank? It is fun ___ play.",
+    "options": [
+     "to",
+     "the",
+     "is",
+     "and"
+    ],
+    "answer": 0,
+    "explain": "It is fun to play, so the missing word is to."
+   },
+   {
+    "q": "Mom said, 'Time to eat!' What did Mom say it is time to do?",
+    "options": [
+     "play",
+     "eat",
+     "run",
+     "sleep"
+    ],
+    "answer": 1,
+    "explain": "Mom said it is time to eat."
+   },
+   {
+    "q": "Look at the red ball. It is big and round. What color is the ball?",
+    "options": [
+     "blue",
+     "green",
+     "red",
+     "yellow"
+    ],
+    "answer": 2,
+    "explain": "The story says the ball is red."
+   },
+   {
+    "q": "The girl is happy. She has a new book. Why is the girl happy?",
+    "options": [
+     "She lost her book.",
+     "She is tired.",
+     "She has a dog.",
+     "She has a new book."
+    ],
+    "answer": 3,
+    "explain": "The story says the girl is happy because she has a new book."
+   },
+   {
+    "q": "Which sight word fills the blank? I can ___ a big fish.",
+    "options": [
+     "see",
+     "is",
+     "and",
+     "the"
+    ],
+    "answer": 0,
+    "explain": "I can see a big fish, so the missing word is see."
+   },
+   {
+    "q": "Which sight word fills the blank? I want ___ cookie, please.",
+    "options": [
+     "and",
+     "is",
+     "run",
+     "a"
+    ],
+    "answer": 3,
+    "explain": "I want a cookie, so the missing word is a."
+   },
+   {
+    "q": "Which sight word means more than two but less than four?",
+    "options": [
+     "three",
+     "two",
+     "one",
+     "four"
+    ],
+    "answer": 0,
+    "explain": "Three comes between two and four."
+   },
+   {
+    "q": "Which sight word fills the blank? Come and play with ___.",
+    "options": [
+     "is",
+     "and",
+     "the",
+     "me"
+    ],
+    "answer": 3,
+    "explain": "Come and play with me, so the missing word is me."
+   },
+   {
+    "q": "Which sight word fills the blank? I ___ a red ball.",
+    "options": [
+     "up",
+     "is",
+     "see",
+     "the"
+    ],
+    "answer": 2,
+    "explain": "I see a red ball, so the missing word is see."
+   },
+   {
+    "q": "Which sight word means the color of a stop sign?",
+    "options": [
+     "red",
+     "blue",
+     "white",
+     "black"
+    ],
+    "answer": 0,
+    "explain": "A stop sign is red."
+   },
+   {
+    "q": "Which sight word fills the blank? I have ___ apples.",
+    "options": [
+     "is",
+     "say",
+     "and",
+     "two"
+    ],
+    "answer": 3,
+    "explain": "I have two apples, so the missing word is two."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Sight Words & Sentences",
+    "title": "Year Quest: Sight Words & Sentences - Quest 4",
+    "desc": "Learn sight words by heart and read simple sentences. Quest 4 of 4 in this unit.",
+    "count": 20,
+    "boss": true
+   }
+  ]
+ },
+ {
+  "title": "Year Quest: Story Parts: Who, Where & What Happens - Quest 1",
+  "subject": "Kids Reading",
+  "module": "kids-reading-yq-u5-q1",
+  "description": "Read mini stories and find who, where, and what happens. Quest 1 of 4 in this unit.",
+  "questions": [
+   {
+    "q": "Zoe lost her red mitten at the park. She looked under the bench. She found it there and cheered. Where did Zoe lose her mitten?",
+    "options": [
+     "at home",
+     "on the bus",
+     "at the park",
+     "at the beach"
+    ],
+    "answer": 2,
+    "explain": "The story says Zoe was at the park."
+   },
+   {
+    "q": "Kai saw snow falling outside. He put on his boots and coat and ran into his yard. He made a snowman with a carrot nose. What did Kai make?",
+    "options": [
+     "a snowman",
+     "a snow angel",
+     "a snow fort",
+     "an ice slide"
+    ],
+    "answer": 0,
+    "explain": "The story says Kai made a snowman."
+   },
+   {
+    "q": "Ella drew a picture of her house. She used red for the roof. She gave the picture to her mom. What color did Ella use for the roof?",
+    "options": [
+     "green",
+     "blue",
+     "yellow",
+     "red"
+    ],
+    "answer": 3,
+    "explain": "The story says Ella used red for the roof."
+   },
+   {
+    "q": "Ruby found a shiny shell at the beach. She held it up to her ear. She heard a soft sound, like the sea. Where did Ruby find the shell?",
+    "options": [
+     "at the beach",
+     "by the lake",
+     "in the garden",
+     "in the sand box at home"
+    ],
+    "answer": 0,
+    "explain": "The story says Ruby was at the beach."
+   },
+   {
+    "q": "A little bird sat in a tree by the school. It sang a happy song. Two kids stopped to listen. Where was the bird sitting?",
+    "options": [
+     "on a roof",
+     "on the ground",
+     "in a nest box",
+     "in a tree"
+    ],
+    "answer": 3,
+    "explain": "The story says the bird sat in a tree."
+   },
+   {
+    "q": "Zoe lost her red mitten at the park. She looked under the bench. She found it there and cheered. What did Zoe find under the bench?",
+    "options": [
+     "a lost coin",
+     "a blue hat",
+     "a little frog",
+     "her red mitten"
+    ],
+    "answer": 3,
+    "explain": "The story says Zoe found her red mitten under the bench."
+   },
+   {
+    "q": "Lily found a lost puppy near her house. She gave it a bowl of water. The happy puppy wagged its tail. Who found a lost puppy?",
+    "options": [
+     "Kai",
+     "Ana",
+     "Lily",
+     "Ben"
+    ],
+    "answer": 2,
+    "explain": "The story says Lily found the puppy."
+   },
+   {
+    "q": "Tom picked apples at the farm. He filled a big basket to the top. Then he ate one crisp apple. What did Tom put in the basket?",
+    "options": [
+     "eggs",
+     "apples",
+     "flowers",
+     "rocks"
+    ],
+    "answer": 1,
+    "explain": "The story says Tom filled the basket with apples."
+   },
+   {
+    "q": "Kai saw snow falling outside. He put on his boots and coat and ran into his yard. He made a snowman with a carrot nose. Where did Kai make the snowman?",
+    "options": [
+     "on a hill",
+     "at school",
+     "in his yard",
+     "at the park"
+    ],
+    "answer": 2,
+    "explain": "The story says Kai ran into his yard."
+   },
+   {
+    "q": "Ben took his kite to the park. The wind blew hard all day. The kite flew high in the sky. What happened to the kite?",
+    "options": [
+     "It flew high in the sky.",
+     "It got stuck in a tree.",
+     "It fell in a pond.",
+     "It popped loudly."
+    ],
+    "answer": 0,
+    "explain": "The story says the kite flew high in the sky."
+   },
+   {
+    "q": "Mrs. Fox read a story to her class at school. The story was about a brave little mouse. The class clapped at the end. Where was the class?",
+    "options": [
+     "at the library",
+     "at school",
+     "at the park",
+     "on a bus"
+    ],
+    "answer": 1,
+    "explain": "The story says the class was at school."
+   },
+   {
+    "q": "Leo the lion cub lived at the zoo. He liked to nap in the warm sun. One day, he roared for the very first time. What did Leo like to do?",
+    "options": [
+     "swim in the pond",
+     "climb tall trees",
+     "nap in the warm sun",
+     "run in the snow"
+    ],
+    "answer": 2,
+    "explain": "The story says Leo liked to nap in the warm sun."
+   },
+   {
+    "q": "Sam went to the beach with his dad. He built a tall sand castle. The waves did not knock it down, and Sam smiled. Who built a sand castle?",
+    "options": [
+     "Leo",
+     "Sam",
+     "Mia",
+     "Tom"
+    ],
+    "answer": 1,
+    "explain": "The story says Sam built the sand castle."
+   },
+   {
+    "q": "A little bird sat in a tree by the school. It sang a happy song. Two kids stopped to listen. What did the two kids do?",
+    "options": [
+     "They ate their lunch.",
+     "They ran away fast.",
+     "They rode their bikes.",
+     "They stopped to listen."
+    ],
+    "answer": 3,
+    "explain": "The story says the two kids stopped to listen."
+   },
+   {
+    "q": "Mia planted a seed in her garden. She watered it every day. Soon a tall sunflower grew. Where did Mia plant the seed?",
+    "options": [
+     "in the park",
+     "at the beach",
+     "in her garden",
+     "in the kitchen"
+    ],
+    "answer": 2,
+    "explain": "The story says Mia planted the seed in her garden."
+   },
+   {
+    "q": "Tom picked apples at the farm. He filled a big basket to the top. Then he ate one crisp apple. Who picked apples?",
+    "options": [
+     "Ben",
+     "Tom",
+     "Leo",
+     "Kai"
+    ],
+    "answer": 1,
+    "explain": "The story says Tom picked the apples."
+   },
+   {
+    "q": "Nora planted carrots in her garden. Rain helped them grow big and strong. In the fall, she pulled up the orange carrots. When did Nora pull up the carrots?",
+    "options": [
+     "at night",
+     "in the fall",
+     "in the winter",
+     "in the spring"
+    ],
+    "answer": 1,
+    "explain": "The story says Nora pulled up the carrots in the fall."
+   },
+   {
+    "q": "Zoe lost her red mitten at the park. She looked under the bench. She found it there and cheered. Who lost a red mitten?",
+    "options": [
+     "Ana",
+     "Mia",
+     "Ruby",
+     "Zoe"
+    ],
+    "answer": 3,
+    "explain": "The story says Zoe lost the mitten."
+   },
+   {
+    "q": "Mrs. Fox read a story to her class at school. The story was about a brave little mouse. The class clapped at the end. What was the story about?",
+    "options": [
+     "a brave little mouse",
+     "a lost puppy",
+     "a fast red car",
+     "a tall tree"
+    ],
+    "answer": 0,
+    "explain": "The story says the book was about a brave little mouse."
+   },
+   {
+    "q": "Mia planted a seed in her garden. She watered it every day. Soon a tall sunflower grew. What grew in the garden?",
+    "options": [
+     "a tall sunflower",
+     "an apple tree",
+     "a red rose",
+     "a big pumpkin"
+    ],
+    "answer": 0,
+    "explain": "The story says a tall sunflower grew."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Story Parts: Who, Where & What Happens",
+    "title": "Year Quest: Story Parts: Who, Where & What Happens - Quest 1",
+    "desc": "Read mini stories and find who, where, and what happens. Quest 1 of 4 in this unit.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Year Quest: Story Parts: Who, Where & What Happens - Quest 2",
+  "subject": "Kids Reading",
+  "module": "kids-reading-yq-u5-q2",
+  "description": "Read mini stories and find who, where, and what happens. Quest 2 of 4 in this unit.",
+  "questions": [
+   {
+    "q": "A frog sat on a log in the pond. A bug flew by. Snap! The frog caught the bug with its long tongue. What did the frog catch?",
+    "options": [
+     "a fly ball",
+     "a raindrop",
+     "a bug",
+     "a leaf"
+    ],
+    "answer": 2,
+    "explain": "The story says the frog caught the bug."
+   },
+   {
+    "q": "Lily found a lost puppy near her house. She gave it a bowl of water. The happy puppy wagged its tail. What did Lily give the puppy?",
+    "options": [
+     "a new toy",
+     "a bowl of milk",
+     "a warm bath",
+     "a bowl of water"
+    ],
+    "answer": 3,
+    "explain": "The story says Lily gave the puppy a bowl of water."
+   },
+   {
+    "q": "A frog sat on a log in the pond. A bug flew by. Snap! The frog caught the bug with its long tongue. Who sat on a log?",
+    "options": [
+     "a turtle",
+     "a frog",
+     "a fish",
+     "a duck"
+    ],
+    "answer": 1,
+    "explain": "The story says a frog sat on the log."
+   },
+   {
+    "q": "A turtle walked slowly to the pond. It slipped into the water. It swam past the lily pads. Where did the turtle swim?",
+    "options": [
+     "in the river",
+     "in the pond",
+     "in a puddle",
+     "in the sea"
+    ],
+    "answer": 1,
+    "explain": "The story says the turtle slipped into the pond."
+   },
+   {
+    "q": "Leo the lion cub lived at the zoo. He liked to nap in the warm sun. One day, he roared for the very first time. Who roared for the first time?",
+    "options": [
+     "Leo",
+     "Kai",
+     "Tom",
+     "Ben"
+    ],
+    "answer": 0,
+    "explain": "The story says Leo roared for the first time."
+   },
+   {
+    "q": "A turtle walked slowly to the pond. It slipped into the water. It swam past the lily pads. What did the turtle swim past?",
+    "options": [
+     "the boats",
+     "the tall rocks",
+     "the ducks",
+     "the lily pads"
+    ],
+    "answer": 3,
+    "explain": "The story says the turtle swam past the lily pads."
+   },
+   {
+    "q": "Ben took his kite to the park. The wind blew hard all day. The kite flew high in the sky. Who took a kite to the park?",
+    "options": [
+     "Tom",
+     "Ben",
+     "Mia",
+     "Zoe"
+    ],
+    "answer": 1,
+    "explain": "The story says Ben took his kite to the park."
+   },
+   {
+    "q": "Grandpa Joe baked bread in his kitchen. The bread smelled warm and sweet. He shared it with Ana. What did Grandpa Joe bake?",
+    "options": [
+     "bread",
+     "a cake",
+     "a pie",
+     "cookies"
+    ],
+    "answer": 0,
+    "explain": "The story says Grandpa Joe baked bread."
+   },
+   {
+    "q": "Ella drew a picture of her house. She used red for the roof. She gave the picture to her mom. Who drew a picture of a house?",
+    "options": [
+     "Mia",
+     "Ella",
+     "Ana",
+     "Nora"
+    ],
+    "answer": 1,
+    "explain": "The story says Ella drew the picture."
+   },
+   {
+    "q": "A frog sat on a log in the pond. A bug flew by. Snap! The frog caught the bug with its long tongue. Where was the log?",
+    "options": [
+     "in the pond",
+     "in the forest",
+     "by the river",
+     "in a garden"
+    ],
+    "answer": 0,
+    "explain": "The story says the log was in the pond."
+   },
+   {
+    "q": "Omar fed the ducks at the lake. The ducks quacked and splashed in the water. One little duck ate seeds right from his hand. Where did Omar feed the ducks?",
+    "options": [
+     "at the lake",
+     "by the river",
+     "at the zoo",
+     "at the pond"
+    ],
+    "answer": 0,
+    "explain": "The story says Omar was at the lake."
+   },
+   {
+    "q": "A little bird sat in a tree by the school. It sang a happy song. Two kids stopped to listen. What did the two kids do?",
+    "options": [
+     "They ran away fast.",
+     "They ate their lunch.",
+     "They rode their bikes.",
+     "They stopped to listen."
+    ],
+    "answer": 3,
+    "explain": "The story says the two kids stopped to listen."
+   },
+   {
+    "q": "Ana read a book about cats at the library. She learned that cats sleep for much of the day. She told her friend all about it. What was Ana's book about?",
+    "options": [
+     "dogs",
+     "birds",
+     "cats",
+     "fish"
+    ],
+    "answer": 2,
+    "explain": "The story says the book was about cats."
+   },
+   {
+    "q": "Lily found a lost puppy near her house. She gave it a bowl of water. The happy puppy wagged its tail. Where did Lily find the puppy?",
+    "options": [
+     "at the zoo",
+     "in the woods",
+     "by the lake",
+     "near her house"
+    ],
+    "answer": 3,
+    "explain": "The story says Lily found the puppy near her house."
+   },
+   {
+    "q": "Zoe lost her red mitten at the park. She looked under the bench. She found it there and cheered. Where did Zoe lose her mitten?",
+    "options": [
+     "at home",
+     "at the beach",
+     "at the park",
+     "on the bus"
+    ],
+    "answer": 2,
+    "explain": "The story says Zoe was at the park."
+   },
+   {
+    "q": "Sam went to the beach with his dad. He built a tall sand castle. The waves did not knock it down, and Sam smiled. What did Sam build?",
+    "options": [
+     "a paper kite",
+     "a tall sand castle",
+     "a snowman",
+     "a little boat"
+    ],
+    "answer": 1,
+    "explain": "The story says Sam built a tall sand castle."
+   },
+   {
+    "q": "Mrs. Fox read a story to her class at school. The story was about a brave little mouse. The class clapped at the end. Who read a story to the class?",
+    "options": [
+     "Grandpa Joe",
+     "Mr. Lee",
+     "Mrs. Fox",
+     "Miss Ana"
+    ],
+    "answer": 2,
+    "explain": "The story says Mrs. Fox read to the class."
+   },
+   {
+    "q": "Ana read a book about cats at the library. She learned that cats sleep for much of the day. She told her friend all about it. Where did Ana read the book?",
+    "options": [
+     "at the park",
+     "on the bus",
+     "at the library",
+     "at home"
+    ],
+    "answer": 2,
+    "explain": "The story says Ana was at the library."
+   },
+   {
+    "q": "Ella drew a picture of her house. She used red for the roof. She gave the picture to her mom. What color did Ella use for the roof?",
+    "options": [
+     "red",
+     "green",
+     "yellow",
+     "blue"
+    ],
+    "answer": 0,
+    "explain": "The story says Ella used red for the roof."
+   },
+   {
+    "q": "Kai saw snow falling outside. He put on his boots and coat and ran into his yard. He made a snowman with a carrot nose. What did Kai make?",
+    "options": [
+     "an ice slide",
+     "a snow angel",
+     "a snow fort",
+     "a snowman"
+    ],
+    "answer": 3,
+    "explain": "The story says Kai made a snowman."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Story Parts: Who, Where & What Happens",
+    "title": "Year Quest: Story Parts: Who, Where & What Happens - Quest 2",
+    "desc": "Read mini stories and find who, where, and what happens. Quest 2 of 4 in this unit.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Year Quest: Story Parts: Who, Where & What Happens - Quest 3",
+  "subject": "Kids Reading",
+  "module": "kids-reading-yq-u5-q3",
+  "description": "Read mini stories and find who, where, and what happens. Quest 3 of 4 in this unit.",
+  "questions": [
+   {
+    "q": "Tom picked apples at the farm. He filled a big basket to the top. Then he ate one crisp apple. What did Tom put in the basket?",
+    "options": [
+     "apples",
+     "rocks",
+     "flowers",
+     "eggs"
+    ],
+    "answer": 0,
+    "explain": "The story says Tom filled the basket with apples."
+   },
+   {
+    "q": "Zoe lost her red mitten at the park. She looked under the bench. She found it there and cheered. Who lost a red mitten?",
+    "options": [
+     "Zoe",
+     "Ana",
+     "Ruby",
+     "Mia"
+    ],
+    "answer": 0,
+    "explain": "The story says Zoe lost the mitten."
+   },
+   {
+    "q": "Sam went to the beach with his dad. He built a tall sand castle. The waves did not knock it down, and Sam smiled. Who built a sand castle?",
+    "options": [
+     "Tom",
+     "Leo",
+     "Mia",
+     "Sam"
+    ],
+    "answer": 3,
+    "explain": "The story says Sam built the sand castle."
+   },
+   {
+    "q": "Mia planted a seed in her garden. She watered it every day. Soon a tall sunflower grew. Where did Mia plant the seed?",
+    "options": [
+     "at the beach",
+     "in the park",
+     "in her garden",
+     "in the kitchen"
+    ],
+    "answer": 2,
+    "explain": "The story says Mia planted the seed in her garden."
+   },
+   {
+    "q": "Ana read a book about cats at the library. She learned that cats sleep for much of the day. She told her friend all about it. What was Ana's book about?",
+    "options": [
+     "birds",
+     "dogs",
+     "cats",
+     "fish"
+    ],
+    "answer": 2,
+    "explain": "The story says the book was about cats."
+   },
+   {
+    "q": "Ruby found a shiny shell at the beach. She held it up to her ear. She heard a soft sound, like the sea. Who found a shiny shell?",
+    "options": [
+     "Lily",
+     "Ruby",
+     "Nora",
+     "Ella"
+    ],
+    "answer": 1,
+    "explain": "The story says Ruby found the shell."
+   },
+   {
+    "q": "Zoe lost her red mitten at the park. She looked under the bench. She found it there and cheered. Where did Zoe lose her mitten?",
+    "options": [
+     "at home",
+     "at the park",
+     "on the bus",
+     "at the beach"
+    ],
+    "answer": 1,
+    "explain": "The story says Zoe was at the park."
+   },
+   {
+    "q": "Zoe lost her red mitten at the park. She looked under the bench. She found it there and cheered. What did Zoe find under the bench?",
+    "options": [
+     "a little frog",
+     "a lost coin",
+     "a blue hat",
+     "her red mitten"
+    ],
+    "answer": 3,
+    "explain": "The story says Zoe found her red mitten under the bench."
+   },
+   {
+    "q": "Mrs. Fox read a story to her class at school. The story was about a brave little mouse. The class clapped at the end. What was the story about?",
+    "options": [
+     "a tall tree",
+     "a lost puppy",
+     "a fast red car",
+     "a brave little mouse"
+    ],
+    "answer": 3,
+    "explain": "The story says the book was about a brave little mouse."
+   },
+   {
+    "q": "Grandpa Joe baked bread in his kitchen. The bread smelled warm and sweet. He shared it with Ana. What did Grandpa Joe bake?",
+    "options": [
+     "a pie",
+     "a cake",
+     "bread",
+     "cookies"
+    ],
+    "answer": 2,
+    "explain": "The story says Grandpa Joe baked bread."
+   },
+   {
+    "q": "Mrs. Fox read a story to her class at school. The story was about a brave little mouse. The class clapped at the end. Who read a story to the class?",
+    "options": [
+     "Mr. Lee",
+     "Miss Ana",
+     "Grandpa Joe",
+     "Mrs. Fox"
+    ],
+    "answer": 3,
+    "explain": "The story says Mrs. Fox read to the class."
+   },
+   {
+    "q": "Leo the lion cub lived at the zoo. He liked to nap in the warm sun. One day, he roared for the very first time. Who roared for the first time?",
+    "options": [
+     "Kai",
+     "Ben",
+     "Leo",
+     "Tom"
+    ],
+    "answer": 2,
+    "explain": "The story says Leo roared for the first time."
+   },
+   {
+    "q": "Mia planted a seed in her garden. She watered it every day. Soon a tall sunflower grew. What grew in the garden?",
+    "options": [
+     "a tall sunflower",
+     "a red rose",
+     "an apple tree",
+     "a big pumpkin"
+    ],
+    "answer": 0,
+    "explain": "The story says a tall sunflower grew."
+   },
+   {
+    "q": "A turtle walked slowly to the pond. It slipped into the water. It swam past the lily pads. What did the turtle swim past?",
+    "options": [
+     "the boats",
+     "the tall rocks",
+     "the ducks",
+     "the lily pads"
+    ],
+    "answer": 3,
+    "explain": "The story says the turtle swam past the lily pads."
+   },
+   {
+    "q": "Lily found a lost puppy near her house. She gave it a bowl of water. The happy puppy wagged its tail. What did Lily give the puppy?",
+    "options": [
+     "a bowl of water",
+     "a warm bath",
+     "a bowl of milk",
+     "a new toy"
+    ],
+    "answer": 0,
+    "explain": "The story says Lily gave the puppy a bowl of water."
+   },
+   {
+    "q": "A little bird sat in a tree by the school. It sang a happy song. Two kids stopped to listen. What did the two kids do?",
+    "options": [
+     "They ate their lunch.",
+     "They rode their bikes.",
+     "They stopped to listen.",
+     "They ran away fast."
+    ],
+    "answer": 2,
+    "explain": "The story says the two kids stopped to listen."
+   },
+   {
+    "q": "Ben took his kite to the park. The wind blew hard all day. The kite flew high in the sky. Who took a kite to the park?",
+    "options": [
+     "Tom",
+     "Ben",
+     "Mia",
+     "Zoe"
+    ],
+    "answer": 1,
+    "explain": "The story says Ben took his kite to the park."
+   },
+   {
+    "q": "A frog sat on a log in the pond. A bug flew by. Snap! The frog caught the bug with its long tongue. What did the frog catch?",
+    "options": [
+     "a leaf",
+     "a bug",
+     "a raindrop",
+     "a fly ball"
+    ],
+    "answer": 1,
+    "explain": "The story says the frog caught the bug."
+   },
+   {
+    "q": "Ruby found a shiny shell at the beach. She held it up to her ear. She heard a soft sound, like the sea. Where did Ruby find the shell?",
+    "options": [
+     "by the lake",
+     "at the beach",
+     "in the sand box at home",
+     "in the garden"
+    ],
+    "answer": 1,
+    "explain": "The story says Ruby was at the beach."
+   },
+   {
+    "q": "Ella drew a picture of her house. She used red for the roof. She gave the picture to her mom. Who drew a picture of a house?",
+    "options": [
+     "Ella",
+     "Ana",
+     "Nora",
+     "Mia"
+    ],
+    "answer": 0,
+    "explain": "The story says Ella drew the picture."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Story Parts: Who, Where & What Happens",
+    "title": "Year Quest: Story Parts: Who, Where & What Happens - Quest 3",
+    "desc": "Read mini stories and find who, where, and what happens. Quest 3 of 4 in this unit.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Year Quest: Story Parts: Who, Where & What Happens - Quest 4",
+  "subject": "Kids Reading",
+  "module": "kids-reading-yq-u5-q4",
+  "description": "Read mini stories and find who, where, and what happens. Quest 4 of 4 in this unit.",
+  "questions": [
+   {
+    "q": "Omar fed the ducks at the lake. The ducks quacked and splashed in the water. One little duck ate seeds right from his hand. What animals did Omar feed?",
+    "options": [
+     "frogs",
+     "fish",
+     "ducks",
+     "geese"
+    ],
+    "answer": 2,
+    "explain": "The story says Omar fed the ducks."
+   },
+   {
+    "q": "A little bird sat in a tree by the school. It sang a happy song. Two kids stopped to listen. What did the two kids do?",
+    "options": [
+     "They rode their bikes.",
+     "They ran away fast.",
+     "They stopped to listen.",
+     "They ate their lunch."
+    ],
+    "answer": 2,
+    "explain": "The story says the two kids stopped to listen."
+   },
+   {
+    "q": "A frog sat on a log in the pond. A bug flew by. Snap! The frog caught the bug with its long tongue. What did the frog catch?",
+    "options": [
+     "a fly ball",
+     "a leaf",
+     "a bug",
+     "a raindrop"
+    ],
+    "answer": 2,
+    "explain": "The story says the frog caught the bug."
+   },
+   {
+    "q": "Lily found a lost puppy near her house. She gave it a bowl of water. The happy puppy wagged its tail. Where did Lily find the puppy?",
+    "options": [
+     "by the lake",
+     "in the woods",
+     "at the zoo",
+     "near her house"
+    ],
+    "answer": 3,
+    "explain": "The story says Lily found the puppy near her house."
+   },
+   {
+    "q": "A frog sat on a log in the pond. A bug flew by. Snap! The frog caught the bug with its long tongue. Who sat on a log?",
+    "options": [
+     "a turtle",
+     "a duck",
+     "a fish",
+     "a frog"
+    ],
+    "answer": 3,
+    "explain": "The story says a frog sat on the log."
+   },
+   {
+    "q": "Ana read a book about cats at the library. She learned that cats sleep for much of the day. She told her friend all about it. Who read a book about cats?",
+    "options": [
+     "Sam",
+     "Ana",
+     "Zoe",
+     "Ella"
+    ],
+    "answer": 1,
+    "explain": "The story says Ana read the book."
+   },
+   {
+    "q": "Nora planted carrots in her garden. Rain helped them grow big and strong. In the fall, she pulled up the orange carrots. Who planted carrots?",
+    "options": [
+     "Nora",
+     "Mia",
+     "Zoe",
+     "Ella"
+    ],
+    "answer": 0,
+    "explain": "The story says Nora planted the carrots."
+   },
+   {
+    "q": "Zoe lost her red mitten at the park. She looked under the bench. She found it there and cheered. Where did Zoe lose her mitten?",
+    "options": [
+     "at home",
+     "at the park",
+     "at the beach",
+     "on the bus"
+    ],
+    "answer": 1,
+    "explain": "The story says Zoe was at the park."
+   },
+   {
+    "q": "Sam went to the beach with his dad. He built a tall sand castle. The waves did not knock it down, and Sam smiled. Where did Sam build the castle?",
+    "options": [
+     "at the beach",
+     "in his room",
+     "in the snow",
+     "at the park"
+    ],
+    "answer": 0,
+    "explain": "The story says Sam went to the beach."
+   },
+   {
+    "q": "Mrs. Fox read a story to her class at school. The story was about a brave little mouse. The class clapped at the end. What was the story about?",
+    "options": [
+     "a lost puppy",
+     "a fast red car",
+     "a tall tree",
+     "a brave little mouse"
+    ],
+    "answer": 3,
+    "explain": "The story says the book was about a brave little mouse."
+   },
+   {
+    "q": "Zoe lost her red mitten at the park. She looked under the bench. She found it there and cheered. What did Zoe find under the bench?",
+    "options": [
+     "a little frog",
+     "her red mitten",
+     "a blue hat",
+     "a lost coin"
+    ],
+    "answer": 1,
+    "explain": "The story says Zoe found her red mitten under the bench."
+   },
+   {
+    "q": "Ella drew a picture of her house. She used red for the roof. She gave the picture to her mom. Who drew a picture of a house?",
+    "options": [
+     "Nora",
+     "Mia",
+     "Ella",
+     "Ana"
+    ],
+    "answer": 2,
+    "explain": "The story says Ella drew the picture."
+   },
+   {
+    "q": "A little bird sat in a tree by the school. It sang a happy song. Two kids stopped to listen. Who sang a happy song?",
+    "options": [
+     "a big dog",
+     "the little bird",
+     "the two kids",
+     "the teacher"
+    ],
+    "answer": 1,
+    "explain": "The story says the little bird sang the song."
+   },
+   {
+    "q": "A turtle walked slowly to the pond. It slipped into the water. It swam past the lily pads. What did the turtle swim past?",
+    "options": [
+     "the lily pads",
+     "the boats",
+     "the ducks",
+     "the tall rocks"
+    ],
+    "answer": 0,
+    "explain": "The story says the turtle swam past the lily pads."
+   },
+   {
+    "q": "Kai saw snow falling outside. He put on his boots and coat and ran into his yard. He made a snowman with a carrot nose. Who made a snowman?",
+    "options": [
+     "Kai",
+     "Omar",
+     "Ben",
+     "Leo"
+    ],
+    "answer": 0,
+    "explain": "The story says Kai made the snowman."
+   },
+   {
+    "q": "A turtle walked slowly to the pond. It slipped into the water. It swam past the lily pads. Where did the turtle swim?",
+    "options": [
+     "in the river",
+     "in a puddle",
+     "in the pond",
+     "in the sea"
+    ],
+    "answer": 2,
+    "explain": "The story says the turtle slipped into the pond."
+   },
+   {
+    "q": "Ruby found a shiny shell at the beach. She held it up to her ear. She heard a soft sound, like the sea. What did Ruby find?",
+    "options": [
+     "a shiny shell",
+     "a lost coin",
+     "a starfish",
+     "a smooth rock"
+    ],
+    "answer": 0,
+    "explain": "The story says Ruby found a shiny shell."
+   },
+   {
+    "q": "Grandpa Joe baked bread in his kitchen. The bread smelled warm and sweet. He shared it with Ana. Who baked the bread?",
+    "options": [
+     "Tom",
+     "Sam",
+     "Mr. Lee",
+     "Grandpa Joe"
+    ],
+    "answer": 3,
+    "explain": "The story says Grandpa Joe baked the bread."
+   },
+   {
+    "q": "Leo the lion cub lived at the zoo. He liked to nap in the warm sun. One day, he roared for the very first time. Who roared for the first time?",
+    "options": [
+     "Kai",
+     "Leo",
+     "Ben",
+     "Tom"
+    ],
+    "answer": 1,
+    "explain": "The story says Leo roared for the first time."
+   },
+   {
+    "q": "Mia planted a seed in her garden. She watered it every day. Soon a tall sunflower grew. Where did Mia plant the seed?",
+    "options": [
+     "in the kitchen",
+     "in the park",
+     "at the beach",
+     "in her garden"
+    ],
+    "answer": 3,
+    "explain": "The story says Mia planted the seed in her garden."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Story Parts: Who, Where & What Happens",
+    "title": "Year Quest: Story Parts: Who, Where & What Happens - Quest 4",
+    "desc": "Read mini stories and find who, where, and what happens. Quest 4 of 4 in this unit.",
+    "count": 20,
+    "boss": true
+   }
+  ]
+ },
+ {
+  "title": "Year Quest: Rhymes & Poems - Quest 1",
+  "subject": "Kids Reading",
+  "module": "kids-reading-yq-u6-q1",
+  "description": "Find words that rhyme and enjoy short, silly poems. Quest 1 of 4 in this unit.",
+  "questions": [
+   {
+    "q": "Which word rhymes with ball?",
+    "options": [
+     "rat",
+     "call",
+     "coat",
+     "see"
+    ],
+    "answer": 1,
+    "explain": "Ball and call rhyme because they end with the same sound."
+   },
+   {
+    "q": "Read the poem: \"Run, sun, run and play, chase the clouds away today.\" Which word rhymes with sun?",
+    "options": [
+     "red",
+     "ring",
+     "hat",
+     "run"
+    ],
+    "answer": 3,
+    "explain": "In the poem, sun and run rhyme."
+   },
+   {
+    "q": "Which pair of words rhymes?",
+    "options": [
+     "moon and day",
+     "moon and star",
+     "moon and hen",
+     "moon and spoon"
+    ],
+    "answer": 3,
+    "explain": "moon and spoon rhyme because they end with the same sound."
+   },
+   {
+    "q": "Read the poem: \"The hen ran to the pen and counted up to ten.\" Which word rhymes with hen?",
+    "options": [
+     "fun",
+     "tree",
+     "spoon",
+     "pen"
+    ],
+    "answer": 3,
+    "explain": "In the poem, hen and pen rhyme."
+   },
+   {
+    "q": "Which word rhymes with dog?",
+    "options": [
+     "log",
+     "tree",
+     "hair",
+     "goat"
+    ],
+    "answer": 0,
+    "explain": "Dog and log rhyme because they end with the same sound."
+   },
+   {
+    "q": "Which word rhymes with hen?",
+    "options": [
+     "boat",
+     "men",
+     "box",
+     "red"
+    ],
+    "answer": 1,
+    "explain": "Hen and men rhyme because they end with the same sound."
+   },
+   {
+    "q": "Which word rhymes with book?",
+    "options": [
+     "ring",
+     "pup",
+     "cook",
+     "star"
+    ],
+    "answer": 2,
+    "explain": "Book and cook rhyme because they end with the same sound."
+   },
+   {
+    "q": "Read the poem: \"The goat wore a coat and rode in a boat.\" Which word rhymes with boat?",
+    "options": [
+     "dig",
+     "goat",
+     "cook",
+     "sun"
+    ],
+    "answer": 1,
+    "explain": "In the poem, boat and goat rhyme."
+   },
+   {
+    "q": "Which word does NOT rhyme with hen?",
+    "options": [
+     "hat",
+     "den",
+     "ten",
+     "men"
+    ],
+    "answer": 0,
+    "explain": "Hat does not end with the same sound as hen."
+   },
+   {
+    "q": "Which word does NOT rhyme with day?",
+    "options": [
+     "say",
+     "play",
+     "hay",
+     "hat"
+    ],
+    "answer": 3,
+    "explain": "Hat does not end with the same sound as day."
+   },
+   {
+    "q": "Which word rhymes with fox?",
+    "options": [
+     "socks",
+     "men",
+     "look",
+     "wig"
+    ],
+    "answer": 0,
+    "explain": "Fox and socks rhyme because they end with the same sound."
+   },
+   {
+    "q": "Which word does NOT rhyme with dog?",
+    "options": [
+     "hat",
+     "frog",
+     "bog",
+     "log"
+    ],
+    "answer": 0,
+    "explain": "Hat does not end with the same sound as dog."
+   },
+   {
+    "q": "Which word rhymes with fish?",
+    "options": [
+     "tall",
+     "wish",
+     "bun",
+     "bright"
+    ],
+    "answer": 1,
+    "explain": "Fish and wish rhyme because they end with the same sound."
+   },
+   {
+    "q": "Which word rhymes with cup?",
+    "options": [
+     "night",
+     "pup",
+     "boat",
+     "sing"
+    ],
+    "answer": 1,
+    "explain": "Cup and pup rhyme because they end with the same sound."
+   },
+   {
+    "q": "Which word rhymes with bed?",
+    "options": [
+     "men",
+     "socks",
+     "red",
+     "mop"
+    ],
+    "answer": 2,
+    "explain": "Bed and red rhyme because they end with the same sound."
+   },
+   {
+    "q": "Which word rhymes with moon?",
+    "options": [
+     "star",
+     "bake",
+     "dish",
+     "spoon"
+    ],
+    "answer": 3,
+    "explain": "Moon and spoon rhyme because they end with the same sound."
+   },
+   {
+    "q": "Which word rhymes with sun?",
+    "options": [
+     "run",
+     "star",
+     "wing",
+     "book"
+    ],
+    "answer": 0,
+    "explain": "Sun and run rhyme because they end with the same sound."
+   },
+   {
+    "q": "Read the poem: \"The cat sat on the mat and wore a funny hat.\" Which word rhymes with cat?",
+    "options": [
+     "call",
+     "wall",
+     "hat",
+     "cook"
+    ],
+    "answer": 2,
+    "explain": "In the poem, cat and hat rhyme."
+   },
+   {
+    "q": "Which word does NOT rhyme with bee?",
+    "options": [
+     "see",
+     "three",
+     "hat",
+     "tree"
+    ],
+    "answer": 2,
+    "explain": "Hat does not end with the same sound as bee."
+   },
+   {
+    "q": "Which word rhymes with cake?",
+    "options": [
+     "sing",
+     "king",
+     "lake",
+     "dig"
+    ],
+    "answer": 2,
+    "explain": "Cake and lake rhyme because they end with the same sound."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Rhymes & Poems",
+    "title": "Year Quest: Rhymes & Poems - Quest 1",
+    "desc": "Find words that rhyme and enjoy short, silly poems. Quest 1 of 4 in this unit.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Year Quest: Rhymes & Poems - Quest 2",
+  "subject": "Kids Reading",
+  "module": "kids-reading-yq-u6-q2",
+  "description": "Find words that rhyme and enjoy short, silly poems. Quest 2 of 4 in this unit.",
+  "questions": [
+   {
+    "q": "Which word rhymes with cat?",
+    "options": [
+     "three",
+     "hook",
+     "fun",
+     "bat"
+    ],
+    "answer": 3,
+    "explain": "Cat and bat rhyme because they end with the same sound."
+   },
+   {
+    "q": "Which pair of words rhymes?",
+    "options": [
+     "cup and boat",
+     "cup and ball",
+     "cup and pup",
+     "cup and night"
+    ],
+    "answer": 2,
+    "explain": "cup and pup rhyme because they end with the same sound."
+   },
+   {
+    "q": "Which word rhymes with day?",
+    "options": [
+     "play",
+     "ten",
+     "hat",
+     "night"
+    ],
+    "answer": 0,
+    "explain": "Day and play rhyme because they end with the same sound."
+   },
+   {
+    "q": "Which word rhymes with sing?",
+    "options": [
+     "fig",
+     "ring",
+     "bright",
+     "play"
+    ],
+    "answer": 1,
+    "explain": "Sing and ring rhyme because they end with the same sound."
+   },
+   {
+    "q": "Which word does NOT rhyme with book?",
+    "options": [
+     "hook",
+     "cook",
+     "hat",
+     "look"
+    ],
+    "answer": 2,
+    "explain": "Hat does not end with the same sound as book."
+   },
+   {
+    "q": "Which word rhymes with ball?",
+    "options": [
+     "wall",
+     "up",
+     "den",
+     "way"
+    ],
+    "answer": 0,
+    "explain": "Ball and wall rhyme because they end with the same sound."
+   },
+   {
+    "q": "Which word rhymes with fish?",
+    "options": [
+     "wish",
+     "mat",
+     "red",
+     "men"
+    ],
+    "answer": 0,
+    "explain": "Fish and wish rhyme because they end with the same sound."
+   },
+   {
+    "q": "Which word rhymes with star?",
+    "options": [
+     "king",
+     "sled",
+     "car",
+     "log"
+    ],
+    "answer": 2,
+    "explain": "Star and car rhyme because they end with the same sound."
+   },
+   {
+    "q": "Which word rhymes with book?",
+    "options": [
+     "box",
+     "frog",
+     "fun",
+     "hook"
+    ],
+    "answer": 3,
+    "explain": "Book and hook rhyme because they end with the same sound."
+   },
+   {
+    "q": "Which word rhymes with cup?",
+    "options": [
+     "bake",
+     "up",
+     "fun",
+     "three"
+    ],
+    "answer": 1,
+    "explain": "Cup and up rhyme because they end with the same sound."
+   },
+   {
+    "q": "Read the poem: \"Run, sun, run and play, chase the clouds away today.\" Which word rhymes with sun?",
+    "options": [
+     "fish",
+     "moon",
+     "den",
+     "run"
+    ],
+    "answer": 3,
+    "explain": "In the poem, sun and run rhyme."
+   },
+   {
+    "q": "Which word does NOT rhyme with sun?",
+    "options": [
+     "hat",
+     "bun",
+     "fun",
+     "run"
+    ],
+    "answer": 0,
+    "explain": "Hat does not end with the same sound as sun."
+   },
+   {
+    "q": "Read the poem: \"The bee flew to the tree, happy as can be.\" Which word rhymes with tree?",
+    "options": [
+     "bright",
+     "cat",
+     "hook",
+     "bee"
+    ],
+    "answer": 3,
+    "explain": "In the poem, tree and bee rhyme."
+   },
+   {
+    "q": "Read the poem: \"A little frog sat on a log and sang a song to the dog.\" Which word rhymes with log?",
+    "options": [
+     "soon",
+     "dog",
+     "cook",
+     "rat"
+    ],
+    "answer": 1,
+    "explain": "In the poem, log and dog rhyme."
+   },
+   {
+    "q": "Which word rhymes with bear?",
+    "options": [
+     "see",
+     "hair",
+     "tree",
+     "bed"
+    ],
+    "answer": 1,
+    "explain": "Bear and hair rhyme because they end with the same sound."
+   },
+   {
+    "q": "Which word rhymes with hen?",
+    "options": [
+     "frog",
+     "wing",
+     "den",
+     "sun"
+    ],
+    "answer": 2,
+    "explain": "Hen and den rhyme because they end with the same sound."
+   },
+   {
+    "q": "Which word rhymes with night?",
+    "options": [
+     "light",
+     "jar",
+     "bat",
+     "socks"
+    ],
+    "answer": 0,
+    "explain": "Night and light rhyme because they end with the same sound."
+   },
+   {
+    "q": "Which word rhymes with pig?",
+    "options": [
+     "bake",
+     "fig",
+     "hook",
+     "wall"
+    ],
+    "answer": 1,
+    "explain": "Pig and fig rhyme because they end with the same sound."
+   },
+   {
+    "q": "Which word rhymes with moon?",
+    "options": [
+     "play",
+     "car",
+     "spoon",
+     "king"
+    ],
+    "answer": 2,
+    "explain": "Moon and spoon rhyme because they end with the same sound."
+   },
+   {
+    "q": "Read the poem: \"At night I see the light of the moon, so round and bright.\" Which word rhymes with night?",
+    "options": [
+     "wig",
+     "frog",
+     "fish",
+     "light"
+    ],
+    "answer": 3,
+    "explain": "In the poem, night and light rhyme."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Rhymes & Poems",
+    "title": "Year Quest: Rhymes & Poems - Quest 2",
+    "desc": "Find words that rhyme and enjoy short, silly poems. Quest 2 of 4 in this unit.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Year Quest: Rhymes & Poems - Quest 3",
+  "subject": "Kids Reading",
+  "module": "kids-reading-yq-u6-q3",
+  "description": "Find words that rhyme and enjoy short, silly poems. Quest 3 of 4 in this unit.",
+  "questions": [
+   {
+    "q": "Which word rhymes with cake?",
+    "options": [
+     "frog",
+     "red",
+     "wake",
+     "call"
+    ],
+    "answer": 2,
+    "explain": "Cake and wake rhyme because they end with the same sound."
+   },
+   {
+    "q": "Which word rhymes with star?",
+    "options": [
+     "call",
+     "tree",
+     "look",
+     "car"
+    ],
+    "answer": 3,
+    "explain": "Star and car rhyme because they end with the same sound."
+   },
+   {
+    "q": "Which pair of words rhymes?",
+    "options": [
+     "pig and big",
+     "pig and bee",
+     "pig and fox",
+     "pig and night"
+    ],
+    "answer": 0,
+    "explain": "pig and big rhyme because they end with the same sound."
+   },
+   {
+    "q": "Which word rhymes with bed?",
+    "options": [
+     "lake",
+     "hop",
+     "hook",
+     "red"
+    ],
+    "answer": 3,
+    "explain": "Bed and red rhyme because they end with the same sound."
+   },
+   {
+    "q": "Which word rhymes with pig?",
+    "options": [
+     "cat",
+     "big",
+     "tall",
+     "up"
+    ],
+    "answer": 1,
+    "explain": "Pig and big rhyme because they end with the same sound."
+   },
+   {
+    "q": "Read the poem: \"The goat wore a coat and rode in a boat.\" Which word rhymes with boat?",
+    "options": [
+     "tree",
+     "mop",
+     "soon",
+     "goat"
+    ],
+    "answer": 3,
+    "explain": "In the poem, boat and goat rhyme."
+   },
+   {
+    "q": "Which word rhymes with cat?",
+    "options": [
+     "wake",
+     "book",
+     "socks",
+     "hat"
+    ],
+    "answer": 3,
+    "explain": "Cat and hat rhyme because they end with the same sound."
+   },
+   {
+    "q": "Which word rhymes with cup?",
+    "options": [
+     "wish",
+     "pup",
+     "mat",
+     "dig"
+    ],
+    "answer": 1,
+    "explain": "Cup and pup rhyme because they end with the same sound."
+   },
+   {
+    "q": "Which word rhymes with moon?",
+    "options": [
+     "soon",
+     "pop",
+     "star",
+     "light"
+    ],
+    "answer": 0,
+    "explain": "Moon and soon rhyme because they end with the same sound."
+   },
+   {
+    "q": "Which word rhymes with fish?",
+    "options": [
+     "ring",
+     "dish",
+     "lake",
+     "pup"
+    ],
+    "answer": 1,
+    "explain": "Fish and dish rhyme because they end with the same sound."
+   },
+   {
+    "q": "Which word does NOT rhyme with bee?",
+    "options": [
+     "three",
+     "tree",
+     "see",
+     "hat"
+    ],
+    "answer": 3,
+    "explain": "Hat does not end with the same sound as bee."
+   },
+   {
+    "q": "Read the poem: \"The bee flew to the tree, happy as can be.\" Which word rhymes with tree?",
+    "options": [
+     "pen",
+     "tall",
+     "bee",
+     "dog"
+    ],
+    "answer": 2,
+    "explain": "In the poem, tree and bee rhyme."
+   },
+   {
+    "q": "Which word rhymes with bee?",
+    "options": [
+     "tree",
+     "fig",
+     "day",
+     "mat"
+    ],
+    "answer": 0,
+    "explain": "Bee and tree rhyme because they end with the same sound."
+   },
+   {
+    "q": "Which word rhymes with day?",
+    "options": [
+     "play",
+     "ball",
+     "spoon",
+     "moon"
+    ],
+    "answer": 0,
+    "explain": "Day and play rhyme because they end with the same sound."
+   },
+   {
+    "q": "Which word rhymes with dog?",
+    "options": [
+     "chair",
+     "sing",
+     "log",
+     "mat"
+    ],
+    "answer": 2,
+    "explain": "Dog and log rhyme because they end with the same sound."
+   },
+   {
+    "q": "Read the poem: \"The hen ran to the pen and counted up to ten.\" Which word rhymes with hen?",
+    "options": [
+     "night",
+     "pen",
+     "way",
+     "wig"
+    ],
+    "answer": 1,
+    "explain": "In the poem, hen and pen rhyme."
+   },
+   {
+    "q": "Which word rhymes with night?",
+    "options": [
+     "cake",
+     "bed",
+     "light",
+     "hair"
+    ],
+    "answer": 2,
+    "explain": "Night and light rhyme because they end with the same sound."
+   },
+   {
+    "q": "Read the poem: \"The cat sat on the mat and wore a funny hat.\" Which word rhymes with cat?",
+    "options": [
+     "sled",
+     "car",
+     "hat",
+     "fish"
+    ],
+    "answer": 2,
+    "explain": "In the poem, cat and hat rhyme."
+   },
+   {
+    "q": "Which word does NOT rhyme with day?",
+    "options": [
+     "play",
+     "hat",
+     "way",
+     "hay"
+    ],
+    "answer": 1,
+    "explain": "Hat does not end with the same sound as day."
+   },
+   {
+    "q": "Which word rhymes with mop?",
+    "options": [
+     "top",
+     "ten",
+     "light",
+     "fish"
+    ],
+    "answer": 0,
+    "explain": "Mop and top rhyme because they end with the same sound."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Rhymes & Poems",
+    "title": "Year Quest: Rhymes & Poems - Quest 3",
+    "desc": "Find words that rhyme and enjoy short, silly poems. Quest 3 of 4 in this unit.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Year Quest: Rhymes & Poems - Quest 4",
+  "subject": "Kids Reading",
+  "module": "kids-reading-yq-u6-q4",
+  "description": "Find words that rhyme and enjoy short, silly poems. Quest 4 of 4 in this unit.",
+  "questions": [
+   {
+    "q": "Which word does NOT rhyme with cake?",
+    "options": [
+     "snake",
+     "lake",
+     "hat",
+     "bake"
+    ],
+    "answer": 2,
+    "explain": "Hat does not end with the same sound as cake."
+   },
+   {
+    "q": "Which pair of words rhymes?",
+    "options": [
+     "pig and bear",
+     "pig and hen",
+     "pig and big",
+     "pig and bee"
+    ],
+    "answer": 2,
+    "explain": "pig and big rhyme because they end with the same sound."
+   },
+   {
+    "q": "Which word rhymes with pig?",
+    "options": [
+     "far",
+     "big",
+     "sun",
+     "wing"
+    ],
+    "answer": 1,
+    "explain": "Pig and big rhyme because they end with the same sound."
+   },
+   {
+    "q": "Which word does NOT rhyme with bee?",
+    "options": [
+     "see",
+     "hat",
+     "tree",
+     "three"
+    ],
+    "answer": 1,
+    "explain": "Hat does not end with the same sound as bee."
+   },
+   {
+    "q": "Which word rhymes with hen?",
+    "options": [
+     "car",
+     "pig",
+     "frog",
+     "ten"
+    ],
+    "answer": 3,
+    "explain": "Hen and ten rhyme because they end with the same sound."
+   },
+   {
+    "q": "Which word rhymes with ball?",
+    "options": [
+     "run",
+     "wall",
+     "day",
+     "wig"
+    ],
+    "answer": 1,
+    "explain": "Ball and wall rhyme because they end with the same sound."
+   },
+   {
+    "q": "Which word does NOT rhyme with cat?",
+    "options": [
+     "hat",
+     "log",
+     "mat",
+     "bat"
+    ],
+    "answer": 1,
+    "explain": "Log does not end with the same sound as cat."
+   },
+   {
+    "q": "Which word rhymes with bed?",
+    "options": [
+     "snake",
+     "cat",
+     "pop",
+     "sled"
+    ],
+    "answer": 3,
+    "explain": "Bed and sled rhyme because they end with the same sound."
+   },
+   {
+    "q": "Which word rhymes with cat?",
+    "options": [
+     "day",
+     "pen",
+     "wake",
+     "hat"
+    ],
+    "answer": 3,
+    "explain": "Cat and hat rhyme because they end with the same sound."
+   },
+   {
+    "q": "Which word rhymes with boat?",
+    "options": [
+     "see",
+     "coat",
+     "tall",
+     "pup"
+    ],
+    "answer": 1,
+    "explain": "Boat and coat rhyme because they end with the same sound."
+   },
+   {
+    "q": "Which word does NOT rhyme with hen?",
+    "options": [
+     "men",
+     "pen",
+     "den",
+     "hat"
+    ],
+    "answer": 3,
+    "explain": "Hat does not end with the same sound as hen."
+   },
+   {
+    "q": "Which word rhymes with star?",
+    "options": [
+     "box",
+     "bat",
+     "den",
+     "car"
+    ],
+    "answer": 3,
+    "explain": "Star and car rhyme because they end with the same sound."
+   },
+   {
+    "q": "Which word rhymes with sun?",
+    "options": [
+     "wig",
+     "bright",
+     "fun",
+     "hair"
+    ],
+    "answer": 2,
+    "explain": "Sun and fun rhyme because they end with the same sound."
+   },
+   {
+    "q": "Which word does NOT rhyme with mop?",
+    "options": [
+     "hat",
+     "hop",
+     "pop",
+     "top"
+    ],
+    "answer": 0,
+    "explain": "Hat does not end with the same sound as mop."
+   },
+   {
+    "q": "Which word rhymes with book?",
+    "options": [
+     "cook",
+     "say",
+     "play",
+     "goat"
+    ],
+    "answer": 0,
+    "explain": "Book and cook rhyme because they end with the same sound."
+   },
+   {
+    "q": "Read the poem: \"A little frog sat on a log and sang a song to the dog.\" Which word rhymes with log?",
+    "options": [
+     "dog",
+     "men",
+     "hen",
+     "bun"
+    ],
+    "answer": 0,
+    "explain": "In the poem, log and dog rhyme."
+   },
+   {
+    "q": "Which word rhymes with bear?",
+    "options": [
+     "hair",
+     "pup",
+     "ring",
+     "day"
+    ],
+    "answer": 0,
+    "explain": "Bear and hair rhyme because they end with the same sound."
+   },
+   {
+    "q": "Which word does NOT rhyme with star?",
+    "options": [
+     "jar",
+     "car",
+     "hat",
+     "far"
+    ],
+    "answer": 2,
+    "explain": "Hat does not end with the same sound as star."
+   },
+   {
+    "q": "Which word rhymes with night?",
+    "options": [
+     "bright",
+     "coat",
+     "bed",
+     "top"
+    ],
+    "answer": 0,
+    "explain": "Night and bright rhyme because they end with the same sound."
+   },
+   {
+    "q": "Which word rhymes with mop?",
+    "options": [
+     "look",
+     "pup",
+     "pop",
+     "pig"
+    ],
+    "answer": 2,
+    "explain": "Mop and pop rhyme because they end with the same sound."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Rhymes & Poems",
+    "title": "Year Quest: Rhymes & Poems - Quest 4",
+    "desc": "Find words that rhyme and enjoy short, silly poems. Quest 4 of 4 in this unit.",
+    "count": 20,
+    "boss": true
+   }
+  ]
+ },
+ {
+  "title": "Year Quest: Facts & Nonfiction - Quest 1",
+  "subject": "Kids Reading",
+  "module": "kids-reading-yq-u7-q1",
+  "description": "Learn true facts about animals, nature, and the world. Quest 1 of 4 in this unit.",
+  "questions": [
+   {
+    "q": "What do bees make?",
+    "options": [
+     "milk",
+     "honey",
+     "juice",
+     "silk"
+    ],
+    "answer": 1,
+    "explain": "Bees make honey."
+   },
+   {
+    "q": "Which sentence tells a fact about birds?",
+    "options": [
+     "Rainy days are the worst days.",
+     "Reading books is boring.",
+     "Birds have feathers and wings.",
+     "Bugs are the coolest animals."
+    ],
+    "answer": 2,
+    "explain": "A fact is something true, and this sentence tells something true."
+   },
+   {
+    "q": "Where do fish live?",
+    "options": [
+     "in the sky",
+     "in water",
+     "in trees",
+     "in the sand"
+    ],
+    "answer": 1,
+    "explain": "Fish live in water."
+   },
+   {
+    "q": "How many senses do people have?",
+    "options": [
+     "nine",
+     "three",
+     "seven",
+     "five"
+    ],
+    "answer": 3,
+    "explain": "People have five senses: sight, hearing, smell, taste, and touch."
+   },
+   {
+    "q": "Which sentence tells a fact about trees?",
+    "options": [
+     "Frogs are yucky and gross.",
+     "Fish are the cutest pets of all.",
+     "Trees give us shade on sunny days.",
+     "Cake tastes better than fruit."
+    ],
+    "answer": 2,
+    "explain": "A fact is something true, and this sentence tells something true."
+   },
+   {
+    "q": "Which sentence tells a fact about plants?",
+    "options": [
+     "Frogs are yucky and gross.",
+     "Plants need sunlight and water to grow.",
+     "Summer is the most fun season.",
+     "Bugs are the coolest animals."
+    ],
+    "answer": 1,
+    "explain": "A fact is something true, and this sentence tells something true."
+   },
+   {
+    "q": "Which is true about the moon?",
+    "options": [
+     "It is a tiny star.",
+     "We can see it at night.",
+     "It is hot like fire.",
+     "It is made of cheese."
+    ],
+    "answer": 1,
+    "explain": "We can see the moon in the night sky."
+   },
+   {
+    "q": "What season comes right after summer?",
+    "options": [
+     "winter",
+     "spring",
+     "summer",
+     "fall"
+    ],
+    "answer": 3,
+    "explain": "Fall comes right after summer."
+   },
+   {
+    "q": "Which sentence tells a fact about bees?",
+    "options": [
+     "Fish are the cutest pets of all.",
+     "Winter is prettier than fall.",
+     "Bees make honey.",
+     "Bugs are the coolest animals."
+    ],
+    "answer": 2,
+    "explain": "A fact is something true, and this sentence tells something true."
+   },
+   {
+    "q": "Which sentence tells a fact about the body?",
+    "options": [
+     "Dogs are better than cats.",
+     "Bugs are the coolest animals.",
+     "The heart pumps blood around the body.",
+     "Frogs are yucky and gross."
+    ],
+    "answer": 2,
+    "explain": "A fact is something true, and this sentence tells something true."
+   },
+   {
+    "q": "Which sentence could you find in a nonfiction book about frogs?",
+    "options": [
+     "Frogs have long back legs for jumping.",
+     "The magic frog flew to the moon.",
+     "Once upon a time, a frog talked.",
+     "The frog wore a crown and danced."
+    ],
+    "answer": 0,
+    "explain": "Nonfiction tells true facts, and frogs really do have long back legs for jumping."
+   },
+   {
+    "q": "Which sense do you use to hear music?",
+    "options": [
+     "tasting",
+     "seeing",
+     "smelling",
+     "hearing"
+    ],
+    "answer": 3,
+    "explain": "You use your sense of hearing to hear music."
+   },
+   {
+    "q": "Which animal has feathers?",
+    "options": [
+     "a frog",
+     "a bird",
+     "a fish",
+     "a snake"
+    ],
+    "answer": 1,
+    "explain": "Birds are the animals with feathers."
+   },
+   {
+    "q": "Why do nonfiction books often have pictures?",
+    "options": [
+     "to tell silly jokes",
+     "to hide all the words",
+     "to make the book heavier",
+     "to show what things really look like"
+    ],
+    "answer": 3,
+    "explain": "Pictures in nonfiction books show what things really look like."
+   },
+   {
+    "q": "Which sentence tells a fact about seeds?",
+    "options": [
+     "Seeds can grow into new plants.",
+     "Winter is prettier than fall.",
+     "Cake tastes better than fruit.",
+     "Frogs are yucky and gross."
+    ],
+    "answer": 0,
+    "explain": "A fact is something true, and this sentence tells something true."
+   },
+   {
+    "q": "The sun is a what?",
+    "options": [
+     "moon",
+     "cloud",
+     "planet",
+     "star"
+    ],
+    "answer": 3,
+    "explain": "The sun is a star."
+   },
+   {
+    "q": "A nonfiction book gives you what?",
+    "options": [
+     "a made-up story",
+     "magic spells",
+     "true facts",
+     "only songs"
+    ],
+    "answer": 2,
+    "explain": "Nonfiction books give you true facts."
+   },
+   {
+    "q": "Which sentence tells a fact about the sun?",
+    "options": [
+     "The sun is a star.",
+     "Rainy days are the worst days.",
+     "Frogs are yucky and gross.",
+     "Reading books is boring."
+    ],
+    "answer": 0,
+    "explain": "A fact is something true, and this sentence tells something true."
+   },
+   {
+    "q": "Which sentence tells a fact about fish?",
+    "options": [
+     "Fish live in water.",
+     "Rainy days are the worst days.",
+     "Summer is the most fun season.",
+     "Winter is prettier than fall."
+    ],
+    "answer": 0,
+    "explain": "A fact is something true, and this sentence tells something true."
+   },
+   {
+    "q": "What does a caterpillar turn into?",
+    "options": [
+     "a butterfly",
+     "a frog",
+     "a bird",
+     "a bee"
+    ],
+    "answer": 0,
+    "explain": "A caterpillar turns into a butterfly."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Facts & Nonfiction",
+    "title": "Year Quest: Facts & Nonfiction - Quest 1",
+    "desc": "Learn true facts about animals, nature, and the world. Quest 1 of 4 in this unit.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Year Quest: Facts & Nonfiction - Quest 2",
+  "subject": "Kids Reading",
+  "module": "kids-reading-yq-u7-q2",
+  "description": "Learn true facts about animals, nature, and the world. Quest 2 of 4 in this unit.",
+  "questions": [
+   {
+    "q": "Which sentence could you find in a nonfiction book about frogs?",
+    "options": [
+     "Once upon a time, a frog talked.",
+     "The magic frog flew to the moon.",
+     "Frogs have long back legs for jumping.",
+     "The frog wore a crown and danced."
+    ],
+    "answer": 2,
+    "explain": "Nonfiction tells true facts, and frogs really do have long back legs for jumping."
+   },
+   {
+    "q": "Which animal hops and carries its baby in a pouch?",
+    "options": [
+     "a kangaroo",
+     "a frog",
+     "a bear",
+     "a rabbit"
+    ],
+    "answer": 0,
+    "explain": "A kangaroo carries its baby in a pouch."
+   },
+   {
+    "q": "If you want to learn real facts about sharks, which book should you pick?",
+    "options": [
+     "a nonfiction book about sharks",
+     "a coloring book",
+     "a book of poems",
+     "a story about a magic fish"
+    ],
+    "answer": 0,
+    "explain": "A nonfiction book about sharks gives real facts about sharks."
+   },
+   {
+    "q": "Which sentence tells a fact about seeds?",
+    "options": [
+     "Summer is the most fun season.",
+     "Cake tastes better than fruit.",
+     "Seeds can grow into new plants.",
+     "Winter is prettier than fall."
+    ],
+    "answer": 2,
+    "explain": "A fact is something true, and this sentence tells something true."
+   },
+   {
+    "q": "Which sentence tells a fact about ice?",
+    "options": [
+     "Rainy days are the worst days.",
+     "Ice is frozen water.",
+     "Fish are the cutest pets of all.",
+     "Pizza is the best food ever."
+    ],
+    "answer": 1,
+    "explain": "A fact is something true, and this sentence tells something true."
+   },
+   {
+    "q": "A young frog is called a what?",
+    "options": [
+     "pup",
+     "tadpole",
+     "fry",
+     "calf"
+    ],
+    "answer": 1,
+    "explain": "A young frog is called a tadpole."
+   },
+   {
+    "q": "A nonfiction book gives you what?",
+    "options": [
+     "a made-up story",
+     "magic spells",
+     "only songs",
+     "true facts"
+    ],
+    "answer": 3,
+    "explain": "Nonfiction books give you true facts."
+   },
+   {
+    "q": "Which is true about the moon?",
+    "options": [
+     "It is a tiny star.",
+     "We can see it at night.",
+     "It is hot like fire.",
+     "It is made of cheese."
+    ],
+    "answer": 1,
+    "explain": "We can see the moon in the night sky."
+   },
+   {
+    "q": "Which sentence tells a fact about kangaroos?",
+    "options": [
+     "A kangaroo carries its baby in a pouch.",
+     "Frogs are yucky and gross.",
+     "Pizza is the best food ever.",
+     "Dogs are better than cats."
+    ],
+    "answer": 0,
+    "explain": "A fact is something true, and this sentence tells something true."
+   },
+   {
+    "q": "What does the title of a nonfiction book tell you?",
+    "options": [
+     "the color of the pages",
+     "the last word of the book",
+     "how the cover feels",
+     "what the book is mostly about"
+    ],
+    "answer": 3,
+    "explain": "The title tells you what a book is mostly about."
+   },
+   {
+    "q": "The sun is a what?",
+    "options": [
+     "planet",
+     "star",
+     "cloud",
+     "moon"
+    ],
+    "answer": 1,
+    "explain": "The sun is a star."
+   },
+   {
+    "q": "Which sentence tells a fact about dogs?",
+    "options": [
+     "Dogs are better than cats.",
+     "Summer is the most fun season.",
+     "Pizza is the best food ever.",
+     "A baby dog is called a puppy."
+    ],
+    "answer": 3,
+    "explain": "A fact is something true, and this sentence tells something true."
+   },
+   {
+    "q": "In some nonfiction books, where can you find the meaning of a hard word?",
+    "options": [
+     "under the title only",
+     "on the cover",
+     "on a bookmark",
+     "in the glossary"
+    ],
+    "answer": 3,
+    "explain": "A glossary in a nonfiction book tells what hard words mean."
+   },
+   {
+    "q": "What do plants need to grow?",
+    "options": [
+     "candy and juice",
+     "rocks and wind",
+     "sunlight and water",
+     "darkness and ice"
+    ],
+    "answer": 2,
+    "explain": "Plants need sunlight and water to grow."
+   },
+   {
+    "q": "Which sentence tells a fact about caterpillars?",
+    "options": [
+     "Pizza is the best food ever.",
+     "Summer is the most fun season.",
+     "A caterpillar turns into a butterfly.",
+     "Dogs are better than cats."
+    ],
+    "answer": 2,
+    "explain": "A fact is something true, and this sentence tells something true."
+   },
+   {
+    "q": "A baby dog is called a what?",
+    "options": [
+     "calf",
+     "cub",
+     "puppy",
+     "kitten"
+    ],
+    "answer": 2,
+    "explain": "A baby dog is called a puppy."
+   },
+   {
+    "q": "What season comes right after summer?",
+    "options": [
+     "fall",
+     "summer",
+     "spring",
+     "winter"
+    ],
+    "answer": 0,
+    "explain": "Fall comes right after summer."
+   },
+   {
+    "q": "Which sentence tells a fact about fish?",
+    "options": [
+     "Fish live in water.",
+     "Winter is prettier than fall.",
+     "Cake tastes better than fruit.",
+     "Reading books is boring."
+    ],
+    "answer": 0,
+    "explain": "A fact is something true, and this sentence tells something true."
+   },
+   {
+    "q": "Which sentence tells a fact about the body?",
+    "options": [
+     "Bugs are the coolest animals.",
+     "Reading books is boring.",
+     "Cake tastes better than fruit.",
+     "The heart pumps blood around the body."
+    ],
+    "answer": 3,
+    "explain": "A fact is something true, and this sentence tells something true."
+   },
+   {
+    "q": "What is ice?",
+    "options": [
+     "hot water",
+     "frozen water",
+     "fast rain",
+     "salty water"
+    ],
+    "answer": 1,
+    "explain": "Ice is water that has frozen."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Facts & Nonfiction",
+    "title": "Year Quest: Facts & Nonfiction - Quest 2",
+    "desc": "Learn true facts about animals, nature, and the world. Quest 2 of 4 in this unit.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Year Quest: Facts & Nonfiction - Quest 3",
+  "subject": "Kids Reading",
+  "module": "kids-reading-yq-u7-q3",
+  "description": "Learn true facts about animals, nature, and the world. Quest 3 of 4 in this unit.",
+  "questions": [
+   {
+    "q": "Where do fish live?",
+    "options": [
+     "in the sand",
+     "in trees",
+     "in the sky",
+     "in water"
+    ],
+    "answer": 3,
+    "explain": "Fish live in water."
+   },
+   {
+    "q": "A nonfiction book gives you what?",
+    "options": [
+     "a made-up story",
+     "only songs",
+     "magic spells",
+     "true facts"
+    ],
+    "answer": 3,
+    "explain": "Nonfiction books give you true facts."
+   },
+   {
+    "q": "Which animal has feathers?",
+    "options": [
+     "a snake",
+     "a frog",
+     "a bird",
+     "a fish"
+    ],
+    "answer": 2,
+    "explain": "Birds are the animals with feathers."
+   },
+   {
+    "q": "Which sense do you use to hear music?",
+    "options": [
+     "seeing",
+     "tasting",
+     "hearing",
+     "smelling"
+    ],
+    "answer": 2,
+    "explain": "You use your sense of hearing to hear music."
+   },
+   {
+    "q": "Which sentence tells a fact about plants?",
+    "options": [
+     "Plants need sunlight and water to grow.",
+     "Winter is prettier than fall.",
+     "Reading books is boring.",
+     "Dogs are better than cats."
+    ],
+    "answer": 0,
+    "explain": "A fact is something true, and this sentence tells something true."
+   },
+   {
+    "q": "Which sentence tells a fact about the body?",
+    "options": [
+     "Rainy days are the worst days.",
+     "The heart pumps blood around the body.",
+     "Reading books is boring.",
+     "Fish are the cutest pets of all."
+    ],
+    "answer": 1,
+    "explain": "A fact is something true, and this sentence tells something true."
+   },
+   {
+    "q": "What falls from clouds?",
+    "options": [
+     "leaves",
+     "dust",
+     "sand",
+     "rain"
+    ],
+    "answer": 3,
+    "explain": "Rain falls from clouds."
+   },
+   {
+    "q": "Why do nonfiction books often have pictures?",
+    "options": [
+     "to hide all the words",
+     "to show what things really look like",
+     "to tell silly jokes",
+     "to make the book heavier"
+    ],
+    "answer": 1,
+    "explain": "Pictures in nonfiction books show what things really look like."
+   },
+   {
+    "q": "Which is true about the moon?",
+    "options": [
+     "We can see it at night.",
+     "It is hot like fire.",
+     "It is made of cheese.",
+     "It is a tiny star."
+    ],
+    "answer": 0,
+    "explain": "We can see the moon in the night sky."
+   },
+   {
+    "q": "A baby cat is called a what?",
+    "options": [
+     "calf",
+     "kitten",
+     "chick",
+     "puppy"
+    ],
+    "answer": 1,
+    "explain": "A baby cat is called a kitten."
+   },
+   {
+    "q": "What do trees give us on a hot, sunny day?",
+    "options": [
+     "wind",
+     "shade",
+     "rain",
+     "snow"
+    ],
+    "answer": 1,
+    "explain": "Trees give us shade on sunny days."
+   },
+   {
+    "q": "Which sentence tells a fact about bees?",
+    "options": [
+     "Dogs are better than cats.",
+     "Winter is prettier than fall.",
+     "Rainy days are the worst days.",
+     "Bees make honey."
+    ],
+    "answer": 3,
+    "explain": "A fact is something true, and this sentence tells something true."
+   },
+   {
+    "q": "Which sentence tells a fact about trees?",
+    "options": [
+     "Pizza is the best food ever.",
+     "Rainy days are the worst days.",
+     "Trees give us shade on sunny days.",
+     "Frogs are yucky and gross."
+    ],
+    "answer": 2,
+    "explain": "A fact is something true, and this sentence tells something true."
+   },
+   {
+    "q": "How many senses do people have?",
+    "options": [
+     "nine",
+     "three",
+     "seven",
+     "five"
+    ],
+    "answer": 3,
+    "explain": "People have five senses: sight, hearing, smell, taste, and touch."
+   },
+   {
+    "q": "Which sentence tells a fact about spiders?",
+    "options": [
+     "Frogs are yucky and gross.",
+     "A spider has eight legs.",
+     "Summer is the most fun season.",
+     "Reading books is boring."
+    ],
+    "answer": 1,
+    "explain": "A fact is something true, and this sentence tells something true."
+   },
+   {
+    "q": "In some nonfiction books, where can you find the meaning of a hard word?",
+    "options": [
+     "in the glossary",
+     "under the title only",
+     "on the cover",
+     "on a bookmark"
+    ],
+    "answer": 0,
+    "explain": "A glossary in a nonfiction book tells what hard words mean."
+   },
+   {
+    "q": "Which sentence tells a fact about kangaroos?",
+    "options": [
+     "A kangaroo carries its baby in a pouch.",
+     "Pizza is the best food ever.",
+     "Fish are the cutest pets of all.",
+     "Frogs are yucky and gross."
+    ],
+    "answer": 0,
+    "explain": "A fact is something true, and this sentence tells something true."
+   },
+   {
+    "q": "What is ice?",
+    "options": [
+     "fast rain",
+     "hot water",
+     "frozen water",
+     "salty water"
+    ],
+    "answer": 2,
+    "explain": "Ice is water that has frozen."
+   },
+   {
+    "q": "If you want to learn real facts about sharks, which book should you pick?",
+    "options": [
+     "a coloring book",
+     "a story about a magic fish",
+     "a nonfiction book about sharks",
+     "a book of poems"
+    ],
+    "answer": 2,
+    "explain": "A nonfiction book about sharks gives real facts about sharks."
+   },
+   {
+    "q": "What season comes right after summer?",
+    "options": [
+     "fall",
+     "spring",
+     "winter",
+     "summer"
+    ],
+    "answer": 0,
+    "explain": "Fall comes right after summer."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Facts & Nonfiction",
+    "title": "Year Quest: Facts & Nonfiction - Quest 3",
+    "desc": "Learn true facts about animals, nature, and the world. Quest 3 of 4 in this unit.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Year Quest: Facts & Nonfiction - Quest 4",
+  "subject": "Kids Reading",
+  "module": "kids-reading-yq-u7-q4",
+  "description": "Learn true facts about animals, nature, and the world. Quest 4 of 4 in this unit.",
+  "questions": [
+   {
+    "q": "How many senses do people have?",
+    "options": [
+     "nine",
+     "seven",
+     "five",
+     "three"
+    ],
+    "answer": 2,
+    "explain": "People have five senses: sight, hearing, smell, taste, and touch."
+   },
+   {
+    "q": "Where do fish live?",
+    "options": [
+     "in the sky",
+     "in water",
+     "in trees",
+     "in the sand"
+    ],
+    "answer": 1,
+    "explain": "Fish live in water."
+   },
+   {
+    "q": "What do plants need to grow?",
+    "options": [
+     "sunlight and water",
+     "darkness and ice",
+     "candy and juice",
+     "rocks and wind"
+    ],
+    "answer": 0,
+    "explain": "Plants need sunlight and water to grow."
+   },
+   {
+    "q": "Which sentence tells a fact about birds?",
+    "options": [
+     "Bugs are the coolest animals.",
+     "Birds have feathers and wings.",
+     "Dogs are better than cats.",
+     "Winter is prettier than fall."
+    ],
+    "answer": 1,
+    "explain": "A fact is something true, and this sentence tells something true."
+   },
+   {
+    "q": "How many legs does a spider have?",
+    "options": [
+     "six",
+     "eight",
+     "four",
+     "ten"
+    ],
+    "answer": 1,
+    "explain": "A spider has eight legs."
+   },
+   {
+    "q": "Which sentence tells a fact about trees?",
+    "options": [
+     "Frogs are yucky and gross.",
+     "Trees give us shade on sunny days.",
+     "Dogs are better than cats.",
+     "Cake tastes better than fruit."
+    ],
+    "answer": 1,
+    "explain": "A fact is something true, and this sentence tells something true."
+   },
+   {
+    "q": "Which animal hops and carries its baby in a pouch?",
+    "options": [
+     "a bear",
+     "a rabbit",
+     "a frog",
+     "a kangaroo"
+    ],
+    "answer": 3,
+    "explain": "A kangaroo carries its baby in a pouch."
+   },
+   {
+    "q": "What falls from clouds?",
+    "options": [
+     "rain",
+     "sand",
+     "dust",
+     "leaves"
+    ],
+    "answer": 0,
+    "explain": "Rain falls from clouds."
+   },
+   {
+    "q": "What season comes right after summer?",
+    "options": [
+     "winter",
+     "summer",
+     "fall",
+     "spring"
+    ],
+    "answer": 2,
+    "explain": "Fall comes right after summer."
+   },
+   {
+    "q": "In some nonfiction books, where can you find the meaning of a hard word?",
+    "options": [
+     "on the cover",
+     "on a bookmark",
+     "in the glossary",
+     "under the title only"
+    ],
+    "answer": 2,
+    "explain": "A glossary in a nonfiction book tells what hard words mean."
+   },
+   {
+    "q": "Which animal has feathers?",
+    "options": [
+     "a frog",
+     "a snake",
+     "a fish",
+     "a bird"
+    ],
+    "answer": 3,
+    "explain": "Birds are the animals with feathers."
+   },
+   {
+    "q": "What do birds use to fly?",
+    "options": [
+     "wings",
+     "paws",
+     "tails",
+     "fins"
+    ],
+    "answer": 0,
+    "explain": "Birds use their wings to fly."
+   },
+   {
+    "q": "Which sentence tells a fact about spiders?",
+    "options": [
+     "Fish are the cutest pets of all.",
+     "Rainy days are the worst days.",
+     "Dogs are better than cats.",
+     "A spider has eight legs."
+    ],
+    "answer": 3,
+    "explain": "A fact is something true, and this sentence tells something true."
+   },
+   {
+    "q": "Which sense do you use to hear music?",
+    "options": [
+     "tasting",
+     "seeing",
+     "hearing",
+     "smelling"
+    ],
+    "answer": 2,
+    "explain": "You use your sense of hearing to hear music."
+   },
+   {
+    "q": "What does the title of a nonfiction book tell you?",
+    "options": [
+     "the color of the pages",
+     "the last word of the book",
+     "how the cover feels",
+     "what the book is mostly about"
+    ],
+    "answer": 3,
+    "explain": "The title tells you what a book is mostly about."
+   },
+   {
+    "q": "Which sentence tells a fact about caterpillars?",
+    "options": [
+     "A caterpillar turns into a butterfly.",
+     "Pizza is the best food ever.",
+     "Dogs are better than cats.",
+     "Rainy days are the worst days."
+    ],
+    "answer": 0,
+    "explain": "A fact is something true, and this sentence tells something true."
+   },
+   {
+    "q": "Which sentence tells a fact about elephants?",
+    "options": [
+     "Elephants are the largest land animals.",
+     "Cake tastes better than fruit.",
+     "Reading books is boring.",
+     "Rainy days are the worst days."
+    ],
+    "answer": 0,
+    "explain": "A fact is something true, and this sentence tells something true."
+   },
+   {
+    "q": "The sun is a what?",
+    "options": [
+     "cloud",
+     "planet",
+     "star",
+     "moon"
+    ],
+    "answer": 2,
+    "explain": "The sun is a star."
+   },
+   {
+    "q": "A young frog is called a what?",
+    "options": [
+     "fry",
+     "pup",
+     "calf",
+     "tadpole"
+    ],
+    "answer": 3,
+    "explain": "A young frog is called a tadpole."
+   },
+   {
+    "q": "Which is true about the moon?",
+    "options": [
+     "It is a tiny star.",
+     "We can see it at night.",
+     "It is hot like fire.",
+     "It is made of cheese."
+    ],
+    "answer": 1,
+    "explain": "We can see the moon in the night sky."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Facts & Nonfiction",
+    "title": "Year Quest: Facts & Nonfiction - Quest 4",
+    "desc": "Learn true facts about animals, nature, and the world. Quest 4 of 4 in this unit.",
+    "count": 20,
+    "boss": true
+   }
+  ]
+ },
+ {
+  "title": "Year Quest: Long Vowels & Tricky Words - Quest 1",
+  "subject": "Kids Reading",
+  "module": "kids-reading-yq-u8-q1",
+  "description": "Practice long vowel sounds and tricky words you must know by sight. Quest 1 of 4 in this unit.",
+  "questions": [
+   {
+    "q": "Which word is a tricky word that does not sound out the usual way?",
+    "options": [
+     "fish",
+     "pig",
+     "of",
+     "cat"
+    ],
+    "answer": 2,
+    "explain": "The word of is tricky, so you must learn it by sight."
+   },
+   {
+    "q": "Which word has the same vowel sound as play?",
+    "options": [
+     "run",
+     "tub",
+     "dog",
+     "cake"
+    ],
+    "answer": 3,
+    "explain": "Play and cake both have a long a sound."
+   },
+   {
+    "q": "Which word makes the long i sound?",
+    "options": [
+     "nut",
+     "egg",
+     "jam",
+     "light"
+    ],
+    "answer": 3,
+    "explain": "The word light has a long i sound, like the letter name."
+   },
+   {
+    "q": "Which word makes the long e sound?",
+    "options": [
+     "these",
+     "pig",
+     "mud",
+     "fin"
+    ],
+    "answer": 0,
+    "explain": "The word these has a long e sound, like the letter name."
+   },
+   {
+    "q": "Which word has the same vowel sound as we?",
+    "options": [
+     "box",
+     "sun",
+     "tree",
+     "pot"
+    ],
+    "answer": 2,
+    "explain": "We and tree both have a long e sound."
+   },
+   {
+    "q": "Which word makes the long a sound?",
+    "options": [
+     "red",
+     "net",
+     "gate",
+     "fox"
+    ],
+    "answer": 2,
+    "explain": "The word gate has a long a sound, like the letter name."
+   },
+   {
+    "q": "Which word makes the long o sound?",
+    "options": [
+     "mop",
+     "cup",
+     "nose",
+     "pin"
+    ],
+    "answer": 2,
+    "explain": "The word nose has a long o sound, like the letter name."
+   },
+   {
+    "q": "Pick the word with a long u sound.",
+    "options": [
+     "glue",
+     "sit",
+     "cap",
+     "rug"
+    ],
+    "answer": 0,
+    "explain": "The word glue has a long u sound, like the letter name."
+   },
+   {
+    "q": "Which word has the same vowel sound as feet?",
+    "options": [
+     "bat",
+     "hat",
+     "hen",
+     "tree"
+    ],
+    "answer": 3,
+    "explain": "Feet and tree both have a long e sound."
+   },
+   {
+    "q": "Which word has the same vowel sound as rose?",
+    "options": [
+     "win",
+     "home",
+     "top",
+     "fin"
+    ],
+    "answer": 1,
+    "explain": "Rose and home both have a long o sound."
+   },
+   {
+    "q": "Which pair of words shows how a silent e changes a word?",
+    "options": [
+     "run - sun",
+     "kit - kite",
+     "top - mop",
+     "red - bed"
+    ],
+    "answer": 1,
+    "explain": "Adding a silent e to kit makes kite, and the vowel sound turns long."
+   },
+   {
+    "q": "Which tricky word fills the blank? She has a gift ___ you.",
+    "options": [
+     "the",
+     "is",
+     "and",
+     "for"
+    ],
+    "answer": 3,
+    "explain": "For you means the gift belongs to you."
+   },
+   {
+    "q": "Which word has a long u sound?",
+    "options": [
+     "cute",
+     "cob",
+     "jet",
+     "cup"
+    ],
+    "answer": 0,
+    "explain": "The word cute has a long u sound, like the letter name."
+   },
+   {
+    "q": "Which tricky word fills the blank? Yesterday, the cat ___ sleeping all day.",
+    "options": [
+     "was",
+     "are",
+     "the",
+     "is"
+    ],
+    "answer": 0,
+    "explain": "Yesterday tells us the action already happened, so the word is was."
+   },
+   {
+    "q": "Which word has the same vowel sound as nose?",
+    "options": [
+     "box",
+     "home",
+     "tub",
+     "dog"
+    ],
+    "answer": 1,
+    "explain": "Nose and home both have a long o sound."
+   },
+   {
+    "q": "Which word has the same vowel sound as coat?",
+    "options": [
+     "pin",
+     "home",
+     "hop",
+     "cob"
+    ],
+    "answer": 1,
+    "explain": "Coat and home both have a long o sound."
+   },
+   {
+    "q": "Which tricky word fills the blank? The dog ran ___ the yard.",
+    "options": [
+     "is",
+     "the",
+     "into",
+     "and"
+    ],
+    "answer": 2,
+    "explain": "Into shows the dog moved to be inside the yard."
+   },
+   {
+    "q": "Which word has the same vowel sound as home?",
+    "options": [
+     "dog",
+     "nose",
+     "bed",
+     "cat"
+    ],
+    "answer": 1,
+    "explain": "Home and nose both have a long o sound."
+   },
+   {
+    "q": "Which word has the same vowel sound as line?",
+    "options": [
+     "bike",
+     "bed",
+     "rug",
+     "ran"
+    ],
+    "answer": 0,
+    "explain": "Line and bike both have a long i sound."
+   },
+   {
+    "q": "Which word has the same vowel sound as say?",
+    "options": [
+     "jam",
+     "bib",
+     "cob",
+     "cake"
+    ],
+    "answer": 3,
+    "explain": "Say and cake both have a long a sound."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Long Vowels & Tricky Words",
+    "title": "Year Quest: Long Vowels & Tricky Words - Quest 1",
+    "desc": "Practice long vowel sounds and tricky words you must know by sight. Quest 1 of 4 in this unit.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Year Quest: Long Vowels & Tricky Words - Quest 2",
+  "subject": "Kids Reading",
+  "module": "kids-reading-yq-u8-q2",
+  "description": "Practice long vowel sounds and tricky words you must know by sight. Quest 2 of 4 in this unit.",
+  "questions": [
+   {
+    "q": "Which word has the same vowel sound as day?",
+    "options": [
+     "cake",
+     "bag",
+     "net",
+     "log"
+    ],
+    "answer": 0,
+    "explain": "Day and cake both have a long a sound."
+   },
+   {
+    "q": "Pick the word with a long e sound.",
+    "options": [
+     "hop",
+     "cup",
+     "he",
+     "bus"
+    ],
+    "answer": 2,
+    "explain": "The word he has a long e sound, like the letter name."
+   },
+   {
+    "q": "Which word has the same vowel sound as nose?",
+    "options": [
+     "six",
+     "hot",
+     "bus",
+     "home"
+    ],
+    "answer": 3,
+    "explain": "Nose and home both have a long o sound."
+   },
+   {
+    "q": "Which word is a tricky word that does not sound out the usual way?",
+    "options": [
+     "hand",
+     "two",
+     "map",
+     "sun"
+    ],
+    "answer": 1,
+    "explain": "The word two is tricky, so you must learn it by sight."
+   },
+   {
+    "q": "Pick the word with a long a sound.",
+    "options": [
+     "cap",
+     "mop",
+     "sun",
+     "play"
+    ],
+    "answer": 3,
+    "explain": "The word play has a long a sound, like the letter name."
+   },
+   {
+    "q": "Which word has the same vowel sound as wave?",
+    "options": [
+     "lip",
+     "cat",
+     "cake",
+     "hen"
+    ],
+    "answer": 2,
+    "explain": "Wave and cake both have a long a sound."
+   },
+   {
+    "q": "Which word has a long e sound?",
+    "options": [
+     "cob",
+     "pen",
+     "web",
+     "feet"
+    ],
+    "answer": 3,
+    "explain": "The word feet has a long e sound, like the letter name."
+   },
+   {
+    "q": "Which word has the same vowel sound as tie?",
+    "options": [
+     "fox",
+     "dog",
+     "mop",
+     "bike"
+    ],
+    "answer": 3,
+    "explain": "Tie and bike both have a long i sound."
+   },
+   {
+    "q": "Which tricky word fills the blank? I have ___ hands.",
+    "options": [
+     "two",
+     "to",
+     "ten",
+     "too"
+    ],
+    "answer": 0,
+    "explain": "Two is the number word in this sentence."
+   },
+   {
+    "q": "Which word makes the long a sound?",
+    "options": [
+     "jet",
+     "cap",
+     "gate",
+     "hat"
+    ],
+    "answer": 2,
+    "explain": "The word gate has a long a sound, like the letter name."
+   },
+   {
+    "q": "Which word has the same vowel sound as see?",
+    "options": [
+     "hat",
+     "tree",
+     "fox",
+     "leg"
+    ],
+    "answer": 1,
+    "explain": "See and tree both have a long e sound."
+   },
+   {
+    "q": "Which word has the same vowel sound as green?",
+    "options": [
+     "pan",
+     "tree",
+     "nut",
+     "bib"
+    ],
+    "answer": 1,
+    "explain": "Green and tree both have a long e sound."
+   },
+   {
+    "q": "Which word has the same vowel sound as we?",
+    "options": [
+     "ran",
+     "egg",
+     "tree",
+     "sit"
+    ],
+    "answer": 2,
+    "explain": "We and tree both have a long e sound."
+   },
+   {
+    "q": "Which word has the long e sound, like the letter name?",
+    "options": [
+     "bug",
+     "green",
+     "net",
+     "pig"
+    ],
+    "answer": 1,
+    "explain": "The word green has a long e sound, like the letter name."
+   },
+   {
+    "q": "Which word has the same vowel sound as say?",
+    "options": [
+     "cake",
+     "jam",
+     "mop",
+     "nut"
+    ],
+    "answer": 0,
+    "explain": "Say and cake both have a long a sound."
+   },
+   {
+    "q": "Which word has the same vowel sound as boat?",
+    "options": [
+     "home",
+     "jam",
+     "six",
+     "cup"
+    ],
+    "answer": 0,
+    "explain": "Boat and home both have a long o sound."
+   },
+   {
+    "q": "Which word has the same vowel sound as goat?",
+    "options": [
+     "home",
+     "six",
+     "bus",
+     "cup"
+    ],
+    "answer": 0,
+    "explain": "Goat and home both have a long o sound."
+   },
+   {
+    "q": "Which word has the same vowel sound as kite?",
+    "options": [
+     "jet",
+     "bike",
+     "ran",
+     "cob"
+    ],
+    "answer": 1,
+    "explain": "Kite and bike both have a long i sound."
+   },
+   {
+    "q": "Which word makes the long o sound?",
+    "options": [
+     "hen",
+     "pin",
+     "nose",
+     "cob"
+    ],
+    "answer": 2,
+    "explain": "The word nose has a long o sound, like the letter name."
+   },
+   {
+    "q": "In the word tune, the silent e at the end does what?",
+    "options": [
+     "It makes the e say its name out loud.",
+     "It does nothing at all.",
+     "It makes the u sound short.",
+     "It makes the u say its name, a long sound."
+    ],
+    "answer": 3,
+    "explain": "The silent e makes the u in tune say its name."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Long Vowels & Tricky Words",
+    "title": "Year Quest: Long Vowels & Tricky Words - Quest 2",
+    "desc": "Practice long vowel sounds and tricky words you must know by sight. Quest 2 of 4 in this unit.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Year Quest: Long Vowels & Tricky Words - Quest 3",
+  "subject": "Kids Reading",
+  "module": "kids-reading-yq-u8-q3",
+  "description": "Practice long vowel sounds and tricky words you must know by sight. Quest 3 of 4 in this unit.",
+  "questions": [
+   {
+    "q": "In the word cake, the silent e at the end does what?",
+    "options": [
+     "It does nothing at all.",
+     "It makes the a sound short.",
+     "It makes the a say its name, a long sound.",
+     "It makes the e say its name out loud."
+    ],
+    "answer": 2,
+    "explain": "The silent e makes the a in cake say its name."
+   },
+   {
+    "q": "Pick the word with a long a sound.",
+    "options": [
+     "big",
+     "lip",
+     "wave",
+     "hot"
+    ],
+    "answer": 2,
+    "explain": "The word wave has a long a sound, like the letter name."
+   },
+   {
+    "q": "In the word tune, the silent e at the end does what?",
+    "options": [
+     "It makes the e say its name out loud.",
+     "It makes the u say its name, a long sound.",
+     "It makes the u sound short.",
+     "It does nothing at all."
+    ],
+    "answer": 1,
+    "explain": "The silent e makes the u in tune say its name."
+   },
+   {
+    "q": "Which word has the long o sound, like the letter name?",
+    "options": [
+     "rope",
+     "leg",
+     "map",
+     "hot"
+    ],
+    "answer": 0,
+    "explain": "The word rope has a long o sound, like the letter name."
+   },
+   {
+    "q": "Which word makes the long u sound?",
+    "options": [
+     "hot",
+     "tube",
+     "cob",
+     "egg"
+    ],
+    "answer": 1,
+    "explain": "The word tube has a long u sound, like the letter name."
+   },
+   {
+    "q": "Which word has the same vowel sound as flute?",
+    "options": [
+     "cube",
+     "win",
+     "tub",
+     "pin"
+    ],
+    "answer": 0,
+    "explain": "Flute and cube both have a long u sound."
+   },
+   {
+    "q": "Which word is a tricky word that does not sound out the usual way?",
+    "options": [
+     "bed",
+     "cat",
+     "pig",
+     "are"
+    ],
+    "answer": 3,
+    "explain": "The word are is tricky, so you must learn it by sight."
+   },
+   {
+    "q": "Pick the word with a long e sound.",
+    "options": [
+     "run",
+     "mud",
+     "egg",
+     "see"
+    ],
+    "answer": 3,
+    "explain": "The word see has a long e sound, like the letter name."
+   },
+   {
+    "q": "Which word has the same vowel sound as tie?",
+    "options": [
+     "bike",
+     "cob",
+     "nut",
+     "hop"
+    ],
+    "answer": 0,
+    "explain": "Tie and bike both have a long i sound."
+   },
+   {
+    "q": "Which tricky word fills the blank? We are going ___ the park.",
+    "options": [
+     "to",
+     "ten",
+     "two",
+     "too"
+    ],
+    "answer": 0,
+    "explain": "To shows where we are going in this sentence."
+   },
+   {
+    "q": "Pick the word with a long o sound.",
+    "options": [
+     "bed",
+     "rug",
+     "cob",
+     "bone"
+    ],
+    "answer": 3,
+    "explain": "The word bone has a long o sound, like the letter name."
+   },
+   {
+    "q": "Which word has the long a sound, like the letter name?",
+    "options": [
+     "six",
+     "web",
+     "game",
+     "fin"
+    ],
+    "answer": 2,
+    "explain": "The word game has a long a sound, like the letter name."
+   },
+   {
+    "q": "Which word has the same vowel sound as rain?",
+    "options": [
+     "cake",
+     "dig",
+     "rug",
+     "dog"
+    ],
+    "answer": 0,
+    "explain": "Rain and cake both have a long a sound."
+   },
+   {
+    "q": "Which word has the same vowel sound as lake?",
+    "options": [
+     "mop",
+     "bat",
+     "log",
+     "cake"
+    ],
+    "answer": 3,
+    "explain": "Lake and cake both have a long a sound."
+   },
+   {
+    "q": "Which word has the long i sound, like the letter name?",
+    "options": [
+     "sun",
+     "dig",
+     "ride",
+     "ten"
+    ],
+    "answer": 2,
+    "explain": "The word ride has a long i sound, like the letter name."
+   },
+   {
+    "q": "Which word has the same vowel sound as tube?",
+    "options": [
+     "hot",
+     "cube",
+     "pin",
+     "ten"
+    ],
+    "answer": 1,
+    "explain": "Tube and cube both have a long u sound."
+   },
+   {
+    "q": "Which word has the same vowel sound as play?",
+    "options": [
+     "net",
+     "cake",
+     "hot",
+     "hop"
+    ],
+    "answer": 1,
+    "explain": "Play and cake both have a long a sound."
+   },
+   {
+    "q": "Which word has a long i sound?",
+    "options": [
+     "red",
+     "hot",
+     "run",
+     "bike"
+    ],
+    "answer": 3,
+    "explain": "The word bike has a long i sound, like the letter name."
+   },
+   {
+    "q": "Which word makes the long o sound?",
+    "options": [
+     "tub",
+     "hot",
+     "snow",
+     "net"
+    ],
+    "answer": 2,
+    "explain": "The word snow has a long o sound, like the letter name."
+   },
+   {
+    "q": "Which word has the same vowel sound as train?",
+    "options": [
+     "nut",
+     "cake",
+     "bed",
+     "cut"
+    ],
+    "answer": 1,
+    "explain": "Train and cake both have a long a sound."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Long Vowels & Tricky Words",
+    "title": "Year Quest: Long Vowels & Tricky Words - Quest 3",
+    "desc": "Practice long vowel sounds and tricky words you must know by sight. Quest 3 of 4 in this unit.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Year Quest: Long Vowels & Tricky Words - Quest 4",
+  "subject": "Kids Reading",
+  "module": "kids-reading-yq-u8-q4",
+  "description": "Practice long vowel sounds and tricky words you must know by sight. Quest 4 of 4 in this unit.",
+  "questions": [
+   {
+    "q": "Which word has the long u sound, like the letter name?",
+    "options": [
+     "fox",
+     "sit",
+     "flute",
+     "log"
+    ],
+    "answer": 2,
+    "explain": "The word flute has a long u sound, like the letter name."
+   },
+   {
+    "q": "Which word has the long i sound, like the letter name?",
+    "options": [
+     "pie",
+     "bed",
+     "jet",
+     "sun"
+    ],
+    "answer": 0,
+    "explain": "The word pie has a long i sound, like the letter name."
+   },
+   {
+    "q": "Which word makes the long i sound?",
+    "options": [
+     "log",
+     "light",
+     "bag",
+     "pig"
+    ],
+    "answer": 1,
+    "explain": "The word light has a long i sound, like the letter name."
+   },
+   {
+    "q": "Which word has the same vowel sound as boat?",
+    "options": [
+     "big",
+     "home",
+     "hot",
+     "dog"
+    ],
+    "answer": 1,
+    "explain": "Boat and home both have a long o sound."
+   },
+   {
+    "q": "Which word has the same vowel sound as note?",
+    "options": [
+     "home",
+     "jam",
+     "mop",
+     "lip"
+    ],
+    "answer": 0,
+    "explain": "Note and home both have a long o sound."
+   },
+   {
+    "q": "Which word is a tricky word that does not sound out the usual way?",
+    "options": [
+     "what",
+     "sun",
+     "jump",
+     "pig"
+    ],
+    "answer": 0,
+    "explain": "The word what is tricky, so you must learn it by sight."
+   },
+   {
+    "q": "Which word has the same vowel sound as green?",
+    "options": [
+     "bat",
+     "hot",
+     "tree",
+     "red"
+    ],
+    "answer": 2,
+    "explain": "Green and tree both have a long e sound."
+   },
+   {
+    "q": "Which word makes the long e sound?",
+    "options": [
+     "map",
+     "these",
+     "bed",
+     "hat"
+    ],
+    "answer": 1,
+    "explain": "The word these has a long e sound, like the letter name."
+   },
+   {
+    "q": "Which tricky word fills the blank? He is the ___ who helps us every day.",
+    "options": [
+     "the",
+     "in",
+     "on",
+     "one"
+    ],
+    "answer": 3,
+    "explain": "The one means the single person who helps us."
+   },
+   {
+    "q": "Pick the word with a long i sound.",
+    "options": [
+     "win",
+     "pig",
+     "bed",
+     "line"
+    ],
+    "answer": 3,
+    "explain": "The word line has a long i sound, like the letter name."
+   },
+   {
+    "q": "Which tricky word fills the blank? You ___ a good reader.",
+    "options": [
+     "and",
+     "is",
+     "are",
+     "the"
+    ],
+    "answer": 2,
+    "explain": "You are a good reader, so the tricky word is are."
+   },
+   {
+    "q": "Which word has the same vowel sound as feet?",
+    "options": [
+     "nut",
+     "bed",
+     "mud",
+     "tree"
+    ],
+    "answer": 3,
+    "explain": "Feet and tree both have a long e sound."
+   },
+   {
+    "q": "Pick the word with a long o sound.",
+    "options": [
+     "dig",
+     "web",
+     "bone",
+     "cut"
+    ],
+    "answer": 2,
+    "explain": "The word bone has a long o sound, like the letter name."
+   },
+   {
+    "q": "Which tricky word fills the blank? I have ___ hands.",
+    "options": [
+     "ten",
+     "too",
+     "to",
+     "two"
+    ],
+    "answer": 3,
+    "explain": "Two is the number word in this sentence."
+   },
+   {
+    "q": "Which word has a long a sound?",
+    "options": [
+     "ten",
+     "bake",
+     "jet",
+     "fin"
+    ],
+    "answer": 1,
+    "explain": "The word bake has a long a sound, like the letter name."
+   },
+   {
+    "q": "Which word has the same vowel sound as ride?",
+    "options": [
+     "win",
+     "bike",
+     "mop",
+     "cap"
+    ],
+    "answer": 1,
+    "explain": "Ride and bike both have a long i sound."
+   },
+   {
+    "q": "Which word makes the long a sound?",
+    "options": [
+     "day",
+     "top",
+     "win",
+     "net"
+    ],
+    "answer": 0,
+    "explain": "The word day has a long a sound, like the letter name."
+   },
+   {
+    "q": "Which word makes the long o sound?",
+    "options": [
+     "pan",
+     "web",
+     "rose",
+     "sun"
+    ],
+    "answer": 2,
+    "explain": "The word rose has a long o sound, like the letter name."
+   },
+   {
+    "q": "Which word has a long i sound?",
+    "options": [
+     "hen",
+     "red",
+     "bus",
+     "bike"
+    ],
+    "answer": 3,
+    "explain": "The word bike has a long i sound, like the letter name."
+   },
+   {
+    "q": "In the word name, the silent e at the end does what?",
+    "options": [
+     "It makes the a say its name, a long sound.",
+     "It makes the e say its name out loud.",
+     "It makes the a sound short.",
+     "It does nothing at all."
+    ],
+    "answer": 0,
+    "explain": "The silent e makes the a in name say its name."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Long Vowels & Tricky Words",
+    "title": "Year Quest: Long Vowels & Tricky Words - Quest 4",
+    "desc": "Practice long vowel sounds and tricky words you must know by sight. Quest 4 of 4 in this unit.",
+    "count": 20,
+    "boss": true
+   }
+  ]
+ },
+ {
+  "title": "Year Quest: Reading Challenge Review - Quest 1",
+  "subject": "Kids Reading",
+  "module": "kids-reading-yq-u9-q1",
+  "description": "Review everything: letters, sounds, words, stories, and facts. Quest 1 of 4 in this unit.",
+  "questions": [
+   {
+    "q": "Leo the lion cub lived at the zoo. He liked to nap in the warm sun. One day, he roared for the very first time. Where did Leo live?",
+    "options": [
+     "in a cave",
+     "at the zoo",
+     "on a farm",
+     "in the jungle"
+    ],
+    "answer": 1,
+    "explain": "The story says Leo lived at the zoo."
+   },
+   {
+    "q": "Which word belongs to the -it word family?",
+    "options": [
+     "pot",
+     "mug",
+     "cub",
+     "hit"
+    ],
+    "answer": 3,
+    "explain": "The word hit ends with -it, so it is in the -it family."
+   },
+   {
+    "q": "What letter does the word goat start with?",
+    "options": [
+     "M",
+     "Y",
+     "G",
+     "T"
+    ],
+    "answer": 2,
+    "explain": "The word goat starts with the letter G."
+   },
+   {
+    "q": "Which letter is the capital match for q?",
+    "options": [
+     "M",
+     "C",
+     "Q",
+     "Z"
+    ],
+    "answer": 2,
+    "explain": "q and Q are the same letter."
+   },
+   {
+    "q": "Which word starts with the letter I?",
+    "options": [
+     "jam",
+     "cat",
+     "nest",
+     "igloo"
+    ],
+    "answer": 3,
+    "explain": "Igloo starts with the letter I."
+   },
+   {
+    "q": "Which letter comes right before B in the alphabet?",
+    "options": [
+     "F",
+     "N",
+     "X",
+     "A"
+    ],
+    "answer": 3,
+    "explain": "A comes right before B in the alphabet."
+   },
+   {
+    "q": "Which word starts with the same sound as cat?",
+    "options": [
+     "nose",
+     "cow",
+     "frog",
+     "kangaroo"
+    ],
+    "answer": 1,
+    "explain": "Cat and cow both start with the letter C."
+   },
+   {
+    "q": "Which word starts with the same sound as lion?",
+    "options": [
+     "lemon",
+     "sun",
+     "apple",
+     "mouse"
+    ],
+    "answer": 0,
+    "explain": "Lion and lemon both start with the letter L."
+   },
+   {
+    "q": "Which letter is the capital match for a?",
+    "options": [
+     "A",
+     "J",
+     "C",
+     "L"
+    ],
+    "answer": 0,
+    "explain": "a and A are the same letter."
+   },
+   {
+    "q": "Which two letters make the last sound in the word bath?",
+    "options": [
+     "ck",
+     "ll",
+     "ss",
+     "th"
+    ],
+    "answer": 3,
+    "explain": "The word bath ends with the letters th, which make one sound."
+   },
+   {
+    "q": "Which word starts with the letter Z?",
+    "options": [
+     "igloo",
+     "goat",
+     "zebra",
+     "dog"
+    ],
+    "answer": 2,
+    "explain": "Zebra starts with the letter Z."
+   },
+   {
+    "q": "Which tricky word fills the blank? ___ are my friends.",
+    "options": [
+     "The",
+     "Day",
+     "Say",
+     "They"
+    ],
+    "answer": 3,
+    "explain": "They is the tricky word that starts this sentence."
+   },
+   {
+    "q": "What blend starts the word smile?",
+    "options": [
+     "sm",
+     "bl",
+     "cr",
+     "sl"
+    ],
+    "answer": 0,
+    "explain": "The word smile starts with the letters sm."
+   },
+   {
+    "q": "Which two letters make the last sound in the word dish?",
+    "options": [
+     "sh",
+     "ck",
+     "ll",
+     "th"
+    ],
+    "answer": 0,
+    "explain": "The word dish ends with the letters sh, which make one sound."
+   },
+   {
+    "q": "Which word rhymes with jog?",
+    "options": [
+     "dog",
+     "pop",
+     "pig",
+     "men"
+    ],
+    "answer": 0,
+    "explain": "Jog and dog both end with the -og sound."
+   },
+   {
+    "q": "Which letter comes right after J in the alphabet?",
+    "options": [
+     "M",
+     "K",
+     "N",
+     "B"
+    ],
+    "answer": 1,
+    "explain": "K comes right after J in the alphabet."
+   },
+   {
+    "q": "Which word has a long o sound?",
+    "options": [
+     "lip",
+     "pan",
+     "home",
+     "log"
+    ],
+    "answer": 2,
+    "explain": "The word home has a long o sound, like the letter name."
+   },
+   {
+    "q": "Which word has the same vowel sound as run?",
+    "options": [
+     "pig",
+     "bus",
+     "red",
+     "pin"
+    ],
+    "answer": 1,
+    "explain": "Run and bus both have a short u sound."
+   },
+   {
+    "q": "Which word starts with the same sound as fish?",
+    "options": [
+     "bear",
+     "frog",
+     "pig",
+     "elephant"
+    ],
+    "answer": 1,
+    "explain": "Fish and frog both start with the letter F."
+   },
+   {
+    "q": "Which word starts with the letter M?",
+    "options": [
+     "igloo",
+     "sun",
+     "moon",
+     "van"
+    ],
+    "answer": 2,
+    "explain": "Moon starts with the letter M."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Reading Challenge Review",
+    "title": "Year Quest: Reading Challenge Review - Quest 1",
+    "desc": "Review everything: letters, sounds, words, stories, and facts. Quest 1 of 4 in this unit.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Year Quest: Reading Challenge Review - Quest 2",
+  "subject": "Kids Reading",
+  "module": "kids-reading-yq-u9-q2",
+  "description": "Review everything: letters, sounds, words, stories, and facts. Quest 2 of 4 in this unit.",
+  "questions": [
+   {
+    "q": "Which word belongs to the -an word family?",
+    "options": [
+     "ran",
+     "ten",
+     "mat",
+     "lot"
+    ],
+    "answer": 0,
+    "explain": "The word ran ends with -an, so it is in the -an family."
+   },
+   {
+    "q": "Which sight word fills the blank? ___ is my mom.",
+    "options": [
+     "The",
+     "And",
+     "She",
+     "Is"
+    ],
+    "answer": 2,
+    "explain": "She is my mom, so the sentence starts with She."
+   },
+   {
+    "q": "Which letter comes right before Y in the alphabet?",
+    "options": [
+     "I",
+     "W",
+     "X",
+     "E"
+    ],
+    "answer": 2,
+    "explain": "X comes right before Y in the alphabet."
+   },
+   {
+    "q": "Which letter is the capital match for l?",
+    "options": [
+     "S",
+     "Y",
+     "L",
+     "H"
+    ],
+    "answer": 2,
+    "explain": "l and L are the same letter."
+   },
+   {
+    "q": "What letter does the word tiger start with?",
+    "options": [
+     "U",
+     "T",
+     "S",
+     "O"
+    ],
+    "answer": 1,
+    "explain": "The word tiger starts with the letter T."
+   },
+   {
+    "q": "Which word is in the same word family as top?",
+    "options": [
+     "mop",
+     "pan",
+     "hot",
+     "man"
+    ],
+    "answer": 0,
+    "explain": "Top and mop both end with -op."
+   },
+   {
+    "q": "Which word has the same vowel sound as ten?",
+    "options": [
+     "box",
+     "six",
+     "ran",
+     "bed"
+    ],
+    "answer": 3,
+    "explain": "Ten and bed both have a short e sound."
+   },
+   {
+    "q": "Which two letters make the first sound in the word chick?",
+    "options": [
+     "ch",
+     "sn",
+     "pl",
+     "bl"
+    ],
+    "answer": 0,
+    "explain": "The word chick starts with the letters ch, which make one sound."
+   },
+   {
+    "q": "Which letter is the lowercase match for C?",
+    "options": [
+     "w",
+     "q",
+     "f",
+     "c"
+    ],
+    "answer": 3,
+    "explain": "C and c are the same letter."
+   },
+   {
+    "q": "What blend starts the word dragon?",
+    "options": [
+     "sn",
+     "dr",
+     "bl",
+     "sl"
+    ],
+    "answer": 1,
+    "explain": "The word dragon starts with the letters dr."
+   },
+   {
+    "q": "Which word has the short o sound in the middle?",
+    "options": [
+     "pot",
+     "red",
+     "egg",
+     "win"
+    ],
+    "answer": 0,
+    "explain": "The word pot has a short o sound."
+   },
+   {
+    "q": "Which word has the same vowel sound as mud?",
+    "options": [
+     "red",
+     "box",
+     "web",
+     "bus"
+    ],
+    "answer": 3,
+    "explain": "Mud and bus both have a short u sound."
+   },
+   {
+    "q": "Which letter is the lowercase match for K?",
+    "options": [
+     "e",
+     "k",
+     "t",
+     "j"
+    ],
+    "answer": 1,
+    "explain": "K and k are the same letter."
+   },
+   {
+    "q": "What letter does the word lion start with?",
+    "options": [
+     "L",
+     "R",
+     "F",
+     "U"
+    ],
+    "answer": 0,
+    "explain": "The word lion starts with the letter L."
+   },
+   {
+    "q": "Which word has a short o sound?",
+    "options": [
+     "tub",
+     "mop",
+     "leg",
+     "run"
+    ],
+    "answer": 1,
+    "explain": "The word mop has a short o sound."
+   },
+   {
+    "q": "What blend starts the word play?",
+    "options": [
+     "gr",
+     "pl",
+     "dr",
+     "sm"
+    ],
+    "answer": 1,
+    "explain": "The word play starts with the letters pl."
+   },
+   {
+    "q": "Which word starts with the letter B?",
+    "options": [
+     "whale",
+     "dog",
+     "goat",
+     "ball"
+    ],
+    "answer": 3,
+    "explain": "Ball starts with the letter B."
+   },
+   {
+    "q": "Which letter is the lowercase match for V?",
+    "options": [
+     "u",
+     "j",
+     "v",
+     "t"
+    ],
+    "answer": 2,
+    "explain": "V and v are the same letter."
+   },
+   {
+    "q": "In the word cap, which letter makes the middle sound?",
+    "options": [
+     "u",
+     "e",
+     "a",
+     "o"
+    ],
+    "answer": 2,
+    "explain": "The word cap has a short a sound in the middle."
+   },
+   {
+    "q": "Which word has the same vowel sound as hat?",
+    "options": [
+     "red",
+     "six",
+     "net",
+     "cat"
+    ],
+    "answer": 3,
+    "explain": "Hat and cat both have a short a sound."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Reading Challenge Review",
+    "title": "Year Quest: Reading Challenge Review - Quest 2",
+    "desc": "Review everything: letters, sounds, words, stories, and facts. Quest 2 of 4 in this unit.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Year Quest: Reading Challenge Review - Quest 3",
+  "subject": "Kids Reading",
+  "module": "kids-reading-yq-u9-q3",
+  "description": "Review everything: letters, sounds, words, stories, and facts. Quest 3 of 4 in this unit.",
+  "questions": [
+   {
+    "q": "Which letter is the capital match for n?",
+    "options": [
+     "F",
+     "N",
+     "M",
+     "U"
+    ],
+    "answer": 1,
+    "explain": "n and N are the same letter."
+   },
+   {
+    "q": "Which word starts with the letter O?",
+    "options": [
+     "rabbit",
+     "hat",
+     "yo-yo",
+     "ostrich"
+    ],
+    "answer": 3,
+    "explain": "Ostrich starts with the letter O."
+   },
+   {
+    "q": "Which letter comes right after L in the alphabet?",
+    "options": [
+     "Y",
+     "H",
+     "M",
+     "K"
+    ],
+    "answer": 2,
+    "explain": "M comes right after L in the alphabet."
+   },
+   {
+    "q": "Which word has the short a sound in the middle?",
+    "options": [
+     "ran",
+     "hop",
+     "rug",
+     "sun"
+    ],
+    "answer": 0,
+    "explain": "The word ran has a short a sound."
+   },
+   {
+    "q": "Which word starts with the wh sound?",
+    "options": [
+     "truck",
+     "thumb",
+     "whale",
+     "shoe"
+    ],
+    "answer": 2,
+    "explain": "The word whale starts with the wh sound."
+   },
+   {
+    "q": "Which word starts with the blend sp?",
+    "options": [
+     "spin",
+     "sweet",
+     "dress",
+     "stop"
+    ],
+    "answer": 0,
+    "explain": "The word spin starts with the blend sp."
+   },
+   {
+    "q": "Which word is in the same word family as six?",
+    "options": [
+     "jog",
+     "sub",
+     "fix",
+     "men"
+    ],
+    "answer": 2,
+    "explain": "Six and fix both end with -ix."
+   },
+   {
+    "q": "What blend starts the word clap?",
+    "options": [
+     "fr",
+     "cl",
+     "bl",
+     "sp"
+    ],
+    "answer": 1,
+    "explain": "The word clap starts with the letters cl."
+   },
+   {
+    "q": "Which word is in the same word family as dog?",
+    "options": [
+     "fix",
+     "mix",
+     "man",
+     "log"
+    ],
+    "answer": 3,
+    "explain": "Dog and log both end with -og."
+   },
+   {
+    "q": "Which two letters make the first sound in the word shark?",
+    "options": [
+     "tr",
+     "fr",
+     "sh",
+     "cr"
+    ],
+    "answer": 2,
+    "explain": "The word shark starts with the letters sh, which make one sound."
+   },
+   {
+    "q": "Which word has the same vowel sound as tune?",
+    "options": [
+     "cube",
+     "bat",
+     "box",
+     "pig"
+    ],
+    "answer": 0,
+    "explain": "Tune and cube both have a long u sound."
+   },
+   {
+    "q": "Which word has the same vowel sound as mop?",
+    "options": [
+     "bag",
+     "dog",
+     "cap",
+     "cat"
+    ],
+    "answer": 1,
+    "explain": "Mop and dog both have a short o sound."
+   },
+   {
+    "q": "Which letter comes right after S in the alphabet?",
+    "options": [
+     "U",
+     "T",
+     "O",
+     "F"
+    ],
+    "answer": 1,
+    "explain": "T comes right after S in the alphabet."
+   },
+   {
+    "q": "Which word does NOT rhyme with sing?",
+    "options": [
+     "wing",
+     "king",
+     "hat",
+     "ring"
+    ],
+    "answer": 2,
+    "explain": "Hat does not end with the same sound as sing."
+   },
+   {
+    "q": "Which letter comes right before J in the alphabet?",
+    "options": [
+     "K",
+     "P",
+     "L",
+     "I"
+    ],
+    "answer": 3,
+    "explain": "I comes right before J in the alphabet."
+   },
+   {
+    "q": "Which letter comes right before D in the alphabet?",
+    "options": [
+     "Q",
+     "X",
+     "F",
+     "C"
+    ],
+    "answer": 3,
+    "explain": "C comes right before D in the alphabet."
+   },
+   {
+    "q": "Which word starts with the blend bl?",
+    "options": [
+     "sweet",
+     "blue",
+     "dress",
+     "drum"
+    ],
+    "answer": 1,
+    "explain": "The word blue starts with the blend bl."
+   },
+   {
+    "q": "Which word has the same vowel sound as bake?",
+    "options": [
+     "cake",
+     "dig",
+     "pig",
+     "box"
+    ],
+    "answer": 0,
+    "explain": "Bake and cake both have a long a sound."
+   },
+   {
+    "q": "Which word starts with the letter U?",
+    "options": [
+     "ball",
+     "goat",
+     "cat",
+     "umbrella"
+    ],
+    "answer": 3,
+    "explain": "Umbrella starts with the letter U."
+   },
+   {
+    "q": "Which word has the same vowel sound as pig?",
+    "options": [
+     "sit",
+     "tub",
+     "mop",
+     "sun"
+    ],
+    "answer": 0,
+    "explain": "Pig and sit both have a short i sound."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Reading Challenge Review",
+    "title": "Year Quest: Reading Challenge Review - Quest 3",
+    "desc": "Review everything: letters, sounds, words, stories, and facts. Quest 3 of 4 in this unit.",
+    "count": 20,
+    "boss": false
+   }
+  ]
+ },
+ {
+  "title": "Year Quest: Reading Challenge Review - Quest 4",
+  "subject": "Kids Reading",
+  "module": "kids-reading-yq-u9-q4",
+  "description": "Review everything: letters, sounds, words, stories, and facts. Quest 4 of 4 in this unit.",
+  "questions": [
+   {
+    "q": "Which word belongs to the -en word family?",
+    "options": [
+     "men",
+     "fun",
+     "dog",
+     "rug"
+    ],
+    "answer": 0,
+    "explain": "The word men ends with -en, so it is in the -en family."
+   },
+   {
+    "q": "In the word box, which letter makes the middle sound?",
+    "options": [
+     "e",
+     "a",
+     "i",
+     "o"
+    ],
+    "answer": 3,
+    "explain": "The word box has a short o sound in the middle."
+   },
+   {
+    "q": "Which word rhymes with mat?",
+    "options": [
+     "rug",
+     "led",
+     "cat",
+     "mop"
+    ],
+    "answer": 2,
+    "explain": "Mat and cat both end with the -at sound."
+   },
+   {
+    "q": "Which letter comes right before V in the alphabet?",
+    "options": [
+     "H",
+     "Z",
+     "U",
+     "S"
+    ],
+    "answer": 2,
+    "explain": "U comes right before V in the alphabet."
+   },
+   {
+    "q": "Ella drew a picture of her house. She used red for the roof. She gave the picture to her mom. Who did Ella give the picture to?",
+    "options": [
+     "her dad",
+     "her friend",
+     "her teacher",
+     "her mom"
+    ],
+    "answer": 3,
+    "explain": "The story says Ella gave the picture to her mom."
+   },
+   {
+    "q": "Which word starts with the blend sw?",
+    "options": [
+     "slide",
+     "sweet",
+     "blue",
+     "plane"
+    ],
+    "answer": 1,
+    "explain": "The word sweet starts with the blend sw."
+   },
+   {
+    "q": "Which word begins with the blend st?",
+    "options": [
+     "plane",
+     "stop",
+     "black",
+     "train"
+    ],
+    "answer": 1,
+    "explain": "The word stop starts with the blend st."
+   },
+   {
+    "q": "In the word dig, which letter makes the middle sound?",
+    "options": [
+     "a",
+     "u",
+     "i",
+     "e"
+    ],
+    "answer": 2,
+    "explain": "The word dig has a short i sound in the middle."
+   },
+   {
+    "q": "Which word makes the short a sound?",
+    "options": [
+     "tub",
+     "map",
+     "run",
+     "leg"
+    ],
+    "answer": 1,
+    "explain": "The word map has a short a sound."
+   },
+   {
+    "q": "Which word has a short u sound?",
+    "options": [
+     "bus",
+     "pen",
+     "sad",
+     "hat"
+    ],
+    "answer": 0,
+    "explain": "The word bus has a short u sound."
+   },
+   {
+    "q": "Which letter is the capital match for m?",
+    "options": [
+     "M",
+     "L",
+     "N",
+     "U"
+    ],
+    "answer": 0,
+    "explain": "m and M are the same letter."
+   },
+   {
+    "q": "Which vowel fills the blank to make a word? b_d - you sleep in it at night.",
+    "options": [
+     "o",
+     "a",
+     "i",
+     "e"
+    ],
+    "answer": 3,
+    "explain": "The word is bed, so the missing vowel is e."
+   },
+   {
+    "q": "In the word bus, which letter makes the middle sound?",
+    "options": [
+     "e",
+     "u",
+     "a",
+     "i"
+    ],
+    "answer": 1,
+    "explain": "The word bus has a short u sound in the middle."
+   },
+   {
+    "q": "Which word is in the same word family as cat?",
+    "options": [
+     "tub",
+     "sun",
+     "mug",
+     "hat"
+    ],
+    "answer": 3,
+    "explain": "Cat and hat both end with -at."
+   },
+   {
+    "q": "What blend starts the word bread?",
+    "options": [
+     "br",
+     "dr",
+     "sm",
+     "sl"
+    ],
+    "answer": 0,
+    "explain": "The word bread starts with the letters br."
+   },
+   {
+    "q": "What blend starts the word tree?",
+    "options": [
+     "fl",
+     "fr",
+     "tr",
+     "cr"
+    ],
+    "answer": 2,
+    "explain": "The word tree starts with the letters tr."
+   },
+   {
+    "q": "Mia planted a seed in her garden. She watered it every day. Soon a tall sunflower grew. Who planted a seed?",
+    "options": [
+     "Mia",
+     "Lily",
+     "Sam",
+     "Ben"
+    ],
+    "answer": 0,
+    "explain": "The story says Mia planted the seed."
+   },
+   {
+    "q": "Which word starts with the blend fr?",
+    "options": [
+     "sweet",
+     "frog",
+     "small",
+     "sleep"
+    ],
+    "answer": 1,
+    "explain": "The word frog starts with the blend fr."
+   },
+   {
+    "q": "Which word has the same vowel sound as time?",
+    "options": [
+     "run",
+     "bug",
+     "bike",
+     "rug"
+    ],
+    "answer": 2,
+    "explain": "Time and bike both have a long i sound."
+   },
+   {
+    "q": "Which letter is the capital match for v?",
+    "options": [
+     "L",
+     "T",
+     "B",
+     "V"
+    ],
+    "answer": 3,
+    "explain": "v and V are the same letter."
+   }
+  ],
+  "rounds": [
+   {
+    "tag": "Reading Challenge Review",
+    "title": "Year Quest: Reading Challenge Review - Quest 4",
+    "desc": "Review everything: letters, sounds, words, stories, and facts. Quest 4 of 4 in this unit.",
+    "count": 20,
+    "boss": true
+   }
+  ]
  }
 ]
