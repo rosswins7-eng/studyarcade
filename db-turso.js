@@ -62,6 +62,7 @@ async function init() {
   try { await run('ALTER TABLE users ADD COLUMN color_id TEXT'); } catch (e) { /* already exists */ }
   try { await run('ALTER TABLE users ADD COLUMN title_id TEXT'); } catch (e) { /* already exists */ }
   try { await run('ALTER TABLE users ADD COLUMN bio TEXT'); } catch (e) { /* already exists */ }
+  try { await run('ALTER TABLE users ADD COLUMN founder_number INTEGER'); } catch (e) { /* already exists */ }
   await seed();
   await applyProgression();
 }
@@ -117,13 +118,29 @@ async function seed() {
 module.exports = {
   init,
   getUserByEmail: (email) => get('SELECT * FROM users WHERE email = ?', [email]),
-  getUserById: (id) => get('SELECT id, name, email, is_pro, xp, stripe_customer_id, stripe_sub_id, avatar_id, frame_id, color_id, title_id, bio, created_at FROM users WHERE id = ?', [id]),
+  getUserById: (id) => get('SELECT id, name, email, is_pro, xp, stripe_customer_id, stripe_sub_id, avatar_id, frame_id, color_id, title_id, bio, founder_number, created_at FROM users WHERE id = ?', [id]),
   getUserByStripeCustomer: (customerId) =>
     customerId ? get('SELECT * FROM users WHERE stripe_customer_id = ?', [customerId]) : Promise.resolve(undefined),
   setUserPro: async (userId, isPro, customerId, subId) => {
     await run('UPDATE users SET is_pro = ? WHERE id = ?', [isPro ? 1 : 0, userId]);
     if (customerId) await run('UPDATE users SET stripe_customer_id = ? WHERE id = ?', [customerId, userId]);
     if (subId) await run('UPDATE users SET stripe_sub_id = ? WHERE id = ?', [subId, userId]);
+  },
+  // Founder promo: the first 100 paying Pro users get a permanent number.
+  claimFounderNumber: async (userId) => {
+    const cur = await get('SELECT founder_number FROM users WHERE id = ?', [userId]);
+    if (!cur) return null;
+    if (cur.founder_number) return cur.founder_number;
+    const c = await get('SELECT COUNT(*) AS c FROM users WHERE founder_number IS NOT NULL', []);
+    if (c && c.c >= 100) return null;
+    const m = await get('SELECT COALESCE(MAX(founder_number),0) AS m FROM users', []);
+    const n = (m ? m.m : 0) + 1;
+    await run('UPDATE users SET founder_number = ? WHERE id = ? AND founder_number IS NULL', [n, userId]);
+    return n;
+  },
+  countFounders: async () => {
+    const r = await get('SELECT COUNT(*) AS c FROM users WHERE founder_number IS NOT NULL', []);
+    return r ? r.c : 0;
   },
   countUserSets: async (userId) => {
     const r = await get('SELECT COUNT(*) AS c FROM sets WHERE creator_id = ?', [userId]);

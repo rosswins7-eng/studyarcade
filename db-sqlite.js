@@ -68,6 +68,7 @@ async function init() {
   try { db.exec('ALTER TABLE users ADD COLUMN color_id TEXT'); } catch (e) { /* column already exists */ }
   try { db.exec('ALTER TABLE users ADD COLUMN title_id TEXT'); } catch (e) { /* column already exists */ }
   try { db.exec('ALTER TABLE users ADD COLUMN bio TEXT'); } catch (e) { /* column already exists */ }
+  try { db.exec('ALTER TABLE users ADD COLUMN founder_number INTEGER'); } catch (e) { /* column already exists */ }
   await seed();
   applyProgression();
 }
@@ -119,7 +120,7 @@ async function seed() {
 
 const q = {
   getUserByEmail: async (email) => db.prepare('SELECT * FROM users WHERE email = ?').get(email),
-  getUserById: async (id) => db.prepare('SELECT id, name, email, is_pro, xp, stripe_customer_id, stripe_sub_id, avatar_id, frame_id, color_id, title_id, bio, created_at FROM users WHERE id = ?').get(id),
+  getUserById: async (id) => db.prepare('SELECT id, name, email, is_pro, xp, stripe_customer_id, stripe_sub_id, avatar_id, frame_id, color_id, title_id, bio, founder_number, created_at FROM users WHERE id = ?').get(id),
   getUserByStripeCustomer: async (customerId) =>
     customerId ? db.prepare('SELECT * FROM users WHERE stripe_customer_id = ?').get(customerId) : undefined,
   setUserPro: async (userId, isPro, customerId, subId) => {
@@ -127,6 +128,19 @@ const q = {
     if (customerId) db.prepare('UPDATE users SET stripe_customer_id = ? WHERE id = ?').run(customerId, userId);
     if (subId) db.prepare('UPDATE users SET stripe_sub_id = ? WHERE id = ?').run(subId, userId);
   },
+  // Founder promo: the first 100 paying Pro users get a permanent number.
+  claimFounderNumber: async (userId) => {
+    const cur = db.prepare('SELECT founder_number FROM users WHERE id = ?').get(userId);
+    if (!cur) return null;
+    if (cur.founder_number) return cur.founder_number;
+    const c = db.prepare('SELECT COUNT(*) AS c FROM users WHERE founder_number IS NOT NULL').get().c;
+    if (c >= 100) return null;
+    const n = db.prepare('SELECT COALESCE(MAX(founder_number),0) AS m FROM users').get().m + 1;
+    db.prepare('UPDATE users SET founder_number = ? WHERE id = ? AND founder_number IS NULL').run(n, userId);
+    return n;
+  },
+  countFounders: async () =>
+    db.prepare('SELECT COUNT(*) AS c FROM users WHERE founder_number IS NOT NULL').get().c,
   countUserSets: async (userId) =>
     db.prepare('SELECT COUNT(*) AS c FROM sets WHERE creator_id = ?').get(userId).c,
   countGenRequestsSince: async (userId, isoDate) =>

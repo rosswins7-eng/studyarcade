@@ -33,6 +33,20 @@ const levelOf = (u) => (u && LIFETIME_PRO_EMAILS.has((u.email || '').toLowerCase
 const xpOf = (u) => !u ? 0 : (LIFETIME_PRO_EMAILS.has((u.email || '').toLowerCase()) ? Math.max(u.xp || 0, xpForLevel(1000)) : (u.xp || 0));
 const setProSafe = (db, target, val, customerId, subId) =>
   db.setUserPro(target.id, LIFETIME_PRO_EMAILS.has((target.email || '').toLowerCase()) ? true : val, customerId, subId);
+// Founder promo (Chris, 2026-11-05): the first 100 PAYING Pro users receive a
+// permanent founder number that unlocks the Founder cosmetic pack. Owner-comp
+// accounts don't consume a slot. Claiming is idempotent and never revoked —
+// cancelling later keeps the number and the cosmetics.
+const FOUNDER_LIMIT = 100;
+const isFounderUser = (u) => !!(u && (u.founder_number || LIFETIME_PRO_EMAILS.has((u.email || '').toLowerCase())));
+async function maybeClaimFounder(db, target) {
+  try {
+    if (!target || target.founder_number) return;
+    if (LIFETIME_PRO_EMAILS.has((target.email || '').toLowerCase())) return;
+    const n = await db.claimFounderNumber(target.id);
+    if (n) console.log('Founder #' + n + ' claimed by user', target.id);
+  } catch (e) { console.error('Founder claim failed:', e.message); }
+}
 
 // Stripe webhook MUST see the raw body for signature verification, so this
 // route (with express.raw) is registered BEFORE express.json() below.
@@ -65,11 +79,12 @@ app.post('/api/billing/webhook', express.raw({ type: 'application/json' }), asyn
           } catch (e) { /* keep completed-checkout default */ }
         }
         await setProSafe(db, target, isPro, customerId, subId);
+        if (isPro) await maybeClaimFounder(db, target);
       }
     } else if (event.type === 'customer.subscription.created' || event.type === 'customer.subscription.updated') {
       const isPro = obj.status === 'active' || obj.status === 'trialing';
       const target = await db.getUserByStripeCustomer(obj.customer);
-      if (target) await setProSafe(db, target, isPro, obj.customer, obj.id);
+      if (target) { await setProSafe(db, target, isPro, obj.customer, obj.id); if (isPro) await maybeClaimFounder(db, target); }
     } else if (event.type === 'customer.subscription.deleted') {
       const target = await db.getUserByStripeCustomer(obj.customer);
       if (target) await setProSafe(db, target, false, obj.customer, obj.id);
@@ -114,7 +129,10 @@ const PROFILE_CATALOG = {
     { id: 'galaxy', e: '🌌', name: 'Galaxy', min: 500 },
     { id: 'pumpkin', e: '🎃', name: 'Pumpkin', min: 1 }, { id: 'ghost', e: '👻', name: 'Ghost', min: 1 },
     { id: 'bat', e: '🦇', name: 'Bat', min: 3 }, { id: 'skull', e: '💀', name: 'Skull', min: 5 },
-    { id: 'wizard', e: '🧙', name: 'Wizard', min: 8 }
+    { id: 'wizard', e: '🧙', name: 'Wizard', min: 8 },
+    { id: 'founder-lion', e: '🦁', name: 'Founder Lion', min: 1, founder: true },
+    { id: 'founder-eagle', e: '🦅', name: 'Founder Eagle', min: 1, founder: true },
+    { id: 'founder-wolf', e: '🐺', name: 'Founder Wolf', min: 1, founder: true }
   ],
   frames: [
     { id: 'none', name: 'No frame', min: 1 }, { id: 'bronze', name: 'Bronze Ring', min: 5 },
@@ -122,7 +140,8 @@ const PROFILE_CATALOG = {
     { id: 'crystal', name: 'Crystal Aura', min: 50 }, { id: 'flame', name: 'Flame Aura', min: 75 },
     { id: 'galaxyswirl', name: 'Galaxy Swirl', min: 100 }, { id: 'rainbow', name: 'Rainbow Pulse', min: 250 },
     { id: 'glimmer', name: '✨ Glimmering', min: 1000 },
-    { id: 'spooky', name: '🎃 Haunted Aura', min: 5 }
+    { id: 'spooky', name: '🎃 Haunted Aura', min: 5 },
+    { id: 'founder', name: '🏆 Founder Gold', min: 1, founder: true }
   ],
   colors: [
     { id: 'violet', name: 'Violet', css: 'linear-gradient(135deg,#7c5cff,#00d4ff)', min: 1 },
@@ -142,7 +161,8 @@ const PROFILE_CATALOG = {
     { id: 'master', text: 'Quiz Master', min: 35 }, { id: 'sage', text: 'Study Sage', min: 50 },
     { id: 'legend', text: 'Study Legend', min: 100 }, { id: 'mythic', text: 'Mythic Scholar', min: 250 },
     { id: 'eternal', text: 'Eternal Scholar ✨', min: 1000 },
-    { id: 'pumpkin-scholar', text: '🎃 Pumpkin Scholar', min: 3 }
+    { id: 'pumpkin-scholar', text: '🎃 Pumpkin Scholar', min: 3 },
+    { id: 'founder', text: 'Founder 💯', min: 1, founder: true }
   ]
 };
 const catItem = (kind, id) => PROFILE_CATALOG[kind].find((x) => x.id === id) || null;
@@ -163,7 +183,7 @@ function cosmeticsOf(u) {
 // The one public shape for the signed-in user (never leaks stripe ids).
 function publicUser(u) {
   if (!u) return null;
-  return { id: u.id, name: u.name, email: u.email, is_pro: userIsPro(u), xp: xpOf(u), level: levelOf(u), ...cosmeticsOf(u) };
+  return { id: u.id, name: u.name, email: u.email, is_pro: userIsPro(u), xp: xpOf(u), level: levelOf(u), founder_number: u.founder_number || null, ...cosmeticsOf(u) };
 }
 
 app.use(express.json({ limit: '2mb' }));
@@ -268,6 +288,12 @@ app.get('/api/auth/me', ah(async (req, res) => {
 // ---------- profile customization ----------
 app.get('/api/profile/catalog', (req, res) => res.json(PROFILE_CATALOG));
 
+// Founder promo counter (public): how many of the 100 slots are claimed.
+app.get('/api/founders', ah(async (req, res) => {
+  const claimed = await db.countFounders();
+  res.json({ claimed, total: FOUNDER_LIMIT, remaining: Math.max(0, FOUNDER_LIMIT - claimed) });
+}));
+
 app.patch('/api/auth/profile', authed, ah(async (req, res) => {
   const u = await db.getUserById(req.session.userId);
   if (!u) return res.status(401).json({ error: 'Sign in required.' });
@@ -278,6 +304,7 @@ app.patch('/api/auth/profile', authed, ah(async (req, res) => {
     if (b[key] === undefined) return true;
     const item = catItem(kind, b[key]);
     if (!item) { res.status(400).json({ error: 'Unknown ' + key.replace('_id', '') + '.' }); return false; }
+    if (item.founder && !isFounderUser(u)) { res.status(403).json({ error: '🏆 "' + (item.name || item.text) + '" is a Founder exclusive — only the first ' + FOUNDER_LIMIT + ' Pro users ever unlock it.', locked: true, founder: true }); return false; }
     if (lvl < item.min) { res.status(403).json({ error: '🔒 "' + (item.name || item.text) + '" unlocks at level ' + item.min + ' — you are level ' + lvl + '.', locked: true, need: item.min }); return false; }
     fields[key] = item.id;
     return true;
@@ -307,6 +334,7 @@ app.get('/api/users/:id', ah(async (req, res) => {
   const stats = await db.getUserStats(u.id);
   res.json({
     id: u.id, name: u.name, xp: xpOf(u), level: levelOf(u), is_pro: userIsPro(u),
+    founder_number: u.founder_number || null,
     created_at: u.created_at, ...cosmeticsOf(u), stats
   });
 }));

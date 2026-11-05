@@ -523,7 +523,10 @@ async function renderCustomize(){
   const co = CATALOG.colors.find(c => c.id === draft.color_id) || CATALOG.colors[0];
   const ti = CATALOG.titles.find(t => t.id === draft.title_id) || CATALOG.titles[0];
   const locked = (min) => lvl < min;
-  const pickBtn = (kind, item, inner) => `<button class="pick${draft[kind] === item.id ? ' sel' : ''}${locked(item.min) ? ' locked' : ''}" title="${esc(item.name || item.text)}${locked(item.min) ? ' — unlocks at Lv ' + item.min : ''}" onclick="pickCosmetic('${kind}','${item.id}',${item.min})">${inner}${locked(item.min) ? `<span class="lock">🔒 Lv ${item.min}</span>` : ''}</button>`;
+  const isFounder = !!ME.founder_number;
+  const itemLocked = (item) => item.founder ? !isFounder : lvl < item.min;
+  const itemLockTag = (item) => item.founder ? '🏆 First 100 Pro' : '🔒 Lv ' + item.min;
+  const pickBtn = (kind, item, inner) => `<button class="pick${draft[kind] === item.id ? ' sel' : ''}${itemLocked(item) ? ' locked' : ''}" title="${esc(item.name || item.text)}${itemLocked(item) ? ' — ' + (item.founder ? 'Founder exclusive: the first 100 Pro users only' : 'unlocks at Lv ' + item.min) : ''}" onclick="pickCosmetic('${kind}','${item.id}',${item.min},${item.founder ? 1 : 0})">${inner}${itemLocked(item) ? `<span class="lock">${itemLockTag(item)}</span>` : ''}</button>`;
   host.innerHTML = `
   <div class="card" style="margin-bottom:24px">
     <h3 style="margin-bottom:6px">🎨 Your profile</h3>
@@ -531,7 +534,7 @@ async function renderCustomize(){
     <div class="profile-banner" style="background:${co.css}">
       ${avatarHtml({ avatar: av.e, frame_id: fr.id }, 'avatar-lg')}
       <div>
-        <div class="pb-name">${esc(ME.name)} <span class="lvlbadge">Lv ${lvl}</span>${ME.is_pro ? ' <span class="lvlbadge">PRO</span>' : ''}</div>
+        <div class="pb-name">${esc(ME.name)} <span class="lvlbadge">Lv ${lvl}</span>${ME.is_pro ? ' <span class="lvlbadge">PRO</span>' : ''}${ME.founder_number ? ' <span class="lvlbadge">🏆 FOUNDER #' + ME.founder_number + '</span>' : ''}</div>
         <div class="pb-title">${esc(ti.text)}</div>
         <div class="pb-bio">${esc(ME.bio || '')}</div>
       </div>
@@ -543,16 +546,25 @@ async function renderCustomize(){
     <h4 class="picklabel">Banner color</h4>
     <div class="pickrow">${CATALOG.colors.map(c => `<button class="swatch${draft.color_id === c.id ? ' sel' : ''}${locked(c.min) ? ' locked' : ''}" style="background:${c.css}" title="${esc(c.name)}${locked(c.min) ? ' — unlocks at Lv ' + c.min : ''}" onclick="pickCosmetic('color_id','${c.id}',${c.min})">${locked(c.min) ? '🔒' : ''}</button>`).join('')}</div>
     <h4 class="picklabel">Title</h4>
-    <div class="pickrow">${CATALOG.titles.map(t => `<button class="titlechip${draft.title_id === t.id ? ' sel' : ''}${locked(t.min) ? ' locked' : ''}" onclick="pickCosmetic('title_id','${t.id}',${t.min})">${esc(t.text)}${locked(t.min) ? ` <span class="lockinline">🔒 Lv ${t.min}</span>` : ''}</button>`).join('')}</div>
+    <div class="pickrow">${CATALOG.titles.map(t => `<button class="titlechip${draft.title_id === t.id ? ' sel' : ''}${itemLocked(t) ? ' locked' : ''}" onclick="pickCosmetic('title_id','${t.id}',${t.min},${t.founder ? 1 : 0})">${esc(t.text)}${itemLocked(t) ? ` <span class="lockinline">${itemLockTag(t)}</span>` : ''}</button>`).join('')}</div>
+    <p class="muted" id="founderline" style="margin-top:14px"></p>
     <h4 class="picklabel">Display name &amp; bio</h4>
     <input id="pfname" class="pfinput" maxlength="30" value="${esc(ME.name)}">
     <textarea id="pfbio" class="pfinput" rows="2" maxlength="140" placeholder="A short bio other players can see (max 140 characters)">${esc(ME.bio || '')}</textarea>
     <button class="btn" onclick="saveProfile()">Save profile</button>
     <div class="toast" id="profiletoast"></div>
   </div>`;
+  api('GET', '/api/founders').then(f => {
+    const el = $('founderline');
+    if (!el) return;
+    el.innerHTML = ME.founder_number
+      ? '🏆 You are <b>Founder #' + ME.founder_number + '</b> — the Founder pack above is yours forever.'
+      : '🏆 <b>Founder pack:</b> the first 100 Pro users ever get 3 exclusive avatars, the Founder Gold frame, and the Founder 💯 title — never available again after that. <b>' + f.remaining + ' of 100 spots left.</b>';
+  }).catch(() => {});
 }
-function pickCosmetic(kind, id, min){
+function pickCosmetic(kind, id, min, founder){
   const lvl = ME.level || levelFor(ME.xp || 0);
+  if (founder && !ME.founder_number) { toast('profiletoast', 'err', '🏆 That is a Founder exclusive — only the first 100 Pro users ever unlock it.'); return; }
   if (lvl < min) { toast('profiletoast', 'err', '🔒 That unlocks at level ' + min + ' — you are level ' + lvl + '. Keep playing!'); return; }
   draft[kind] = id;
   renderCustomize();
@@ -579,7 +591,7 @@ function openProfile(id){
       <div class="profile-banner" style="background:${p.color_css}">
         ${avatarHtml(p, 'avatar-lg')}
         <div>
-          <div class="pb-name">${esc(p.name)} <span class="lvlbadge">Lv ${p.level}</span>${p.is_pro ? ' <span class="lvlbadge">PRO</span>' : ''}</div>
+          <div class="pb-name">${esc(p.name)} <span class="lvlbadge">Lv ${p.level}</span>${p.is_pro ? ' <span class="lvlbadge">PRO</span>' : ''}${p.founder_number ? ' <span class="lvlbadge">🏆 FOUNDER #' + p.founder_number + '</span>' : ''}</div>
           <div class="pb-title">${esc(p.title)}</div>
           <div class="pb-bio">${esc(p.bio || '')}</div>
         </div>

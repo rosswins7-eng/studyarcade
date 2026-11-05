@@ -96,6 +96,8 @@ a { color: #8b7bff; }
 .frame-glimmer { background: conic-gradient(from var(--fa), #fff7ae, #ffd166, #ff8ad8, #8ab6ff, #b0ffd9, #fff7ae); animation: fa-spin 5s linear infinite; box-shadow: 0 0 16px 4px rgba(255,209,102,.6); }
 .frame-glimmer::after { content: '✨'; position: absolute; top: -.45em; right: -.45em; font-size: .55em; animation: fa-pulse 1.4s ease-in-out infinite alternate; }
 .frame-glimmer::before { content: '✨'; position: absolute; bottom: -.4em; left: -.4em; font-size: .4em; animation: fa-pulse 1.4s .7s ease-in-out infinite alternate; }
+.frame-founder { background: conic-gradient(from var(--fa), #fff3b0, #ffd700, #b8860b, #ffe27a, #ffd700, #fff3b0); animation: fa-spin 6s linear infinite; box-shadow: 0 0 16px 4px rgba(255,215,0,.65); }
+.frame-founder::after { content: '🏆'; position: absolute; top: -.45em; right: -.45em; font-size: .5em; animation: fa-pulse 1.4s ease-in-out infinite alternate; }
 @keyframes fa-spin { to { --fa: 360deg; } }
 @keyframes fa-pulse { from { transform: scale(.75) rotate(-8deg); opacity: .7; } to { transform: scale(1.2) rotate(10deg); opacity: 1; } }
 .profile-banner { border-radius: 16px; padding: 18px; display: flex; gap: 16px; align-items: center; color: #fff; margin-bottom: 16px; }
